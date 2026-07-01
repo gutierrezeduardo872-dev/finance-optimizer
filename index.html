@@ -1,0 +1,546 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<title>Finance Optimizer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+<script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.5/babel.min.js"></script>
+<style>
+  :root{
+    --ink:#161A2E; --ink2:#262C45; --indigo:#4F46E5; --indigo-soft:#EEF0FF;
+    --win:#0E9F6E; --win-soft:#E6F6EF; --amber:#B5791A; --amber-soft:#FBF1DD;
+    --bg:#F4F5F9; --card:#FFFFFF; --line:#E5E7EF; --muted:#6B7187; --text:#1B1F30;
+    --radius:16px; --shadow:0 1px 2px rgba(22,26,46,.04),0 8px 24px rgba(22,26,46,.06);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:"Space Grotesk",sans-serif;margin:0}
+  .num{font-family:"Space Grotesk",sans-serif;font-variant-numeric:tabular-nums}
+  .wrap{max-width:680px;margin:0 auto;padding:0 16px 96px}
+  .topbar{position:sticky;top:0;z-index:20;background:var(--ink);color:#fff;padding:14px 16px;display:flex;align-items:center;justify-content:space-between}
+  .topbar .brand{font-family:"Space Grotesk";font-weight:700;letter-spacing:-.02em;font-size:17px}
+  .topbar .who{font-size:13px;opacity:.8;display:flex;gap:10px;align-items:center}
+  .topbar button{background:rgba(255,255,255,.12);color:#fff;border:0;border-radius:8px;padding:6px 10px;font:inherit;font-size:13px;cursor:pointer}
+  .tabs{display:flex;gap:6px;overflow-x:auto;padding:14px 0 4px;position:sticky;top:50px;background:var(--bg);z-index:10}
+  .tab{flex:0 0 auto;border:1px solid var(--line);background:var(--card);border-radius:999px;padding:8px 14px;font:inherit;font-size:14px;color:var(--muted);cursor:pointer;white-space:nowrap}
+  .tab.active{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow);margin-bottom:14px}
+  .card h2{font-size:18px;letter-spacing:-.01em;margin-bottom:2px}
+  .sub{color:var(--muted);font-size:13.5px;margin-bottom:14px}
+  label.fld{display:block;font-size:13px;color:var(--muted);margin:0 0 6px}
+  select,input[type=number],input[type=password]{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:12px;font:inherit;background:#fff;color:var(--text)}
+  .row{display:flex;gap:10px}.row>*{flex:1}
+  .seg{display:flex;background:var(--bg);border-radius:12px;padding:4px;gap:4px}
+  .seg button{flex:1;border:0;background:transparent;padding:9px;border-radius:9px;font:inherit;color:var(--muted);cursor:pointer}
+  .seg button.on{background:#fff;color:var(--ink);box-shadow:var(--shadow);font-weight:600}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;width:100%;border:0;border-radius:12px;padding:13px;font:inherit;font-weight:600;cursor:pointer;background:var(--indigo);color:#fff}
+  .btn:disabled{opacity:.5;cursor:default}
+  .btn.ghost{background:var(--indigo-soft);color:var(--indigo)}
+  .btn.win{background:var(--win)}
+  .verdict{border:1.5px solid var(--win);background:var(--win-soft);border-radius:var(--radius);padding:18px;margin-top:16px}
+  .verdict .eyebrow{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--win)}
+  .verdict .pick{font-family:"Space Grotesk";font-weight:700;font-size:24px;letter-spacing:-.02em;margin:4px 0 2px}
+  .verdict .big{font-family:"Space Grotesk";font-weight:700;font-size:30px;color:var(--win)}
+  .bd{border-top:1px dashed var(--line);margin-top:14px;padding-top:12px}
+  .bd .li{display:flex;justify-content:space-between;font-size:13.5px;padding:3px 0;color:var(--ink2)}
+  .bd .li .v{font-family:"Space Grotesk";font-variant-numeric:tabular-nums}
+  .alt{display:flex;justify-content:space-between;align-items:center;padding:11px 0;border-top:1px solid var(--line);font-size:14px}
+  .alt .nm{color:var(--ink2)} .alt .amt{font-family:"Space Grotesk";color:var(--muted);font-variant-numeric:tabular-nums}
+  .pill{display:inline-block;font-size:11.5px;padding:2px 8px;border-radius:999px;background:var(--indigo-soft);color:var(--indigo);font-weight:600;margin-left:6px}
+  .pill.amber{background:var(--amber-soft);color:var(--amber)}
+  .pill.win{background:var(--win-soft);color:var(--win)}
+  .note{font-size:12.5px;color:var(--muted);margin-top:10px}
+  .prod{display:flex;justify-content:space-between;align-items:center;padding:13px 0;border-top:1px solid var(--line)}
+  .prod:first-of-type{border-top:0}
+  .prod .meta{font-size:12.5px;color:var(--muted)}
+  .x{border:0;background:var(--bg);color:var(--muted);border-radius:8px;padding:6px 10px;font:inherit;cursor:pointer}
+  .mv{display:flex;justify-content:space-between;gap:10px;padding:12px 0;border-top:1px solid var(--line);font-size:14px}
+  .mv:first-of-type{border-top:0}
+  .mv .l .t{font-size:12px;color:var(--muted)}
+  .mv .r{text-align:right;font-family:"Space Grotesk";font-variant-numeric:tabular-nums}
+  .center{min-height:70vh;display:flex;align-items:center;justify-content:center;padding:16px}
+  .login{width:100%;max-width:380px}
+  .ulist{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}
+  .ucard{border:1px solid var(--line);background:#fff;border-radius:12px;padding:14px;text-align:center;cursor:pointer;font:inherit}
+  .ucard.sel{border-color:var(--indigo);background:var(--indigo-soft)}
+  .ucard .nm{font-family:"Space Grotesk";font-weight:600}
+  .err{background:#FEECEC;color:#B42318;border-radius:10px;padding:10px 12px;font-size:13.5px;margin-top:10px}
+  .empty{color:var(--muted);font-size:14px;padding:8px 0}
+  .spin{display:inline-block;width:18px;height:18px;border:2px solid rgba(255,255,255,.4);border-top-color:#fff;border-radius:50%;animation:s .7s linear infinite}
+  @keyframes s{to{transform:rotate(360deg)}}
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+const { useState, useEffect, useMemo } = React;
+
+const API = "https://script.google.com/macros/s/AKfycbz0ti8iYODBR60V-AqD-YlTDK4-w7RekiMDrFsz6dJqLeJ9oqRZCyQxuEpFvpAk8ZeP/exec";
+
+const mxn = n => new Intl.NumberFormat('es-MX',{style:'currency',currency:'MXN',maximumFractionDigits:0}).format(Math.round(n||0));
+const mxn2 = n => new Intl.NumberFormat('es-MX',{style:'currency',currency:'MXN',maximumFractionDigits:2}).format(n||0);
+const num = (v,d=0)=> (v===''||v==null||isNaN(Number(v))) ? d : Number(v);
+const NOW_MONTH = new Date().toISOString().slice(0,7);
+
+async function apiGet(params){
+  const url = API + '?' + new URLSearchParams(params).toString();
+  const r = await fetch(url); return r.json();
+}
+async function apiPost(body){
+  const r = await fetch(API,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(body)});
+  return r.json();
+}
+
+// ---------- recommendation engine ----------
+function heldCards(d,uid){
+  const ids = d.userProducts.filter(p=>p.user_id===uid && p.product_type==='card').map(p=>p.product_id);
+  return d.cards.filter(c=>ids.includes(c.card_id));
+}
+function heldAccounts(d,uid){
+  const rows = d.userProducts.filter(p=>p.user_id===uid && p.product_type==='account');
+  return rows.map(p=>{const a=d.accounts.find(x=>x.account_id===p.product_id); return a?{...a,current_balance:num(p.current_balance)}:null;}).filter(Boolean);
+}
+function mtdSpend(d,uid,cardId){
+  return d.movements.filter(m=>m.user_id===uid && m.flow==='cc' && m.recommended_product_id===cardId && String(m.timestamp).slice(0,7)===NOW_MONTH)
+    .reduce((s,m)=>s+num(m.amount),0);
+}
+
+function scoreCard(d,card,category,amount){
+  const bonus = d.cardRewards.find(r=>r.card_id===card.card_id && r.category===category);
+  let rate,rtype,pv,cap,usedBonus=false;
+  if(bonus && (bonus.min_spend==='' || amount>=num(bonus.min_spend))){
+    rate=num(bonus.rate); rtype=bonus.reward_type; pv=num(bonus.point_value_mxn,1); cap=bonus.monthly_cap; usedBonus=true;
+  } else {
+    rate=num(card.base_reward_rate); rtype=card.reward_type; pv=num(card.point_value_mxn,1); cap='';
+  }
+  const gross = amount*rate/100;
+  let reward = rtype==='points' ? gross*pv : gross;
+  let capped=false;
+  if(cap!=='' && reward>num(cap)){ reward=num(cap); capped=true; }
+  const perks = d.cardPerks.filter(p=>p.card_id===card.card_id && p.applies_to_category===category);
+  const perkValue = perks.reduce((s,p)=>s+num(p.mxn_value),0);
+  return {card,rate,rtype,reward,perkValue,perks,usedBonus,capped,score:reward+perkValue};
+}
+function ccRecommend(d,uid,category,amount){
+  const cards = heldCards(d,uid);
+  return cards.map(c=>scoreCard(d,c,category,amount)).sort((a,b)=>b.score-a.score);
+}
+
+function tiersFor(d,acctId){ return d.yieldTiers.filter(t=>t.account_id===acctId).sort((a,b)=>num(a.tier_min)-num(b.tier_min)); }
+function boostActive(d,uid,acct){
+  if(acct.boost_apy==='' ) return false;
+  const held = heldCards(d,uid).some(c=>c.card_id===acct.boost_card_id);
+  return held && mtdSpend(d,uid,acct.boost_card_id) >= num(acct.boost_min_credit_spend);
+}
+function annualYield(d,uid,acct,balance){
+  let y=0;
+  const boost = boostActive(d,uid,acct) ? num(acct.boost_apy) : 0;
+  if(acct.yield_type==='tiered'){
+    for(const t of tiersFor(d,acct.account_id)){
+      const lo=num(t.tier_min), hi=t.tier_max===''?Infinity:num(t.tier_max);
+      const portion=Math.max(0,Math.min(balance,hi)-lo);
+      y += portion*(num(t.apy)+boost)/100;
+    }
+  } else {
+    const cap=acct.yield_cap===''?Infinity:num(acct.yield_cap);
+    const earning=Math.min(balance,cap);
+    y += earning*(num(acct.base_apy)+boost)/100;
+  }
+  y -= num(acct.monthly_fee)*12;
+  return y;
+}
+function marginalRate(d,uid,acct,balance){
+  const boost = boostActive(d,uid,acct)?num(acct.boost_apy):0;
+  if(acct.yield_type==='tiered'){
+    let r=0;
+    for(const t of tiersFor(d,acct.account_id)){
+      const lo=num(t.tier_min), hi=t.tier_max===''?Infinity:num(t.tier_max);
+      if(balance>lo) r=num(t.apy)+boost;
+    }
+    return r;
+  }
+  const cap=acct.yield_cap===''?Infinity:num(acct.yield_cap);
+  return balance<=cap ? num(acct.base_apy)+boost : 0;
+}
+function savingsIn(d,uid,amount){
+  const accts=heldAccounts(d,uid);
+  const ranked=accts.map(a=>{
+    const eligible = amount>=num(a.min_balance);
+    return {acct:a,eligible,benefit:eligible?annualYield(d,uid,a,amount):0,boost:boostActive(d,uid,a)};
+  }).sort((x,y)=>y.benefit-x.benefit);
+  // split via rate bands across eligible accounts
+  const bands=[];
+  accts.filter(a=>amount>=num(a.min_balance)).forEach(a=>{
+    const boost=boostActive(d,uid,a)?num(a.boost_apy):0;
+    if(a.yield_type==='tiered'){
+      tiersFor(d,a.account_id).forEach(t=>{
+        const lo=num(t.tier_min),hi=t.tier_max===''?Infinity:num(t.tier_max);
+        bands.push({rate:num(t.apy)+boost,cap:hi-lo,acct:a});
+      });
+    } else {
+      const cap=a.yield_cap===''?Infinity:num(a.yield_cap);
+      bands.push({rate:num(a.base_apy)+boost,cap,acct:a});
+    }
+  });
+  bands.sort((x,y)=>y.rate-x.rate);
+  let left=amount; const alloc={};
+  bands.forEach(b=>{ if(left<=0)return; const take=Math.min(left,b.cap); alloc[b.acct.account_id]=(alloc[b.acct.account_id]||0)+take; left-=take; });
+  let splitTotal=0; const splitParts=[];
+  Object.keys(alloc).forEach(id=>{
+    const a=accts.find(x=>x.account_id===id);
+    splitTotal+=annualYield(d,uid,a,alloc[id]);
+    splitParts.push({acct:a,amount:alloc[id]});
+  });
+  return {ranked, best:ranked[0], split:{total:splitTotal,parts:splitParts.sort((a,b)=>b.amount-a.amount)}};
+}
+function savingsOut(d,uid,amount){
+  const accts=heldAccounts(d,uid).filter(a=>a.liquidity!=='term' && a.current_balance>0);
+  const ranked=accts.map(a=>{
+    const mr=marginalRate(d,uid,a,a.current_balance);
+    const enough=a.current_balance>=amount;
+    const breaksMin=(a.current_balance-amount)<num(a.min_balance);
+    const losesBoost=breaksMin && a.boost_apy!=='';
+    return {acct:a,marginal:mr,enough,breaksMin,losesBoost,costPerYear:amount*mr/100};
+  }).sort((x,y)=>x.costPerYear-y.costPerYear);
+  return {ranked,best:ranked[0]};
+}
+
+function newCardPicks(d,uid){
+  const u=d.users.find(x=>x.user_id===uid);
+  const held=heldCards(d,uid); const heldIds=held.map(c=>c.card_id);
+  // last-month category spend
+  const spend={};
+  d.movements.filter(m=>m.user_id===uid && m.flow==='cc').forEach(m=>{ spend[m.merchant_category]=(spend[m.merchant_category]||0)+num(m.amount); });
+  const rewardOn=(card,cat,amt)=>scoreCard(d,card,cat,amt).reward;
+  const cur={}; Object.keys(spend).forEach(cat=>{ cur[cat]=Math.max(0,...held.map(c=>rewardOn(c,cat,spend[cat])),0); });
+  const candidates=d.cards.filter(c=>!heldIds.includes(c.card_id) && num(u.risk_score)>=num(c.min_risk_score));
+  return candidates.map(c=>{
+    let proj=0,base=0;
+    Object.keys(spend).forEach(cat=>{ proj+=rewardOn(c,cat,spend[cat]); base+=cur[cat]; });
+    const uplift = proj - base - num(c.annual_fee)/12;
+    return {card:c,uplift,monthlyExtra:proj-base,fee:num(c.annual_fee)};
+  }).filter(x=>x.uplift>0).sort((a,b)=>b.uplift-a.uplift).slice(0,3);
+}
+function newAccountPicks(d,uid){
+  const u=d.users.find(x=>x.user_id===uid);
+  const held=heldAccounts(d,uid); const heldIds=held.map(a=>a.account_id);
+  const deposits=d.movements.filter(m=>m.user_id===uid && m.flow==='debit' && m.direction==='in').map(m=>num(m.amount));
+  if(!deposits.length) return [];
+  const typical=Math.round(deposits.reduce((a,b)=>a+b,0)/deposits.length);
+  const bestHeld=Math.max(0,...held.map(a=>annualYield(d,uid,a,typical)),0);
+  const cands=d.accounts.filter(a=>!heldIds.includes(a.account_id) && num(u.risk_score)>=num(a.min_risk_score));
+  return cands.map(a=>{
+    const y=annualYield(d,uid,{...a,current_balance:typical},typical);
+    return {acct:a,typical,uplift:y-bestHeld};
+  }).filter(x=>x.uplift>0).sort((a,b)=>b.uplift-a.uplift).slice(0,2);
+}
+
+// ---------- UI ----------
+function Login({onLogin}){
+  const [users,setUsers]=useState(null);
+  const [sel,setSel]=useState(null);
+  const [pin,setPin]=useState('');
+  const [err,setErr]=useState('');
+  const [busy,setBusy]=useState(false);
+  useEffect(()=>{ apiGet({action:'bootstrap'}).then(r=>{ if(r.ok) setUsers(r.data.users); else setErr('Could not load. '+(r.error||'')); }).catch(e=>setErr('Network error: '+e.message)); },[]);
+  const go=async()=>{
+    setErr(''); setBusy(true);
+    try{ const r=await apiGet({action:'login',user_id:sel,pin}); if(r.ok) onLogin(r.user); else setErr('Wrong PIN, try again.'); }
+    catch(e){ setErr('Network error: '+e.message); }
+    setBusy(false);
+  };
+  return (
+    <div className="center"><div className="login">
+      <div style={{textAlign:'center',marginBottom:22}}>
+        <h1 style={{fontSize:26,letterSpacing:'-.02em'}}>Finance Optimizer</h1>
+        <div className="sub" style={{marginTop:6}}>Swipe smarter. Save smarter.</div>
+      </div>
+      <div className="card">
+        <label className="fld">Who's signing in?</label>
+        {!users && <div className="empty">Loading…</div>}
+        <div className="ulist">
+          {users && users.map(u=>(
+            <button key={u.user_id} className={"ucard"+(sel===u.user_id?' sel':'')} onClick={()=>{setSel(u.user_id);setErr('')}}>
+              <div className="nm">{u.name}</div>
+              <div className="meta" style={{fontSize:12,color:'var(--muted)'}}>{u.is_admin?'admin':'member'}</div>
+            </button>
+          ))}
+        </div>
+        {sel && <>
+          <label className="fld">Enter PIN</label>
+          <input type="password" inputMode="numeric" value={pin} onChange={e=>setPin(e.target.value)} placeholder="••••" onKeyDown={e=>e.key==='Enter'&&go()} />
+          <div style={{height:12}}/>
+          <button className="btn" disabled={!pin||busy} onClick={go}>{busy?<span className="spin"/>:'Sign in'}</button>
+        </>}
+        {err && <div className="err">{err}</div>}
+      </div>
+      <div className="note" style={{textAlign:'center'}}>Demo PINs — Eduardo 1234 · Sofia 2345 · Diego 3456</div>
+    </div></div>
+  );
+}
+
+function Breakdown({rows}){
+  return <div className="bd">{rows.map((r,i)=><div className="li" key={i}><span>{r.k}</span><span className="v" style={r.c?{color:r.c}:{}}>{r.v}</span></div>)}</div>;
+}
+
+function CCAdvisor({d,user,refresh}){
+  const cats=d.categories;
+  const [cat,setCat]=useState(cats[0]?.category_key||'');
+  const [amt,setAmt]=useState('');
+  const [res,setRes]=useState(null);
+  const [logged,setLogged]=useState(false);
+  const [busy,setBusy]=useState(false);
+  const run=()=>{ setLogged(false); setRes(ccRecommend(d,user.user_id,cat,num(amt))); };
+  const log=async()=>{
+    setBusy(true);
+    await apiPost({action:'logMovement',user_id:user.user_id,flow:'cc',merchant_category:cat,amount:num(amt),recommended_product_id:res[0].card.card_id,computed_benefit_mxn:Number(res[0].score.toFixed(2)),notes:'logged from app'});
+    setBusy(false); setLogged(true); refresh();
+  };
+  const held=heldCards(d,user.user_id);
+  return (
+    <div className="card">
+      <h2>Credit card advisor</h2>
+      <div className="sub">Where are you, and how much?</div>
+      <label className="fld">Merchant</label>
+      <select value={cat} onChange={e=>{setCat(e.target.value);setRes(null)}}>
+        {cats.map(c=><option key={c.category_key} value={c.category_key}>{c.display_label}</option>)}
+      </select>
+      <div style={{height:12}}/>
+      <label className="fld">Amount (MXN)</label>
+      <input type="number" value={amt} onChange={e=>{setAmt(e.target.value);setRes(null)}} placeholder="e.g. 1500" onKeyDown={e=>e.key==='Enter'&&run()}/>
+      <div style={{height:14}}/>
+      <button className="btn" disabled={!amt||num(amt)<=0||!held.length} onClick={run}>Find my best card</button>
+      {!held.length && <div className="note">You don't hold any cards yet — add some in My products.</div>}
+      {res && res.length>0 && <>
+        <div className="verdict">
+          <div className="eyebrow">Use this card</div>
+          <div className="pick">{res[0].card.card_name}
+            {res[0].usedBonus && <span className="pill amber">{res[0].rate}% bonus</span>}
+            {res[0].capped && <span className="pill">cap hit</span>}
+          </div>
+          <div className="big">{mxn2(res[0].score)}</div>
+          <div className="sub" style={{margin:'2px 0 0'}}>back on this purchase</div>
+          <Breakdown rows={[
+            {k:`Reward (${res[0].rate}% ${res[0].rtype})`, v:mxn2(res[0].reward)},
+            ...(res[0].perkValue>0?[{k:'Perk value',v:'+ '+mxn2(res[0].perkValue),c:'var(--amber)'}]:[]),
+            {k:'Annual fee (info)', v:mxn(num(res[0].card.annual_fee))+'/yr'},
+          ]}/>
+          {res[0].perks.length>0 && <div className="note">Perks here: {res[0].perks.map(p=>p.perk_name).join(', ')}</div>}
+          <div style={{height:12}}/>
+          <button className="btn win" onClick={log} disabled={busy||logged}>{busy?<span className="spin"/>:logged?'Logged ✓':'Log this purchase'}</button>
+        </div>
+        {res.length>1 && <div style={{marginTop:14}}>
+          <div className="sub" style={{marginBottom:0}}>Your other cards</div>
+          {res.slice(1).map((r,i)=>(
+            <div className="alt" key={i}><span className="nm">{r.card.card_name}</span><span className="amt">{mxn2(r.score)}</span></div>
+          ))}
+        </div>}
+      </>}
+    </div>
+  );
+}
+
+function SavingsAdvisor({d,user,refresh}){
+  const [dir,setDir]=useState('in');
+  const [amt,setAmt]=useState('');
+  const [res,setRes]=useState(null);
+  const [logged,setLogged]=useState(false);
+  const [busy,setBusy]=useState(false);
+  const run=()=>{ setLogged(false); setRes(dir==='in'?savingsIn(d,user.user_id,num(amt)):savingsOut(d,user.user_id,num(amt))); };
+  const log=async()=>{
+    setBusy(true);
+    const best=res.best;
+    await apiPost({action:'logMovement',user_id:user.user_id,flow:'debit',direction:dir,amount:num(amt),recommended_product_id:best.acct.account_id,computed_benefit_mxn:Number((dir==='in'?best.benefit:0).toFixed(2)),notes:'logged from app'});
+    setBusy(false); setLogged(true); refresh();
+  };
+  const accts=heldAccounts(d,user.user_id);
+  const showSplit = res && dir==='in' && res.split && res.best && res.split.total > res.best.benefit + 1 && res.split.parts.length>1;
+  return (
+    <div className="card">
+      <h2>Savings advisor</h2>
+      <div className="sub">Moving money in or out?</div>
+      <div className="seg">
+        <button className={dir==='in'?'on':''} onClick={()=>{setDir('in');setRes(null)}}>Deposit (in)</button>
+        <button className={dir==='out'?'on':''} onClick={()=>{setDir('out');setRes(null)}}>Withdraw (out)</button>
+      </div>
+      <div style={{height:12}}/>
+      <label className="fld">Amount (MXN)</label>
+      <input type="number" value={amt} onChange={e=>{setAmt(e.target.value);setRes(null)}} placeholder="e.g. 50000" onKeyDown={e=>e.key==='Enter'&&run()}/>
+      <div style={{height:14}}/>
+      <button className="btn" disabled={!amt||num(amt)<=0||!accts.length} onClick={run}>{dir==='in'?'Where should this go?':'Where should I pull from?'}</button>
+      {!accts.length && <div className="note">No accounts yet — add some in My products.</div>}
+
+      {res && dir==='in' && res.best && <>
+        <div className="verdict">
+          <div className="eyebrow">Deposit here</div>
+          <div className="pick">{res.best.acct.account_name}{res.best.boost&&<span className="pill win">boost active</span>}</div>
+          <div className="big">{mxn(res.best.benefit)}</div>
+          <div className="sub" style={{margin:'2px 0 0'}}>estimated yield per year</div>
+          <div style={{height:12}}/>
+          <button className="btn win" onClick={log} disabled={busy||logged}>{busy?<span className="spin"/>:logged?'Logged ✓':'Log this deposit'}</button>
+        </div>
+        {showSplit && <div className="card" style={{marginTop:14,background:'var(--amber-soft)',borderColor:'var(--amber)'}}>
+          <div className="eyebrow" style={{color:'var(--amber)'}}>Optimize across accounts</div>
+          <div className="sub" style={{margin:'4px 0 8px',color:'var(--ink2)'}}>Caps mean splitting earns more — {mxn(res.split.total)}/yr (<b>+{mxn(res.split.total-res.best.benefit)}</b>):</div>
+          {res.split.parts.map((p,i)=><div className="alt" key={i} style={{borderColor:'rgba(181,121,26,.25)'}}><span className="nm">{p.acct.account_name}</span><span className="amt">{mxn(p.amount)}</span></div>)}
+        </div>}
+        {res.ranked.length>1 && <div style={{marginTop:14}}>
+          <div className="sub" style={{marginBottom:0}}>All your accounts</div>
+          {res.ranked.slice(1).map((r,i)=><div className="alt" key={i}><span className="nm">{r.acct.account_name}{!r.eligible&&<span className="pill">below min</span>}</span><span className="amt">{r.eligible?mxn(r.benefit)+'/yr':'—'}</span></div>)}
+        </div>}
+      </>}
+
+      {res && dir==='out' && res.best && <>
+        <div className="verdict" style={{borderColor:'var(--indigo)',background:'var(--indigo-soft)'}}>
+          <div className="eyebrow" style={{color:'var(--indigo)'}}>Pull from here</div>
+          <div className="pick">{res.best.acct.account_name}</div>
+          <div className="sub" style={{margin:'2px 0 0'}}>Lowest cost — you give up only <b>{mxn2(res.best.costPerYear)}</b>/yr of future yield ({res.best.marginal}% marginal).</div>
+          {!res.best.enough && <div className="note" style={{color:'var(--amber)'}}>Heads up: balance is {mxn(res.best.acct.current_balance)}, less than the amount.</div>}
+          {res.best.losesBoost && <div className="note" style={{color:'var(--amber)'}}>This dips below the minimum that keeps a yield boost — consider another account.</div>}
+          <div style={{height:12}}/>
+          <button className="btn" onClick={log} disabled={busy||logged}>{busy?<span className="spin"/>:logged?'Logged ✓':'Log this withdrawal'}</button>
+        </div>
+        {res.ranked.length>1 && <div style={{marginTop:14}}>
+          <div className="sub" style={{marginBottom:0}}>Other sources</div>
+          {res.ranked.slice(1).map((r,i)=><div className="alt" key={i}><span className="nm">{r.acct.account_name}</span><span className="amt">{r.marginal}% · {mxn(r.acct.current_balance)}</span></div>)}
+        </div>}
+      </>}
+    </div>
+  );
+}
+
+function MyProducts({d,user,refresh}){
+  const [busy,setBusy]=useState('');
+  const cards=heldCards(d,user.user_id);
+  const accts=heldAccounts(d,user.user_id);
+  const heldCardIds=cards.map(c=>c.card_id);
+  const heldAcctIds=accts.map(a=>a.account_id);
+  const issuer=id=>{const i=d.issuers.find(x=>x.issuer_id===id);return i?i.name:'';};
+  const upRow=(type,id)=>d.userProducts.find(p=>p.user_id===user.user_id&&p.product_type===type&&p.product_id===id);
+  const remove=async(type,id)=>{ const row=upRow(type,id); if(!row)return; setBusy(id); await apiPost({action:'removeUserProduct',id:row.id}); setBusy(''); refresh(); };
+  const add=async(type,id)=>{ setBusy(id); await apiPost({action:'addUserProduct',user_id:user.user_id,product_type:type,product_id:id,current_balance:type==='account'?0:''}); setBusy(''); refresh(); };
+  const availCards=d.cards.filter(c=>!heldCardIds.includes(c.card_id));
+  const availAccts=d.accounts.filter(a=>!heldAcctIds.includes(a.account_id));
+  return (<>
+    <div className="card">
+      <h2>My cards</h2><div className="sub">What you carry today</div>
+      {!cards.length&&<div className="empty">No cards yet.</div>}
+      {cards.map(c=><div className="prod" key={c.card_id}>
+        <div><div style={{fontWeight:600}}>{c.card_name}</div><div className="meta">{issuer(c.issuer_id)} · {c.tier} · fee {mxn(num(c.annual_fee))}/yr</div></div>
+        <button className="x" onClick={()=>remove('card',c.card_id)} disabled={busy===c.card_id}>Remove</button>
+      </div>)}
+    </div>
+    <div className="card">
+      <h2>My accounts</h2><div className="sub">Where your money sits</div>
+      {!accts.length&&<div className="empty">No accounts yet.</div>}
+      {accts.map(a=><div className="prod" key={a.account_id}>
+        <div><div style={{fontWeight:600}}>{a.account_name}</div><div className="meta">{issuer(a.issuer_id)} · {a.yield_type} · balance {mxn(a.current_balance)}</div></div>
+        <button className="x" onClick={()=>remove('account',a.account_id)} disabled={busy===a.account_id}>Remove</button>
+      </div>)}
+    </div>
+    <div className="card">
+      <h2>Add a product</h2><div className="sub">From the market</div>
+      {availCards.map(c=><div className="prod" key={c.card_id}>
+        <div><div style={{fontWeight:600}}>{c.card_name}</div><div className="meta">{issuer(c.issuer_id)} · card</div></div>
+        <button className="x" onClick={()=>add('card',c.card_id)} disabled={busy===c.card_id}>Add</button>
+      </div>)}
+      {availAccts.map(a=><div className="prod" key={a.account_id}>
+        <div><div style={{fontWeight:600}}>{a.account_name}</div><div className="meta">{issuer(a.issuer_id)} · account</div></div>
+        <button className="x" onClick={()=>add('account',a.account_id)} disabled={busy===a.account_id}>Add</button>
+      </div>)}
+      {!availCards.length&&!availAccts.length&&<div className="empty">You hold everything in the market.</div>}
+    </div>
+  </>);
+}
+
+function NewPicks({d,user}){
+  const cardPicks=useMemo(()=>newCardPicks(d,user.user_id),[d,user]);
+  const acctPicks=useMemo(()=>newAccountPicks(d,user.user_id),[d,user]);
+  const issuer=id=>{const i=d.issuers.find(x=>x.issuer_id===id);return i?i.name:'';};
+  return (
+    <div className="card">
+      <h2>What to get next</h2>
+      <div className="sub">Based on how you've actually been spending and saving</div>
+      {!cardPicks.length&&!acctPicks.length&&<div className="empty">Log a few more movements and we'll spot upgrades for you.</div>}
+      {cardPicks.map((p,i)=><div className="verdict" key={'c'+i} style={{borderColor:'var(--indigo)',background:'var(--indigo-soft)',marginTop:i?12:6}}>
+        <div className="eyebrow" style={{color:'var(--indigo)'}}>Card upgrade</div>
+        <div className="pick" style={{fontSize:20}}>{p.card.card_name}</div>
+        <div className="sub" style={{margin:'2px 0 0'}}>About <b>{mxn(p.uplift)}/mo</b> more than your current setup, after its {mxn(p.fee)}/yr fee — {issuer(p.card.issuer_id)}.</div>
+      </div>)}
+      {acctPicks.map((p,i)=><div className="verdict" key={'a'+i} style={{borderColor:'var(--amber)',background:'var(--amber-soft)',marginTop:12}}>
+        <div className="eyebrow" style={{color:'var(--amber)'}}>Account upgrade</div>
+        <div className="pick" style={{fontSize:20}}>{p.acct.account_name}</div>
+        <div className="sub" style={{margin:'2px 0 0'}}>On a typical {mxn(p.typical)} deposit, about <b>{mxn(p.uplift)}/yr</b> more yield — {issuer(p.acct.issuer_id)}.</div>
+      </div>)}
+    </div>
+  );
+}
+
+function History({d,user}){
+  const mv=d.movements.filter(m=>m.user_id===user.user_id).sort((a,b)=>String(b.timestamp).localeCompare(String(a.timestamp)));
+  const label=id=>{const c=d.cards.find(x=>x.card_id===id);if(c)return c.card_name;const a=d.accounts.find(x=>x.account_id===id);return a?a.account_name:id;};
+  const catLabel=k=>{const c=d.categories.find(x=>x.category_key===k);return c?c.display_label:k;};
+  return (
+    <div className="card">
+      <h2>History</h2><div className="sub">Every move you've logged</div>
+      {!mv.length&&<div className="empty">Nothing logged yet.</div>}
+      {mv.map((m,i)=><div className="mv" key={i}>
+        <div className="l">
+          <div style={{fontWeight:600}}>{m.flow==='cc'?catLabel(m.merchant_category):(m.direction==='in'?'Deposit':'Withdrawal')} · {mxn(num(m.amount))}</div>
+          <div className="t">{label(m.recommended_product_id)} · {String(m.timestamp).slice(0,10)}</div>
+        </div>
+        <div className="r" style={{color:num(m.computed_benefit_mxn)>0?'var(--win)':'var(--muted)'}}>{num(m.computed_benefit_mxn)>0?'+'+mxn2(num(m.computed_benefit_mxn)):'—'}</div>
+      </div>)}
+    </div>
+  );
+}
+
+function Admin({d}){
+  return (
+    <div className="card">
+      <h2>Admin</h2>
+      <div className="sub">Market data is edited directly in the Google Sheet — changes go live instantly.</div>
+      <div className="prod"><div><div style={{fontWeight:600}}>{d.users.length} users</div><div className="meta">{d.users.map(u=>u.name).join(', ')}</div></div></div>
+      <div className="prod"><div><div style={{fontWeight:600}}>{d.cards.length} cards · {d.accounts.length} accounts</div><div className="meta">across {d.issuers.length} issuers</div></div></div>
+      <div className="prod"><div><div style={{fontWeight:600}}>{d.movements.length} total movements logged</div><div className="meta">all users</div></div></div>
+      <div className="note">Hook is in place (is_admin) — tell me what admin actions you want and I'll wire them here.</div>
+    </div>
+  );
+}
+
+function App(){
+  const [user,setUser]=useState(null);
+  const [d,setD]=useState(null);
+  const [view,setView]=useState('cc');
+  const [err,setErr]=useState('');
+  const load=async()=>{ try{ const r=await apiGet({action:'bootstrap'}); if(r.ok)setD(r.data); else setErr(r.error||'load failed'); }catch(e){ setErr(e.message); } };
+  useEffect(()=>{ if(user) load(); },[user]);
+  if(!user) return <Login onLogin={setUser}/>;
+  if(!d) return <div className="center"><div className="empty">Loading your data…{err&&<div className="err">{err}</div>}</div></div>;
+  const tabs=[['cc','Cards'],['save','Savings'],['products','My products'],['picks','New picks'],['history','History']];
+  if(user.is_admin) tabs.push(['admin','Admin']);
+  return (<>
+    <div className="topbar">
+      <span className="brand">Finance Optimizer</span>
+      <span className="who">{user.name}{user.is_admin&&<span className="pill" style={{background:'rgba(255,255,255,.15)',color:'#fff'}}>admin</span>}<button onClick={()=>{setUser(null);setD(null)}}>Sign out</button></span>
+    </div>
+    <div className="wrap">
+      <div className="tabs">{tabs.map(([k,l])=><button key={k} className={"tab"+(view===k?' active':'')} onClick={()=>setView(k)}>{l}</button>)}</div>
+      {view==='cc'&&<CCAdvisor d={d} user={user} refresh={load}/>}
+      {view==='save'&&<SavingsAdvisor d={d} user={user} refresh={load}/>}
+      {view==='products'&&<MyProducts d={d} user={user} refresh={load}/>}
+      {view==='picks'&&<NewPicks d={d} user={user}/>}
+      {view==='history'&&<History d={d} user={user}/>}
+      {view==='admin'&&user.is_admin&&<Admin d={d}/>}
+    </div>
+  </>);
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script>
+</body>
+</html>
