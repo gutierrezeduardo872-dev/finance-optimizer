@@ -59,6 +59,16 @@
   .prod:first-of-type{border-top:0}
   .prod .meta{font-size:12.5px;color:var(--muted)}
   .x{border:0;background:var(--bg);color:var(--muted);border-radius:8px;padding:6px 10px;font:inherit;cursor:pointer}
+  .pitem+.pitem{border-top:1px solid var(--line)}
+  .phead{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:13px 0;cursor:pointer}
+  .phead .chev{color:var(--muted);font-size:11px;transition:transform .2s}
+  .phead.open .chev{transform:rotate(90deg)}
+  .detail{padding:2px 0 14px;animation:exp .2s ease}
+  @keyframes exp{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+  .drow{display:flex;justify-content:space-between;gap:16px;font-size:13.5px;padding:5px 0;color:var(--ink2)}
+  .drow span:first-child{color:var(--muted);flex:0 0 auto}
+  .drow span:last-child{text-align:right;font-family:"Space Grotesk";font-variant-numeric:tabular-nums}
+  .dsub{font-size:11.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--indigo);margin:10px 0 2px}
   .mv{display:flex;justify-content:space-between;gap:10px;padding:12px 0;border-top:1px solid var(--line);font-size:14px}
   .mv:first-of-type{border-top:0}
   .mv .l .t{font-size:12px;color:var(--muted)}
@@ -414,8 +424,56 @@ function SavingsAdvisor({d,user,refresh}){
   );
 }
 
+function CardDetails({d,c}){
+  const issuer=id=>{const i=d.issuers.find(x=>x.issuer_id===id);return i?i.name:'';};
+  const catLabel=k=>{const x=d.categories.find(y=>y.category_key===k);return x?x.display_label:k;};
+  const bonuses=d.cardRewards.filter(r=>r.card_id===c.card_id);
+  const perks=d.cardPerks.filter(p=>p.card_id===c.card_id);
+  return (<div className="detail">
+    <div className="drow"><span>Issuer</span><span>{issuer(c.issuer_id)}</span></div>
+    <div className="drow"><span>Tier</span><span>{c.tier}</span></div>
+    <div className="drow"><span>Annuity</span><span>{num(c.annual_fee)?mxn(num(c.annual_fee))+'/yr':'No annual fee'}</span></div>
+    <div className="drow"><span>Base reward</span><span>{num(c.base_reward_rate)}% {c.reward_type}{c.reward_type==='points'?` · 1 pt = ${mxn2(num(c.point_value_mxn,1))}`:''}</span></div>
+    {bonuses.length>0&&<div className="dsub">Category bonuses</div>}
+    {bonuses.map(b=><div className="drow" key={b.reward_id}><span>{catLabel(b.category)}</span><span>{num(b.rate)}%{b.monthly_cap!==''?` · cap ${mxn(num(b.monthly_cap))}/mo`:''}{b.min_spend!==''?` · min ${mxn(num(b.min_spend))}`:''}</span></div>)}
+    {perks.length>0&&<div className="dsub">Perks &amp; benefits</div>}
+    {perks.map(p=><div className="drow" key={p.perk_id}><span>{p.perk_name}</span><span>{p.mxn_value!==''?'≈ '+mxn(num(p.mxn_value)):'included'}</span></div>)}
+    <div className="drow"><span>Min. risk score</span><span>{num(c.min_risk_score)}</span></div>
+  </div>);
+}
+
+function AccountDetails({d,a}){
+  const issuer=id=>{const i=d.issuers.find(x=>x.issuer_id===id);return i?i.name:'';};
+  const cardName=id=>{const x=d.cards.find(y=>y.card_id===id);return x?x.card_name:id;};
+  const tiers=d.yieldTiers.filter(t=>t.account_id===a.account_id).sort((x,y)=>num(x.tier_min)-num(y.tier_min));
+  return (<div className="detail">
+    <div className="drow"><span>Issuer</span><span>{issuer(a.issuer_id)}</span></div>
+    {a.yield_type==='flat'
+      ? <div className="drow"><span>Yield</span><span>{num(a.base_apy)}% APY{a.yield_cap!==''?` · up to ${mxn(num(a.yield_cap))}`:' · uncapped'}</span></div>
+      : <div className="dsub">Tiered yield</div>}
+    {a.yield_type==='tiered'&&tiers.map(t=><div className="drow" key={t.tier_id}><span>{mxn(num(t.tier_min))} – {t.tier_max===''?'∞':mxn(num(t.tier_max))}</span><span>{num(t.apy)}% APY</span></div>)}
+    <div className="drow"><span>Monthly fee</span><span>{num(a.monthly_fee)?mxn(num(a.monthly_fee))+'/mo':'None'}</span></div>
+    <div className="drow"><span>Min. balance</span><span>{num(a.min_balance)?mxn(num(a.min_balance)):'None'}</span></div>
+    <div className="drow"><span>Liquidity</span><span>{a.liquidity==='term'?'Locked (term)':'Instant'}</span></div>
+    {a.boost_apy!==''&&<div className="drow"><span>Yield boost</span><span>+{num(a.boost_apy)}% if ≥ {mxn(num(a.boost_min_credit_spend))}/mo on {cardName(a.boost_card_id)}</span></div>}
+    <div className="drow"><span>Min. risk score</span><span>{num(a.min_risk_score)}</span></div>
+  </div>);
+}
+
+function PItem({open,onToggle,name,meta,action,children}){
+  return (<div className="pitem">
+    <div className={"phead"+(open?" open":"")} onClick={onToggle}>
+      <div><div style={{fontWeight:600}}>{name}</div><div className="meta">{meta}</div></div>
+      <div style={{display:'flex',alignItems:'center',gap:10}}>{action}<span className="chev">▶</span></div>
+    </div>
+    {open&&children}
+  </div>);
+}
+
 function MyProducts({d,user,refresh}){
   const [busy,setBusy]=useState('');
+  const [open,setOpen]=useState(null);
+  const toggle=k=>setOpen(open===k?null:k);
   const cards=heldCards(d,user.user_id);
   const accts=heldAccounts(d,user.user_id);
   const heldCardIds=cards.map(c=>c.card_id);
@@ -426,33 +484,29 @@ function MyProducts({d,user,refresh}){
   const add=async(type,id)=>{ setBusy(id); await apiPost({action:'addUserProduct',user_id:user.user_id,product_type:type,product_id:id,current_balance:type==='account'?0:''}); setBusy(''); refresh(); };
   const availCards=d.cards.filter(c=>!heldCardIds.includes(c.card_id));
   const availAccts=d.accounts.filter(a=>!heldAcctIds.includes(a.account_id));
+  const removeBtn=(type,id)=><button className="x" onClick={e=>{e.stopPropagation();remove(type,id)}} disabled={busy===id}>Remove</button>;
+  const addBtn=(type,id)=><button className="x" onClick={e=>{e.stopPropagation();add(type,id)}} disabled={busy===id}>Add</button>;
   return (<>
     <div className="card">
-      <h2>My cards</h2><div className="sub">What you carry today</div>
+      <h2>My cards</h2><div className="sub">Tap a card for full details</div>
       {!cards.length&&<div className="empty">No cards yet.</div>}
-      {cards.map(c=><div className="prod" key={c.card_id}>
-        <div><div style={{fontWeight:600}}>{c.card_name}</div><div className="meta">{issuer(c.issuer_id)} · {c.tier} · fee {mxn(num(c.annual_fee))}/yr</div></div>
-        <button className="x" onClick={()=>remove('card',c.card_id)} disabled={busy===c.card_id}>Remove</button>
-      </div>)}
+      {cards.map(c=><PItem key={c.card_id} open={open==='card:'+c.card_id} onToggle={()=>toggle('card:'+c.card_id)}
+        name={c.card_name} meta={`${issuer(c.issuer_id)} · ${c.tier} · ${num(c.annual_fee)?mxn(num(c.annual_fee))+'/yr':'no fee'}`}
+        action={removeBtn('card',c.card_id)}><CardDetails d={d} c={c}/></PItem>)}
     </div>
     <div className="card">
-      <h2>My accounts</h2><div className="sub">Where your money sits</div>
+      <h2>My accounts</h2><div className="sub">Tap an account for full details</div>
       {!accts.length&&<div className="empty">No accounts yet.</div>}
-      {accts.map(a=><div className="prod" key={a.account_id}>
-        <div><div style={{fontWeight:600}}>{a.account_name}</div><div className="meta">{issuer(a.issuer_id)} · {a.yield_type} · balance {mxn(a.current_balance)}</div></div>
-        <button className="x" onClick={()=>remove('account',a.account_id)} disabled={busy===a.account_id}>Remove</button>
-      </div>)}
+      {accts.map(a=><PItem key={a.account_id} open={open==='account:'+a.account_id} onToggle={()=>toggle('account:'+a.account_id)}
+        name={a.account_name} meta={`${issuer(a.issuer_id)} · ${a.yield_type} · balance ${mxn(a.current_balance)}`}
+        action={removeBtn('account',a.account_id)}><AccountDetails d={d} a={a}/></PItem>)}
     </div>
     <div className="card">
-      <h2>Add a product</h2><div className="sub">From the market</div>
-      {availCards.map(c=><div className="prod" key={c.card_id}>
-        <div><div style={{fontWeight:600}}>{c.card_name}</div><div className="meta">{issuer(c.issuer_id)} · card</div></div>
-        <button className="x" onClick={()=>add('card',c.card_id)} disabled={busy===c.card_id}>Add</button>
-      </div>)}
-      {availAccts.map(a=><div className="prod" key={a.account_id}>
-        <div><div style={{fontWeight:600}}>{a.account_name}</div><div className="meta">{issuer(a.issuer_id)} · account</div></div>
-        <button className="x" onClick={()=>add('account',a.account_id)} disabled={busy===a.account_id}>Add</button>
-      </div>)}
+      <h2>Add a product</h2><div className="sub">Tap to see details, or add from the market</div>
+      {availCards.map(c=><PItem key={c.card_id} open={open==='card:'+c.card_id} onToggle={()=>toggle('card:'+c.card_id)}
+        name={c.card_name} meta={`${issuer(c.issuer_id)} · card`} action={addBtn('card',c.card_id)}><CardDetails d={d} c={c}/></PItem>)}
+      {availAccts.map(a=><PItem key={a.account_id} open={open==='account:'+a.account_id} onToggle={()=>toggle('account:'+a.account_id)}
+        name={a.account_name} meta={`${issuer(a.issuer_id)} · account`} action={addBtn('account',a.account_id)}><AccountDetails d={d} a={a}/></PItem>)}
       {!availCards.length&&!availAccts.length&&<div className="empty">You hold everything in the market.</div>}
     </div>
   </>);
