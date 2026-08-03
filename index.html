@@ -96,6 +96,13 @@ const mxn = n => new Intl.NumberFormat('es-MX',{style:'currency',currency:'MXN',
 const mxn2 = n => new Intl.NumberFormat('es-MX',{style:'currency',currency:'MXN',maximumFractionDigits:2}).format(n||0);
 const num = (v,d=0)=> (v===''||v==null||isNaN(Number(v))) ? d : Number(v);
 const NOW_MONTH = new Date().toISOString().slice(0,7);
+// Fallback peso value for a points program we haven't valued per-issuer yet.
+// Placeholder pending a sourcing pass — deliberately conservative so unknown points don't beat real cashback.
+const MARKET_POINT_VALUE_MXN = 0.25;
+function weekKey(ts){ const dt=new Date(ts); const d=new Date(Date.UTC(dt.getFullYear(),dt.getMonth(),dt.getDate())); const day=d.getUTCDay()||7; d.setUTCDate(d.getUTCDate()+4-day); const ys=new Date(Date.UTC(d.getUTCFullYear(),0,1)); const wk=Math.ceil((((d-ys)/86400000)+1)/7); return d.getUTCFullYear()+'-W'+String(wk).padStart(2,'0'); }
+const NOW_WEEK = weekKey(new Date().toISOString());
+// Returns a usable number, or null if the cell is blank / a sentinel (UNKNOWN, UNCAPPED, NOT_APPLICABLE).
+const knownNum = v => (v===''||v==null||['UNKNOWN','UNCAPPED','NOT_APPLICABLE'].includes(String(v).trim().toUpperCase())||isNaN(Number(v))) ? null : Number(v);
 
 async function apiGet(params){
   const url = API + '?' + new URLSearchParams(params).toString();
@@ -120,25 +127,80 @@ function mtdSpend(d,uid,cardId){
     .reduce((s,m)=>s+num(m.amount),0);
 }
 
-function scoreCard(d,card,category,amount){
-  const bonus = d.cardRewards.find(r=>r.card_id===card.card_id && r.category===category);
-  let rate,rtype,pv,cap,usedBonus=false;
-  if(bonus && (bonus.min_spend==='' || amount>=num(bonus.min_spend))){
-    rate=num(bonus.rate); rtype=bonus.reward_type; pv=num(bonus.point_value_mxn,1); cap=bonus.monthly_cap; usedBonus=true;
-  } else {
-    rate=num(card.base_reward_rate); rtype=card.reward_type; pv=num(card.point_value_mxn,1); cap='';
+// Peso value of one point: row-level override -> card-level -> global market fallback (flagged as estimate).
+function pointValue(row,card){
+  const rv = knownNum(row && row.point_value_mxn); if(rv!==null) return {pv:rv,est:false};
+  const cv = knownNum(card && card.point_value_mxn); if(cv!==null) return {pv:cv,est:false};
+  return {pv:MARKET_POINT_VALUE_MXN,est:true};
+}
+// Convert a bonus cap to MXN and read its window. cap column = monthly_cap; cap_basis/cap_period refine it.
+function capInfoFor(row,pv){
+  const cap = knownNum(row.monthly_cap); if(cap===null) return null; // uncapped
+  const basis=(row.cap_basis||'mxn').toString().toLowerCase();
+  const period=(row.cap_period||'monthly').toString().toLowerCase();
+  return {mxnCap: basis==='points'?cap*pv:cap, period};
+}
+// Reward already booked this window on a card across a set of categories (drives month/week-to-date caps).
+// Approximation: uses logged movements' computed_benefit, so it's only as complete as the user's logging.
+function priorRewardOnCard(d,uid,cardId,cats,period){
+  const key = period==='weekly'?NOW_WEEK:NOW_MONTH;
+  const inWin = ts => period==='weekly' ? weekKey(ts)===key : String(ts).slice(0,7)===key;
+  return d.movements.filter(m=>m.user_id===uid && m.flow==='cc' && m.recommended_product_id===cardId && inWin(m.timestamp) && (!cats||cats.includes(m.merchant_category)))
+    .reduce((s,m)=>s+num(m.computed_benefit_mxn),0);
+}
+const rewardValue=(type,rate,pv)=> (rate/100)*(type==='points'?pv:1); // reward earned per 1 MXN of spend
+
+function scoreCard(d,card,category,amount,uid){
+  const rows = d.cardRewards.filter(r=>r.card_id===card.card_id && r.category===category);
+  const isOpt = r => String(r.user_selectable||'no').toLowerCase()==='yes';
+  const optional = rows.filter(isOpt);                 // user-choice bonuses: shown, not scored (yet)
+  const bonus = rows.find(r=>!isOpt(r)) || null;       // the fixed bonus, if any
+
+  // min-spend gate: per-transaction (default) or monthly threshold
+  let bonusEligible=false;
+  if(bonus){
+    const ms = knownNum(bonus.min_spend);
+    if(ms===null) bonusEligible=true;
+    else if((bonus.min_spend_period||'per_txn').toString().toLowerCase()==='monthly') bonusEligible = mtdSpend(d,uid,card.card_id) >= ms;
+    else bonusEligible = amount>=ms;
   }
-  const gross = amount*rate/100;
-  let reward = rtype==='points' ? gross*pv : gross;
+  const useBonus = !!(bonus && bonusEligible);
+
+  const baseRate=num(card.base_reward_rate), baseType=card.reward_type, basePV=pointValue(null,card);
+  let rate, rtype, pvInfo, addsBase=false;
+  if(useBonus){
+    rate=num(bonus.rate); rtype=bonus.reward_type||baseType; pvInfo=pointValue(bonus,card);
+    addsBase = String(bonus.replaces_or_adds_to_base||'replaces').toLowerCase()==='adds';
+  } else { rate=baseRate; rtype=baseType; pvInfo=basePV; }
+
+  // reward (an 'adds' bonus stacks on the base, even if the two are different reward types)
+  let reward = amount*rewardValue(rtype,rate,pvInfo.pv);
+  if(useBonus && addsBase) reward += amount*rewardValue(baseType,baseRate,basePV.pv);
+  const pointsEstimated = (rtype==='points'&&pvInfo.est) || (useBonus&&addsBase&&baseType==='points'&&basePV.est);
+
+  // cap: honor basis (MXN/points), period (month/week) and shared pools across categories
   let capped=false;
-  if(cap!=='' && reward>num(cap)){ reward=num(cap); capped=true; }
+  if(useBonus){
+    const ci = capInfoFor(bonus,pvInfo.pv);
+    if(ci){
+      const grp=(bonus.shared_cap_group||'').toString().trim();
+      const cats = grp
+        ? d.cardRewards.filter(r=>r.card_id===card.card_id && String(r.shared_cap_group||'').trim()===grp).map(r=>r.category)
+        : [category];
+      const prior = uid!=null ? priorRewardOnCard(d,uid,card.card_id,cats,ci.period) : 0;
+      const remaining = Math.max(0, ci.mxnCap - prior);
+      if(reward>remaining){ reward=remaining; capped=true; }
+    }
+  }
+
+  // contextual perks only (always-on coverage has no category match -> listed on card, not scored)
   const perks = d.cardPerks.filter(p=>p.card_id===card.card_id && p.applies_to_category===category);
   const perkValue = perks.reduce((s,p)=>s+num(p.mxn_value),0);
-  return {card,rate,rtype,reward,perkValue,perks,usedBonus,capped,score:reward+perkValue};
+  return {card,rate,rtype,reward,perkValue,perks,usedBonus:useBonus,capped,pointsEstimated,optional,score:reward+perkValue};
 }
 function ccRecommend(d,uid,category,amount){
   const cards = heldCards(d,uid);
-  return cards.map(c=>scoreCard(d,c,category,amount)).sort((a,b)=>b.score-a.score);
+  return cards.map(c=>scoreCard(d,c,category,amount,uid)).sort((a,b)=>b.score-a.score);
 }
 
 function tiersFor(d,acctId){ return d.yieldTiers.filter(t=>t.account_id===acctId).sort((a,b)=>num(a.tier_min)-num(b.tier_min)); }
@@ -226,7 +288,7 @@ function newCardPicks(d,uid){
   // last-month category spend
   const spend={};
   d.movements.filter(m=>m.user_id===uid && m.flow==='cc').forEach(m=>{ spend[m.merchant_category]=(spend[m.merchant_category]||0)+num(m.amount); });
-  const rewardOn=(card,cat,amt)=>scoreCard(d,card,cat,amt).reward;
+  const rewardOn=(card,cat,amt)=>scoreCard(d,card,cat,amt,uid).reward;
   const cur={}; Object.keys(spend).forEach(cat=>{ cur[cat]=Math.max(0,...held.map(c=>rewardOn(c,cat,spend[cat])),0); });
   const candidates=d.cards.filter(c=>!heldIds.includes(c.card_id) && num(u.risk_score)>=num(c.min_risk_score));
   return candidates.map(c=>{
@@ -332,6 +394,7 @@ function CCAdvisor({d,user,refresh}){
           <div className="pick">{res[0].card.card_name}
             {res[0].usedBonus && <span className="pill amber">{res[0].rate}% bonus</span>}
             {res[0].capped && <span className="pill">cap hit</span>}
+            {res[0].pointsEstimated && <span className="pill">points est.</span>}
           </div>
           <div className="big">{mxn2(res[0].score)}</div>
           <div className="sub" style={{margin:'2px 0 0'}}>back on this purchase</div>
@@ -341,6 +404,8 @@ function CCAdvisor({d,user,refresh}){
             {k:'Annual fee (info)', v:mxn(num(res[0].card.annual_fee))+'/yr'},
           ]}/>
           {res[0].perks.length>0 && <div className="note">Perks here: {res[0].perks.map(p=>p.perk_name).join(', ')}</div>}
+          {res[0].pointsEstimated && <div className="note">Points valued at an estimated {mxn2(MARKET_POINT_VALUE_MXN)}/pt — pending per-issuer sourcing.</div>}
+          {res[0].optional && res[0].optional.length>0 && <div className="note">This card also has an optional category bonus you can activate — not counted here.</div>}
           <div style={{height:12}}/>
           <button className="btn win" onClick={log} disabled={busy||logged}>{busy?<span className="spin"/>:logged?'Logged ✓':'Log this purchase'}</button>
         </div>
@@ -433,11 +498,21 @@ function CardDetails({d,c}){
     <div className="drow"><span>Issuer</span><span>{issuer(c.issuer_id)}</span></div>
     <div className="drow"><span>Tier</span><span>{c.tier}</span></div>
     <div className="drow"><span>Annuity</span><span>{num(c.annual_fee)?mxn(num(c.annual_fee))+'/yr':'No annual fee'}</span></div>
-    <div className="drow"><span>Base reward</span><span>{num(c.base_reward_rate)}% {c.reward_type}{c.reward_type==='points'?` · 1 pt = ${mxn2(num(c.point_value_mxn,1))}`:''}</span></div>
+    {(()=>{const pv=pointValue(null,c);return <div className="drow"><span>Base reward</span><span>{num(c.base_reward_rate)}% {c.reward_type}{c.reward_type==='points'?` · 1 pt ≈ ${mxn2(pv.pv)}${pv.est?' (est.)':''}`:''}</span></div>;})()}
     {bonuses.length>0&&<div className="dsub">Category bonuses</div>}
-    {bonuses.map(b=><div className="drow" key={b.reward_id}><span>{catLabel(b.category)}</span><span>{num(b.rate)}%{b.monthly_cap!==''?` · cap ${mxn(num(b.monthly_cap))}/mo`:''}{b.min_spend!==''?` · min ${mxn(num(b.min_spend))}`:''}</span></div>)}
+    {bonuses.map(b=>{
+      const opt=String(b.user_selectable||'no').toLowerCase()==='yes';
+      const adds=String(b.replaces_or_adds_to_base||'replaces').toLowerCase()==='adds';
+      const capN=knownNum(b.monthly_cap), per=(b.cap_period||'monthly').toLowerCase(), basis=(b.cap_basis||'mxn').toLowerCase();
+      const capTxt=capN!==null?` · cap ${basis==='points'?capN+' pts':mxn(capN)}/${per==='weekly'?'wk':'mo'}`:'';
+      const msN=knownNum(b.min_spend), msPer=(b.min_spend_period||'per_txn').toLowerCase();
+      const msTxt=msN!==null?` · min ${mxn(msN)}${msPer==='monthly'?'/mo':''}`:'';
+      return <div className="drow" key={b.reward_id}><span>{catLabel(b.category)}{opt?' *':''}</span><span>{num(b.rate)}%{adds?' +base':''}{capTxt}{msTxt}</span></div>;
+    })}
+    {bonuses.some(b=>String(b.user_selectable||'no').toLowerCase()==='yes') && <div className="note">* optional category you choose/activate — shown here, not counted in recommendations yet.</div>}
     {perks.length>0&&<div className="dsub">Perks &amp; benefits</div>}
-    {perks.map(p=><div className="drow" key={p.perk_id}><span>{p.perk_name}</span><span>{p.mxn_value!==''?'≈ '+mxn(num(p.mxn_value)):'included'}</span></div>)}
+    {perks.map(p=><div className="drow" key={p.perk_id}><span>{p.perk_name}{!p.applies_to_category?' · always-on':''}</span><span>{p.mxn_value!==''?'≈ '+mxn(num(p.mxn_value)):'included'}</span></div>)}
+    {perks.some(p=>!p.applies_to_category) && <div className="note">Always-on benefits are shown for reference and aren't added to a purchase score.</div>}
     <div className="drow"><span>Min. risk score</span><span>{num(c.min_risk_score)}</span></div>
   </div>);
 }
