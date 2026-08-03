@@ -1,9 +1,10 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-<title>Finance Optimizer</title>
+<title>Norte</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 42 42'%3E%3Crect width='42' height='42' rx='11' fill='%231C2431'/%3E%3Cpolygon points='21,8 26,22 21,19.5 16,22' fill='%23D67B4C'/%3E%3Cpolygon points='21,34 16,22 21,24.5 26,22' fill='%238a97a6'/%3E%3Ccircle cx='21' cy='21.5' r='2.2' fill='%23fff'/%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
@@ -12,10 +13,10 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.5/babel.min.js"></script>
 <style>
   :root{
-    --ink:#161A2E; --ink2:#262C45; --indigo:#4F46E5; --indigo-soft:#EEF0FF;
-    --win:#0E9F6E; --win-soft:#E6F6EF; --amber:#B5791A; --amber-soft:#FBF1DD;
-    --bg:#F4F5F9; --card:#FFFFFF; --line:#E5E7EF; --muted:#6B7187; --text:#1B1F30;
-    --radius:16px; --shadow:0 1px 2px rgba(22,26,46,.04),0 8px 24px rgba(22,26,46,.06);
+    --ink:#1C2431; --ink2:#2A3340; --indigo:#C2673B; --indigo-soft:#F6E7DD;
+    --win:#12796A; --win-soft:#EAF3F0; --amber:#9A6B12; --amber-soft:#F5EDDC;
+    --bg:#F7F6F3; --card:#FFFFFF; --line:#E7E4DD; --muted:#7C8492; --text:#1E2733;
+    --radius:16px; --shadow:0 1px 2px rgba(28,36,49,.05),0 10px 26px rgba(28,36,49,.08);
   }
   *{box-sizing:border-box}
   body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased}
@@ -94,6 +95,8 @@ const API = "https://script.google.com/macros/s/AKfycbz0ti8iYODBR60V-AqD-YlTDK4-
 
 const mxn = n => new Intl.NumberFormat('es-MX',{style:'currency',currency:'MXN',maximumFractionDigits:0}).format(Math.round(n||0));
 const mxn2 = n => new Intl.NumberFormat('es-MX',{style:'currency',currency:'MXN',maximumFractionDigits:2}).format(n||0);
+const RTL={points:'puntos',cashback:'cashback'}; const rtl=t=>RTL[t]||t||'';
+const YTL={flat:'tasa fija',tiered:'niveles'}; const ytl=t=>YTL[t]||t||'';
 const num = (v,d=0)=> (v===''||v==null||isNaN(Number(v))) ? d : Number(v);
 const NOW_MONTH = new Date().toISOString().slice(0,7);
 // Fallback peso value for a points program we haven't valued per-issuer yet.
@@ -313,45 +316,53 @@ function newAccountPicks(d,uid){
 }
 
 // ---------- UI ----------
+function Logo({size=40,plain=false}){
+  return (<svg width={size} height={size} viewBox="0 0 42 42" style={{flex:'0 0 auto',display:'block'}}>
+    {!plain&&<rect width="42" height="42" rx="11" fill="#1C2431"/>}
+    <polygon points="21,8 26,22 21,19.5 16,22" fill="#D67B4C"/>
+    <polygon points="21,34 16,22 21,24.5 26,22" fill={plain?'#9aa6b4':'#8a97a6'}/>
+    <circle cx="21" cy="21.5" r="2.2" fill="#fff"/>
+  </svg>);
+}
 function Login({onLogin}){
   const [users,setUsers]=useState(null);
   const [sel,setSel]=useState(null);
   const [pin,setPin]=useState('');
   const [err,setErr]=useState('');
   const [busy,setBusy]=useState(false);
-  useEffect(()=>{ apiGet({action:'bootstrap'}).then(r=>{ if(r.ok) setUsers(r.data.users); else setErr('Could not load. '+(r.error||'')); }).catch(e=>setErr('Network error: '+e.message)); },[]);
+  useEffect(()=>{ apiGet({action:'bootstrap'}).then(r=>{ if(r.ok) setUsers(r.data.users); else setErr('No se pudo cargar. '+(r.error||'')); }).catch(e=>setErr('Error de red: '+e.message)); },[]);
   const go=async()=>{
     setErr(''); setBusy(true);
-    try{ const r=await apiGet({action:'login',user_id:sel,pin}); if(r.ok) onLogin(r.user); else setErr('Wrong PIN, try again.'); }
-    catch(e){ setErr('Network error: '+e.message); }
+    try{ const r=await apiGet({action:'login',user_id:sel,pin}); if(r.ok) onLogin(r.user); else setErr('NIP incorrecto, inténtalo de nuevo.'); }
+    catch(e){ setErr('Error de red: '+e.message); }
     setBusy(false);
   };
   return (
     <div className="center"><div className="login">
       <div style={{textAlign:'center',marginBottom:22}}>
-        <h1 style={{fontSize:26,letterSpacing:'-.02em'}}>Finance Optimizer</h1>
-        <div className="sub" style={{marginTop:6}}>Swipe smarter. Save smarter.</div>
+        <div style={{display:'flex',justifyContent:'center',marginBottom:10}}><Logo size={46}/></div><h1 style={{fontSize:26,letterSpacing:'-.02em'}}>Norte</h1>
+        <div className="sub" style={{marginTop:6}}>Tu norte financiero.</div>
       </div>
       <div className="card">
-        <label className="fld">Who's signing in?</label>
-        {!users && <div className="empty">Loading…</div>}
+        <label className="fld">¿Quién entra?</label>
+        {!users && <div className="empty">Cargando…</div>}
         <div className="ulist">
           {users && users.map(u=>(
             <button key={u.user_id} className={"ucard"+(sel===u.user_id?' sel':'')} onClick={()=>{setSel(u.user_id);setErr('')}}>
               <div className="nm">{u.name}</div>
-              <div className="meta" style={{fontSize:12,color:'var(--muted)'}}>{u.is_admin?'admin':'member'}</div>
+              <div className="meta" style={{fontSize:12,color:'var(--muted)'}}>{u.is_admin?'admin':'miembro'}</div>
             </button>
           ))}
         </div>
         {sel && <>
-          <label className="fld">Enter PIN</label>
+          <label className="fld">Ingresa tu NIP</label>
           <input type="password" inputMode="numeric" value={pin} onChange={e=>setPin(e.target.value)} placeholder="••••" onKeyDown={e=>e.key==='Enter'&&go()} />
           <div style={{height:12}}/>
-          <button className="btn" disabled={!pin||busy} onClick={go}>{busy?<span className="spin"/>:'Sign in'}</button>
+          <button className="btn" disabled={!pin||busy} onClick={go}>{busy?<span className="spin"/>:'Entrar'}</button>
         </>}
         {err && <div className="err">{err}</div>}
       </div>
-      <div className="note" style={{textAlign:'center'}}>Demo PINs — Eduardo 1234 · Sofia 2345 · Diego 3456</div>
+      <div className="note" style={{textAlign:'center'}}>NIP demo — Eduardo 1234 · Sofía 2345 · Diego 3456</div>
     </div></div>
   );
 }
@@ -376,41 +387,41 @@ function CCAdvisor({d,user,refresh}){
   const held=heldCards(d,user.user_id);
   return (
     <div className="card">
-      <h2>Credit card advisor</h2>
-      <div className="sub">Where are you, and how much?</div>
-      <label className="fld">Merchant</label>
+      <h2>Asesor de tarjetas</h2>
+      <div className="sub">¿Dónde y cuánto?</div>
+      <label className="fld">Comercio</label>
       <select value={cat} onChange={e=>{setCat(e.target.value);setRes(null)}}>
         {cats.map(c=><option key={c.category_key} value={c.category_key}>{c.display_label}</option>)}
       </select>
       <div style={{height:12}}/>
-      <label className="fld">Amount (MXN)</label>
-      <input type="number" value={amt} onChange={e=>{setAmt(e.target.value);setRes(null)}} placeholder="e.g. 1500" onKeyDown={e=>e.key==='Enter'&&run()}/>
+      <label className="fld">Monto (MXN)</label>
+      <input type="number" value={amt} onChange={e=>{setAmt(e.target.value);setRes(null)}} placeholder="ej. 1500" onKeyDown={e=>e.key==='Enter'&&run()}/>
       <div style={{height:14}}/>
-      <button className="btn" disabled={!amt||num(amt)<=0||!held.length} onClick={run}>Find my best card</button>
-      {!held.length && <div className="note">You don't hold any cards yet — add some in My products.</div>}
+      <button className="btn" disabled={!amt||num(amt)<=0||!held.length} onClick={run}>Encuentra tu mejor tarjeta</button>
+      {!held.length && <div className="note">Aún no tienes tarjetas — agrégalas en Productos.</div>}
       {res && res.length>0 && <>
         <div className="verdict">
-          <div className="eyebrow">Use this card</div>
+          <div className="eyebrow">Usa esta tarjeta</div>
           <div className="pick">{res[0].card.card_name}
             {res[0].usedBonus && <span className="pill amber">{res[0].rate}% bonus</span>}
-            {res[0].capped && <span className="pill">cap hit</span>}
-            {res[0].pointsEstimated && <span className="pill">points est.</span>}
+            {res[0].capped && <span className="pill">tope alcanzado</span>}
+            {res[0].pointsEstimated && <span className="pill">puntos est.</span>}
           </div>
           <div className="big">{mxn2(res[0].score)}</div>
-          <div className="sub" style={{margin:'2px 0 0'}}>back on this purchase</div>
+          <div className="sub" style={{margin:'2px 0 0'}}>de vuelta en esta compra</div>
           <Breakdown rows={[
-            {k:`Reward (${res[0].rate}% ${res[0].rtype})`, v:mxn2(res[0].reward)},
-            ...(res[0].perkValue>0?[{k:'Perk value',v:'+ '+mxn2(res[0].perkValue),c:'var(--amber)'}]:[]),
-            {k:'Annual fee (info)', v:mxn(num(res[0].card.annual_fee))+'/yr'},
+            {k:`Recompensa (${res[0].rate}% ${rtl(res[0].rtype)})`, v:mxn2(res[0].reward)},
+            ...(res[0].perkValue>0?[{k:'Valor de beneficios',v:'+ '+mxn2(res[0].perkValue),c:'var(--amber)'}]:[]),
+            {k:'Comisión anual (info)', v:mxn(num(res[0].card.annual_fee))+'/año'},
           ]}/>
-          {res[0].perks.length>0 && <div className="note">Perks here: {res[0].perks.map(p=>p.perk_name).join(', ')}</div>}
-          {res[0].pointsEstimated && <div className="note">Points valued at an estimated {mxn2(MARKET_POINT_VALUE_MXN)}/pt — pending per-issuer sourcing.</div>}
-          {res[0].optional && res[0].optional.length>0 && <div className="note">This card also has an optional category bonus you can activate — not counted here.</div>}
+          {res[0].perks.length>0 && <div className="note">Beneficios aquí: {res[0].perks.map(p=>p.perk_name).join(', ')}</div>}
+          {res[0].pointsEstimated && <div className="note">Puntos valuados en aprox. {mxn2(MARKET_POINT_VALUE_MXN)}/pto — pendiente de verificar por emisor.</div>}
+          {res[0].optional && res[0].optional.length>0 && <div className="note">Esta tarjeta tiene un bonus de categoría opcional que puedes activar — no se cuenta aquí.</div>}
           <div style={{height:12}}/>
-          <button className="btn win" onClick={log} disabled={busy||logged}>{busy?<span className="spin"/>:logged?'Logged ✓':'Log this purchase'}</button>
+          <button className="btn win" onClick={log} disabled={busy||logged}>{busy?<span className="spin"/>:logged?'Registrado ✓':'Registrar compra'}</button>
         </div>
         {res.length>1 && <div style={{marginTop:14}}>
-          <div className="sub" style={{marginBottom:0}}>Your other cards</div>
+          <div className="sub" style={{marginBottom:0}}>Tus otras tarjetas</div>
           {res.slice(1).map((r,i)=>(
             <div className="alt" key={i}><span className="nm">{r.card.card_name}</span><span className="amt">{mxn2(r.score)}</span></div>
           ))}
@@ -437,51 +448,51 @@ function SavingsAdvisor({d,user,refresh}){
   const showSplit = res && dir==='in' && res.split && res.best && res.split.total > res.best.benefit + 1 && res.split.parts.length>1;
   return (
     <div className="card">
-      <h2>Savings advisor</h2>
-      <div className="sub">Moving money in or out?</div>
+      <h2>Asesor de ahorro</h2>
+      <div className="sub">¿Entra o sale dinero?</div>
       <div className="seg">
-        <button className={dir==='in'?'on':''} onClick={()=>{setDir('in');setRes(null)}}>Deposit (in)</button>
-        <button className={dir==='out'?'on':''} onClick={()=>{setDir('out');setRes(null)}}>Withdraw (out)</button>
+        <button className={dir==='in'?'on':''} onClick={()=>{setDir('in');setRes(null)}}>Depósito</button>
+        <button className={dir==='out'?'on':''} onClick={()=>{setDir('out');setRes(null)}}>Retiro</button>
       </div>
       <div style={{height:12}}/>
-      <label className="fld">Amount (MXN)</label>
-      <input type="number" value={amt} onChange={e=>{setAmt(e.target.value);setRes(null)}} placeholder="e.g. 50000" onKeyDown={e=>e.key==='Enter'&&run()}/>
+      <label className="fld">Monto (MXN)</label>
+      <input type="number" value={amt} onChange={e=>{setAmt(e.target.value);setRes(null)}} placeholder="ej. 50000" onKeyDown={e=>e.key==='Enter'&&run()}/>
       <div style={{height:14}}/>
-      <button className="btn" disabled={!amt||num(amt)<=0||!accts.length} onClick={run}>{dir==='in'?'Where should this go?':'Where should I pull from?'}</button>
-      {!accts.length && <div className="note">No accounts yet — add some in My products.</div>}
+      <button className="btn" disabled={!amt||num(amt)<=0||!accts.length} onClick={run}>{dir==='in'?'¿A dónde lo pongo?':'¿De dónde lo saco?'}</button>
+      {!accts.length && <div className="note">Aún no tienes cuentas — agrégalas en Productos.</div>}
 
       {res && dir==='in' && res.best && <>
         <div className="verdict">
-          <div className="eyebrow">Deposit here</div>
-          <div className="pick">{res.best.acct.account_name}{res.best.boost&&<span className="pill win">boost active</span>}</div>
+          <div className="eyebrow">Deposita aquí</div>
+          <div className="pick">{res.best.acct.account_name}{res.best.boost&&<span className="pill win">boost activo</span>}</div>
           <div className="big">{mxn(res.best.benefit)}</div>
-          <div className="sub" style={{margin:'2px 0 0'}}>estimated yield per year</div>
+          <div className="sub" style={{margin:'2px 0 0'}}>rendimiento estimado al año</div>
           <div style={{height:12}}/>
-          <button className="btn win" onClick={log} disabled={busy||logged}>{busy?<span className="spin"/>:logged?'Logged ✓':'Log this deposit'}</button>
+          <button className="btn win" onClick={log} disabled={busy||logged}>{busy?<span className="spin"/>:logged?'Registrado ✓':'Registrar depósito'}</button>
         </div>
         {showSplit && <div className="card" style={{marginTop:14,background:'var(--amber-soft)',borderColor:'var(--amber)'}}>
-          <div className="eyebrow" style={{color:'var(--amber)'}}>Optimize across accounts</div>
-          <div className="sub" style={{margin:'4px 0 8px',color:'var(--ink2)'}}>Caps mean splitting earns more — {mxn(res.split.total)}/yr (<b>+{mxn(res.split.total-res.best.benefit)}</b>):</div>
+          <div className="eyebrow" style={{color:'var(--amber)'}}>Optimiza entre cuentas</div>
+          <div className="sub" style={{margin:'4px 0 8px',color:'var(--ink2)'}}>Con los topes, dividir rinde más — {mxn(res.split.total)}/año (<b>+{mxn(res.split.total-res.best.benefit)}</b>):</div>
           {res.split.parts.map((p,i)=><div className="alt" key={i} style={{borderColor:'rgba(181,121,26,.25)'}}><span className="nm">{p.acct.account_name}</span><span className="amt">{mxn(p.amount)}</span></div>)}
         </div>}
         {res.ranked.length>1 && <div style={{marginTop:14}}>
-          <div className="sub" style={{marginBottom:0}}>All your accounts</div>
-          {res.ranked.slice(1).map((r,i)=><div className="alt" key={i}><span className="nm">{r.acct.account_name}{!r.eligible&&<span className="pill">below min</span>}</span><span className="amt">{r.eligible?mxn(r.benefit)+'/yr':'—'}</span></div>)}
+          <div className="sub" style={{marginBottom:0}}>Todas tus cuentas</div>
+          {res.ranked.slice(1).map((r,i)=><div className="alt" key={i}><span className="nm">{r.acct.account_name}{!r.eligible&&<span className="pill">bajo el mínimo</span>}</span><span className="amt">{r.eligible?mxn(r.benefit)+'/año':'—'}</span></div>)}
         </div>}
       </>}
 
       {res && dir==='out' && res.best && <>
         <div className="verdict" style={{borderColor:'var(--indigo)',background:'var(--indigo-soft)'}}>
-          <div className="eyebrow" style={{color:'var(--indigo)'}}>Pull from here</div>
+          <div className="eyebrow" style={{color:'var(--indigo)'}}>Saca de aquí</div>
           <div className="pick">{res.best.acct.account_name}</div>
-          <div className="sub" style={{margin:'2px 0 0'}}>Lowest cost — you give up only <b>{mxn2(res.best.costPerYear)}</b>/yr of future yield ({res.best.marginal}% marginal).</div>
-          {!res.best.enough && <div className="note" style={{color:'var(--amber)'}}>Heads up: balance is {mxn(res.best.acct.current_balance)}, less than the amount.</div>}
-          {res.best.losesBoost && <div className="note" style={{color:'var(--amber)'}}>This dips below the minimum that keeps a yield boost — consider another account.</div>}
+          <div className="sub" style={{margin:'2px 0 0'}}>Menor costo — solo renuncias a <b>{mxn2(res.best.costPerYear)}</b>/año de rendimiento futuro ({res.best.marginal}% marginal).</div>
+          {!res.best.enough && <div className="note" style={{color:'var(--amber)'}}>Ojo: el saldo es {mxn(res.best.acct.current_balance)}, menor al monto.</div>}
+          {res.best.losesBoost && <div className="note" style={{color:'var(--amber)'}}>Esto cae por debajo del mínimo que mantiene un boost de rendimiento — considera otra cuenta.</div>}
           <div style={{height:12}}/>
-          <button className="btn" onClick={log} disabled={busy||logged}>{busy?<span className="spin"/>:logged?'Logged ✓':'Log this withdrawal'}</button>
+          <button className="btn" onClick={log} disabled={busy||logged}>{busy?<span className="spin"/>:logged?'Registrado ✓':'Registrar retiro'}</button>
         </div>
         {res.ranked.length>1 && <div style={{marginTop:14}}>
-          <div className="sub" style={{marginBottom:0}}>Other sources</div>
+          <div className="sub" style={{marginBottom:0}}>Otras fuentes</div>
           {res.ranked.slice(1).map((r,i)=><div className="alt" key={i}><span className="nm">{r.acct.account_name}</span><span className="amt">{r.marginal}% · {mxn(r.acct.current_balance)}</span></div>)}
         </div>}
       </>}
@@ -495,25 +506,25 @@ function CardDetails({d,c}){
   const bonuses=d.cardRewards.filter(r=>r.card_id===c.card_id);
   const perks=d.cardPerks.filter(p=>p.card_id===c.card_id);
   return (<div className="detail">
-    <div className="drow"><span>Issuer</span><span>{issuer(c.issuer_id)}</span></div>
-    <div className="drow"><span>Tier</span><span>{c.tier}</span></div>
-    <div className="drow"><span>Annuity</span><span>{num(c.annual_fee)?mxn(num(c.annual_fee))+'/yr':'No annual fee'}</span></div>
-    {(()=>{const pv=pointValue(null,c);return <div className="drow"><span>Base reward</span><span>{num(c.base_reward_rate)}% {c.reward_type}{c.reward_type==='points'?` · 1 pt ≈ ${mxn2(pv.pv)}${pv.est?' (est.)':''}`:''}</span></div>;})()}
-    {bonuses.length>0&&<div className="dsub">Category bonuses</div>}
+    <div className="drow"><span>Emisor</span><span>{issuer(c.issuer_id)}</span></div>
+    <div className="drow"><span>Nivel</span><span>{c.tier}</span></div>
+    <div className="drow"><span>Anualidad</span><span>{num(c.annual_fee)?mxn(num(c.annual_fee))+'/año':'Sin anualidad'}</span></div>
+    {(()=>{const pv=pointValue(null,c);return <div className="drow"><span>Recompensa base</span><span>{num(c.base_reward_rate)}% {rtl(c.reward_type)}{c.reward_type==='points'?` · 1 pto ≈ ${mxn2(pv.pv)}${pv.est?' (est.)':''}`:''}</span></div>;})()}
+    {bonuses.length>0&&<div className="dsub">Bonus por categoría</div>}
     {bonuses.map(b=>{
       const opt=String(b.user_selectable||'no').toLowerCase()==='yes';
       const adds=String(b.replaces_or_adds_to_base||'replaces').toLowerCase()==='adds';
       const capN=knownNum(b.monthly_cap), per=(b.cap_period||'monthly').toLowerCase(), basis=(b.cap_basis||'mxn').toLowerCase();
-      const capTxt=capN!==null?` · cap ${basis==='points'?capN+' pts':mxn(capN)}/${per==='weekly'?'wk':'mo'}`:'';
+      const capTxt=capN!==null?` · tope ${basis==='points'?capN+' pts':mxn(capN)}/${per==='weekly'?'sem':'mes'}`:'';
       const msN=knownNum(b.min_spend), msPer=(b.min_spend_period||'per_txn').toLowerCase();
-      const msTxt=msN!==null?` · min ${mxn(msN)}${msPer==='monthly'?'/mo':''}`:'';
+      const msTxt=msN!==null?` · mín ${mxn(msN)}${msPer==='monthly'?'/mes':''}`:'';
       return <div className="drow" key={b.reward_id}><span>{catLabel(b.category)}{opt?' *':''}</span><span>{num(b.rate)}%{adds?' +base':''}{capTxt}{msTxt}</span></div>;
     })}
-    {bonuses.some(b=>String(b.user_selectable||'no').toLowerCase()==='yes') && <div className="note">* optional category you choose/activate — shown here, not counted in recommendations yet.</div>}
-    {perks.length>0&&<div className="dsub">Perks &amp; benefits</div>}
-    {perks.map(p=><div className="drow" key={p.perk_id}><span>{p.perk_name}{!p.applies_to_category?' · always-on':''}</span><span>{p.mxn_value!==''?'≈ '+mxn(num(p.mxn_value)):'included'}</span></div>)}
-    {perks.some(p=>!p.applies_to_category) && <div className="note">Always-on benefits are shown for reference and aren't added to a purchase score.</div>}
-    <div className="drow"><span>Min. risk score</span><span>{num(c.min_risk_score)}</span></div>
+    {bonuses.some(b=>String(b.user_selectable||'no').toLowerCase()==='yes') && <div className="note">* categoría opcional que eliges/activas — se muestra aquí, aún no se cuenta en las recomendaciones.</div>}
+    {perks.length>0&&<div className="dsub">Beneficios</div>}
+    {perks.map(p=><div className="drow" key={p.perk_id}><span>{p.perk_name}{!p.applies_to_category?' · siempre activo':''}</span><span>{p.mxn_value!==''?'≈ '+mxn(num(p.mxn_value)):'incluido'}</span></div>)}
+    {perks.some(p=>!p.applies_to_category) && <div className="note">Los beneficios siempre activos se muestran como referencia y no se suman al puntaje de una compra.</div>}
+    <div className="drow"><span>Score mín. de riesgo</span><span>{num(c.min_risk_score)}</span></div>
   </div>);
 }
 
@@ -522,16 +533,16 @@ function AccountDetails({d,a}){
   const cardName=id=>{const x=d.cards.find(y=>y.card_id===id);return x?x.card_name:id;};
   const tiers=d.yieldTiers.filter(t=>t.account_id===a.account_id).sort((x,y)=>num(x.tier_min)-num(y.tier_min));
   return (<div className="detail">
-    <div className="drow"><span>Issuer</span><span>{issuer(a.issuer_id)}</span></div>
+    <div className="drow"><span>Emisor</span><span>{issuer(a.issuer_id)}</span></div>
     {a.yield_type==='flat'
-      ? <div className="drow"><span>Yield</span><span>{num(a.base_apy)}% APY{a.yield_cap!==''?` · up to ${mxn(num(a.yield_cap))}`:' · uncapped'}</span></div>
-      : <div className="dsub">Tiered yield</div>}
-    {a.yield_type==='tiered'&&tiers.map(t=><div className="drow" key={t.tier_id}><span>{mxn(num(t.tier_min))} – {t.tier_max===''?'∞':mxn(num(t.tier_max))}</span><span>{num(t.apy)}% APY</span></div>)}
-    <div className="drow"><span>Monthly fee</span><span>{num(a.monthly_fee)?mxn(num(a.monthly_fee))+'/mo':'None'}</span></div>
-    <div className="drow"><span>Min. balance</span><span>{num(a.min_balance)?mxn(num(a.min_balance)):'None'}</span></div>
-    <div className="drow"><span>Liquidity</span><span>{a.liquidity==='term'?'Locked (term)':'Instant'}</span></div>
-    {a.boost_apy!==''&&<div className="drow"><span>Yield boost</span><span>+{num(a.boost_apy)}% if ≥ {mxn(num(a.boost_min_credit_spend))}/mo on {cardName(a.boost_card_id)}</span></div>}
-    <div className="drow"><span>Min. risk score</span><span>{num(a.min_risk_score)}</span></div>
+      ? <div className="drow"><span>Rendimiento</span><span>{num(a.base_apy)}% anual{a.yield_cap!==''?` · hasta ${mxn(num(a.yield_cap))}`:' · sin tope'}</span></div>
+      : <div className="dsub">Rendimiento por niveles</div>}
+    {a.yield_type==='tiered'&&tiers.map(t=><div className="drow" key={t.tier_id}><span>{mxn(num(t.tier_min))} – {t.tier_max===''?'∞':mxn(num(t.tier_max))}</span><span>{num(t.apy)}% anual</span></div>)}
+    <div className="drow"><span>Comisión mensual</span><span>{num(a.monthly_fee)?mxn(num(a.monthly_fee))+'/mes':'Ninguna'}</span></div>
+    <div className="drow"><span>Saldo mínimo</span><span>{num(a.min_balance)?mxn(num(a.min_balance)):'Ninguno'}</span></div>
+    <div className="drow"><span>Liquidez</span><span>{a.liquidity==='term'?'Bloqueado (plazo)':'Inmediata'}</span></div>
+    {a.boost_apy!==''&&<div className="drow"><span>Boost de rendimiento</span><span>+{num(a.boost_apy)}% si ≥ {mxn(num(a.boost_min_credit_spend))}/mes en {cardName(a.boost_card_id)}</span></div>}
+    <div className="drow"><span>Score mín. de riesgo</span><span>{num(a.min_risk_score)}</span></div>
   </div>);
 }
 
@@ -559,30 +570,30 @@ function MyProducts({d,user,refresh}){
   const add=async(type,id)=>{ setBusy(id); await apiPost({action:'addUserProduct',user_id:user.user_id,product_type:type,product_id:id,current_balance:type==='account'?0:''}); setBusy(''); refresh(); };
   const availCards=d.cards.filter(c=>!heldCardIds.includes(c.card_id));
   const availAccts=d.accounts.filter(a=>!heldAcctIds.includes(a.account_id));
-  const removeBtn=(type,id)=><button className="x" onClick={e=>{e.stopPropagation();remove(type,id)}} disabled={busy===id}>Remove</button>;
-  const addBtn=(type,id)=><button className="x" onClick={e=>{e.stopPropagation();add(type,id)}} disabled={busy===id}>Add</button>;
+  const removeBtn=(type,id)=><button className="x" onClick={e=>{e.stopPropagation();remove(type,id)}} disabled={busy===id}>Quitar</button>;
+  const addBtn=(type,id)=><button className="x" onClick={e=>{e.stopPropagation();add(type,id)}} disabled={busy===id}>Agregar</button>;
   return (<>
     <div className="card">
-      <h2>My cards</h2><div className="sub">Tap a card for full details</div>
-      {!cards.length&&<div className="empty">No cards yet.</div>}
+      <h2>Mis tarjetas</h2><div className="sub">Toca una tarjeta para ver el detalle</div>
+      {!cards.length&&<div className="empty">Aún no tienes tarjetas.</div>}
       {cards.map(c=><PItem key={c.card_id} open={open==='card:'+c.card_id} onToggle={()=>toggle('card:'+c.card_id)}
-        name={c.card_name} meta={`${issuer(c.issuer_id)} · ${c.tier} · ${num(c.annual_fee)?mxn(num(c.annual_fee))+'/yr':'no fee'}`}
+        name={c.card_name} meta={`${issuer(c.issuer_id)} · ${c.tier} · ${num(c.annual_fee)?mxn(num(c.annual_fee))+'/año':'sin anualidad'}`}
         action={removeBtn('card',c.card_id)}><CardDetails d={d} c={c}/></PItem>)}
     </div>
     <div className="card">
-      <h2>My accounts</h2><div className="sub">Tap an account for full details</div>
-      {!accts.length&&<div className="empty">No accounts yet.</div>}
+      <h2>Mis cuentas</h2><div className="sub">Toca una cuenta para ver el detalle</div>
+      {!accts.length&&<div className="empty">Aún no tienes cuentas.</div>}
       {accts.map(a=><PItem key={a.account_id} open={open==='account:'+a.account_id} onToggle={()=>toggle('account:'+a.account_id)}
-        name={a.account_name} meta={`${issuer(a.issuer_id)} · ${a.yield_type} · balance ${mxn(a.current_balance)}`}
+        name={a.account_name} meta={`${issuer(a.issuer_id)} · ${ytl(a.yield_type)} · saldo ${mxn(a.current_balance)}`}
         action={removeBtn('account',a.account_id)}><AccountDetails d={d} a={a}/></PItem>)}
     </div>
     <div className="card">
-      <h2>Add a product</h2><div className="sub">Tap to see details, or add from the market</div>
+      <h2>Agregar producto</h2><div className="sub">Toca para ver el detalle, o agrégalo del mercado</div>
       {availCards.map(c=><PItem key={c.card_id} open={open==='card:'+c.card_id} onToggle={()=>toggle('card:'+c.card_id)}
-        name={c.card_name} meta={`${issuer(c.issuer_id)} · card`} action={addBtn('card',c.card_id)}><CardDetails d={d} c={c}/></PItem>)}
+        name={c.card_name} meta={`${issuer(c.issuer_id)} · tarjeta`} action={addBtn('card',c.card_id)}><CardDetails d={d} c={c}/></PItem>)}
       {availAccts.map(a=><PItem key={a.account_id} open={open==='account:'+a.account_id} onToggle={()=>toggle('account:'+a.account_id)}
-        name={a.account_name} meta={`${issuer(a.issuer_id)} · account`} action={addBtn('account',a.account_id)}><AccountDetails d={d} a={a}/></PItem>)}
-      {!availCards.length&&!availAccts.length&&<div className="empty">You hold everything in the market.</div>}
+        name={a.account_name} meta={`${issuer(a.issuer_id)} · cuenta`} action={addBtn('account',a.account_id)}><AccountDetails d={d} a={a}/></PItem>)}
+      {!availCards.length&&!availAccts.length&&<div className="empty">Ya tienes todo lo disponible.</div>}
     </div>
   </>);
 }
@@ -593,18 +604,18 @@ function NewPicks({d,user}){
   const issuer=id=>{const i=d.issuers.find(x=>x.issuer_id===id);return i?i.name:'';};
   return (
     <div className="card">
-      <h2>What to get next</h2>
-      <div className="sub">Based on how you've actually been spending and saving</div>
-      {!cardPicks.length&&!acctPicks.length&&<div className="empty">Log a few more movements and we'll spot upgrades for you.</div>}
+      <h2>Qué te conviene después</h2>
+      <div className="sub">Según cómo has gastado y ahorrado</div>
+      {!cardPicks.length&&!acctPicks.length&&<div className="empty">Registra algunos movimientos más y te mostraremos mejoras.</div>}
       {cardPicks.map((p,i)=><div className="verdict" key={'c'+i} style={{borderColor:'var(--indigo)',background:'var(--indigo-soft)',marginTop:i?12:6}}>
-        <div className="eyebrow" style={{color:'var(--indigo)'}}>Card upgrade</div>
+        <div className="eyebrow" style={{color:'var(--indigo)'}}>Mejor tarjeta</div>
         <div className="pick" style={{fontSize:20}}>{p.card.card_name}</div>
-        <div className="sub" style={{margin:'2px 0 0'}}>About <b>{mxn(p.uplift)}/mo</b> more than your current setup, after its {mxn(p.fee)}/yr fee — {issuer(p.card.issuer_id)}.</div>
+        <div className="sub" style={{margin:'2px 0 0'}}>Cerca de <b>{mxn(p.uplift)}/mes</b> más que tu combinación actual, ya con su anualidad de {mxn(p.fee)}/año — {issuer(p.card.issuer_id)}.</div>
       </div>)}
       {acctPicks.map((p,i)=><div className="verdict" key={'a'+i} style={{borderColor:'var(--amber)',background:'var(--amber-soft)',marginTop:12}}>
-        <div className="eyebrow" style={{color:'var(--amber)'}}>Account upgrade</div>
+        <div className="eyebrow" style={{color:'var(--amber)'}}>Mejor cuenta</div>
         <div className="pick" style={{fontSize:20}}>{p.acct.account_name}</div>
-        <div className="sub" style={{margin:'2px 0 0'}}>On a typical {mxn(p.typical)} deposit, about <b>{mxn(p.uplift)}/yr</b> more yield — {issuer(p.acct.issuer_id)}.</div>
+        <div className="sub" style={{margin:'2px 0 0'}}>En un depósito típico de {mxn(p.typical)}, cerca de <b>{mxn(p.uplift)}/año</b> más de rendimiento — {issuer(p.acct.issuer_id)}.</div>
       </div>)}
     </div>
   );
@@ -616,11 +627,11 @@ function History({d,user}){
   const catLabel=k=>{const c=d.categories.find(x=>x.category_key===k);return c?c.display_label:k;};
   return (
     <div className="card">
-      <h2>History</h2><div className="sub">Every move you've logged</div>
-      {!mv.length&&<div className="empty">Nothing logged yet.</div>}
+      <h2>Historial</h2><div className="sub">Cada movimiento que has registrado</div>
+      {!mv.length&&<div className="empty">Nada registrado aún.</div>}
       {mv.map((m,i)=><div className="mv" key={i}>
         <div className="l">
-          <div style={{fontWeight:600}}>{m.flow==='cc'?catLabel(m.merchant_category):(m.direction==='in'?'Deposit':'Withdrawal')} · {mxn(num(m.amount))}</div>
+          <div style={{fontWeight:600}}>{m.flow==='cc'?catLabel(m.merchant_category):(m.direction==='in'?'Depósito':'Retiro')} · {mxn(num(m.amount))}</div>
           <div className="t">{label(m.recommended_product_id)} · {String(m.timestamp).slice(0,10)}</div>
         </div>
         <div className="r" style={{color:num(m.computed_benefit_mxn)>0?'var(--win)':'var(--muted)'}}>{num(m.computed_benefit_mxn)>0?'+'+mxn2(num(m.computed_benefit_mxn)):'—'}</div>
@@ -633,11 +644,11 @@ function Admin({d}){
   return (
     <div className="card">
       <h2>Admin</h2>
-      <div className="sub">Market data is edited directly in the Google Sheet — changes go live instantly.</div>
-      <div className="prod"><div><div style={{fontWeight:600}}>{d.users.length} users</div><div className="meta">{d.users.map(u=>u.name).join(', ')}</div></div></div>
-      <div className="prod"><div><div style={{fontWeight:600}}>{d.cards.length} cards · {d.accounts.length} accounts</div><div className="meta">across {d.issuers.length} issuers</div></div></div>
-      <div className="prod"><div><div style={{fontWeight:600}}>{d.movements.length} total movements logged</div><div className="meta">all users</div></div></div>
-      <div className="note">Hook is in place (is_admin) — tell me what admin actions you want and I'll wire them here.</div>
+      <div className="sub">Los datos de mercado se editan directo en la Google Sheet — los cambios se aplican al instante.</div>
+      <div className="prod"><div><div style={{fontWeight:600}}>{d.users.length} usuarios</div><div className="meta">{d.users.map(u=>u.name).join(', ')}</div></div></div>
+      <div className="prod"><div><div style={{fontWeight:600}}>{d.cards.length} tarjetas · {d.accounts.length} cuentas</div><div className="meta">en {d.issuers.length} emisores</div></div></div>
+      <div className="prod"><div><div style={{fontWeight:600}}>{d.movements.length} movimientos registrados en total</div><div className="meta">todos los usuarios</div></div></div>
+      <div className="note">El gancho ya está listo (is_admin) — dime qué acciones de admin quieres y las conecto aquí.</div>
     </div>
   );
 }
@@ -647,16 +658,16 @@ function App(){
   const [d,setD]=useState(null);
   const [view,setView]=useState('cc');
   const [err,setErr]=useState('');
-  const load=async()=>{ try{ const r=await apiGet({action:'bootstrap'}); if(r.ok)setD(r.data); else setErr(r.error||'load failed'); }catch(e){ setErr(e.message); } };
+  const load=async()=>{ try{ const r=await apiGet({action:'bootstrap'}); if(r.ok)setD(r.data); else setErr(r.error||'no se pudo cargar'); }catch(e){ setErr(e.message); } };
   useEffect(()=>{ if(user) load(); },[user]);
   if(!user) return <Login onLogin={setUser}/>;
-  if(!d) return <div className="center"><div className="empty">Loading your data…{err&&<div className="err">{err}</div>}</div></div>;
-  const tabs=[['cc','Cards'],['save','Savings'],['products','My products'],['picks','New picks'],['history','History']];
+  if(!d) return <div className="center"><div className="empty">Cargando tus datos…{err&&<div className="err">{err}</div>}</div></div>;
+  const tabs=[['cc','Tarjetas'],['save','Ahorro'],['products','Productos'],['picks','Sugerencias'],['history','Historial']];
   if(user.is_admin) tabs.push(['admin','Admin']);
   return (<>
     <div className="topbar">
-      <span className="brand">Finance Optimizer</span>
-      <span className="who">{user.name}{user.is_admin&&<span className="pill" style={{background:'rgba(255,255,255,.15)',color:'#fff'}}>admin</span>}<button onClick={()=>{setUser(null);setD(null)}}>Sign out</button></span>
+      <span className="brand" style={{display:'flex',alignItems:'center',gap:8}}><Logo size={20} plain/>Norte</span>
+      <span className="who">{user.name}{user.is_admin&&<span className="pill" style={{background:'rgba(255,255,255,.15)',color:'#fff'}}>admin</span>}<button onClick={()=>{setUser(null);setD(null)}}>Salir</button></span>
     </div>
     <div className="wrap">
       <div className="tabs">{tabs.map(([k,l])=><button key={k} className={"tab"+(view===k?' active':'')} onClick={()=>setView(k)}>{l}</button>)}</div>
