@@ -2,685 +2,393 @@
 <html lang="es">
 <head>
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#1C2431" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="description" content="Norte — tu norte financiero. Elige la mejor tarjeta y la mejor cuenta en cada movimiento." />
 <title>Norte</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 42 42'%3E%3Crect width='42' height='42' rx='11' fill='%231C2431'/%3E%3Cpolygon points='21,8 26,22 21,19.5 16,22' fill='%23D67B4C'/%3E%3Cpolygon points='21,34 16,22 21,24.5 26,22' fill='%238a97a6'/%3E%3Ccircle cx='21' cy='21.5' r='2.2' fill='%23fff'/%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-<script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
-<script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.5/babel.min.js"></script>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap">
+<script defer crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+<script defer crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
 <style>
-  :root{
-    --ink:#1C2431; --ink2:#2A3340; --indigo:#C2673B; --indigo-soft:#F6E7DD;
-    --win:#12796A; --win-soft:#EAF3F0; --amber:#9A6B12; --amber-soft:#F5EDDC;
-    --bg:#F7F6F3; --card:#FFFFFF; --line:#E7E4DD; --muted:#7C8492; --text:#1E2733;
-    --radius:16px; --shadow:0 1px 2px rgba(28,36,49,.05),0 10px 26px rgba(28,36,49,.08);
-  }
-  *{box-sizing:border-box}
-  body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased}
-  h1,h2,h3{font-family:"Space Grotesk",sans-serif;margin:0}
-  .num{font-family:"Space Grotesk",sans-serif;font-variant-numeric:tabular-nums}
-  .wrap{max-width:680px;margin:0 auto;padding:0 16px 96px}
-  .topbar{position:sticky;top:0;z-index:20;background:var(--ink);color:#fff;padding:14px 16px;display:flex;align-items:center;justify-content:space-between}
-  .topbar .brand{font-family:"Space Grotesk";font-weight:700;letter-spacing:-.02em;font-size:17px}
-  .topbar .who{font-size:13px;opacity:.8;display:flex;gap:10px;align-items:center}
-  .topbar button{background:rgba(255,255,255,.12);color:#fff;border:0;border-radius:8px;padding:6px 10px;font:inherit;font-size:13px;cursor:pointer}
-  .tabs{display:flex;gap:6px;overflow-x:auto;padding:14px 0 4px;position:sticky;top:50px;background:var(--bg);z-index:10}
-  .tab{flex:0 0 auto;border:1px solid var(--line);background:var(--card);border-radius:999px;padding:8px 14px;font:inherit;font-size:14px;color:var(--muted);cursor:pointer;white-space:nowrap}
-  .tab.active{background:var(--ink);color:#fff;border-color:var(--ink)}
-  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow);margin-bottom:14px}
-  .card h2{font-size:18px;letter-spacing:-.01em;margin-bottom:2px}
-  .sub{color:var(--muted);font-size:13.5px;margin-bottom:14px}
-  label.fld{display:block;font-size:13px;color:var(--muted);margin:0 0 6px}
-  select,input[type=number],input[type=password]{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:12px;font:inherit;background:#fff;color:var(--text)}
-  .row{display:flex;gap:10px}.row>*{flex:1}
-  .seg{display:flex;background:var(--bg);border-radius:12px;padding:4px;gap:4px}
-  .seg button{flex:1;border:0;background:transparent;padding:9px;border-radius:9px;font:inherit;color:var(--muted);cursor:pointer}
-  .seg button.on{background:#fff;color:var(--ink);box-shadow:var(--shadow);font-weight:600}
-  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;width:100%;border:0;border-radius:12px;padding:13px;font:inherit;font-weight:600;cursor:pointer;background:var(--indigo);color:#fff}
-  .btn:disabled{opacity:.5;cursor:default}
-  .btn.ghost{background:var(--indigo-soft);color:var(--indigo)}
-  .btn.win{background:var(--win)}
-  .verdict{border:1.5px solid var(--win);background:var(--win-soft);border-radius:var(--radius);padding:18px;margin-top:16px}
-  .verdict .eyebrow{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--win)}
-  .verdict .pick{font-family:"Space Grotesk";font-weight:700;font-size:24px;letter-spacing:-.02em;margin:4px 0 2px}
-  .verdict .big{font-family:"Space Grotesk";font-weight:700;font-size:30px;color:var(--win)}
-  .bd{border-top:1px dashed var(--line);margin-top:14px;padding-top:12px}
-  .bd .li{display:flex;justify-content:space-between;font-size:13.5px;padding:3px 0;color:var(--ink2)}
-  .bd .li .v{font-family:"Space Grotesk";font-variant-numeric:tabular-nums}
-  .alt{display:flex;justify-content:space-between;align-items:center;padding:11px 0;border-top:1px solid var(--line);font-size:14px}
-  .alt .nm{color:var(--ink2)} .alt .amt{font-family:"Space Grotesk";color:var(--muted);font-variant-numeric:tabular-nums}
-  .pill{display:inline-block;font-size:11.5px;padding:2px 8px;border-radius:999px;background:var(--indigo-soft);color:var(--indigo);font-weight:600;margin-left:6px}
-  .pill.amber{background:var(--amber-soft);color:var(--amber)}
-  .pill.win{background:var(--win-soft);color:var(--win)}
-  .note{font-size:12.5px;color:var(--muted);margin-top:10px}
-  .prod{display:flex;justify-content:space-between;align-items:center;padding:13px 0;border-top:1px solid var(--line)}
-  .prod:first-of-type{border-top:0}
-  .prod .meta{font-size:12.5px;color:var(--muted)}
-  .x{border:0;background:var(--bg);color:var(--muted);border-radius:8px;padding:6px 10px;font:inherit;cursor:pointer}
-  .pitem+.pitem{border-top:1px solid var(--line)}
-  .phead{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:13px 0;cursor:pointer}
-  .phead .chev{color:var(--muted);font-size:11px;transition:transform .2s}
-  .phead.open .chev{transform:rotate(90deg)}
-  .detail{padding:2px 0 14px;animation:exp .2s ease}
-  @keyframes exp{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
-  .drow{display:flex;justify-content:space-between;gap:16px;font-size:13.5px;padding:5px 0;color:var(--ink2)}
-  .drow span:first-child{color:var(--muted);flex:0 0 auto}
-  .drow span:last-child{text-align:right;font-family:"Space Grotesk";font-variant-numeric:tabular-nums}
-  .dsub{font-size:11.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--indigo);margin:10px 0 2px}
-  .mv{display:flex;justify-content:space-between;gap:10px;padding:12px 0;border-top:1px solid var(--line);font-size:14px}
-  .mv:first-of-type{border-top:0}
-  .mv .l .t{font-size:12px;color:var(--muted)}
-  .mv .r{text-align:right;font-family:"Space Grotesk";font-variant-numeric:tabular-nums}
-  .center{min-height:70vh;display:flex;align-items:center;justify-content:center;padding:16px}
-  .login{width:100%;max-width:380px}
-  .ulist{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}
-  .ucard{border:1px solid var(--line);background:#fff;border-radius:12px;padding:14px;text-align:center;cursor:pointer;font:inherit}
-  .ucard.sel{border-color:var(--indigo);background:var(--indigo-soft)}
-  .ucard .nm{font-family:"Space Grotesk";font-weight:600}
-  .err{background:#FEECEC;color:#B42318;border-radius:10px;padding:10px 12px;font-size:13.5px;margin-top:10px}
-  .empty{color:var(--muted);font-size:14px;padding:8px 0}
-  .spin{display:inline-block;width:18px;height:18px;border:2px solid rgba(255,255,255,.4);border-top-color:#fff;border-radius:50%;animation:s .7s linear infinite}
-  @keyframes s{to{transform:rotate(360deg)}}
+:root{
+  --ink:#1C2431; --ink-2:#2A3340; --ink-3:#48525F;
+  --copper:#B85F35; --copper-2:#D67B4C; --copper-soft:#F7EAE1;
+  --teal:#0F7365; --teal-soft:#E6F1EE;
+  --sand:#8F6210; --sand-soft:#F6EEDD;
+  --danger:#A83229; --danger-soft:#FBEDEB;
+  --bg:#F6F5F1; --surface:#FFFFFF; --surface-2:#FBFAF7;
+  --line:#E7E4DD; --line-2:#F1EFEA;
+  --muted:#7C8492; --text:#1E2733;
+  --r-lg:20px; --r-md:14px; --r-sm:10px;
+  --sh-1:0 1px 2px rgba(28,36,49,.04);
+  --sh-2:0 1px 2px rgba(28,36,49,.04),0 10px 24px rgba(28,36,49,.07);
+  --sh-3:0 -8px 40px rgba(28,36,49,.16);
+  --top-h:54px; --nav-h:60px;
+  --safe-b:env(safe-area-inset-bottom,0px);
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;padding:0}
+body{background:var(--ink);color:var(--text);
+  font-family:Inter,system-ui,-apple-system,sans-serif;font-size:15px;line-height:1.5;
+  -webkit-font-smoothing:antialiased;overscroll-behavior-y:none}
+h1,h2,h3{font-family:"Space Grotesk",Inter,sans-serif;margin:0;letter-spacing:-.02em}
+.num{font-family:"Space Grotesk",Inter,sans-serif;font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+.cap::first-letter{text-transform:uppercase}
+button{font:inherit;color:inherit;cursor:pointer}
+
+/* ---------- shell ---------- */
+.app{max-width:520px;margin:0 auto;background:var(--bg);min-height:100vh;position:relative;
+  box-shadow:0 0 60px rgba(0,0,0,.10)}
+.topbar{position:sticky;top:0;z-index:30;height:var(--top-h);background:var(--ink);color:#fff;
+  display:flex;align-items:center;justify-content:space-between;gap:10px;padding:0 12px 0 14px}
+.brand{font-family:"Space Grotesk";font-weight:700;font-size:16.5px;letter-spacing:-.02em;
+  display:flex;align-items:center;gap:8px}
+.topbar-title{position:absolute;left:0;right:0;text-align:center;pointer-events:none;
+  font-family:"Space Grotesk";font-weight:600;font-size:15.5px}
+.topbar-r{display:flex;align-items:center;gap:10px;margin-left:auto;z-index:1}
+.avatar-btn{width:30px;height:30px;border-radius:999px;border:0;color:#fff;
+  font-family:"Space Grotesk";font-weight:700;font-size:13px;display:grid;place-items:center}
+.screen{padding:14px 14px calc(var(--nav-h) + var(--safe-b) + 22px);display:flex;flex-direction:column;gap:12px}
+.banner{background:#3A2A24;color:#F6DCCF;font-size:13px;padding:9px 14px;display:flex;align-items:center;gap:8px}
+
+.tabbar{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:520px;z-index:30;
+  height:calc(var(--nav-h) + var(--safe-b));padding-bottom:var(--safe-b);
+  background:rgba(255,255,255,.94);backdrop-filter:saturate(1.6) blur(14px);
+  border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(5,1fr)}
+.tabb{border:0;background:none;color:var(--muted);display:flex;flex-direction:column;align-items:center;
+  justify-content:center;gap:3px;font-size:10.5px;font-weight:500;letter-spacing:.01em;padding:0;
+  transition:color .15s}
+.tabb.on{color:var(--copper);font-weight:600}
+
+/* ---------- surfaces ---------- */
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);
+  padding:16px;box-shadow:var(--sh-1)}
+.panel.sand{background:var(--sand-soft);border-color:#E6D6B2}
+.tap-panel{display:block;width:100%;text-align:left;border:1px solid var(--line)}
+.tap-panel:active{transform:scale(.995)}
+.sticky-tools{position:sticky;top:var(--top-h);z-index:12;margin:-14px -14px 0;padding:14px;
+  border-radius:0;border-left:0;border-right:0;border-top:0;box-shadow:0 6px 16px rgba(28,36,49,.06)}
+.panel-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px}
+.ph-l{font-family:"Space Grotesk";font-weight:600;font-size:14.5px;color:var(--ink);
+  display:flex;align-items:center;gap:7px}
+.ph-r{font-size:12.5px;color:var(--muted);font-family:"Space Grotesk";font-variant-numeric:tabular-nums}
+.ph-r.teal{color:var(--teal);font-weight:600}
+.sub{color:var(--muted);font-size:13.5px}
+.note{font-size:12.5px;color:var(--muted);margin-top:10px;line-height:1.45}
+.note.warn{color:var(--sand)}
+.note.center{text-align:center}
+.hint{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);
+  background:var(--surface-2);border:1px dashed var(--line);border-radius:var(--r-md);padding:12px 14px}
+.link{background:none;border:0;color:var(--copper);font-size:13px;font-weight:600;padding:0}
+.version{text-align:center;font-size:12px;color:var(--muted);padding:6px 0 2px}
+
+/* ---------- forms ---------- */
+.fld{display:block;font-size:12.5px;font-weight:600;color:var(--muted);margin:0 0 8px;
+  letter-spacing:.02em;text-transform:uppercase}
+.amount-box{display:flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:var(--r-md);
+  background:var(--surface-2);padding:6px 10px 6px 14px}
+.amount-box:focus-within{border-color:var(--copper);background:#fff;box-shadow:0 0 0 3px var(--copper-soft)}
+.amount-cur{font-family:"Space Grotesk";font-weight:600;font-size:22px;color:var(--muted)}
+.amount-in{flex:1;min-width:0;border:0;background:none;outline:none;padding:8px 0;
+  font-family:"Space Grotesk";font-weight:700;font-size:28px;letter-spacing:-.02em;color:var(--ink)}
+.amount-in::-webkit-outer-spin-button,.amount-in::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+.amount-in[type=number]{-moz-appearance:textfield}
+.chips{display:flex;gap:7px;margin-top:10px;overflow-x:auto;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:0 0 auto;border:1px solid var(--line);background:var(--surface);border-radius:999px;
+  padding:7px 13px;font-size:13px;font-weight:600;color:var(--ink-3);font-family:"Space Grotesk"}
+.chip.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.text-in,.pin-in{width:100%;padding:13px 14px;border:1px solid var(--line);border-radius:var(--r-md);
+  font:inherit;background:var(--surface-2);color:var(--text);outline:none}
+.text-in:focus,.pin-in:focus{border-color:var(--copper);background:#fff;box-shadow:0 0 0 3px var(--copper-soft)}
+.pin-in{text-align:center;letter-spacing:.5em;font-size:20px;font-family:"Space Grotesk"}
+.search{display:flex;align-items:center;gap:9px;border:1px solid var(--line);border-radius:var(--r-md);
+  background:var(--surface-2);padding:0 8px 0 13px;color:var(--muted)}
+.search:focus-within{border-color:var(--copper);background:#fff;box-shadow:0 0 0 3px var(--copper-soft)}
+.search input{flex:1;min-width:0;border:0;background:none;outline:none;padding:12px 0;font:inherit;color:var(--text)}
+
+.seg{display:flex;background:var(--bg);border-radius:12px;padding:4px;gap:4px}
+.seg button{flex:1;border:0;background:transparent;padding:9px 6px;border-radius:9px;color:var(--muted);
+  font-size:13.5px;font-weight:600;transition:all .15s}
+.seg button.on{background:#fff;color:var(--ink);box-shadow:var(--sh-1)}
+.seg-sm button{padding:6px;font-size:12.5px}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;width:100%;border:0;
+  border-radius:var(--r-md);padding:14px;font-weight:600;font-size:15px;background:var(--copper);color:#fff;
+  transition:opacity .15s,transform .1s}
+.btn:active{transform:scale(.99)}
+.btn:disabled{opacity:.45}
+.btn.ghost{background:var(--copper-soft);color:var(--copper)}
+.btn.teal{background:var(--teal)}
+.btn.ok{background:var(--teal-soft);color:var(--teal)}
+.btn.danger{background:var(--danger);color:#fff}
+.btn.danger-ghost{background:var(--danger-soft);color:var(--danger)}
+.icon-btn{border:0;background:var(--bg);color:var(--muted);border-radius:9px;padding:7px;display:grid;place-items:center}
+.icon-btn.ghost{background:none}
+.icon-btn.light{background:rgba(255,255,255,.14);color:#fff;z-index:1}
+.pill-btn{border:1px solid var(--line);background:var(--surface);color:var(--copper);border-radius:999px;
+  width:32px;height:32px;display:grid;place-items:center;flex:0 0 auto}
+.pill-btn.held{background:var(--teal-soft);border-color:var(--teal-soft);color:var(--teal)}
+
+/* ---------- rows ---------- */
+.row{display:flex;align-items:center;gap:12px;padding:11px 0;border-top:1px solid var(--line-2);
+  width:100%;text-align:left;background:none;border-left:0;border-right:0;border-bottom:0}
+.row:first-of-type{border-top:0}
+.row.tap:active{opacity:.6}
+.row-ico{width:34px;height:34px;border-radius:10px;background:var(--bg);color:var(--ink-3);
+  display:grid;place-items:center;flex:0 0 auto}
+.row-main{flex:1;min-width:0}
+.row-t{font-weight:600;font-size:14.5px;color:var(--ink);display:flex;align-items:center;gap:6px;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.row-m{font-size:12.5px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:1px}
+.row-r{text-align:right;flex:0 0 auto;font-size:14.5px;font-weight:600;color:var(--ink)}
+.row-r.teal-sub .row-rs{color:var(--teal)}
+.row-rs{font-size:12px;color:var(--muted);font-family:"Space Grotesk";font-weight:500;margin-top:1px}
+.row-chev{color:#C6C9D0;display:flex;flex:0 0 auto}
+
+/* ---------- stats ---------- */
+.mini-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.mini-grid.three{grid-template-columns:repeat(3,1fr);gap:8px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-md);padding:13px 14px}
+.stat-l{font-size:11.5px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.03em}
+.stat-v{font-size:19px;font-weight:700;color:var(--ink);margin-top:3px}
+.stat.teal .stat-v{color:var(--teal)}
+.stat-s{font-size:11.5px;color:var(--muted);margin-top:2px}
+
+/* ---------- home ---------- */
+.greet{font-size:15px;color:var(--muted);padding:2px 2px 0}
+.greet b{color:var(--ink);font-weight:600}
+.hero{background:linear-gradient(158deg,#212B3A 0%,#1C2431 62%,#241F1C 100%);color:#fff;
+  border-radius:var(--r-lg);padding:20px;box-shadow:var(--sh-2)}
+.hero-l{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#9AA5B4}
+.hero-v{font-family:"Space Grotesk";font-weight:700;font-size:36px;letter-spacing:-.03em;margin-top:4px;
+  color:#fff}
+.hero-s{font-size:12.5px;color:#8A97A6;margin-top:2px}
+.hero-split{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px;padding-top:16px;
+  border-top:1px solid rgba(255,255,255,.10)}
+.hs-l{font-size:11.5px;color:#8A97A6}
+.hs-v{font-family:"Space Grotesk";font-weight:600;font-size:17px;margin-top:2px;color:#F0EDE8}
+.hs-u{font-size:11.5px;color:#8A97A6;font-weight:500;margin-left:2px}
+
+.quick{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.quick-b{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:15px;
+  display:flex;flex-direction:column;align-items:flex-start;gap:3px;box-shadow:var(--sh-1);text-align:left}
+.quick-b:active{transform:scale(.99)}
+.quick-i{width:38px;height:38px;border-radius:11px;display:grid;place-items:center;margin-bottom:7px}
+.quick-t{font-family:"Space Grotesk";font-weight:600;font-size:14.5px;color:var(--ink)}
+.quick-s{font-size:12px;color:var(--muted);line-height:1.35}
+
+.pick-mini{display:flex;align-items:center;gap:12px}
+.pick-mini-m{min-width:0}
+.pick-mini-n{font-weight:600;font-size:14.5px;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pick-mini-s{font-size:12.5px;color:var(--muted);margin-top:1px}
+
+/* ---------- profile ---------- */
+.profile-head{display:flex;flex-direction:column;align-items:center;gap:5px;padding:14px 0 6px}
+.p-avatar{width:66px;height:66px;border-radius:999px;color:#fff;display:grid;place-items:center;
+  font-family:"Space Grotesk";font-weight:700;font-size:27px;flex:0 0 auto;
+  box-shadow:0 6px 18px rgba(28,36,49,.16)}
+.p-name{font-family:"Space Grotesk";font-weight:700;font-size:21px;letter-spacing:-.02em;color:var(--ink);margin-top:6px}
+.p-role{font-size:12.5px;color:var(--muted)}
+
+/* ---------- verdict ---------- */
+.verdict{border:1.5px solid var(--teal);background:var(--teal-soft);border-radius:var(--r-lg);padding:18px}
+.verdict.neutral{border-color:var(--line);background:var(--surface)}
+.v-eyebrow{font-size:11.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--teal);
+  display:flex;align-items:center;gap:6px}
+.verdict.neutral .v-eyebrow{color:var(--muted)}
+.v-card{display:flex;align-items:center;gap:12px;margin:12px 0 14px}
+.v-name{font-family:"Space Grotesk";font-weight:700;font-size:19px;letter-spacing:-.02em;color:var(--ink);line-height:1.2}
+.v-issuer{font-size:12.5px;color:var(--muted);margin-top:2px}
+.v-amount{font-family:"Space Grotesk";font-weight:700;font-size:34px;letter-spacing:-.03em;color:var(--teal)}
+.verdict.neutral .v-amount{color:var(--ink)}
+.v-sub{font-size:13px;color:var(--muted);margin-top:1px}
+.v-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.tag{font-size:11.5px;font-weight:600;padding:4px 9px;border-radius:999px;background:rgba(255,255,255,.75);
+  color:var(--ink-3);border:1px solid rgba(28,36,49,.07)}
+.tag.amber{background:var(--sand-soft);color:var(--sand);border-color:transparent}
+.tag.warn{background:#F7E4E1;color:var(--danger);border-color:transparent}
+.tag.teal{background:#D6EBE5;color:var(--teal);border-color:transparent}
+.verdict .btn{margin-top:16px}
+.bd{border-top:1px dashed rgba(28,36,49,.16);margin-top:14px;padding-top:11px}
+.bd-li{display:flex;justify-content:space-between;gap:14px;font-size:13.5px;padding:3px 0;color:var(--ink-3)}
+
+/* ---------- category grid ---------- */
+.cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.cat{border:1px solid var(--line);background:var(--surface-2);border-radius:var(--r-md);
+  padding:11px 4px 9px;display:flex;flex-direction:column;align-items:center;gap:6px;color:var(--ink-3)}
+.cat span{font-size:10.5px;font-weight:500;line-height:1.2;text-align:center;color:var(--muted)}
+.cat.on{background:var(--copper-soft);border-color:var(--copper);color:var(--copper)}
+.cat.on span{color:var(--copper);font-weight:600}
+
+/* ---------- accounts ---------- */
+.acct-row{border-top:1px solid var(--line-2);padding:4px 0}
+.acct-row:first-of-type{border-top:0}
+.acct-row.on{background:var(--copper-soft);border-radius:var(--r-md);border-top-color:transparent;
+  margin:4px -8px;padding:6px 8px}
+.acct-main{display:flex;align-items:center;gap:12px;width:100%;border:0;background:none;padding:8px 0;text-align:left}
+.acct-mid{flex:1;min-width:0}
+.acct-n{font-weight:600;font-size:14.5px;color:var(--ink);display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.acct-m{font-size:12px;color:var(--muted);margin-top:2px}
+.acct-r{text-align:right;flex:0 0 auto}
+.acct-benefit{font-size:15px;font-weight:700;color:var(--ink)}
+.acct-u{font-size:11px;color:var(--muted);font-weight:500;margin-left:1px}
+.acct-foot{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:0 0 6px 52px}
+.bal-chip{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:4px 10px;
+  font-size:12px;color:var(--ink-3);display:inline-flex;align-items:center;gap:5px;font-weight:500}
+.mini-badge{font-size:10px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;
+  background:var(--teal-soft);color:var(--teal);padding:2px 7px;border-radius:999px}
+
+/* ---------- banks ---------- */
+.bank-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}
+.bank-tile{position:relative;border:1px solid var(--line);background:var(--surface-2);border-radius:var(--r-md);
+  padding:13px 7px 11px;display:flex;flex-direction:column;align-items:center;gap:7px}
+.bank-tile:active{transform:scale(.98)}
+.bank-n{font-size:11.5px;font-weight:600;color:var(--ink);text-align:center;line-height:1.25;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.bank-c{font-size:10.5px;color:var(--muted)}
+.bank-dot{position:absolute;top:8px;right:8px;width:7px;height:7px;border-radius:999px;background:var(--teal)}
+
+/* ---------- picks ---------- */
+.pick{display:block;width:100%;text-align:left;border:1px solid var(--line);background:var(--surface-2);
+  border-radius:var(--r-md);padding:14px;margin-bottom:10px}
+.pick:last-child{margin-bottom:0}
+.pick:active{transform:scale(.995)}
+.pick-top{display:flex;align-items:center;gap:12px}
+.pick-id{flex:1;min-width:0}
+.pick-n{font-family:"Space Grotesk";font-weight:600;font-size:15.5px;color:var(--ink);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pick-i{font-size:12px;color:var(--muted);margin-top:1px}
+.pick-up{text-align:right;flex:0 0 auto;font-family:"Space Grotesk"}
+.pick-up .num{font-size:19px;font-weight:700;color:var(--copper)}
+.sand-pick .pick-up .num{color:var(--sand)}
+.pick-uu{font-size:10.5px;color:var(--muted)}
+.why{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.why-chip{display:inline-flex;align-items:center;gap:5px;font-size:11.5px;font-weight:500;
+  background:var(--surface);border:1px solid var(--line);color:var(--ink-3);padding:4px 9px;border-radius:999px}
+.pick-foot{display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:12.5px;
+  color:var(--muted);margin-top:11px;padding-top:10px;border-top:1px dashed var(--line);line-height:1.4}
+
+/* ---------- sheet ---------- */
+.sheet-bg{position:fixed;inset:0;z-index:60;background:rgba(20,26,36,.42);
+  display:flex;align-items:flex-end;justify-content:center;animation:fade .18s ease}
+.sheet{width:100%;max-width:520px;max-height:88vh;background:var(--surface);
+  border-radius:24px 24px 0 0;box-shadow:var(--sh-3);display:flex;flex-direction:column;
+  animation:rise .24s cubic-bezier(.2,.8,.3,1);padding-bottom:var(--safe-b)}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+@keyframes rise{from{transform:translateY(22px)}to{transform:none}}
+.sheet-grip{width:38px;height:4px;border-radius:999px;background:var(--line);margin:9px auto 2px;flex:0 0 auto}
+.sheet-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 16px 12px;
+  border-bottom:1px solid var(--line-2);flex:0 0 auto}
+.sheet-title{font-family:"Space Grotesk";font-weight:600;font-size:16px;color:var(--ink);min-width:0}
+.sheet-prod{display:flex;align-items:center;gap:11px;min-width:0}
+.sheet-prod-n{font-family:"Space Grotesk";font-weight:600;font-size:16px;color:var(--ink);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sheet-prod-i{font-size:12px;color:var(--muted);font-family:Inter;font-weight:400}
+.sheet-body{overflow-y:auto;padding:14px 16px;-webkit-overflow-scrolling:touch}
+.sheet-foot{padding:12px 16px 16px;border-top:1px solid var(--line-2);flex:0 0 auto;background:var(--surface)}
+.confirm-t{font-size:13.5px;color:var(--ink-3);margin-bottom:10px;text-align:center}
+.confirm-b{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+
+/* ---------- detail rows ---------- */
+.detail{padding:2px 0}
+.drow{display:flex;justify-content:space-between;gap:16px;font-size:13.5px;padding:6px 0;color:var(--ink-2);
+  border-bottom:1px solid var(--line-2)}
+.drow:last-child{border-bottom:0}
+.drow span:first-child{color:var(--muted);flex:0 0 auto}
+.drow span:last-child{text-align:right;font-family:"Space Grotesk";font-variant-numeric:tabular-nums}
+.dsub{font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--copper);
+  margin:16px 0 4px}
+
+/* ---------- empty / feedback ---------- */
+.empty-state{text-align:center;padding:20px 8px 8px}
+.empty-ico{width:44px;height:44px;border-radius:14px;background:var(--bg);color:var(--muted);
+  display:grid;place-items:center;margin:0 auto 12px}
+.empty-t{font-family:"Space Grotesk";font-weight:600;font-size:15.5px;color:var(--ink)}
+.empty-b{font-size:13px;color:var(--muted);margin-top:6px;line-height:1.5;max-width:330px;
+  margin-left:auto;margin-right:auto}
+.empty-state .btn{margin-top:16px;max-width:260px;margin-left:auto;margin-right:auto}
+.err{background:var(--danger-soft);color:var(--danger);border-radius:var(--r-sm);padding:10px 12px;
+  font-size:13px;margin-top:12px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.err .link{color:var(--danger)}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(var(--nav-h) + var(--safe-b) + 14px);
+  z-index:70;background:var(--ink);color:#fff;border-radius:999px;padding:10px 16px;font-size:13.5px;
+  font-weight:500;display:flex;align-items:center;gap:8px;box-shadow:0 8px 28px rgba(0,0,0,.28);
+  animation:rise .2s ease;max-width:calc(100% - 32px)}
+.spin{display:inline-block;width:18px;height:18px;border:2px solid rgba(255,255,255,.35);
+  border-top-color:#fff;border-radius:50%;animation:sp .7s linear infinite;flex:0 0 auto}
+.spin.small{width:14px;height:14px;border-width:2px}
+.spin.dark{border-color:rgba(28,36,49,.2);border-top-color:var(--copper);width:15px;height:15px}
+@keyframes sp{to{transform:rotate(360deg)}}
+.skel{height:64px;border-radius:var(--r-md);background:linear-gradient(90deg,#EDEBE6,#F5F3EF,#EDEBE6);
+  background-size:200% 100%;animation:sh 1.3s ease-in-out infinite;margin-bottom:12px}
+.skel.tall{height:130px}
+.skeleton-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0}
+.skeleton-grid .skel{height:70px;margin:0}
+@keyframes sh{0%{background-position:200% 0}100%{background-position:-200% 0}}
+
+/* ---------- auth ---------- */
+.auth{min-height:100vh;background:var(--bg);display:flex;align-items:center;justify-content:center;
+  padding:24px 16px calc(24px + var(--safe-b))}
+.auth-inner{width:100%;max-width:400px}
+.auth-brand{text-align:center;margin-bottom:22px;display:flex;flex-direction:column;align-items:center;gap:8px}
+.auth-brand h1{font-size:27px}
+.auth-brand p{margin:0;color:var(--muted);font-size:14px}
+.auth-pin{margin-top:6px}
+.ulist{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0 4px}
+.ucard{border:1px solid var(--line);background:var(--surface-2);border-radius:var(--r-md);padding:12px 10px;
+  display:flex;align-items:center;gap:10px;text-align:left}
+.ucard.sel{border-color:var(--copper);background:var(--copper-soft)}
+.uavatar{width:32px;height:32px;border-radius:999px;color:#fff;display:grid;place-items:center;
+  font-family:"Space Grotesk";font-weight:700;font-size:14px;flex:0 0 auto}
+.unm{font-weight:600;font-size:14px;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+/* "Sugerencias" is the longest tab label; give it room on small phones. */
+@media (max-width:390px){
+  .tabb{font-size:9.5px;letter-spacing:0}
+  .tabb span{padding:0 1px}
+}
+@media (max-width:360px){
+  .cat-grid{grid-template-columns:repeat(3,1fr)}
+  .hero-v{font-size:31px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation-duration:.01ms !important;transition-duration:.01ms !important}
+}
 </style>
 </head>
 <body>
 <div id="root"></div>
-<script type="text/babel">
-const { useState, useEffect, useMemo } = React;
-
-const API = "https://script.google.com/macros/s/AKfycbz0ti8iYODBR60V-AqD-YlTDK4-w7RekiMDrFsz6dJqLeJ9oqRZCyQxuEpFvpAk8ZeP/exec";
-
-const mxn = n => new Intl.NumberFormat('es-MX',{style:'currency',currency:'MXN',maximumFractionDigits:0}).format(Math.round(n||0));
-const mxn2 = n => new Intl.NumberFormat('es-MX',{style:'currency',currency:'MXN',maximumFractionDigits:2}).format(n||0);
-const RTL={points:'puntos',cashback:'cashback'}; const rtl=t=>RTL[t]||t||'';
-const YTL={flat:'tasa fija',tiered:'niveles'}; const ytl=t=>YTL[t]||t||'';
-const num = (v,d=0)=> (v===''||v==null||isNaN(Number(v))) ? d : Number(v);
-const NOW_MONTH = new Date().toISOString().slice(0,7);
-// Fallback peso value for a points program we haven't valued per-issuer yet.
-// Placeholder pending a sourcing pass — deliberately conservative so unknown points don't beat real cashback.
-const MARKET_POINT_VALUE_MXN = 0.25;
-function weekKey(ts){ const dt=new Date(ts); const d=new Date(Date.UTC(dt.getFullYear(),dt.getMonth(),dt.getDate())); const day=d.getUTCDay()||7; d.setUTCDate(d.getUTCDate()+4-day); const ys=new Date(Date.UTC(d.getUTCFullYear(),0,1)); const wk=Math.ceil((((d-ys)/86400000)+1)/7); return d.getUTCFullYear()+'-W'+String(wk).padStart(2,'0'); }
-const NOW_WEEK = weekKey(new Date().toISOString());
-// Returns a usable number, or null if the cell is blank / a sentinel (UNKNOWN, UNCAPPED, NOT_APPLICABLE).
-const knownNum = v => (v===''||v==null||['UNKNOWN','UNCAPPED','NOT_APPLICABLE'].includes(String(v).trim().toUpperCase())||isNaN(Number(v))) ? null : Number(v);
-
-async function apiGet(params){
-  const url = API + '?' + new URLSearchParams(params).toString();
-  const r = await fetch(url); return r.json();
-}
-async function apiPost(body){
-  const r = await fetch(API,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(body)});
-  return r.json();
-}
-
-// ---------- recommendation engine ----------
-function heldCards(d,uid){
-  const ids = d.userProducts.filter(p=>p.user_id===uid && p.product_type==='card').map(p=>p.product_id);
-  return d.cards.filter(c=>ids.includes(c.card_id));
-}
-function heldAccounts(d,uid){
-  const rows = d.userProducts.filter(p=>p.user_id===uid && p.product_type==='account');
-  return rows.map(p=>{const a=d.accounts.find(x=>x.account_id===p.product_id); return a?{...a,current_balance:num(p.current_balance)}:null;}).filter(Boolean);
-}
-function mtdSpend(d,uid,cardId){
-  return d.movements.filter(m=>m.user_id===uid && m.flow==='cc' && m.recommended_product_id===cardId && String(m.timestamp).slice(0,7)===NOW_MONTH)
-    .reduce((s,m)=>s+num(m.amount),0);
-}
-
-// Peso value of one point: row-level override -> card-level -> global market fallback (flagged as estimate).
-function pointValue(row,card){
-  const rv = knownNum(row && row.point_value_mxn); if(rv!==null) return {pv:rv,est:false};
-  const cv = knownNum(card && card.point_value_mxn); if(cv!==null) return {pv:cv,est:false};
-  return {pv:MARKET_POINT_VALUE_MXN,est:true};
-}
-// Convert a bonus cap to MXN and read its window. cap column = monthly_cap; cap_basis/cap_period refine it.
-function capInfoFor(row,pv){
-  const cap = knownNum(row.monthly_cap); if(cap===null) return null; // uncapped
-  const basis=(row.cap_basis||'mxn').toString().toLowerCase();
-  const period=(row.cap_period||'monthly').toString().toLowerCase();
-  return {mxnCap: basis==='points'?cap*pv:cap, period};
-}
-// Reward already booked this window on a card across a set of categories (drives month/week-to-date caps).
-// Approximation: uses logged movements' computed_benefit, so it's only as complete as the user's logging.
-function priorRewardOnCard(d,uid,cardId,cats,period){
-  const key = period==='weekly'?NOW_WEEK:NOW_MONTH;
-  const inWin = ts => period==='weekly' ? weekKey(ts)===key : String(ts).slice(0,7)===key;
-  return d.movements.filter(m=>m.user_id===uid && m.flow==='cc' && m.recommended_product_id===cardId && inWin(m.timestamp) && (!cats||cats.includes(m.merchant_category)))
-    .reduce((s,m)=>s+num(m.computed_benefit_mxn),0);
-}
-const rewardValue=(type,rate,pv)=> (rate/100)*(type==='points'?pv:1); // reward earned per 1 MXN of spend
-
-function scoreCard(d,card,category,amount,uid){
-  const rows = d.cardRewards.filter(r=>r.card_id===card.card_id && r.category===category);
-  const isOpt = r => String(r.user_selectable||'no').toLowerCase()==='yes';
-  const optional = rows.filter(isOpt);                 // user-choice bonuses: shown, not scored (yet)
-  const bonus = rows.find(r=>!isOpt(r)) || null;       // the fixed bonus, if any
-
-  // min-spend gate: per-transaction (default) or monthly threshold
-  let bonusEligible=false;
-  if(bonus){
-    const ms = knownNum(bonus.min_spend);
-    if(ms===null) bonusEligible=true;
-    else if((bonus.min_spend_period||'per_txn').toString().toLowerCase()==='monthly') bonusEligible = mtdSpend(d,uid,card.card_id) >= ms;
-    else bonusEligible = amount>=ms;
-  }
-  const useBonus = !!(bonus && bonusEligible);
-
-  const baseRate=num(card.base_reward_rate), baseType=card.reward_type, basePV=pointValue(null,card);
-  let rate, rtype, pvInfo, addsBase=false;
-  if(useBonus){
-    rate=num(bonus.rate); rtype=bonus.reward_type||baseType; pvInfo=pointValue(bonus,card);
-    addsBase = String(bonus.replaces_or_adds_to_base||'replaces').toLowerCase()==='adds';
-  } else { rate=baseRate; rtype=baseType; pvInfo=basePV; }
-
-  // reward (an 'adds' bonus stacks on the base, even if the two are different reward types)
-  let reward = amount*rewardValue(rtype,rate,pvInfo.pv);
-  if(useBonus && addsBase) reward += amount*rewardValue(baseType,baseRate,basePV.pv);
-  const pointsEstimated = (rtype==='points'&&pvInfo.est) || (useBonus&&addsBase&&baseType==='points'&&basePV.est);
-
-  // cap: honor basis (MXN/points), period (month/week) and shared pools across categories
-  let capped=false;
-  if(useBonus){
-    const ci = capInfoFor(bonus,pvInfo.pv);
-    if(ci){
-      const grp=(bonus.shared_cap_group||'').toString().trim();
-      const cats = grp
-        ? d.cardRewards.filter(r=>r.card_id===card.card_id && String(r.shared_cap_group||'').trim()===grp).map(r=>r.category)
-        : [category];
-      const prior = uid!=null ? priorRewardOnCard(d,uid,card.card_id,cats,ci.period) : 0;
-      const remaining = Math.max(0, ci.mxnCap - prior);
-      if(reward>remaining){ reward=remaining; capped=true; }
+<script>
+/* The React tags above are deferred, so they finish AFTER this inline script is
+   parsed. Booting on DOMContentLoaded guarantees React exists first, while
+   keeping the CDN loads non-blocking. */
+(function(){
+  function boot(){
+    if(!window.React || !window.ReactDOM){
+      document.getElementById('root').innerHTML =
+        '<div style="max-width:420px;margin:22vh auto;padding:0 24px;text-align:center;'+
+        'font-family:system-ui,sans-serif;color:#1E2733">'+
+        '<div style="font-size:17px;font-weight:600;margin-bottom:8px">No se pudo cargar Norte</div>'+
+        '<div style="font-size:14px;color:#7C8492;line-height:1.5">Revisa tu conexión y vuelve a '+
+        'intentarlo.</div>'+
+        '<button onclick="location.reload()" style="margin-top:18px;border:0;border-radius:14px;'+
+        'padding:13px 22px;background:#B85F35;color:#fff;font:inherit;font-weight:600">'+
+        'Reintentar</button></div>';
+      return;
     }
+const{useState,useEffect,useMemo,useRef,useCallback}=React,API="https://script.google.com/macros/s/AKfycbz0ti8iYODBR60V-AqD-YlTDK4-w7RekiMDrFsz6dJqLeJ9oqRZCyQxuEpFvpAk8ZeP/exec",LS={get(e){try{const a=localStorage.getItem(e);return a?JSON.parse(a):null}catch{return null}},set(e,a){try{return localStorage.setItem(e,JSON.stringify(a)),!0}catch{return!1}},del(e){try{localStorage.removeItem(e)}catch{}}},K_SESSION="norte.session.v1",K_MARKET="norte.market.v1",K_USER="norte.user.v1",fmtMXN=new Intl.NumberFormat("es-MX",{style:"currency",currency:"MXN",maximumFractionDigits:0}),fmtMXN2=new Intl.NumberFormat("es-MX",{style:"currency",currency:"MXN",minimumFractionDigits:2,maximumFractionDigits:2}),mxn=e=>fmtMXN.format(Math.round(e||0)),mxn2=e=>fmtMXN2.format(e||0),pct=e=>(Math.round((e||0)*100)/100).toLocaleString("es-MX")+"%",num=(e,a=0)=>e===""||e==null||isNaN(Number(e))?a:Number(e),knownNum=e=>e===""||e==null||["UNKNOWN","UNCAPPED","NOT_APPLICABLE"].includes(String(e).trim().toUpperCase())||isNaN(Number(e))?null:Number(e),RTL={points:"puntos",cashback:"cashback"},rtl=e=>RTL[e]||e||"",YTL={flat:"tasa fija",tiered:"por niveles"},ytl=e=>YTL[e]||e||"",MONTHS=["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"],monthLabel=e=>{const[a,s]=String(e).split("-");return(MONTHS[Number(s)-1]||"")+" "+a},dayLabel=e=>{const a=String(e).slice(0,10),[s,t,n]=a.split("-");return n+" "+(MONTHS[Number(t)-1]||"").slice(0,3)+"."},NOW_MONTH=new Date().toISOString().slice(0,7),MARKET_POINT_VALUE_MXN=.25;function weekKey(e){const a=new Date(e),s=new Date(Date.UTC(a.getFullYear(),a.getMonth(),a.getDate())),t=s.getUTCDay()||7;s.setUTCDate(s.getUTCDate()+4-t);const n=new Date(Date.UTC(s.getUTCFullYear(),0,1)),i=Math.ceil(((s-n)/864e5+1)/7);return s.getUTCFullYear()+"-W"+String(i).padStart(2,"0")}const NOW_WEEK=weekKey(new Date().toISOString()),uid=e=>e+"_"+Date.now().toString(36)+Math.random().toString(36).slice(2,7),norm=e=>String(e||"").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,""),BANK_COLORS=[["bbva","#0B3B7A"],["santander","#C4262E"],["banorte","#C4102A"],["banamex","#00426A"],["citi","#00426A"],["hsbc","#B5121B"],["scotia","#C4262E"],["inbursa","#0A3D91"],["banregio","#C97024"],["nu","#7B2FBE"],["hey","#0E9179"],["klar","#33333D"],["stori","#C75E22"],["uala","#0E8E86"],["didi","#C96A33"],["rappi","#C93B26"],["mercado","#1E7AA8"],["plata","#0E8A78"],["azteca","#127A42"],["coppel","#14539A"],["afirme","#9E2A34"],["bajio","#A81828"],["actinver","#1A3E7A"],["invex","#33333D"],["liverpool","#A81070"],["palacio","#2B2B33"],["cetes","#5B1330"],["finsus","#63307A"],["kubo","#B57A1E"],["revolut","#155FAF"],["bineo","#33619E"],["broxel","#1F4E8C"],["nafin","#5B1330"],["falabella","#0E6E3C"],["sabadell","#0E6E8E"],["multiva","#8A1E3C"],["compartamos","#C4622A"],["bancoppel","#14539A"],["fondeadora","#2B2B33"],["albo","#1E6EA8"]];function bankColor(e){const a=norm(e);for(const[t,n]of BANK_COLORS)if(a.includes(t))return n;let s=0;for(let t=0;t<a.length;t++)s=s*31+a.charCodeAt(t)|0;return"hsl("+Math.abs(s)%360+",38%,33%)"}function bankInitials(e){const s=String(e||"?").replace(/\(.*?\)/g,"").trim().split(/[\s\-]+/).filter(Boolean);return s.length?s.length>1&&s[0].length<=3?(s[0][0]+s[1][0]).toUpperCase():s[0].slice(0,2).toUpperCase():"?"}function heldCards(e,a){const s=e.userProducts.filter(t=>t.user_id===a&&t.product_type==="card").map(t=>t.product_id);return e.cards.filter(t=>s.includes(t.card_id))}function heldAccounts(e,a){return e.userProducts.filter(t=>t.user_id===a&&t.product_type==="account").map(t=>{const n=e.accounts.find(i=>i.account_id===t.product_id);return n?{...n,current_balance:num(t.current_balance),_upid:t.id}:null}).filter(Boolean)}function mtdSpend(e,a,s){return e.movements.filter(t=>t.user_id===a&&t.flow==="cc"&&t.recommended_product_id===s&&String(t.timestamp).slice(0,7)===NOW_MONTH).reduce((t,n)=>t+num(n.amount),0)}function pointValue(e,a){const s=knownNum(e&&e.point_value_mxn);if(s!==null)return{pv:s,est:!1};const t=knownNum(a&&a.point_value_mxn);return t!==null?{pv:t,est:!1}:{pv:MARKET_POINT_VALUE_MXN,est:!0}}function capInfoFor(e,a){const s=knownNum(e.monthly_cap);if(s===null)return null;const t=(e.cap_basis||"mxn").toString().toLowerCase(),n=(e.cap_period||"monthly").toString().toLowerCase();return{mxnCap:t==="points"?s*a:s,period:n}}function priorRewardOnCard(e,a,s,t,n){const i=n==="weekly"?NOW_WEEK:NOW_MONTH,r=c=>n==="weekly"?weekKey(c)===i:String(c).slice(0,7)===i;return e.movements.filter(c=>c.user_id===a&&c.flow==="cc"&&c.recommended_product_id===s&&r(c.timestamp)&&(!t||t.includes(c.merchant_category))).reduce((c,_)=>c+num(_.computed_benefit_mxn),0)}const rewardValue=(e,a,s)=>a/100*(e==="points"?s:1);function scoreCard(e,a,s,t,n){const i=e.cardRewards.filter(S=>S.card_id===a.card_id&&S.category===s),r=S=>String(S.user_selectable||"no").toLowerCase()==="yes",c=i.filter(r),_=i.find(S=>!r(S))||null;let l=!1,o=null;if(_){const S=knownNum(_.min_spend);S===null?l=!0:(_.min_spend_period||"per_txn").toString().toLowerCase()==="monthly"?(l=mtdSpend(e,n,a.card_id)>=S,l||(o="Necesitas "+mxn(S)+"/mes en esta tarjeta")):(l=t>=S,l||(o="El bonus aplica desde "+mxn(S)))}const d=!!(_&&l),v=num(a.base_reward_rate),m=a.reward_type,h=pointValue(null,a);let N,C,A,f=!1;d?(N=num(_.rate),C=_.reward_type||m,A=pointValue(_,a),f=String(_.replaces_or_adds_to_base||"replaces").toLowerCase()==="adds"):(N=v,C=m,A=h);let u=t*rewardValue(C,N,A.pv);d&&f&&(u+=t*rewardValue(m,v,h.pv));const k=C==="points"&&A.est||d&&f&&m==="points"&&h.est;let y=!1,P=null;if(d){const S=capInfoFor(_,A.pv);if(S){const j=(_.shared_cap_group||"").toString().trim(),I=j?e.cardRewards.filter(b=>b.card_id===a.card_id&&String(b.shared_cap_group||"").trim()===j).map(b=>b.category):[s],D=n!=null?priorRewardOnCard(e,n,a.card_id,I,S.period):0,p=Math.max(0,S.mxnCap-D);P=p,u>p&&(u=p,y=!0)}}const B=e.cardPerks.filter(S=>S.card_id===a.card_id&&S.applies_to_category===s),w=B.reduce((S,j)=>S+num(j.mxn_value),0);return{card:a,rate:N,rtype:C,reward:u,perkValue:w,perks:B,usedBonus:d,capped:y,capRemaining:P,bonusBlockedBy:o,pointsEstimated:k,optional:c,baseRate:v,score:u+w}}function ccRecommend(e,a,s,t){return heldCards(e,a).map(n=>scoreCard(e,n,s,t,a)).sort((n,i)=>i.score-n.score)}function tiersFor(e,a){return e.yieldTiers.filter(s=>s.account_id===a).sort((s,t)=>num(s.tier_min)-num(t.tier_min))}function boostActive(e,a,s){return s.boost_apy===""||s.boost_apy==null?!1:heldCards(e,a).some(n=>n.card_id===s.boost_card_id)&&mtdSpend(e,a,s.boost_card_id)>=num(s.boost_min_credit_spend)}function annualYield(e,a,s,t){let n=0;const i=boostActive(e,a,s)?num(s.boost_apy):0;if(s.yield_type==="tiered")for(const r of tiersFor(e,s.account_id)){const c=num(r.tier_min),_=r.tier_max===""?1/0:num(r.tier_max),l=Math.max(0,Math.min(t,_)-c);n+=l*(num(r.apy)+i)/100}else{const r=s.yield_cap===""?1/0:num(s.yield_cap);n+=Math.min(t,r)*(num(s.base_apy)+i)/100}return n-num(s.monthly_fee)*12}function marginalRate(e,a,s,t){const n=boostActive(e,a,s)?num(s.boost_apy):0;if(s.yield_type==="tiered"){let r=0;for(const c of tiersFor(e,s.account_id)){const _=num(c.tier_min),l=c.tier_max===""?1/0:num(c.tier_max);t>_&&(r=num(c.apy)+n)}return r}const i=s.yield_cap===""?1/0:num(s.yield_cap);return t<=i?num(s.base_apy)+n:0}function headlineRate(e,a,s){const t=boostActive(e,a,s)?num(s.boost_apy):0;if(s.yield_type==="tiered"){const n=tiersFor(e,s.account_id);return n.length?Math.max(...n.map(i=>num(i.apy)))+t:t}return num(s.base_apy)+t}function savingsIn(e,a,s){const t=heldAccounts(e,a),n=t.map(o=>{const d=s>=num(o.min_balance);return{acct:o,eligible:d,benefit:d?annualYield(e,a,o,s):0,boost:boostActive(e,a,o),rate:headlineRate(e,a,o)}}).sort((o,d)=>d.benefit-o.benefit),i=[];t.filter(o=>s>=num(o.min_balance)).forEach(o=>{const d=boostActive(e,a,o)?num(o.boost_apy):0;o.yield_type==="tiered"?tiersFor(e,o.account_id).forEach(v=>{const m=num(v.tier_min),h=v.tier_max===""?1/0:num(v.tier_max);i.push({rate:num(v.apy)+d,cap:h-m,acct:o})}):i.push({rate:num(o.base_apy)+d,cap:o.yield_cap===""?1/0:num(o.yield_cap),acct:o})}),i.sort((o,d)=>d.rate-o.rate);let r=s;const c={};i.forEach(o=>{if(r<=0)return;const d=Math.min(r,o.cap);c[o.acct.account_id]=(c[o.acct.account_id]||0)+d,r-=d});let _=0;const l=[];return Object.keys(c).forEach(o=>{const d=t.find(v=>v.account_id===o);_+=annualYield(e,a,d,c[o]),l.push({acct:d,amount:c[o]})}),{ranked:n,best:n[0],split:{total:_,parts:l.sort((o,d)=>d.amount-o.amount)}}}function savingsOut(e,a,s){const n=heldAccounts(e,a).filter(i=>i.liquidity!=="term"&&i.current_balance>0).map(i=>{const r=marginalRate(e,a,i,i.current_balance),c=i.current_balance-s<num(i.min_balance);return{acct:i,marginal:r,enough:i.current_balance>=s,breaksMin:c,losesBoost:c&&i.boost_apy!==""&&i.boost_apy!=null,costPerYear:s*r/100}}).sort((i,r)=>i.enough!==r.enough?i.enough?-1:1:i.costPerYear-r.costPerYear);return{ranked:n,best:n[0]}}function newCardPicks(e,a){const s=e.users.find(l=>l.user_id===a);if(!s)return[];const t=heldCards(e,a),n=t.map(l=>l.card_id),i={};if(e.movements.filter(l=>l.user_id===a&&l.flow==="cc").forEach(l=>{i[l.merchant_category]=(i[l.merchant_category]||0)+num(l.amount)}),!Object.keys(i).length)return[];const r=(l,o,d)=>scoreCard(e,l,o,d,a).reward,c={};return Object.keys(i).forEach(l=>{c[l]=Math.max(0,...t.map(o=>r(o,l,i[l])),0)}),e.cards.filter(l=>!n.includes(l.card_id)&&num(s.risk_score)>=num(l.min_risk_score)).map(l=>{let o=0,d=0;const v=[];return Object.keys(i).forEach(m=>{const h=r(l,m,i[m]),N=c[m];o+=h,d+=N,h-N>.5&&v.push({cat:m,gain:h-N,spend:i[m],rate:scoreCard(e,l,m,i[m],a).rate})}),v.sort((m,h)=>h.gain-m.gain),{type:"card",card:l,uplift:o-d-num(l.annual_fee)/12,monthlyExtra:o-d,fee:num(l.annual_fee),reasons:v}}).filter(l=>l.uplift>0).sort((l,o)=>o.uplift-l.uplift).slice(0,4)}function newAccountPicks(e,a){const s=e.users.find(o=>o.user_id===a);if(!s)return[];const t=heldAccounts(e,a),n=t.map(o=>o.account_id),i=e.movements.filter(o=>o.user_id===a&&o.flow==="debit"&&o.direction==="in").map(o=>num(o.amount));if(!i.length)return[];const r=Math.round(i.reduce((o,d)=>o+d,0)/i.length),c=t.map(o=>({a:o,y:annualYield(e,a,o,r)})).sort((o,d)=>d.y-o.y)[0],_=c?Math.max(0,c.y):0;return e.accounts.filter(o=>!n.includes(o.account_id)&&num(s.risk_score)>=num(o.min_risk_score)).map(o=>({type:"account",acct:o,typical:r,uplift:annualYield(e,a,{...o,current_balance:r},r)-_,rate:headlineRate(e,a,o),beats:c?c.a.account_name:null})).filter(o=>o.uplift>0).sort((o,d)=>d.uplift-o.uplift).slice(0,3)}function portfolio(e,a){const s=heldCards(e,a),t=heldAccounts(e,a),n=e.movements.filter(v=>v.user_id===a),i=t.reduce((v,m)=>v+num(m.current_balance),0),r=t.reduce((v,m)=>v+annualYield(e,a,m,num(m.current_balance)),0),c=n.filter(v=>v.flow==="cc"),_=c.filter(v=>String(v.timestamp).slice(0,7)===NOW_MONTH).reduce((v,m)=>v+num(m.computed_benefit_mxn),0),l=c.reduce((v,m)=>v+num(m.computed_benefit_mxn),0),o=c.filter(v=>String(v.timestamp).slice(0,7)===NOW_MONTH).reduce((v,m)=>v+num(m.amount),0),d=s.reduce((v,m)=>v+num(m.annual_fee),0);return{cards:s,accts:t,mv:n,balance:i,projYield:r,monthBenefit:_,lifeBenefit:l,monthSpend:o,fees:d,avgRate:i>0?r/i*100:0}}async function apiGet(e){const a=await fetch(API+"?"+new URLSearchParams(e).toString());if(!a.ok)throw new Error("HTTP "+a.status);return a.json()}async function apiPost(e){const a=await fetch(API,{method:"POST",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify(e)});if(!a.ok)throw new Error("HTTP "+a.status);return a.json()}const writeQueue=(()=>{let e=Promise.resolve(),a=0;const s=new Set,t=()=>s.forEach(n=>n(a));return{push(n,i){return a++,t(),e=e.then(async()=>{try{const r=await apiPost(n);if(!r||r.ok===!1)throw new Error(r&&r.error||"rechazado")}catch(r){i&&i(r)}finally{a--,t()}}),e},subscribe(n){return s.add(n),()=>s.delete(n)}}})(),EMPTY_DB={issuers:[],cards:[],cardRewards:[],cardPerks:[],accounts:[],yieldTiers:[],categories:[],users:[],userProducts:[],movements:[]},MARKET_KEYS=["issuers","cards","cardRewards","cardPerks","accounts","yieldTiers","categories"],USER_KEYS=["users","userProducts","movements"],pick=(e,a)=>a.reduce((s,t)=>(s[t]=e[t]||[],s),{}),ICONS={home:["M3 10.6 12 3.4l9 7.2","M5.6 9.4V20.6h12.8V9.4"],card:["M2.6 6.4h18.8v11.2H2.6z","M2.6 10.4h18.8"],savings:["M12 3.2v17.6","M16.2 7.6c0-1.9-1.9-3-4.2-3s-4.2 1.1-4.2 3 1.9 2.7 4.2 3.3 4.2 1.4 4.2 3.3-1.9 3-4.2 3-4.2-1.1-4.2-3"],grid:["M3.6 3.6h6.8v6.8H3.6z","M13.6 3.6h6.8v6.8h-6.8z","M3.6 13.6h6.8v6.8H3.6z","M13.6 13.6h6.8v6.8h-6.8z"],more:["M5 12h.01","M12 12h.01","M19 12h.01"],search:["M11 4.2a6.8 6.8 0 1 0 0 13.6 6.8 6.8 0 0 0 0-13.6","m16.1 16.1 4.3 4.3"],close:["M6.2 6.2 17.8 17.8","M17.8 6.2 6.2 17.8"],right:["m9.4 5.2 6.8 6.8-6.8 6.8"],down:["m5.2 9.4 6.8 6.8 6.8-6.8"],plus:["M12 5.2v13.6","M5.2 12h13.6"],trash:["M4.2 6.8h15.6","M9.2 6.8V4.2h5.6v2.6","M6.6 6.8 7.6 20.4h8.8L17.4 6.8"],check:["m5.2 12.4 4.8 4.8 8.8-10.4"],spark:["M12 3.2 14.2 9.6l6.4 2.4-6.4 2.4L12 20.8l-2.2-6.4L3.4 12l6.4-2.4z"],user:["M12 12.2a4.1 4.1 0 1 0 0-8.2 4.1 4.1 0 0 0 0 8.2","M4.4 20.4c.9-3.8 4-5.7 7.6-5.7s6.7 1.9 7.6 5.7"],shield:["M12 3.2 19.4 6.2v5.6c0 4.4-3 8.2-7.4 9.4-4.4-1.2-7.4-5-7.4-9.4V6.2z"],logout:["M14.4 4.4h5.2v15.2h-5.2","M4.4 12h9.6","m10.6 8.4 3.6 3.6-3.6 3.6"],edit:["M4.2 19.8h4L19 9a2.1 2.1 0 0 0-3-3L5.2 15.8z"],refresh:["M20.2 12a8.2 8.2 0 1 1-2.6-6","M20.6 3.6v4.4h-4.4"],clock:["M12 20.8a8.8 8.8 0 1 0 0-17.6 8.8 8.8 0 0 0 0 17.6","M12 7v5.4l3.6 2.1"],bank:["M3.4 9.6 12 4.2l8.6 5.4","M5.8 9.6v9M18.2 9.6v9M10 9.6v9M14 9.6v9","M3.4 20.6h17.2"],alert:["M12 3.4 2.8 20.6h18.4z","M12 10v4.2","M12 17.4h.01"],arrowdown:["M12 4.6v14.8","m6.4 13.4 5.6 6 5.6-6"],arrowup:["M12 19.4V4.6","m6.4 10.6 5.6-6 5.6 6"],info:["M12 20.8a8.8 8.8 0 1 0 0-17.6 8.8 8.8 0 0 0 0 17.6","M12 11v5.4","M12 7.6h.01"],supermarket:["M3.2 5h2.6l2.4 10.2h9.6l2-7.2H7.2","M10 19.4h.01","M17 19.4h.01"],restaurants:["M6.4 3.2v7.6a2.1 2.1 0 0 0 4.2 0V3.2","M8.5 10.8v10","M17.6 3.2c-1.6 1-2.6 3-2.6 5.6s1 4.4 2.6 4.4v7.6"],cinema:["M3.4 4.6h17.2v14.8H3.4z","M8.2 4.6v14.8","M15.8 4.6v14.8"],gas:["M4.6 20.4V5.2a1.6 1.6 0 0 1 1.6-1.6h4.8a1.6 1.6 0 0 1 1.6 1.6v15.2","M3.2 20.4h11.2","M12.6 9.2h2.8l2 2v6.6a1.6 1.6 0 0 1-3.2 0V13.2"],travel:["M20.8 4.2 3.4 11.2l5.8 2.4 2.4 5.8z","M9.2 13.6 20.8 4.2"],online:["M12 20.8a8.8 8.8 0 1 0 0-17.6 8.8 8.8 0 0 0 0 17.6","M3.4 9.6h17.2M3.4 14.4h17.2","M12 3.2c-2.4 2.4-3.6 5.3-3.6 8.8s1.2 6.4 3.6 8.8c2.4-2.4 3.6-5.3 3.6-8.8S14.4 5.6 12 3.2"],department_store:["M5.2 8h13.6l-1.1 12.4H6.3z","M9 8V6a3 3 0 0 1 6 0v2"],pharmacy:["M9.6 3.6h4.8v6h6v4.8h-6v6H9.6v-6h-6V9.6h6z"],utilities:["M13.4 3.2 5.2 14h6l-.6 6.8L18.8 10h-6z"],other:["M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16","M12 12h.01"]};function Ico({n:e,s:a=20,w:s=1.7,style:t}){const n=ICONS[e]||ICONS.other;return React.createElement("svg",{width:a,height:a,viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:s,strokeLinecap:"round",strokeLinejoin:"round",style:{flex:"0 0 auto",display:"block",...t||{}},"aria-hidden":"true"},n.map((i,r)=>React.createElement("path",{key:r,d:i})))}const catIcon=e=>ICONS[e]?e:"other";function Logo({size:e=40,plain:a=!1}){return React.createElement("svg",{width:e,height:e,viewBox:"0 0 42 42",style:{flex:"0 0 auto",display:"block"}},!a&&React.createElement("rect",{width:"42",height:"42",rx:"11",fill:"#1C2431"}),React.createElement("polygon",{points:"21,8 26,22 21,19.5 16,22",fill:"#D67B4C"}),React.createElement("polygon",{points:"21,34 16,22 21,24.5 26,22",fill:a?"#9aa6b4":"#8a97a6"}),React.createElement("circle",{cx:"21",cy:"21.5",r:"2.2",fill:"#fff"}))}function BankMark({name:e,url:a,size:s=40,radius:t}){const n=t!=null?t:Math.round(s*.3);return a?React.createElement("img",{src:a,alt:"",width:s,height:s,style:{borderRadius:n,objectFit:"contain",background:"#fff",flex:"0 0 auto"}}):React.createElement("div",{style:{width:s,height:s,borderRadius:n,background:bankColor(e),color:"#fff",display:"flex",alignItems:"center",justifyContent:"center",flex:"0 0 auto",fontFamily:'"Space Grotesk",sans-serif',fontWeight:700,fontSize:Math.round(s*.36),letterSpacing:"-.02em"}},bankInitials(e))}function Sheet({open:e,onClose:a,title:s,children:t,footer:n}){return useEffect(()=>{if(!e)return;const i=document.body.style.overflow;document.body.style.overflow="hidden";const r=c=>{c.key==="Escape"&&a()};return window.addEventListener("keydown",r),()=>{document.body.style.overflow=i,window.removeEventListener("keydown",r)}},[e,a]),e?React.createElement("div",{className:"sheet-bg",onClick:a},React.createElement("div",{className:"sheet",onClick:i=>i.stopPropagation(),role:"dialog","aria-modal":"true"},React.createElement("div",{className:"sheet-grip"}),React.createElement("div",{className:"sheet-head"},React.createElement("div",{className:"sheet-title"},s),React.createElement("button",{className:"icon-btn",onClick:a,"aria-label":"Cerrar"},React.createElement(Ico,{n:"close",s:18}))),React.createElement("div",{className:"sheet-body"},t),n&&React.createElement("div",{className:"sheet-foot"},n))):null}function Segmented({value:e,onChange:a,options:s,size:t}){return React.createElement("div",{className:"seg"+(t==="sm"?" seg-sm":""),role:"tablist"},s.map(n=>React.createElement("button",{key:n.v,role:"tab","aria-selected":e===n.v,className:e===n.v?"on":"",onClick:()=>a(n.v)},n.l)))}function Toast({msg:e}){return e?React.createElement("div",{className:"toast"},React.createElement(Ico,{n:e.bad?"alert":"check",s:16}),React.createElement("span",null,e.text)):null}const CHIPS=[200,500,1e3,2500,5e3],CHIPS_BIG=[5e3,1e4,25e3,5e4,1e5];function AmountInput({value:e,onChange:a,placeholder:s,chips:t=CHIPS,label:n}){return React.createElement("div",null,n&&React.createElement("label",{className:"fld"},n),React.createElement("div",{className:"amount-box"},React.createElement("span",{className:"amount-cur"},"$"),React.createElement("input",{className:"amount-in",type:"number",inputMode:"decimal",value:e,onChange:i=>a(i.target.value),placeholder:s}),e!==""&&React.createElement("button",{className:"icon-btn ghost",onClick:()=>a(""),"aria-label":"Borrar"},React.createElement(Ico,{n:"close",s:16}))),React.createElement("div",{className:"chips"},t.map(i=>React.createElement("button",{key:i,className:"chip"+(num(e)===i?" on":""),onClick:()=>a(String(i))},i>=1e3?i/1e3+"k":i))))}function Stat({label:e,value:a,sub:s,tone:t}){return React.createElement("div",{className:"stat"+(t?" "+t:"")},React.createElement("div",{className:"stat-l"},e),React.createElement("div",{className:"stat-v num"},a),s&&React.createElement("div",{className:"stat-s"},s))}function Row({icon:e,mark:a,title:s,meta:t,right:n,rightSub:i,onClick:r,tone:c,badge:_,action:l}){return React.createElement(r?"button":"div",{className:"row"+(r?" tap":""),onClick:r},a,e&&React.createElement("div",{className:"row-ico"},React.createElement(Ico,{n:e,s:18})),React.createElement("div",{className:"row-main"},React.createElement("div",{className:"row-t"},s,_),t&&React.createElement("div",{className:"row-m"},t)),(n||i)&&React.createElement("div",{className:"row-r"+(c?" "+c:"")},React.createElement("div",{className:"num"},n),i&&React.createElement("div",{className:"row-rs"},i)),l,r&&!l&&React.createElement("span",{className:"row-chev"},React.createElement(Ico,{n:"right",s:14})))}function Empty({icon:e="info",title:a,children:s,cta:t}){return React.createElement("div",{className:"empty-state"},React.createElement("div",{className:"empty-ico"},React.createElement(Ico,{n:e,s:22})),React.createElement("div",{className:"empty-t"},a),s&&React.createElement("div",{className:"empty-b"},s),t)}function Breakdown({rows:e}){return React.createElement("div",{className:"bd"},e.map((a,s)=>React.createElement("div",{className:"bd-li",key:s},React.createElement("span",null,a.k),React.createElement("span",{className:"num",style:a.c?{color:a.c}:{}},a.v))))}function CardDetails({d:e,c:a}){const s=c=>{const _=e.issuers.find(l=>l.issuer_id===c);return _?_.name:""},t=c=>{const _=e.categories.find(l=>l.category_key===c);return _?_.display_label:c},n=e.cardRewards.filter(c=>c.card_id===a.card_id),i=e.cardPerks.filter(c=>c.card_id===a.card_id),r=pointValue(null,a);return React.createElement("div",{className:"detail"},React.createElement("div",{className:"drow"},React.createElement("span",null,"Emisor"),React.createElement("span",null,s(a.issuer_id))),React.createElement("div",{className:"drow"},React.createElement("span",null,"Nivel"),React.createElement("span",null,a.tier)),React.createElement("div",{className:"drow"},React.createElement("span",null,"Anualidad"),React.createElement("span",null,num(a.annual_fee)?mxn(num(a.annual_fee))+"/a\xF1o":"Sin anualidad")),React.createElement("div",{className:"drow"},React.createElement("span",null,"Recompensa base"),React.createElement("span",null,num(a.base_reward_rate),"% ",rtl(a.reward_type),a.reward_type==="points"?" \xB7 1 pto \u2248 "+mxn2(r.pv)+(r.est?" (est.)":""):"")),n.length>0&&React.createElement("div",{className:"dsub"},"Bonus por categor\xEDa"),n.map(c=>{const _=String(c.user_selectable||"no").toLowerCase()==="yes",l=String(c.replaces_or_adds_to_base||"replaces").toLowerCase()==="adds",o=knownNum(c.monthly_cap),d=(c.cap_period||"monthly").toLowerCase(),v=(c.cap_basis||"mxn").toLowerCase(),m=o!==null?" \xB7 tope "+(v==="points"?o+" pts":mxn(o))+"/"+(d==="weekly"?"sem":"mes"):"",h=knownNum(c.min_spend),N=(c.min_spend_period||"per_txn").toLowerCase(),C=h!==null?" \xB7 m\xEDn "+mxn(h)+(N==="monthly"?"/mes":""):"";return React.createElement("div",{className:"drow",key:c.reward_id},React.createElement("span",null,t(c.category),_?" *":""),React.createElement("span",null,num(c.rate),"%",l?" +base":"",m,C))}),n.some(c=>String(c.user_selectable||"no").toLowerCase()==="yes")&&React.createElement("div",{className:"note"},"* categor\xEDa opcional que t\xFA eliges \u2014 se muestra aqu\xED, todav\xEDa no se cuenta en las recomendaciones."),i.length>0&&React.createElement("div",{className:"dsub"},"Beneficios"),i.map(c=>React.createElement("div",{className:"drow",key:c.perk_id},React.createElement("span",null,c.perk_name,c.applies_to_category?"":" \xB7 siempre activo"),React.createElement("span",null,c.mxn_value!==""?"\u2248 "+mxn(num(c.mxn_value)):"incluido"))),i.some(c=>!c.applies_to_category)&&React.createElement("div",{className:"note"},"Los beneficios siempre activos son referencia; no se suman al puntaje de una compra."),React.createElement("div",{className:"drow"},React.createElement("span",null,"Score m\xEDn. de riesgo"),React.createElement("span",null,num(a.min_risk_score))))}function AccountDetails({d:e,a,uid:s}){const t=r=>{const c=e.issuers.find(_=>_.issuer_id===r);return c?c.name:""},n=r=>{const c=e.cards.find(_=>_.card_id===r);return c?c.card_name:r},i=tiersFor(e,a.account_id);return React.createElement("div",{className:"detail"},React.createElement("div",{className:"drow"},React.createElement("span",null,"Emisor"),React.createElement("span",null,t(a.issuer_id))),a.yield_type==="flat"?React.createElement("div",{className:"drow"},React.createElement("span",null,"Rendimiento"),React.createElement("span",null,num(a.base_apy),"% anual",a.yield_cap!==""?" \xB7 hasta "+mxn(num(a.yield_cap)):" \xB7 sin tope")):React.createElement("div",{className:"dsub"},"Rendimiento por niveles"),a.yield_type==="tiered"&&i.map(r=>React.createElement("div",{className:"drow",key:r.tier_id},React.createElement("span",null,mxn(num(r.tier_min))," \u2013 ",r.tier_max===""?"\u221E":mxn(num(r.tier_max))),React.createElement("span",null,num(r.apy),"% anual"))),React.createElement("div",{className:"drow"},React.createElement("span",null,"Comisi\xF3n mensual"),React.createElement("span",null,num(a.monthly_fee)?mxn(num(a.monthly_fee))+"/mes":"Ninguna")),React.createElement("div",{className:"drow"},React.createElement("span",null,"Saldo m\xEDnimo"),React.createElement("span",null,num(a.min_balance)?mxn(num(a.min_balance)):"Ninguno")),React.createElement("div",{className:"drow"},React.createElement("span",null,"Liquidez"),React.createElement("span",null,a.liquidity==="term"?"Bloqueado (plazo)":"Inmediata")),a.boost_apy!==""&&a.boost_apy!=null&&React.createElement("div",{className:"drow"},React.createElement("span",null,"Boost"),React.createElement("span",null,"+",num(a.boost_apy),"% si gastas \u2265 ",mxn(num(a.boost_min_credit_spend)),"/mes en ",n(a.boost_card_id))),React.createElement("div",{className:"drow"},React.createElement("span",null,"Score m\xEDn. de riesgo"),React.createElement("span",null,num(a.min_risk_score))))}function ProductSheet({d:e,item:a,onClose:s,onAdd:t,onRemove:n,held:i,busy:r}){if(!a)return null;const c=a.type==="card",_=a.data,l=(()=>{const o=e.issuers.find(d=>d.issuer_id===_.issuer_id);return o?o.name:""})();return React.createElement(Sheet,{open:!!a,onClose:s,title:React.createElement("div",{className:"sheet-prod"},React.createElement(BankMark,{name:l,url:a.logo,size:38}),React.createElement("div",null,React.createElement("div",{className:"sheet-prod-n"},c?_.card_name:_.account_name),React.createElement("div",{className:"sheet-prod-i"},l))),footer:!t&&!n?null:i?React.createElement("button",{className:"btn danger-ghost",disabled:r,onClick:n},React.createElement(Ico,{n:"trash",s:16})," Quitar de mis productos"):React.createElement("button",{className:"btn",disabled:r,onClick:t},React.createElement(Ico,{n:"plus",s:16})," Agregar a mis productos")},c?React.createElement(CardDetails,{d:e,c:_}):React.createElement(AccountDetails,{d:e,a:_}))}function Login({onLogin:e,seedUsers:a}){const[s,t]=useState(a||null),[n,i]=useState(null),[r,c]=useState(""),[_,l]=useState(""),[o,d]=useState(!1);useEffect(()=>{s||apiGet({action:"bootstrap"}).then(m=>{m.ok?t(m.data.users):l("No se pudo cargar. "+(m.error||""))}).catch(m=>l("Error de red: "+m.message))},[]);const v=async()=>{l(""),d(!0);try{const m=await apiGet({action:"login",user_id:n,pin:r});m.ok?e(m.user):l("NIP incorrecto, int\xE9ntalo de nuevo.")}catch(m){l("Error de red: "+m.message)}d(!1)};return React.createElement("div",{className:"auth"},React.createElement("div",{className:"auth-inner"},React.createElement("div",{className:"auth-brand"},React.createElement(Logo,{size:52}),React.createElement("h1",null,"Norte"),React.createElement("p",null,"Tu norte financiero.")),React.createElement("div",{className:"panel"},React.createElement("label",{className:"fld"},"\xBFQui\xE9n entra?"),!s&&React.createElement("div",{className:"skeleton-grid"},[0,1,2,3].map(m=>React.createElement("div",{key:m,className:"skel"}))),React.createElement("div",{className:"ulist"},s&&s.map(m=>React.createElement("button",{key:m.user_id,className:"ucard"+(n===m.user_id?" sel":""),onClick:()=>{i(m.user_id),l(""),c("")}},React.createElement("div",{className:"uavatar",style:{background:bankColor(m.name)}},String(m.name||"?").slice(0,1).toUpperCase()),React.createElement("div",{className:"unm"},m.name)))),n&&React.createElement("div",{className:"auth-pin"},React.createElement("label",{className:"fld"},"Ingresa tu NIP"),React.createElement("input",{className:"pin-in",type:"password",inputMode:"numeric",autoFocus:!0,value:r,onChange:m=>c(m.target.value),placeholder:"\u2022\u2022\u2022\u2022",onKeyDown:m=>m.key==="Enter"&&r&&v()}),React.createElement("div",{style:{height:12}}),React.createElement("button",{className:"btn",disabled:!r||o,onClick:v},o?React.createElement("span",{className:"spin"}):"Entrar"),React.createElement("div",{className:"note center"},"Se recordar\xE1 tu sesi\xF3n en este dispositivo.")),_&&React.createElement("div",{className:"err"},_))))}function Home({d:e,user:a,go:s}){const t=useMemo(()=>portfolio(e,a.user_id),[e,a]),n=useMemo(()=>[...newCardPicks(e,a.user_id),...newAccountPicks(e,a.user_id)].sort((d,v)=>(v.uplift||0)-(d.uplift||0)),[e,a]),i=useMemo(()=>t.mv.slice().sort((d,v)=>String(v.timestamp).localeCompare(String(d.timestamp))).slice(0,3),[t.mv]),r=new Date().getHours(),c=r<12?"Buenos d\xEDas":r<19?"Buenas tardes":"Buenas noches",_=d=>{const v=e.cards.find(h=>h.card_id===d);if(v)return v.card_name;const m=e.accounts.find(h=>h.account_id===d);return m?m.account_name:d},l=d=>{const v=e.categories.find(m=>m.category_key===d);return v?v.display_label:d},o=n[0];return React.createElement(React.Fragment,null,React.createElement("div",{className:"greet"},c,", ",React.createElement("b",null,a.name)),React.createElement("div",{className:"hero"},React.createElement("div",{className:"hero-l"},"Generado este mes"),React.createElement("div",{className:"hero-v num"},mxn2(t.monthBenefit)),React.createElement("div",{className:"hero-s"},mxn(t.lifeBenefit)," acumulado \xB7 ",t.mv.length," movimientos"),React.createElement("div",{className:"hero-split"},React.createElement("div",null,React.createElement("div",{className:"hs-l"},"Saldo total"),React.createElement("div",{className:"hs-v num"},mxn(t.balance))),React.createElement("div",null,React.createElement("div",{className:"hs-l"},"Rendimiento proy."),React.createElement("div",{className:"hs-v num"},mxn(t.projYield),React.createElement("span",{className:"hs-u"},"/a\xF1o"))))),React.createElement("div",{className:"quick"},React.createElement("button",{className:"quick-b",onClick:()=>s("cc")},React.createElement("span",{className:"quick-i",style:{background:"var(--copper-soft)",color:"var(--copper)"}},React.createElement(Ico,{n:"card",s:20})),React.createElement("span",{className:"quick-t"},"Voy a comprar"),React.createElement("span",{className:"quick-s"},"Elige la mejor tarjeta")),React.createElement("button",{className:"quick-b",onClick:()=>s("save")},React.createElement("span",{className:"quick-i",style:{background:"var(--teal-soft)",color:"var(--teal)"}},React.createElement(Ico,{n:"savings",s:20})),React.createElement("span",{className:"quick-t"},"Voy a ahorrar"),React.createElement("span",{className:"quick-s"},"Elige la mejor cuenta"))),o&&React.createElement("button",{className:"panel tap-panel",onClick:()=>s("picks")},React.createElement("div",{className:"panel-head"},React.createElement("div",{className:"ph-l"},React.createElement(Ico,{n:"spark",s:16})," Tu mejor oportunidad"),React.createElement("span",{className:"row-chev"},React.createElement(Ico,{n:"right",s:14}))),React.createElement("div",{className:"pick-mini"},React.createElement(BankMark,{name:(e.issuers.find(d=>d.issuer_id===(o.card||o.acct).issuer_id)||{}).name,size:38}),React.createElement("div",{className:"pick-mini-m"},React.createElement("div",{className:"pick-mini-n"},o.card?o.card.card_name:o.acct.account_name),React.createElement("div",{className:"pick-mini-s"},o.card?"Cerca de "+mxn(o.uplift)+"/mes m\xE1s que tu combinaci\xF3n actual":"Cerca de "+mxn(o.uplift)+"/a\xF1o m\xE1s de rendimiento")))),React.createElement("div",{className:"panel"},React.createElement("div",{className:"panel-head"},React.createElement("div",{className:"ph-l"},React.createElement(Ico,{n:"clock",s:16})," Movimientos recientes"),t.mv.length>0&&React.createElement("button",{className:"link",onClick:()=>s("history")},"Ver todo")),!i.length&&React.createElement(Empty,{icon:"clock",title:"A\xFAn no registras nada"},"Cuando uses el asesor de tarjetas o de ahorro, tus movimientos aparecer\xE1n aqu\xED."),i.map(d=>React.createElement(Row,{key:d.movement_id,icon:d.flow==="cc"?catIcon(d.merchant_category):d.direction==="in"?"arrowdown":"arrowup",title:d.flow==="cc"?l(d.merchant_category):d.direction==="in"?"Dep\xF3sito":"Retiro",meta:_(d.recommended_product_id)+" \xB7 "+dayLabel(d.timestamp),right:mxn(num(d.amount)),rightSub:num(d.computed_benefit_mxn)>0?"+"+mxn2(num(d.computed_benefit_mxn)):null}))),React.createElement("div",{className:"mini-grid"},React.createElement(Stat,{label:"Tarjetas",value:t.cards.length,sub:t.fees?mxn(t.fees)+"/a\xF1o en anualidades":"sin anualidades"}),React.createElement(Stat,{label:"Cuentas",value:t.accts.length,sub:t.balance>0?pct(t.avgRate)+" promedio":"sin saldo"})))}function CardAdvisor({d:e,user:a,logMovement:s,go:t}){const n=e.categories,[i,r]=useState(n[0]?n[0].category_key:""),[c,_]=useState(""),[l,o]=useState(!1),[d,v]=useState(null),m=useMemo(()=>heldCards(e,a.user_id),[e,a]),h=num(c),N=useMemo(()=>h>0&&i&&m.length?ccRecommend(e,a.user_id,i,h):null,[e,a,i,h,m.length]);useEffect(()=>{o(!1)},[i,c]);const C=u=>{const k=e.cards.find(y=>y.card_id===u);return k?e.issuers.find(y=>y.issuer_id===k.issuer_id)||{}:{}},A=()=>{const u=N[0];s({flow:"cc",merchant_category:i,amount:h,recommended_product_id:u.card.card_id,computed_benefit_mxn:Number(u.score.toFixed(2))}),o(!0)};if(!m.length)return React.createElement("div",{className:"panel"},React.createElement(Empty,{icon:"card",title:"A\xFAn no tienes tarjetas",cta:React.createElement("button",{className:"btn",onClick:()=>t("products")},"Agregar tarjetas")},"Agrega las tarjetas que ya tienes y Norte te dir\xE1 cu\xE1l usar en cada compra."));const f=N&&N[0];return React.createElement(React.Fragment,null,React.createElement("div",{className:"panel"},React.createElement(AmountInput,{value:c,onChange:_,placeholder:"0",label:"\xBFCu\xE1nto vas a gastar?"})),React.createElement("div",{className:"panel"},React.createElement("label",{className:"fld"},"\xBFEn qu\xE9 tipo de comercio?"),React.createElement("div",{className:"cat-grid"},n.map(u=>React.createElement("button",{key:u.category_key,className:"cat"+(i===u.category_key?" on":""),onClick:()=>r(u.category_key)},React.createElement(Ico,{n:catIcon(u.category_key),s:20}),React.createElement("span",null,u.display_label))))),!N&&React.createElement("div",{className:"hint"},React.createElement(Ico,{n:"info",s:16})," Escribe un monto para ver tu mejor tarjeta."),f&&React.createElement(React.Fragment,null,React.createElement("div",{className:"verdict"},React.createElement("div",{className:"v-eyebrow"},React.createElement(Ico,{n:"check",s:14})," Usa esta tarjeta"),React.createElement("div",{className:"v-card"},React.createElement(BankMark,{name:C(f.card.card_id).name,url:C(f.card.card_id).logo_url,size:44}),React.createElement("div",null,React.createElement("div",{className:"v-name"},f.card.card_name),React.createElement("div",{className:"v-issuer"},C(f.card.card_id).name))),React.createElement("div",{className:"v-amount num"},mxn2(f.score)),React.createElement("div",{className:"v-sub"},"de vuelta en esta compra"),React.createElement("div",{className:"v-tags"},React.createElement("span",{className:"tag"},f.rate,"% ",rtl(f.rtype)),f.usedBonus&&React.createElement("span",{className:"tag amber"},"bonus activo"),f.capped&&React.createElement("span",{className:"tag warn"},"tope alcanzado"),f.pointsEstimated&&React.createElement("span",{className:"tag"},"puntos est.")),React.createElement(Breakdown,{rows:[{k:"Recompensa ("+f.rate+"% "+rtl(f.rtype)+")",v:mxn2(f.reward)},...f.perkValue>0?[{k:"Valor de beneficios",v:"+ "+mxn2(f.perkValue),c:"var(--sand)"}]:[],...N[1]&&f.score-N[1].score>=.01?[{k:"Ventaja vs. la siguiente",v:"+ "+mxn2(f.score-N[1].score),c:"var(--teal)"}]:N[1]?[{k:"Empata con",v:N[1].card.card_name}]:[],{k:"Anualidad (informativo)",v:num(f.card.annual_fee)?mxn(num(f.card.annual_fee))+"/a\xF1o":"sin anualidad"}]}),f.capped&&React.createElement("div",{className:"note warn"},"Ya alcanzaste el tope del bonus en este periodo \u2014 el excedente rinde a la tasa base."),f.perks.length>0&&React.createElement("div",{className:"note"},"Beneficios aqu\xED: ",f.perks.map(u=>u.perk_name).join(", ")),f.pointsEstimated&&React.createElement("div",{className:"note"},"Puntos valuados en \u2248 ",mxn2(MARKET_POINT_VALUE_MXN),"/pto \u2014 pendiente verificar por emisor."),f.optional.length>0&&React.createElement("div",{className:"note"},"Esta tarjeta tiene un bonus de categor\xEDa opcional que puedes activar \u2014 no se cuenta aqu\xED."),React.createElement("button",{className:"btn "+(l?"ok":"teal"),onClick:A,disabled:l},l?React.createElement(React.Fragment,null,React.createElement(Ico,{n:"check",s:16})," Registrado"):"Registrar compra")),N.length>1&&React.createElement("div",{className:"panel"},React.createElement("div",{className:"panel-head"},React.createElement("div",{className:"ph-l"},"Tus otras tarjetas")),N.slice(1).map((u,k)=>{const y=C(u.card.card_id);return React.createElement(Row,{key:u.card.card_id,mark:React.createElement(BankMark,{name:y.name,url:y.logo_url,size:34}),title:u.card.card_name,meta:u.bonusBlockedBy?u.bonusBlockedBy:u.rate+"% "+rtl(u.rtype)+(u.capped?" \xB7 tope alcanzado":""),right:mxn2(u.score),rightSub:f.score-u.score>=.01?"\u2212"+mxn2(f.score-u.score):"igual",onClick:()=>v({type:"card",data:u.card,logo:y.logo_url})})}))),React.createElement(ProductSheet,{d:e,item:d,onClose:()=>v(null)}))}function SavingsAdvisor({d:e,user:a,logMovement:s,setBalance:t,go:n}){const[i,r]=useState("in"),[c,_]=useState(""),[l,o]=useState(null),[d,v]=useState(!1),[m,h]=useState(null),[N,C]=useState(null),[A,f]=useState(""),u=useMemo(()=>heldAccounts(e,a.user_id),[e,a]),k=num(c),y=useMemo(()=>k>0&&u.length?i==="in"?savingsIn(e,a.user_id,k):savingsOut(e,a.user_id,k):null,[e,a,i,k,u.length]);useEffect(()=>{v(!1),o(null)},[i,c]);const P=b=>e.issuers.find(M=>M.issuer_id===b.issuer_id)||{},B=y&&y.best,w=y?y.ranked.find(b=>b.acct.account_id===l)||B:null,S=w&&B&&w.acct.account_id===B.acct.account_id,j=w&&B?i==="in"?B.benefit-w.benefit:w.costPerYear-B.costPerYear:0,I=y&&i==="in"&&y.split&&B&&y.split.total>B.benefit+1&&y.split.parts.length>1,D=()=>{s({flow:"debit",direction:i,amount:k,recommended_product_id:w.acct.account_id,computed_benefit_mxn:Number((i==="in"?w.benefit:0).toFixed(2))}),v(!0)},p=()=>{t(N._upid,num(A)),C(null)};return u.length?React.createElement(React.Fragment,null,React.createElement("div",{className:"panel"},React.createElement(Segmented,{value:i,onChange:r,options:[{v:"in",l:"Dep\xF3sito"},{v:"out",l:"Retiro"}]}),React.createElement("div",{style:{height:16}}),React.createElement(AmountInput,{value:c,onChange:_,chips:CHIPS_BIG,placeholder:"0",label:i==="in"?"\xBFCu\xE1nto vas a depositar?":"\xBFCu\xE1nto necesitas sacar?"})),!y&&React.createElement("div",{className:"hint"},React.createElement(Ico,{n:"info",s:16})," Escribe un monto para comparar tus cuentas."),w&&React.createElement("div",{className:"verdict"+(S?"":" neutral")},React.createElement("div",{className:"v-eyebrow"},S?React.createElement(React.Fragment,null,React.createElement(Ico,{n:"check",s:14})," ",i==="in"?"Deposita aqu\xED":"Saca de aqu\xED"):React.createElement(React.Fragment,null,React.createElement(Ico,{n:"info",s:14})," Tu selecci\xF3n")),React.createElement("div",{className:"v-card"},React.createElement(BankMark,{name:P(w.acct).name,url:P(w.acct).logo_url,size:44}),React.createElement("div",null,React.createElement("div",{className:"v-name"},w.acct.account_name),React.createElement("div",{className:"v-issuer"},P(w.acct).name))),i==="in"?React.createElement(React.Fragment,null,React.createElement("div",{className:"v-amount num"},mxn(w.benefit)),React.createElement("div",{className:"v-sub"},"rendimiento estimado al a\xF1o"),React.createElement("div",{className:"v-tags"},React.createElement("span",{className:"tag"},pct(w.rate)," anual"),w.boost&&React.createElement("span",{className:"tag teal"},"boost activo"),!w.eligible&&React.createElement("span",{className:"tag warn"},"bajo el m\xEDnimo"))):React.createElement(React.Fragment,null,React.createElement("div",{className:"v-amount num"},mxn2(w.costPerYear)),React.createElement("div",{className:"v-sub"},"rendimiento futuro que dejas de ganar (",pct(w.marginal)," marginal)"),React.createElement("div",{className:"v-tags"},React.createElement("span",{className:"tag"},"saldo ",mxn(w.acct.current_balance)),!w.enough&&React.createElement("span",{className:"tag warn"},"saldo insuficiente"),w.losesBoost&&React.createElement("span",{className:"tag warn"},"pierdes el boost"))),!S&&j>.5&&React.createElement("div",{className:"note warn"},"Elegir esta cuenta te cuesta ",mxn2(j),"/a\xF1o frente a ",B.acct.account_name,"."),i==="out"&&!w.enough&&React.createElement("div",{className:"note warn"},"El saldo de esta cuenta (",mxn(w.acct.current_balance),") es menor al monto que quieres sacar."),React.createElement("button",{className:"btn "+(d?"ok":"teal"),onClick:D,disabled:d},d?React.createElement(React.Fragment,null,React.createElement(Ico,{n:"check",s:16})," Registrado"):i==="in"?"Registrar dep\xF3sito":"Registrar retiro")),I&&React.createElement("div",{className:"panel sand"},React.createElement("div",{className:"panel-head"},React.createElement("div",{className:"ph-l",style:{color:"var(--sand)"}},React.createElement(Ico,{n:"spark",s:16})," Rinde m\xE1s si lo divides")),React.createElement("div",{className:"sub"},"Con los topes de cada cuenta, repartir da ",mxn(y.split.total),"/a\xF1o \u2014 ",React.createElement("b",null,mxn(y.split.total-B.benefit)," m\xE1s")," que ponerlo todo junto."),y.split.parts.map((b,M)=>React.createElement(Row,{key:M,mark:React.createElement(BankMark,{name:P(b.acct).name,size:30}),title:b.acct.account_name,right:mxn(b.amount)}))),React.createElement("div",{className:"panel"},React.createElement("div",{className:"panel-head"},React.createElement("div",{className:"ph-l"},"Tus cuentas"),React.createElement("span",{className:"ph-r"},u.length)),(y?y.ranked:u.map(b=>({acct:b}))).map(b=>{const M=b.acct,T=P(M),z=w&&w.acct.account_id===M.account_id,O=b.rate!=null?b.rate:b.marginal!=null?b.marginal:headlineRate(e,a.user_id,M);return React.createElement("div",{key:M.account_id,className:"acct-row"+(z?" on":"")},React.createElement("button",{className:"acct-main",onClick:()=>y&&o(M.account_id)},React.createElement(BankMark,{name:T.name,url:T.logo_url,size:38}),React.createElement("div",{className:"acct-mid"},React.createElement("div",{className:"acct-n"},M.account_name,B&&B.acct.account_id===M.account_id&&y&&React.createElement("span",{className:"mini-badge"},"recomendada")),React.createElement("div",{className:"acct-m"},T.name," \xB7 ",pct(O)," anual \xB7 ",ytl(M.yield_type))),React.createElement("div",{className:"acct-r"},y&&i==="in"&&React.createElement("div",{className:"num acct-benefit"},b.eligible?mxn(b.benefit):"\u2014",React.createElement("span",{className:"acct-u"},"/a\xF1o")),y&&i==="out"&&React.createElement("div",{className:"num acct-benefit"},mxn2(b.costPerYear),React.createElement("span",{className:"acct-u"},"/a\xF1o")),!y&&React.createElement("div",{className:"num acct-benefit"},mxn(M.current_balance)))),React.createElement("div",{className:"acct-foot"},React.createElement("button",{className:"bal-chip",onClick:()=>{C(M),f(String(num(M.current_balance)))}},"Saldo ",mxn(M.current_balance)," ",React.createElement(Ico,{n:"edit",s:13})),React.createElement("button",{className:"link",onClick:()=>h({type:"account",data:M,logo:T.logo_url})},"Detalle")))})),React.createElement(Sheet,{open:!!N,onClose:()=>C(null),title:"Actualizar saldo",footer:React.createElement("button",{className:"btn",onClick:p},"Guardar")},N&&React.createElement(React.Fragment,null,React.createElement("div",{className:"sub"},N.account_name),React.createElement(AmountInput,{value:A,onChange:f,chips:CHIPS_BIG,placeholder:"0"}),React.createElement("div",{className:"note"},"El saldo alimenta las recomendaciones de retiro y el rendimiento proyectado en Inicio."))),React.createElement(ProductSheet,{d:e,item:m,onClose:()=>h(null)})):React.createElement("div",{className:"panel"},React.createElement(Empty,{icon:"savings",title:"A\xFAn no tienes cuentas",cta:React.createElement("button",{className:"btn",onClick:()=>n("products")},"Agregar cuentas")},"Agrega tus cuentas de ahorro o d\xE9bito y Norte te dir\xE1 d\xF3nde poner o de d\xF3nde sacar tu dinero."))}function Products({d:e,user:a,addProduct:s,removeProduct:t}){const[n,i]=useState("card"),[r,c]=useState(""),[_,l]=useState(null),[o,d]=useState(null),[v,m]=useState(""),h=useMemo(()=>e.userProducts.filter(p=>p.user_id===a.user_id&&p.product_type==="card").map(p=>p.product_id),[e,a]),N=useMemo(()=>e.userProducts.filter(p=>p.user_id===a.user_id&&p.product_type==="account").map(p=>p.product_id),[e,a]),C=(p,b)=>(p==="card"?h:N).includes(b),A=useMemo(()=>{const p={};return e.issuers.forEach(b=>p[b.issuer_id]=b),p},[e.issuers]),f=p=>n==="card"?p.card_name:p.account_name,u=p=>n==="card"?p.card_id:p.account_id,k=n==="card"?e.cards:e.accounts,y=useMemo(()=>k.filter(p=>C(n,u(p))),[k,h,N,n]),P=useMemo(()=>{if(!r.trim())return null;const p=norm(r);return k.filter(b=>{const M=A[b.issuer_id]||{};return norm(f(b)).includes(p)||norm(M.name).includes(p)||norm(b.tier).includes(p)})},[r,k,n,A]),B=useMemo(()=>{const p={};return k.forEach(b=>{(p[b.issuer_id]=p[b.issuer_id]||{issuer:A[b.issuer_id]||{issuer_id:b.issuer_id,name:b.issuer_id},items:[]}).items.push(b)}),Object.values(p).sort((b,M)=>String(b.issuer.name).localeCompare(String(M.issuer.name),"es"))},[k,A]),w=async p=>{const b=u(p);m(b),C(n,b)?await t(n,b):await s(n,b),m("")},S=(p,b)=>{const M=A[p.issuer_id]||{};d({type:n,data:p,logo:M.logo_url,from:b}),b&&l(null)},j=()=>{const p=o&&o.from;d(null),p&&l(p)},I=p=>{const b=A[p.issuer_id]||{};return n==="card"?b.name+" \xB7 "+(num(p.annual_fee)?mxn(num(p.annual_fee))+"/a\xF1o":"sin anualidad"):b.name+" \xB7 "+pct(headlineRate(e,a.user_id,p))+" anual"},D=(p,b)=>{const M=A[p.issuer_id]||{},T=u(p),z=C(n,T);return React.createElement(Row,{key:T,mark:React.createElement(BankMark,{name:M.name,url:M.logo_url,size:38}),title:f(p),meta:I(p),onClick:()=>S(p,b),action:React.createElement("button",{className:"pill-btn"+(z?" held":""),disabled:v===T,onClick:O=>{O.stopPropagation(),w(p)}},v===T?React.createElement("span",{className:"spin dark"}):z?React.createElement(Ico,{n:"check",s:15}):React.createElement(Ico,{n:"plus",s:15}))})};return React.createElement(React.Fragment,null,React.createElement("div",{className:"panel sticky-tools"},React.createElement(Segmented,{value:n,onChange:p=>{i(p),c(""),l(null)},options:[{v:"card",l:"Tarjetas de cr\xE9dito"},{v:"account",l:"Cuentas"}]}),React.createElement("div",{style:{height:12}}),React.createElement("div",{className:"search"},React.createElement(Ico,{n:"search",s:17}),React.createElement("input",{value:r,onChange:p=>c(p.target.value),placeholder:n==="card"?"Busca una tarjeta o banco":"Busca una cuenta o banco"}),r&&React.createElement("button",{className:"icon-btn ghost",onClick:()=>c(""),"aria-label":"Limpiar"},React.createElement(Ico,{n:"close",s:16})))),P?React.createElement("div",{className:"panel"},React.createElement("div",{className:"panel-head"},React.createElement("div",{className:"ph-l"},"Resultados"),React.createElement("span",{className:"ph-r"},P.length)),!P.length&&React.createElement(Empty,{icon:"search",title:"Sin resultados"},"Prueba con el nombre del banco o del producto."),P.map(p=>D(p))):React.createElement(React.Fragment,null,React.createElement("div",{className:"panel"},React.createElement("div",{className:"panel-head"},React.createElement("div",{className:"ph-l"},n==="card"?"Mis tarjetas":"Mis cuentas"),React.createElement("span",{className:"ph-r"},y.length)),!y.length&&React.createElement(Empty,{icon:n==="card"?"card":"savings",title:n==="card"?"Sin tarjetas todav\xEDa":"Sin cuentas todav\xEDa"},"B\xFAscalas arriba o explora por banco para agregarlas."),y.map(p=>D(p))),React.createElement("div",{className:"panel"},React.createElement("div",{className:"panel-head"},React.createElement("div",{className:"ph-l"},"Explorar por banco"),React.createElement("span",{className:"ph-r"},B.length)),React.createElement("div",{className:"bank-grid"},B.map(p=>{const b=p.items.filter(M=>C(n,u(M))).length;return React.createElement("button",{key:p.issuer.issuer_id,className:"bank-tile",onClick:()=>l(p)},React.createElement(BankMark,{name:p.issuer.name,url:p.issuer.logo_url,size:44,radius:13}),React.createElement("div",{className:"bank-n"},p.issuer.name),React.createElement("div",{className:"bank-c"},p.items.length," ",n==="card"?p.items.length===1?"tarjeta":"tarjetas":p.items.length===1?"cuenta":"cuentas"),b>0&&React.createElement("span",{className:"bank-dot",title:"Ya tienes productos aqu\xED"}))})))),React.createElement(Sheet,{open:!!_,onClose:()=>l(null),title:_&&React.createElement("div",{className:"sheet-prod"},React.createElement(BankMark,{name:_.issuer.name,url:_.issuer.logo_url,size:38}),React.createElement("div",null,React.createElement("div",{className:"sheet-prod-n"},_.issuer.name),React.createElement("div",{className:"sheet-prod-i"},_.items.length," ",n==="card"?"tarjetas":"cuentas")))},_&&(()=>{const p={};return _.items.forEach(b=>{const M=n==="card"?b.tier||"Otras":ytl(b.yield_type);(p[M]=p[M]||[]).push(b)}),Object.keys(p).sort().map(b=>React.createElement("div",{key:b},React.createElement("div",{className:"dsub"},b),p[b].map(M=>D(M,_))))})()),React.createElement(ProductSheet,{d:e,item:o,onClose:j,held:o?C(o.type,o.type==="card"?o.data.card_id:o.data.account_id):!1,busy:!!v,onAdd:()=>{o&&(w(o.data),j())},onRemove:()=>{o&&(w(o.data),j())}}))}function Suggestions({d:e,user:a,addProduct:s,go:t}){const n=useMemo(()=>newCardPicks(e,a.user_id),[e,a]),i=useMemo(()=>newAccountPicks(e,a.user_id),[e,a]),[r,c]=useState(null),[_,l]=useState(""),o=h=>e.issuers.find(N=>N.issuer_id===h.issuer_id)||{},d=h=>{const N=e.categories.find(C=>C.category_key===h);return N?N.display_label:h},v=e.movements.filter(h=>h.user_id===a.user_id&&h.flow==="cc").length,m=async(h,N)=>{const C=h==="card"?N.card_id:N.account_id;l(C),await s(h,C),l(""),c(null)};return!n.length&&!i.length?React.createElement("div",{className:"panel"},React.createElement(Empty,{icon:"spark",title:"Todav\xEDa no hay sugerencias",cta:React.createElement("button",{className:"btn ghost",onClick:()=>t("cc")},"Ir al asesor de tarjetas")},v<3?"Registra algunas compras y dep\xF3sitos. Con tu patr\xF3n real de gasto podemos calcular qu\xE9 producto te dejar\xEDa m\xE1s dinero.":"Con tu gasto actual, ning\xFAn producto del mercado te deja m\xE1s dinero que lo que ya tienes. Eso es buena se\xF1al.")):React.createElement(React.Fragment,null,React.createElement("div",{className:"hint"},React.createElement(Ico,{n:"info",s:16})," Calculado sobre tus movimientos registrados, ya descontando anualidades."),n.length>0&&React.createElement("div",{className:"panel"},React.createElement("div",{className:"panel-head"},React.createElement("div",{className:"ph-l"},React.createElement(Ico,{n:"card",s:16})," Tarjetas que te convienen")),n.map(h=>{const N=o(h.card);return React.createElement("button",{key:h.card.card_id,className:"pick",onClick:()=>c({type:"card",data:h.card,logo:N.logo_url,pick:h})},React.createElement("div",{className:"pick-top"},React.createElement(BankMark,{name:N.name,url:N.logo_url,size:42}),React.createElement("div",{className:"pick-id"},React.createElement("div",{className:"pick-n"},h.card.card_name),React.createElement("div",{className:"pick-i"},N.name," \xB7 ",num(h.card.annual_fee)?mxn(num(h.card.annual_fee))+"/a\xF1o":"sin anualidad")),React.createElement("div",{className:"pick-up"},React.createElement("div",{className:"num"},"+",mxn(h.uplift)),React.createElement("div",{className:"pick-uu"},"al mes"))),h.reasons.length>0&&React.createElement("div",{className:"why"},h.reasons.slice(0,3).map(C=>React.createElement("span",{key:C.cat,className:"why-chip"},React.createElement(Ico,{n:catIcon(C.cat),s:13})," ",d(C.cat)," \xB7 ",C.rate,"%"))),React.createElement("div",{className:"pick-foot"},"Ganar\xEDas ",mxn(h.monthlyExtra),"/mes m\xE1s en recompensas",num(h.card.annual_fee)?", menos "+mxn(num(h.card.annual_fee)/12)+"/mes de anualidad":"",".",React.createElement("span",{className:"row-chev"},React.createElement(Ico,{n:"right",s:14}))))})),i.length>0&&React.createElement("div",{className:"panel"},React.createElement("div",{className:"panel-head"},React.createElement("div",{className:"ph-l"},React.createElement(Ico,{n:"savings",s:16})," Cuentas que te convienen")),i.map(h=>{const N=o(h.acct);return React.createElement("button",{key:h.acct.account_id,className:"pick sand-pick",onClick:()=>c({type:"account",data:h.acct,logo:N.logo_url,pick:h})},React.createElement("div",{className:"pick-top"},React.createElement(BankMark,{name:N.name,url:N.logo_url,size:42}),React.createElement("div",{className:"pick-id"},React.createElement("div",{className:"pick-n"},h.acct.account_name),React.createElement("div",{className:"pick-i"},N.name," \xB7 ",pct(h.rate)," anual")),React.createElement("div",{className:"pick-up"},React.createElement("div",{className:"num"},"+",mxn(h.uplift)),React.createElement("div",{className:"pick-uu"},"al a\xF1o"))),React.createElement("div",{className:"pick-foot"},"Sobre un dep\xF3sito t\xEDpico tuyo de ",mxn(h.typical),h.beats?", frente a "+h.beats:"",".",React.createElement("span",{className:"row-chev"},React.createElement(Ico,{n:"right",s:14}))))})),React.createElement(ProductSheet,{d:e,item:r,onClose:()=>c(null),held:!1,busy:!!_,onAdd:()=>r&&m(r.type,r.data)}))}function History({d:e,user:a,deleteMovement:s}){const[t,n]=useState("all"),[i,r]=useState(null),[c,_]=useState(!1),l=f=>{const u=e.cards.find(y=>y.card_id===f);if(u)return u.card_name;const k=e.accounts.find(y=>y.account_id===f);return k?k.account_name:f},o=f=>{const u=e.cards.find(P=>P.card_id===f),k=u?null:e.accounts.find(P=>P.account_id===f),y=u||k;return y?e.issuers.find(P=>P.issuer_id===y.issuer_id)||{}:{}},d=f=>{const u=e.categories.find(k=>k.category_key===f);return u?u.display_label:f},v=useMemo(()=>e.movements.filter(f=>f.user_id===a.user_id).filter(f=>t==="all"?!0:t==="cc"?f.flow==="cc":f.flow==="debit").sort((f,u)=>String(u.timestamp).localeCompare(String(f.timestamp))),[e,a,t]),m=f=>f.filter(u=>u.flow==="cc").reduce((u,k)=>u+num(k.computed_benefit_mxn),0),h=f=>f.filter(u=>u.flow==="debit").reduce((u,k)=>u+num(k.computed_benefit_mxn),0),N=useMemo(()=>({count:v.length,amount:v.reduce((f,u)=>f+num(u.amount),0),benefit:t==="debit"?h(v):m(v)}),[v,t]),C=useMemo(()=>{const f={};return v.forEach(u=>{const k=String(u.timestamp).slice(0,7);(f[k]=f[k]||[]).push(u)}),Object.keys(f).sort().reverse().map(u=>({k:u,items:f[u],benefit:t==="debit"?h(f[u]):m(f[u])}))},[v,t]),A=()=>{s(i.movement_id),_(!1),r(null)};return React.createElement(React.Fragment,null,React.createElement("div",{className:"panel sticky-tools"},React.createElement(Segmented,{value:t,onChange:n,options:[{v:"all",l:"Todo"},{v:"cc",l:"Tarjetas"},{v:"debit",l:"Cuentas"}]})),React.createElement("div",{className:"mini-grid three"},React.createElement(Stat,{label:"Movimientos",value:N.count}),React.createElement(Stat,{label:"Monto",value:mxn(N.amount)}),React.createElement(Stat,{label:t==="debit"?"Rendimiento":"Generado",value:mxn2(N.benefit),tone:"teal",sub:t==="debit"?"estimado al a\xF1o":null})),!v.length&&React.createElement("div",{className:"panel"},React.createElement(Empty,{icon:"clock",title:"Nada registrado aqu\xED"},t==="all"?"Usa los asesores y registra tus movimientos para construir tu historial.":"No hay movimientos de este tipo todav\xEDa.")),C.map(f=>React.createElement("div",{className:"panel",key:f.k},React.createElement("div",{className:"panel-head"},React.createElement("div",{className:"ph-l cap"},monthLabel(f.k)),React.createElement("span",{className:"ph-r teal"},f.benefit>0?"+"+mxn2(f.benefit):"\u2014")),f.items.map(u=>{const k=o(u.recommended_product_id);return React.createElement(Row,{key:u.movement_id,mark:React.createElement(BankMark,{name:k.name,url:k.logo_url,size:34}),title:u.flow==="cc"?d(u.merchant_category):u.direction==="in"?"Dep\xF3sito":"Retiro",meta:l(u.recommended_product_id)+" \xB7 "+dayLabel(u.timestamp),right:mxn(num(u.amount)),rightSub:num(u.computed_benefit_mxn)>0?"+"+mxn2(num(u.computed_benefit_mxn)):null,tone:num(u.computed_benefit_mxn)>0?"teal-sub":null,onClick:()=>{r(u),_(!1)}})}))),React.createElement(Sheet,{open:!!i,onClose:()=>r(null),title:"Detalle del movimiento",footer:c?React.createElement("div",{className:"confirm"},React.createElement("div",{className:"confirm-t"},"\xBFEliminar este movimiento? No se puede deshacer."),React.createElement("div",{className:"confirm-b"},React.createElement("button",{className:"btn ghost",onClick:()=>_(!1)},"Cancelar"),React.createElement("button",{className:"btn danger",onClick:A},"Eliminar"))):React.createElement("button",{className:"btn danger-ghost",onClick:()=>_(!0)},React.createElement(Ico,{n:"trash",s:16})," Eliminar movimiento")},i&&React.createElement("div",{className:"detail"},React.createElement("div",{className:"drow"},React.createElement("span",null,"Tipo"),React.createElement("span",null,i.flow==="cc"?"Compra con tarjeta":i.direction==="in"?"Dep\xF3sito":"Retiro")),i.flow==="cc"&&React.createElement("div",{className:"drow"},React.createElement("span",null,"Categor\xEDa"),React.createElement("span",null,d(i.merchant_category))),React.createElement("div",{className:"drow"},React.createElement("span",null,"Producto"),React.createElement("span",null,l(i.recommended_product_id))),React.createElement("div",{className:"drow"},React.createElement("span",null,"Monto"),React.createElement("span",null,mxn2(num(i.amount)))),React.createElement("div",{className:"drow"},React.createElement("span",null,i.flow==="cc"?"Recompensa de esta compra":"Rendimiento estimado al a\xF1o"),React.createElement("span",null,mxn2(num(i.computed_benefit_mxn)))),React.createElement("div",{className:"drow"},React.createElement("span",null,"Fecha"),React.createElement("span",null,String(i.timestamp).slice(0,10))),i.notes&&React.createElement("div",{className:"drow"},React.createElement("span",null,"Notas"),React.createElement("span",null,i.notes)))))}function Profile({d:e,user:a,onSignOut:s,onSwitch:t,saveName:n,go:i}){const r=useMemo(()=>portfolio(e,a.user_id),[e,a]),c=e.users.find(m=>m.user_id===a.user_id)||a,[_,l]=useState(!1),[o,d]=useState(c.name||""),v=r.mv.length?r.mv.map(m=>String(m.timestamp)).sort()[0].slice(0,7):null;return React.createElement(React.Fragment,null,React.createElement("div",{className:"profile-head"},React.createElement("div",{className:"p-avatar",style:{background:bankColor(c.name)}},String(c.name||"?").slice(0,1).toUpperCase()),React.createElement("div",{className:"p-name"},c.name),React.createElement("div",{className:"p-role"},c.is_admin?"Administrador":"Miembro"," \xB7 ",c.user_id)),React.createElement("div",{className:"mini-grid"},React.createElement(Stat,{label:"Generado a la fecha",value:mxn2(r.lifeBenefit),tone:"teal",sub:r.mv.length+" movimientos"}),React.createElement(Stat,{label:"Saldo total",value:mxn(r.balance),sub:r.balance>0?pct(r.avgRate)+" promedio":"\u2014"})),React.createElement("div",{className:"panel"},React.createElement("div",{className:"panel-head"},React.createElement("div",{className:"ph-l"},"Mis productos")),React.createElement(Row,{icon:"card",title:"Tarjetas de cr\xE9dito",meta:r.fees?mxn(r.fees)+"/a\xF1o en anualidades":"Sin anualidades",right:r.cards.length,onClick:()=>i("products")}),React.createElement(Row,{icon:"savings",title:"Cuentas",meta:r.projYield>0?mxn(r.projYield)+"/a\xF1o proyectado":"Sin rendimiento proyectado",right:r.accts.length,onClick:()=>i("products")})),React.createElement("div",{className:"panel"},React.createElement("div",{className:"panel-head"},React.createElement("div",{className:"ph-l"},"Datos")),React.createElement("div",{className:"detail"},React.createElement("div",{className:"drow"},React.createElement("span",null,"Nombre"),React.createElement("span",null,c.name)),React.createElement("div",{className:"drow"},React.createElement("span",null,"Usuario"),React.createElement("span",null,c.user_id)),React.createElement("div",{className:"drow"},React.createElement("span",null,"Score de riesgo"),React.createElement("span",null,num(c.risk_score))),React.createElement("div",{className:"drow"},React.createElement("span",null,"Gasto del mes"),React.createElement("span",null,mxn(r.monthSpend))),React.createElement("div",{className:"drow"},React.createElement("span",null,"Activo desde"),React.createElement("span",{className:"cap"},v?monthLabel(v):"\u2014"))),React.createElement("div",{className:"note"},"El score de riesgo se administra desde la hoja de datos y define qu\xE9 productos aparecen en Sugerencias.")),React.createElement("div",{className:"panel"},React.createElement("div",{className:"panel-head"},React.createElement("div",{className:"ph-l"},"Cuenta")),React.createElement(Row,{icon:"edit",title:"Editar nombre",onClick:()=>{d(c.name||""),l(!0)}}),React.createElement(Row,{icon:"user",title:"Cambiar de usuario",onClick:t}),React.createElement(Row,{icon:"logout",title:"Cerrar sesi\xF3n",onClick:s})),React.createElement(Sheet,{open:_,onClose:()=>l(!1),title:"Editar nombre",footer:React.createElement("button",{className:"btn",disabled:!o.trim(),onClick:()=>{n(o.trim()),l(!1)}},"Guardar")},React.createElement("label",{className:"fld"},"Nombre"),React.createElement("input",{className:"text-in",value:o,onChange:m=>d(m.target.value),maxLength:40})))}function Menu({open:e,onClose:a,d:s,user:t,go:n,onRefresh:i,syncing:r,lastSync:c,onSignOut:_}){const l=useMemo(()=>e?portfolio(s,t.user_id):null,[s,t,e]);return e?React.createElement(Sheet,{open:e,onClose:a,title:React.createElement("div",{className:"sheet-prod"},React.createElement("div",{className:"uavatar",style:{background:bankColor(t.name),width:38,height:38,fontSize:16}},String(t.name||"?").slice(0,1).toUpperCase()),React.createElement("div",null,React.createElement("div",{className:"sheet-prod-n"},t.name),React.createElement("div",{className:"sheet-prod-i"},t.is_admin?"Administrador":"Miembro")))},React.createElement(Row,{icon:"clock",title:"Historial",meta:"Todos tus movimientos",right:l.mv.length||null,onClick:()=>n("history")}),React.createElement(Row,{icon:"user",title:"Perfil",meta:"Tus datos y productos",onClick:()=>n("profile")}),t.is_admin&&React.createElement(Row,{icon:"shield",title:"Admin",meta:"Estado de los datos",onClick:()=>n("admin")}),React.createElement(Row,{icon:"refresh",title:r?"Actualizando\u2026":"Actualizar datos",meta:c?"\xDAltima sincronizaci\xF3n "+c:"Datos del mercado y tus movimientos",onClick:r?null:i}),React.createElement(Row,{icon:"logout",title:"Cerrar sesi\xF3n",onClick:_}),React.createElement("div",{className:"version"},"Norte \xB7 versi\xF3n 2.0")):null}function Admin({d:e}){const a=[["Usuarios",e.users.length,e.users.map(s=>s.name).join(", ")],["Emisores",e.issuers.length,e.issuers.map(s=>s.name).slice(0,4).join(", ")+(e.issuers.length>4?"\u2026":"")],["Tarjetas",e.cards.length,e.cardRewards.length+" bonus \xB7 "+e.cardPerks.length+" beneficios"],["Cuentas",e.accounts.length,e.yieldTiers.length+" niveles de rendimiento"],["Categor\xEDas",e.categories.length,e.categories.map(s=>s.display_label).join(", ")],["Movimientos",e.movements.length,"registrados por ti"]];return React.createElement("div",{className:"panel"},React.createElement("div",{className:"panel-head"},React.createElement("div",{className:"ph-l"},React.createElement(Ico,{n:"shield",s:16})," Estado de los datos")),React.createElement("div",{className:"sub"},"Los datos de mercado se editan directo en la Google Sheet \u2014 los cambios se aplican al actualizar."),a.map(([s,t,n])=>React.createElement(Row,{key:s,title:s,meta:n,right:t})),React.createElement("div",{className:"note"},"Los datos actuales siguen siendo de prueba. La app est\xE1 lista para escalar a m\xE1s emisores sin cambios de c\xF3digo."))}const TABS=[["home","Inicio","home"],["cc","Tarjetas","card"],["save","Ahorro","savings"],["picks","Sugerencias","spark"],["products","Productos","grid"]],MAIN=TABS.map(e=>e[0]),SUBVIEWS={history:"Historial",profile:"Perfil",admin:"Admin"},TITLES={home:"Norte",cc:"Asesor de tarjetas",save:"Asesor de ahorro",picks:"Sugerencias",products:"Productos",...SUBVIEWS};function App(){const[e,a]=useState(()=>LS.get(K_SESSION)),[s,t]=useState(()=>{const g=LS.get(K_MARKET),E=LS.get(K_USER);return g&&E?{...EMPTY_DB,...g.data,...E.data}:null}),[n,i]=useState("home"),[r,c]=useState(!1),[_,l]=useState("home"),[o,d]=useState(!1),[v,m]=useState(""),[h,N]=useState(null),[C,A]=useState(0),[f,u]=useState(()=>{const g=LS.get(K_MARKET);return g?g.at:null}),k=useRef(null);useEffect(()=>writeQueue.subscribe(A),[]),useEffect(()=>{if(!h)return;const g=setTimeout(()=>N(null),2600);return()=>clearTimeout(g)},[h]);const y=g=>N({text:g}),P=g=>N({text:g,bad:!0}),B=g=>{LS.set(K_MARKET,{at:Date.now(),data:pick(g,MARKET_KEYS)}),LS.set(K_USER,{at:Date.now(),data:pick(g,USER_KEYS)})},w=useCallback(async()=>{if(e){d(!0);try{const g=await apiGet({action:"bootstrap",user_id:e.user_id});if(g.ok){const E={...EMPTY_DB,...g.data};t(E),B(E),u(Date.now()),m("")}else m(g.error||"No se pudieron cargar los datos")}catch{m("Sin conexi\xF3n con el servidor")}d(!1)}},[e]);useEffect(()=>{e&&w()},[e,w]);const S=g=>t(E=>{if(!E)return E;const x=g(E);return B(x),x}),j=g=>{const E={movement_id:uid("mv"),user_id:e.user_id,timestamp:new Date().toISOString(),flow:g.flow,direction:g.direction||"",merchant_category:g.merchant_category||"",amount:g.amount,recommended_product_id:g.recommended_product_id,computed_benefit_mxn:g.computed_benefit_mxn,notes:"registrado desde la app"};S(x=>({...x,movements:[...x.movements,E]})),writeQueue.push({action:"logMovement",...E},()=>P("No se pudo guardar el movimiento")),y("Movimiento registrado")},I=g=>{S(E=>({...E,movements:E.movements.filter(x=>x.movement_id!==g)})),writeQueue.push({action:"deleteMovement",movement_id:g},()=>P("No se pudo eliminar")),y("Movimiento eliminado")},D=(g,E)=>{const x={id:uid("up"),user_id:e.user_id,product_type:g,product_id:E,current_balance:g==="account"?0:"",notes:""};S(L=>({...L,userProducts:[...L.userProducts,x]})),writeQueue.push({action:"addUserProduct",...x},()=>P("No se pudo agregar")),y(g==="card"?"Tarjeta agregada":"Cuenta agregada")},p=(g,E)=>{const x=s.userProducts.find(L=>L.user_id===e.user_id&&L.product_type===g&&L.product_id===E);x&&(S(L=>({...L,userProducts:L.userProducts.filter(F=>F.id!==x.id)})),writeQueue.push({action:"removeUserProduct",id:x.id},()=>P("No se pudo quitar")),y(g==="card"?"Tarjeta quitada":"Cuenta quitada"))},b=(g,E)=>{S(x=>({...x,userProducts:x.userProducts.map(L=>L.id===g?{...L,current_balance:E}:L)})),writeQueue.push({action:"updateUserProduct",id:g,current_balance:E},()=>P("No se pudo actualizar el saldo")),y("Saldo actualizado")},M=g=>{S(E=>({...E,users:E.users.map(x=>x.user_id===e.user_id?{...x,name:g}:x)})),a(E=>{const x={...E,name:g};return LS.set(K_SESSION,x),x}),writeQueue.push({action:"updateUser",user_id:e.user_id,name:g},()=>P("No se pudo guardar el nombre")),y("Nombre actualizado")},T=g=>{MAIN.indexOf(g)<0&&MAIN.indexOf(n)>=0&&l(n),i(g),c(!1),k.current&&(k.current.scrollTop=0),window.scrollTo(0,0)},z=()=>{LS.del(K_SESSION),LS.del(K_USER),a(null),i("home")},O=()=>{LS.del(K_SESSION),LS.del(K_USER),a(null),i("home")},U=g=>{const E={user_id:g.user_id,name:g.name,is_admin:g.is_admin};LS.set(K_SESSION,E),a(E),i("home")};if(!e)return React.createElement(Login,{onLogin:U,seedUsers:s?s.users:null});if(!s)return React.createElement("div",{className:"app"},React.createElement("div",{className:"topbar"},React.createElement("span",{className:"brand"},React.createElement(Logo,{size:20,plain:!0})," Norte")),React.createElement("div",{className:"screen"},React.createElement("div",{className:"skel tall"}),React.createElement("div",{className:"skel tall"}),React.createElement("div",{className:"skel"}),v&&React.createElement("div",{className:"err"},v," ",React.createElement("button",{className:"link",onClick:w},"Reintentar"))));const R=s.users.find(g=>g.user_id===e.user_id)||e,q=!!SUBVIEWS[n],V=f?new Date(f).toLocaleTimeString("es-MX",{hour:"2-digit",minute:"2-digit"}):null;return React.createElement("div",{className:"app"},React.createElement("div",{className:"topbar"},q?React.createElement("button",{className:"icon-btn light",onClick:()=>T(_),"aria-label":"Atr\xE1s"},React.createElement(Ico,{n:"right",s:18,style:{transform:"rotate(180deg)"}})):React.createElement("span",{className:"brand"},React.createElement(Logo,{size:20,plain:!0})," ",n==="home"?"Norte":TITLES[n]),q&&React.createElement("span",{className:"topbar-title"},TITLES[n]),React.createElement("div",{className:"topbar-r"},(o||C>0)&&React.createElement("span",{className:"spin small"}),React.createElement("button",{className:"avatar-btn",onClick:()=>c(!0),"aria-label":"Men\xFA",style:{background:bankColor(R.name)}},String(R.name||"?").slice(0,1).toUpperCase()))),v&&React.createElement("div",{className:"banner"},React.createElement(Ico,{n:"alert",s:15})," ",v,React.createElement("button",{className:"link",onClick:w},"Reintentar")),React.createElement("div",{className:"screen",ref:k},n==="home"&&React.createElement(Home,{d:s,user:R,go:T}),n==="cc"&&React.createElement(CardAdvisor,{d:s,user:R,logMovement:j,go:T}),n==="save"&&React.createElement(SavingsAdvisor,{d:s,user:R,logMovement:j,setBalance:b,go:T}),n==="products"&&React.createElement(Products,{d:s,user:R,addProduct:D,removeProduct:p}),n==="picks"&&React.createElement(Suggestions,{d:s,user:R,addProduct:D,go:T}),n==="history"&&React.createElement(History,{d:s,user:R,deleteMovement:I}),n==="profile"&&React.createElement(Profile,{d:s,user:R,onSignOut:z,onSwitch:O,saveName:M,go:T}),n==="admin"&&R.is_admin&&React.createElement(Admin,{d:s})),React.createElement("nav",{className:"tabbar"},TABS.map(([g,E,x])=>React.createElement("button",{key:g,className:"tabb"+(n===g?" on":""),onClick:()=>T(g)},React.createElement(Ico,{n:x,s:21,w:n===g?2:1.7}),React.createElement("span",null,E)))),React.createElement(Menu,{open:r,onClose:()=>c(!1),d:s,user:R,go:T,onRefresh:w,syncing:o,lastSync:V,onSignOut:z}),React.createElement(Toast,{msg:h}))}ReactDOM.createRoot(document.getElementById("root")).render(React.createElement(App,null));
+
   }
-
-  // contextual perks only (always-on coverage has no category match -> listed on card, not scored)
-  const perks = d.cardPerks.filter(p=>p.card_id===card.card_id && p.applies_to_category===category);
-  const perkValue = perks.reduce((s,p)=>s+num(p.mxn_value),0);
-  return {card,rate,rtype,reward,perkValue,perks,usedBonus:useBonus,capped,pointsEstimated,optional,score:reward+perkValue};
-}
-function ccRecommend(d,uid,category,amount){
-  const cards = heldCards(d,uid);
-  return cards.map(c=>scoreCard(d,c,category,amount,uid)).sort((a,b)=>b.score-a.score);
-}
-
-function tiersFor(d,acctId){ return d.yieldTiers.filter(t=>t.account_id===acctId).sort((a,b)=>num(a.tier_min)-num(b.tier_min)); }
-function boostActive(d,uid,acct){
-  if(acct.boost_apy==='' ) return false;
-  const held = heldCards(d,uid).some(c=>c.card_id===acct.boost_card_id);
-  return held && mtdSpend(d,uid,acct.boost_card_id) >= num(acct.boost_min_credit_spend);
-}
-function annualYield(d,uid,acct,balance){
-  let y=0;
-  const boost = boostActive(d,uid,acct) ? num(acct.boost_apy) : 0;
-  if(acct.yield_type==='tiered'){
-    for(const t of tiersFor(d,acct.account_id)){
-      const lo=num(t.tier_min), hi=t.tier_max===''?Infinity:num(t.tier_max);
-      const portion=Math.max(0,Math.min(balance,hi)-lo);
-      y += portion*(num(t.apy)+boost)/100;
-    }
-  } else {
-    const cap=acct.yield_cap===''?Infinity:num(acct.yield_cap);
-    const earning=Math.min(balance,cap);
-    y += earning*(num(acct.base_apy)+boost)/100;
-  }
-  y -= num(acct.monthly_fee)*12;
-  return y;
-}
-function marginalRate(d,uid,acct,balance){
-  const boost = boostActive(d,uid,acct)?num(acct.boost_apy):0;
-  if(acct.yield_type==='tiered'){
-    let r=0;
-    for(const t of tiersFor(d,acct.account_id)){
-      const lo=num(t.tier_min), hi=t.tier_max===''?Infinity:num(t.tier_max);
-      if(balance>lo) r=num(t.apy)+boost;
-    }
-    return r;
-  }
-  const cap=acct.yield_cap===''?Infinity:num(acct.yield_cap);
-  return balance<=cap ? num(acct.base_apy)+boost : 0;
-}
-function savingsIn(d,uid,amount){
-  const accts=heldAccounts(d,uid);
-  const ranked=accts.map(a=>{
-    const eligible = amount>=num(a.min_balance);
-    return {acct:a,eligible,benefit:eligible?annualYield(d,uid,a,amount):0,boost:boostActive(d,uid,a)};
-  }).sort((x,y)=>y.benefit-x.benefit);
-  // split via rate bands across eligible accounts
-  const bands=[];
-  accts.filter(a=>amount>=num(a.min_balance)).forEach(a=>{
-    const boost=boostActive(d,uid,a)?num(a.boost_apy):0;
-    if(a.yield_type==='tiered'){
-      tiersFor(d,a.account_id).forEach(t=>{
-        const lo=num(t.tier_min),hi=t.tier_max===''?Infinity:num(t.tier_max);
-        bands.push({rate:num(t.apy)+boost,cap:hi-lo,acct:a});
-      });
-    } else {
-      const cap=a.yield_cap===''?Infinity:num(a.yield_cap);
-      bands.push({rate:num(a.base_apy)+boost,cap,acct:a});
-    }
-  });
-  bands.sort((x,y)=>y.rate-x.rate);
-  let left=amount; const alloc={};
-  bands.forEach(b=>{ if(left<=0)return; const take=Math.min(left,b.cap); alloc[b.acct.account_id]=(alloc[b.acct.account_id]||0)+take; left-=take; });
-  let splitTotal=0; const splitParts=[];
-  Object.keys(alloc).forEach(id=>{
-    const a=accts.find(x=>x.account_id===id);
-    splitTotal+=annualYield(d,uid,a,alloc[id]);
-    splitParts.push({acct:a,amount:alloc[id]});
-  });
-  return {ranked, best:ranked[0], split:{total:splitTotal,parts:splitParts.sort((a,b)=>b.amount-a.amount)}};
-}
-function savingsOut(d,uid,amount){
-  const accts=heldAccounts(d,uid).filter(a=>a.liquidity!=='term' && a.current_balance>0);
-  const ranked=accts.map(a=>{
-    const mr=marginalRate(d,uid,a,a.current_balance);
-    const enough=a.current_balance>=amount;
-    const breaksMin=(a.current_balance-amount)<num(a.min_balance);
-    const losesBoost=breaksMin && a.boost_apy!=='';
-    return {acct:a,marginal:mr,enough,breaksMin,losesBoost,costPerYear:amount*mr/100};
-  }).sort((x,y)=>x.costPerYear-y.costPerYear);
-  return {ranked,best:ranked[0]};
-}
-
-function newCardPicks(d,uid){
-  const u=d.users.find(x=>x.user_id===uid);
-  const held=heldCards(d,uid); const heldIds=held.map(c=>c.card_id);
-  // last-month category spend
-  const spend={};
-  d.movements.filter(m=>m.user_id===uid && m.flow==='cc').forEach(m=>{ spend[m.merchant_category]=(spend[m.merchant_category]||0)+num(m.amount); });
-  const rewardOn=(card,cat,amt)=>scoreCard(d,card,cat,amt,uid).reward;
-  const cur={}; Object.keys(spend).forEach(cat=>{ cur[cat]=Math.max(0,...held.map(c=>rewardOn(c,cat,spend[cat])),0); });
-  const candidates=d.cards.filter(c=>!heldIds.includes(c.card_id) && num(u.risk_score)>=num(c.min_risk_score));
-  return candidates.map(c=>{
-    let proj=0,base=0;
-    Object.keys(spend).forEach(cat=>{ proj+=rewardOn(c,cat,spend[cat]); base+=cur[cat]; });
-    const uplift = proj - base - num(c.annual_fee)/12;
-    return {card:c,uplift,monthlyExtra:proj-base,fee:num(c.annual_fee)};
-  }).filter(x=>x.uplift>0).sort((a,b)=>b.uplift-a.uplift).slice(0,3);
-}
-function newAccountPicks(d,uid){
-  const u=d.users.find(x=>x.user_id===uid);
-  const held=heldAccounts(d,uid); const heldIds=held.map(a=>a.account_id);
-  const deposits=d.movements.filter(m=>m.user_id===uid && m.flow==='debit' && m.direction==='in').map(m=>num(m.amount));
-  if(!deposits.length) return [];
-  const typical=Math.round(deposits.reduce((a,b)=>a+b,0)/deposits.length);
-  const bestHeld=Math.max(0,...held.map(a=>annualYield(d,uid,a,typical)),0);
-  const cands=d.accounts.filter(a=>!heldIds.includes(a.account_id) && num(u.risk_score)>=num(a.min_risk_score));
-  return cands.map(a=>{
-    const y=annualYield(d,uid,{...a,current_balance:typical},typical);
-    return {acct:a,typical,uplift:y-bestHeld};
-  }).filter(x=>x.uplift>0).sort((a,b)=>b.uplift-a.uplift).slice(0,2);
-}
-
-// ---------- UI ----------
-function Logo({size=40,plain=false}){
-  return (<svg width={size} height={size} viewBox="0 0 42 42" style={{flex:'0 0 auto',display:'block'}}>
-    {!plain&&<rect width="42" height="42" rx="11" fill="#1C2431"/>}
-    <polygon points="21,8 26,22 21,19.5 16,22" fill="#D67B4C"/>
-    <polygon points="21,34 16,22 21,24.5 26,22" fill={plain?'#9aa6b4':'#8a97a6'}/>
-    <circle cx="21" cy="21.5" r="2.2" fill="#fff"/>
-  </svg>);
-}
-function Login({onLogin}){
-  const [users,setUsers]=useState(null);
-  const [sel,setSel]=useState(null);
-  const [pin,setPin]=useState('');
-  const [err,setErr]=useState('');
-  const [busy,setBusy]=useState(false);
-  useEffect(()=>{ apiGet({action:'bootstrap'}).then(r=>{ if(r.ok) setUsers(r.data.users); else setErr('No se pudo cargar. '+(r.error||'')); }).catch(e=>setErr('Error de red: '+e.message)); },[]);
-  const go=async()=>{
-    setErr(''); setBusy(true);
-    try{ const r=await apiGet({action:'login',user_id:sel,pin}); if(r.ok) onLogin(r.user); else setErr('NIP incorrecto, inténtalo de nuevo.'); }
-    catch(e){ setErr('Error de red: '+e.message); }
-    setBusy(false);
-  };
-  return (
-    <div className="center"><div className="login">
-      <div style={{textAlign:'center',marginBottom:22}}>
-        <div style={{display:'flex',justifyContent:'center',marginBottom:10}}><Logo size={46}/></div><h1 style={{fontSize:26,letterSpacing:'-.02em'}}>Norte</h1>
-        <div className="sub" style={{marginTop:6}}>Tu norte financiero.</div>
-      </div>
-      <div className="card">
-        <label className="fld">¿Quién entra?</label>
-        {!users && <div className="empty">Cargando…</div>}
-        <div className="ulist">
-          {users && users.map(u=>(
-            <button key={u.user_id} className={"ucard"+(sel===u.user_id?' sel':'')} onClick={()=>{setSel(u.user_id);setErr('')}}>
-              <div className="nm">{u.name}</div>
-              <div className="meta" style={{fontSize:12,color:'var(--muted)'}}>{u.is_admin?'admin':'miembro'}</div>
-            </button>
-          ))}
-        </div>
-        {sel && <>
-          <label className="fld">Ingresa tu NIP</label>
-          <input type="password" inputMode="numeric" value={pin} onChange={e=>setPin(e.target.value)} placeholder="••••" onKeyDown={e=>e.key==='Enter'&&go()} />
-          <div style={{height:12}}/>
-          <button className="btn" disabled={!pin||busy} onClick={go}>{busy?<span className="spin"/>:'Entrar'}</button>
-        </>}
-        {err && <div className="err">{err}</div>}
-      </div>
-      <div className="note" style={{textAlign:'center'}}>NIP demo — Pichi 9408 · Bomber 3087 · Lalu 5878 · Laura 6223 · Jorge 5520 · Tester 3390</div>
-    </div></div>
-  );
-}
-
-function Breakdown({rows}){
-  return <div className="bd">{rows.map((r,i)=><div className="li" key={i}><span>{r.k}</span><span className="v" style={r.c?{color:r.c}:{}}>{r.v}</span></div>)}</div>;
-}
-
-function CCAdvisor({d,user,refresh}){
-  const cats=d.categories;
-  const [cat,setCat]=useState(cats[0]?.category_key||'');
-  const [amt,setAmt]=useState('');
-  const [res,setRes]=useState(null);
-  const [logged,setLogged]=useState(false);
-  const [busy,setBusy]=useState(false);
-  const run=()=>{ setLogged(false); setRes(ccRecommend(d,user.user_id,cat,num(amt))); };
-  const log=async()=>{
-    setBusy(true);
-    await apiPost({action:'logMovement',user_id:user.user_id,flow:'cc',merchant_category:cat,amount:num(amt),recommended_product_id:res[0].card.card_id,computed_benefit_mxn:Number(res[0].score.toFixed(2)),notes:'logged from app'});
-    setBusy(false); setLogged(true); refresh();
-  };
-  const held=heldCards(d,user.user_id);
-  return (
-    <div className="card">
-      <h2>Asesor de tarjetas</h2>
-      <div className="sub">¿Dónde y cuánto?</div>
-      <label className="fld">Comercio</label>
-      <select value={cat} onChange={e=>{setCat(e.target.value);setRes(null)}}>
-        {cats.map(c=><option key={c.category_key} value={c.category_key}>{c.display_label}</option>)}
-      </select>
-      <div style={{height:12}}/>
-      <label className="fld">Monto (MXN)</label>
-      <input type="number" value={amt} onChange={e=>{setAmt(e.target.value);setRes(null)}} placeholder="ej. 1500" onKeyDown={e=>e.key==='Enter'&&run()}/>
-      <div style={{height:14}}/>
-      <button className="btn" disabled={!amt||num(amt)<=0||!held.length} onClick={run}>Encuentra tu mejor tarjeta</button>
-      {!held.length && <div className="note">Aún no tienes tarjetas — agrégalas en Productos.</div>}
-      {res && res.length>0 && <>
-        <div className="verdict">
-          <div className="eyebrow">Usa esta tarjeta</div>
-          <div className="pick">{res[0].card.card_name}
-            {res[0].usedBonus && <span className="pill amber">{res[0].rate}% bonus</span>}
-            {res[0].capped && <span className="pill">tope alcanzado</span>}
-            {res[0].pointsEstimated && <span className="pill">puntos est.</span>}
-          </div>
-          <div className="big">{mxn2(res[0].score)}</div>
-          <div className="sub" style={{margin:'2px 0 0'}}>de vuelta en esta compra</div>
-          <Breakdown rows={[
-            {k:`Recompensa (${res[0].rate}% ${rtl(res[0].rtype)})`, v:mxn2(res[0].reward)},
-            ...(res[0].perkValue>0?[{k:'Valor de beneficios',v:'+ '+mxn2(res[0].perkValue),c:'var(--amber)'}]:[]),
-            {k:'Comisión anual (info)', v:mxn(num(res[0].card.annual_fee))+'/año'},
-          ]}/>
-          {res[0].perks.length>0 && <div className="note">Beneficios aquí: {res[0].perks.map(p=>p.perk_name).join(', ')}</div>}
-          {res[0].pointsEstimated && <div className="note">Puntos valuados en aprox. {mxn2(MARKET_POINT_VALUE_MXN)}/pto — pendiente de verificar por emisor.</div>}
-          {res[0].optional && res[0].optional.length>0 && <div className="note">Esta tarjeta tiene un bonus de categoría opcional que puedes activar — no se cuenta aquí.</div>}
-          <div style={{height:12}}/>
-          <button className="btn win" onClick={log} disabled={busy||logged}>{busy?<span className="spin"/>:logged?'Registrado ✓':'Registrar compra'}</button>
-        </div>
-        {res.length>1 && <div style={{marginTop:14}}>
-          <div className="sub" style={{marginBottom:0}}>Tus otras tarjetas</div>
-          {res.slice(1).map((r,i)=>(
-            <div className="alt" key={i}><span className="nm">{r.card.card_name}</span><span className="amt">{mxn2(r.score)}</span></div>
-          ))}
-        </div>}
-      </>}
-    </div>
-  );
-}
-
-function SavingsAdvisor({d,user,refresh}){
-  const [dir,setDir]=useState('in');
-  const [amt,setAmt]=useState('');
-  const [res,setRes]=useState(null);
-  const [logged,setLogged]=useState(false);
-  const [busy,setBusy]=useState(false);
-  const run=()=>{ setLogged(false); setRes(dir==='in'?savingsIn(d,user.user_id,num(amt)):savingsOut(d,user.user_id,num(amt))); };
-  const log=async()=>{
-    setBusy(true);
-    const best=res.best;
-    await apiPost({action:'logMovement',user_id:user.user_id,flow:'debit',direction:dir,amount:num(amt),recommended_product_id:best.acct.account_id,computed_benefit_mxn:Number((dir==='in'?best.benefit:0).toFixed(2)),notes:'logged from app'});
-    setBusy(false); setLogged(true); refresh();
-  };
-  const accts=heldAccounts(d,user.user_id);
-  const showSplit = res && dir==='in' && res.split && res.best && res.split.total > res.best.benefit + 1 && res.split.parts.length>1;
-  return (
-    <div className="card">
-      <h2>Asesor de ahorro</h2>
-      <div className="sub">¿Entra o sale dinero?</div>
-      <div className="seg">
-        <button className={dir==='in'?'on':''} onClick={()=>{setDir('in');setRes(null)}}>Depósito</button>
-        <button className={dir==='out'?'on':''} onClick={()=>{setDir('out');setRes(null)}}>Retiro</button>
-      </div>
-      <div style={{height:12}}/>
-      <label className="fld">Monto (MXN)</label>
-      <input type="number" value={amt} onChange={e=>{setAmt(e.target.value);setRes(null)}} placeholder="ej. 50000" onKeyDown={e=>e.key==='Enter'&&run()}/>
-      <div style={{height:14}}/>
-      <button className="btn" disabled={!amt||num(amt)<=0||!accts.length} onClick={run}>{dir==='in'?'¿A dónde lo pongo?':'¿De dónde lo saco?'}</button>
-      {!accts.length && <div className="note">Aún no tienes cuentas — agrégalas en Productos.</div>}
-
-      {res && dir==='in' && res.best && <>
-        <div className="verdict">
-          <div className="eyebrow">Deposita aquí</div>
-          <div className="pick">{res.best.acct.account_name}{res.best.boost&&<span className="pill win">boost activo</span>}</div>
-          <div className="big">{mxn(res.best.benefit)}</div>
-          <div className="sub" style={{margin:'2px 0 0'}}>rendimiento estimado al año</div>
-          <div style={{height:12}}/>
-          <button className="btn win" onClick={log} disabled={busy||logged}>{busy?<span className="spin"/>:logged?'Registrado ✓':'Registrar depósito'}</button>
-        </div>
-        {showSplit && <div className="card" style={{marginTop:14,background:'var(--amber-soft)',borderColor:'var(--amber)'}}>
-          <div className="eyebrow" style={{color:'var(--amber)'}}>Optimiza entre cuentas</div>
-          <div className="sub" style={{margin:'4px 0 8px',color:'var(--ink2)'}}>Con los topes, dividir rinde más — {mxn(res.split.total)}/año (<b>+{mxn(res.split.total-res.best.benefit)}</b>):</div>
-          {res.split.parts.map((p,i)=><div className="alt" key={i} style={{borderColor:'rgba(181,121,26,.25)'}}><span className="nm">{p.acct.account_name}</span><span className="amt">{mxn(p.amount)}</span></div>)}
-        </div>}
-        {res.ranked.length>1 && <div style={{marginTop:14}}>
-          <div className="sub" style={{marginBottom:0}}>Todas tus cuentas</div>
-          {res.ranked.slice(1).map((r,i)=><div className="alt" key={i}><span className="nm">{r.acct.account_name}{!r.eligible&&<span className="pill">bajo el mínimo</span>}</span><span className="amt">{r.eligible?mxn(r.benefit)+'/año':'—'}</span></div>)}
-        </div>}
-      </>}
-
-      {res && dir==='out' && res.best && <>
-        <div className="verdict" style={{borderColor:'var(--indigo)',background:'var(--indigo-soft)'}}>
-          <div className="eyebrow" style={{color:'var(--indigo)'}}>Saca de aquí</div>
-          <div className="pick">{res.best.acct.account_name}</div>
-          <div className="sub" style={{margin:'2px 0 0'}}>Menor costo — solo renuncias a <b>{mxn2(res.best.costPerYear)}</b>/año de rendimiento futuro ({res.best.marginal}% marginal).</div>
-          {!res.best.enough && <div className="note" style={{color:'var(--amber)'}}>Ojo: el saldo es {mxn(res.best.acct.current_balance)}, menor al monto.</div>}
-          {res.best.losesBoost && <div className="note" style={{color:'var(--amber)'}}>Esto cae por debajo del mínimo que mantiene un boost de rendimiento — considera otra cuenta.</div>}
-          <div style={{height:12}}/>
-          <button className="btn" onClick={log} disabled={busy||logged}>{busy?<span className="spin"/>:logged?'Registrado ✓':'Registrar retiro'}</button>
-        </div>
-        {res.ranked.length>1 && <div style={{marginTop:14}}>
-          <div className="sub" style={{marginBottom:0}}>Otras fuentes</div>
-          {res.ranked.slice(1).map((r,i)=><div className="alt" key={i}><span className="nm">{r.acct.account_name}</span><span className="amt">{r.marginal}% · {mxn(r.acct.current_balance)}</span></div>)}
-        </div>}
-      </>}
-    </div>
-  );
-}
-
-function CardDetails({d,c}){
-  const issuer=id=>{const i=d.issuers.find(x=>x.issuer_id===id);return i?i.name:'';};
-  const catLabel=k=>{const x=d.categories.find(y=>y.category_key===k);return x?x.display_label:k;};
-  const bonuses=d.cardRewards.filter(r=>r.card_id===c.card_id);
-  const perks=d.cardPerks.filter(p=>p.card_id===c.card_id);
-  return (<div className="detail">
-    <div className="drow"><span>Emisor</span><span>{issuer(c.issuer_id)}</span></div>
-    <div className="drow"><span>Nivel</span><span>{c.tier}</span></div>
-    <div className="drow"><span>Anualidad</span><span>{num(c.annual_fee)?mxn(num(c.annual_fee))+'/año':'Sin anualidad'}</span></div>
-    {(()=>{const pv=pointValue(null,c);return <div className="drow"><span>Recompensa base</span><span>{num(c.base_reward_rate)}% {rtl(c.reward_type)}{c.reward_type==='points'?` · 1 pto ≈ ${mxn2(pv.pv)}${pv.est?' (est.)':''}`:''}</span></div>;})()}
-    {bonuses.length>0&&<div className="dsub">Bonus por categoría</div>}
-    {bonuses.map(b=>{
-      const opt=String(b.user_selectable||'no').toLowerCase()==='yes';
-      const adds=String(b.replaces_or_adds_to_base||'replaces').toLowerCase()==='adds';
-      const capN=knownNum(b.monthly_cap), per=(b.cap_period||'monthly').toLowerCase(), basis=(b.cap_basis||'mxn').toLowerCase();
-      const capTxt=capN!==null?` · tope ${basis==='points'?capN+' pts':mxn(capN)}/${per==='weekly'?'sem':'mes'}`:'';
-      const msN=knownNum(b.min_spend), msPer=(b.min_spend_period||'per_txn').toLowerCase();
-      const msTxt=msN!==null?` · mín ${mxn(msN)}${msPer==='monthly'?'/mes':''}`:'';
-      return <div className="drow" key={b.reward_id}><span>{catLabel(b.category)}{opt?' *':''}</span><span>{num(b.rate)}%{adds?' +base':''}{capTxt}{msTxt}</span></div>;
-    })}
-    {bonuses.some(b=>String(b.user_selectable||'no').toLowerCase()==='yes') && <div className="note">* categoría opcional que eliges/activas — se muestra aquí, aún no se cuenta en las recomendaciones.</div>}
-    {perks.length>0&&<div className="dsub">Beneficios</div>}
-    {perks.map(p=><div className="drow" key={p.perk_id}><span>{p.perk_name}{!p.applies_to_category?' · siempre activo':''}</span><span>{p.mxn_value!==''?'≈ '+mxn(num(p.mxn_value)):'incluido'}</span></div>)}
-    {perks.some(p=>!p.applies_to_category) && <div className="note">Los beneficios siempre activos se muestran como referencia y no se suman al puntaje de una compra.</div>}
-    <div className="drow"><span>Score mín. de riesgo</span><span>{num(c.min_risk_score)}</span></div>
-  </div>);
-}
-
-function AccountDetails({d,a}){
-  const issuer=id=>{const i=d.issuers.find(x=>x.issuer_id===id);return i?i.name:'';};
-  const cardName=id=>{const x=d.cards.find(y=>y.card_id===id);return x?x.card_name:id;};
-  const tiers=d.yieldTiers.filter(t=>t.account_id===a.account_id).sort((x,y)=>num(x.tier_min)-num(y.tier_min));
-  return (<div className="detail">
-    <div className="drow"><span>Emisor</span><span>{issuer(a.issuer_id)}</span></div>
-    {a.yield_type==='flat'
-      ? <div className="drow"><span>Rendimiento</span><span>{num(a.base_apy)}% anual{a.yield_cap!==''?` · hasta ${mxn(num(a.yield_cap))}`:' · sin tope'}</span></div>
-      : <div className="dsub">Rendimiento por niveles</div>}
-    {a.yield_type==='tiered'&&tiers.map(t=><div className="drow" key={t.tier_id}><span>{mxn(num(t.tier_min))} – {t.tier_max===''?'∞':mxn(num(t.tier_max))}</span><span>{num(t.apy)}% anual</span></div>)}
-    <div className="drow"><span>Comisión mensual</span><span>{num(a.monthly_fee)?mxn(num(a.monthly_fee))+'/mes':'Ninguna'}</span></div>
-    <div className="drow"><span>Saldo mínimo</span><span>{num(a.min_balance)?mxn(num(a.min_balance)):'Ninguno'}</span></div>
-    <div className="drow"><span>Liquidez</span><span>{a.liquidity==='term'?'Bloqueado (plazo)':'Inmediata'}</span></div>
-    {a.boost_apy!==''&&<div className="drow"><span>Boost de rendimiento</span><span>+{num(a.boost_apy)}% si ≥ {mxn(num(a.boost_min_credit_spend))}/mes en {cardName(a.boost_card_id)}</span></div>}
-    <div className="drow"><span>Score mín. de riesgo</span><span>{num(a.min_risk_score)}</span></div>
-  </div>);
-}
-
-function PItem({open,onToggle,name,meta,action,children}){
-  return (<div className="pitem">
-    <div className={"phead"+(open?" open":"")} onClick={onToggle}>
-      <div><div style={{fontWeight:600}}>{name}</div><div className="meta">{meta}</div></div>
-      <div style={{display:'flex',alignItems:'center',gap:10}}>{action}<span className="chev">▶</span></div>
-    </div>
-    {open&&children}
-  </div>);
-}
-
-function MyProducts({d,user,refresh}){
-  const [busy,setBusy]=useState('');
-  const [open,setOpen]=useState(null);
-  const toggle=k=>setOpen(open===k?null:k);
-  const cards=heldCards(d,user.user_id);
-  const accts=heldAccounts(d,user.user_id);
-  const heldCardIds=cards.map(c=>c.card_id);
-  const heldAcctIds=accts.map(a=>a.account_id);
-  const issuer=id=>{const i=d.issuers.find(x=>x.issuer_id===id);return i?i.name:'';};
-  const upRow=(type,id)=>d.userProducts.find(p=>p.user_id===user.user_id&&p.product_type===type&&p.product_id===id);
-  const remove=async(type,id)=>{ const row=upRow(type,id); if(!row)return; setBusy(id); await apiPost({action:'removeUserProduct',id:row.id}); setBusy(''); refresh(); };
-  const add=async(type,id)=>{ setBusy(id); await apiPost({action:'addUserProduct',user_id:user.user_id,product_type:type,product_id:id,current_balance:type==='account'?0:''}); setBusy(''); refresh(); };
-  const availCards=d.cards.filter(c=>!heldCardIds.includes(c.card_id));
-  const availAccts=d.accounts.filter(a=>!heldAcctIds.includes(a.account_id));
-  const removeBtn=(type,id)=><button className="x" onClick={e=>{e.stopPropagation();remove(type,id)}} disabled={busy===id}>Quitar</button>;
-  const addBtn=(type,id)=><button className="x" onClick={e=>{e.stopPropagation();add(type,id)}} disabled={busy===id}>Agregar</button>;
-  return (<>
-    <div className="card">
-      <h2>Mis tarjetas</h2><div className="sub">Toca una tarjeta para ver el detalle</div>
-      {!cards.length&&<div className="empty">Aún no tienes tarjetas.</div>}
-      {cards.map(c=><PItem key={c.card_id} open={open==='card:'+c.card_id} onToggle={()=>toggle('card:'+c.card_id)}
-        name={c.card_name} meta={`${issuer(c.issuer_id)} · ${c.tier} · ${num(c.annual_fee)?mxn(num(c.annual_fee))+'/año':'sin anualidad'}`}
-        action={removeBtn('card',c.card_id)}><CardDetails d={d} c={c}/></PItem>)}
-    </div>
-    <div className="card">
-      <h2>Mis cuentas</h2><div className="sub">Toca una cuenta para ver el detalle</div>
-      {!accts.length&&<div className="empty">Aún no tienes cuentas.</div>}
-      {accts.map(a=><PItem key={a.account_id} open={open==='account:'+a.account_id} onToggle={()=>toggle('account:'+a.account_id)}
-        name={a.account_name} meta={`${issuer(a.issuer_id)} · ${ytl(a.yield_type)} · saldo ${mxn(a.current_balance)}`}
-        action={removeBtn('account',a.account_id)}><AccountDetails d={d} a={a}/></PItem>)}
-    </div>
-    <div className="card">
-      <h2>Agregar producto</h2><div className="sub">Toca para ver el detalle, o agrégalo del mercado</div>
-      {availCards.map(c=><PItem key={c.card_id} open={open==='card:'+c.card_id} onToggle={()=>toggle('card:'+c.card_id)}
-        name={c.card_name} meta={`${issuer(c.issuer_id)} · tarjeta`} action={addBtn('card',c.card_id)}><CardDetails d={d} c={c}/></PItem>)}
-      {availAccts.map(a=><PItem key={a.account_id} open={open==='account:'+a.account_id} onToggle={()=>toggle('account:'+a.account_id)}
-        name={a.account_name} meta={`${issuer(a.issuer_id)} · cuenta`} action={addBtn('account',a.account_id)}><AccountDetails d={d} a={a}/></PItem>)}
-      {!availCards.length&&!availAccts.length&&<div className="empty">Ya tienes todo lo disponible.</div>}
-    </div>
-  </>);
-}
-
-function NewPicks({d,user}){
-  const cardPicks=useMemo(()=>newCardPicks(d,user.user_id),[d,user]);
-  const acctPicks=useMemo(()=>newAccountPicks(d,user.user_id),[d,user]);
-  const issuer=id=>{const i=d.issuers.find(x=>x.issuer_id===id);return i?i.name:'';};
-  return (
-    <div className="card">
-      <h2>Qué te conviene después</h2>
-      <div className="sub">Según cómo has gastado y ahorrado</div>
-      {!cardPicks.length&&!acctPicks.length&&<div className="empty">Registra algunos movimientos más y te mostraremos mejoras.</div>}
-      {cardPicks.map((p,i)=><div className="verdict" key={'c'+i} style={{borderColor:'var(--indigo)',background:'var(--indigo-soft)',marginTop:i?12:6}}>
-        <div className="eyebrow" style={{color:'var(--indigo)'}}>Mejor tarjeta</div>
-        <div className="pick" style={{fontSize:20}}>{p.card.card_name}</div>
-        <div className="sub" style={{margin:'2px 0 0'}}>Cerca de <b>{mxn(p.uplift)}/mes</b> más que tu combinación actual, ya con su anualidad de {mxn(p.fee)}/año — {issuer(p.card.issuer_id)}.</div>
-      </div>)}
-      {acctPicks.map((p,i)=><div className="verdict" key={'a'+i} style={{borderColor:'var(--amber)',background:'var(--amber-soft)',marginTop:12}}>
-        <div className="eyebrow" style={{color:'var(--amber)'}}>Mejor cuenta</div>
-        <div className="pick" style={{fontSize:20}}>{p.acct.account_name}</div>
-        <div className="sub" style={{margin:'2px 0 0'}}>En un depósito típico de {mxn(p.typical)}, cerca de <b>{mxn(p.uplift)}/año</b> más de rendimiento — {issuer(p.acct.issuer_id)}.</div>
-      </div>)}
-    </div>
-  );
-}
-
-function History({d,user}){
-  const mv=d.movements.filter(m=>m.user_id===user.user_id).sort((a,b)=>String(b.timestamp).localeCompare(String(a.timestamp)));
-  const label=id=>{const c=d.cards.find(x=>x.card_id===id);if(c)return c.card_name;const a=d.accounts.find(x=>x.account_id===id);return a?a.account_name:id;};
-  const catLabel=k=>{const c=d.categories.find(x=>x.category_key===k);return c?c.display_label:k;};
-  return (
-    <div className="card">
-      <h2>Historial</h2><div className="sub">Cada movimiento que has registrado</div>
-      {!mv.length&&<div className="empty">Nada registrado aún.</div>}
-      {mv.map((m,i)=><div className="mv" key={i}>
-        <div className="l">
-          <div style={{fontWeight:600}}>{m.flow==='cc'?catLabel(m.merchant_category):(m.direction==='in'?'Depósito':'Retiro')} · {mxn(num(m.amount))}</div>
-          <div className="t">{label(m.recommended_product_id)} · {String(m.timestamp).slice(0,10)}</div>
-        </div>
-        <div className="r" style={{color:num(m.computed_benefit_mxn)>0?'var(--win)':'var(--muted)'}}>{num(m.computed_benefit_mxn)>0?'+'+mxn2(num(m.computed_benefit_mxn)):'—'}</div>
-      </div>)}
-    </div>
-  );
-}
-
-function Admin({d}){
-  return (
-    <div className="card">
-      <h2>Admin</h2>
-      <div className="sub">Los datos de mercado se editan directo en la Google Sheet — los cambios se aplican al instante.</div>
-      <div className="prod"><div><div style={{fontWeight:600}}>{d.users.length} usuarios</div><div className="meta">{d.users.map(u=>u.name).join(', ')}</div></div></div>
-      <div className="prod"><div><div style={{fontWeight:600}}>{d.cards.length} tarjetas · {d.accounts.length} cuentas</div><div className="meta">en {d.issuers.length} emisores</div></div></div>
-      <div className="prod"><div><div style={{fontWeight:600}}>{d.movements.length} movimientos registrados en total</div><div className="meta">todos los usuarios</div></div></div>
-      <div className="note">El gancho ya está listo (is_admin) — dime qué acciones de admin quieres y las conecto aquí.</div>
-    </div>
-  );
-}
-
-function App(){
-  const [user,setUser]=useState(null);
-  const [d,setD]=useState(null);
-  const [view,setView]=useState('cc');
-  const [err,setErr]=useState('');
-  const load=async()=>{ try{ const r=await apiGet({action:'bootstrap'}); if(r.ok)setD(r.data); else setErr(r.error||'no se pudo cargar'); }catch(e){ setErr(e.message); } };
-  useEffect(()=>{ if(user) load(); },[user]);
-  if(!user) return <Login onLogin={setUser}/>;
-  if(!d) return <div className="center"><div className="empty">Cargando tus datos…{err&&<div className="err">{err}</div>}</div></div>;
-  const tabs=[['cc','Tarjetas'],['save','Ahorro'],['products','Productos'],['picks','Sugerencias'],['history','Historial']];
-  if(user.is_admin) tabs.push(['admin','Admin']);
-  return (<>
-    <div className="topbar">
-      <span className="brand" style={{display:'flex',alignItems:'center',gap:8}}><Logo size={20} plain/>Norte</span>
-      <span className="who">{user.name}{user.is_admin&&<span className="pill" style={{background:'rgba(255,255,255,.15)',color:'#fff'}}>admin</span>}<button onClick={()=>{setUser(null);setD(null)}}>Salir</button></span>
-    </div>
-    <div className="wrap">
-      <div className="tabs">{tabs.map(([k,l])=><button key={k} className={"tab"+(view===k?' active':'')} onClick={()=>setView(k)}>{l}</button>)}</div>
-      {view==='cc'&&<CCAdvisor d={d} user={user} refresh={load}/>}
-      {view==='save'&&<SavingsAdvisor d={d} user={user} refresh={load}/>}
-      {view==='products'&&<MyProducts d={d} user={user} refresh={load}/>}
-      {view==='picks'&&<NewPicks d={d} user={user}/>}
-      {view==='history'&&<History d={d} user={user}/>}
-      {view==='admin'&&user.is_admin&&<Admin d={d}/>}
-    </div>
-  </>);
-}
-ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+  if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
+  else boot();
+})();
 </script>
 </body>
 </html>
