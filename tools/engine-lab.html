@@ -137,6 +137,31 @@ table.terms td{padding:6px 4px;border-top:1px solid var(--line2);vertical-align:
   padding-top:14px;border-top:1px solid var(--line2)}
 @media(max-width:900px){.ub-body{grid-template-columns:1fr}}
 .h2s{font-weight:500;letter-spacing:0;text-transform:none;color:#B4B0A6;margin-left:6px}
+.gwrap{position:relative;display:grid;grid-auto-flow:column;grid-auto-columns:minmax(190px,1fr);
+  gap:26px;background:var(--sf);border:1px solid var(--line);border-radius:14px;padding:16px;overflow-x:auto}
+#gedges{position:absolute;inset:0;pointer-events:none;z-index:0}
+.gcol{position:relative;z-index:1;display:flex;flex-direction:column;gap:8px}
+.gcolh{font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);
+  padding-bottom:4px;border-bottom:1px solid var(--line);margin-bottom:2px}
+.gnode{position:relative;background:#FBFAF7;border:1px solid var(--line);border-radius:10px;
+  padding:8px 10px 8px 14px;cursor:pointer;transition:opacity .15s,box-shadow .15s}
+.gnode:hover{box-shadow:0 2px 10px rgba(28,36,49,.10)}
+.gnode.dim{opacity:.2}
+.gnode.focus{border-color:var(--ink);box-shadow:0 0 0 2px rgba(28,36,49,.14)}
+.gnode.warnnode{background:#FDF6F5}
+.gk{position:absolute;left:0;top:0;bottom:0;width:4px;border-radius:10px 0 0 10px}
+.gt{font-size:11.5px;font-weight:700;line-height:1.3;overflow-wrap:anywhere}
+.gf{font-size:10px;color:#5A6472;background:#F1EFEA;border-radius:5px;padding:4px 6px;margin-top:5px;
+  white-space:pre-wrap;line-height:1.45}
+.gv{font-size:13px;font-weight:700;margin-top:5px;font-variant-numeric:tabular-nums;color:var(--ink)}
+.gnode.warnnode .gv{color:var(--danger)}
+.gs{font-size:9.5px;color:var(--muted);margin-top:2px;text-transform:uppercase;letter-spacing:.04em}
+.glegend{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-top:12px;font-size:11.5px;color:var(--muted)}
+.glegend i{display:inline-block;width:9px;height:9px;border-radius:3px;margin-right:5px;vertical-align:-1px}
+.ghint{margin-left:auto}
+.gcheck{border-radius:10px;padding:9px 13px;font-size:12.5px;margin-bottom:12px;font-weight:600}
+.gcheck.ok{background:var(--teal-s);color:var(--teal)}
+.gcheck.bad{background:var(--danger-s);color:var(--danger)}
 .flowmap{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:12px;align-items:center;
   background:var(--sf);border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:16px}
 @media(max-width:900px){.flowmap{grid-template-columns:1fr;}.farrow{transform:rotate(90deg)}}
@@ -184,6 +209,7 @@ tr.v-miss .vp{color:var(--danger)}
   <button data-p="sv">Ahorro</button>
   <button data-p="tree">Árbol de decisión</button>
   <button data-p="vars">Variables y flujo</button>
+  <button data-p="graph">Mapa de cálculo</button>
 </div>
 
 <div class="userbar-wrap">
@@ -289,6 +315,17 @@ tr.v-miss .vp{color:var(--danger)}
 <div class="pane" id="pane-vars">
   <div class="lede"><b>El contrato de datos del motor.</b> Toda entrada que puede mover una decisión: de dónde sale, si la tenemos hoy y qué regla la consume. Lo que aparezca en rojo es exactamente lo que el skill de recolección tiene que ir a buscar.</div>
   <div id="vars"></div>
+</div>
+
+<div class="pane" id="pane-graph">
+  <div class="lede"><b>El grafo real del cálculo.</b> Cada variable es un nodo, cada fórmula una arista, y los valores que ves son los del producto seleccionado con el escenario actual. Sigue una línea de izquierda a derecha y tienes la recomendación completa, sin nada implícito.</div>
+  <div class="treepick">
+    <label class="f">Motor</label>
+    <select id="g-side"><option value="cc">Tarjetas</option><option value="sv">Ahorro</option></select>
+    <label class="f">Producto</label>
+    <select id="g-prod"></select>
+  </div>
+  <div id="graph"></div>
 </div>
 
 <div class="pane" id="pane-tree">
@@ -1041,7 +1078,9 @@ function renderTree(){
   }).join('<div class="arrow">↓</div>');
 }
 
-function run(){ runCC(); runSV(); renderTree(); if($('#vars')) renderVars(); }
+function run(){ runCC(); runSV(); renderTree();
+  if($('#vars')) renderVars();
+  if($('#graph') && typeof renderGraph==='function') renderGraph(); }
 
 /* ---- simulador ---- */
 function renderSim(){
@@ -1121,6 +1160,8 @@ function init(){
     if(t.id==='risk-mode'){ P.riskMode=t.value;
       $('#risk-custom').style.display=(t.value==='custom')?'block':'none'; run(); }
     if(t.id==='tree-side'||t.id==='tree-prod'){ renderTree(); }
+    if(t.id==='g-side'){ GSEL.side=t.value; GSEL.id=null; GSEL.focus=null; renderGraph(); }
+    if(t.id==='g-prod'){ GSEL.id=t.value; GSEL.focus=null; renderGraph(); }
   });
   document.addEventListener('input',function(e){
     var t=e.target;
@@ -1140,6 +1181,7 @@ function init(){
       $$('.pane').forEach(function(p){p.classList.toggle('on',p.id==='pane-'+b.dataset.p);});
       if(b.dataset.p==='tree') renderTree();
       if(b.dataset.p==='vars') renderVars();
+      if(b.dataset.p==='graph') renderGraph();
     };
   });
   run();
@@ -1284,6 +1326,360 @@ function renderVars(){
     '<div class="vs1"><b>'+VARS.length+'</b> variables en total</div></div>'+
     '<p class="vnote">La cobertura se mide contra los datos cargados en este momento, no está escrita a mano. Cuando conectes datos reales, esta pestaña reporta la verdad sin que nadie la actualice.</p>'+
     groups;
+}
+</script>
+<script>/* =====================================================================
+   MAPA DE CÁLCULO
+   El grafo real: cada variable un nodo, cada fórmula una arista, con el
+   valor vivo del producto que estés inspeccionando corriendo por encima.
+
+   Este archivo recalcula el puntaje paso a paso en vez de leer el rastro,
+   precisamente para poder mostrar los valores intermedios que el rastro
+   resume. Como eso abre la puerta a que se desincronice del motor, al
+   final compara su total contra evalCard/evalAccount y lo dice en pantalla.
+   ===================================================================== */
+
+/* The lab is standalone: these live in the app source, not here. */
+var rtl = function(t){ return ({points:'puntos',cashback:'cashback'})[t] || t || ''; };
+var ytl = function(t){ return ({flat:'tasa fija',tiered:'por niveles'})[t] || t || ''; };
+
+var KINDS = {
+  in:{t:'entrada',c:'#4A5B8C'}, gate:{t:'filtro',c:'#A83229'},
+  calc:{t:'intermedio',c:'#8F6210'}, term:{t:'término en pesos',c:'#0F7365'},
+  adj:{t:'ajuste',c:'#5B4A7A'}, out:{t:'resultado',c:'#B85F35'}
+};
+
+var GRAPH = {
+cc:{
+ layers:['Entradas','Filtros','Selección de regla','Términos en pesos','Ajuste y total'],
+ nodes:[
+  // L0 — entradas
+  {id:'monto',L:0,k:'in',t:'Monto de la compra',s:'escenario'},
+  {id:'cat',L:0,k:'in',t:'Categoría',s:'escenario'},
+  {id:'plan',L:0,k:'in',t:'Plan de pago',s:'escenario'},
+  {id:'baserate',L:0,k:'in',t:'cards.base_reward_rate',s:'market'},
+  {id:'rtype',L:0,k:'in',t:'cards.reward_type',s:'market'},
+  {id:'pvcard',L:0,k:'in',t:'cards.point_value_mxn',s:'market'},
+  {id:'bonusrate',L:0,k:'in',t:'cardRewards.rate',s:'market'},
+  {id:'minspend',L:0,k:'in',t:'cardRewards.min_spend',s:'market'},
+  {id:'minperiod',L:0,k:'in',t:'cardRewards.min_spend_period',s:'market'},
+  {id:'replaces',L:0,k:'in',t:'cardRewards.replaces_or_adds_to_base',s:'market'},
+  {id:'cap',L:0,k:'in',t:'cardRewards.monthly_cap',s:'market'},
+  {id:'capbasis',L:0,k:'in',t:'cardRewards.cap_basis',s:'market'},
+  {id:'shared',L:0,k:'in',t:'cardRewards.shared_cap_group',s:'market'},
+  {id:'perkval',L:0,k:'in',t:'cardPerks.mxn_value',s:'market'},
+  {id:'fee',L:0,k:'in',t:'cards.annual_fee',s:'market'},
+  {id:'msimax',L:0,k:'in',t:'cards.msi_max_months',s:'market'},
+  {id:'minrisk',L:0,k:'in',t:'cards.min_risk_score',s:'market'},
+  {id:'minincome',L:0,k:'in',t:'cards.min_income',s:'market'},
+  {id:'mtd',L:0,k:'in',t:'Gasto del mes en la tarjeta',s:'historial'},
+  {id:'prior',L:0,k:'in',t:'Recompensa ya ganada',s:'historial'},
+  {id:'held',L:0,k:'in',t:'¿Está en la cartera?',s:'cartera'},
+  {id:'score',L:0,k:'in',t:'users.risk_score',s:'perfil'},
+  {id:'income',L:0,k:'in',t:'users.monthly_income',s:'perfil'},
+  {id:'opp',L:0,k:'in',t:'Tasa de oportunidad',s:'param'},
+  {id:'mspend',L:0,k:'in',t:'Gasto mensual estimado',s:'param'},
+
+  // L1 — filtros
+  {id:'f_held',L:1,k:'gate',t:'Filtro: en cartera',f:'held = sí  ·  o modo mercado',from:['held']},
+  {id:'f_risk',L:1,k:'gate',t:'Filtro: score',f:'score ≥ min_risk_score;  si falta cualquiera → pasa marcada',from:['score','minrisk']},
+  {id:'f_inc',L:1,k:'gate',t:'Filtro: ingreso',f:'ingreso ≥ min_income;  si falta cualquiera → pasa marcada',from:['income','minincome']},
+
+  // L2 — selección
+  {id:'c_bonus',L:2,k:'calc',t:'¿Aplica el bonus?',
+   f:'per_txn → monto ≥ min_spend\nmonthly → gasto_del_mes ≥ min_spend',from:['bonusrate','minspend','minperiod','monto','mtd']},
+  {id:'c_rate',L:2,k:'calc',t:'Tasa efectiva',
+   f:'bonus?  ( adds → bonus + base ;  replaces → bonus )  :  base',from:['c_bonus','bonusrate','baserate','replaces']},
+  {id:'c_pv',L:2,k:'calc',t:'Valor del punto',
+   f:'cardRewards.point_value_mxn\n→ cards.point_value_mxn\n→ $0.25 por defecto  ⚠',from:['pvcard']},
+  {id:'c_unit',L:2,k:'calc',t:'Pesos por peso gastado',
+   f:'(tasa / 100) × (puntos ? valor_punto : 1)',from:['c_rate','rtype','c_pv']},
+  {id:'c_cap',L:2,k:'calc',t:'Tope en pesos',
+   f:'cap_basis = puntos ? tope × valor_punto : tope',from:['cap','capbasis','c_pv']},
+  {id:'c_left',L:2,k:'calc',t:'Tope disponible',
+   f:'max(0, tope_en_pesos − ya_ganado_en_el_periodo)',from:['c_cap','prior','shared']},
+  {id:'c_msi',L:2,k:'calc',t:'Meses aplicables',
+   f:'plan = contado ? 0 : min(plan, msi_max_months)',from:['plan','msimax']},
+
+  // L3 — términos
+  {id:'t_reward',L:3,k:'term',t:'Recompensa',f:'monto × pesos_por_peso',from:['monto','c_unit']},
+  {id:'t_cap',L:3,k:'term',t:'Recorte por tope',f:'min(0, tope_disponible − recompensa)',from:['t_reward','c_left']},
+  {id:'t_perks',L:3,k:'term',t:'Beneficios',f:'Σ mxn_value de la categoría  ⚠ se cuenta completo cada vez',from:['perkval','cat']},
+  {id:'t_fee',L:3,k:'term',t:'Anualidad prorrateada',f:'− anualidad / 12 × (monto / gasto_mensual)',from:['fee','monto','mspend']},
+  {id:'t_msi',L:3,k:'term',t:'Valor de diferir',f:'monto × (oportunidad/12) × (meses − 1) / 2',from:['monto','opp','c_msi']},
+
+  // L4 — total
+  {id:'g_gross',L:4,k:'calc',t:'Valor bruto',f:'suma de todos los términos',from:['t_reward','t_cap','t_perks','t_fee','t_msi']},
+  {id:'a_conf',L:4,k:'adj',t:'Castigo por confianza',
+   f:'− bruto × castigo%  si CUALQUIER término lleva bandera\nde estimado o faltante (valor del punto, MSI, FX, interés)',
+   from:['g_gross','c_pv','c_msi']},
+  {id:'r_total',L:4,k:'out',t:'Puntaje',f:'bruto + ajustes',from:['g_gross','a_conf']},
+  {id:'r_rank',L:4,k:'out',t:'Posición',f:'orden descendente entre las que pasaron los filtros',from:['r_total','f_held','f_risk','f_inc']}
+ ]},
+
+sv:{
+ layers:['Entradas','Filtros','Selección de regla','Términos en pesos','Ajuste y total'],
+ nodes:[
+  {id:'monto',L:0,k:'in',t:'Monto',s:'escenario'},
+  {id:'dir',L:0,k:'in',t:'Depósito o retiro',s:'escenario'},
+  {id:'apy',L:0,k:'in',t:'accounts.base_apy',s:'market'},
+  {id:'ytype',L:0,k:'in',t:'accounts.yield_type',s:'market'},
+  {id:'ycap',L:0,k:'in',t:'accounts.yield_cap',s:'market'},
+  {id:'tiers',L:0,k:'in',t:'yieldTiers.apy',s:'market'},
+  {id:'mfee',L:0,k:'in',t:'accounts.monthly_fee',s:'market'},
+  {id:'minbal',L:0,k:'in',t:'accounts.min_balance',s:'market'},
+  {id:'liq',L:0,k:'in',t:'accounts.liquidity',s:'market'},
+  {id:'bapy',L:0,k:'in',t:'accounts.boost_apy',s:'market'},
+  {id:'bcard',L:0,k:'in',t:'accounts.boost_card_id',s:'market'},
+  {id:'bmin',L:0,k:'in',t:'accounts.boost_min_credit_spend',s:'market'},
+  {id:'inst',L:0,k:'in',t:'issuers.institution_type',s:'market'},
+  {id:'bal',L:0,k:'in',t:'Saldo actual',s:'cartera'},
+  {id:'expo',L:0,k:'in',t:'Saldo ya sin seguro',s:'cartera'},
+  {id:'mtd2',L:0,k:'in',t:'Gasto en la tarjeta ligada',s:'historial'},
+  {id:'uncap',L:0,k:'in',t:'Tope sin seguro',s:'perfil'},
+  {id:'isrrate',L:0,k:'in',t:'Tasa de ISR',s:'param'},
+
+  {id:'f_min',L:1,k:'gate',t:'Filtro: saldo mínimo',f:'monto ≥ min_balance',from:['monto','minbal']},
+  {id:'f_liq',L:1,k:'gate',t:'Filtro: liquidez',f:'retiro → liquidity ≠ plazo',from:['dir','liq']},
+  {id:'f_uncap',L:1,k:'gate',t:'Filtro: tope sin seguro',
+   f:'si sin seguro → cabe = max(0, tope − ya_sin_seguro)',from:['inst','uncap','expo']},
+
+  {id:'c_boost',L:2,k:'calc',t:'¿Boost activo?',
+   f:'tiene la tarjeta ligada  y  gasto_del_mes ≥ mínimo',from:['bapy','bcard','bmin','mtd2']},
+  {id:'c_rate2',L:2,k:'calc',t:'Tasa aplicable',
+   f:'plana → base_apy + boost\nniveles → tasa de cada tramo + boost',from:['apy','ytype','tiers','c_boost']},
+  {id:'c_base',L:2,k:'calc',t:'Capital que rinde',
+   f:'depósito → min(monto, cabe, yield_cap)\nretiro → saldo',from:['monto','dir','bal','ycap','f_uncap']},
+
+  {id:'t_gross',L:3,k:'term',t:'Rendimiento bruto',f:'Σ tramo × tasa_del_tramo%',from:['c_base','c_rate2']},
+  {id:'t_fee2',L:3,k:'term',t:'Comisión',f:'− comisión_mensual × 12',from:['mfee']},
+  {id:'t_isr',L:3,k:'term',t:'Retención de ISR',f:'− capital × tasa_isr%   ⚠ sobre el capital, no sobre el interés',from:['c_base','isrrate']},
+
+  {id:'g_gross2',L:4,k:'calc',t:'Valor bruto',f:'suma de los términos',from:['t_gross','t_fee2','t_isr']},
+  {id:'a_ins',L:4,k:'adj',t:'Prima de riesgo',f:'− bruto × prima%  sólo en el modelo de prima',from:['g_gross2','inst']},
+  {id:'r_total2',L:4,k:'out',t:'Rendimiento neto',f:'bruto + ajustes',from:['g_gross2','a_ins']},
+  {id:'r_rank2',L:4,k:'out',t:'Posición',f:'depósito → mayor primero;  retiro → menor primero',from:['r_total2','f_min','f_liq','f_uncap']}
+ ]}
+};
+
+/* ---- valores vivos ---- */
+function fmtV(v){
+  if(v===undefined) return '—';
+  if(v===null) return 'sin dato';
+  if(typeof v==='boolean') return v?'sí':'no';
+  if(typeof v==='number') return Math.abs(v)>=1000?mx(v):mx2(v);
+  return String(v);
+}
+
+function ccValues(card){
+  var V={}, amount=P.amount, cat=P.category;
+  var rows=D.cardRewards.filter(function(r){return r.card_id===card.card_id&&r.category===cat;});
+  var isOpt=function(r){return String(r.user_selectable||'no').toLowerCase()==='yes';};
+  var bonus=rows.filter(function(r){return !isOpt(r);})[0]||null;
+  var perks=D.cardPerks.filter(function(x){return x.card_id===card.card_id&&x.applies_to_category===cat;});
+
+  V.monto=amount; V.cat=cat; V.plan=P.payPlan===0?'de contado':(P.payPlan+' MSI');
+  V.baserate=num(card.base_reward_rate)+'%'; V.rtype=rtl(card.reward_type);
+  V.pvcard=known(card.point_value_mxn);
+  V.bonusrate=bonus?num(bonus.rate)+'%':null;
+  V.minspend=bonus?known(bonus.min_spend):null;
+  V.minperiod=bonus?(bonus.min_spend_period||'per_txn'):null;
+  V.replaces=bonus?(bonus.replaces_or_adds_to_base||'replaces'):null;
+  V.cap=bonus?known(bonus.monthly_cap):null;
+  V.capbasis=bonus?(bonus.cap_basis||'mxn'):null;
+  V.shared=bonus?(String(bonus.shared_cap_group||'')||null):null;
+  V.perkval=perks.reduce(function(s,x){return s+num(x.mxn_value);},0);
+  V.fee=num(card.annual_fee); V.msimax=known(card.msi_max_months);
+  V.minrisk=known(card.min_risk_score); V.minincome=known(card.min_income);
+  V.mtd=mtdSpend(card.card_id); V.prior=priorReward(card.card_id,null);
+  V.held=holdsCard(card.card_id); V.score=riskScore(); V.income=P.income>0?P.income:null;
+  V.opp=P.oppRate+'%'; V.mspend=P.monthlySpend;
+
+  V.f_held=V.held||P.scope==='market';
+  V.f_risk=(V.score===null||V.minrisk===null)?'pasa marcada':(V.score>=V.minrisk);
+  V.f_inc=(V.income===null||V.minincome===null)?'pasa marcada':(V.income>=V.minincome);
+
+  var useBonus=false;
+  if(bonus&&RULES.bonusRate.on){
+    var ms=known(bonus.min_spend);
+    if(ms===null) useBonus=true;
+    else if(!RULES.minSpend.on) useBonus=true;
+    else if(String(bonus.min_spend_period||'per_txn').toLowerCase()==='monthly') useBonus=V.mtd>=ms;
+    else useBonus=amount>=ms;
+  }
+  V.c_bonus=useBonus;
+  var adds=useBonus&&String(bonus.replaces_or_adds_to_base||'replaces').toLowerCase()==='adds';
+  var rate=useBonus?num(bonus.rate):num(card.base_reward_rate);
+  var type=useBonus?(bonus.reward_type||card.reward_type):card.reward_type;
+  V.c_rate=rate+'%'+(adds?' + '+num(card.base_reward_rate)+'% base':'');
+  var pvr=useBonus?known(bonus.point_value_mxn):null;
+  var pv=pvr!==null?pvr:(known(card.point_value_mxn)!==null?known(card.point_value_mxn):0.25);
+  var pvEst=(pvr===null&&known(card.point_value_mxn)===null);
+  V.c_pv=(type==='points')?(mx2(pv)+(pvEst?' (estimado)':'')):'no aplica';
+  var unit=(rate/100)*(type==='points'?pv:1);
+  if(adds) unit+=(num(card.base_reward_rate)/100)*(card.reward_type==='points'?pv:1);
+  V.c_unit=unit;
+  V.c_cap=V.cap===null?null:((String(V.capbasis).toLowerCase()==='points')?V.cap*pv:V.cap);
+  V.c_left=V.c_cap===null?null:Math.max(0,V.c_cap-V.prior);
+  V.c_msi=P.payPlan===0?0:(V.msimax===null?null:Math.min(P.payPlan,V.msimax));
+
+  V.t_reward=amount*unit;
+  V.t_cap=(RULES.caps.on&&useBonus&&V.c_left!==null&&V.t_reward>V.c_left)?(V.c_left-V.t_reward):0;
+  V.t_perks=RULES.perks.on?V.perkval:0;
+  V.t_fee=RULES.feeAmort.on?(-V.fee/12*(P.monthlySpend>0?amount/P.monthlySpend:0)):0;
+  V.t_msi=(RULES.msi.on&&V.c_msi)?amount*(P.oppRate/100/12)*(V.c_msi-1)/2:0;
+
+  V.g_gross=V.t_reward+V.t_cap+V.t_perks+V.t_fee+V.t_msi;
+  /* Mirror the engine exactly: the penalty fires on ANY term flagged as
+     estimated or missing, not only on the point valuation. Getting this
+     wrong is what the cross-check below caught. */
+  var shaky = (pvEst&&type==='points')
+    || (RULES.msi.on && P.payPlan!==0 && V.msimax===null)
+    || (RULES.fx.on && card.fx_fee_pct==null)
+    || (RULES.revolve.on && card.interest_rate_annual==null);
+  V.a_conf=(RULES.ccConf.on&&shaky)?(-V.g_gross*(P.confPenalty/100)):0;
+  V.r_total=V.g_gross+V.a_conf;
+  var pos=LAST.cc.map(function(t){return t.id;}).indexOf(card.card_id);
+  V.r_rank=pos<0?'eliminada':((pos+1)+' de '+LAST.cc.length);
+  return V;
+}
+
+function svValues(acct){
+  var V={}, amount=P.svAmount, bal=balanceOf(acct.account_id);
+  var iss=issuerOf(acct), it=String(iss.institution_type||'').toLowerCase();
+  V.monto=amount; V.dir=P.dir==='in'?'depósito':'retiro';
+  V.apy=known(acct.base_apy)!==null?num(acct.base_apy)+'%':null;
+  V.ytype=ytl(acct.yield_type); V.ycap=known(acct.yield_cap);
+  V.tiers=tiersFor(acct.account_id).map(function(t){return num(t.apy)+'%';}).join(' / ')||null;
+  V.mfee=num(acct.monthly_fee); V.minbal=num(acct.min_balance); V.liq=acct.liquidity;
+  V.bapy=known(acct.boost_apy); V.bcard=acct.boost_card_id||null;
+  V.bmin=known(acct.boost_min_credit_spend); V.inst=it||null;
+  V.bal=bal; V.expo=uninsuredExposure(acct.account_id);
+  V.mtd2=acct.boost_card_id?mtdSpend(acct.boost_card_id):null;
+  V.uncap=P.uninsuredCap; V.isrrate=P.isrRate+'%';
+
+  V.f_min=P.dir==='in'?(amount>=num(acct.min_balance)):'no aplica';
+  V.f_liq=P.dir==='out'?(acct.liquidity!=='term'):'no aplica';
+  var head=(it==='other')?Math.max(0,P.uninsuredCap-V.expo):Infinity;
+  V.f_uncap=(RULES.insurance.on&&P.insModel==='cap'&&it==='other')?(head>0?('caben '+mx(head)):'no cabe'):'no aplica';
+
+  var boost=0;
+  if(acct.boost_apy!==''&&acct.boost_apy!=null&&RULES.boost.on){
+    if(holdsCard(acct.boost_card_id)&&mtdSpend(acct.boost_card_id)>=num(acct.boost_min_credit_spend)) boost=num(acct.boost_apy);
+  }
+  V.c_boost=boost>0?('+'+boost+'%'):'no';
+  V.c_rate2=acct.yield_type==='tiered'?('por niveles'+(boost?' +'+boost+'%':'')):(num(acct.base_apy)+boost)+'%';
+  var fitting=(RULES.insurance.on&&P.insModel==='cap'&&it==='other'&&P.dir==='in')?Math.min(amount,head):amount;
+  var base=P.dir==='in'?fitting:bal;
+  V.c_base=base;
+
+  var gross=0;
+  if(acct.yield_type==='tiered'){
+    tiersFor(acct.account_id).forEach(function(t){
+      var lo=num(t.tier_min),hi=t.tier_max===''?Infinity:num(t.tier_max);
+      gross+=Math.max(0,Math.min(base,hi)-lo)*(num(t.apy)+boost)/100;
+    });
+  } else {
+    var c=acct.yield_cap===''?Infinity:num(acct.yield_cap);
+    gross=Math.min(base,c)*(num(acct.base_apy)+boost)/100;
+  }
+  V.t_gross=gross;
+  V.t_fee2=RULES.acctFee.on?-num(acct.monthly_fee)*12:0;
+  V.t_isr=RULES.isr.on?-base*P.isrRate/100:0;
+  V.g_gross2=V.t_gross+V.t_fee2+V.t_isr;
+  V.a_ins=(RULES.insurance.on&&P.insModel==='premium'&&it==='other')?(-V.g_gross2*(P.riskPremium/100)):0;
+  V.r_total2=V.g_gross2+V.a_ins;
+  var pos=LAST.sv.map(function(t){return t.id;}).indexOf(acct.account_id);
+  V.r_rank2=pos<0?'eliminada':((pos+1)+' de '+LAST.sv.length);
+  return V;
+}
+
+/* ---- render ---- */
+var GSEL={side:'cc',id:null,focus:null};
+
+function renderGraph(){
+  var side=GSEL.side, g=GRAPH[side];
+  var list=side==='cc'?LAST.cc:LAST.sv;
+  var sel=$('#g-prod');
+  sel.innerHTML=list.map(function(t){return '<option value="'+t.id+'">'+esc(t.name)+'</option>';}).join('');
+  if(GSEL.id&&list.some(function(t){return t.id===GSEL.id;})) sel.value=GSEL.id;
+  GSEL.id=sel.value;
+  var prod=side==='cc'
+    ? D.cards.filter(function(c){return c.card_id===GSEL.id;})[0]
+    : D.accounts.filter(function(a){return a.account_id===GSEL.id;})[0];
+  if(!prod){ $('#graph').innerHTML='<div class="empty">Sin producto que inspeccionar.</div>'; return; }
+
+  var V=side==='cc'?ccValues(prod):svValues(prod);
+  var byId={}; g.nodes.forEach(function(n){byId[n.id]=n;});
+
+  // highlight the path through a focused node, both directions
+  var lit={};
+  if(GSEL.focus){
+    (function up(id){ if(lit[id])return; lit[id]=1; (byId[id].from||[]).forEach(up); })(GSEL.focus);
+    (function down(id){ g.nodes.forEach(function(n){
+      if((n.from||[]).indexOf(id)>=0 && !lit[n.id]){ lit[n.id]=1; down(n.id); } }); })(GSEL.focus);
+  }
+
+  var cols=g.layers.map(function(lbl,i){
+    var ns=g.nodes.filter(function(n){return n.L===i;});
+    return '<div class="gcol"><div class="gcolh">'+lbl+'</div>'+ns.map(function(n){
+      var v=V[n.id];
+      var dim=(GSEL.focus&&!lit[n.id])?' dim':'';
+      var warn=(v===null||v===undefined)?' warnnode':'';
+      return '<div class="gnode k-'+n.k+dim+warn+(GSEL.focus===n.id?' focus':'')+'" data-node="'+n.id+'">'+
+        '<div class="gk" style="background:'+KINDS[n.k].c+'"></div>'+
+        '<div class="gt">'+esc(n.t)+'</div>'+
+        (n.f?'<div class="gf mono">'+esc(n.f)+'</div>':'')+
+        '<div class="gv">'+fmtV(v)+'</div>'+
+        (n.s?'<div class="gs">'+SOURCES[n.s].t+'</div>':'')+
+      '</div>';
+    }).join('')+'</div>';
+  }).join('');
+
+  // engine cross-check: this file recomputes, so it must agree with the engine
+  var tr=list.filter(function(t){return t.id===GSEL.id;})[0];
+  var mine=side==='cc'?V.r_total:V.r_total2;
+  var theirs=tr?tr.total:null;
+  var agree=(theirs===null)||Math.abs(mine-theirs)<0.01;
+  var check='<div class="gcheck '+(agree?'ok':'bad')+'">'+
+    (agree?'✓ El mapa reproduce el puntaje del motor: '+mx2(mine)
+          :'✗ Discrepancia — mapa '+mx2(mine)+' vs motor '+mx2(theirs)+'. El mapa se desincronizó del motor.')+
+    '</div>';
+
+  $('#graph').innerHTML=check+'<div class="gwrap"><svg id="gedges"></svg>'+cols+'</div>'+
+    '<div class="glegend">'+Object.keys(KINDS).map(function(k){
+      return '<span><i style="background:'+KINDS[k].c+'"></i>'+KINDS[k].t+'</span>';}).join('')+
+      '<span class="ghint">Haz clic en un nodo para seguir su camino completo, hacia atrás y hacia adelante.</span></div>';
+
+  drawEdges(g,lit);
+  $$('#graph .gnode').forEach(function(el){
+    el.onclick=function(){
+      GSEL.focus=(GSEL.focus===el.dataset.node)?null:el.dataset.node;
+      renderGraph();
+    };
+  });
+}
+
+function drawEdges(g,lit){
+  var wrap=$('.gwrap'), svg=$('#gedges');
+  if(!wrap||!svg) return;
+  var wr=wrap.getBoundingClientRect();
+  svg.setAttribute('width',wrap.scrollWidth); svg.setAttribute('height',wrap.scrollHeight);
+  var paths=[];
+  g.nodes.forEach(function(n){
+    (n.from||[]).forEach(function(src){
+      var a=$('[data-node="'+src+'"]'), b=$('[data-node="'+n.id+'"]');
+      if(!a||!b) return;
+      var ar=a.getBoundingClientRect(), br=b.getBoundingClientRect();
+      var x1=ar.right-wr.left, y1=ar.top-wr.top+ar.height/2;
+      var x2=br.left-wr.left,  y2=br.top-wr.top+br.height/2;
+      var mid=(x1+x2)/2;
+      var on=(!GSEL.focus)||(lit[src]&&lit[n.id]);
+      paths.push('<path d="M'+x1+','+y1+' C'+mid+','+y1+' '+mid+','+y2+' '+x2+','+y2+
+        '" fill="none" stroke="'+(on?'#B8B3A8':'#EDEBE6')+'" stroke-width="'+(on?1.4:1)+'"/>');
+    });
+  });
+  svg.innerHTML=paths.join('');
 }
 </script>
 </body></html>

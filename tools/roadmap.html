@@ -162,7 +162,8 @@ var ITEMS = [
 {id:'eng-conf', p:'motor', t:'Modelo de confianza y vigencia', status:'later', effort:'M', impact:3,
  why:'Un dato equivocado es peor que uno faltante, porque la app lo presenta con total seguridad. El motor debería poder decir “no recomiendo esta tarjeta porque no confío en sus datos”.',
  needs:['*.confidence','*.last_verified'],
- after:['eng-trace','data-prov']},
+ after:['eng-trace','data-prov'],
+ note:'DEFECTO DETECTADO en el mapa de cálculo: el castigo es un porcentaje plano sobre TODO el puntaje en cuanto cualquier término lleve bandera. Una tarjeta de cashback con datos perfectos pierde 30% sólo porque no sabemos si ofrece MSI — y eso aunque su término de MSI valga cero. El castigo debería escalar con qué proporción del valor depende del dato incierto, no dispararse parejo. Mientras no se corrija, encender esta regla distorsiona el ranking en vez de protegerlo.'},
 
 {id:'risk-user', p:'motor', t:'Cómo se obtiene el score de riesgo del usuario', status:'later', effort:'L', impact:3,
  why:'Hoy el número se escribe a mano en la pestaña Users y nadie lo calcula. Mientras no exista un método, el score no puede esconder productos: por eso ahora un usuario sin score pasa todos los filtros y se le avisa. Pero sin score tampoco podemos decirle si vale la pena solicitar una tarjeta, que es media promesa del producto.',
