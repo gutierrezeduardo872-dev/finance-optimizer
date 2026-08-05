@@ -1,0 +1,1289 @@
+<!doctype html>
+<html lang="es"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Norte — Laboratorio del motor</title>
+<style>
+:root{--ink:#1C2431;--ink2:#48525F;--copper:#B85F35;--copper-s:#F7EAE1;--teal:#0F7365;--teal-s:#E6F1EE;
+--sand:#8F6210;--sand-s:#F6EEDD;--danger:#A83229;--danger-s:#FBEDEB;--bg:#F6F5F1;--sf:#fff;
+--line:#E7E4DD;--line2:#F1EFEA;--muted:#7C8492}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:#1E2733;font:14px/1.5 ui-sans-serif,system-ui,-apple-system,sans-serif}
+.num,.tot,.tv,.fn-n,.rk{font-variant-numeric:tabular-nums}
+header{background:var(--ink);color:#fff;padding:16px 20px}
+h1{margin:0;font-size:17px;letter-spacing:-.02em}
+header p{margin:4px 0 0;font-size:12.5px;color:#96A2B1;max-width:760px}
+.tabs{display:flex;gap:6px;padding:12px 20px 0;background:var(--ink)}
+.tabs button{border:0;background:rgba(255,255,255,.10);color:#C3CCD6;padding:9px 16px;
+  border-radius:9px 9px 0 0;font:inherit;font-weight:600;font-size:13px;cursor:pointer}
+.tabs button.on{background:var(--bg);color:var(--ink)}
+.pane{display:none;padding:18px 20px 60px;max-width:1180px;margin:0 auto}
+.pane.on{display:block}
+.grid{display:grid;grid-template-columns:330px 1fr;gap:18px;align-items:start}
+@media(max-width:900px){.grid{grid-template-columns:1fr}}
+.panel{background:var(--sf);border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:14px}
+.panel h2{margin:0 0 10px;font-size:13px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+label.f{display:block;font-size:12px;font-weight:600;color:var(--muted);margin:12px 0 5px}
+label.f:first-child{margin-top:0}
+input[type=number],select{width:100%;padding:9px 11px;border:1px solid var(--line);border-radius:9px;font:inherit;background:#FBFAF7}
+input[type=range]{width:100%}
+.rowo{display:flex;justify-content:space-between;font-size:12px;color:var(--muted)}
+.rule-t{border:1px solid var(--line);border-radius:11px;padding:10px 12px;margin-bottom:8px;
+  background:#fff;font-size:12.5px}
+.rule-t.prop{border-style:dashed}
+.rule-t.offr{background:#FBFAF7}
+.rule-t.offr .rt-body{opacity:.5}
+.rt-head{display:flex;align-items:flex-start;gap:8px;cursor:pointer}
+.rt-head input{margin:2px 0 0;flex:0 0 auto}
+.rl{font-weight:700;font-size:13px;line-height:1.3}
+.rt-body{margin-left:23px;margin-top:5px}
+.rt-what{font-size:12px;color:#48525F;line-height:1.45}
+/* Wrap rather than scroll: a formula clipped at the sidebar edge is no more
+   readable than no formula at all. */
+.rt-formula{font-size:11px;background:#F4F2ED;border-radius:6px;padding:6px 8px;margin-top:6px;
+  color:#3A4553;white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.5}
+.rt-tags{display:flex;gap:5px;flex-wrap:wrap;margin-top:6px}
+.pill.stagep{background:#EDEBE6;color:var(--muted)}
+.rt-needs{font-size:10.5px;color:var(--danger);margin-top:6px;line-height:1.5}
+.rt-needs code{background:var(--danger-s);padding:1px 5px;border-radius:4px}
+.funnel{margin-bottom:14px}
+.fn-row{background:var(--sf);border:1px solid var(--line);border-left:4px solid var(--teal);
+  border-radius:9px;padding:9px 12px;margin-bottom:6px;font-size:13px}
+.fn-row.out{border-left-color:var(--danger);color:var(--ink2)}
+.fn-row.keep{border-left-color:var(--teal);font-weight:600}
+.fn-n{font-weight:700;margin-right:8px}
+.fn-d{font-size:11.5px;color:var(--muted);margin-top:3px}
+.card{background:var(--sf);border:1px solid var(--line);border-radius:14px;padding:14px;margin-bottom:12px}
+.card.win{border:1.5px solid var(--teal);background:var(--teal-s)}
+.card.out{opacity:.62;background:#FBFAF7}
+.ch{display:flex;align-items:center;gap:9px}
+.rk{width:22px;height:22px;border-radius:6px;background:var(--ink);color:#fff;display:grid;place-items:center;font-size:11.5px;font-weight:700}
+.cn{font-weight:700;font-size:15px;flex:1}
+.tot{font-weight:700;font-size:17px}
+.cx{font-size:11px;color:var(--danger);font-weight:700;text-transform:uppercase}
+.cw{font-size:12px;color:var(--muted);margin:1px 0 9px 31px}
+.card.out .cw{margin-left:0}
+.rule{background:rgba(255,255,255,.7);border:1px solid var(--line);border-radius:9px;padding:8px 11px;font-size:12.5px;margin-bottom:9px}
+.rule span{color:var(--muted)}
+.elim{font-size:12.5px;color:var(--ink2);background:var(--danger-s);border-radius:8px;padding:8px 11px}
+table.terms{width:100%;border-collapse:collapse}
+table.terms td{padding:6px 4px;border-top:1px solid var(--line2);vertical-align:middle;font-size:12.5px}
+.tl{width:45%}
+.fo{font-size:11px;color:var(--muted);font-family:ui-monospace,SFMono-Regular,Menlo,monospace;margin-top:2px}
+.tb{width:35%}
+.tv{width:20%;text-align:right;font-weight:700}
+.tv.neg{color:var(--danger)}
+.bar{height:8px;border-radius:4px;background:var(--teal);min-width:2px}
+.bar.neg{background:var(--danger)}
+.flag{display:inline-block;margin-left:6px;font-size:10px;font-weight:700;background:var(--sand-s);color:var(--sand);padding:1px 6px;border-radius:99px}
+.flag.bad{background:var(--danger-s);color:var(--danger)}
+.notes{font-size:11.5px;color:var(--muted);margin-top:9px;border-top:1px dashed var(--line);padding-top:8px}
+.stg{background:var(--sf);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+.stg-h{font-weight:700;font-size:14px;display:flex;align-items:center;gap:9px}
+.stg-n{width:24px;height:24px;border-radius:7px;background:var(--copper);color:#fff;display:grid;place-items:center;font-size:12px}
+.stg-d{font-size:12.5px;color:var(--muted);margin:4px 0 9px 33px}
+.stg-r{display:flex;flex-wrap:wrap;gap:6px;margin-left:33px}
+.pill{font-size:11.5px;padding:4px 10px;border-radius:99px;background:var(--teal-s);color:var(--teal);font-weight:600}
+.pill.prop{background:var(--copper-s);color:var(--copper);border:1px dashed var(--copper)}
+.pill.off{opacity:.38}
+.arrow{text-align:center;color:var(--muted);font-size:19px;margin:6px 0}
+.sw{display:flex;align-items:center;gap:8px;font-size:13.5px;cursor:pointer}
+.hlp{font-size:12px;color:var(--muted);margin:7px 0 0;line-height:1.45}
+.simlist{max-height:190px;overflow:auto;border:1px solid var(--line);border-radius:9px;padding:7px;background:#FBFAF7}
+.simrow{padding:4px 2px;border-bottom:1px solid var(--line2);font-size:12.5px}
+.simrow:last-child{border-bottom:0}
+.simrow label{display:flex;align-items:center;gap:7px;cursor:pointer}
+.simrow i{color:var(--muted);font-style:normal;font-size:11px}
+.simin{display:block;margin:4px 0 2px 22px;font-size:11px;color:var(--muted)}
+.simin input{width:74px;padding:3px 6px;border:1px solid var(--line);border-radius:6px;font:inherit;font-size:11.5px}
+.treepick{display:flex;gap:14px;align-items:flex-end;background:var(--sf);border:1px solid var(--line);
+  border-radius:12px;padding:12px 15px;margin-bottom:14px;flex-wrap:wrap}
+.treepick label{margin:0 0 4px}
+.treepick select{width:auto;min-width:170px}
+.legend{margin-top:10px;font-size:11.5px;color:var(--muted);display:flex;flex-wrap:wrap;gap:7px;align-items:center}
+.stg-k{margin-left:auto;font-size:10.5px;letter-spacing:.08em;color:var(--muted);font-weight:700}
+.stg-body{margin-left:33px}
+.stg-p{font-size:13px;margin:2px 0 10px}
+.io{display:grid;grid-template-columns:1fr 1fr;gap:10px;font-size:12px;color:var(--ink2);margin-bottom:10px}
+.io>div{background:#FBFAF7;border:1px solid var(--line);border-radius:9px;padding:8px 11px}
+.io b{font-size:10.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+.stg-w{font-size:12.5px;color:var(--ink2);margin:0 0 12px;border-left:3px solid var(--line);padding-left:11px}
+.rlist{display:grid;gap:8px;margin-bottom:12px}
+.rdoc{border:1px solid var(--line);border-radius:10px;padding:10px 12px;background:#fff}
+.rdoc.off{opacity:.5}
+.rdh{font-weight:700;font-size:13px;display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+.rdw{font-size:12.5px;color:var(--ink2);margin-top:4px}
+.rdf{font-size:11.5px;background:#F4F2ED;border-radius:7px;padding:6px 9px;margin-top:7px;color:#3A4553}
+.rdn{font-size:11px;color:var(--danger);margin-top:6px}
+.rdn code{background:var(--danger-s);padding:1px 5px;border-radius:4px}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+.livebox{background:#F4F2ED;border-radius:10px;padding:11px 13px}
+.lvh{font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin-bottom:7px}
+.lv{font-size:12.5px;padding:6px 0;border-top:1px solid rgba(0,0,0,.06)}
+.lv:first-of-type{border-top:0}
+.lv.ok{color:var(--teal)}
+.lv.no{color:var(--danger)}
+.lv.tot2{color:var(--ink);font-weight:600;border-top:1px dashed rgba(0,0,0,.18);margin-top:4px;padding-top:8px}
+.lvx{color:var(--muted);font-size:11.5px;margin-top:2px}
+.pill.off2{background:#EDEBE6;color:var(--muted)}
+.stn{display:inline-block;background:var(--ink);color:#fff;font-size:9.5px;font-weight:700;
+  padding:1px 5px;border-radius:4px;margin-right:6px;vertical-align:1px}
+.userbar-wrap{max-width:1180px;margin:0 auto;padding:16px 20px 0}
+.userbar{background:var(--sf);border:1px solid var(--line);border-radius:14px;padding:12px 16px}
+.userbar summary{cursor:pointer;display:flex;align-items:baseline;gap:12px;list-style:none}
+.userbar summary::-webkit-details-marker{display:none}
+.ubt{font-weight:700;font-size:13.5px}
+.ubs{font-size:12px;color:var(--muted)}
+.ub-body{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;margin-top:14px;
+  padding-top:14px;border-top:1px solid var(--line2)}
+@media(max-width:900px){.ub-body{grid-template-columns:1fr}}
+.h2s{font-weight:500;letter-spacing:0;text-transform:none;color:#B4B0A6;margin-left:6px}
+.flowmap{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:12px;align-items:center;
+  background:var(--sf);border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:16px}
+@media(max-width:900px){.flowmap{grid-template-columns:1fr;}.farrow{transform:rotate(90deg)}}
+.fcol{display:grid;gap:7px}
+.fsrc{background:#FBFAF7;border:1px solid var(--line);border-left:4px solid;border-radius:9px;padding:8px 11px}
+.fsrc b{display:block;font-size:12.5px}
+.fsrc span{font-size:11px;color:var(--muted);line-height:1.4}
+.farrow{color:var(--muted);font-size:20px;text-align:center}
+.fstg{background:var(--ink);color:#fff;border-radius:9px;padding:9px 12px;font-size:12.5px;font-weight:600;
+  display:flex;align-items:center;gap:9px}
+.fn2{width:19px;height:19px;border-radius:5px;background:rgba(255,255,255,.18);display:grid;place-items:center;
+  font-size:11px;flex:0 0 auto}
+.fdec{background:var(--teal-s);border:1.5px solid var(--teal);border-radius:11px;padding:13px}
+.fdec b{display:block;color:var(--teal);font-size:14px;margin-bottom:3px}
+.fdec span{font-size:11.5px;color:#48525F;line-height:1.45}
+.vsum{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:10px}
+.vs1{background:var(--sf);border:1px solid var(--line);border-radius:10px;padding:9px 15px;font-size:12.5px;color:var(--muted)}
+.vs1 b{font-size:17px;color:var(--ink);margin-right:6px;font-variant-numeric:tabular-nums}
+.vs1.ok b{color:var(--teal)} .vs1.part b{color:var(--sand)} .vs1.miss b{color:var(--danger)}
+.vnote{font-size:12px;color:var(--muted);margin:0 0 18px}
+.vgrp{margin-bottom:20px}
+.vgrp h3{font-size:12.5px;text-transform:uppercase;letter-spacing:.06em;border-left:4px solid;
+  padding-left:10px;margin:0 0 8px}
+.vtab{width:100%;border-collapse:collapse;background:var(--sf);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.vtab td{padding:9px 11px;border-top:1px solid var(--line2);font-size:12.5px;vertical-align:top}
+.vtab tr:first-child td{border-top:0}
+.vp{width:29%;font-size:11.5px;color:#3A4553;overflow-wrap:anywhere}
+.vw{width:47%;color:#48525F}
+.vu{margin-top:5px;display:flex;gap:4px;flex-wrap:wrap}
+.uses{font-size:10.5px;background:var(--teal-s);color:var(--teal);padding:2px 7px;border-radius:99px;font-weight:600}
+.uses.offu{background:#EDEBE6;color:var(--muted)}
+.vs{width:24%;font-size:11.5px;color:var(--muted);white-space:nowrap}
+.dot2{display:inline-block;width:7px;height:7px;border-radius:99px;margin-right:6px;background:var(--muted)}
+.dot2.ok{background:var(--teal)} .dot2.part{background:var(--sand)}
+.dot2.miss{background:var(--danger)} .dot2.na{background:#9AA5B4}
+tr.v-miss .vp{color:var(--danger)}
+.lede{background:var(--sand-s);border:1px solid #E6D6B2;border-radius:12px;padding:12px 15px;font-size:13px;margin-bottom:14px}
+</style></head><body>
+<header>
+  <h1>Norte · Laboratorio del motor</h1>
+  <p>El motor no devuelve un número, devuelve un <b>rastro</b>: qué filtros pasó cada producto, qué regla se aplicó y cada término en pesos que construyó su puntaje. Enciende y apaga reglas para ver el efecto antes de escribirlas en la app.</p>
+</header>
+<div class="tabs">
+  <button class="on" data-p="cc">Tarjetas</button>
+  <button data-p="sv">Ahorro</button>
+  <button data-p="tree">Árbol de decisión</button>
+  <button data-p="vars">Variables y flujo</button>
+</div>
+
+<div class="userbar-wrap">
+  <details class="userbar" open>
+    <summary><span class="ubt">Perfil del usuario</span><span class="ubs" id="userbar-sum"></span></summary>
+    <div class="ub-body">
+      <div class="ub-col">
+        <label class="sw"><input type="checkbox" id="simon"> <b>Usuario simulado</b></label>
+        <p class="hlp">Inventa una cartera y un patrón de gasto en vez de usar los usuarios sembrados.</p>
+        <div id="realbox"><label class="f">Usuario real</label><select id="user"></select></div>
+        <div id="simbox" style="display:none"><label class="f">Preset</label><select id="preset"></select></div>
+        <label class="f">Ingreso mensual declarado <span id="income-o">0</span></label>
+        <input type="range" id="income" min="0" max="80000" step="2000" value="0">
+        <p class="hlp">Cero = no declarado. Es el requisito duro que publica cada emisor.</p>
+        <label class="f">Score de riesgo</label>
+        <select id="risk-mode">
+          <option value="sheet">El del usuario / la hoja</option>
+          <option value="none">Sin score (no lo tenemos)</option>
+          <option value="custom">Valor específico…</option>
+        </select>
+        <div id="risk-custom" style="display:none">
+          <label class="f">Score <span id="riskv-o">700</span></label>
+          <input type="range" id="riskv" min="450" max="850" step="10" value="700">
+        </div>
+      </div>
+      <div class="ub-col" id="simcols" style="display:none">
+        <label class="f">Tarjetas en la cartera</label><div class="simlist" id="sim-cards"></div>
+      </div>
+      <div class="ub-col" id="simcols2" style="display:none">
+        <label class="f">Cuentas en la cartera</label><div class="simlist" id="sim-accts"></div>
+      </div>
+    </div>
+  </details>
+</div>
+
+<div class="pane on" id="pane-cc"><div class="grid">
+  <div>
+    <div class="panel"><h2>La compra <span class="h2s">escenario</span></h2>
+      <label class="f">Monto</label><input type="number" id="cc-amt" value="2400">
+      <label class="f">Categoría del comercio</label><select id="cc-cat"></select>
+      <label class="f">Plan de pago</label>
+      <select id="payplan">
+        <option value="0">De contado (una exhibición)</option>
+        <option value="3">3 meses sin intereses</option>
+        <option value="6">6 meses sin intereses</option>
+        <option value="9">9 meses sin intereses</option>
+        <option value="12">12 meses sin intereses</option>
+        <option value="18">18 meses sin intereses</option>
+        <option value="24">24 meses sin intereses</option>
+      </select>
+      <p class="hlp">La mayoría de las compras son de contado. El MSI sólo entra al cálculo cuando el usuario lo elige, y la app todavía no hace esta pregunta.</p>
+    </div>
+    <div class="panel"><h2>Parámetros del motor <span class="h2s">supuestos</span></h2>
+      <label class="f">Modo de evaluación</label>
+      <select id="scope"><option value="held">Sólo mis productos</option><option value="market">Todo el mercado</option></select>
+      <label class="f">Gasto mensual estimado <span id="mspend-o">8000</span></label>
+      <input type="range" id="mspend" min="2000" max="40000" step="1000" value="8000">
+      <label class="f">Tasa de oportunidad <span id="opp-o">12</span>% anual</label>
+      <input type="range" id="opp" min="0" max="16" step="0.5" value="12">
+      <p class="hlp">Contra qué se compara el valor de diferir. Debería salir de la mejor cuenta del propio usuario, no de un supuesto global.</p>
+      <label class="f">Castigo por baja confianza <span id="confp-o">30</span>%</label>
+      <input type="range" id="confp" min="0" max="60" step="5" value="30">
+    </div>
+    <div class="panel"><h2>Reglas</h2><div id="cc-rules"></div></div>
+  </div>
+  <div><div id="cc-funnel"></div><div id="cc-out"></div></div>
+</div></div>
+
+<div class="pane" id="pane-sv"><div class="grid">
+  <div>
+    <div class="panel"><h2>La operación <span class="h2s">escenario</span></h2>
+      <label class="f">Tipo</label>
+      <select id="sv-dir"><option value="in">Depósito</option><option value="out">Retiro</option></select>
+      <label class="f">Monto</label><input type="number" id="sv-amt" value="30000">
+      <p class="hlp" id="sv-hint"></p>
+    </div>
+    <div class="panel"><h2>Riesgo: seguro de depósito <span class="h2s">preferencia</span></h2>
+      <label class="f">Modelo</label>
+      <select id="ins-model">
+        <option value="cap">Tope de exposición (etapa 1)</option>
+        <option value="premium">Prima de riesgo (etapa 4)</option>
+      </select>
+      <p class="hlp" id="ins-explain"></p>
+      <div id="ins-cap-box">
+        <label class="f">Máximo sin seguro <span id="uncap-o">50000</span></label>
+        <input type="range" id="uncap" min="0" max="300000" step="10000" value="50000">
+      </div>
+      <div id="ins-prem-box" style="display:none">
+        <label class="f">Prima de riesgo <span id="prem-o">15</span>%</label>
+        <input type="range" id="prem" min="0" max="50" step="5" value="15">
+      </div>
+    </div>
+    <div class="panel"><h2>Parámetros del motor <span class="h2s">supuestos</span></h2>
+      <label class="f">Retención de ISR <span id="isr-r-o">0.90</span>% sobre el capital</label>
+      <input type="range" id="isr-r" min="0" max="2" step="0.05" value="0.90">
+      <p class="hlp">Cambia cada año en la Ley de Ingresos. Verificar antes de usarla en la app.</p>
+    </div>
+    <div class="panel"><h2>Reglas</h2><div id="sv-rules"></div></div>
+  </div>
+  <div><div id="sv-funnel"></div><div id="sv-out"></div></div>
+</div></div>
+
+<div class="pane" id="pane-vars">
+  <div class="lede"><b>El contrato de datos del motor.</b> Toda entrada que puede mover una decisión: de dónde sale, si la tenemos hoy y qué regla la consume. Lo que aparezca en rojo es exactamente lo que el skill de recolección tiene que ir a buscar.</div>
+  <div id="vars"></div>
+</div>
+
+<div class="pane" id="pane-tree">
+  <div class="lede">
+    <b>Cómo leer esto.</b> El motor procesa cada producto en cinco etapas, en orden. Abajo se explica qué hace cada una, qué reglas viven dentro, y — en el recuadro gris al final de cada etapa — <b>qué le pasó exactamente al producto que elijas</b> al atravesarla.
+    <div class="legend">
+      <span class="pill live">en producción</span> ya está en la app ·
+      <span class="pill prop">propuesta</span> todavía no existe ·
+      <span class="pill off2">apagada</span> desactivada ahora mismo ·
+      <span class="stn">E3</span> el término se calculó en la etapa 3
+    </div>
+  </div>
+  <div class="treepick">
+    <label class="f">Motor</label>
+    <select id="tree-side"><option value="cc">Tarjetas</option><option value="sv">Ahorro</option></select>
+    <label class="f">Seguir a este producto</label>
+    <select id="tree-prod"></select>
+  </div>
+  <div id="tree"></div>
+</div>
+<script>// Fictional test fixture shaped exactly like the Apps Script bootstrap payload.
+window.__SEED__ = (function(){
+  const issuers=[
+    {issuer_id:'bbva',institution_type:'bank',name:'BBVA México',notes:''},
+    {issuer_id:'santander',institution_type:'bank',name:'Santander',notes:''},
+    {issuer_id:'banorte',institution_type:'bank',name:'Banorte',notes:''},
+    {issuer_id:'nu',institution_type:'other',name:'Nu México',notes:''},
+    {issuer_id:'hey',institution_type:'bank',name:'Hey Banco',notes:''},
+    {issuer_id:'klar',institution_type:'sofipo',name:'Klar',notes:''},
+    {issuer_id:'uala',institution_type:'other',name:'Ualá',notes:''},
+    {issuer_id:'stori',institution_type:'other',name:'Stori',notes:''},
+    {issuer_id:'inbursa',institution_type:'bank',name:'Inbursa',notes:''},
+    {issuer_id:'didi',institution_type:'other',name:'DiDi',notes:''},
+  ];
+  const cards=[
+    {card_id:'bbva_azul',msi_max_months:12,min_income:8000,invitation_only:'no',issuer_id:'bbva',card_name:'BBVA Azul',tier:'Clásica',annual_fee:750,base_reward_rate:0.5,reward_type:'points',point_value_mxn:0.14,min_risk_score:600,notes:''},
+    {card_id:'bbva_oro',msi_max_months:12,min_income:20000,invitation_only:'no',issuer_id:'bbva',card_name:'BBVA Oro',tier:'Oro',annual_fee:1400,base_reward_rate:1,reward_type:'points',point_value_mxn:0.14,min_risk_score:660,notes:''},
+    {card_id:'bbva_platinum',msi_max_months:18,min_income:45000,invitation_only:'no',issuer_id:'bbva',card_name:'BBVA Platinum',tier:'Platino',annual_fee:3200,base_reward_rate:1.5,reward_type:'points',point_value_mxn:'',min_risk_score:720,notes:''},
+    {card_id:'sant_likeu',msi_max_months:12,min_income:7000,invitation_only:'no',issuer_id:'santander',card_name:'Santander LikeU',tier:'Clásica',annual_fee:0,base_reward_rate:1,reward_type:'cashback',point_value_mxn:'',min_risk_score:620,notes:''},
+    {card_id:'sant_free',msi_max_months:6,min_income:6000,invitation_only:'no',issuer_id:'santander',card_name:'Santander Free',tier:'Clásica',annual_fee:0,base_reward_rate:0.5,reward_type:'cashback',point_value_mxn:'',min_risk_score:600,notes:''},
+    {card_id:'banorte_oro',msi_max_months:12,min_income:18000,invitation_only:'no',issuer_id:'banorte',card_name:'Banorte Oro',tier:'Oro',annual_fee:1100,base_reward_rate:1,reward_type:'points',point_value_mxn:0.10,min_risk_score:650,notes:''},
+    {card_id:'nu_credito',min_income:'',invitation_only:'',issuer_id:'nu',card_name:'Tarjeta Nu',tier:'Sin anualidad',annual_fee:0,base_reward_rate:1,reward_type:'cashback',point_value_mxn:'',min_risk_score:580,notes:''},
+    {card_id:'hey_credito',min_income:'',invitation_only:'',issuer_id:'hey',card_name:'Hey Crédito',tier:'Sin anualidad',annual_fee:0,base_reward_rate:1.5,reward_type:'cashback',point_value_mxn:'',min_risk_score:640,notes:''},
+    {card_id:'klar_credito',min_income:'',invitation_only:'',issuer_id:'klar',card_name:'Klar Crédito',tier:'Sin anualidad',annual_fee:0,base_reward_rate:1,reward_type:'cashback',point_value_mxn:'',min_risk_score:560,notes:''},
+    {card_id:'uala_credito',min_income:'',invitation_only:'',issuer_id:'uala',card_name:'Tarjeta Ualá',tier:'Sin anualidad',annual_fee:0,base_reward_rate:0.5,reward_type:'cashback',point_value_mxn:'',min_risk_score:560,notes:''},
+    {card_id:'stori_plus',min_income:'',invitation_only:'',issuer_id:'stori',card_name:'Stori Plus',tier:'Sin anualidad',annual_fee:0,base_reward_rate:1,reward_type:'cashback',point_value_mxn:'',min_risk_score:520,notes:''},
+    {card_id:'didi_card',min_income:'',invitation_only:'',issuer_id:'didi',card_name:'DiDi Card',tier:'Cashback',annual_fee:0,base_reward_rate:1,reward_type:'cashback',point_value_mxn:'',min_risk_score:560,notes:''},
+    {card_id:'inbursa_efe',msi_max_months:9,min_income:6000,invitation_only:'no',issuer_id:'inbursa',card_name:'Inbursa Efectiva',tier:'Clásica',annual_fee:0,base_reward_rate:0.5,reward_type:'cashback',point_value_mxn:'',min_risk_score:600,notes:''},
+  ];
+  const cardRewards=[
+    {reward_id:'r1',card_id:'bbva_oro',category:'restaurants',rate:3,reward_type:'points',point_value_mxn:0.14,monthly_cap:800,cap_basis:'mxn',cap_period:'monthly',min_spend:'',min_spend_period:'',shared_cap_group:'',replaces_or_adds_to_base:'replaces',user_selectable:'no',notes:''},
+    {reward_id:'r2',card_id:'bbva_oro',category:'supermarket',rate:2,reward_type:'points',point_value_mxn:0.14,monthly_cap:800,cap_basis:'mxn',cap_period:'monthly',min_spend:'',min_spend_period:'',shared_cap_group:'',replaces_or_adds_to_base:'replaces',user_selectable:'no',notes:''},
+    {reward_id:'r3',card_id:'sant_likeu',category:'pharmacy',rate:5,reward_type:'cashback',point_value_mxn:'',monthly_cap:500,cap_basis:'mxn',cap_period:'monthly',min_spend:'',min_spend_period:'',shared_cap_group:'',replaces_or_adds_to_base:'replaces',user_selectable:'no',notes:''},
+    {reward_id:'r4',card_id:'sant_likeu',category:'cinema',rate:4,reward_type:'cashback',point_value_mxn:'',monthly_cap:200,cap_basis:'mxn',cap_period:'monthly',min_spend:'',min_spend_period:'',shared_cap_group:'',replaces_or_adds_to_base:'replaces',user_selectable:'no',notes:''},
+    {reward_id:'r5',card_id:'hey_credito',category:'supermarket',rate:3,reward_type:'cashback',point_value_mxn:'',monthly_cap:400,cap_basis:'mxn',cap_period:'monthly',min_spend:'',min_spend_period:'',shared_cap_group:'grocery',replaces_or_adds_to_base:'adds',user_selectable:'no',notes:''},
+    {reward_id:'r6',card_id:'nu_credito',category:'online',rate:3,reward_type:'cashback',point_value_mxn:'',monthly_cap:'UNCAPPED',cap_basis:'mxn',cap_period:'monthly',min_spend:500,min_spend_period:'per_txn',shared_cap_group:'',replaces_or_adds_to_base:'replaces',user_selectable:'no',notes:''},
+    {reward_id:'r7',card_id:'didi_card',category:'restaurants',rate:6,reward_type:'cashback',point_value_mxn:'',monthly_cap:300,cap_basis:'mxn',cap_period:'monthly',min_spend:'',min_spend_period:'',shared_cap_group:'',replaces_or_adds_to_base:'replaces',user_selectable:'yes',notes:'categoría elegible'},
+    {reward_id:'r8',card_id:'bbva_platinum',category:'travel',rate:4,reward_type:'points',point_value_mxn:'',monthly_cap:'',cap_basis:'mxn',cap_period:'monthly',min_spend:'',min_spend_period:'',shared_cap_group:'',replaces_or_adds_to_base:'replaces',user_selectable:'no',notes:''},
+    {reward_id:'r9',card_id:'klar_credito',category:'gas',rate:2,reward_type:'cashback',point_value_mxn:'',monthly_cap:150,cap_basis:'mxn',cap_period:'weekly',min_spend:'',min_spend_period:'',shared_cap_group:'',replaces_or_adds_to_base:'replaces',user_selectable:'no',notes:''},
+    {reward_id:'r10',card_id:'stori_plus',category:'department_store',rate:3,reward_type:'cashback',point_value_mxn:'',monthly_cap:250,cap_basis:'mxn',cap_period:'monthly',min_spend:2000,min_spend_period:'monthly',shared_cap_group:'',replaces_or_adds_to_base:'replaces',user_selectable:'no',notes:''},
+  ];
+  const cardPerks=[
+    {perk_id:'p1',card_id:'bbva_platinum',perk_name:'Acceso a salas VIP',applies_to_category:'travel',mxn_value:600,notes:''},
+    {perk_id:'p2',card_id:'bbva_platinum',perk_name:'Seguro de viaje',applies_to_category:'',mxn_value:'',notes:''},
+    {perk_id:'p3',card_id:'sant_likeu',perk_name:'2x1 en cines',applies_to_category:'cinema',mxn_value:90,notes:''},
+    {perk_id:'p4',card_id:'bbva_oro',perk_name:'Protección de compras',applies_to_category:'',mxn_value:'',notes:''},
+  ];
+  const accounts=[
+    {account_id:'nu_cajita',issuer_id:'nu',account_name:'Nu Cajita Turbo',yield_type:'flat',base_apy:14.75,yield_cap:25000,monthly_fee:0,min_balance:0,liquidity:'instant',min_risk_score:0,boost_apy:'',boost_card_id:'',boost_min_credit_spend:'',notes:''},
+    {account_id:'klar_ahorro',issuer_id:'klar',account_name:'Klar Ahorro',yield_type:'tiered',base_apy:'',yield_cap:'',monthly_fee:0,min_balance:0,liquidity:'instant',min_risk_score:0,boost_apy:2,boost_card_id:'klar_credito',boost_min_credit_spend:3000,notes:''},
+    {account_id:'uala_ahorro',issuer_id:'uala',account_name:'Ualá Rendimiento',yield_type:'flat',base_apy:12,yield_cap:20000,monthly_fee:0,min_balance:0,liquidity:'instant',min_risk_score:0,boost_apy:'',boost_card_id:'',boost_min_credit_spend:'',notes:''},
+    {account_id:'hey_ahorro',issuer_id:'hey',account_name:'Hey Ahorro',yield_type:'flat',base_apy:9.5,yield_cap:'',monthly_fee:0,min_balance:1000,liquidity:'instant',min_risk_score:0,boost_apy:'',boost_card_id:'',boost_min_credit_spend:'',notes:''},
+    {account_id:'bbva_meta',issuer_id:'bbva',account_name:'BBVA Meta Ahorro',yield_type:'flat',base_apy:2.7,yield_cap:'',monthly_fee:0,min_balance:0,liquidity:'instant',min_risk_score:0,boost_apy:'',boost_card_id:'',boost_min_credit_spend:'',notes:''},
+    {account_id:'bbva_libreton',issuer_id:'bbva',account_name:'BBVA Libretón',yield_type:'flat',base_apy:0,yield_cap:'',monthly_fee:130,min_balance:0,liquidity:'instant',min_risk_score:0,boost_apy:'',boost_card_id:'',boost_min_credit_spend:'',notes:''},
+    {account_id:'sant_plus',issuer_id:'santander',account_name:'Santander Ahorro Plus',yield_type:'flat',base_apy:3.2,yield_cap:'',monthly_fee:0,min_balance:5000,liquidity:'instant',min_risk_score:0,boost_apy:'',boost_card_id:'',boost_min_credit_spend:'',notes:''},
+    {account_id:'stori_ahorro',issuer_id:'stori',account_name:'Stori Ahorro',yield_type:'flat',base_apy:15,yield_cap:15000,monthly_fee:0,min_balance:0,liquidity:'instant',min_risk_score:0,boost_apy:'',boost_card_id:'',boost_min_credit_spend:'',notes:''},
+    {account_id:'banorte_plazo',issuer_id:'banorte',account_name:'Banorte Pagaré 90 días',yield_type:'flat',base_apy:8.4,yield_cap:'',monthly_fee:0,min_balance:10000,liquidity:'term',min_risk_score:0,boost_apy:'',boost_card_id:'',boost_min_credit_spend:'',notes:''},
+    {account_id:'didi_cuenta',issuer_id:'didi',account_name:'DiDi Cuenta',yield_type:'tiered',base_apy:'',yield_cap:'',monthly_fee:0,min_balance:0,liquidity:'instant',min_risk_score:0,boost_apy:'',boost_card_id:'',boost_min_credit_spend:'',notes:''},
+  ];
+  const yieldTiers=[
+    {tier_id:'t1',account_id:'klar_ahorro',tier_min:0,tier_max:10000,apy:11,notes:''},
+    {tier_id:'t2',account_id:'klar_ahorro',tier_min:10000,tier_max:'',apy:6,notes:''},
+    {tier_id:'t3',account_id:'didi_cuenta',tier_min:0,tier_max:30000,apy:15,notes:''},
+    {tier_id:'t4',account_id:'didi_cuenta',tier_min:30000,tier_max:'',apy:7.5,notes:''},
+  ];
+  const categories=[
+    {category_key:'supermarket',display_label:'Súper',notes:''},
+    {category_key:'restaurants',display_label:'Restaurantes',notes:''},
+    {category_key:'cinema',display_label:'Cine',notes:''},
+    {category_key:'gas',display_label:'Gasolina',notes:''},
+    {category_key:'travel',display_label:'Viajes',notes:''},
+    {category_key:'online',display_label:'En línea',notes:''},
+    {category_key:'department_store',display_label:'Departamental',notes:''},
+    {category_key:'pharmacy',display_label:'Farmacia',notes:''},
+    {category_key:'utilities',display_label:'Servicios',notes:''},
+    {category_key:'other',display_label:'Otro',notes:''},
+  ];
+  const users=[
+    {user_id:'u_pichi',name:'Pichi',risk_score:720,pin:'9408',is_admin:true,notes:''},
+    {user_id:'u_bomber',name:'Bomber',risk_score:660,pin:'3087',is_admin:false,notes:''},
+    {user_id:'u_lalu',name:'Lalu',risk_score:640,pin:'5878',is_admin:false,notes:''},
+    {user_id:'u_laura',name:'Laura',risk_score:700,pin:'6223',is_admin:false,notes:''},
+  ];
+  const userProducts=[
+    {id:'up1',user_id:'u_pichi',product_type:'card',product_id:'bbva_oro',current_balance:'',notes:''},
+    {id:'up2',user_id:'u_pichi',product_type:'card',product_id:'sant_likeu',current_balance:'',notes:''},
+    {id:'up3',user_id:'u_pichi',product_type:'card',product_id:'nu_credito',current_balance:'',notes:''},
+    {id:'up4',user_id:'u_pichi',product_type:'account',product_id:'nu_cajita',current_balance:38000,notes:''},
+    {id:'up5',user_id:'u_pichi',product_type:'account',product_id:'bbva_libreton',current_balance:12500,notes:''},
+    {id:'up6',user_id:'u_pichi',product_type:'account',product_id:'klar_ahorro',current_balance:8000,notes:''},
+  ];
+  const M=new Date().toISOString().slice(0,7);
+  const prev=(()=>{const d=new Date();d.setMonth(d.getMonth()-1);return d.toISOString().slice(0,7);})();
+  const mv=(i,day,flow,cat,amt,pid,ben,dir)=>({movement_id:'mv'+i,user_id:'u_pichi',
+    timestamp:(day.length>7?day:day+'-10')+'T14:20:00.000Z',flow,direction:dir||'',
+    merchant_category:cat||'',amount:amt,recommended_product_id:pid,computed_benefit_mxn:ben,notes:''});
+  const movements=[
+    mv(1,M+'-02','cc','supermarket',2400,'bbva_oro',48),
+    mv(2,M+'-04','cc','restaurants',890,'bbva_oro',26.7),
+    mv(3,M+'-07','cc','pharmacy',430,'sant_likeu',21.5),
+    mv(4,M+'-09','cc','online',1250,'nu_credito',37.5),
+    mv(5,M+'-12','cc','cinema',360,'sant_likeu',14.4),
+    mv(6,M+'-14','debit',null,25000,'nu_cajita',3687,'in'),
+    mv(7,M+'-16','cc','gas',900,'bbva_oro',6.3),
+    mv(8,M+'-18','cc','supermarket',1980,'bbva_oro',39.6),
+    mv(9,prev+'-21','cc','restaurants',1450,'bbva_oro',43.5),
+    mv(10,prev+'-23','debit',null,9000,'klar_ahorro',990,'in'),
+    mv(11,prev+'-25','cc','travel',6800,'bbva_oro',9.52),
+    mv(12,prev+'-27','debit',null,4000,'bbva_libreton',0,'out'),
+  ];
+  return {issuers,cards,cardRewards,cardPerks,accounts,yieldTiers,categories,users,userProducts,movements};
+})();
+</script>
+<script>/* =====================================================================
+   NORTE — LABORATORIO DEL MOTOR  (v2)
+   El motor no devuelve un número: devuelve un RASTRO. Cada producto lleva
+   registro de qué filtros pasó, qué regla se aplicó y cada término en pesos
+   que construyó su puntaje, etiquetado por etapa.
+   ===================================================================== */
+
+var D = window.__SEED__;
+var $  = function(s,r){ return (r||document).querySelector(s); };
+var $$ = function(s,r){ return [].slice.call((r||document).querySelectorAll(s)); };
+var mx  = function(n){ return (n<0?'-':'')+'$'+Math.abs(n).toLocaleString('es-MX',{maximumFractionDigits:0}); };
+var mx2 = function(n){ return (n<0?'-':'')+'$'+Math.abs(n).toLocaleString('es-MX',{minimumFractionDigits:2,maximumFractionDigits:2}); };
+var num = function(v,d){ return (v===''||v==null||isNaN(Number(v)))?(d||0):Number(v); };
+var known = function(v){
+  if(v===''||v==null) return null;
+  var s=String(v).trim().toUpperCase();
+  if(s==='UNKNOWN'||s==='UNCAPPED'||s==='NOT_APPLICABLE') return null;
+  return isNaN(Number(v))?null:Number(v);
+};
+var esc = function(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;'); };
+var MONTH = new Date().toISOString().slice(0,7);
+
+/* ---------------------------------------------------------------------
+   ETAPAS
+--------------------------------------------------------------------- */
+var STAGES = [
+ {n:1,k:'FILTRO',t:'Filtro',
+  purpose:'Descarta productos que no aplican. Nunca puntúa: o pasa o queda fuera, con una razón legible.',
+  inp:'Todos los productos del catálogo, más la cartera y el perfil del usuario.',
+  out:'Un subconjunto de candidatos y una lista de descartes con su motivo.',
+  why:'Separar “no aplica” de “aplica pero rinde poco” evita que un producto imposible aparezca al final del ranking como si fuera una opción real.'},
+ {n:2,k:'REGLA',t:'Selección de regla',
+  purpose:'Decide cuál de las reglas del producto aplica a este escenario, y deja escrito por qué esa y no otra.',
+  inp:'Los candidatos y el escenario: monto, categoría, historial del mes.',
+  out:'Una regla elegida por producto, con su justificación en texto.',
+  why:'Una tarjeta puede tener seis bonos. Cuál se activa depende del monto, del gasto acumulado del mes y de si el usuario eligió esa categoría. Sin dejar constancia es imposible auditar una recomendación.'},
+ {n:3,k:'VALOR',t:'Valor económico',
+  purpose:'Convierte la regla en pesos, término por término. Cada término es independiente e inspeccionable.',
+  inp:'La regla elegida y los parámetros del escenario.',
+  out:'Una lista de términos con fórmula y monto; su suma es el valor bruto.',
+  why:'Sumar todo en una sola cifra esconde los errores. Con términos separados se ve exactamente cuál está inflando o hundiendo un producto.'},
+ {n:4,k:'CONFIANZA',t:'Confianza y preferencias',
+  purpose:'Ajusta por la calidad del dato y por las preferencias de riesgo del usuario. No cambia los hechos: cambia cuánto nos apoyamos en ellos.',
+  inp:'El valor bruto, la procedencia de cada dato y el perfil de riesgo.',
+  out:'Valor ajustado, con la razón de cada ajuste.',
+  why:'Un dato inventado con apariencia de certeza es peor que un hueco declarado. Y dos usuarios con los mismos productos pueden querer respuestas distintas.'},
+ {n:5,k:'ORDEN',t:'Orden y explicación',
+  purpose:'Ordena, desempata y produce el texto que ve el usuario.',
+  inp:'Los productos ya ajustados.',
+  out:'Ranking y explicación.',
+  why:'La explicación no se redacta aparte: se arma con el mismo rastro que produjo el número, así nunca pueden contradecirse.'}
+];
+
+/* ---------------------------------------------------------------------
+   REGLAS
+--------------------------------------------------------------------- */
+var RULES = {
+ riskGate:{live:1,on:1,side:'cc',stage:1,label:'Score de riesgo',
+  what:'Estima la probabilidad de que al usuario le aprueben la tarjeta. Responde una pregunta distinta al ingreso: el ingreso es un requisito duro publicado, el score es una probabilidad de aprobación. Hoy el número se escribe a mano en la hoja y todavía no hay método para obtenerlo, así que cuando falta — del lado del usuario o del producto — la tarjeta pasa y se marca, nunca se esconde.',
+  formula:'si users.risk_score y cards.min_risk_score existen → score ≥ mínimo;  si falta cualquiera → pasa marcada',
+  needs:['método para calcular users.risk_score','método para asignar cards.min_risk_score']},
+ eligibility:{live:0,on:1,side:'cc',stage:1,label:'Elegibilidad por ingreso',
+  what:'Descarta tarjetas que el usuario no podría obtener. Sustituye al “score de riesgo”, que nadie calculaba: era un número escrito a mano en la hoja, comparado contra otro número escrito a mano en cada producto, en una escala que no corresponde a Buró ni a nada publicado. En su lugar se usa el ingreso mínimo comprobable que sí publican los emisores, y la marca de tarjeta sólo por invitación.',
+  formula:'ingreso_declarado ≥ cards.min_income   y   cards.invitation_only ≠ "yes"',
+  needs:['cards.min_income','cards.invitation_only','users.monthly_income']},
+ baseRate:{live:1,on:1,side:'cc',stage:3,label:'Tasa base de recompensa',
+  what:'Toda tarjeta paga un porcentaje sobre cualquier compra. Es el piso: se usa cuando ningún bonus aplica.',
+  formula:'monto × tasa_base%   (si son puntos: × valor_del_punto)'},
+ bonusRate:{live:1,on:1,side:'cc',stage:2,label:'Bonus por categoría',
+  what:'Muchas tarjetas pagan más en ciertas categorías. Si hay bonus para la categoría de la compra, sustituye a la tasa base — salvo que el dato indique que se suma.',
+  formula:'replaces_or_adds_to_base = "adds" → bonus + base;  si no → sólo bonus'},
+ minSpend:{live:1,on:1,side:'cc',stage:2,label:'Gasto mínimo del bonus',
+  what:'Algunos bonos exigen un mínimo. Puede ser por compra (esta transacción debe superarlo) o mensual (el acumulado del mes en esa tarjeta).',
+  formula:'per_txn: monto ≥ min_spend    ·    monthly: gasto_del_mes ≥ min_spend'},
+ caps:{live:1,on:1,side:'cc',stage:3,label:'Topes',
+  what:'Los bonos casi siempre tienen tope. Se resta lo ya ganado en el periodo y el excedente cae a la tasa base. El tope puede venir en pesos o en puntos, ser semanal o mensual, y compartirse entre varias categorías.',
+  formula:'recompensa = min(recompensa, tope − ya_ganado_en_el_periodo)'},
+ perks:{live:1,on:1,side:'cc',stage:3,label:'Beneficios de la categoría',
+  what:'Beneficios con valor en pesos atados a la categoría (2x1 en cine, salas VIP). Hoy se suman completos en cada compra, que es justamente el defecto pendiente.',
+  formula:'+ Σ mxn_value de los beneficios de esa categoría'},
+ feeAmort:{live:0,on:0,side:'cc',stage:3,label:'Anualidad prorrateada',
+  what:'La anualidad no se paga por compra, pero ignorarla hace que una tarjeta cara parezca gratis. Se reparte según qué proporción del gasto mensual representa esta compra.',
+  formula:'− anualidad/12 × (monto / gasto_mensual)'},
+ msi:{live:0,on:0,side:'cc',stage:3,label:'Meses sin intereses',
+  what:'Diferir el pago sin intereses deja el dinero rindiendo mientras tanto. Ese rendimiento es valor real que hoy el motor no ve.',
+  formula:'monto × (tasa_oportunidad/12) × (meses − 1) / 2',
+  needs:['cards.msi_max_months','cards.msi_merchant_scope']},
+ fx:{live:0,on:0,side:'cc',stage:3,label:'Comisión por divisa',
+  what:'En compras en el extranjero la comisión pesa más que cualquier cashback. Algunas tarjetas no cobran nada.',
+  formula:'− monto × fx_fee_pct%', needs:['cards.fx_fee_pct']},
+ revolve:{live:0,on:0,side:'cc',stage:3,label:'Costo de no liquidar',
+  what:'Si el usuario revuelve saldo, una tasa de 40% anual borra cualquier cashback y la recomendación correcta cambia por completo.',
+  formula:'− saldo_revolvente × tasa_interés/12',
+  needs:['cards.interest_rate_annual','users.pays_full_balance']},
+ ccConf:{live:0,on:0,side:'cc',stage:4,label:'Penalizar baja confianza',
+  what:'Cuando el valor del punto es estimado o falta un campo, preferimos subestimar antes que prometer de más.',
+  formula:'× (1 − castigo%) si algún término lleva bandera de estimado o faltante',
+  needs:['cardRewards.confidence','cards.last_verified']},
+
+ riskGateSv:{live:1,on:1,side:'sv',stage:1,label:'Score de riesgo',
+  what:'Misma lógica que en tarjetas. En cuentas casi nunca aplica — la mayoría no exige historial crediticio — pero el campo existe en el esquema y se respeta si está lleno.',
+  formula:'si ambos existen → score ≥ mínimo;  si falta cualquiera → pasa marcada'},
+ grossYield:{live:1,on:1,side:'sv',stage:3,label:'Rendimiento bruto',
+  what:'Tasa plana con tope, o por niveles: cada tramo del saldo rinde a su propia tasa.',
+  formula:'plana: min(saldo, tope) × tasa%    ·    niveles: Σ tramo × tasa_del_tramo%'},
+ boost:{live:1,on:1,side:'sv',stage:2,label:'Boost condicionado',
+  what:'Algunas cuentas suben la tasa si gastas cierto monto en su tarjeta. Es una condición cruzada: la decisión de ahorro depende de la de gasto.',
+  formula:'si tienes la tarjeta ligada y gasto_del_mes ≥ mínimo → tasa + boost'},
+ acctFee:{live:1,on:1,side:'sv',stage:3,label:'Comisión mensual',
+  what:'Una cuenta sin rendimiento y con comisión tiene retorno negativo. Hay que restarla siempre.',
+  formula:'− comisión_mensual × 12'},
+ isr:{live:0,on:0,side:'sv',stage:3,label:'Retención de ISR',
+  what:'La retención se calcula sobre el CAPITAL, no sobre el interés. Por eso castiga desproporcionadamente a las cuentas de tasa baja: pueden terminar con rendimiento real negativo.',
+  formula:'− capital × tasa_isr%   (tasa anual de la Ley de Ingresos vigente)',
+  needs:['params.isr_rate_annual']},
+ insurance:{live:0,on:0,side:'sv',stage:4,label:'Seguro de depósito',
+  what:'No reduce el rendimiento: limita cuánto dinero aceptas tener en una institución sin cobertura. Elige el modelo en el panel de riesgo.',
+  formula:'ver el modelo seleccionado',
+  needs:['issuers.institution_type']},
+ liquidity:{live:0,on:0,side:'sv',stage:4,label:'Penalización por plazo',
+  what:'Un pagaré a 90 días con mejor tasa no sirve si necesitas el dinero en tres semanas.',
+  formula:'si plazo > horizonte del usuario → descartar o castigar',
+  needs:['accounts.term_days']}
+};
+
+var P = {
+  amount:2400, category:'supermarket', dir:'in', svAmount:30000,
+  user:'u_pichi', scope:'held',
+  msiMonths:12, oppRate:12, isrRate:0.90, monthlySpend:8000, confPenalty:30, income:0,
+  riskMode:'sheet', riskValue:700, payPlan:0,
+  insModel:'cap', uninsuredCap:50000, riskPremium:15, horizonMonths:12
+};
+
+/* =====================================================================
+   USUARIO SIMULADO
+   El laboratorio no debe estar atado a los usuarios sembrados: para probar
+   el motor hace falta inventar carteras y patrones de gasto a voluntad.
+   ===================================================================== */
+var SIM = {on:false, risk:700, cards:{}, accounts:{}};
+
+function issuerOf(p){ return D.issuers.filter(function(i){return i.issuer_id===p.issuer_id;})[0]||{name:'?'}; }
+
+function simFromReal(uid){
+  SIM.cards={}; SIM.accounts={};
+  var u=D.users.filter(function(x){return x.user_id===uid;})[0];
+  SIM.risk=u?num(u.risk_score,700):700;
+  D.userProducts.filter(function(p){return p.user_id===uid;}).forEach(function(p){
+    if(p.product_type==='card') SIM.cards[p.product_id]={mtd:0,prior:0};
+    else SIM.accounts[p.product_id]=num(p.current_balance);
+  });
+  D.movements.filter(function(m){return m.user_id===uid&&m.flow==='cc';}).forEach(function(m){
+    var c=SIM.cards[m.recommended_product_id]; if(!c) return;
+    if(String(m.timestamp).slice(0,7)===MONTH){ c.mtd+=num(m.amount); c.prior+=num(m.computed_benefit_mxn); }
+  });
+}
+var PRESETS = {
+  nuevo:  {label:'Usuario nuevo (sin productos)', risk:640, cards:[], accounts:[]},
+  basico: {label:'Cartera básica', risk:660, cards:['nu_credito'], accounts:['bbva_libreton']},
+  optimiz:{label:'Optimizador', risk:740, cards:['bbva_oro','sant_likeu','nu_credito','hey_credito'],
+           accounts:['nu_cajita','klar_ahorro','stori_ahorro']},
+  conserv:{label:'Conservador (sólo banca)', risk:720, cards:['bbva_oro'], accounts:['bbva_meta','sant_plus']}
+};
+function applyPreset(k){
+  var pr=PRESETS[k]; SIM.risk=pr.risk; SIM.cards={}; SIM.accounts={};
+  pr.cards.forEach(function(id){ SIM.cards[id]={mtd:0,prior:0}; });
+  pr.accounts.forEach(function(id){ SIM.accounts[id]=25000; });
+}
+
+/* Kept only so the savings side can keep reading the sheet column while it
+   still exists. The card engine no longer uses it — see RULES.eligibility. */
+/* null means "we don't know", which is a legitimate state and must never be
+   silently treated as zero — that would hide every product from a new user. */
+function riskScore(){
+  if(P.riskMode==='none') return null;
+  if(P.riskMode==='custom') return P.riskValue;
+  if(SIM.on) return SIM.risk!=null?SIM.risk:null;
+  var u=D.users.filter(function(x){return x.user_id===P.user;})[0];
+  return u?known(u.risk_score):null;
+}
+/* Shared by both engines: compare a possibly-unknown score to a possibly-
+   unknown product minimum, and report exactly which side was missing. */
+function riskCheck(tr,minRaw,label){
+  var score=riskScore(), min=known(minRaw);
+  if(min===null){
+    tr.filters.push({rule:'score de riesgo',pass:true,detail:label+' no tiene mínimo definido',
+      explain:'Sin mínimo en el producto no hay nada que comparar. Pasa marcada.'});
+    tr.notes.push('Este producto no tiene min_risk_score asignado todavía.');
+    return true;
+  }
+  if(score===null){
+    tr.filters.push({rule:'score de riesgo',pass:true,detail:'requiere '+min+', no tienes score',
+      explain:'Un usuario sin score es un estado válido, no un score de cero. Pasa marcada: preferimos admitir de más y avisarlo, a esconder productos por un dato que no tenemos.'});
+    tr.notes.push('Requiere score de '+min+'; todavía no tenemos el tuyo.');
+    return true;
+  }
+  var ok=score>=min;
+  tr.filters.push({rule:'score de riesgo',pass:ok,detail:'tu score '+score+' vs mínimo '+min,
+    explain:'Probabilidad estimada de aprobación. El número es provisional: aún no existe método para calcularlo.'});
+  if(!ok) tr.eliminated={stage:1,rule:'score de riesgo',reason:'Score '+score+' < '+min};
+  return ok;
+}
+function holdsCard(id){
+  if(SIM.on) return !!SIM.cards[id];
+  return D.userProducts.some(function(p){return p.user_id===P.user&&p.product_type==='card'&&p.product_id===id;});
+}
+function holdsAcct(id){
+  if(SIM.on) return SIM.accounts[id]!=null;
+  return D.userProducts.some(function(p){return p.user_id===P.user&&p.product_type==='account'&&p.product_id===id;});
+}
+function balanceOf(id){
+  if(SIM.on) return num(SIM.accounts[id]);
+  var p=D.userProducts.filter(function(x){return x.user_id===P.user&&x.product_type==='account'&&x.product_id===id;})[0];
+  return p?num(p.current_balance):0;
+}
+function mtdSpend(cardId){
+  if(SIM.on) return SIM.cards[cardId]?num(SIM.cards[cardId].mtd):0;
+  return D.movements.filter(function(m){
+    return m.user_id===P.user&&m.flow==='cc'&&m.recommended_product_id===cardId&&
+           String(m.timestamp).slice(0,7)===MONTH;}).reduce(function(s,m){return s+num(m.amount);},0);
+}
+function priorReward(cardId,cats){
+  if(SIM.on) return SIM.cards[cardId]?num(SIM.cards[cardId].prior):0;
+  return D.movements.filter(function(m){
+    return m.user_id===P.user&&m.flow==='cc'&&m.recommended_product_id===cardId&&
+           String(m.timestamp).slice(0,7)===MONTH&&(!cats||cats.indexOf(m.merchant_category)>=0);})
+    .reduce(function(s,m){return s+num(m.computed_benefit_mxn);},0);
+}
+/* How much money already sits at institutions with no deposit insurance. */
+function uninsuredExposure(exceptId){
+  return D.accounts.filter(function(a){
+    if(a.account_id===exceptId) return false;
+    if(!holdsAcct(a.account_id)) return false;
+    return String(issuerOf(a).institution_type||'').toLowerCase()==='other';
+  }).reduce(function(s,a){return s+balanceOf(a.account_id);},0);
+}
+function T(st,key,label,formula,value,flag){
+  return {st:st,key:key,label:label,formula:formula,value:value,flag:flag||null};
+}
+
+/* =====================================================================
+   TARJETAS
+   ===================================================================== */
+function evalCard(card){
+  var amount=P.amount, cat=P.category;
+  var tr={id:card.card_id,name:card.card_name,issuer:issuerOf(card).name,
+          filters:[],rule:null,terms:[],notes:[],eliminated:null,total:0,gross:0};
+
+  var held=holdsCard(card.card_id);
+  tr.filters.push({rule:'en cartera',pass:held||P.scope==='market',
+    detail:held?'la tienes':(P.scope==='market'?'modo mercado: se evalúa igual':'no la tienes'),
+    explain:'Sólo se recomienda lo que el usuario ya tiene, salvo en modo mercado, que es lo que alimenta Sugerencias.'});
+  if(!held&&P.scope==='held'){ tr.eliminated={stage:1,rule:'en cartera',reason:'No está en la cartera'}; return tr; }
+
+  if(RULES.riskGate.on && !riskCheck(tr,card.min_risk_score,'esta tarjeta')) return tr;
+
+  if(RULES.eligibility.on){
+    var inv=String(card.invitation_only||'').toLowerCase()==='yes';
+    var mi=known(card.min_income), inc=P.income>0?P.income:null;
+    if(inv){
+      tr.filters.push({rule:'elegibilidad',pass:false,detail:'sólo por invitación',
+        explain:'El emisor no acepta solicitudes para esta tarjeta.'});
+      tr.eliminated={stage:1,rule:'elegibilidad',reason:'Sólo por invitación'}; return tr;
+    }
+    if(mi===null){
+      tr.filters.push({rule:'elegibilidad',pass:true,detail:'el emisor no publica ingreso mínimo',
+        explain:'Sin el dato no se filtra. Pasa, pero queda marcada: es preferible admitir de más y avisarlo, que esconder productos con un criterio inventado.'});
+      tr.notes.push('No conocemos el ingreso mínimo de esta tarjeta (cards.min_income vacío).');
+    } else if(inc===null){
+      tr.filters.push({rule:'elegibilidad',pass:true,detail:'requiere '+mx(mi)+'/mes, no declaraste ingreso',
+        explain:'Sin ingreso declarado no se puede filtrar. Una sola pregunta en el onboarding lo resuelve.'});
+      tr.notes.push('Requiere ingreso comprobable de '+mx(mi)+'/mes; no sabemos el tuyo.');
+    } else {
+      var okInc=inc>=mi;
+      tr.filters.push({rule:'elegibilidad',pass:okInc,
+        detail:'tu ingreso '+mx(inc)+' vs mínimo '+mx(mi),
+        explain:'Ingreso mínimo comprobable publicado por el emisor. Es un hecho verificable, a diferencia del score que había antes.'});
+      if(!okInc){ tr.eliminated={stage:1,rule:'elegibilidad',
+        reason:'Requiere '+mx(mi)+'/mes y declaraste '+mx(inc)}; return tr; }
+    }
+  }
+
+  var rows=D.cardRewards.filter(function(r){return r.card_id===card.card_id&&r.category===cat;});
+  var isOpt=function(r){ return String(r.user_selectable||'no').toLowerCase()==='yes'; };
+  var optional=rows.filter(isOpt), bonus=rows.filter(function(r){return !isOpt(r);})[0]||null;
+  var useBonus=false, why='';
+  if(!bonus) why='No hay bonus para esta categoría, así que aplica la tasa base.';
+  else if(!RULES.bonusRate.on) why='La regla de bonus está apagada en el laboratorio.';
+  else {
+    var ms=known(bonus.min_spend);
+    if(ms===null){ useBonus=true; why='Bonus de '+num(bonus.rate)+'% sin gasto mínimo.'; }
+    else if(!RULES.minSpend.on){ useBonus=true; why='Gasto mínimo ignorado (regla apagada).'; }
+    else if(String(bonus.min_spend_period||'per_txn').toLowerCase()==='monthly'){
+      var sp=mtdSpend(card.card_id); useBonus=sp>=ms;
+      why=useBonus?('Bonus activo: llevas '+mx(sp)+' este mes y el mínimo es '+mx(ms)+'.')
+                  :('Bonus bloqueado: llevas '+mx(sp)+' de '+mx(ms)+' requeridos este mes.');
+    } else {
+      useBonus=amount>=ms;
+      why=useBonus?('Bonus activo: la compra supera el mínimo por transacción de '+mx(ms)+'.')
+                  :('Bonus bloqueado: '+mx(amount)+' no alcanza el mínimo por transacción de '+mx(ms)+'.');
+    }
+  }
+  if(optional.length) tr.notes.push('Tiene '+optional.length+' bonus que el usuario elige (user_selectable). Hoy se ignoran, así que esta tarjeta está subestimada.');
+  tr.rule={applied:useBonus?('bonus '+num(bonus.rate)+'%'):('base '+num(card.base_reward_rate)+'%'),why:why};
+
+  var baseRate=num(card.base_reward_rate), baseType=card.reward_type;
+  var pvOf=function(row){
+    var rv=known(row&&row.point_value_mxn); if(rv!==null) return {pv:rv,est:false};
+    var cv=known(card.point_value_mxn);     if(cv!==null) return {pv:cv,est:false};
+    return {pv:0.25,est:true};
+  };
+  var rate,type,pv,adds=false;
+  if(useBonus){ rate=num(bonus.rate); type=bonus.reward_type||baseType; pv=pvOf(bonus);
+    adds=String(bonus.replaces_or_adds_to_base||'replaces').toLowerCase()==='adds'; }
+  else { rate=baseRate; type=baseType; pv=pvOf(null); }
+  var unit=function(rt,r,v){ return (r/100)*(rt==='points'?v:1); };
+  var reward=amount*unit(type,rate,pv.pv);
+  tr.terms.push(T(3,'reward',useBonus?'Recompensa (bonus)':'Recompensa (base)',
+    mx(amount)+' × '+rate+'%'+(type==='points'?' × '+mx2(pv.pv)+'/pto':''),reward,
+    (pv.est&&type==='points')?'Valor del punto estimado — dato faltante':null));
+  if(useBonus&&adds){
+    var ex=amount*unit(baseType,baseRate,pvOf(null).pv); reward+=ex;
+    tr.terms.push(T(3,'base_add','Tasa base acumulable',mx(amount)+' × '+baseRate+'%',ex));
+  }
+  if(RULES.caps.on&&useBonus){
+    var capRaw=known(bonus.monthly_cap);
+    if(capRaw!==null){
+      var basis=String(bonus.cap_basis||'mxn').toLowerCase();
+      var mxnCap=basis==='points'?capRaw*pv.pv:capRaw;
+      var grp=String(bonus.shared_cap_group||'').trim();
+      var cats=grp?D.cardRewards.filter(function(r){return r.card_id===card.card_id&&String(r.shared_cap_group||'').trim()===grp;}).map(function(r){return r.category;}):[cat];
+      var prior=priorReward(card.card_id,cats), left=Math.max(0,mxnCap-prior);
+      if(reward>left){
+        tr.terms.push(T(3,'cap','Recorte por tope',
+          'tope '+mx(mxnCap)+(grp?' compartido ('+grp+')':'')+' − '+mx(prior)+' ya ganado',left-reward,'Tope alcanzado'));
+        reward=left;
+      } else tr.notes.push('Tope de '+mx(mxnCap)+' en el periodo; quedarían '+mx(left-reward)+'.');
+    }
+  }
+  if(RULES.perks.on){
+    var pk=D.cardPerks.filter(function(x){return x.card_id===card.card_id&&x.applies_to_category===cat;});
+    var pval=pk.reduce(function(s,x){return s+num(x.mxn_value);},0);
+    if(pval>0) tr.terms.push(T(3,'perks','Beneficios aplicables',pk.map(function(x){return x.perk_name;}).join(', '),pval,
+      'Se cuenta completo en cada compra — sobrevalorado'));
+  }
+  if(RULES.feeAmort.on){
+    var share=P.monthlySpend>0?amount/P.monthlySpend:0, fv=-num(card.annual_fee)/12*share;
+    if(fv!==0) tr.terms.push(T(3,'fee','Anualidad prorrateada',
+      '−'+mx(num(card.annual_fee))+'/12 × ('+mx(amount)+' / '+mx(P.monthlySpend)+')',fv));
+  }
+  if(RULES.msi.on){
+    if(P.payPlan===0){
+      tr.notes.push('Compra de contado: el MSI no aplica. La mayoría de las compras caen aquí.');
+    } else if(card.msi_max_months==null){
+      tr.terms.push(T(3,'msi','Valor de diferir el pago','falta cards.msi_max_months',0,
+        'CAMPO FALTANTE — no sabemos si esta tarjeta ofrece MSI'));
+    } else {
+      var maxM=num(card.msi_max_months);
+      if(maxM===0){
+        tr.notes.push('Esta tarjeta no ofrece meses sin intereses; pedirle '+P.payPlan+' MSI no es posible.');
+      } else {
+        var m=Math.min(P.payPlan,maxM);
+        tr.terms.push(T(3,'msi','Valor de diferir el pago',
+          mx(amount)+' × '+P.oppRate+'%/12 × ('+m+'−1)/2',amount*(P.oppRate/100/12)*(m-1)/2,
+          m<P.payPlan?('Sólo llega a '+maxM+' MSI, pediste '+P.payPlan):null));
+        if(m<P.payPlan) tr.notes.push('Pediste '+P.payPlan+' MSI y esta tarjeta ofrece hasta '+maxM+'. Se valúa a '+maxM+', pero no cumple lo que pediste.');
+      }
+    }
+  }
+  if(RULES.fx.on){
+    if(card.fx_fee_pct==null) tr.terms.push(T(3,'fx','Comisión por divisa','falta cards.fx_fee_pct',0,'CAMPO FALTANTE'));
+    else tr.terms.push(T(3,'fx','Comisión por divisa',mx(amount)+' × '+num(card.fx_fee_pct)+'%',-amount*num(card.fx_fee_pct)/100));
+  }
+  if(RULES.revolve.on&&card.interest_rate_annual==null)
+    tr.terms.push(T(3,'rev','Costo de no liquidar','falta cards.interest_rate_annual',0,'CAMPO FALTANTE'));
+
+  var total=tr.terms.reduce(function(s,t){return s+t.value;},0);
+  tr.gross=total;
+  if(RULES.ccConf.on){
+    var shaky=tr.terms.some(function(t){return t.flag&&/estimado|FALTANTE/.test(t.flag);});
+    if(shaky){
+      var cut=-total*(P.confPenalty/100);
+      tr.terms.push(T(4,'conf','Castigo por baja confianza','−'+P.confPenalty+'% por campos estimados o faltantes',cut,
+        'Preferimos subestimar antes que prometer de más'));
+      total+=cut;
+    } else tr.notes.push('Todos los campos usados tienen valor conocido: sin castigo de confianza.');
+  }
+  tr.total=total;
+  return tr;
+}
+
+/* =====================================================================
+   AHORRO
+   ===================================================================== */
+function tiersFor(id){ return D.yieldTiers.filter(function(t){return t.account_id===id;})
+  .sort(function(a,b){return num(a.tier_min)-num(b.tier_min);}); }
+
+function evalAccount(acct){
+  var amount=P.svAmount, bal=balanceOf(acct.account_id);
+  var iss=issuerOf(acct), it=String(iss.institution_type||'').toLowerCase();
+  var tr={id:acct.account_id,name:acct.account_name,issuer:iss.name,inst:it,
+          filters:[],rule:null,terms:[],notes:[],eliminated:null,total:0,gross:0};
+
+  var held=holdsAcct(acct.account_id);
+  tr.filters.push({rule:'en cartera',pass:held||P.scope==='market',
+    detail:held?('la tienes, saldo '+mx(bal)):'no la tienes',
+    explain:'Sólo se recomienda mover dinero a cuentas que el usuario ya tiene, salvo en modo mercado.'});
+  if(!held&&P.scope==='held'){ tr.eliminated={stage:1,rule:'en cartera',reason:'No está en la cartera'}; return tr; }
+
+  if(P.dir==='out'){
+    var enough=bal>=amount;
+    tr.filters.push({rule:'saldo suficiente',pass:enough,detail:mx(bal)+' vs '+mx(amount),
+      explain:'No se puede sacar de donde no hay.'});
+    if(!enough){ tr.eliminated={stage:1,rule:'saldo suficiente',reason:'Saldo '+mx(bal)+' < '+mx(amount)}; return tr; }
+    tr.filters.push({rule:'liquidez',pass:acct.liquidity!=='term',
+      detail:acct.liquidity==='term'?'cuenta a plazo':'disponible',
+      explain:'Las cuentas a plazo no permiten retiro anticipado sin penalización.'});
+    if(acct.liquidity==='term'){ tr.eliminated={stage:1,rule:'liquidez',reason:'Cuenta a plazo'}; return tr; }
+  }
+
+  if(RULES.riskGateSv.on && !riskCheck(tr,acct.min_risk_score,'esta cuenta')) return tr;
+
+  if(P.dir==='in'){
+    var okMin=amount>=num(acct.min_balance);
+    tr.filters.push({rule:'saldo mínimo',pass:okMin,
+      detail:num(acct.min_balance)?('mínimo '+mx(num(acct.min_balance))):'sin mínimo',
+      explain:'Debajo del mínimo la cuenta no rinde o cobra comisión.'});
+    if(!okMin){ tr.eliminated={stage:1,rule:'saldo mínimo',reason:'Requiere '+mx(num(acct.min_balance))}; return tr; }
+  }
+
+  /* Deposit insurance, model A: a ceiling on exposure, applied as a FILTER.
+     This is the honest home for it — a constraint on how much money may sit
+     somewhere uninsured, not a haircut on the interest rate. */
+  var fitting=amount;
+  if(RULES.insurance.on&&P.insModel==='cap'&&P.dir==='in'){
+    if(!it) tr.notes.push('Emisor sin institution_type: no se puede aplicar el tope de exposición.');
+    else if(it==='other'){
+      var already=uninsuredExposure(acct.account_id);
+      var head=Math.max(0,P.uninsuredCap-already);
+      tr.filters.push({rule:'tope sin seguro',pass:head>0,
+        detail:'ya tienes '+mx(already)+' sin seguro y tu tope es '+mx(P.uninsuredCap)+', así que caben '+mx(head),
+        explain:'Cuánto dinero aceptas tener en instituciones sin IPAB ni PROSOFIPO. Es una preferencia del usuario, no un dato del producto.'});
+      if(head<=0){ tr.eliminated={stage:1,rule:'tope sin seguro',reason:'Ya alcanzaste tu tope de '+mx(P.uninsuredCap)+' sin seguro'}; return tr; }
+      if(head<amount){ fitting=head;
+        tr.notes.push('Sólo caben '+mx(head)+' aquí bajo tu tope; los otros '+mx(amount-head)+' tendrían que ir a una institución con seguro.'); }
+    }
+  }
+
+  var boostPts=0, bwhy='esta cuenta no tiene boost definido';
+  if(acct.boost_apy!==''&&acct.boost_apy!=null){
+    if(!RULES.boost.on) bwhy='regla de boost apagada';
+    else {
+      var hasCard=holdsCard(acct.boost_card_id), sp2=mtdSpend(acct.boost_card_id), need=num(acct.boost_min_credit_spend);
+      if(hasCard&&sp2>=need){ boostPts=num(acct.boost_apy);
+        bwhy='boost de +'+boostPts+'% activo: llevas '+mx(sp2)+' en la tarjeta ligada y el mínimo es '+mx(need); }
+      else bwhy=hasCard?('boost inactivo: llevas '+mx(sp2)+' de '+mx(need)+' requeridos')
+                       :'boost inactivo: no tienes la tarjeta ligada';
+    }
+  }
+  tr.rule={applied:acct.yield_type==='tiered'?'rendimiento por niveles':'tasa plana',why:bwhy};
+
+  var base=P.dir==='in'?fitting:bal, gross=0, formula='';
+  if(acct.yield_type==='tiered'){
+    var parts=[];
+    tiersFor(acct.account_id).forEach(function(t){
+      var lo=num(t.tier_min), hi=t.tier_max===''?Infinity:num(t.tier_max);
+      var portion=Math.max(0,Math.min(base,hi)-lo);
+      if(portion>0){ gross+=portion*(num(t.apy)+boostPts)/100; parts.push(mx(portion)+' @ '+(num(t.apy)+boostPts)+'%'); }
+    });
+    formula=parts.join(' + ');
+  } else {
+    var cap=acct.yield_cap===''?Infinity:num(acct.yield_cap), eff=Math.min(base,cap);
+    gross=eff*(num(acct.base_apy)+boostPts)/100;
+    formula=mx(eff)+' × '+(num(acct.base_apy)+boostPts)+'%'+
+      (cap<Infinity&&base>cap?(' · tope '+mx(cap)+', '+mx(base-cap)+' no rinde'):'');
+  }
+  tr.terms.push(T(3,'gross','Rendimiento bruto anual',formula,gross));
+  if(RULES.acctFee.on&&num(acct.monthly_fee)>0)
+    tr.terms.push(T(3,'fee','Comisión mensual','−'+mx(num(acct.monthly_fee))+' × 12',-num(acct.monthly_fee)*12));
+  if(RULES.isr.on)
+    tr.terms.push(T(3,'isr','Retención de ISR',mx(base)+' × '+P.isrRate+'% sobre el capital',-base*P.isrRate/100,
+      'Tasa por verificar en la Ley de Ingresos vigente'));
+
+  var total=tr.terms.reduce(function(s,t){return s+t.value;},0);
+  tr.gross=total;
+
+  if(RULES.insurance.on){
+    if(P.insModel==='premium'){
+      if(!it) tr.notes.push('Emisor sin institution_type: no se puede aplicar la prima de riesgo.');
+      else if(it==='other'){
+        var cut2=-total*(P.riskPremium/100);
+        tr.terms.push(T(4,'ins','Prima de riesgo por falta de seguro',
+          '−'+P.riskPremium+'% del rendimiento neto — preferencia del usuario, no un dato del producto',cut2));
+        total+=cut2;
+      } else tr.notes.push('Protegida por '+(it==='bank'?'IPAB':'PROSOFIPO')+': sin prima de riesgo.');
+    } else if(it&&it!=='other'){
+      tr.notes.push('Protegida por '+(it==='bank'?'IPAB':'PROSOFIPO')+': el tope de exposición no aplica.');
+    }
+  }
+  if(RULES.liquidity.on&&acct.liquidity==='term'){
+    tr.terms.push(T(4,'liq','Penalización por plazo',
+      'el dinero queda bloqueado más allá de tu horizonte de '+P.horizonMonths+' meses',-total*0.20));
+    total=tr.terms.reduce(function(s,t){return s+t.value;},0);
+  }
+  tr.total=total;
+  return tr;
+}
+
+/* =====================================================================
+   RENDER
+   ===================================================================== */
+function bar(v,max){ var w=max>0?Math.min(100,Math.abs(v)/max*100):0;
+  return '<div class="bar '+(v<0?'neg':'pos')+'" style="width:'+w+'%"></div>'; }
+
+function renderTrace(tr,maxAbs,rank){
+  if(tr.eliminated) return '<div class="card out"><div class="ch"><span class="cn">'+esc(tr.name)+
+    '</span><span class="cx">eliminada</span></div><div class="cw">'+esc(tr.issuer)+'</div>'+
+    '<div class="elim"><b>Etapa '+tr.eliminated.stage+' · '+tr.eliminated.rule+'</b> — '+tr.eliminated.reason+'</div></div>';
+  var rows=tr.terms.map(function(t){
+    return '<tr><td class="tl"><span class="stn">E'+t.st+'</span>'+t.label+
+      (t.flag?'<span class="flag'+(/FALTANTE/.test(t.flag)?' bad':'')+'">'+t.flag+'</span>':'')+
+      '<div class="fo">'+esc(t.formula)+'</div></td>'+
+      '<td class="tb">'+bar(t.value,maxAbs)+'</td>'+
+      '<td class="tv '+(t.value<0?'neg':'')+'">'+mx2(t.value)+'</td></tr>';
+  }).join('');
+  return '<div class="card'+(rank===0?' win':'')+'"><div class="ch">'+
+    '<span class="rk">'+(rank+1)+'</span><span class="cn">'+esc(tr.name)+'</span>'+
+    '<span class="tot">'+mx2(tr.total)+'</span></div>'+
+    '<div class="cw">'+esc(tr.issuer)+(tr.inst?' · '+tr.inst:'')+'</div>'+
+    '<div class="rule"><b>Regla aplicada:</b> '+tr.rule.applied+'<br><span>'+esc(tr.rule.why)+'</span></div>'+
+    '<table class="terms">'+rows+'</table>'+
+    (tr.notes.length?'<div class="notes">'+tr.notes.map(function(n){return '• '+esc(n);}).join('<br>')+'</div>':'')+'</div>';
+}
+function renderFunnel(traces){
+  var elim=traces.filter(function(t){return t.eliminated;}), by={};
+  elim.forEach(function(t){ (by[t.eliminated.rule]=by[t.eliminated.rule]||[]).push(t); });
+  var h='<div class="funnel"><div class="fn-row"><span class="fn-n">'+traces.length+'</span> productos evaluados</div>';
+  Object.keys(by).forEach(function(k){
+    h+='<div class="fn-row out"><span class="fn-n">−'+by[k].length+'</span> '+k+
+      '<div class="fn-d">'+by[k].map(function(t){return esc(t.name)+' ('+t.eliminated.reason+')';}).join(' · ')+'</div></div>';
+  });
+  return h+'<div class="fn-row keep"><span class="fn-n">'+(traces.length-elim.length)+'</span> llegan al ranking</div></div>';
+}
+
+var LAST={cc:[],sv:[]};
+function runCC(){
+  var tr=D.cards.map(evalCard);
+  var live=tr.filter(function(t){return !t.eliminated;}).sort(function(a,b){return b.total-a.total;});
+  LAST.cc=live;
+  var max=Math.max.apply(null,[1].concat(live.map(function(t){
+    return Math.max.apply(null,[0].concat(t.terms.map(function(x){return Math.abs(x.value);}))); })));
+  $('#cc-funnel').innerHTML=renderFunnel(tr);
+  $('#cc-out').innerHTML=live.map(function(t,i){return renderTrace(t,max,i);}).join('')+
+    tr.filter(function(t){return t.eliminated;}).map(function(t){return renderTrace(t,max,-1);}).join('');
+}
+function runSV(){
+  var tr=D.accounts.map(evalAccount);
+  var live=tr.filter(function(t){return !t.eliminated;}).sort(function(a,b){
+    return P.dir==='in'?b.total-a.total:a.total-b.total; });
+  LAST.sv=live;
+  var max=Math.max.apply(null,[1].concat(live.map(function(t){
+    return Math.max.apply(null,[0].concat(t.terms.map(function(x){return Math.abs(x.value);}))); })));
+  $('#sv-funnel').innerHTML=renderFunnel(tr);
+  $('#sv-out').innerHTML=live.map(function(t,i){return renderTrace(t,max,i);}).join('')+
+    tr.filter(function(t){return t.eliminated;}).map(function(t){return renderTrace(t,max,-1);}).join('');
+  $('#sv-hint').textContent=P.dir==='in'?'Depósito: más alto es mejor.':'Retiro: más bajo es mejor (es el rendimiento que sacrificas).';
+  $('#ins-cap-box').style.display=P.insModel==='cap'?'block':'none';
+  $('#ins-prem-box').style.display=P.insModel==='premium'?'block':'none';
+  $('#ins-explain').innerHTML=P.insModel==='cap'
+    ? '<b>Tope de exposición (etapa 1).</b> No toca el rendimiento. Limita cuánto dinero puede estar en instituciones sin IPAB ni PROSOFIPO. Si el depósito no cabe completo, sólo se evalúa la parte que sí cabe y el resto se manda a otra cuenta. El riesgo es una restricción, y las restricciones viven en la etapa 1.'
+    : '<b>Prima de riesgo (etapa 4).</b> Descuenta un porcentaje del rendimiento de las cuentas sin seguro, como si el riesgo tuviera precio. Es más simple, pero menos honesto: el porcentaje es una preferencia inventada, no un dato del producto, y queda enterrado dentro del número final donde nadie lo cuestiona.';
+}
+
+/* ---- pestaña Árbol ---- */
+function renderTree(){
+  var side=$('#tree-side').value;
+  var list=side==='cc'?LAST.cc:LAST.sv;
+  var prev=$('#tree-prod').value;
+  $('#tree-prod').innerHTML=list.map(function(t){
+    return '<option value="'+t.id+'">'+esc(t.name)+'</option>';}).join('');
+  if(prev&&list.some(function(t){return t.id===prev;})) $('#tree-prod').value=prev;
+  var tr=list.filter(function(t){return t.id===$('#tree-prod').value;})[0]||list[0];
+
+  $('#tree').innerHTML=STAGES.map(function(s){
+    var rules=Object.keys(RULES).filter(function(k){return RULES[k].stage===s.n&&RULES[k].side===side;});
+    var live='';
+    if(tr){
+      if(s.n===1) live=tr.filters.map(function(f){
+        return '<div class="lv '+(f.pass?'ok':'no')+'"><b>'+f.rule+'</b> — '+esc(f.detail)+
+               '<div class="lvx">'+esc(f.explain)+'</div></div>'; }).join('');
+      else if(s.n===2) live=tr.rule?('<div class="lv ok"><b>'+esc(tr.rule.applied)+'</b><div class="lvx">'+esc(tr.rule.why)+'</div></div>'):'';
+      else if(s.n===3||s.n===4){
+        var ts=tr.terms.filter(function(t){return t.st===s.n;});
+        live=ts.length?ts.map(function(t){
+          return '<div class="lv '+(t.value<0?'no':'ok')+'"><b>'+t.label+'</b> '+mx2(t.value)+
+                 '<div class="lvx mono">'+esc(t.formula)+'</div></div>'; }).join('')
+          :'<div class="lv">ninguna regla de esta etapa está encendida</div>';
+        if(s.n===4) live+='<div class="lv tot2">Bruto '+mx2(tr.gross)+' → ajustado <b>'+mx2(tr.total)+'</b></div>';
+      }
+      else live='<div class="lv ok"><b>Posición '+(list.indexOf(tr)+1)+' de '+list.length+'</b>'+
+        '<div class="lvx">Total '+mx2(tr.total)+
+        (list.length>1&&list.indexOf(tr)===0?(' · ventaja de '+mx2(Math.abs(tr.total-list[1].total))+' sobre la siguiente'):'')+'</div></div>';
+    }
+    return '<div class="stg"><div class="stg-h"><span class="stg-n">'+s.n+'</span>'+s.t+
+      '<span class="stg-k">'+s.k+'</span></div><div class="stg-body">'+
+        '<p class="stg-p">'+s.purpose+'</p>'+
+        '<div class="io"><div><b>Entra</b><br>'+s.inp+'</div><div><b>Sale</b><br>'+s.out+'</div></div>'+
+        '<p class="stg-w"><b>Por qué existe:</b> '+s.why+'</p>'+
+        (rules.length?'<div class="rlist">'+rules.map(function(k){ var r=RULES[k];
+          return '<div class="rdoc'+(r.on?'':' off')+'"><div class="rdh">'+r.label+
+            '<span class="pill '+(r.live?'live':'prop')+'">'+(r.live?'en producción':'propuesta')+'</span>'+
+            (r.on?'':'<span class="pill off2">apagada</span>')+'</div>'+
+            '<div class="rdw">'+r.what+'</div><div class="rdf mono">'+esc(r.formula)+'</div>'+
+            (r.needs?'<div class="rdn">campos faltantes: '+r.needs.map(function(n){return '<code>'+n+'</code>';}).join(' ')+'</div>':'')+
+          '</div>'; }).join('')+'</div>':'')+
+        '<div class="livebox"><div class="lvh">Qué pasó con '+(tr?esc(tr.name):'—')+' aquí</div>'+live+'</div>'+
+      '</div></div>';
+  }).join('<div class="arrow">↓</div>');
+}
+
+function run(){ runCC(); runSV(); renderTree(); if($('#vars')) renderVars(); }
+
+/* ---- simulador ---- */
+function renderSim(){
+  $('#sim-cards').innerHTML=D.cards.map(function(c){
+    var on=!!SIM.cards[c.card_id];
+    return '<div class="simrow"><label><input type="checkbox" data-simcard="'+c.card_id+'"'+(on?' checked':'')+'> '+
+      esc(c.card_name)+'</label>'+
+      (on?'<span class="simin">gasto del mes <input type="number" data-simmtd="'+c.card_id+'" value="'+num(SIM.cards[c.card_id].mtd)+'">'+
+          ' · ya ganado <input type="number" data-simpri="'+c.card_id+'" value="'+num(SIM.cards[c.card_id].prior)+'"></span>':'')+'</div>';
+  }).join('');
+  $('#sim-accts').innerHTML=D.accounts.map(function(a){
+    var on=SIM.accounts[a.account_id]!=null;
+    var it=String(issuerOf(a).institution_type||'').toLowerCase();
+    return '<div class="simrow"><label><input type="checkbox" data-simacct="'+a.account_id+'"'+(on?' checked':'')+'> '+
+      esc(a.account_name)+(it?' <i>('+it+')</i>':'')+'</label>'+
+      (on?'<span class="simin">saldo <input type="number" data-simbal="'+a.account_id+'" value="'+num(SIM.accounts[a.account_id])+'"></span>':'')+'</div>';
+  }).join('');
+  $('#simbox').style.display=SIM.on?'block':'none';
+  $('#realbox').style.display=SIM.on?'none':'block';
+  var sc=$('#simcols'), sc2=$('#simcols2');
+  if(sc){ sc.style.display=SIM.on?'block':'none'; sc2.style.display=SIM.on?'block':'none'; }
+  var who=SIM.on?'simulado':(D.users.filter(function(u){return u.user_id===P.user;})[0]||{}).name;
+  var sr=riskScore();
+  var nCards=SIM.on?Object.keys(SIM.cards).length:D.userProducts.filter(function(x){return x.user_id===P.user&&x.product_type==='card';}).length;
+  var nAcc=SIM.on?Object.keys(SIM.accounts).length:D.userProducts.filter(function(x){return x.user_id===P.user&&x.product_type==='account';}).length;
+  $('#userbar-sum').textContent=who+' · '+nCards+' tarjetas · '+nAcc+' cuentas · ingreso '+
+    (P.income>0?mx(P.income):'no declarado')+' · score '+(sr===null?'sin score':sr);
+}
+
+function init(){
+  $('#cc-cat').innerHTML=D.categories.map(function(c){
+    return '<option value="'+c.category_key+'">'+esc(c.display_label)+'</option>';}).join('');
+  $('#cc-cat').value=P.category;
+  $('#user').innerHTML=D.users.map(function(u){
+    return '<option value="'+u.user_id+'">'+esc(u.name)+'</option>';}).join('');
+  $('#user').value=P.user;
+  $('#preset').innerHTML='<option value="">— aplicar preset —</option>'+
+    Object.keys(PRESETS).map(function(k){return '<option value="'+k+'">'+PRESETS[k].label+'</option>';}).join('');
+
+  /* Each toggle carries its own explanation: what the rule does, the formula
+     it applies, which stage it runs in, and what data it still needs. A
+     checkbox with only a label is not something anyone can reason about. */
+  ['cc','sv'].forEach(function(side){
+    $('#'+side+'-rules').innerHTML=Object.keys(RULES).filter(function(k){return RULES[k].side===side;})
+      .map(function(k){ var r=RULES[k];
+        return '<div class="rule-t'+(r.live?'':' prop')+(r.on?'':' offr')+'">'+
+          '<label class="rt-head"><input type="checkbox" data-rule="'+k+'"'+(r.on?' checked':'')+'>'+
+            '<span class="rl">'+r.label+'</span></label>'+
+          '<div class="rt-body">'+
+            '<div class="rt-what">'+r.what+'</div>'+
+            '<div class="rt-formula mono">'+esc(r.formula)+'</div>'+
+            '<div class="rt-tags"><span class="pill '+(r.live?'live':'prop')+'">'+
+              (r.live?'en producción':'propuesta')+'</span>'+
+              '<span class="pill stagep">etapa '+r.stage+' · '+STAGES[r.stage-1].t+'</span></div>'+
+            (r.needs?'<div class="rt-needs">Campos que faltan en la hoja: '+
+              r.needs.map(function(n){return '<code>'+n+'</code>';}).join(' ')+'</div>':'')+
+          '</div></div>'; }).join('');
+  });
+  renderSim();
+
+  document.addEventListener('change',function(e){
+    var t=e.target;
+    if(t.dataset.rule){
+      RULES[t.dataset.rule].on=t.checked;
+      t.closest('.rule-t').classList.toggle('offr',!t.checked);
+      run(); return; }
+    if(t.id==='simon'){ SIM.on=t.checked; if(SIM.on&&!Object.keys(SIM.cards).length&&!Object.keys(SIM.accounts).length) simFromReal(P.user); renderSim(); run(); return; }
+    if(t.id==='preset'&&t.value){ applyPreset(t.value); t.value=''; renderSim(); run(); return; }
+    if(t.dataset.simcard){ if(t.checked) SIM.cards[t.dataset.simcard]={mtd:0,prior:0}; else delete SIM.cards[t.dataset.simcard]; renderSim(); run(); return; }
+    if(t.dataset.simacct){ if(t.checked) SIM.accounts[t.dataset.simacct]=25000; else delete SIM.accounts[t.dataset.simacct]; renderSim(); run(); return; }
+    if(t.id==='cc-cat'){ P.category=t.value; run(); }
+    if(t.id==='user'){ P.user=t.value; if(SIM.on){ simFromReal(P.user); renderSim(); } run(); }
+    if(t.id==='scope'){ P.scope=t.value; run(); }
+    if(t.id==='sv-dir'){ P.dir=t.value; run(); }
+    if(t.id==='ins-model'){ P.insModel=t.value; run(); }
+    if(t.id==='payplan'){ P.payPlan=num(t.value); run(); }
+    if(t.id==='risk-mode'){ P.riskMode=t.value;
+      $('#risk-custom').style.display=(t.value==='custom')?'block':'none'; run(); }
+    if(t.id==='tree-side'||t.id==='tree-prod'){ renderTree(); }
+  });
+  document.addEventListener('input',function(e){
+    var t=e.target;
+    if(t.dataset.simmtd){ SIM.cards[t.dataset.simmtd].mtd=num(t.value); run(); return; }
+    if(t.dataset.simpri){ SIM.cards[t.dataset.simpri].prior=num(t.value); run(); return; }
+    if(t.dataset.simbal){ SIM.accounts[t.dataset.simbal]=num(t.value); run(); return; }
+    var m={'cc-amt':'amount','sv-amt':'svAmount','opp':'oppRate','isr-r':'isrRate',
+           'uncap':'uninsuredCap','prem':'riskPremium','mspend':'monthlySpend','confp':'confPenalty',
+           'income':'income','riskv':'riskValue'};
+    if(m[t.id]){ P[m[t.id]]=num(t.value); var o=$('#'+t.id+'-o'); if(o) o.textContent=t.value;
+      renderSim(); run(); }
+  });
+  $$('.tabs button').forEach(function(b){
+    b.onclick=function(){
+      $$('.tabs button').forEach(function(x){x.classList.remove('on');});
+      b.classList.add('on');
+      $$('.pane').forEach(function(p){p.classList.toggle('on',p.id==='pane-'+b.dataset.p);});
+      if(b.dataset.p==='tree') renderTree();
+      if(b.dataset.p==='vars') renderVars();
+    };
+  });
+  run();
+}
+document.addEventListener('DOMContentLoaded',init);
+
+/* =====================================================================
+   VARIABLES — el contrato de datos del motor
+   Toda entrada que puede mover una decisión: de dónde sale, si la tenemos
+   hoy, y qué regla la consume. La cobertura NO está escrita a mano: se mide
+   contra los datos cargados, así que cuando entren datos reales esta
+   pestaña dice la verdad sola.
+   ===================================================================== */
+var SOURCES = {
+  market:{t:'Hoja de mercado',d:'Lo que existe en el mercado. Lo editas tú en la Google Sheet.',c:'#0F7365'},
+  cartera:{t:'Cartera del usuario',d:'Qué productos tiene y con qué saldo. Pestaña UserProducts.',c:'#B85F35'},
+  historial:{t:'Historial',d:'Movimientos registrados. Alimenta topes, mínimos mensuales y boosts.',c:'#8F6210'},
+  perfil:{t:'Perfil',d:'Atributos del usuario. Hoy casi vacío: es lo que llenaría el flujo de alta.',c:'#A83229'},
+  escenario:{t:'Escenario',d:'Lo que el usuario está haciendo ahora mismo. Viene de la pantalla, no de la base.',c:'#4A5B8C'},
+  param:{t:'Parámetros',d:'Supuestos globales del motor. No son datos del usuario ni del producto.',c:'#5B4A7A'}
+};
+
+var VARS = [
+ // --- mercado: tarjetas ---
+ {p:'cards.base_reward_rate',s:'market',w:'Porcentaje que paga la tarjeta en cualquier compra.',u:['baseRate']},
+ {p:'cards.reward_type',s:'market',w:'Si paga cashback o puntos. Decide si hay que valuar.',u:['baseRate']},
+ {p:'cards.point_value_mxn',s:'market',w:'Cuánto vale un punto en pesos. Sin esto el motor asume $0.25 en silencio.',u:['baseRate','ccConf']},
+ {p:'cards.annual_fee',s:'market',w:'Anualidad. Hoy sólo informativa en la compra individual.',u:['feeAmort']},
+ {p:'cards.tier',s:'market',w:'Nivel del producto. Se usa para agrupar, no para decidir.',u:[]},
+ {p:'cards.min_risk_score',s:'market',w:'Score mínimo. Escrito a mano; sin método para asignarlo.',u:['riskGate']},
+ {p:'cards.min_income',s:'market',w:'Ingreso mínimo comprobable que publica el emisor.',u:['eligibility']},
+ {p:'cards.invitation_only',s:'market',w:'Si la tarjeta no acepta solicitudes.',u:['eligibility']},
+ {p:'cards.msi_max_months',s:'market',w:'Plazo máximo de meses sin intereses.',u:['msi']},
+ {p:'cards.msi_merchant_scope',s:'market',w:'En qué comercios aplica el MSI. Es por comercio afiliado, no por categoría.',u:['msi']},
+ {p:'cards.fx_fee_pct',s:'market',w:'Comisión por compra en divisa extranjera.',u:['fx']},
+ {p:'cards.interest_rate_annual',s:'market',w:'Tasa de interés. Necesaria si el usuario revuelve saldo.',u:['revolve']},
+ {p:'cards.last_verified',s:'market',w:'Cuándo se verificó por última vez. Base del modelo de confianza.',u:['ccConf']},
+
+ // --- mercado: bonos y beneficios ---
+ {p:'cardRewards.rate',s:'market',w:'Porcentaje del bonus por categoría.',u:['bonusRate']},
+ {p:'cardRewards.category',s:'market',w:'A qué categoría aplica el bonus.',u:['bonusRate']},
+ {p:'cardRewards.min_spend',s:'market',w:'Gasto mínimo para activar el bonus.',u:['minSpend']},
+ {p:'cardRewards.min_spend_period',s:'market',w:'Si el mínimo es por transacción o mensual. Cambia por completo el cálculo.',u:['minSpend']},
+ {p:'cardRewards.monthly_cap',s:'market',w:'Tope del bonus en el periodo.',u:['caps']},
+ {p:'cardRewards.cap_basis',s:'market',w:'Si el tope viene en pesos o en puntos. Confundirlos infla el valor varias veces.',u:['caps']},
+ {p:'cardRewards.cap_period',s:'market',w:'Si el tope es semanal o mensual.',u:['caps']},
+ {p:'cardRewards.shared_cap_group',s:'market',w:'Categorías que comparten un mismo tope.',u:['caps']},
+ {p:'cardRewards.replaces_or_adds_to_base',s:'market',w:'Si el bonus sustituye o se suma a la tasa base.',u:['bonusRate']},
+ {p:'cardRewards.user_selectable',s:'market',w:'Si el usuario elige esta categoría. Hoy se ignoran por completo.',u:[]},
+ {p:'cardRewards.confidence',s:'market',w:'Qué tan confiable es el dato.',u:['ccConf']},
+ {p:'cardPerks.mxn_value',s:'market',w:'Valor en pesos del beneficio.',u:['perks']},
+ {p:'cardPerks.applies_to_category',s:'market',w:'Categoría donde aplica el beneficio.',u:['perks']},
+ {p:'cardPerks.frequency',s:'market',w:'Cada cuánto se puede usar. Sin esto se cuenta completo cada compra.',u:['perks']},
+
+ // --- mercado: cuentas ---
+ {p:'accounts.base_apy',s:'market',w:'Tasa anual de la cuenta.',u:['grossYield']},
+ {p:'accounts.yield_type',s:'market',w:'Si la tasa es plana o por niveles.',u:['grossYield']},
+ {p:'accounts.yield_cap',s:'market',w:'Hasta qué saldo rinde.',u:['grossYield']},
+ {p:'accounts.monthly_fee',s:'market',w:'Comisión mensual.',u:['acctFee']},
+ {p:'accounts.min_balance',s:'market',w:'Saldo mínimo para que rinda.',u:['grossYield']},
+ {p:'accounts.liquidity',s:'market',w:'Si el dinero está disponible o a plazo.',u:['liquidity']},
+ {p:'accounts.term_days',s:'market',w:'Días de bloqueo. Se compara contra el horizonte del usuario.',u:['liquidity']},
+ {p:'accounts.taxable',s:'market',w:'Si el instrumento causa retención de ISR.',u:['isr']},
+ {p:'accounts.boost_apy',s:'market',w:'Puntos extra de tasa si se cumple la condición.',u:['boost']},
+ {p:'accounts.boost_card_id',s:'market',w:'Tarjeta ligada al boost.',u:['boost']},
+ {p:'accounts.boost_min_credit_spend',s:'market',w:'Gasto mensual requerido para el boost.',u:['boost']},
+ {p:'yieldTiers.apy',s:'market',w:'Tasa de cada tramo de saldo.',u:['grossYield']},
+ {p:'issuers.institution_type',s:'market',w:'Banco, sofipo u otro. Determina el esquema de seguro.',u:['insurance']},
+
+ // --- cartera / historial ---
+ {p:'userProducts.product_id',s:'cartera',w:'Qué productos tiene. Filtro de la etapa 1.',u:['—']},
+ {p:'userProducts.current_balance',s:'cartera',w:'Saldo por cuenta. Base del retiro y del tope de exposición.',u:['grossYield','insurance']},
+ {p:'movements.amount',s:'historial',w:'Gasto acumulado del mes. Activa mínimos mensuales y boosts.',u:['minSpend','boost']},
+ {p:'movements.computed_benefit_mxn',s:'historial',w:'Recompensa ya ganada. Se resta de los topes.',u:['caps']},
+ {p:'movements.merchant_category',s:'historial',w:'Categoría del movimiento. Agrupa el consumo de topes compartidos.',u:['caps']},
+ {p:'movements.merchant_name',s:'historial',w:'Comercio concreto. Indispensable para MSI, que es por afiliado.',u:['msi']},
+
+ // --- perfil ---
+ {p:'users.risk_score',s:'perfil',w:'Probabilidad de aprobación. Sin método para obtenerlo.',u:['riskGate']},
+ {p:'users.monthly_income',s:'perfil',w:'Ingreso comprobable declarado.',u:['eligibility']},
+ {p:'users.pays_full_balance',s:'perfil',w:'Si liquida cada mes. Si no, las recompensas dejan de importar.',u:['revolve']},
+ {p:'users.uninsured_cap',s:'perfil',w:'Cuánto acepta tener sin seguro de depósito.',u:['insurance']},
+ {p:'users.horizon_months',s:'perfil',w:'En cuánto tiempo necesita el dinero.',u:['liquidity']},
+
+ // --- escenario ---
+ {p:'escenario.monto',s:'escenario',w:'Cuánto va a gastar o depositar.',u:['baseRate','grossYield'],na:1},
+ {p:'escenario.categoria',s:'escenario',w:'Tipo de comercio.',u:['bonusRate'],na:1},
+ {p:'escenario.direccion',s:'escenario',w:'Depósito o retiro.',u:['grossYield'],na:1},
+ {p:'escenario.plan_de_pago',s:'escenario',w:'De contado o a N meses sin intereses. El usuario lo elige en la caja; la app todavía no lo pregunta, y sin eso el MSI no se puede evaluar.',u:['msi'],na:1},
+ {p:'escenario.comercio',s:'escenario',w:'Dónde está comprando. La app aún no lo captura.',u:['msi'],na:1},
+
+ // --- parámetros ---
+ {p:'param.tasa_oportunidad',s:'param',w:'Contra qué se compara el valor de diferir. Debería salir de la mejor cuenta del propio usuario.',u:['msi'],na:1},
+ {p:'param.tasa_isr',s:'param',w:'Retención anual sobre el capital. Cambia cada año.',u:['isr'],na:1},
+ {p:'param.castigo_confianza',s:'param',w:'Cuánto se descuenta por datos estimados.',u:['ccConf'],na:1},
+ {p:'param.valor_punto_default',s:'param',w:'El $0.25 que se asume cuando no conocemos el valor real. Debería desaparecer.',u:['baseRate'],na:1}
+];
+
+function coverage(path){
+  var parts=path.split('.'), tbl=D[parts[0]];
+  if(!Array.isArray(tbl)) return null;
+  var n=tbl.filter(function(r){ var v=r[parts[1]]; return v!==''&&v!=null; }).length;
+  return {n:n,total:tbl.length};
+}
+
+function renderVars(){
+  var flow='<div class="flowmap">'+
+    '<div class="fcol">'+Object.keys(SOURCES).map(function(k){
+      return '<div class="fsrc" style="border-left-color:'+SOURCES[k].c+'"><b>'+SOURCES[k].t+'</b>'+
+             '<span>'+SOURCES[k].d+'</span></div>'; }).join('')+'</div>'+
+    '<div class="farrow">→</div>'+
+    '<div class="fcol">'+STAGES.map(function(s){
+      return '<div class="fstg"><span class="fn2">'+s.n+'</span>'+s.t+'</div>'; }).join('')+'</div>'+
+    '<div class="farrow">→</div>'+
+    '<div class="fcol"><div class="fdec"><b>Recomendación</b><span>producto elegido, monto de beneficio y la explicación, todo salido del mismo rastro</span></div></div>'+
+    '</div>';
+
+  var have=0, miss=0, partial=0;
+  var groups=Object.keys(SOURCES).map(function(sk){
+    var rows=VARS.filter(function(v){return v.s===sk;}).map(function(v){
+      var cov=v.na?null:coverage(v.p);
+      var state,label;
+      if(v.na){ state='na'; label='lo provee la pantalla'; }
+      else if(!cov){ state='miss'; label='la columna no existe'; miss++; }
+      else if(cov.n===0){ state='miss'; label='columna vacía (0 de '+cov.total+')'; miss++; }
+      else if(cov.n<cov.total){ state='part'; label=cov.n+' de '+cov.total+' filas'; partial++; }
+      else { state='ok'; label='completa ('+cov.total+' filas)'; have++; }
+      var uses=(v.u||[]).filter(function(k){return RULES[k];})
+        .map(function(k){ return '<span class="uses'+(RULES[k].on?'':' offu')+'">'+RULES[k].label+'</span>'; }).join('');
+      return '<tr class="v-'+state+'"><td class="vp mono">'+esc(v.p)+'</td>'+
+        '<td class="vw">'+v.w+(uses?'<div class="vu">'+uses+'</div>':'')+'</td>'+
+        '<td class="vs"><span class="dot2 '+state+'"></span>'+label+'</td></tr>';
+    }).join('');
+    return '<div class="vgrp"><h3 style="border-color:'+SOURCES[sk].c+'">'+SOURCES[sk].t+'</h3>'+
+      '<table class="vtab">'+rows+'</table></div>';
+  }).join('');
+
+  $('#vars').innerHTML=flow+
+    '<div class="vsum"><div class="vs1 ok"><b>'+have+'</b> completas</div>'+
+    '<div class="vs1 part"><b>'+partial+'</b> parciales</div>'+
+    '<div class="vs1 miss"><b>'+miss+'</b> faltantes</div>'+
+    '<div class="vs1"><b>'+VARS.length+'</b> variables en total</div></div>'+
+    '<p class="vnote">La cobertura se mide contra los datos cargados en este momento, no está escrita a mano. Cuando conectes datos reales, esta pestaña reporta la verdad sin que nadie la actualice.</p>'+
+    groups;
+}
+</script>
+</body></html>

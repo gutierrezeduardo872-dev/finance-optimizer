@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="es"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Norte — Roadmap</title>
+<style>
+:root{--ink:#1C2431;--copper:#B85F35;--teal:#0F7365;--bg:#F6F5F1;--sf:#fff;--line:#E7E4DD;
+--line2:#F1EFEA;--muted:#7C8492;--sand-s:#F6EEDD}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:#1E2733;font:14.5px/1.55 ui-sans-serif,system-ui,-apple-system,sans-serif}
+header{background:var(--ink);color:#fff;padding:20px}
+h1{margin:0;font-size:19px;letter-spacing:-.02em}
+header p{margin:5px 0 0;font-size:13px;color:#96A2B1;max-width:720px}
+.wrap{max-width:960px;margin:0 auto;padding:18px 20px 70px}
+#summary{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}
+.sum{background:var(--sf);border:1px solid var(--line);border-radius:12px;padding:11px 16px;flex:1;min-width:96px}
+.sum-n{font-size:22px;font-weight:700;font-variant-numeric:tabular-nums}
+.sum-l{font-size:11.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+.panel{background:var(--sf);border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:18px}
+.panel h3{margin:0 0 4px;font-size:14px}
+.panel .sub{font-size:12.5px;color:var(--muted);margin:0 0 12px}
+.cr{display:flex;align-items:baseline;gap:10px;padding:7px 0;border-top:1px solid var(--line2)}
+.cr:first-of-type{border-top:0}
+.cr-n{width:20px;height:20px;border-radius:6px;background:var(--copper);color:#fff;display:grid;
+  place-items:center;font-size:11px;font-weight:700;flex:0 0 auto}
+.cr-t{font-weight:600;font-size:14px;flex:1}
+.cr-m{font-size:11.5px;color:var(--muted)}
+.filters{margin-bottom:8px}
+.filters .lbl{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;
+  letter-spacing:.05em;margin-bottom:6px}
+.fr{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:11px}
+.fb{border:1px solid var(--line);background:var(--sf);border-radius:99px;padding:6px 13px;
+  font:inherit;font-size:12.5px;font-weight:600;color:var(--muted);cursor:pointer}
+.fb.on{background:var(--c,var(--ink));border-color:var(--c,var(--ink));color:#fff}
+.grp{margin-bottom:22px}
+.grp h2{font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);
+  border-left:4px solid;padding-left:10px;margin:0 0 10px;display:flex;align-items:center;gap:9px}
+.gc{font-size:11px;color:var(--muted);font-weight:500}
+.item{background:var(--sf);border:1px solid var(--line);border-radius:12px;margin-bottom:8px;overflow:hidden}
+.ih{display:flex;align-items:center;gap:10px;padding:12px 14px;flex-wrap:wrap}
+.dot{width:8px;height:8px;border-radius:99px;flex:0 0 auto}
+.it{font-weight:650;font-size:14.5px;flex:1;min-width:180px}
+.meta{display:flex;gap:5px;flex-wrap:wrap}
+.chip{font-size:11px;font-weight:600;padding:3px 9px;border-radius:99px;background:var(--line2);color:var(--muted)}
+.chip.hi{background:#F7EAE1;color:var(--copper)}
+.exp{border:1px solid var(--line);background:var(--sf);width:26px;height:26px;border-radius:8px;
+  font:inherit;font-size:15px;color:var(--muted);cursor:pointer;flex:0 0 auto;line-height:1}
+.ib{display:none;padding:0 14px 14px;border-top:1px solid var(--line2)}
+.item.open .ib{display:block}
+.why{margin:12px 0 0;font-size:13.5px}
+.note{margin:9px 0 0;font-size:13px;color:#48525F;background:#FBFAF7;border-left:3px solid var(--line);
+  padding:9px 12px;border-radius:0 8px 8px 0}
+.needs{margin-top:10px;font-size:12.5px}
+.needs code{background:#F7EAE1;color:var(--copper);padding:2px 6px;border-radius:5px;font-size:11.5px}
+.dep{margin-top:8px;font-size:12.5px;color:var(--teal)}
+.dep.blk{color:#A83229}
+.setst{margin-top:12px;font-size:11.5px;color:var(--muted);display:flex;gap:5px;align-items:center;flex-wrap:wrap}
+.sb{border:1px solid var(--line);background:var(--sf);border-radius:99px;padding:4px 10px;
+  font:inherit;font-size:11.5px;font-weight:600;color:var(--muted);cursor:pointer}
+.sb.on{background:var(--c);border-color:var(--c);color:#fff}
+.tools{display:flex;gap:8px;margin-top:18px}
+.tools button{border:1px solid var(--line);background:var(--sf);border-radius:9px;padding:9px 14px;
+  font:inherit;font-size:13px;font-weight:600;cursor:pointer}
+#exp-out{display:none;white-space:pre;font-family:ui-monospace,Menlo,monospace;font-size:11.5px;
+  background:var(--ink);color:#C3CCD6;padding:14px;border-radius:10px;margin-top:10px;overflow:auto;max-height:220px}
+.warn{background:var(--sand-s);border:1px solid #E6D6B2;border-radius:10px;padding:11px 14px;
+  font-size:12.5px;margin-top:14px}
+.empty{color:var(--muted);padding:22px;text-align:center}
+</style></head><body>
+<header>
+  <h1>Norte · Roadmap</h1>
+  <p>Todo lo que sabemos que falta, agrupado por los seis pilares. Cada punto dice por qué importa, qué campos de esquema necesita y qué desbloquea. Abre un punto para cambiar su estado.</p>
+</header>
+<div class="wrap">
+  <div id="summary"></div>
+
+  <div class="panel">
+    <h3>Ruta sugerida</h3>
+    <p class="sub">Mayor impacto primero, entre lo que hoy no está bloqueado por otra cosa.</p>
+    <div id="crit"></div>
+  </div>
+
+  <div class="filters">
+    <div class="lbl">Pilar</div><div class="fr" id="f-pillar"></div>
+    <div class="lbl">Estado</div><div class="fr" id="f-status"></div>
+  </div>
+
+  <div id="list"></div>
+
+  <div class="tools">
+    <button id="export">Exportar estado</button>
+    <button id="reset">Restablecer</button>
+  </div>
+  <pre id="exp-out"></pre>
+  <div class="warn"><b>Sobre la persistencia:</b> el contenido del roadmap vive en el archivo y se versiona con el repositorio. Los estados que cambies aquí se guardan sólo en este navegador. Usa <i>Exportar estado</i> para moverlos o para pasármelos y que los deje fijos en el archivo.</div>
+</div>
+<script>/* =====================================================================
+   NORTE — datos del roadmap
+   Fuente de verdad del plan. Editar aquí y reconstruir.
+   status: done | now | next | later | blocked
+   effort: S (<1 día) | M (1–3 días) | L (>1 semana)
+   impact: 3 alto | 2 medio | 1 bajo
+   needs:  campos de esquema que aún no existen
+   after:  ids que deben resolverse antes
+   ===================================================================== */
+var ITEMS = [
+
+/* ---------------- MOTOR DE RECOMENDACIÓN ---------------- */
+{id:'risk-null', p:'motor', t:'Tolerar score y requisitos faltantes', status:'next', effort:'S', impact:3,
+ why:'Hoy la app lee un score ausente como cero, así que un usuario nuevo queda por debajo del mínimo de todo y Sugerencias se le vacía sin explicación. “No lo sabemos” es un estado válido y distinto de “sale mal”. Y como muchas tarjetas nunca van a publicar sus requisitos, esto no es un parche mientras completamos datos: es cómo debe comportarse el motor de forma permanente.',
+ note:'Cambio corto y aislado: tratar el score vacío como desconocido en vez de cero, dejar pasar el producto y marcarlo con la razón. Aplica igual cuando el que falta es el mínimo del producto. Ya está implementado y probado en el laboratorio; falta llevarlo a la app.'},
+
+{id:'eng-trace', p:'motor', t:'Motor basado en rastro (trace)', status:'now', effort:'M', impact:3,
+ why:'Hoy el motor devuelve un número. Si devuelve un rastro — qué filtros pasó, qué regla aplicó, cada término en pesos — la explicación al usuario, el laboratorio y las pruebas leen la misma estructura. Es el cimiento de todo lo demás en este pilar.',
+ note:'Prototipo funcionando en engine-lab.html. Falta portarlo a la app y que la UI consuma el rastro en vez de recalcular.'},
+
+{id:'eng-msi', p:'motor', t:'Meses sin intereses (MSI)', status:'next', effort:'L', impact:3,
+ why:'Para una compra de $30,000 a 12 MSI, diferir el pago vale ≈$1,650 contra una tasa de oportunidad de 12% — como cinco veces el mejor cashback disponible. Hoy el motor es ciego al término más grande de la decisión en el mercado mexicano.',
+ needs:['cards.msi_max_months','cards.msi_merchant_scope','cards.msi_min_amount'],
+ after:['eng-trace'],
+ note:'Tres partes separables: (1) esquema y datos de qué tarjeta da MSI y dónde; (2) el cálculo del valor de diferir; (3) UX — preguntar “¿a cuántos meses?” en el flujo de compra. La tasa de oportunidad puede salir de la mejor cuenta del propio usuario, no de un supuesto global. Ojo: MSI suele ser por comercio afiliado, no por categoría, lo que rompe el modelo actual basado en categorías.'},
+
+{id:'eng-isr', p:'motor', t:'ISR sobre intereses', status:'next', effort:'M', impact:3,
+ why:'Todos los rendimientos de la app son brutos y por lo tanto están sobreestimados. La retención es sobre el capital, no sobre el interés, así que castiga desproporcionadamente a las cuentas de tasa baja — justo las que la app debería estar desaconsejando.',
+ needs:['accounts.taxable','params.isr_rate_annual'],
+ after:['eng-trace'],
+ note:'La tasa cambia cada año en la Ley de Ingresos; debe ser un parámetro, nunca una constante en el código. Verificar si algún instrumento (Cetesdirecto, ciertos pagarés) tiene tratamiento distinto.'},
+
+{id:'eng-ins', p:'motor', t:'Ponderar el seguro de depósito', status:'next', effort:'M', impact:3,
+ why:'La brecha de rendimiento entre banca tradicional (0–2.7%) y fintechs (hasta 15%) es en buena parte una prima de riesgo. Recomendar sólo por tasa le dice al usuario que ignore esa diferencia.',
+ needs:['issuers.ipab_prosofipo_coverage_limit','users.uninsured_cap'],
+ after:['data-inst'],
+ note:'Los dos modelos están implementados en el laboratorio para compararlos. (A) Tope de exposición: el usuario declara cuánto acepta tener sin seguro y eso actúa como filtro en la etapa 1; si el depósito no cabe, sólo se evalúa la parte que sí. (B) Prima de riesgo: descuenta un % del rendimiento en la etapa 4. Recomiendo A — el riesgo es una restricción, no un precio, y un porcentaje inventado enterrado en el número final es exactamente lo que esta app no debería hacer. Falta decidirlo y llevarlo al onboarding.'},
+
+{id:'eng-points', p:'motor', t:'Valuación real de puntos', status:'next', effort:'S', impact:3,
+ why:'Cuando no conocemos el valor del punto, el motor asume $0.25 en silencio. Eso convierte un dato faltante en un número con apariencia de certeza, que es el peor error posible en este producto.',
+ needs:['cards.point_value_source','cards.point_value_confidence'],
+ note:'Arreglo corto: dejar de usar el valor por defecto y marcar la incertidumbre en la UI. Arreglo largo: valor por programa (Puntos BBVA, Recompensas Banorte, Membership Rewards) con fuente y fecha.'},
+
+{id:'eng-perks', p:'motor', t:'Beneficios: dejar de contarlos completos', status:'next', effort:'S', impact:2,
+ why:'mxn_value se suma íntegro en cada compra que califica. Un 2x1 de cine que vale $90 al mes cuenta $90 cada vez que vas al cine, así que una tarjeta se ve mejor entre más la uses.',
+ needs:['cardPerks.frequency','cardPerks.annual_cap','cardPerks.uses_per_period'],
+ after:['eng-trace']},
+
+{id:'eng-sel', p:'motor', t:'Categorías que elige el usuario', status:'later', effort:'M', impact:2,
+ why:'DiDi deja elegir una categoría al 6%, Plata hasta cuatro, Vexi tiene niveles. Hoy el motor las ignora por completo, así que subestima esas tarjetas — y son de las más competitivas del mercado.',
+ needs:['userProducts.selected_categories'],
+ after:['eng-trace'],
+ note:'Necesita UI: al agregar la tarjeta, preguntar qué categoría eligió. También afecta a Sugerencias: al comparar una tarjeta que no tienes, hay que asumir la mejor elección posible para el usuario.'},
+
+{id:'eng-fx', p:'motor', t:'Compras en el extranjero', status:'later', effort:'S', impact:2,
+ why:'Algunas tarjetas (Nu entre ellas) no cobran comisión por divisa; otras cobran hasta 2.5%. En una compra en dólares eso pesa más que cualquier cashback.',
+ needs:['cards.fx_fee_pct'],
+ after:['eng-trace'],
+ note:'Es un escenario de compra distinto, no una categoría más.'},
+
+{id:'eng-rev', p:'motor', t:'Costo de no liquidar el saldo', status:'later', effort:'M', impact:3,
+ why:'Si el usuario revuelve saldo, las recompensas son irrelevantes: una tasa de 40% anual borra cualquier cashback de 5%. Recomendar la tarjeta con más cashback a alguien que no liquida es un consejo activamente malo.',
+ needs:['cards.interest_rate_annual','users.pays_full_balance'],
+ after:['eng-trace'],
+ note:'Basta una pregunta en el perfil. Si la respuesta es “no”, el consejo correcto cambia por completo: prioriza tasa baja, no recompensas.'},
+
+{id:'eng-conf', p:'motor', t:'Modelo de confianza y vigencia', status:'later', effort:'M', impact:3,
+ why:'Un dato equivocado es peor que uno faltante, porque la app lo presenta con total seguridad. El motor debería poder decir “no recomiendo esta tarjeta porque no confío en sus datos”.',
+ needs:['*.confidence','*.last_verified'],
+ after:['eng-trace','data-prov']},
+
+{id:'risk-user', p:'motor', t:'Cómo se obtiene el score de riesgo del usuario', status:'later', effort:'L', impact:3,
+ why:'Hoy el número se escribe a mano en la pestaña Users y nadie lo calcula. Mientras no exista un método, el score no puede esconder productos: por eso ahora un usuario sin score pasa todos los filtros y se le avisa. Pero sin score tampoco podemos decirle si vale la pena solicitar una tarjeta, que es media promesa del producto.',
+ needs:['users.risk_score','users.risk_score_source','users.risk_score_updated_at'],
+ note:'Cuatro caminos, de menos a más costoso. (1) DERIVARLO DE LO QUE YA TIENE: si el usuario porta una tarjeta cuyo requisito publicado es de $45,000, demostró que califica en esa banda. Es gratis, no requiere permisos y ya tenemos el dato en UserProducts — es por donde yo empezaría. (2) AUTODECLARADO: el usuario puede consultar su score gratis una vez al año en Buró de Crédito; sirve para quien lo sepa, no para la mayoría. (3) DERIVADO DE ATRIBUTOS del flujo de alta: ingreso, tipo de empleo, antigüedad crediticia, tarjetas vigentes, rechazos recientes. Transparente y explicable, pero es un modelo propio que hay que calibrar contra resultados reales. (4) API DE BURÓ O CÍRCULO DE CRÉDITO: el dato bueno, pero es servicio de paga, exige consentimiento expreso y estar registrado como usuario de una SIC bajo la ley que las regula. No es viable antes del pilar de cumplimiento. Decisión pendiente: si nos quedamos en (1)+(3), conviene dejar de fingir precisión de tres dígitos y usar bandas ordinales (entrada / estándar / premium), que es lo que realmente podemos sostener.'},
+
+{id:'risk-prod', p:'datos', t:'Cómo se asigna el mínimo a cada producto', status:'later', effort:'M', impact:3,
+ why:'El otro lado de la comparación también está inventado: min_risk_score se escribe a mano por producto. Dos números fabricados comparados entre sí no filtran nada, sólo esconden.',
+ needs:['cards.min_risk_score','cards.min_income','cards.invitation_only','cards.eligibility_source'],
+ after:['risk-user'],
+ note:'APLAZADO: la cobertura va a ser parcial de forma permanente — muchas tarjetas simplemente no publican requisitos, sobre todo las fintech. Eso no es un estado temporal que se resuelva recolectando más; es una condición del mercado, y el motor tiene que funcionar bien con huecos para siempre. Por eso lo único que sí se hace ahora es tolerar el dato faltante (ver “Permitir usuarios sin score”). Lo que sí es verificable y publican los emisores: ingreso mínimo comprobable, si la tarjeta es sólo por invitación, y el nivel del producto. Propuesta: derivar el mínimo de esos hechos con una regla escrita y visible, no a ojo, y guardar la fuente en eligibility_source. Debe usar la misma escala que elijamos para el usuario — si pasamos a bandas ordinales, aquí también.'},
+
+{id:'ux-alta', p:'ux', t:'Flujo de alta / adquisición', status:'later', effort:'L', impact:3,
+ why:'Es el único momento natural para pedir los datos que alimentan el score y la elegibilidad. Pedirlos después se siente como un interrogatorio; pedirlos al inicio se siente como configurar la app.',
+ needs:['users.monthly_income','users.employment_type','users.credit_history_years','users.pays_full_balance','users.uninsured_cap'],
+ after:['risk-user'],
+ note:'Campos candidatos, todos con un uso concreto en el motor: ingreso mensual comprobable (elegibilidad), tipo de empleo y antigüedad crediticia (score derivado), tarjetas y cuentas que ya tiene (score derivado por la vía (1) y base de las recomendaciones), si liquida su tarjeta cada mes (regla de revolvencia), y cuánto acepta tener sin seguro de depósito (tope de exposición). Regla de diseño: no pedir ningún campo que el motor no use — cada pregunta debe poder justificarse mostrando qué cambia en la recomendación.'},
+
+{id:'eng-elig', p:'motor', t:'Elegibilidad por ingreso (complemento del score)', status:'later', effort:'S', impact:3,
+ why:'El ingreso mínimo comprobable lo publican los emisores, así que es verificable — a diferencia del score. Responde una pregunta distinta: el ingreso es un requisito duro, el score es probabilidad de aprobación. Los dos filtros conviven.',
+ needs:['cards.min_income','cards.invitation_only','users.monthly_income'],
+ after:['eng-trace'],
+ note:'Ya probado en el laboratorio. Regla clave, igual que en el score: cuando falta el dato de cualquiera de los dos lados, el producto pasa y se marca. Es preferible admitir de más y avisarlo que esconder por un dato que no tenemos — el usuario nunca se entera de lo que le ocultamos.'},
+
+{id:'eng-liq', p:'motor', t:'Liquidez y horizonte de ahorro', status:'later', effort:'M', impact:2,
+ why:'Un pagaré a 90 días con mejor tasa no sirve si el dinero se necesita en tres semanas. El motor sólo distingue “term” y lo excluye de retiros; no modela plazo ni horizonte del usuario.',
+ needs:['accounts.term_days','accounts.early_withdrawal_penalty'],
+ after:['eng-trace']},
+
+{id:'eng-tie', p:'motor', t:'Desempates y explicación', status:'later', effort:'S', impact:1,
+ why:'Cuando dos tarjetas empatan, el orden depende del orden de las filas en la hoja. Debería desempatar por algo defendible: anualidad, confianza del dato, o simplemente decir que empatan.',
+ after:['eng-trace']},
+
+/* ---------------- DATOS DE MERCADO ---------------- */
+{id:'data-inst', p:'datos', t:'Columna institution_type', status:'now', effort:'S', impact:3,
+ why:'Distinguir banco / sofipo / otro es lo que permite hablar de seguro de depósito, que es la variable de riesgo más importante en las recomendaciones de ahorro.',
+ note:'Código listo y desplegable. Falta llenar la columna en la hoja y verificar la figura regulatoria de Nu, Stori y Ualá, que han cambiado.'},
+
+{id:'data-skill', p:'datos', t:'Skill de recolección y validación', status:'next', effort:'L', impact:3,
+ why:'El cuello de botella no es recolectar, es confiar. Un 5% que en realidad es 2% le cuesta dinero real al usuario y la app lo muestra con total seguridad.',
+ note:'Tres etapas: (1) recolección por emisor desde fuentes primarias, con URL, cita y fecha por campo; (2) validación mecánica sin criterio humano — esquema, llaves huérfanas, categorías inexistentes, topes sin unidad, tasas fuera de rango; (3) revisión como diff campo por campo contra lo que está en vivo. Empezar por los emisores que los testers realmente tienen.'},
+
+{id:'data-prov', p:'datos', t:'Procedencia a nivel de campo', status:'next', effort:'M', impact:3,
+ why:'Sin fuente y fecha por campo no se puede construir el modelo de confianza, ni saber qué revalidar, ni defender una recomendación si alguien la cuestiona.',
+ needs:['*.source_url','*.retrieved_at','*.confidence'],
+ after:['data-skill'],
+ note:'El JSON de investigación ya lo hace. Falta llevarlo al esquema de la hoja sin volverla inmanejable — probablemente una pestaña de procedencia aparte, no columnas paralelas en cada tabla.'},
+
+{id:'data-18pt', p:'datos', t:'Plan de extensión de esquema (18 puntos)', status:'next', effort:'M', impact:2,
+ why:'Ya está acordado y sigue pendiente. Varios de los campos que piden MSI, FX y confianza probablemente ya están contemplados ahí.',
+ note:'Revisarlo contra la lista de campos faltantes de este roadmap antes de aplicarlo; puede que se fusionen.'},
+
+{id:'data-caps', p:'datos', t:'Normalizar topes y taxonomía', status:'next', effort:'S', impact:2,
+ why:'Topes en unidades mezcladas y categorías faltantes producen errores silenciosos: un tope en puntos tratado como pesos exagera el valor por 4x o más.',
+ note:'Verificar que farmacia y servicios existan en la hoja en vivo, y que cap_basis / cap_period estén poblados en todas las filas, no sólo en las nuevas.'},
+
+{id:'data-census', p:'datos', t:'Detallar el censo de tarjetas', status:'later', effort:'L', impact:2,
+ why:'Hay un backlog grande de tarjetas registradas pero sin recompensas mapeadas. El motor las puntúa como si sus bonos fueran cero, así que las descarta injustamente.',
+ needs:['cards.data_completeness'],
+ after:['data-skill'],
+ note:'Priorizar co-brands de retail (supermercado, clubes de precio, farmacia) porque concentran el gasto. Mientras tanto, marcar completitud para que el motor pueda negarse a recomendar lo que no entiende del todo.'},
+
+{id:'data-fresh', p:'datos', t:'Indicadores de vigencia en la app', status:'later', effort:'S', impact:2,
+ why:'Las condiciones de tarjetas cambian seguido. El usuario merece ver cuándo se verificó por última vez lo que le estamos diciendo.',
+ after:['data-prov']},
+
+/* ---------------- DATOS DEL USUARIO ---------------- */
+{id:'tx-recon', p:'usuario', t:'Reconciliar saldos con movimientos', status:'next', effort:'M', impact:3,
+ why:'Los depósitos ya actualizan el saldo, pero todo lo registrado antes de ese cambio no lo hizo. Los saldos actuales y el historial no cuadran, y nada en la app lo detecta.',
+ note:'Hace falta decidir cuál manda: el saldo capturado o la suma de movimientos. Mi inclinación es que el saldo capturado manda y el historial sólo explica, con una alerta cuando difieran más de cierto umbral.'},
+
+{id:'tx-merchant', p:'usuario', t:'Capturar el comercio', status:'next', effort:'M', impact:2,
+ why:'La categoría sola no basta: los bonos de MSI y varias promociones son por comercio afiliado. Sin el comercio no se pueden modelar.',
+ needs:['movements.merchant_name','merchants tab'],
+ note:'Empezar por texto libre guardado en notes, luego autocompletado, luego mosaicos de comercios frecuentes.'},
+
+{id:'tx-stmt', p:'usuario', t:'Carga y lectura de estados de cuenta', status:'blocked', effort:'L', impact:3,
+ why:'Es la única forma de que los datos del usuario sean fieles sin capturarlos a mano, y sin datos fieles las recomendaciones son teóricas.',
+ after:['comp-auth','comp-privacy'],
+ note:'Bloqueado a propósito: subir un PDF de estado de cuenta a un Google Sheet sin capa de seguridad ni aviso de privacidad no es aceptable.'},
+
+{id:'tx-geo', p:'usuario', t:'Geolocalización del navegador', status:'later', effort:'S', impact:1,
+ why:'Sugerir el comercio probable a partir de la ubicación reduce la fricción de registrar una compra.',
+ after:['tx-merchant']},
+
+{id:'tx-sms', p:'usuario', t:'Lectura de alertas SMS', status:'later', effort:'L', impact:2,
+ why:'Capturaría movimientos automáticamente, pero exige permisos de sistema operativo que una app web no tiene.',
+ note:'Sólo viable si se construye app nativa Android. No invertir aquí hasta entonces.'},
+
+/* ---------------- EXPERIENCIA ---------------- */
+{id:'ux-onboard', p:'ux', t:'Onboarding', status:'next', effort:'M', impact:3,
+ why:'Un usuario nuevo entra a una app vacía que no puede recomendarle nada hasta que registre productos y movimientos. Ese primer minuto define si vuelve.',
+ after:['eng-elig'],
+ note:'Debe recoger de una vez lo que el motor necesita: productos que ya tiene, ingreso mensual comprobable (sustituye al score de riesgo), si liquida su tarjeta cada mes, y cuánto acepta tener en instituciones sin seguro.'},
+
+{id:'ux-msi', p:'ux', t:'Preguntar plazo en el flujo de compra', status:'later', effort:'S', impact:2,
+ why:'Sin preguntar meses no hay forma de recomendar para MSI.',
+ after:['eng-msi']},
+
+{id:'ux-profile', p:'ux', t:'Preguntas de perfil que alimentan el motor', status:'later', effort:'S', impact:2,
+ why:'“¿Pagas tu tarjeta completa cada mes?” y “¿te sientes cómodo con instituciones sin seguro?” cambian por completo qué es un buen consejo.',
+ after:['eng-rev','eng-ins']},
+
+{id:'ux-logos', p:'ux', t:'Logotipos oficiales', status:'later', effort:'S', impact:1,
+ why:'Los monogramas funcionan y escalan, pero los logos reales dan credibilidad.',
+ needs:['issuers.logo_url'],
+ note:'La app ya usa logo_url en cuanto exista. Hay consideraciones de marca registrada si el producto se comercializa.'},
+
+/* ---------------- CUMPLIMIENTO ---------------- */
+{id:'comp-auth', p:'cumplimiento', t:'Autenticación real', status:'next', effort:'L', impact:3,
+ why:'Hoy es un NIP de 4 dígitos más una bandera en localStorage, y la hoja de cálculo es legible por el backend completo. Está bien para seis testers con datos ficticios y no está bien para nada más.',
+ note:'Es la compuerta de todo el pilar de datos del usuario. Mientras no exista, no deben entrar datos financieros reales.'},
+
+{id:'comp-privacy', p:'cumplimiento', t:'Aviso de privacidad (LFPDPPP)', status:'next', effort:'M', impact:3,
+ why:'Tratar datos personales financieros en México exige aviso de privacidad y consentimiento. No es opcional ni es algo que se agrega al final.',
+ after:['comp-auth']},
+
+{id:'comp-retention', p:'cumplimiento', t:'Política de almacenamiento y retención', status:'later', effort:'M', impact:2,
+ why:'Hay que decidir qué se guarda, dónde, por cuánto tiempo y cómo se borra, antes de que existan datos reales que borrar.',
+ after:['comp-privacy']},
+
+{id:'comp-ob', p:'cumplimiento', t:'Revisión legal de open banking', status:'later', effort:'L', impact:2,
+ why:'La Ley Fintech contempla APIs de datos abiertos, pero el acceso está regulado. Determina si la ingesta automática es viable o si el camino es el estado de cuenta.',
+ after:['comp-privacy']},
+
+/* ---------------- NEGOCIO ---------------- */
+{id:'biz-model', p:'negocio', t:'Modelo de ingresos', status:'later', effort:'M', impact:2,
+ why:'Referidos y afiliación son lo natural, y son exactamente lo que puede corromper la recomendación.',
+ note:'Decidirlo tarde es peor: define si el motor puede seguir siendo neutral.'},
+
+{id:'biz-disc', p:'negocio', t:'Divulgación de incentivos', status:'later', effort:'S', impact:3,
+ why:'Si alguna vez se cobra por una recomendación, el usuario tiene que saberlo en el momento de verla. Un comparador que oculta su incentivo no es un comparador.',
+ after:['biz-model']}
+];
+
+var PILLARS = {
+  motor:        {t:'Motor de recomendación', c:'#B85F35'},
+  datos:        {t:'Datos de mercado',       c:'#0F7365'},
+  usuario:      {t:'Datos del usuario',      c:'#8F6210'},
+  ux:           {t:'Experiencia',            c:'#4A5B8C'},
+  cumplimiento: {t:'Cumplimiento y seguridad', c:'#A83229'},
+  negocio:      {t:'Modelo de negocio',      c:'#5B4A7A'}
+};
+var STATUS = {
+  done:   {t:'Hecho',        c:'#0F7365'},
+  now:    {t:'En curso',     c:'#B85F35'},
+  next:   {t:'Siguiente',    c:'#8F6210'},
+  later:  {t:'Después',      c:'#7C8492'},
+  blocked:{t:'Bloqueado',    c:'#A83229'}
+};
+</script>
+<script>/* Roadmap viewer. Item content lives in roadmap-data.js (versioned in the
+   repo). Only the status you toggle here is stored in localStorage, which is
+   per-browser — use "Exportar estado" to move it anywhere else. */
+var $ = function(s,r){ return (r||document).querySelector(s); };
+var $$ = function(s,r){ return [].slice.call((r||document).querySelectorAll(s)); };
+var KEY='norte.roadmap.v1';
+var EFFORT={S:'menos de 1 día',M:'1–3 días',L:'más de 1 semana'};
+var IMPACT={3:'alto',2:'medio',1:'bajo'};
+
+function loadState(){ try{ return JSON.parse(localStorage.getItem(KEY))||{}; }catch(e){ return {}; } }
+function saveState(s){ try{ localStorage.setItem(KEY,JSON.stringify(s)); }catch(e){} }
+var STATE=loadState();
+function statusOf(it){ return STATE[it.id]||it.status; }
+
+var F={pillar:'all',status:'all'};
+var byId={}; ITEMS.forEach(function(i){ byId[i.id]=i; });
+
+/* An item is actionable when nothing it depends on is still outstanding. */
+function blockers(it){
+  return (it.after||[]).filter(function(id){
+    var d=byId[id]; return d && statusOf(d)!=='done';
+  }).map(function(id){ return byId[id]; });
+}
+function unlocks(it){
+  return ITEMS.filter(function(x){ return (x.after||[]).indexOf(it.id)>=0; });
+}
+
+function chip(txt,cls,style){ return '<span class="chip '+(cls||'')+'"'+(style?' style="'+style+'"':'')+'>'+txt+'</span>'; }
+
+function renderItem(it){
+  var st=statusOf(it), sm=STATUS[st], pm=PILLARS[it.p];
+  var bl=blockers(it), un=unlocks(it);
+  return '<div class="item" data-id="'+it.id+'" data-p="'+it.p+'" data-s="'+st+'">'+
+    '<div class="ih">'+
+      '<span class="dot" style="background:'+pm.c+'"></span>'+
+      '<span class="it">'+it.t+'</span>'+
+      '<span class="meta">'+
+        chip(sm.t,'st','background:'+sm.c+'22;color:'+sm.c)+
+        chip(it.effort+' · '+EFFORT[it.effort])+
+        chip('impacto '+IMPACT[it.impact], it.impact===3?'hi':'')+
+      '</span>'+
+      '<button class="exp" aria-label="Ver detalle">+</button>'+
+    '</div>'+
+    '<div class="ib">'+
+      '<p class="why">'+it.why+'</p>'+
+      (it.note?'<p class="note">'+it.note+'</p>':'')+
+      (it.needs?'<div class="needs"><b>Campos que faltan:</b> '+it.needs.map(function(n){return '<code>'+n+'</code>';}).join(' ')+'</div>':'')+
+      (bl.length?'<div class="dep blk"><b>Esperando a:</b> '+bl.map(function(x){return x.t;}).join(' · ')+'</div>':'')+
+      (un.length?'<div class="dep"><b>Desbloquea:</b> '+un.map(function(x){return x.t;}).join(' · ')+'</div>':'')+
+      '<div class="setst">Cambiar estado: '+Object.keys(STATUS).map(function(k){
+        return '<button class="sb'+(k===st?' on':'')+'" data-set="'+k+'" style="--c:'+STATUS[k].c+'">'+STATUS[k].t+'</button>';
+      }).join('')+'</div>'+
+    '</div></div>';
+}
+
+/* Suggested next moves: high impact, nothing blocking, not already done. */
+function critical(){
+  return ITEMS.filter(function(it){
+    var st=statusOf(it);
+    return st!=='done' && st!=='blocked' && blockers(it).length===0;
+  }).sort(function(a,b){
+    if(b.impact!==a.impact) return b.impact-a.impact;
+    var w={now:0,next:1,later:2};
+    if(w[statusOf(a)]!==w[statusOf(b)]) return w[statusOf(a)]-w[statusOf(b)];
+    return {S:0,M:1,L:2}[a.effort]-{S:0,M:1,L:2}[b.effort];
+  }).slice(0,6);
+}
+
+function render(){
+  var counts={};
+  Object.keys(STATUS).forEach(function(k){ counts[k]=0; });
+  ITEMS.forEach(function(i){ counts[statusOf(i)]++; });
+  $('#summary').innerHTML=Object.keys(STATUS).map(function(k){
+    return '<div class="sum"><div class="sum-n" style="color:'+STATUS[k].c+'">'+counts[k]+'</div>'+
+           '<div class="sum-l">'+STATUS[k].t+'</div></div>';
+  }).join('')+'<div class="sum"><div class="sum-n">'+ITEMS.length+'</div><div class="sum-l">Total</div></div>';
+
+  $('#crit').innerHTML=critical().map(function(it,i){
+    return '<div class="cr"><span class="cr-n">'+(i+1)+'</span>'+
+      '<span class="cr-t">'+it.t+'</span>'+
+      '<span class="cr-m">'+PILLARS[it.p].t+' · '+it.effort+' · impacto '+IMPACT[it.impact]+'</span></div>';
+  }).join('');
+
+  var visible=ITEMS.filter(function(it){
+    return (F.pillar==='all'||it.p===F.pillar) && (F.status==='all'||statusOf(it)===F.status);
+  });
+  var html='';
+  Object.keys(PILLARS).forEach(function(p){
+    var group=visible.filter(function(i){return i.p===p;});
+    if(!group.length) return;
+    group.sort(function(a,b){
+      var w={now:0,next:1,blocked:2,later:3,done:4};
+      if(w[statusOf(a)]!==w[statusOf(b)]) return w[statusOf(a)]-w[statusOf(b)];
+      return b.impact-a.impact;
+    });
+    html+='<div class="grp"><h2 style="border-color:'+PILLARS[p].c+'">'+PILLARS[p].t+
+      '<span class="gc">'+group.length+'</span></h2>'+group.map(renderItem).join('')+'</div>';
+  });
+  $('#list').innerHTML=html||'<div class="empty">Nada con estos filtros.</div>';
+}
+
+function init(){
+  $('#f-pillar').innerHTML='<button class="fb on" data-f="pillar" data-v="all">Todos</button>'+
+    Object.keys(PILLARS).map(function(k){
+      return '<button class="fb" data-f="pillar" data-v="'+k+'" style="--c:'+PILLARS[k].c+'">'+PILLARS[k].t+'</button>';
+    }).join('');
+  $('#f-status').innerHTML='<button class="fb on" data-f="status" data-v="all">Todos</button>'+
+    Object.keys(STATUS).map(function(k){
+      return '<button class="fb" data-f="status" data-v="'+k+'" style="--c:'+STATUS[k].c+'">'+STATUS[k].t+'</button>';
+    }).join('');
+
+  document.addEventListener('click',function(e){
+    var fb=e.target.closest('.fb');
+    if(fb){
+      F[fb.dataset.f]=fb.dataset.v;
+      $$('[data-f="'+fb.dataset.f+'"]').forEach(function(x){x.classList.toggle('on',x===fb);});
+      render(); return;
+    }
+    var ex=e.target.closest('.exp');
+    if(ex){ ex.closest('.item').classList.toggle('open');
+      ex.textContent = ex.closest('.item').classList.contains('open')?'−':'+'; return; }
+    var sb=e.target.closest('.sb');
+    if(sb){
+      var id=sb.closest('.item').dataset.id;
+      STATE[id]=sb.dataset.set; saveState(STATE); render(); return;
+    }
+    if(e.target.id==='export'){
+      var out=JSON.stringify(STATE,null,2);
+      navigator.clipboard && navigator.clipboard.writeText(out);
+      $('#exp-out').textContent=out;
+      $('#exp-out').style.display='block';
+      return;
+    }
+    if(e.target.id==='reset'){
+      if(confirm('¿Restablecer todos los estados a los del archivo?')){ STATE={}; saveState(STATE); render(); }
+    }
+  });
+  render();
+}
+document.addEventListener('DOMContentLoaded',init);
+</script>
+</body></html>
