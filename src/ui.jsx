@@ -5,12 +5,13 @@
    reads market data, so the schema migration does not touch this file.
    =========================================================================== */
 
-import React, { useState, useEffect, useRef } from 'react';
-import { ICONS, bankColor, bankInitials, num } from './lib.js';
+
+/* Loaded as a plain script after lib.js. React comes from the CDN global. */
+const { useState, useEffect, useMemo, useRef, useCallback } = React;
 
 /* --------------------------------- icon --------------------------------- */
 
-export function Ico({ n, s = 20, w = 1.7, style }) {
+function Ico({ n, s = 20, w = 1.7, style }) {
   const paths = ICONS[n] || ICONS.other;
   return (
     <svg
@@ -25,7 +26,7 @@ export function Ico({ n, s = 20, w = 1.7, style }) {
   );
 }
 
-export function Logo({ size = 40, plain = false }) {
+function Logo({ size = 40, plain = false }) {
   return (
     <svg width={size} height={size} viewBox="0 0 42 42"
          style={{ flex: '0 0 auto', display: 'block' }}>
@@ -38,7 +39,7 @@ export function Logo({ size = 40, plain = false }) {
 }
 
 /** Issuer logo, falling back to coloured initials when no image is available. */
-export function BankMark({ name, url, size = 40, radius }) {
+function BankMark({ name, url, size = 40, radius }) {
   const r = radius != null ? radius : Math.round(size * 0.3);
   if (url) {
     return (
@@ -62,7 +63,7 @@ export function BankMark({ name, url, size = 40, radius }) {
 
 /* ------------------------------ bottom sheet ---------------------------- */
 
-export function Sheet({ open, onClose, title, children, footer }) {
+function Sheet({ open, onClose, title, children, footer }) {
   // Lock body scroll while open, and close on Escape.
   useEffect(() => {
     if (!open) return;
@@ -97,7 +98,7 @@ export function Sheet({ open, onClose, title, children, footer }) {
 
 /* -------------------------------- controls ------------------------------ */
 
-export function Segmented({ value, onChange, options, size }) {
+function Segmented({ value, onChange, options, size }) {
   return (
     <div className={'seg' + (size === 'sm' ? ' seg-sm' : '')} role="tablist">
       {options.map((o) => (
@@ -111,7 +112,7 @@ export function Segmented({ value, onChange, options, size }) {
   );
 }
 
-export function Toast({ msg }) {
+function Toast({ msg }) {
   if (!msg) return null;
   return (
     <div className="toast">
@@ -121,10 +122,10 @@ export function Toast({ msg }) {
   );
 }
 
-export const CHIPS = [200, 500, 1000, 2500, 5000];
-export const CHIPS_BIG = [5000, 10000, 25000, 50000, 100000];
+const CHIPS = [200, 500, 1000, 2500, 5000];
+const CHIPS_BIG = [5000, 10000, 25000, 50000, 100000];
 
-export function AmountInput({ value, onChange, placeholder, chips = CHIPS, label }) {
+function AmountInput({ value, onChange, placeholder, chips = CHIPS, label }) {
   return (
     <div>
       {label && <label className="fld">{label}</label>}
@@ -153,7 +154,7 @@ export function AmountInput({ value, onChange, placeholder, chips = CHIPS, label
 
 /* --------------------------------- rows --------------------------------- */
 
-export function Stat({ label, value, sub, tone }) {
+function Stat({ label, value, sub, tone }) {
   return (
     <div className={'stat' + (tone ? ' ' + tone : '')}>
       <div className="stat-l">{label}</div>
@@ -163,7 +164,7 @@ export function Stat({ label, value, sub, tone }) {
   );
 }
 
-export function Row({ icon, mark, title, meta, right, rightSub, onClick,
+function Row({ icon, mark, title, meta, right, rightSub, onClick,
                       tone, badge, action }) {
   const Tag = onClick ? 'button' : 'div';
   return (
@@ -193,7 +194,7 @@ const SWIPE_MAX = -112;
 
 /** Swipe-left-to-delete. Locks to one axis on first movement so vertical
  *  scrolling still works inside a scrollable list. */
-export function SwipeRow({ id, openId, setOpenId, onDelete, children }) {
+function SwipeRow({ id, openId, setOpenId, onDelete, children }) {
   const isOpen = openId === id;
   const [dx, setDx] = useState(0);
   const drag = useRef(null);
@@ -246,7 +247,7 @@ export function SwipeRow({ id, openId, setOpenId, onDelete, children }) {
   );
 }
 
-export function Empty({ icon = 'info', title, children, cta }) {
+function Empty({ icon = 'info', title, children, cta }) {
   return (
     <div className="empty-state">
       <div className="empty-ico"><Ico n={icon} s={22} /></div>
@@ -258,7 +259,7 @@ export function Empty({ icon = 'info', title, children, cta }) {
 }
 
 /** Line-item breakdown under a verdict. `c` sets an accent colour. */
-export function Breakdown({ rows }) {
+function Breakdown({ rows }) {
   return (
     <div className="bd">
       {rows.map((r, i) => (

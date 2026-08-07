@@ -29,44 +29,25 @@
    =========================================================================== */
 
 const MARKET_POINT_VALUE_MXN = 0.25;
-const NOW_MONTH = new Date().toISOString().slice(0, 7);
 
 /* ------------------------------- helpers -------------------------------- */
 
-export const num = (v, dflt = 0) =>
-  v === '' || v == null || isNaN(Number(v)) ? dflt : Number(v);
-
-/** Numeric, or null for sentinels. Never coerces UNKNOWN into a default. */
-export const knownNum = (v) =>
-  v === '' || v == null ||
-  ['UNKNOWN', 'UNCAPPED', 'NOT_APPLICABLE'].includes(String(v).trim().toUpperCase()) ||
-  isNaN(Number(v))
-    ? null
-    : Number(v);
+/* num(), knownNum(), weekKey(), NOW_MONTH and NOW_WEEK come from lib.js,
+   which loads first. Do not redeclare them — these files share one scope. */
 
 const cap = (v) => { const n = knownNum(v); return n === null ? Infinity : n; };
 
-export function weekKey(iso) {
-  const dt = new Date(iso);
-  const d = new Date(Date.UTC(dt.getFullYear(), dt.getMonth(), dt.getDate()));
-  const day = d.getUTCDay() || 7;
-  d.setUTCDate(d.getUTCDate() + 4 - day);
-  const start = new Date(Date.UTC(d.getUTCFullYear(), 0, 1));
-  const week = Math.ceil(((d - start) / 86400000 + 1) / 7);
-  return d.getUTCFullYear() + '-W' + String(week).padStart(2, '0');
-}
-const NOW_WEEK = weekKey(new Date().toISOString());
 
 /* ---------------------------- held products ----------------------------- */
 
-export function heldCards(d, userId) {
+function heldCards(d, userId) {
   const ids = d.userProducts
     .filter((p) => p.user_id === userId && p.product_type === 'card')
     .map((p) => p.product_id);
   return d.cards.filter((c) => ids.includes(c.card_id));
 }
 
-export function heldAccounts(d, userId) {
+function heldAccounts(d, userId) {
   return d.userProducts
     .filter((p) => p.user_id === userId && p.product_type === 'account')
     .map((p) => {
@@ -86,19 +67,19 @@ export function heldAccounts(d, userId) {
     .filter(Boolean);
 }
 
-export const tiersFor = (d, accountId) =>
+const tiersFor = (d, accountId) =>
   (d.yieldTiers || [])
     .filter((t) => t.account_id === accountId)
     .sort((a, b) => num(a.tier_min_mxn) - num(b.tier_min_mxn));
 
-export const termTiersFor = (d, accountId) =>
+const termTiersFor = (d, accountId) =>
   (d.termTiers || [])
     .filter((t) => t.account_id === accountId)
     .sort((a, b) => num(a.term_days) - num(b.term_days));
 
 /* ------------------------- month-to-date activity ------------------------ */
 
-export function mtdSpend(d, userId, cardId) {
+function mtdSpend(d, userId, cardId) {
   return d.movements
     .filter((m) => m.user_id === userId && m.flow === 'cc' &&
                    m.recommended_product_id === cardId &&
@@ -106,14 +87,14 @@ export function mtdSpend(d, userId, cardId) {
     .reduce((s, m) => s + num(m.amount), 0);
 }
 
-export function mtdSpendAnyCard(d, userId) {
+function mtdSpendAnyCard(d, userId) {
   return d.movements
     .filter((m) => m.user_id === userId && m.flow === 'cc' &&
                    String(m.timestamp).slice(0, 7) === NOW_MONTH)
     .reduce((s, m) => s + num(m.amount), 0);
 }
 
-export function mtdTxCount(d, userId, cardId) {
+function mtdTxCount(d, userId, cardId) {
   return d.movements.filter(
     (m) => m.user_id === userId && m.flow === 'cc' &&
            (!cardId || m.recommended_product_id === cardId) &&
@@ -121,7 +102,7 @@ export function mtdTxCount(d, userId, cardId) {
   ).length;
 }
 
-export function mtdDeposits(d, userId, accountId) {
+function mtdDeposits(d, userId, accountId) {
   return d.movements
     .filter((m) => m.user_id === userId && m.flow === 'debit' &&
                    m.direction === 'in' &&
@@ -167,7 +148,7 @@ function capInfoFor(bonusRow, pv) {
   };
 }
 
-export function scoreCard(d, card, category, amount, userId) {
+function scoreCard(d, card, category, amount, userId) {
   const all = d.cardRewards.filter(
     (r) => r.card_id === card.card_id && r.category === category);
   const isSelectable = (r) =>
@@ -240,7 +221,7 @@ export function scoreCard(d, card, category, amount, userId) {
            score: reward + perkValue };
 }
 
-export const ccRecommend = (d, userId, category, amount) =>
+const ccRecommend = (d, userId, category, amount) =>
   heldCards(d, userId)
     .map((c) => scoreCard(d, c, category, amount, userId))
     .sort((a, b) => b.score - a.score);
@@ -291,7 +272,7 @@ function rateOf(b, baseRate) {
 }
 
 /** Best boost the user currently qualifies for, or null. */
-export function bestBoost(d, userId, acct, baseRate) {
+function bestBoost(d, userId, acct, baseRate) {
   const cands = boostsFor(d, acct)
     .filter((b) => boostConditionMet(d, userId, acct, b))
     .map((b) => ({ boost: b, rate: rateOf(b, baseRate), cap: cap(b.max_balance_mxn) }))
@@ -300,7 +281,7 @@ export function bestBoost(d, userId, acct, baseRate) {
 }
 
 /** Best boost the user does NOT yet qualify for, if it beats what they have. */
-export function bestUnmetBoost(d, userId, acct, baseRate) {
+function bestUnmetBoost(d, userId, acct, baseRate) {
   const all = boostsFor(d, acct)
     .map((b) => ({ boost: b, met: boostConditionMet(d, userId, acct, b),
                    rate: rateOf(b, baseRate), cap: cap(b.max_balance_mxn) }))
@@ -312,7 +293,7 @@ export function bestUnmetBoost(d, userId, acct, baseRate) {
 
 /* -------------------------------- yield --------------------------------- */
 
-export function annualYield(d, userId, acct, balance) {
+function annualYield(d, userId, acct, balance) {
   const base = num(acct.flat_rate_pct);
   const structure = acct.yield_structure;
   const bb = bestBoost(d, userId, acct, base);
@@ -348,7 +329,7 @@ export function annualYield(d, userId, acct, balance) {
   return y - num(acct.monthly_fee_mxn) * 12;
 }
 
-export function marginalRate(d, userId, acct, balance) {
+function marginalRate(d, userId, acct, balance) {
   const base = num(acct.flat_rate_pct);
   let r = 0;
   if (acct.yield_structure === 'tiered') {
@@ -362,7 +343,7 @@ export function marginalRate(d, userId, acct, balance) {
   return bb && balance <= bb.cap ? bb.rate : r;
 }
 
-export function headlineRate(d, userId, acct) {
+function headlineRate(d, userId, acct) {
   const base = num(acct.flat_rate_pct);
   let r = base;
   if (acct.yield_structure === 'tiered') {
@@ -377,7 +358,7 @@ export function headlineRate(d, userId, acct) {
 }
 
 /** What the user is leaving on the table, and what unlocks it. */
-export function boostOpportunity(d, userId, acct, balance) {
+function boostOpportunity(d, userId, acct, balance) {
   const current = marginalRate(d, userId, acct, balance);
   const unmet = bestUnmetBoost(d, userId, acct, num(acct.flat_rate_pct));
   if (!unmet) return null;
@@ -397,7 +378,7 @@ export function boostOpportunity(d, userId, acct, balance) {
 
 /* ------------------------------- savings -------------------------------- */
 
-export function savingsIn(d, userId, amount) {
+function savingsIn(d, userId, amount) {
   const accts = heldAccounts(d, userId);
 
   const ranked = accts.map((a) => {
@@ -479,7 +460,7 @@ export function savingsIn(d, userId, amount) {
                     parts: parts.sort((a, b) => b.amount - a.amount) } };
 }
 
-export function savingsOut(d, userId, amount) {
+function savingsOut(d, userId, amount) {
   const ranked = heldAccounts(d, userId)
     .filter((a) => a.liquidity !== 'term_locked' && a.current_balance > 0)
     .map((a) => {
@@ -517,7 +498,7 @@ function eligibleFor(user, product) {
   return income >= minIncome;
 }
 
-export function newCardPicks(d, userId) {
+function newCardPicks(d, userId) {
   const user = d.users.find((u) => u.user_id === userId);
   if (!user) return [];
   const held = heldCards(d, userId);
@@ -562,7 +543,7 @@ export function newCardPicks(d, userId) {
     .slice(0, 4);
 }
 
-export function newAccountPicks(d, userId) {
+function newAccountPicks(d, userId) {
   const user = d.users.find((u) => u.user_id === userId);
   if (!user) return [];
   const held = heldAccounts(d, userId);
@@ -595,7 +576,7 @@ export function newAccountPicks(d, userId) {
 
 /* ------------------------------ portfolio ------------------------------- */
 
-export function portfolio(d, userId) {
+function portfolio(d, userId) {
   const cards = heldCards(d, userId);
   const accts = heldAccounts(d, userId);
   const mv = d.movements.filter((m) => m.user_id === userId);
@@ -614,4 +595,3 @@ export function portfolio(d, userId) {
   };
 }
 
-export { MARKET_POINT_VALUE_MXN, NOW_MONTH, NOW_WEEK };

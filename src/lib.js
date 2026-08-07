@@ -9,22 +9,22 @@
    previous build are marked MIGRATED.
    =========================================================================== */
 
-export const API =
+const API =
   "https://script.google.com/macros/s/AKfycbz0ti8iYODBR60V-AqD-YlTDK4-w7RekiMDrFsz6dJqLeJ9oqRZCyQxuEpFvpAk8ZeP/exec";
 
 /* --------------------------- local storage ------------------------------ */
 
-export const LS = {
+const LS = {
   get(k) { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : null; } catch { return null; } },
   set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); return true; } catch { return false; } },
   del(k) { try { localStorage.removeItem(k); } catch {} },
 };
 
-export const K_SESSION = "norte.session.v1";
+const K_SESSION = "norte.session.v1";
 // MIGRATED: cache keys bumped to v2. A cached v1 payload has the old column
 // names, and serving one after the cutover looks exactly like a failed deploy.
-export const K_MARKET = "norte.market.v2";
-export const K_USER = "norte.user.v2";
+const K_MARKET = "norte.market.v2";
+const K_USER = "norte.user.v2";
 
 /* ----------------------------- formatting ------------------------------- */
 
@@ -33,12 +33,12 @@ const fmtMXN = new Intl.NumberFormat("es-MX",
 const fmtMXN2 = new Intl.NumberFormat("es-MX",
   { style: "currency", currency: "MXN", minimumFractionDigits: 2, maximumFractionDigits: 2 });
 
-export const mxn = (v) => fmtMXN.format(Math.round(v || 0));
-export const mxn2 = (v) => fmtMXN2.format(v || 0);
-export const pct = (v) => (Math.round((v || 0) * 100) / 100).toLocaleString("es-MX") + "%";
+const mxn = (v) => fmtMXN.format(Math.round(v || 0));
+const mxn2 = (v) => fmtMXN2.format(v || 0);
+const pct = (v) => (Math.round((v || 0) * 100) / 100).toLocaleString("es-MX") + "%";
 
 /** Numeric with a fallback. Use for values that are genuinely optional. */
-export const num = (v, dflt = 0) =>
+const num = (v, dflt = 0) =>
   v === "" || v == null || isNaN(Number(v)) ? dflt : Number(v);
 
 /**
@@ -47,7 +47,7 @@ export const num = (v, dflt = 0) =>
  * branch on type first — coercing a sentinel to a default is how an unknown
  * silently becomes a fact.
  */
-export const knownNum = (v) =>
+const knownNum = (v) =>
   v === "" || v == null ||
   ["UNKNOWN", "UNCAPPED", "NOT_APPLICABLE"].includes(String(v).trim().toUpperCase()) ||
   isNaN(Number(v))
@@ -57,7 +57,7 @@ export const knownNum = (v) =>
 /* ------------------------------- labels --------------------------------- */
 
 const RTL = { points: "puntos", miles: "millas", cashback: "cashback", none: "sin recompensa" };
-export const rtl = (t) => RTL[t] || t || "";
+const rtl = (t) => RTL[t] || t || "";
 
 /**
  * MIGRATED: keyed on regulated_entity_type, not the old institution_type.
@@ -76,50 +76,50 @@ const INST = {
   other:      { l: "Otro",    ins: "Sin clasificar",               tone: "warn" },
 };
 
-export const instOf = (issuer) =>
+const instOf = (issuer) =>
   INST[String((issuer && issuer.regulated_entity_type) || "").trim().toLowerCase()] || null;
 
 /**
  * An issuer that takes no deposits has no scheme to be covered by, which is a
  * different statement from "cover unknown" and must not read as a warning.
  */
-export const takesDeposits = (issuer) =>
+const takesDeposits = (issuer) =>
   !(issuer && (issuer.offers_deposit_products === false ||
                String(issuer.offers_deposit_products).toUpperCase() === "FALSE"));
 
 // MIGRATED: yield_structure gained term_tiered.
 const YTL = { none: "sin rendimiento", flat: "tasa fija",
               tiered: "por niveles", term_tiered: "por plazo" };
-export const ytl = (t) => YTL[t] || t || "";
+const ytl = (t) => YTL[t] || t || "";
 
 // MIGRATED: liquidity gained same_day; "term" became "term_locked".
 const LIQ = { instant: "Inmediata", same_day: "Mismo d\u00EDa", term_locked: "Bloqueado (plazo)" };
-export const liq = (t) => LIQ[t] || t || "";
+const liq = (t) => LIQ[t] || t || "";
 
 const RATE_TYPE = {
   rendimiento_anual_nominal: "rendimiento anual nominal",
   GAT_nominal: "GAT nominal", GAT_real: "GAT real",
 };
-export const rateTypeLabel = (t) => RATE_TYPE[t] || "";
+const rateTypeLabel = (t) => RATE_TYPE[t] || "";
 
 /* -------------------------------- dates --------------------------------- */
 
 const MONTHS = ["enero","febrero","marzo","abril","mayo","junio","julio",
                 "agosto","septiembre","octubre","noviembre","diciembre"];
 
-export const monthLabel = (key) => {
+const monthLabel = (key) => {
   const [y, m] = String(key).split("-");
   return (MONTHS[Number(m) - 1] || "") + " " + y;
 };
 
-export const dayLabel = (iso) => {
+const dayLabel = (iso) => {
   const [, m, d] = String(iso).slice(0, 10).split("-");
   return d + " " + (MONTHS[Number(m) - 1] || "").slice(0, 3) + ".";
 };
 
-export const NOW_MONTH = new Date().toISOString().slice(0, 7);
+const NOW_MONTH = new Date().toISOString().slice(0, 7);
 
-export function weekKey(iso) {
+function weekKey(iso) {
   const dt = new Date(iso);
   const d = new Date(Date.UTC(dt.getFullYear(), dt.getMonth(), dt.getDate()));
   const day = d.getUTCDay() || 7;
@@ -128,14 +128,14 @@ export function weekKey(iso) {
   const week = Math.ceil(((d - start) / 86400000 + 1) / 7);
   return d.getUTCFullYear() + "-W" + String(week).padStart(2, "0");
 }
-export const NOW_WEEK = weekKey(new Date().toISOString());
+const NOW_WEEK = weekKey(new Date().toISOString());
 
 /* ------------------------------ identifiers ----------------------------- */
 
-export const uid = (prefix) =>
+const uid = (prefix) =>
   prefix + "_" + Date.now().toString(36) + Math.random().toString(36).slice(2, 7);
 
-export const norm = (s) =>
+const norm = (s) =>
   String(s || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 
 /* ---------------------------- issuer display ---------------------------- */
@@ -181,7 +181,7 @@ const BANK_COLORS = [["bbva","#0B3B7A"],
   ["fondeadora","#2B2B33"],
   ["albo","#1E6EA8"]];
 
-export function bankColor(name) {
+function bankColor(name) {
   const n = norm(name);
   for (const [needle, hex] of BANK_COLORS) if (n.includes(needle)) return hex;
   let h = 0;
@@ -192,7 +192,7 @@ export function bankColor(name) {
 const LOWER_WORDS = ["de", "del", "la", "las", "los", "el"];
 
 /** Trims legal suffixes so "Banco Inbursa, S.A., Instituci\u00F3n de Banca M\u00FAltiple" fits a tile. */
-export function shortIssuer(name) {
+function shortIssuer(name) {
   let s = String(name || "").replace(/\(.*?\)/g, " ");
   s = s.replace(/\bAmerican Express\b/gi, "Amex");
   s = s.replace(/\s+(M[e\u00E9]xico|Mexico|MX)\b\.?/gi, " ");
@@ -208,7 +208,7 @@ export function shortIssuer(name) {
   return parts.join(" ").trim() || String(name || "");
 }
 
-export function bankInitials(name) {
+function bankInitials(name) {
   const parts = String(name || "?").replace(/\(.*?\)/g, "").trim()
                   .split(/[\s\-]+/).filter(Boolean);
   if (!parts.length) return "?";
@@ -219,7 +219,7 @@ export function bankInitials(name) {
 
 /* -------------------------------- icons --------------------------------- */
 
-export const ICONS = {
+const ICONS = {
   home: ["M3 10.6 12 3.4l9 7.2","M5.6 9.4V20.6h12.8V9.4"],
   card: ["M2.6 6.4h18.8v11.2H2.6z","M2.6 10.4h18.8"],
   savings: ["M12 3.2v17.6","M16.2 7.6c0-1.9-1.9-3-4.2-3s-4.2 1.1-4.2 3 1.9 2.7 4.2 3.3 4.2 1.4 4.2 3.3-1.9 3-4.2 3-4.2-1.1-4.2-3"],
@@ -255,4 +255,4 @@ export const ICONS = {
   utilities: ["M13.4 3.2 5.2 14h6l-.6 6.8L18.8 10h-6z"],
   other: ["M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16","M12 12h.01"]};
 
-export const catIcon = (key) => (ICONS[key] ? key : "other");
+const catIcon = (key) => (ICONS[key] ? key : "other");
