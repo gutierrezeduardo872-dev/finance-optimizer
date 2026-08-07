@@ -1,0 +1,122 @@
+[
+  {
+    "boost_id": "uala_mx__cuenta_con_rendimiento_uala__boost_12_0",
+    "account_id": "uala_mx__cuenta_con_rendimiento_uala",
+    "boost_rate_pct": 12.0,
+    "boost_basis": "replacement",
+    "condition_type": "linked_card_spend",
+    "condition_amount_mxn": 3000,
+    "condition_count": "NOT_APPLICABLE",
+    "condition_period": "monthly",
+    "linked_product_id": "",
+    "max_balance_mxn": 30000,
+    "promo_end_date": "NOT_APPLICABLE",
+    "confidence": {
+      "yield": {
+        "score": "low",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-03-26",
+        "sources": [
+          "https://www.uala.mx/cuenta-con-rendimiento"
+        ]
+      }
+    },
+    "notes": "Whole balance up to the cap earns 12% once $3,000/mo of card spend is reached."
+  },
+  {
+    "boost_id": "uala_mx__cuenta_con_rendimiento_uala__boost_15_0_linked_card_spend",
+    "account_id": "uala_mx__cuenta_con_rendimiento_uala",
+    "boost_rate_pct": 15.0,
+    "boost_basis": "replacement",
+    "condition_type": "linked_card_spend",
+    "condition_amount_mxn": 6000,
+    "condition_count": "NOT_APPLICABLE",
+    "condition_period": "monthly",
+    "linked_product_id": "",
+    "max_balance_mxn": 30000,
+    "promo_end_date": "NOT_APPLICABLE",
+    "confidence": {
+      "yield": {
+        "score": "low",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-03-26",
+        "sources": [
+          "https://www.uala.mx/portabilidad-nomina"
+        ]
+      }
+    },
+    "notes": "Route A of two alternatives: $6,000/mo card spend."
+  },
+  {
+    "boost_id": "uala_mx__cuenta_con_rendimiento_uala__boost_15_0_payroll_direct_deposit",
+    "account_id": "uala_mx__cuenta_con_rendimiento_uala",
+    "boost_rate_pct": 15.0,
+    "boost_basis": "replacement",
+    "condition_type": "payroll_direct_deposit",
+    "condition_amount_mxn": "NOT_APPLICABLE",
+    "condition_count": "NOT_APPLICABLE",
+    "condition_period": "monthly",
+    "linked_product_id": "",
+    "max_balance_mxn": 30000,
+    "promo_end_date": "NOT_APPLICABLE",
+    "confidence": {
+      "yield": {
+        "score": "low",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-03-26",
+        "sources": [
+          "https://www.uala.mx/portabilidad-nomina"
+        ]
+      }
+    },
+    "notes": "Route B of two alternatives: payroll deposit. Same rate, different route, so it is its own row."
+  },
+  {
+    "boost_id": "mercado_pago__cuenta_mercado_pago_rendimientos__boost_13_0",
+    "account_id": "mercado_pago__cuenta_mercado_pago_rendimientos",
+    "boost_rate_pct": 13.0,
+    "boost_basis": "replacement",
+    "condition_type": "min_monthly_deposit",
+    "condition_amount_mxn": 3000,
+    "condition_count": "NOT_APPLICABLE",
+    "condition_period": "monthly",
+    "linked_product_id": "",
+    "max_balance_mxn": 25000,
+    "promo_end_date": "NOT_APPLICABLE",
+    "confidence": {
+      "yield": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://bancario.com.mx/mercado-pago"
+        ]
+      }
+    },
+    "notes": "Up to 13% with $3,000/mo deposited; further conditions apply per issuer."
+  },
+  {
+    "boost_id": "klar__cuenta_klar_saldo_disponible__boost_5_0",
+    "account_id": "klar__cuenta_klar_saldo_disponible",
+    "boost_rate_pct": 5.0,
+    "boost_basis": "replacement",
+    "condition_type": "tier_membership",
+    "condition_amount_mxn": "NOT_APPLICABLE",
+    "condition_count": "NOT_APPLICABLE",
+    "condition_period": "monthly",
+    "linked_product_id": "",
+    "max_balance_mxn": "UNCAPPED",
+    "promo_end_date": "NOT_APPLICABLE",
+    "confidence": {
+      "yield": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://expansion.mx/finanzas-personales/2025/08/06/nu-mercadopago-finsus-cual-paga-mas-rendimientos-agosto-2025"
+        ]
+      }
+    },
+    "notes": "Plus/Platino membership. Standard membership earns the 3% base."
+  }
+]

@@ -1,0 +1,1100 @@
+[
+  {
+    "issuer_id": "afirme",
+    "legal_name": "UNKNOWN",
+    "display_name": "Afirme",
+    "regulated_entity_type": "banco",
+    "insurance_scheme": "IPAB",
+    "insurance_coverage_udis": 400000,
+    "cnbv_registered": true,
+    "status": "active",
+    "in_dataset": true,
+    "exclusion_reason": "",
+    "source_urls": [],
+    "enumerated_on": "2026-08-05",
+    "approved_on": "",
+    "legacy_id": "Afirme",
+    "confidence": {
+      "identity": {
+        "score": "medium",
+        "evidence_type": "inferred",
+        "verified_on": "2026-08-05",
+        "sources": []
+      }
+    },
+    "notes": "Migrated from card census. legal_name and source_urls pending confirmation against the CNBV Padrón.",
+    "offers_deposit_products": true
+  },
+  {
+    "issuer_id": "amazon",
+    "legal_name": "UNKNOWN",
+    "display_name": "Amazon",
+    "regulated_entity_type": "other",
+    "insurance_scheme": "UNKNOWN",
+    "insurance_coverage_udis": "UNKNOWN",
+    "cnbv_registered": false,
+    "status": "active",
+    "in_dataset": false,
+    "exclusion_reason": "Closed-loop store card — no general-purpose network, out of scope per scope.md.",
+    "source_urls": [
+      "https://webapps.condusef.gob.mx/SIPRES/jsp/pub/index.jsp"
+    ],
+    "enumerated_on": "2026-08-05",
+    "approved_on": "",
+    "legacy_id": "Amazon (bank partner)",
+    "confidence": {
+      "identity": {
+        "score": "medium",
+        "evidence_type": "regulator",
+        "verified_on": "2026-08-05",
+        "sources": [
+          "https://webapps.condusef.gob.mx/SIPRES/jsp/pub/index.jsp"
+        ]
+      }
+    },
+    "notes": "",
+    "offers_deposit_products": true
+  },
+  {
+    "issuer_id": "american_express",
+    "legal_name": "UNKNOWN",
+    "display_name": "American Express",
+    "regulated_entity_type": "other",
+    "insurance_scheme": "NOT_APPLICABLE",
+    "insurance_coverage_udis": "NOT_APPLICABLE",
+    "cnbv_registered": false,
+    "status": "active",
+    "in_dataset": true,
+    "exclusion_reason": "",
+    "source_urls": [
+      "https://webapps.condusef.gob.mx/SIPRES/jsp/pub/index.jsp"
+    ],
+    "enumerated_on": "2026-08-05",
+    "approved_on": "",
+    "legacy_id": "American Express",
+    "confidence": {
+      "identity": {
+        "score": "medium",
+        "evidence_type": "regulator",
+        "verified_on": "2026-08-05",
+        "sources": [
+          "https://webapps.condusef.gob.mx/SIPRES/jsp/pub/index.jsp"
+        ]
+      }
+    },
+    "notes": "Not a bank in Mexico — a financial services company issuing credit cards only. The former banca múltiple licence shows as revoked in SIPRES. Deposit insurance is NOT_APPLICABLE because it offers no deposit products, not because cover is unknown.",
+    "offers_deposit_products": false
+  },
+  {
+    "issuer_id": "banca_mifel",
+    "legal_name": "UNKNOWN",
+    "display_name": "Banca Mifel",
+    "regulated_entity_type": "banco",
+    "insurance_scheme": "IPAB",
+    "insurance_coverage_udis": 400000,
+    "cnbv_registered": true,
+    "status": "active",
+    "in_dataset": true,
+    "exclusion_reason": "",
+    "source_urls": [],
+    "enumerated_on": "2026-08-05",
+    "approved_on": "",
+    "legacy_id": "Banca Mifel",
+    "confidence": {
+      "identity": {
+        "score": "medium",
+        "evidence_type": "inferred",
+        "verified_on": "2026-08-05",
+        "sources": []
+      }
+    },
+    "notes": "Migrated from card census. legal_name and source_urls pending confirmation against the CNBV Padrón.",
+    "offers_deposit_products": true
+  },
+  {
+    "issuer_id": "banco_azteca",
+    "legal_name": "UNKNOWN",
+    "display_name": "Banco Azteca",
+    "regulated_entity_type": "banco",
+    "insurance_scheme": "IPAB",
+    "insurance_coverage_udis": 400000,
+    "cnbv_registered": true,
+    "status": "active",
+    "in_dataset": true,
+    "exclusion_reason": "",
+    "source_urls": [],
+    "enumerated_on": "2026-08-05",
+    "approved_on": "",
+    "legacy_id": "Banco Azteca",
+    "confidence": {
+      "identity": {
+        "score": "medium",
+        "evidence_type": "inferred",
+        "verified_on": "2026-08-05",
+        "sources": []
+      }
+    },
+    "notes": "Migrated from card census. legal_name and source_urls pending confirmation against the CNBV Padrón.",
+    "offers_deposit_products": true
+  },
+  {
+    "issuer_id": "banco_del_bajio",
+    "legal_name": "Banco del Bajío, S.A., Institución de Banca Múltiple",
+    "display_name": "Banco del Bajío",
+    "regulated_entity_type": "banco",
+    "insurance_scheme": "IPAB",
+    "insurance_coverage_udis": 400000,
+    "cnbv_registered": true,
+    "status": "active",
+    "in_dataset": true,
+    "exclusion_reason": "",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/BanBaj%C3%ADo"
+    ],
+    "enumerated_on": "2026-08-05",
+    "approved_on": "",
+    "legacy_id": "Banco del Bajío (BanBajío)",
+    "confidence": {
+      "identity": {
+        "score": "medium",
+        "evidence_type": "comparator_secondary",
+        "verified_on": "2026-08-05",
+        "sources": [
+          "https://en.wikipedia.org/wiki/BanBaj%C3%ADo"
+        ]
+      }
+    },
+    "notes": "ALIAS confirmed — BanBajío is a trading name, not a co-brand.",
+    "offers_deposit_products": true
+  },
+  {
+    "issuer_id": "banco_inbursa",
+    "legal_name": "UNKNOWN",
+    "display_name": "Banco Inbursa",
+    "regulated_entity_type": "banco",
+    "insurance_scheme": "IPAB",
+    "insurance_coverage_udis": 400000,
+    "cnbv_registered": true,
+    "status": "active",
+    "in_dataset": true,
+    "exclusion_reason": "",
+    "source_urls": [],
+    "enumerated_on": "2026-08-05",
+    "approved_on": "",
+    "legacy_id": "Banco Inbursa",
+    "confidence": {
+      "identity": {
+        "score": "medium",
+        "evidence_type": "inferred",
+        "verified_on": "2026-08-05",
+        "sources": []
+      }
+    },
+    "notes": "Migrated from card census. legal_name and source_urls pending confirmation against the CNBV Padrón.",
+    "offers_deposit_products": true
+  },
+  {
+    "issuer_id": "bancoppel",
+    "legal_name": "UNKNOWN",
+    "display_name": "BanCoppel",
+    "regulated_entity_type": "banco",
+    "insurance_scheme": "IPAB",
+    "insurance_coverage_udis": 400000,
+    "cnbv_registered": true,
+    "status": "active",
+    "in_dataset": true,
+    "exclusion_reason": "",
+    "source_urls": [],
+    "enumerated_on": "2026-08-05",
+    "approved_on": "",
+    "legacy_id": "BanCoppel",
+    "confidence": {
+      "identity": {
+        "score": "medium",
+        "evidence_type": "inferred",
+        "verified_on": "2026-08-05",
+        "sources": []
+      }
+    },
+    "notes": "Migrated from card census. legal_name and source_urls pending confirmation against the CNBV Padrón.",
+    "offers_deposit_products": true
+  },
+  {
+    "issuer_id": "banjercito",
+    "legal_name": "UNKNOWN",
+    "display_name": "Banjercito",
+    "regulated_entity_type": "banco",
+    "insurance_scheme": "IPAB",
+    "insurance_coverage_udis": 400000,
+    "cnbv_registered": true,
+    "status": "active",
+    "in_dataset": true,
+    "exclusion_reason": "",
+    "source_urls": [],
+    "enumerated_on": "2026-08-05",
+    "approved_on": "",
+    "legacy_id": "Banjercito",
+    "confidence": {
+      "identity": {
+        "score": "medium",
+        "evidence_type": "inferred",
+        "verified_on": "2026-08-05",
+        "sources": []
+      }
+    },
+    "notes": "Migrated from card census. legal_name and source_urls pending confirmation against the CNBV Padrón.",
+    "offers_deposit_products": true
+  },
+  {
+    "issuer_id": "banorte",
+    "legal_name": "UNKNOWN",
+    "display_name": "Banorte",
+    "regulated_entity_type": "banco",
+    "insurance_scheme": "IPAB",
+    "insurance_coverage_udis": 400000,
+    "cnbv_registered": true,
+    "status": "active",
+    "in_dataset": true,
+    "exclusion_reason": "",
+    "source_urls": [],
+    "enumerated_on": "2026-08-05",
+    "approved_on": "",
+    "legacy_id": "Banorte",
+    "confidence": {
+      "identity": {
+        "score": "medium",
+        "evidence_type": "inferred",
+        "verified_on": "2026-08-05",
+        "sources": []
+      }
+    },
+    "notes": "Migrated from card census. legal_name and source_urls pending confirmation against the CNBV Padrón.",
+    "offers_deposit_products": true
+  },
+  {
+    "issuer_id": "banregio",
+    "legal_name": "UNKNOWN",
+    "display_name": "Banregio",
+    "regulated_entity_type": "banco",
+    "insurance_scheme": "IPAB",
+    "insurance_coverage_udis": 400000,
+    "cnbv_registered": true,
+    "status": "active",
+    "in_dataset": true,
+    "exclusion_reason": "",
+    "source_urls": [],
+    "enumerated_on": "2026-08-05",
+    "approved_on": "",
+    "legacy_id": "Banregio",
+    "confidence": {
+      "identity": {
+        "score": "medium",
+        "evidence_type": "inferred",
+        "verified_on": "2026-08-05",
+        "sources": []
+      }
+    },
+    "notes": "Migrated from card census. legal_name and source_urls pending confirmation against the CNBV Padrón.",
+    "offers_deposit_products": true
+  },
+  {
+    "issuer_id": "bbva_mexico",
+    "legal_name": "UNKNOWN",
+    "display_name": "BBVA México",
+    "regulated_entity_type": "banco",
+    "insurance_scheme": "IPAB",
+    "insurance_coverage_udis": 400000,
+    "cnbv_registered": true,
+    "status": "active",
+    "in_dataset": true,
+    "exclusion_reason": "",
+    "source_urls": [],
+    "enumerated_on": "2026-08-05",
+    "approved_on": "",
+    "legacy_id": "BBVA México",
+    "confidence": {
+      "identity": {
+        "score": "medium",
+        "evidence_type": "inferred",
+        "verified_on": "2026-08-05",
+        "sources": []
+      }
+    },
+    "notes": "Migrated from card census. legal_name and source_urls pending confirmation against the CNBV Padrón.",
+    "offers_deposit_products": true
+  },
+  {
+    "issuer_id": "chedraui",
+    "legal_name": "UNKNOWN",
+    "display_name": "Chedraui",
+    "regulated_entity_type": "other",
+    "insurance_scheme": "UNKNOWN",
+    "insurance_coverage_udis": "UNKNOWN",
+    "cnbv_registered": false,
+    "status": "active",
+    "in_dataset": false,
+    "exclusion_reason": "Closed-loop store card — no general-purpose network, out of scope per scope.md.",
+    "source_urls": [
+      "https://webapps.condusef.gob.mx/SIPRES/jsp/pub/index.jsp"
+    ],
+    "enumerated_on": "2026-08-05",
+    "approved_on": "",
+    "legacy_id": "Chedraui",
+    "confidence": {
+      "identity": {
+        "score": "medium",
+        "evidence_type": "regulator",
+        "verified_on": "2026-08-05",
+        "sources": [
+          "https://webapps.condusef.gob.mx/SIPRES/jsp/pub/index.jsp"
+        ]
+      }
+    },
+    "notes": "",
+    "offers_deposit_products": true
+  },
+  {
+    "issuer_id": "cibanco",
+    "legal_name": "UNKNOWN",
+    "display_name": "CIBanco",
+    "regulated_entity_type": "banco",
+    "insurance_scheme": "IPAB",
+    "insurance_coverage_udis": 400000,
+    "cnbv_registered": true,
+    "status": "active",
+    "in_dataset": true,
+    "exclusion_reason": "",
+    "source_urls": [],
+    "enumerated_on": "2026-08-05",
+    "approved_on": "",
+    "legacy_id": "CIBanco",
+    "confidence": {
+      "identity": {
+        "score": "medium",
+        "evidence_type": "inferred",
+        "verified_on": "2026-08-05",
+        "sources": []
+      }
+    },
+    "notes": "Migrated from card census. legal_name and source_urls pending confirmation against the CNBV Padrón.",
+    "offers_deposit_products": true
+  },
+  {
+    "issuer_id": "citibanamex",
+    "legal_name": "UNKNOWN",
+    "display_name": "Citibanamex",
+    "regulated_entity_type": "banco",
+    "insurance_scheme": "IPAB",
+    "insurance_coverage_udis": 400000,
+    "cnbv_registered": true,
+    "status": "active",
+    "in_dataset": true,
+    "exclusion_reason": "",
+    "source_urls": [],
+    "enumerated_on": "2026-08-05",
+    "approved_on": "",
+    "legacy_id": "Citibanamex",
+    "confidence": {
+      "identity": {
+        "score": "medium",
+        "evidence_type": "inferred",
+        "verified_on": "2026-08-05",
+        "sources": []
+      }
+    },
+    "notes": "Migrated from card census. legal_name and source_urls pending confirmation against the CNBV Padrón.",
+    "offers_deposit_products": true
+  },
+  {
+    "issuer_id": "coppel",
+    "legal_name": "UNKNOWN",
+    "display_name": "Coppel",
+    "regulated_entity_type": "other",
+    "insurance_scheme": "UNKNOWN",
+    "insurance_coverage_udis": "UNKNOWN",
+    "cnbv_registered": false,
+    "status": "active",
+    "in_dataset": false,
+    "exclusion_reason": "Closed-loop store card — no general-purpose network, out of scope per scope.md.",
+    "source_urls": [
+      "https://webapps.condusef.gob.mx/SIPRES/jsp/pub/index.jsp"
+    ],
+    "enumerated_on": "2026-08-05",
+    "approved_on": "",
+    "legacy_id": "Coppel",
+    "confidence": {
+      "identity": {
+        "score": "medium",
+        "evidence_type": "regulator",
+        "verified_on": "2026-08-05",
+        "sources": [
+          "https://webapps.condusef.gob.mx/SIPRES/jsp/pub/index.jsp"
+        ]
+      }
+    },
+    "notes": "",
+    "offers_deposit_products": true
+  },
+  {
+    "issuer_id": "crediclub",
+    "legal_name": "UNKNOWN",
+    "display_name": "Crediclub (SuperTasas)",
+    "regulated_entity_type": "sofipo",
+    "insurance_scheme": "PROSOFIPO",
+    "insurance_coverage_udis": 25000,
+    "cnbv_registered": true,
+    "status": "active",
+    "in_dataset": true,
+    "exclusion_reason": "",
+    "source_urls": [],
+    "enumerated_on": "2026-08-05",
+    "approved_on": "",
+    "legacy_id": "Crediclub (SuperTasas)",
+    "confidence": {
+      "identity": {
+        "score": "low",
+        "evidence_type": "inferred",
+        "verified_on": "2026-08-05",
+        "sources": []
+      }
+    },
+    "notes": "Deposit-only issuer — absent from the card census. Entity type inherited from the legacy market dataset; verify against SIPRES.",
+    "offers_deposit_products": true
+  },
+  {
+    "issuer_id": "cuenca",
+    "legal_name": "UNKNOWN",
+    "display_name": "Cuenca",
+    "regulated_entity_type": "ifpe",
+    "insurance_scheme": "none",
+    "insurance_coverage_udis": "NOT_APPLICABLE",
+    "cnbv_registered": true,
+    "status": "active",
+    "in_dataset": true,
+    "exclusion_reason": "",
+    "source_urls": [
+      "https://webapps.condusef.gob.mx/SIPRES/jsp/pub/index.jsp"
+    ],
+    "enumerated_on": "2026-08-05",
+    "approved_on": "",
+    "legacy_id": "Cuenca",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "regulator",
+        "verified_on": "2026-08-05",
+        "sources": [
+          "https://webapps.condusef.gob.mx/SIPRES/jsp/pub/index.jsp"
+        ]
+      }
+    },
+    "notes": "",
+    "offers_deposit_products": true
+  },
+  {
+    "issuer_id": "finsus",
+    "legal_name": "UNKNOWN",
+    "display_name": "Finsus",
+    "regulated_entity_type": "sofipo",
+    "insurance_scheme": "PROSOFIPO",
+    "insurance_coverage_udis": 25000,
+    "cnbv_registered": true,
+    "status": "active",
+    "in_dataset": true,
+    "exclusion_reason": "",
+    "source_urls": [],
+    "enumerated_on": "2026-08-05",
+    "approved_on": "",
+    "legacy_id": "Finsus",
+    "confidence": {
+      "identity": {
+        "score": "low",
+        "evidence_type": "inferred",
+        "verified_on": "2026-08-05",
+        "sources": []
+      }
+    },
+    "notes": "Deposit-only issuer — absent from the card census. Entity type inherited from the legacy market dataset; verify against SIPRES.",
+    "offers_deposit_products": true
+  },
+  {
+    "issuer_id": "fondeadora",
+    "legal_name": "UNKNOWN",
+    "display_name": "Fondeadora",
+    "regulated_entity_type": "ifpe",
+    "insurance_scheme": "none",
+    "insurance_coverage_udis": "NOT_APPLICABLE",
+    "cnbv_registered": true,
+    "status": "active",
+    "in_dataset": true,
+    "exclusion_reason": "",
+    "source_urls": [],
+    "enumerated_on": "2026-08-05",
+    "approved_on": "",
+    "legacy_id": "Fondeadora",
+    "confidence": {
+      "identity": {
+        "score": "low",
+        "evidence_type": "inferred",
+        "verified_on": "2026-08-05",
+        "sources": []
+      }
+    },
+    "notes": "Deposit-only issuer — absent from the card census. Entity type inherited from the legacy market dataset; verify against SIPRES.",
+    "offers_deposit_products": true
+  },
+  {
+    "issuer_id": "hey_banco",
+    "legal_name": "Hey Banco, S.A., Institución de Banca Múltiple, Banregio Grupo Financiero",
+    "display_name": "Hey Banco",
+    "regulated_entity_type": "banco",
+    "insurance_scheme": "IPAB",
+    "insurance_coverage_udis": 400000,
+    "cnbv_registered": true,
+    "status": "active",
+    "in_dataset": true,
+    "exclusion_reason": "",
+    "source_urls": [
+      "https://www.dof.gob.mx/nota_detalle.php?codigo=5696333&fecha=21%2F07%2F2023"
+    ],
+    "enumerated_on": "2026-08-05",
+    "approved_on": "",
+    "legacy_id": "Hey Banco",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "regulator",
+        "verified_on": "2026-08-05",
+        "sources": [
+          "https://www.dof.gob.mx/nota_detalle.php?codigo=5696333&fecha=21%2F07%2F2023"
+        ]
+      }
+    },
+    "notes": "DOF authorization for organization and operation as banca múltiple.",
+    "offers_deposit_products": true
+  },
+  {
+    "issuer_id": "hsbc_mexico",
+    "legal_name": "UNKNOWN",
+    "display_name": "HSBC México",
+    "regulated_entity_type": "banco",
+    "insurance_scheme": "IPAB",
+    "insurance_coverage_udis": 400000,
+    "cnbv_registered": true,
+    "status": "active",
+    "in_dataset": true,
+    "exclusion_reason": "",
+    "source_urls": [],
+    "enumerated_on": "2026-08-05",
+    "approved_on": "",
+    "legacy_id": "HSBC México",
+    "confidence": {
+      "identity": {
+        "score": "medium",
+        "evidence_type": "inferred",
+        "verified_on": "2026-08-05",
+        "sources": []
+      }
+    },
+    "notes": "Migrated from card census. legal_name and source_urls pending confirmation against the CNBV Padrón.",
+    "offers_deposit_products": true
+  },
+  {
+    "issuer_id": "invex",
+    "legal_name": "UNKNOWN",
+    "display_name": "Invex",
+    "regulated_entity_type": "banco",
+    "insurance_scheme": "IPAB",
+    "insurance_coverage_udis": 400000,
+    "cnbv_registered": true,
+    "status": "active",
+    "in_dataset": true,
+    "exclusion_reason": "",
+    "source_urls": [],
+    "enumerated_on": "2026-08-05",
+    "approved_on": "",
+    "legacy_id": "Invex",
+    "confidence": {
+      "identity": {
+        "score": "medium",
+        "evidence_type": "inferred",
+        "verified_on": "2026-08-05",
+        "sources": []
+      }
+    },
+    "notes": "Migrated from card census. legal_name and source_urls pending confirmation against the CNBV Padrón.",
+    "offers_deposit_products": true
+  },
+  {
+    "issuer_id": "jp_sofiexpress",
+    "legal_name": "UNKNOWN",
+    "display_name": "JP Sofiexpress",
+    "regulated_entity_type": "sofipo",
+    "insurance_scheme": "PROSOFIPO",
+    "insurance_coverage_udis": 25000,
+    "cnbv_registered": true,
+    "status": "active",
+    "in_dataset": true,
+    "exclusion_reason": "",
+    "source_urls": [
+      "https://webapps.condusef.gob.mx/SIPRES/jsp/pub/index.jsp"
+    ],
+    "enumerated_on": "2026-08-05",
+    "approved_on": "",
+    "legacy_id": "DiDi (Regigold SOFOM)",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "regulator",
+        "verified_on": "2026-08-05",
+        "sources": [
+          "https://webapps.condusef.gob.mx/SIPRES/jsp/pub/index.jsp"
+        ]
+      }
+    },
+    "notes": "CONFLICT RESOLVED — SIPRES names JP Sofiexpress. The market dataset was right; the census 'Regigold SOFOM' was wrong.",
+    "offers_deposit_products": true
+  },
+  {
+    "issuer_id": "klar",
+    "legal_name": "UNKNOWN",
+    "display_name": "Klar",
+    "regulated_entity_type": "sofipo",
+    "insurance_scheme": "PROSOFIPO",
+    "insurance_coverage_udis": 25000,
+    "cnbv_registered": true,
+    "status": "active",
+    "in_dataset": true,
+    "exclusion_reason": "",
+    "source_urls": [
+      "https://webapps.condusef.gob.mx/SIPRES/jsp/pub/index.jsp"
+    ],
+    "enumerated_on": "2026-08-05",
+    "approved_on": "",
+    "legacy_id": "Klar",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "regulator",
+        "verified_on": "2026-08-05",
+        "sources": [
+          "https://webapps.condusef.gob.mx/SIPRES/jsp/pub/index.jsp"
+        ]
+      }
+    },
+    "notes": "",
+    "offers_deposit_products": true
+  },
+  {
+    "issuer_id": "liverpool",
+    "legal_name": "UNKNOWN",
+    "display_name": "Liverpool",
+    "regulated_entity_type": "other",
+    "insurance_scheme": "UNKNOWN",
+    "insurance_coverage_udis": "UNKNOWN",
+    "cnbv_registered": false,
+    "status": "active",
+    "in_dataset": false,
+    "exclusion_reason": "Closed-loop store card — no general-purpose network, out of scope per scope.md.",
+    "source_urls": [
+      "https://webapps.condusef.gob.mx/SIPRES/jsp/pub/index.jsp"
+    ],
+    "enumerated_on": "2026-08-05",
+    "approved_on": "",
+    "legacy_id": "Liverpool",
+    "confidence": {
+      "identity": {
+        "score": "medium",
+        "evidence_type": "regulator",
+        "verified_on": "2026-08-05",
+        "sources": [
+          "https://webapps.condusef.gob.mx/SIPRES/jsp/pub/index.jsp"
+        ]
+      }
+    },
+    "notes": "",
+    "offers_deposit_products": true
+  },
+  {
+    "issuer_id": "mercado_pago",
+    "legal_name": "UNKNOWN",
+    "display_name": "Mercado Pago",
+    "regulated_entity_type": "ifpe",
+    "insurance_scheme": "none",
+    "insurance_coverage_udis": "NOT_APPLICABLE",
+    "cnbv_registered": true,
+    "status": "active",
+    "in_dataset": true,
+    "exclusion_reason": "",
+    "source_urls": [
+      "https://webapps.condusef.gob.mx/SIPRES/jsp/pub/index.jsp"
+    ],
+    "enumerated_on": "2026-08-05",
+    "approved_on": "",
+    "legacy_id": "Mercado Pago (Mercado Lending)",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "regulator",
+        "verified_on": "2026-08-05",
+        "sources": [
+          "https://webapps.condusef.gob.mx/SIPRES/jsp/pub/index.jsp"
+        ]
+      }
+    },
+    "notes": "",
+    "offers_deposit_products": true
+  },
+  {
+    "issuer_id": "multiva",
+    "legal_name": "UNKNOWN",
+    "display_name": "Multiva",
+    "regulated_entity_type": "banco",
+    "insurance_scheme": "IPAB",
+    "insurance_coverage_udis": 400000,
+    "cnbv_registered": true,
+    "status": "active",
+    "in_dataset": true,
+    "exclusion_reason": "",
+    "source_urls": [],
+    "enumerated_on": "2026-08-05",
+    "approved_on": "",
+    "legacy_id": "Multiva",
+    "confidence": {
+      "identity": {
+        "score": "medium",
+        "evidence_type": "inferred",
+        "verified_on": "2026-08-05",
+        "sources": []
+      }
+    },
+    "notes": "Migrated from card census. legal_name and source_urls pending confirmation against the CNBV Padrón.",
+    "offers_deposit_products": true
+  },
+  {
+    "issuer_id": "nu_mx",
+    "legal_name": "UNKNOWN",
+    "display_name": "Nu",
+    "regulated_entity_type": "banco",
+    "insurance_scheme": "IPAB",
+    "insurance_coverage_udis": 400000,
+    "cnbv_registered": true,
+    "status": "active",
+    "in_dataset": true,
+    "exclusion_reason": "",
+    "source_urls": [
+      "https://webapps.condusef.gob.mx/SIPRES/jsp/pub/index.jsp",
+      "https://www.eluniversal.com.mx/cartera/nu-mexico-inicia-su-transicion-a-banca-multiple-que-cambia-para-sus-clientes/"
+    ],
+    "enumerated_on": "2026-08-05",
+    "approved_on": "",
+    "legacy_id": "Nu México",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "regulator",
+        "verified_on": "2026-08-05",
+        "sources": [
+          "https://webapps.condusef.gob.mx/SIPRES/jsp/pub/index.jsp",
+          "https://www.eluniversal.com.mx/cartera/nu-mexico-inicia-su-transicion-a-banca-multiple-que-cambia-para-sus-clientes/"
+        ]
+      }
+    },
+    "notes": "Converted from SOFIPO to institución de banca múltiple on 2026-08-06. CNBV authorised operations 2026-07-10. Deposit protection moved from PROSOFIPO 25,000 UDIS to IPAB 400,000 UDIS. legal_name still to be confirmed against the CNBV Padrón under the new licence.",
+    "pending_entity_type": "",
+    "conversion_effective_date": "",
+    "offers_deposit_products": true
+  },
+  {
+    "issuer_id": "palacio_de_hierro",
+    "legal_name": "UNKNOWN",
+    "display_name": "Palacio de Hierro",
+    "regulated_entity_type": "other",
+    "insurance_scheme": "UNKNOWN",
+    "insurance_coverage_udis": "UNKNOWN",
+    "cnbv_registered": false,
+    "status": "active",
+    "in_dataset": false,
+    "exclusion_reason": "Closed-loop store card — no general-purpose network, out of scope per scope.md.",
+    "source_urls": [
+      "https://webapps.condusef.gob.mx/SIPRES/jsp/pub/index.jsp"
+    ],
+    "enumerated_on": "2026-08-05",
+    "approved_on": "",
+    "legacy_id": "Palacio de Hierro",
+    "confidence": {
+      "identity": {
+        "score": "medium",
+        "evidence_type": "regulator",
+        "verified_on": "2026-08-05",
+        "sources": [
+          "https://webapps.condusef.gob.mx/SIPRES/jsp/pub/index.jsp"
+        ]
+      }
+    },
+    "notes": "",
+    "offers_deposit_products": true
+  },
+  {
+    "issuer_id": "plata",
+    "legal_name": "Plata, S.A., Institución de Banca Múltiple",
+    "display_name": "Plata Card",
+    "regulated_entity_type": "banco",
+    "insurance_scheme": "IPAB",
+    "insurance_coverage_udis": 400000,
+    "cnbv_registered": true,
+    "status": "active",
+    "in_dataset": true,
+    "exclusion_reason": "",
+    "source_urls": [
+      "https://elceo.com/negocios/del-colapso-de-famsa-a-la-autorizacion-de-plata-mexico-llega-al-record-de-53-bancos/",
+      "https://es.wikipedia.org/wiki/Anexo:Bancos_de_M%C3%A9xico"
+    ],
+    "enumerated_on": "2026-08-05",
+    "approved_on": "",
+    "legacy_id": "Plata Card",
+    "confidence": {
+      "identity": {
+        "score": "medium",
+        "evidence_type": "comparator_secondary",
+        "verified_on": "2026-08-05",
+        "sources": [
+          "https://elceo.com/negocios/del-colapso-de-famsa-a-la-autorizacion-de-plata-mexico-llega-al-record-de-53-bancos/",
+          "https://es.wikipedia.org/wiki/Anexo:Bancos_de_M%C3%A9xico"
+        ]
+      }
+    },
+    "notes": "Banking licence Dec 2024; began banca múltiple operations 18 Mar 2026.",
+    "offers_deposit_products": true
+  },
+  {
+    "issuer_id": "santander_mexico",
+    "legal_name": "UNKNOWN",
+    "display_name": "Santander México",
+    "regulated_entity_type": "banco",
+    "insurance_scheme": "IPAB",
+    "insurance_coverage_udis": 400000,
+    "cnbv_registered": true,
+    "status": "active",
+    "in_dataset": true,
+    "exclusion_reason": "",
+    "source_urls": [],
+    "enumerated_on": "2026-08-05",
+    "approved_on": "",
+    "legacy_id": "Santander México",
+    "confidence": {
+      "identity": {
+        "score": "medium",
+        "evidence_type": "inferred",
+        "verified_on": "2026-08-05",
+        "sources": []
+      }
+    },
+    "notes": "Migrated from card census. legal_name and source_urls pending confirmation against the CNBV Padrón.",
+    "offers_deposit_products": true
+  },
+  {
+    "issuer_id": "scotiabank_mexico",
+    "legal_name": "UNKNOWN",
+    "display_name": "Scotiabank México",
+    "regulated_entity_type": "banco",
+    "insurance_scheme": "IPAB",
+    "insurance_coverage_udis": 400000,
+    "cnbv_registered": true,
+    "status": "active",
+    "in_dataset": true,
+    "exclusion_reason": "",
+    "source_urls": [],
+    "enumerated_on": "2026-08-05",
+    "approved_on": "",
+    "legacy_id": "Scotiabank México",
+    "confidence": {
+      "identity": {
+        "score": "medium",
+        "evidence_type": "inferred",
+        "verified_on": "2026-08-05",
+        "sources": []
+      }
+    },
+    "notes": "Migrated from card census. legal_name and source_urls pending confirmation against the CNBV Padrón.",
+    "offers_deposit_products": true
+  },
+  {
+    "issuer_id": "sears",
+    "legal_name": "UNKNOWN",
+    "display_name": "Sears",
+    "regulated_entity_type": "other",
+    "insurance_scheme": "UNKNOWN",
+    "insurance_coverage_udis": "UNKNOWN",
+    "cnbv_registered": false,
+    "status": "active",
+    "in_dataset": false,
+    "exclusion_reason": "Closed-loop store card — no general-purpose network, out of scope per scope.md.",
+    "source_urls": [
+      "https://webapps.condusef.gob.mx/SIPRES/jsp/pub/index.jsp"
+    ],
+    "enumerated_on": "2026-08-05",
+    "approved_on": "",
+    "legacy_id": "Sears",
+    "confidence": {
+      "identity": {
+        "score": "medium",
+        "evidence_type": "regulator",
+        "verified_on": "2026-08-05",
+        "sources": [
+          "https://webapps.condusef.gob.mx/SIPRES/jsp/pub/index.jsp"
+        ]
+      }
+    },
+    "notes": "",
+    "offers_deposit_products": true
+  },
+  {
+    "issuer_id": "soriana",
+    "legal_name": "UNKNOWN",
+    "display_name": "Soriana",
+    "regulated_entity_type": "other",
+    "insurance_scheme": "UNKNOWN",
+    "insurance_coverage_udis": "UNKNOWN",
+    "cnbv_registered": false,
+    "status": "active",
+    "in_dataset": false,
+    "exclusion_reason": "Closed-loop store card — no general-purpose network, out of scope per scope.md.",
+    "source_urls": [
+      "https://webapps.condusef.gob.mx/SIPRES/jsp/pub/index.jsp"
+    ],
+    "enumerated_on": "2026-08-05",
+    "approved_on": "",
+    "legacy_id": "Soriana",
+    "confidence": {
+      "identity": {
+        "score": "medium",
+        "evidence_type": "regulator",
+        "verified_on": "2026-08-05",
+        "sources": [
+          "https://webapps.condusef.gob.mx/SIPRES/jsp/pub/index.jsp"
+        ]
+      }
+    },
+    "notes": "",
+    "offers_deposit_products": true
+  },
+  {
+    "issuer_id": "spin_oxxo",
+    "legal_name": "UNKNOWN",
+    "display_name": "Spin by Oxxo",
+    "regulated_entity_type": "ifpe",
+    "insurance_scheme": "none",
+    "insurance_coverage_udis": "NOT_APPLICABLE",
+    "cnbv_registered": true,
+    "status": "active",
+    "in_dataset": true,
+    "exclusion_reason": "",
+    "source_urls": [],
+    "enumerated_on": "2026-08-05",
+    "approved_on": "",
+    "legacy_id": "Spin by Oxxo",
+    "confidence": {
+      "identity": {
+        "score": "low",
+        "evidence_type": "inferred",
+        "verified_on": "2026-08-05",
+        "sources": []
+      }
+    },
+    "notes": "Deposit-only issuer — absent from the card census. Entity type inherited from the legacy market dataset; verify against SIPRES.",
+    "offers_deposit_products": true
+  },
+  {
+    "issuer_id": "stori",
+    "legal_name": "UNKNOWN",
+    "display_name": "Stori",
+    "regulated_entity_type": "sofipo",
+    "insurance_scheme": "PROSOFIPO",
+    "insurance_coverage_udis": 25000,
+    "cnbv_registered": true,
+    "status": "active",
+    "in_dataset": true,
+    "exclusion_reason": "",
+    "source_urls": [
+      "https://webapps.condusef.gob.mx/SIPRES/jsp/pub/index.jsp"
+    ],
+    "enumerated_on": "2026-08-05",
+    "approved_on": "",
+    "legacy_id": "Stori",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "regulator",
+        "verified_on": "2026-08-05",
+        "sources": [
+          "https://webapps.condusef.gob.mx/SIPRES/jsp/pub/index.jsp"
+        ]
+      }
+    },
+    "notes": "",
+    "offers_deposit_products": true
+  },
+  {
+    "issuer_id": "uala_mx",
+    "legal_name": "Ualá México, S.A., Institución de Banca Múltiple",
+    "display_name": "Ualá",
+    "regulated_entity_type": "banco",
+    "insurance_scheme": "IPAB",
+    "insurance_coverage_udis": 400000,
+    "cnbv_registered": true,
+    "status": "active",
+    "in_dataset": true,
+    "exclusion_reason": "",
+    "source_urls": [
+      "https://www.uala.mx/la-cnbv-autoriza-a-la-compania-de-tecnologia-uala-la-adquisicion-del-banco",
+      "https://es.wikipedia.org/wiki/Anexo:Bancos_de_M%C3%A9xico"
+    ],
+    "enumerated_on": "2026-08-05",
+    "approved_on": "",
+    "legacy_id": "Ualá",
+    "confidence": {
+      "identity": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-05",
+        "sources": [
+          "https://www.uala.mx/la-cnbv-autoriza-a-la-compania-de-tecnologia-uala-la-adquisicion-del-banco",
+          "https://es.wikipedia.org/wiki/Anexo:Bancos_de_M%C3%A9xico"
+        ]
+      }
+    },
+    "notes": "Acquired ABC Capital; renamed to Ualá after SHCP authorization.",
+    "offers_deposit_products": true
+  },
+  {
+    "issuer_id": "vexi",
+    "legal_name": "UNKNOWN",
+    "display_name": "Vexi",
+    "regulated_entity_type": "other",
+    "insurance_scheme": "UNKNOWN",
+    "insurance_coverage_udis": "UNKNOWN",
+    "cnbv_registered": false,
+    "status": "active",
+    "in_dataset": false,
+    "exclusion_reason": "Not found in SIPRES — regulatory status unestablished.",
+    "source_urls": [
+      "https://webapps.condusef.gob.mx/SIPRES/jsp/pub/index.jsp"
+    ],
+    "enumerated_on": "2026-08-05",
+    "approved_on": "",
+    "legacy_id": "Vexi",
+    "confidence": {
+      "identity": {
+        "score": "medium",
+        "evidence_type": "regulator",
+        "verified_on": "2026-08-05",
+        "sources": [
+          "https://webapps.condusef.gob.mx/SIPRES/jsp/pub/index.jsp"
+        ]
+      }
+    },
+    "notes": "",
+    "offers_deposit_products": true
+  }
+]

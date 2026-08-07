@@ -1,0 +1,1244 @@
+[
+  {
+    "account_id": "nu_mx__cajita_nu",
+    "issuer_id": "nu_mx",
+    "display_name": "Cajita Nu",
+    "former_names": [],
+    "legacy_id": "nu_cajita",
+    "account_type": "savings",
+    "lifecycle_status": "active",
+    "mapping_status": "mapped",
+    "yield_structure": "tiered",
+    "flat_rate_pct": "NOT_APPLICABLE",
+    "promotional_rate_pct": "NOT_APPLICABLE",
+    "promotional_rate_end_date": "NOT_APPLICABLE",
+    "rate_type": "rendimiento_anual_nominal",
+    "max_balance_earning_stated_rate_mxn": "UNCAPPED",
+    "monthly_fee_mxn": 0,
+    "fee_waiver_condition": "NOT_APPLICABLE",
+    "min_balance_mxn": 0,
+    "min_opening_deposit_mxn": 0,
+    "liquidity": "instant",
+    "term_days": "NOT_APPLICABLE",
+    "isr_withholding_note": "Rate before ISR; ISR withheld on interest",
+    "insurance_scheme": "IPAB",
+    "insurance_coverage_udis": 400000,
+    "regulated_entity_type": "banco",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-06-25",
+        "sources": [
+          "https://nu.com.mx/cuenta/"
+        ]
+      },
+      "cost": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-06-25",
+        "sources": [
+          "https://nu.com.mx/cuenta/"
+        ]
+      },
+      "yield": {
+        "score": "low",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-06-25",
+        "sources": [
+          "https://nu.com.mx/cuenta/"
+        ]
+      }
+    },
+    "conflicts": [],
+    "notes": "Contractual base 6.00% (GAT nominal 6.72%), promo preferencial 6.50%; congelada 6.80%; Cajita Turbo 13.00% (see ConditionalBoosts)"
+  },
+  {
+    "account_id": "mercado_pago__cuenta_mercado_pago_rendimientos",
+    "issuer_id": "mercado_pago",
+    "display_name": "Cuenta Mercado Pago (rendimientos)",
+    "former_names": [],
+    "legacy_id": "mp_cuenta",
+    "account_type": "hybrid",
+    "lifecycle_status": "active",
+    "mapping_status": "mapped",
+    "yield_structure": "tiered",
+    "flat_rate_pct": "NOT_APPLICABLE",
+    "promotional_rate_pct": "NOT_APPLICABLE",
+    "promotional_rate_end_date": "NOT_APPLICABLE",
+    "rate_type": "rendimiento_anual_nominal",
+    "max_balance_earning_stated_rate_mxn": 25000,
+    "monthly_fee_mxn": 0,
+    "fee_waiver_condition": "NOT_APPLICABLE",
+    "min_balance_mxn": 0,
+    "min_opening_deposit_mxn": 0,
+    "liquidity": "instant",
+    "term_days": "NOT_APPLICABLE",
+    "isr_withholding_note": "Before ISR; yield via GBM investment fund",
+    "insurance_scheme": "none",
+    "insurance_coverage_udis": "NOT_APPLICABLE",
+    "regulated_entity_type": "ifpe",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://bancario.com.mx/mercado-pago"
+        ]
+      },
+      "cost": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://bancario.com.mx/mercado-pago"
+        ]
+      },
+      "yield": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://bancario.com.mx/mercado-pago"
+        ]
+      }
+    },
+    "conflicts": [],
+    "notes": "7% base, up to 13% with $3000/mo deposit on <=$25000; NOT IPAB (fund-linked); change effective 1 Oct 2025"
+  },
+  {
+    "account_id": "finsus__cuenta_de_ahorro_finsus",
+    "issuer_id": "finsus",
+    "display_name": "Cuenta de ahorro finsus+",
+    "former_names": [],
+    "legacy_id": "finsus_ahorro",
+    "account_type": "savings",
+    "lifecycle_status": "active",
+    "mapping_status": "mapped",
+    "yield_structure": "flat",
+    "flat_rate_pct": 7.08,
+    "promotional_rate_pct": "NOT_APPLICABLE",
+    "promotional_rate_end_date": "NOT_APPLICABLE",
+    "rate_type": "rendimiento_anual_nominal",
+    "max_balance_earning_stated_rate_mxn": "UNCAPPED",
+    "monthly_fee_mxn": 0,
+    "fee_waiver_condition": "NOT_APPLICABLE",
+    "min_balance_mxn": 0,
+    "min_opening_deposit_mxn": 100,
+    "liquidity": "instant",
+    "term_days": "NOT_APPLICABLE",
+    "isr_withholding_note": "Before ISR",
+    "insurance_scheme": "PROSOFIPO",
+    "insurance_coverage_udis": 25000,
+    "regulated_entity_type": "sofipo",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://finsus.mx/"
+        ]
+      },
+      "cost": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://finsus.mx/"
+        ]
+      },
+      "yield": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://finsus.mx/"
+        ]
+      }
+    },
+    "conflicts": [],
+    "notes": "Investment tier up to 8.69% (verify current)"
+  },
+  {
+    "account_id": "klar__cuenta_klar_saldo_disponible",
+    "issuer_id": "klar",
+    "display_name": "Cuenta Klar (saldo disponible)",
+    "former_names": [],
+    "legacy_id": "klar_cuenta",
+    "account_type": "savings",
+    "lifecycle_status": "active",
+    "mapping_status": "mapped",
+    "yield_structure": "flat",
+    "flat_rate_pct": 3.0,
+    "promotional_rate_pct": "NOT_APPLICABLE",
+    "promotional_rate_end_date": "NOT_APPLICABLE",
+    "rate_type": "rendimiento_anual_nominal",
+    "max_balance_earning_stated_rate_mxn": "UNCAPPED",
+    "monthly_fee_mxn": 0,
+    "fee_waiver_condition": "NOT_APPLICABLE",
+    "min_balance_mxn": 100,
+    "min_opening_deposit_mxn": 0,
+    "liquidity": "instant",
+    "term_days": "NOT_APPLICABLE",
+    "isr_withholding_note": "Before ISR",
+    "insurance_scheme": "PROSOFIPO",
+    "insurance_coverage_udis": 25000,
+    "regulated_entity_type": "sofipo",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://www.klar.mx/"
+        ]
+      },
+      "cost": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://www.klar.mx/"
+        ]
+      },
+      "yield": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://www.klar.mx/"
+        ]
+      }
+    },
+    "conflicts": [],
+    "notes": "3% standard, 5% Plus/Platino; Inversión Max up to 15% (see ConditionalBoosts)"
+  },
+  {
+    "account_id": "stori__stori_cuenta_apartados",
+    "issuer_id": "stori",
+    "display_name": "Stori Cuenta+ (Apartados)",
+    "former_names": [],
+    "legacy_id": "stori_cuentamas",
+    "account_type": "savings",
+    "lifecycle_status": "active",
+    "mapping_status": "mapped",
+    "yield_structure": "flat",
+    "flat_rate_pct": 8.0,
+    "promotional_rate_pct": "NOT_APPLICABLE",
+    "promotional_rate_end_date": "NOT_APPLICABLE",
+    "rate_type": "GAT_nominal",
+    "max_balance_earning_stated_rate_mxn": 24000,
+    "monthly_fee_mxn": 0,
+    "fee_waiver_condition": "NOT_APPLICABLE",
+    "min_balance_mxn": 0,
+    "min_opening_deposit_mxn": 0,
+    "liquidity": "instant",
+    "term_days": "NOT_APPLICABLE",
+    "isr_withholding_note": "Before impuestos; GAT Real lower",
+    "insurance_scheme": "PROSOFIPO",
+    "insurance_coverage_udis": 25000,
+    "regulated_entity_type": "sofipo",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://www.storicard.com/stori-cuentamas"
+        ]
+      },
+      "cost": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://www.storicard.com/stori-cuentamas"
+        ]
+      },
+      "yield": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://www.storicard.com/stori-cuentamas"
+        ]
+      }
+    },
+    "conflicts": [],
+    "notes": "GAT nominal up to 8.20%; deposit cap $24000/mo; Inversión+ up to 15%"
+  },
+  {
+    "account_id": "uala_mx__cuenta_con_rendimiento_uala",
+    "issuer_id": "uala_mx",
+    "display_name": "Cuenta con rendimiento Ualá",
+    "former_names": [],
+    "legacy_id": "uala_cuenta",
+    "account_type": "savings",
+    "lifecycle_status": "active",
+    "mapping_status": "mapped",
+    "yield_structure": "tiered",
+    "flat_rate_pct": "NOT_APPLICABLE",
+    "promotional_rate_pct": "NOT_APPLICABLE",
+    "promotional_rate_end_date": "NOT_APPLICABLE",
+    "rate_type": "rendimiento_anual_nominal",
+    "max_balance_earning_stated_rate_mxn": 30000,
+    "monthly_fee_mxn": 0,
+    "fee_waiver_condition": "NOT_APPLICABLE",
+    "min_balance_mxn": 100,
+    "min_opening_deposit_mxn": 0,
+    "liquidity": "instant",
+    "term_days": "NOT_APPLICABLE",
+    "isr_withholding_note": "Before impuestos; GAT nominal 6.98%, GAT real 2.95%",
+    "insurance_scheme": "IPAB",
+    "insurance_coverage_udis": 400000,
+    "regulated_entity_type": "banco",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-03-26",
+        "sources": [
+          "https://www.uala.mx/cuenta-con-rendimiento"
+        ]
+      },
+      "cost": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-03-26",
+        "sources": [
+          "https://www.uala.mx/cuenta-con-rendimiento"
+        ]
+      },
+      "yield": {
+        "score": "low",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-03-26",
+        "sources": [
+          "https://www.uala.mx/cuenta-con-rendimiento"
+        ]
+      }
+    },
+    "conflicts": [],
+    "notes": "6.75% base, 12% with $3000/mo, 15% with $6000/mo, all on <=$30000"
+  },
+  {
+    "account_id": "uala_mx__reserva_a_plazo_uala",
+    "issuer_id": "uala_mx",
+    "display_name": "Reserva a plazo Ualá",
+    "former_names": [],
+    "legacy_id": "uala_reserva",
+    "account_type": "investment_term",
+    "lifecycle_status": "active",
+    "mapping_status": "mapped",
+    "yield_structure": "flat",
+    "flat_rate_pct": 8.5,
+    "promotional_rate_pct": "NOT_APPLICABLE",
+    "promotional_rate_end_date": "NOT_APPLICABLE",
+    "rate_type": "rendimiento_anual_nominal",
+    "max_balance_earning_stated_rate_mxn": "UNCAPPED",
+    "monthly_fee_mxn": 0,
+    "fee_waiver_condition": "NOT_APPLICABLE",
+    "min_balance_mxn": 10,
+    "min_opening_deposit_mxn": 10,
+    "liquidity": "term_locked",
+    "term_days": 365,
+    "isr_withholding_note": "Before impuestos; GAT nominal 8.50%, GAT real 4.54%",
+    "insurance_scheme": "IPAB",
+    "insurance_coverage_udis": 400000,
+    "regulated_entity_type": "banco",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://www.uala.mx/reserva-a-plazo"
+        ]
+      },
+      "cost": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://www.uala.mx/reserva-a-plazo"
+        ]
+      },
+      "yield": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://www.uala.mx/reserva-a-plazo"
+        ]
+      }
+    },
+    "conflicts": [],
+    "notes": "365-day term; from $10"
+  },
+  {
+    "account_id": "crediclub__inversion_supertasas",
+    "issuer_id": "crediclub",
+    "display_name": "Inversión SuperTasas",
+    "former_names": [],
+    "legacy_id": "supertasas_inversion",
+    "account_type": "investment_term",
+    "lifecycle_status": "active",
+    "mapping_status": "mapped",
+    "yield_structure": "flat",
+    "flat_rate_pct": 8.8,
+    "promotional_rate_pct": "NOT_APPLICABLE",
+    "promotional_rate_end_date": "NOT_APPLICABLE",
+    "rate_type": "GAT_nominal",
+    "max_balance_earning_stated_rate_mxn": "UNCAPPED",
+    "monthly_fee_mxn": 0,
+    "fee_waiver_condition": "NOT_APPLICABLE",
+    "min_balance_mxn": 1,
+    "min_opening_deposit_mxn": 1,
+    "liquidity": "term_locked",
+    "term_days": "UNKNOWN",
+    "isr_withholding_note": "Before impuestos; GAT Real ~4.84%",
+    "insurance_scheme": "PROSOFIPO",
+    "insurance_coverage_udis": 25000,
+    "regulated_entity_type": "sofipo",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-05-30",
+        "sources": [
+          "https://supertasas.com/programa-referidos/"
+        ]
+      },
+      "cost": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-05-30",
+        "sources": [
+          "https://supertasas.com/programa-referidos/"
+        ]
+      },
+      "yield": {
+        "score": "low",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-05-30",
+        "sources": [
+          "https://supertasas.com/programa-referidos/"
+        ]
+      }
+    },
+    "conflicts": [],
+    "notes": "Same rate regardless of amount; up to ~8.80% GAT nominal"
+  },
+  {
+    "account_id": "jp_sofiexpress__didi_cuenta",
+    "issuer_id": "jp_sofiexpress",
+    "display_name": "DiDi Cuenta",
+    "former_names": [],
+    "legacy_id": "didi_cuenta",
+    "account_type": "savings",
+    "lifecycle_status": "active",
+    "mapping_status": "mapped",
+    "yield_structure": "tiered",
+    "flat_rate_pct": "NOT_APPLICABLE",
+    "promotional_rate_pct": "NOT_APPLICABLE",
+    "promotional_rate_end_date": "NOT_APPLICABLE",
+    "rate_type": "rendimiento_anual_nominal",
+    "max_balance_earning_stated_rate_mxn": 10000,
+    "monthly_fee_mxn": 0,
+    "fee_waiver_condition": "NOT_APPLICABLE",
+    "min_balance_mxn": 0,
+    "min_opening_deposit_mxn": 0,
+    "liquidity": "instant",
+    "term_days": "NOT_APPLICABLE",
+    "isr_withholding_note": "Before impuestos; GAT Nominal 16.18%, GAT Real 12.05% on first tier",
+    "insurance_scheme": "PROSOFIPO",
+    "insurance_coverage_udis": 25000,
+    "regulated_entity_type": "sofipo",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-01-20",
+        "sources": [
+          "https://web.didiglobal.com"
+        ]
+      },
+      "cost": {
+        "score": "low",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-01-20",
+        "sources": [
+          "https://web.didiglobal.com"
+        ]
+      },
+      "yield": {
+        "score": "low",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-01-20",
+        "sources": [
+          "https://web.didiglobal.com"
+        ]
+      }
+    },
+    "conflicts": [],
+    "notes": "Effective 2 Feb 2026: 15% on first $10000, 7.5% above; no min spend (supersedes prior 16%/8.5%)"
+  },
+  {
+    "account_id": "hey_banco__ahorro_hey",
+    "issuer_id": "hey_banco",
+    "display_name": "Ahorro Hey",
+    "former_names": [],
+    "legacy_id": "hey_ahorro",
+    "account_type": "savings",
+    "lifecycle_status": "active",
+    "mapping_status": "mapped",
+    "yield_structure": "flat",
+    "flat_rate_pct": 4.0,
+    "promotional_rate_pct": "NOT_APPLICABLE",
+    "promotional_rate_end_date": "NOT_APPLICABLE",
+    "rate_type": "rendimiento_anual_nominal",
+    "max_balance_earning_stated_rate_mxn": "UNCAPPED",
+    "monthly_fee_mxn": 0,
+    "fee_waiver_condition": "NOT_APPLICABLE",
+    "min_balance_mxn": 0,
+    "min_opening_deposit_mxn": 0,
+    "liquidity": "instant",
+    "term_days": "NOT_APPLICABLE",
+    "isr_withholding_note": "Before impuestos; GAT nominal 4.07%",
+    "insurance_scheme": "IPAB",
+    "insurance_coverage_udis": 400000,
+    "regulated_entity_type": "banco",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-04-07",
+        "sources": [
+          "https://banco.hey.inc/universo-hey/ahorra-e-invierte/ahorro-hey"
+        ]
+      },
+      "cost": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-04-07",
+        "sources": [
+          "https://banco.hey.inc/universo-hey/ahorra-e-invierte/ahorro-hey"
+        ]
+      },
+      "yield": {
+        "score": "low",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-04-07",
+        "sources": [
+          "https://banco.hey.inc/universo-hey/ahorra-e-invierte/ahorro-hey"
+        ]
+      }
+    },
+    "conflicts": [],
+    "notes": "Up to 5 metas; 4% flat"
+  },
+  {
+    "account_id": "hey_banco__pagare_hey_inversion",
+    "issuer_id": "hey_banco",
+    "display_name": "Pagaré Hey (Inversión)",
+    "former_names": [],
+    "legacy_id": "hey_pagare",
+    "account_type": "investment_term",
+    "lifecycle_status": "active",
+    "mapping_status": "mapped",
+    "yield_structure": "tiered",
+    "flat_rate_pct": "NOT_APPLICABLE",
+    "promotional_rate_pct": "NOT_APPLICABLE",
+    "promotional_rate_end_date": "NOT_APPLICABLE",
+    "rate_type": "rendimiento_anual_nominal",
+    "max_balance_earning_stated_rate_mxn": "UNCAPPED",
+    "monthly_fee_mxn": 0,
+    "fee_waiver_condition": "NOT_APPLICABLE",
+    "min_balance_mxn": 1000,
+    "min_opening_deposit_mxn": 1000,
+    "liquidity": "term_locked",
+    "term_days": 28,
+    "isr_withholding_note": "Before impuestos; GAT nominal 7.76%",
+    "insurance_scheme": "IPAB",
+    "insurance_coverage_udis": 400000,
+    "regulated_entity_type": "banco",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-06-16",
+        "sources": [
+          "https://banco.hey.inc/content/dam/heybanco/folletos/folletos-hey-you-biz.pdf"
+        ]
+      },
+      "cost": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-06-16",
+        "sources": [
+          "https://banco.hey.inc/content/dam/heybanco/folletos/folletos-hey-you-biz.pdf"
+        ]
+      },
+      "yield": {
+        "score": "low",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-06-16",
+        "sources": [
+          "https://banco.hey.inc/content/dam/heybanco/folletos/folletos-hey-you-biz.pdf"
+        ]
+      }
+    },
+    "conflicts": [],
+    "notes": "7% (7d) to 7.5% (28d) as Hey Pro; base without Pro lower"
+  },
+  {
+    "account_id": "bbva_mexico__meta_ahorro_bbva",
+    "issuer_id": "bbva_mexico",
+    "display_name": "Meta Ahorro BBVA",
+    "former_names": [],
+    "legacy_id": "bbva_metaahorro",
+    "account_type": "savings",
+    "lifecycle_status": "active",
+    "mapping_status": "mapped",
+    "yield_structure": "flat",
+    "flat_rate_pct": 2.7,
+    "promotional_rate_pct": "NOT_APPLICABLE",
+    "promotional_rate_end_date": "NOT_APPLICABLE",
+    "rate_type": "rendimiento_anual_nominal",
+    "max_balance_earning_stated_rate_mxn": "UNKNOWN",
+    "monthly_fee_mxn": 0,
+    "fee_waiver_condition": "NOT_APPLICABLE",
+    "min_balance_mxn": 0,
+    "min_opening_deposit_mxn": 0,
+    "liquidity": "term_locked",
+    "term_days": "UNKNOWN",
+    "isr_withholding_note": "2.70% only if term completed; 0.20% if early withdrawal",
+    "insurance_scheme": "IPAB",
+    "insurance_coverage_udis": 400000,
+    "regulated_entity_type": "banco",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://www.bbva.mx/personas/productos/ahorro/meta-ahorro.html"
+        ]
+      },
+      "cost": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://www.bbva.mx/personas/productos/ahorro/meta-ahorro.html"
+        ]
+      },
+      "yield": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://www.bbva.mx/personas/productos/ahorro/meta-ahorro.html"
+        ]
+      }
+    },
+    "conflicts": [],
+    "notes": "Debit Cuenta Digital pays 0%; interest only in Meta Ahorro"
+  },
+  {
+    "account_id": "banorte__cuenta_suma_menores",
+    "issuer_id": "banorte",
+    "display_name": "Cuenta Suma Menores",
+    "former_names": [],
+    "legacy_id": "banorte_suma",
+    "account_type": "savings",
+    "lifecycle_status": "active",
+    "mapping_status": "mapped",
+    "yield_structure": "flat",
+    "flat_rate_pct": 0.4,
+    "promotional_rate_pct": "NOT_APPLICABLE",
+    "promotional_rate_end_date": "NOT_APPLICABLE",
+    "rate_type": "GAT_nominal",
+    "max_balance_earning_stated_rate_mxn": "UNKNOWN",
+    "monthly_fee_mxn": 0,
+    "fee_waiver_condition": "NOT_APPLICABLE",
+    "min_balance_mxn": 500,
+    "min_opening_deposit_mxn": 500,
+    "liquidity": "instant",
+    "term_days": "NOT_APPLICABLE",
+    "isr_withholding_note": "GAT Real -3.35%",
+    "insurance_scheme": "IPAB",
+    "insurance_coverage_udis": 400000,
+    "regulated_entity_type": "banco",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-03-26",
+        "sources": [
+          "https://www.banorte.com/Personal/Cuentas/Cuenta-Suma-Menores.html"
+        ]
+      },
+      "cost": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-03-26",
+        "sources": [
+          "https://www.banorte.com/Personal/Cuentas/Cuenta-Suma-Menores.html"
+        ]
+      },
+      "yield": {
+        "score": "low",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-03-26",
+        "sources": [
+          "https://www.banorte.com/Personal/Cuentas/Cuenta-Suma-Menores.html"
+        ]
+      }
+    },
+    "conflicts": [],
+    "notes": "Bank debit accounts pay ~0%"
+  },
+  {
+    "account_id": "banorte__pagare_altos_rendimientos_banorte",
+    "issuer_id": "banorte",
+    "display_name": "Pagaré Altos Rendimientos Banorte",
+    "former_names": [],
+    "legacy_id": "banorte_pagare",
+    "account_type": "investment_term",
+    "lifecycle_status": "active",
+    "mapping_status": "mapped",
+    "yield_structure": "flat",
+    "flat_rate_pct": 6.54,
+    "promotional_rate_pct": "NOT_APPLICABLE",
+    "promotional_rate_end_date": "NOT_APPLICABLE",
+    "rate_type": "rendimiento_anual_nominal",
+    "max_balance_earning_stated_rate_mxn": "UNKNOWN",
+    "monthly_fee_mxn": 0,
+    "fee_waiver_condition": "NOT_APPLICABLE",
+    "min_balance_mxn": 1000000,
+    "min_opening_deposit_mxn": 1000000,
+    "liquidity": "term_locked",
+    "term_days": 28,
+    "isr_withholding_note": "GAT nominal 6.74%; 100% de Cetes",
+    "insurance_scheme": "IPAB",
+    "insurance_coverage_udis": 400000,
+    "regulated_entity_type": "banco",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-05-19",
+        "sources": [
+          "https://www.banorte.com/Personal/Promociones-Banorte/Pagare-Altos-Rendimientos.html"
+        ]
+      },
+      "cost": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-05-19",
+        "sources": [
+          "https://www.banorte.com/Personal/Promociones-Banorte/Pagare-Altos-Rendimientos.html"
+        ]
+      },
+      "yield": {
+        "score": "low",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-05-19",
+        "sources": [
+          "https://www.banorte.com/Personal/Promociones-Banorte/Pagare-Altos-Rendimientos.html"
+        ]
+      }
+    },
+    "conflicts": [],
+    "notes": "Requires $1M; standard Pagaré ~4.57%"
+  },
+  {
+    "account_id": "hsbc_mexico__ahorro_flexible_hsbc",
+    "issuer_id": "hsbc_mexico",
+    "display_name": "Ahorro Flexible HSBC",
+    "former_names": [],
+    "legacy_id": "hsbc_ahorroflexible",
+    "account_type": "savings",
+    "lifecycle_status": "active",
+    "mapping_status": "mapped",
+    "yield_structure": "flat",
+    "flat_rate_pct": 1.0,
+    "promotional_rate_pct": "NOT_APPLICABLE",
+    "promotional_rate_end_date": "NOT_APPLICABLE",
+    "rate_type": "GAT_nominal",
+    "max_balance_earning_stated_rate_mxn": "UNKNOWN",
+    "monthly_fee_mxn": 0,
+    "fee_waiver_condition": "NOT_APPLICABLE",
+    "min_balance_mxn": 1,
+    "min_opening_deposit_mxn": 1,
+    "liquidity": "instant",
+    "term_days": "NOT_APPLICABLE",
+    "isr_withholding_note": "GAT Real -2.73%",
+    "insurance_scheme": "IPAB",
+    "insurance_coverage_udis": 400000,
+    "regulated_entity_type": "banco",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-01-14",
+        "sources": [
+          "https://www.hsbc.com.mx/cuentas/ahorro-flexible-hsbc/"
+        ]
+      },
+      "cost": {
+        "score": "low",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-01-14",
+        "sources": [
+          "https://www.hsbc.com.mx/cuentas/ahorro-flexible-hsbc/"
+        ]
+      },
+      "yield": {
+        "score": "low",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-01-14",
+        "sources": [
+          "https://www.hsbc.com.mx/cuentas/ahorro-flexible-hsbc/"
+        ]
+      }
+    },
+    "conflicts": [],
+    "notes": "Rate varies by amount; ~1% GAT nominal"
+  },
+  {
+    "account_id": "scotiabank_mexico__scotia_inversion_disponible",
+    "issuer_id": "scotiabank_mexico",
+    "display_name": "Scotia Inversión Disponible",
+    "former_names": [],
+    "legacy_id": "scotia_inversion",
+    "account_type": "investment_term",
+    "lifecycle_status": "active",
+    "mapping_status": "mapped",
+    "yield_structure": "tiered",
+    "flat_rate_pct": "NOT_APPLICABLE",
+    "promotional_rate_pct": "NOT_APPLICABLE",
+    "promotional_rate_end_date": "NOT_APPLICABLE",
+    "rate_type": "GAT_nominal",
+    "max_balance_earning_stated_rate_mxn": "UNKNOWN",
+    "monthly_fee_mxn": 0,
+    "fee_waiver_condition": "Saldo promedio >=$10000 to earn",
+    "min_balance_mxn": 10000,
+    "min_opening_deposit_mxn": 10000,
+    "liquidity": "same_day",
+    "term_days": "NOT_APPLICABLE",
+    "isr_withholding_note": "GAT Real -2.96%",
+    "insurance_scheme": "IPAB",
+    "insurance_coverage_udis": 400000,
+    "regulated_entity_type": "banco",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-04-07",
+        "sources": [
+          "https://www.scotiabank.com.mx/personas/inversiones/productos/scotia-inversion-disponible.aspx"
+        ]
+      },
+      "cost": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-04-07",
+        "sources": [
+          "https://www.scotiabank.com.mx/personas/inversiones/productos/scotia-inversion-disponible.aspx"
+        ]
+      },
+      "yield": {
+        "score": "low",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-04-07",
+        "sources": [
+          "https://www.scotiabank.com.mx/personas/inversiones/productos/scotia-inversion-disponible.aspx"
+        ]
+      }
+    },
+    "conflicts": [],
+    "notes": "Scotia debit accounts pay 0%"
+  },
+  {
+    "account_id": "banco_inbursa__cuenta_inbursa_ct_max",
+    "issuer_id": "banco_inbursa",
+    "display_name": "Cuenta Inbursa CT Max",
+    "former_names": [],
+    "legacy_id": "inbursa_ctmax",
+    "account_type": "savings",
+    "lifecycle_status": "active",
+    "mapping_status": "mapped",
+    "yield_structure": "flat",
+    "flat_rate_pct": "UNKNOWN",
+    "promotional_rate_pct": "NOT_APPLICABLE",
+    "promotional_rate_end_date": "NOT_APPLICABLE",
+    "rate_type": "rendimiento_anual_nominal",
+    "max_balance_earning_stated_rate_mxn": "UNKNOWN",
+    "monthly_fee_mxn": "UNKNOWN",
+    "fee_waiver_condition": "UNKNOWN",
+    "min_balance_mxn": 100000,
+    "min_opening_deposit_mxn": 100000,
+    "liquidity": "instant",
+    "term_days": "NOT_APPLICABLE",
+    "isr_withholding_note": "Referenced to CETES 28d; before ISR",
+    "insurance_scheme": "IPAB",
+    "insurance_coverage_udis": 400000,
+    "regulated_entity_type": "banco",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-09",
+        "sources": [
+          "https://www.inbursa.com/sites/gfi/cuenta-inbursactmax"
+        ]
+      },
+      "cost": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-09",
+        "sources": [
+          "https://www.inbursa.com/sites/gfi/cuenta-inbursactmax"
+        ]
+      },
+      "yield": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-09",
+        "sources": [
+          "https://www.inbursa.com/sites/gfi/cuenta-inbursactmax"
+        ]
+      }
+    },
+    "conflicts": [],
+    "notes": "Rate = ponderado de CETES; see tasasmensuales page"
+  },
+  {
+    "account_id": "banco_inbursa__cuenta_inbursa_ct_60",
+    "issuer_id": "banco_inbursa",
+    "display_name": "Cuenta Inbursa CT 60",
+    "former_names": [],
+    "legacy_id": "inbursa_ct60",
+    "account_type": "savings",
+    "lifecycle_status": "active",
+    "mapping_status": "mapped",
+    "yield_structure": "flat",
+    "flat_rate_pct": "UNKNOWN",
+    "promotional_rate_pct": "NOT_APPLICABLE",
+    "promotional_rate_end_date": "NOT_APPLICABLE",
+    "rate_type": "rendimiento_anual_nominal",
+    "max_balance_earning_stated_rate_mxn": "UNCAPPED",
+    "monthly_fee_mxn": "UNKNOWN",
+    "fee_waiver_condition": "UNKNOWN",
+    "min_balance_mxn": 1,
+    "min_opening_deposit_mxn": 1,
+    "liquidity": "instant",
+    "term_days": "NOT_APPLICABLE",
+    "isr_withholding_note": "100% de CETES 28d before ISR",
+    "insurance_scheme": "IPAB",
+    "insurance_coverage_udis": 400000,
+    "regulated_entity_type": "banco",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://www.inbursa.com/sites/gfi/cuenta-inbursact60"
+        ]
+      },
+      "cost": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://www.inbursa.com/sites/gfi/cuenta-inbursact60"
+        ]
+      },
+      "yield": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://www.inbursa.com/sites/gfi/cuenta-inbursact60"
+        ]
+      }
+    },
+    "conflicts": [],
+    "notes": "Pays 100% of Cetes 28d rate from $1"
+  },
+  {
+    "account_id": "fondeadora__boveda_fondeadora_apartado_30_dias",
+    "issuer_id": "fondeadora",
+    "display_name": "Bóveda Fondeadora (apartado 30 días)",
+    "former_names": [],
+    "legacy_id": "fondeadora_boveda",
+    "account_type": "savings",
+    "lifecycle_status": "active",
+    "mapping_status": "mapped",
+    "yield_structure": "flat",
+    "flat_rate_pct": 9.0,
+    "promotional_rate_pct": "NOT_APPLICABLE",
+    "promotional_rate_end_date": "NOT_APPLICABLE",
+    "rate_type": "rendimiento_anual_nominal",
+    "max_balance_earning_stated_rate_mxn": "UNCAPPED",
+    "monthly_fee_mxn": 0,
+    "fee_waiver_condition": "NOT_APPLICABLE",
+    "min_balance_mxn": 0,
+    "min_opening_deposit_mxn": 0,
+    "liquidity": "instant",
+    "term_days": 30,
+    "isr_withholding_note": "GAT nominal 9.38%, GAT Real 5.34%; before impuestos",
+    "insurance_scheme": "none",
+    "insurance_coverage_udis": "NOT_APPLICABLE",
+    "regulated_entity_type": "ifpe",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://personal.fondeadora.com/boveda"
+        ]
+      },
+      "cost": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://personal.fondeadora.com/boveda"
+        ]
+      },
+      "yield": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://personal.fondeadora.com/boveda"
+        ]
+      }
+    },
+    "conflicts": [],
+    "notes": "9% on 30-day apartado, continues after"
+  },
+  {
+    "account_id": "banco_azteca__cuenta_de_ahorro_guardadito",
+    "issuer_id": "banco_azteca",
+    "display_name": "Cuenta de Ahorro Guardadito",
+    "former_names": [],
+    "legacy_id": "azteca_guardadito",
+    "account_type": "debit",
+    "lifecycle_status": "active",
+    "mapping_status": "mapped",
+    "yield_structure": "flat",
+    "flat_rate_pct": 0.01,
+    "promotional_rate_pct": "NOT_APPLICABLE",
+    "promotional_rate_end_date": "NOT_APPLICABLE",
+    "rate_type": "rendimiento_anual_nominal",
+    "max_balance_earning_stated_rate_mxn": "UNCAPPED",
+    "monthly_fee_mxn": 0,
+    "fee_waiver_condition": "NOT_APPLICABLE",
+    "min_balance_mxn": 0,
+    "min_opening_deposit_mxn": 1,
+    "liquidity": "instant",
+    "term_days": "NOT_APPLICABLE",
+    "isr_withholding_note": "Negligible; before ISR",
+    "insurance_scheme": "IPAB",
+    "insurance_coverage_udis": 400000,
+    "regulated_entity_type": "banco",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://www.bancoazteca.com.mx/productos/cuentas/guardadito.html"
+        ]
+      },
+      "cost": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://www.bancoazteca.com.mx/productos/cuentas/guardadito.html"
+        ]
+      },
+      "yield": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://www.bancoazteca.com.mx/productos/cuentas/guardadito.html"
+        ]
+      }
+    },
+    "conflicts": [],
+    "notes": "No fees, no min; effectively 0% yield"
+  },
+  {
+    "account_id": "spin_oxxo__cuenta_spin",
+    "issuer_id": "spin_oxxo",
+    "display_name": "Cuenta Spin",
+    "former_names": [],
+    "legacy_id": "spin_cuenta",
+    "account_type": "debit",
+    "lifecycle_status": "active",
+    "mapping_status": "mapped",
+    "yield_structure": "none",
+    "flat_rate_pct": "NOT_APPLICABLE",
+    "promotional_rate_pct": "NOT_APPLICABLE",
+    "promotional_rate_end_date": "NOT_APPLICABLE",
+    "rate_type": "NOT_APPLICABLE",
+    "max_balance_earning_stated_rate_mxn": "NOT_APPLICABLE",
+    "monthly_fee_mxn": 0,
+    "fee_waiver_condition": "NOT_APPLICABLE",
+    "min_balance_mxn": 0,
+    "min_opening_deposit_mxn": 0,
+    "liquidity": "instant",
+    "term_days": "NOT_APPLICABLE",
+    "isr_withholding_note": "No yield",
+    "insurance_scheme": "none",
+    "insurance_coverage_udis": "NOT_APPLICABLE",
+    "regulated_entity_type": "ifpe",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://spinbyoxxo.com.mx/programa-de-lealtad"
+        ]
+      },
+      "cost": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://spinbyoxxo.com.mx/programa-de-lealtad"
+        ]
+      },
+      "yield": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://spinbyoxxo.com.mx/programa-de-lealtad"
+        ]
+      }
+    },
+    "conflicts": [],
+    "notes": "IFPE; NO deposit insurance; loyalty via Spin Premia"
+  },
+  {
+    "account_id": "cuenca__cuenta_cuenca",
+    "issuer_id": "cuenca",
+    "display_name": "Cuenta Cuenca",
+    "former_names": [],
+    "legacy_id": "cuenca_cuenta",
+    "account_type": "debit",
+    "lifecycle_status": "active",
+    "mapping_status": "mapped",
+    "yield_structure": "none",
+    "flat_rate_pct": "NOT_APPLICABLE",
+    "promotional_rate_pct": "NOT_APPLICABLE",
+    "promotional_rate_end_date": "NOT_APPLICABLE",
+    "rate_type": "NOT_APPLICABLE",
+    "max_balance_earning_stated_rate_mxn": "NOT_APPLICABLE",
+    "monthly_fee_mxn": 50,
+    "fee_waiver_condition": "UNKNOWN",
+    "min_balance_mxn": 0,
+    "min_opening_deposit_mxn": 0,
+    "liquidity": "instant",
+    "term_days": "NOT_APPLICABLE",
+    "isr_withholding_note": "No yield product",
+    "insurance_scheme": "none",
+    "insurance_coverage_udis": "NOT_APPLICABLE",
+    "regulated_entity_type": "ifpe",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://cuenca.com/faq"
+        ]
+      },
+      "cost": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://cuenca.com/faq"
+        ]
+      },
+      "yield": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://cuenca.com/faq"
+        ]
+      }
+    },
+    "conflicts": [],
+    "notes": "IFPE; $50/mo manejo; 15 free transfers; no rendimiento"
+  },
+  {
+    "account_id": "bbva_mexico__libreton_cuenta_digital_bbva",
+    "issuer_id": "bbva_mexico",
+    "display_name": "Libretón / Cuenta Digital BBVA",
+    "former_names": [],
+    "legacy_id": "bbva_libreton",
+    "account_type": "debit",
+    "lifecycle_status": "active",
+    "mapping_status": "mapped",
+    "yield_structure": "none",
+    "flat_rate_pct": "NOT_APPLICABLE",
+    "promotional_rate_pct": "NOT_APPLICABLE",
+    "promotional_rate_end_date": "NOT_APPLICABLE",
+    "rate_type": "NOT_APPLICABLE",
+    "max_balance_earning_stated_rate_mxn": "NOT_APPLICABLE",
+    "monthly_fee_mxn": 0,
+    "fee_waiver_condition": "NOT_APPLICABLE",
+    "min_balance_mxn": 0,
+    "min_opening_deposit_mxn": 0,
+    "liquidity": "instant",
+    "term_days": "NOT_APPLICABLE",
+    "isr_withholding_note": "Transactional; no interest",
+    "insurance_scheme": "IPAB",
+    "insurance_coverage_udis": 400000,
+    "regulated_entity_type": "banco",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://www.bbva.mx/personas/productos/cuentas/cuenta-bancaria.html"
+        ]
+      },
+      "cost": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://www.bbva.mx/personas/productos/cuentas/cuenta-bancaria.html"
+        ]
+      },
+      "yield": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://www.bbva.mx/personas/productos/cuentas/cuenta-bancaria.html"
+        ]
+      }
+    },
+    "conflicts": [],
+    "notes": "Debit pays 0%; interest via Meta Ahorro"
+  }
+]

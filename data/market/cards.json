@@ -1,0 +1,4252 @@
+[
+  {
+    "card_id": "afirme__blanc",
+    "issuer_id": "afirme",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito Afirme Blanc",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito Afirme Blanc",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "medium",
+    "census_note": "in Afirme official cost table",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "afirme__basica",
+    "issuer_id": "afirme",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito Afirme Básica",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito Afirme Básica",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "afirme__clasica",
+    "issuer_id": "afirme",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito Afirme Clásica",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito Afirme Clásica",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "afirme__gc",
+    "issuer_id": "afirme",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito Afirme GC",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito Afirme GC",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "low",
+    "census_note": "appears in fee tables; distinct consumer tier unconfirmed - verify",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "afirme__oro",
+    "issuer_id": "afirme",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito Afirme Oro",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito Afirme Oro",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "afirme__platinum",
+    "issuer_id": "afirme",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito Afirme Platinum",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito Afirme Platinum",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "anualidad $2,500 + IVA",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "banca_mifel__mifel_basica",
+    "issuer_id": "banca_mifel",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito Mifel Básica",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito Mifel Básica",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "banca_mifel__mifel_leones",
+    "issuer_id": "banca_mifel",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito Mifel Leones",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito Mifel Leones",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "medium",
+    "census_note": "co-brand/affinity - verify",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "banca_mifel__mifel_mexicana",
+    "issuer_id": "banca_mifel",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito Mifel Mexicana",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito Mifel Mexicana",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "co-brand (Mexicana de Aviación)",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "banca_mifel__mifel_miles_more_world_elite",
+    "issuer_id": "banca_mifel",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito Mifel Miles & More World Elite",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito Mifel Miles & More World Elite",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "co-brand (Lufthansa Miles & More)",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "banca_mifel__mifel_oro",
+    "issuer_id": "banca_mifel",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito Mifel Oro",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito Mifel Oro",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "banca_mifel__mifel_platino",
+    "issuer_id": "banca_mifel",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito Mifel Platino",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito Mifel Platino",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "banca_mifel__mifel_world_elite",
+    "issuer_id": "banca_mifel",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito Mifel World Elite",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito Mifel World Elite",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "banco_azteca__oro_garantizada",
+    "issuer_id": "banco_azteca",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito Oro Garantizada",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito Oro Garantizada",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "secured card",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "banco_azteca__oro_garantizada_vas",
+    "issuer_id": "banco_azteca",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito Oro Garantizada VAS",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito Oro Garantizada VAS",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "secured card",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "banco_azteca__vas",
+    "issuer_id": "banco_azteca",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito VAS",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito VAS",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "banco_inbursa__inbursa_black_american_express",
+    "issuer_id": "banco_inbursa",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito Inbursa Black American Express",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito Inbursa Black American Express",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "Amex network product",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "banco_inbursa__inbursa_clasica",
+    "issuer_id": "banco_inbursa",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito Inbursa Clásica",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito Inbursa Clásica",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "banco_inbursa__inbursa_oro",
+    "issuer_id": "banco_inbursa",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito Inbursa Oro",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito Inbursa Oro",
+    "tier": "oro",
+    "network": "visa_mastercard",
+    "lifecycle_status": "active",
+    "mapping_status": "mapped",
+    "census_confidence": "high",
+    "census_note": "",
+    "conflicts": [],
+    "notes": "Comisión administración $540 sin IVA",
+    "annual_fee_mxn": 540,
+    "annual_fee_includes_iva": false,
+    "annual_fee_first_year_waived": "UNKNOWN",
+    "annual_fee_waiver_condition": "UNKNOWN",
+    "interest_rate_annual_pct": 52.31,
+    "cat_promedio_pct": 70.2,
+    "base_reward_type": "none",
+    "base_reward_rate": "UNKNOWN",
+    "point_value_mxn": "NOT_APPLICABLE",
+    "effective_rate_pct": 0,
+    "points_program_name": "NOT_APPLICABLE",
+    "min_income_mxn_monthly": "UNKNOWN",
+    "invitation_only": false,
+    "other_eligibility_criteria": "UNKNOWN",
+    "legacy_market_id": "inbursa_oro",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2025-12-31",
+        "sources": [
+          "https://www.inbursa.com/sites/gfi/tdc-oro"
+        ]
+      },
+      "cost": {
+        "score": "low",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2025-12-31",
+        "sources": [
+          "https://www.inbursa.com/sites/gfi/tdc-oro"
+        ]
+      },
+      "rewards": {
+        "score": "low",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2025-12-31",
+        "sources": [
+          "https://www.inbursa.com/sites/gfi/tdc-oro"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2025-12-31",
+        "sources": [
+          "https://www.inbursa.com/sites/gfi/tdc-oro"
+        ]
+      },
+      "eligibility": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2025-12-31",
+        "sources": [
+          "https://www.inbursa.com/sites/gfi/tdc-oro"
+        ]
+      }
+    }
+  },
+  {
+    "card_id": "banco_inbursa__inbursa_platinum",
+    "issuer_id": "banco_inbursa",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito Inbursa Platinum",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito Inbursa Platinum",
+    "tier": "platinum",
+    "network": "visa_mastercard",
+    "lifecycle_status": "active",
+    "mapping_status": "mapped",
+    "census_confidence": "high",
+    "census_note": "",
+    "conflicts": [],
+    "notes": "Comisión $1320 sin IVA; lowest CAT among listed",
+    "annual_fee_mxn": 1320,
+    "annual_fee_includes_iva": false,
+    "annual_fee_first_year_waived": "UNKNOWN",
+    "annual_fee_waiver_condition": "UNKNOWN",
+    "interest_rate_annual_pct": 33.85,
+    "cat_promedio_pct": 42.1,
+    "base_reward_type": "none",
+    "base_reward_rate": "UNKNOWN",
+    "point_value_mxn": "NOT_APPLICABLE",
+    "effective_rate_pct": 0,
+    "points_program_name": "NOT_APPLICABLE",
+    "min_income_mxn_monthly": "UNKNOWN",
+    "invitation_only": false,
+    "other_eligibility_criteria": "UNKNOWN",
+    "legacy_market_id": "inbursa_platinum",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-06-30",
+        "sources": [
+          "https://www.inbursa.com/sites/gfi/tdc-platinum"
+        ]
+      },
+      "cost": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-06-30",
+        "sources": [
+          "https://www.inbursa.com/sites/gfi/tdc-platinum"
+        ]
+      },
+      "rewards": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-06-30",
+        "sources": [
+          "https://www.inbursa.com/sites/gfi/tdc-platinum"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-06-30",
+        "sources": [
+          "https://www.inbursa.com/sites/gfi/tdc-platinum"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-06-30",
+        "sources": [
+          "https://www.inbursa.com/sites/gfi/tdc-platinum"
+        ]
+      }
+    }
+  },
+  {
+    "card_id": "banco_inbursa__inbursa_optima",
+    "issuer_id": "banco_inbursa",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito Inbursa Óptima",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito Inbursa Óptima",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "banco_inbursa__telcel_oro",
+    "issuer_id": "banco_inbursa",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta Telcel Oro",
+    "former_names": [],
+    "legacy_id": "Tarjeta Telcel Oro",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "co-brand (Telcel)",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "bancoppel__tarjeta_de_credito_bancoppel",
+    "issuer_id": "bancoppel",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito BanCoppel",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito BanCoppel",
+    "tier": "básica",
+    "network": "visa",
+    "lifecycle_status": "active",
+    "mapping_status": "mapped",
+    "census_confidence": "high",
+    "census_note": "",
+    "conflicts": [],
+    "notes": "2023 secondary source; needs official verification",
+    "annual_fee_mxn": 0,
+    "annual_fee_includes_iva": "UNKNOWN",
+    "annual_fee_first_year_waived": "UNKNOWN",
+    "annual_fee_waiver_condition": "Sin anualidad",
+    "interest_rate_annual_pct": 63.1,
+    "cat_promedio_pct": 85.3,
+    "base_reward_type": "none",
+    "base_reward_rate": "UNKNOWN",
+    "point_value_mxn": "NOT_APPLICABLE",
+    "effective_rate_pct": 0,
+    "points_program_name": "NOT_APPLICABLE",
+    "min_income_mxn_monthly": "UNKNOWN",
+    "invitation_only": false,
+    "other_eligibility_criteria": "Cliente Coppel",
+    "legacy_market_id": "bancoppel_card",
+    "confidence": {
+      "identity": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2023-01-31",
+        "sources": [
+          "https://www.milenio.com/negocios/banco-azteca-vs-bancoppel-cual-es-mejor-para-una-tarjeta-de-creditio"
+        ]
+      },
+      "cost": {
+        "score": "low",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2023-01-31",
+        "sources": [
+          "https://www.milenio.com/negocios/banco-azteca-vs-bancoppel-cual-es-mejor-para-una-tarjeta-de-creditio"
+        ]
+      },
+      "rewards": {
+        "score": "low",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2023-01-31",
+        "sources": [
+          "https://www.milenio.com/negocios/banco-azteca-vs-bancoppel-cual-es-mejor-para-una-tarjeta-de-creditio"
+        ]
+      },
+      "perks": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2023-01-31",
+        "sources": [
+          "https://www.milenio.com/negocios/banco-azteca-vs-bancoppel-cual-es-mejor-para-una-tarjeta-de-creditio"
+        ]
+      },
+      "eligibility": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2023-01-31",
+        "sources": [
+          "https://www.milenio.com/negocios/banco-azteca-vs-bancoppel-cual-es-mejor-para-una-tarjeta-de-creditio"
+        ]
+      }
+    }
+  },
+  {
+    "card_id": "bancoppel__infinite",
+    "issuer_id": "bancoppel",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito BanCoppel Infinite",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito BanCoppel Infinite",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "por invitación",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "bancoppel__oro",
+    "issuer_id": "bancoppel",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito BanCoppel Oro",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito BanCoppel Oro",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "bancoppel__platinum",
+    "issuer_id": "bancoppel",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito BanCoppel Platinum",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito BanCoppel Platinum",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "por invitación",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "banjercito__basica",
+    "issuer_id": "banjercito",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito Banjercito Básica",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito Banjercito Básica",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "banjercito__infinite",
+    "issuer_id": "banjercito",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito Banjercito Infinite",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito Banjercito Infinite",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "banjercito__platinum",
+    "issuer_id": "banjercito",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito Banjercito Platinum",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito Banjercito Platinum",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "banjercito__tradicional_clasica",
+    "issuer_id": "banjercito",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito Tradicional Clásica",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito Tradicional Clásica",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "banorte__basica",
+    "issuer_id": "banorte",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito Banorte Básica",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito Banorte Básica",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "banorte__clasica",
+    "issuer_id": "banorte",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito Banorte Clásica",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito Banorte Clásica",
+    "tier": "clásica",
+    "network": "visa_mastercard",
+    "lifecycle_status": "active",
+    "mapping_status": "mapped",
+    "census_confidence": "high",
+    "census_note": "",
+    "conflicts": [],
+    "notes": "Up to 3 puntos per purchase",
+    "annual_fee_mxn": "UNKNOWN",
+    "annual_fee_includes_iva": false,
+    "annual_fee_first_year_waived": true,
+    "annual_fee_waiver_condition": "1st annuity free with min spend within 30 days",
+    "interest_rate_annual_pct": "UNKNOWN",
+    "cat_promedio_pct": "UNKNOWN",
+    "base_reward_type": "points",
+    "base_reward_rate": "UNKNOWN",
+    "point_value_mxn": "UNKNOWN",
+    "effective_rate_pct": "UNKNOWN",
+    "points_program_name": "Recompensa Total Banorte",
+    "min_income_mxn_monthly": 7000,
+    "invitation_only": false,
+    "other_eligibility_criteria": "18-74 años",
+    "legacy_market_id": "banorte_clasica",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://www.banorte.com/Personal/TDC/Clasica.html"
+        ]
+      },
+      "cost": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://www.banorte.com/Personal/TDC/Clasica.html"
+        ]
+      },
+      "rewards": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://www.banorte.com/Personal/TDC/Clasica.html"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://www.banorte.com/Personal/TDC/Clasica.html"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://www.banorte.com/Personal/TDC/Clasica.html"
+        ]
+      }
+    }
+  },
+  {
+    "card_id": "banorte__infinite",
+    "issuer_id": "banorte",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito Banorte Infinite",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito Banorte Infinite",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "banorte__ke_buena",
+    "issuer_id": "banorte",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito Banorte Ke Buena",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito Banorte Ke Buena",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "medium",
+    "census_note": "affinity - verify current",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "banorte__one_up",
+    "issuer_id": "banorte",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito Banorte One Up",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito Banorte One Up",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "no anualidad",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "banorte__oro",
+    "issuer_id": "banorte",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito Banorte Oro",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito Banorte Oro",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "banorte__platinum",
+    "issuer_id": "banorte",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito Banorte Platinum",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito Banorte Platinum",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "banorte__por_ti",
+    "issuer_id": "banorte",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito Banorte Por Ti",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito Banorte Por Ti",
+    "tier": "clásica / cashback",
+    "network": "visa",
+    "lifecycle_status": "active",
+    "mapping_status": "mapped",
+    "census_confidence": "high",
+    "census_note": "",
+    "conflicts": [],
+    "notes": "1% base + 1% preferred categories; MSI diferir 23% fija",
+    "annual_fee_mxn": "UNKNOWN",
+    "annual_fee_includes_iva": false,
+    "annual_fee_first_year_waived": true,
+    "annual_fee_waiver_condition": "1st year free; from 2nd year via program",
+    "interest_rate_annual_pct": 96.2,
+    "cat_promedio_pct": 96.2,
+    "base_reward_type": "cashback",
+    "base_reward_rate": 1.0,
+    "point_value_mxn": 1.0,
+    "effective_rate_pct": 1.0,
+    "points_program_name": "Monedero Banorte",
+    "min_income_mxn_monthly": 7000,
+    "invitation_only": false,
+    "other_eligibility_criteria": "18-74 años, INE, comprobante",
+    "legacy_market_id": "banorte_porti",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2025-12-02",
+        "sources": [
+          "https://www.tarjetas.creditobanorte.com/?url=portibnt"
+        ]
+      },
+      "cost": {
+        "score": "low",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2025-12-02",
+        "sources": [
+          "https://www.tarjetas.creditobanorte.com/?url=portibnt"
+        ]
+      },
+      "rewards": {
+        "score": "low",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2025-12-02",
+        "sources": [
+          "https://www.tarjetas.creditobanorte.com/?url=portibnt"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2025-12-02",
+        "sources": [
+          "https://www.tarjetas.creditobanorte.com/?url=portibnt"
+        ]
+      },
+      "eligibility": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2025-12-02",
+        "sources": [
+          "https://www.tarjetas.creditobanorte.com/?url=portibnt"
+        ]
+      }
+    }
+  },
+  {
+    "card_id": "banorte__marriott_bonvoy",
+    "issuer_id": "banorte",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito Marriott Bonvoy",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito Marriott Bonvoy",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "co-brand",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "banorte__marriott_bonvoy_inspire",
+    "issuer_id": "banorte",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito Marriott Bonvoy Inspire",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito Marriott Bonvoy Inspire",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "co-brand",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "banorte__mujer",
+    "issuer_id": "banorte",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito Mujer Banorte",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito Mujer Banorte",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "banorte__seleccion_nacional",
+    "issuer_id": "banorte",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito Selección Nacional",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito Selección Nacional",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "co-brand",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "banorte__united",
+    "issuer_id": "banorte",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito United",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito United",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "co-brand",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "banorte__united_universe",
+    "issuer_id": "banorte",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito United Universe",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito United Universe",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "co-brand",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "banregio__acceso_gold",
+    "issuer_id": "banregio",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito Acceso Gold",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito Acceso Gold",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "secured card",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "banregio__basica",
+    "issuer_id": "banregio",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito Banregio Básica",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito Banregio Básica",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "banregio__mas",
+    "issuer_id": "banregio",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito Banregio MÁS",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito Banregio MÁS",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "banregio__platinum",
+    "issuer_id": "banregio",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito Banregio Platinum",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito Banregio Platinum",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "banregio__win",
+    "issuer_id": "banregio",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito Win Banregio",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito Win Banregio",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "medium",
+    "census_note": "co-brand/affinity - verify",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "bbva_mexico__mi_primera_tarjeta_bbva",
+    "issuer_id": "bbva_mexico",
+    "cobrand_partner": "",
+    "display_name": "Mi Primera Tarjeta BBVA",
+    "former_names": [],
+    "legacy_id": "Mi Primera Tarjeta BBVA",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "bbva_mexico__afinidad_unam_bbva",
+    "issuer_id": "bbva_mexico",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta Afinidad UNAM BBVA",
+    "former_names": [],
+    "legacy_id": "Tarjeta Afinidad UNAM BBVA",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "affinity",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "bbva_mexico__azul_bbva",
+    "issuer_id": "bbva_mexico",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta Azul BBVA",
+    "former_names": [],
+    "legacy_id": "Tarjeta Azul BBVA",
+    "tier": "clásica",
+    "network": "visa",
+    "lifecycle_status": "active",
+    "mapping_status": "mapped",
+    "census_confidence": "high",
+    "census_note": "",
+    "conflicts": [],
+    "notes": "'9% en Puntos BBVA' is points accrual not cashback; point value low",
+    "annual_fee_mxn": 748,
+    "annual_fee_includes_iva": false,
+    "annual_fee_first_year_waived": true,
+    "annual_fee_waiver_condition": "Sin anualidad de por vida si se contrata 100% en línea y se mantiene al corriente",
+    "interest_rate_annual_pct": 60.53,
+    "cat_promedio_pct": 90.9,
+    "base_reward_type": "points",
+    "base_reward_rate": 9.0,
+    "point_value_mxn": "UNKNOWN",
+    "effective_rate_pct": "UNKNOWN",
+    "points_program_name": "Puntos BBVA",
+    "min_income_mxn_monthly": "UNKNOWN",
+    "invitation_only": false,
+    "other_eligibility_criteria": "18-75 años, residente en México",
+    "legacy_market_id": "bbva_azul",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-03-09",
+        "sources": [
+          "https://www.bbva.mx/personas/productos/tarjetas-de-credito/tarjeta-de-credito-azul.html"
+        ]
+      },
+      "cost": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-03-09",
+        "sources": [
+          "https://www.bbva.mx/personas/productos/tarjetas-de-credito/tarjeta-de-credito-azul.html"
+        ]
+      },
+      "rewards": {
+        "score": "low",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-03-09",
+        "sources": [
+          "https://www.bbva.mx/personas/productos/tarjetas-de-credito/tarjeta-de-credito-azul.html"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-03-09",
+        "sources": [
+          "https://www.bbva.mx/personas/productos/tarjetas-de-credito/tarjeta-de-credito-azul.html"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-03-09",
+        "sources": [
+          "https://www.bbva.mx/personas/productos/tarjetas-de-credito/tarjeta-de-credito-azul.html"
+        ]
+      }
+    }
+  },
+  {
+    "card_id": "bbva_mexico__crea_bbva",
+    "issuer_id": "bbva_mexico",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta Crea BBVA",
+    "former_names": [],
+    "legacy_id": "Tarjeta Crea BBVA",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "bbva_mexico__educacion_bbva",
+    "issuer_id": "bbva_mexico",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta Educación BBVA",
+    "former_names": [],
+    "legacy_id": "Tarjeta Educación BBVA",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "bbva_mexico__ipn_bbva",
+    "issuer_id": "bbva_mexico",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta IPN BBVA",
+    "former_names": [],
+    "legacy_id": "Tarjeta IPN BBVA",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "affinity",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "bbva_mexico__oro_bbva",
+    "issuer_id": "bbva_mexico",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta Oro BBVA",
+    "former_names": [],
+    "legacy_id": "Tarjeta Oro BBVA",
+    "tier": "oro",
+    "network": "visa",
+    "lifecycle_status": "active",
+    "mapping_status": "mapped",
+    "census_confidence": "high",
+    "census_note": "",
+    "conflicts": [],
+    "notes": "CAT from older PDF; verify current",
+    "annual_fee_mxn": 748,
+    "annual_fee_includes_iva": false,
+    "annual_fee_first_year_waived": "UNKNOWN",
+    "annual_fee_waiver_condition": "UNKNOWN",
+    "interest_rate_annual_pct": 44.99,
+    "cat_promedio_pct": 60.5,
+    "base_reward_type": "points",
+    "base_reward_rate": "UNKNOWN",
+    "point_value_mxn": "UNKNOWN",
+    "effective_rate_pct": "UNKNOWN",
+    "points_program_name": "Puntos BBVA",
+    "min_income_mxn_monthly": "UNKNOWN",
+    "invitation_only": false,
+    "other_eligibility_criteria": "UNKNOWN",
+    "legacy_market_id": "bbva_oro",
+    "confidence": {
+      "identity": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2023-08-01",
+        "sources": [
+          "https://www.bbva.mx/content/dam/public-web/mexico/documents/landing/cats_ago_2023.pdf"
+        ]
+      },
+      "cost": {
+        "score": "low",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2023-08-01",
+        "sources": [
+          "https://www.bbva.mx/content/dam/public-web/mexico/documents/landing/cats_ago_2023.pdf"
+        ]
+      },
+      "rewards": {
+        "score": "low",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2023-08-01",
+        "sources": [
+          "https://www.bbva.mx/content/dam/public-web/mexico/documents/landing/cats_ago_2023.pdf"
+        ]
+      },
+      "perks": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2023-08-01",
+        "sources": [
+          "https://www.bbva.mx/content/dam/public-web/mexico/documents/landing/cats_ago_2023.pdf"
+        ]
+      },
+      "eligibility": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2023-08-01",
+        "sources": [
+          "https://www.bbva.mx/content/dam/public-web/mexico/documents/landing/cats_ago_2023.pdf"
+        ]
+      }
+    }
+  },
+  {
+    "card_id": "bbva_mexico__platinum_bbva",
+    "issuer_id": "bbva_mexico",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta Platinum BBVA",
+    "former_names": [],
+    "legacy_id": "Tarjeta Platinum BBVA",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "bbva_mexico__start_bbva",
+    "issuer_id": "bbva_mexico",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta Start BBVA",
+    "former_names": [],
+    "legacy_id": "Tarjeta Start BBVA",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "no anualidad",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "bbva_mexico__vive_bbva",
+    "issuer_id": "bbva_mexico",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta Vive BBVA",
+    "former_names": [],
+    "legacy_id": "Tarjeta Vive BBVA",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "cibanco__clasica_platinum",
+    "issuer_id": "cibanco",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta CIBanco Clásica / Platinum",
+    "former_names": [],
+    "legacy_id": "Tarjeta CIBanco Clásica / Platinum",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "low",
+    "census_note": "additional tiers referenced but unverified - verify",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "cibanco__oro",
+    "issuer_id": "cibanco",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta CIBanco Oro",
+    "former_names": [],
+    "legacy_id": "Tarjeta CIBanco Oro",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "medium",
+    "census_note": "Visa; issued by Banco INVEX; other tiers unverified",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "citibanamex__beyond_banamex",
+    "issuer_id": "citibanamex",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito Beyond Banamex",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito Beyond Banamex",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "por invitación",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "citibanamex__clasica_banamex",
+    "issuer_id": "citibanamex",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito Clásica Banamex",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito Clásica Banamex",
+    "tier": "clásica",
+    "network": "visa_mastercard",
+    "lifecycle_status": "active",
+    "mapping_status": "mapped",
+    "census_confidence": "high",
+    "census_note": "",
+    "conflicts": [],
+    "notes": "Official annual fee rendered dynamically; not captured",
+    "annual_fee_mxn": "UNKNOWN",
+    "annual_fee_includes_iva": false,
+    "annual_fee_first_year_waived": "UNKNOWN",
+    "annual_fee_waiver_condition": "Paquete Citibanamex refunds part of annuity with min spend 1000/mo",
+    "interest_rate_annual_pct": "UNKNOWN",
+    "cat_promedio_pct": 81.3,
+    "base_reward_type": "points",
+    "base_reward_rate": "UNKNOWN",
+    "point_value_mxn": "UNKNOWN",
+    "effective_rate_pct": "UNKNOWN",
+    "points_program_name": "Puntos Premia",
+    "min_income_mxn_monthly": "UNKNOWN",
+    "invitation_only": false,
+    "other_eligibility_criteria": "18+",
+    "legacy_market_id": "citi_clasica",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://www.banamex.com/es/personas/tarjetas-credito/tarjeta-clasica.html"
+        ]
+      },
+      "cost": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://www.banamex.com/es/personas/tarjetas-credito/tarjeta-clasica.html"
+        ]
+      },
+      "rewards": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://www.banamex.com/es/personas/tarjetas-credito/tarjeta-clasica.html"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://www.banamex.com/es/personas/tarjetas-credito/tarjeta-clasica.html"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://www.banamex.com/es/personas/tarjetas-credito/tarjeta-clasica.html"
+        ]
+      }
+    }
+  },
+  {
+    "card_id": "citibanamex__conquista_banamex",
+    "issuer_id": "citibanamex",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito Conquista Banamex",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito Conquista Banamex",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "citibanamex__descubre_banamex",
+    "issuer_id": "citibanamex",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito Descubre Banamex",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito Descubre Banamex",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "citibanamex__explora_banamex",
+    "issuer_id": "citibanamex",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito Explora Banamex",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito Explora Banamex",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "citibanamex__joy_banamex",
+    "issuer_id": "citibanamex",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito Joy Banamex",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito Joy Banamex",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "no anualidad",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "citibanamex__oro_banamex",
+    "issuer_id": "citibanamex",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito Oro Banamex",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito Oro Banamex",
+    "tier": "oro",
+    "network": "mastercard",
+    "lifecycle_status": "active",
+    "mapping_status": "mapped",
+    "census_confidence": "high",
+    "census_note": "",
+    "conflicts": [],
+    "notes": "7% Premia base; double points on gas; fee dynamic",
+    "annual_fee_mxn": "UNKNOWN",
+    "annual_fee_includes_iva": false,
+    "annual_fee_first_year_waived": "UNKNOWN",
+    "annual_fee_waiver_condition": "UNKNOWN",
+    "interest_rate_annual_pct": 62.39,
+    "cat_promedio_pct": 70.1,
+    "base_reward_type": "points",
+    "base_reward_rate": 7.0,
+    "point_value_mxn": "UNKNOWN",
+    "effective_rate_pct": "UNKNOWN",
+    "points_program_name": "Puntos Premia",
+    "min_income_mxn_monthly": 12000,
+    "invitation_only": false,
+    "other_eligibility_criteria": "INE, comprobante de ingresos",
+    "legacy_market_id": "citi_oro",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://www.banamex.com/es/personas/tarjetas-credito/tarjeta-oro.html"
+        ]
+      },
+      "cost": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://www.banamex.com/es/personas/tarjetas-credito/tarjeta-oro.html"
+        ]
+      },
+      "rewards": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://www.banamex.com/es/personas/tarjetas-credito/tarjeta-oro.html"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://www.banamex.com/es/personas/tarjetas-credito/tarjeta-oro.html"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://www.banamex.com/es/personas/tarjetas-credito/tarjeta-oro.html"
+        ]
+      }
+    }
+  },
+  {
+    "card_id": "citibanamex__platinum_banamex",
+    "issuer_id": "citibanamex",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito Platinum Banamex",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito Platinum Banamex",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "hsbc_mexico__hsbc_2now",
+    "issuer_id": "hsbc_mexico",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito HSBC 2Now",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito HSBC 2Now",
+    "tier": "cashback digital",
+    "network": "visa_mastercard",
+    "lifecycle_status": "active",
+    "mapping_status": "mapped",
+    "census_confidence": "high",
+    "census_note": "cashback",
+    "conflicts": [],
+    "notes": "2% cashback digital compras per issuer",
+    "annual_fee_mxn": "UNKNOWN",
+    "annual_fee_includes_iva": false,
+    "annual_fee_first_year_waived": "UNKNOWN",
+    "annual_fee_waiver_condition": "UNKNOWN",
+    "interest_rate_annual_pct": "UNKNOWN",
+    "cat_promedio_pct": "UNKNOWN",
+    "base_reward_type": "cashback",
+    "base_reward_rate": 2.0,
+    "point_value_mxn": 1.0,
+    "effective_rate_pct": 2.0,
+    "points_program_name": "NOT_APPLICABLE",
+    "min_income_mxn_monthly": "UNKNOWN",
+    "invitation_only": false,
+    "other_eligibility_criteria": "UNKNOWN",
+    "legacy_market_id": "hsbc_2now",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-03-10",
+        "sources": [
+          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/"
+        ]
+      },
+      "cost": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-03-10",
+        "sources": [
+          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/"
+        ]
+      },
+      "rewards": {
+        "score": "low",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-03-10",
+        "sources": [
+          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-03-10",
+        "sources": [
+          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-03-10",
+        "sources": [
+          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/"
+        ]
+      }
+    }
+  },
+  {
+    "card_id": "hsbc_mexico__hsbc_advance_platinum",
+    "issuer_id": "hsbc_mexico",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito HSBC Advance Platinum",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito HSBC Advance Platinum",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "hsbc_mexico__hsbc_air",
+    "issuer_id": "hsbc_mexico",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito HSBC AIR",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito HSBC AIR",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "hsbc_mexico__hsbc_basica",
+    "issuer_id": "hsbc_mexico",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito HSBC Básica",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito HSBC Básica",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "hsbc_mexico__hsbc_clasica",
+    "issuer_id": "hsbc_mexico",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito HSBC Clásica",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito HSBC Clásica",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "hsbc_mexico__hsbc_easy_points",
+    "issuer_id": "hsbc_mexico",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito HSBC Easy Points",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito HSBC Easy Points",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "hsbc_mexico__hsbc_oro",
+    "issuer_id": "hsbc_mexico",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito HSBC Oro",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito HSBC Oro",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "hsbc_mexico__hsbc_platinum",
+    "issuer_id": "hsbc_mexico",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito HSBC Platinum",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito HSBC Platinum",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "hsbc_mexico__hsbc_premier",
+    "issuer_id": "hsbc_mexico",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito HSBC Premier",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito HSBC Premier",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "hsbc_mexico__hsbc_titanium",
+    "issuer_id": "hsbc_mexico",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito HSBC Titanium",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito HSBC Titanium",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "hsbc_mexico__hsbc_viva",
+    "issuer_id": "hsbc_mexico",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito HSBC Viva",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito HSBC Viva",
+    "tier": "cashback",
+    "network": "visa_mastercard",
+    "lifecycle_status": "active",
+    "mapping_status": "mapped",
+    "census_confidence": "high",
+    "census_note": "co-brand (Viva Aerobús)",
+    "conflicts": [],
+    "notes": "1% cashback on all purchases",
+    "annual_fee_mxn": 0,
+    "annual_fee_includes_iva": "UNKNOWN",
+    "annual_fee_first_year_waived": "UNKNOWN",
+    "annual_fee_waiver_condition": "$300 purchase/month waives titular management fee",
+    "interest_rate_annual_pct": 44.9,
+    "cat_promedio_pct": 99.0,
+    "base_reward_type": "cashback",
+    "base_reward_rate": 1.0,
+    "point_value_mxn": 1.0,
+    "effective_rate_pct": 1.0,
+    "points_program_name": "NOT_APPLICABLE",
+    "min_income_mxn_monthly": 5000,
+    "invitation_only": false,
+    "other_eligibility_criteria": "18-74 años",
+    "legacy_market_id": "hsbc_viva",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-03-10",
+        "sources": [
+          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/viva/"
+        ]
+      },
+      "cost": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-03-10",
+        "sources": [
+          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/viva/"
+        ]
+      },
+      "rewards": {
+        "score": "low",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-03-10",
+        "sources": [
+          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/viva/"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-03-10",
+        "sources": [
+          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/viva/"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-03-10",
+        "sources": [
+          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/viva/"
+        ]
+      }
+    }
+  },
+  {
+    "card_id": "hsbc_mexico__hsbc_viva_plus",
+    "issuer_id": "hsbc_mexico",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito HSBC Viva Plus",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito HSBC Viva Plus",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "co-brand (Viva Aerobús)",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "hsbc_mexico__hsbc_world_elite",
+    "issuer_id": "hsbc_mexico",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito HSBC World Elite",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito HSBC World Elite",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "hsbc_mexico__hsbc_zero",
+    "issuer_id": "hsbc_mexico",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito HSBC Zero",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito HSBC Zero",
+    "tier": "sin anualidad",
+    "network": "visa_mastercard",
+    "lifecycle_status": "active",
+    "mapping_status": "mapped",
+    "census_confidence": "high",
+    "census_note": "no anualidad",
+    "conflicts": [],
+    "notes": "No rewards; entry card",
+    "annual_fee_mxn": 0,
+    "annual_fee_includes_iva": "UNKNOWN",
+    "annual_fee_first_year_waived": "UNKNOWN",
+    "annual_fee_waiver_condition": "$186/month management fee waived by >=1 purchase of $300/mo",
+    "interest_rate_annual_pct": 49.04,
+    "cat_promedio_pct": 95.5,
+    "base_reward_type": "none",
+    "base_reward_rate": "UNKNOWN",
+    "point_value_mxn": "NOT_APPLICABLE",
+    "effective_rate_pct": 0,
+    "points_program_name": "NOT_APPLICABLE",
+    "min_income_mxn_monthly": 5000,
+    "invitation_only": false,
+    "other_eligibility_criteria": "18-74 años",
+    "legacy_market_id": "hsbc_zero",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-03-10",
+        "sources": [
+          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/zero/"
+        ]
+      },
+      "cost": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-03-10",
+        "sources": [
+          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/zero/"
+        ]
+      },
+      "rewards": {
+        "score": "low",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-03-10",
+        "sources": [
+          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/zero/"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-03-10",
+        "sources": [
+          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/zero/"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-03-10",
+        "sources": [
+          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/zero/"
+        ]
+      }
+    }
+  },
+  {
+    "card_id": "invex__voyage",
+    "issuer_id": "invex",
+    "cobrand_partner": "",
+    "display_name": "INVEX Voyage",
+    "former_names": [],
+    "legacy_id": "INVEX Voyage",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "invex__voyage_platinum",
+    "issuer_id": "invex",
+    "cobrand_partner": "",
+    "display_name": "INVEX Voyage Platinum",
+    "former_names": [],
+    "legacy_id": "INVEX Voyage Platinum",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "invex__sicard_basica",
+    "issuer_id": "invex",
+    "cobrand_partner": "",
+    "display_name": "SíCard Básica INVEX",
+    "former_names": [],
+    "legacy_id": "SíCard Básica INVEX",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "invex__sicard_platinum",
+    "issuer_id": "invex",
+    "cobrand_partner": "",
+    "display_name": "SíCard Platinum INVEX",
+    "former_names": [],
+    "legacy_id": "SíCard Platinum INVEX",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "invex__sicard_plus",
+    "issuer_id": "invex",
+    "cobrand_partner": "",
+    "display_name": "SíCard Plus INVEX",
+    "former_names": [],
+    "legacy_id": "SíCard Plus INVEX",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "multiva__clasica",
+    "issuer_id": "multiva",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito MULTIVA Clásica",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito MULTIVA Clásica",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "issued via INVEX",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "multiva__oro",
+    "issuer_id": "multiva",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito MULTIVA Oro",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito MULTIVA Oro",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "issued via INVEX",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "multiva__platinum",
+    "issuer_id": "multiva",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito MULTIVA Platinum",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito MULTIVA Platinum",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "issued via INVEX",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "santander_mexico__likeu",
+    "issuer_id": "santander_mexico",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito LikeU",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito LikeU",
+    "tier": "sin anualidad / cashback",
+    "network": "visa_mastercard",
+    "lifecycle_status": "active",
+    "mapping_status": "mapped",
+    "census_confidence": "high",
+    "census_note": "cashback (Red/Blue/White variants)",
+    "conflicts": [],
+    "notes": "Base 1% super; higher cashback by category (see CardRewards)",
+    "annual_fee_mxn": 0,
+    "annual_fee_includes_iva": "UNKNOWN",
+    "annual_fee_first_year_waived": "UNKNOWN",
+    "annual_fee_waiver_condition": "$0 if >=$200 spend/month; else $169/month management fee",
+    "interest_rate_annual_pct": 66.35,
+    "cat_promedio_pct": 90.6,
+    "base_reward_type": "cashback",
+    "base_reward_rate": 1.0,
+    "point_value_mxn": 1.0,
+    "effective_rate_pct": 1.0,
+    "points_program_name": "NOT_APPLICABLE",
+    "min_income_mxn_monthly": 7500,
+    "invitation_only": false,
+    "other_eligibility_criteria": "20-69 años; débito Santander requerido para cashback",
+    "legacy_market_id": "santander_likeu",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-01-01",
+        "sources": [
+          "https://www.santander.com.mx/personas/credito-y-financiamiento/tarjetas-de-credito/likeu/"
+        ]
+      },
+      "cost": {
+        "score": "low",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-01-01",
+        "sources": [
+          "https://www.santander.com.mx/personas/credito-y-financiamiento/tarjetas-de-credito/likeu/"
+        ]
+      },
+      "rewards": {
+        "score": "low",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-01-01",
+        "sources": [
+          "https://www.santander.com.mx/personas/credito-y-financiamiento/tarjetas-de-credito/likeu/"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-01-01",
+        "sources": [
+          "https://www.santander.com.mx/personas/credito-y-financiamiento/tarjetas-de-credito/likeu/"
+        ]
+      },
+      "eligibility": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-01-01",
+        "sources": [
+          "https://www.santander.com.mx/personas/credito-y-financiamiento/tarjetas-de-credito/likeu/"
+        ]
+      }
+    }
+  },
+  {
+    "card_id": "santander_mexico__santander_american_express",
+    "issuer_id": "santander_mexico",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito Santander American Express",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito Santander American Express",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "Amex network product",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "santander_mexico__santander_basica",
+    "issuer_id": "santander_mexico",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito Santander Básica",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito Santander Básica",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "santander_mexico__santander_free",
+    "issuer_id": "santander_mexico",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito Santander Free",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito Santander Free",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "no anualidad",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "santander_mexico__unique_rewards_gold",
+    "issuer_id": "santander_mexico",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito Unique Rewards Gold",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito Unique Rewards Gold",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "santander_mexico__unique_rewards_platinum",
+    "issuer_id": "santander_mexico",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito Unique Rewards Platinum",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito Unique Rewards Platinum",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "santander_mexico__world_elite",
+    "issuer_id": "santander_mexico",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito World Elite",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito World Elite",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "scotiabank_mexico__ideal_scotiabank",
+    "issuer_id": "scotiabank_mexico",
+    "cobrand_partner": "",
+    "display_name": "IDEAL Scotiabank",
+    "former_names": [],
+    "legacy_id": "IDEAL Scotiabank",
+    "tier": "sin anualidad",
+    "network": "visa",
+    "lifecycle_status": "active",
+    "mapping_status": "mapped",
+    "census_confidence": "high",
+    "census_note": "",
+    "conflicts": [],
+    "notes": "No annual fee entry card",
+    "annual_fee_mxn": 0,
+    "annual_fee_includes_iva": "UNKNOWN",
+    "annual_fee_first_year_waived": "UNKNOWN",
+    "annual_fee_waiver_condition": "Sin anualidad",
+    "interest_rate_annual_pct": "UNKNOWN",
+    "cat_promedio_pct": "UNKNOWN",
+    "base_reward_type": "none",
+    "base_reward_rate": "UNKNOWN",
+    "point_value_mxn": "NOT_APPLICABLE",
+    "effective_rate_pct": 0,
+    "points_program_name": "NOT_APPLICABLE",
+    "min_income_mxn_monthly": 7500,
+    "invitation_only": false,
+    "other_eligibility_criteria": "INE",
+    "legacy_market_id": "scotia_ideal",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/scotia-basica.aspx"
+        ]
+      },
+      "cost": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/scotia-basica.aspx"
+        ]
+      },
+      "rewards": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/scotia-basica.aspx"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/scotia-basica.aspx"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/scotia-basica.aspx"
+        ]
+      }
+    }
+  },
+  {
+    "card_id": "scotiabank_mexico__infinite_scotia_wealth_management",
+    "issuer_id": "scotiabank_mexico",
+    "cobrand_partner": "",
+    "display_name": "Infinite Scotia Wealth Management",
+    "former_names": [],
+    "legacy_id": "Infinite Scotia Wealth Management",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "scotiabank_mexico__scotia_travel_clasica",
+    "issuer_id": "scotiabank_mexico",
+    "cobrand_partner": "",
+    "display_name": "Scotia Travel Clásica",
+    "former_names": [],
+    "legacy_id": "Scotia Travel Clásica",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "scotiabank_mexico__scotia_travel_oro",
+    "issuer_id": "scotiabank_mexico",
+    "cobrand_partner": "",
+    "display_name": "Scotia Travel Oro",
+    "former_names": [],
+    "legacy_id": "Scotia Travel Oro",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "scotiabank_mexico__scotia_travel_platinum",
+    "issuer_id": "scotiabank_mexico",
+    "cobrand_partner": "",
+    "display_name": "Scotia Travel Platinum",
+    "former_names": [],
+    "legacy_id": "Scotia Travel Platinum",
+    "tier": "platinum / viajes",
+    "network": "visa",
+    "lifecycle_status": "active",
+    "mapping_status": "mapped",
+    "census_confidence": "high",
+    "census_note": "",
+    "conflicts": [],
+    "notes": "Annual fee from aggregator; verify. Lounge access",
+    "annual_fee_mxn": 2600,
+    "annual_fee_includes_iva": false,
+    "annual_fee_first_year_waived": "UNKNOWN",
+    "annual_fee_waiver_condition": "UNKNOWN",
+    "interest_rate_annual_pct": "UNKNOWN",
+    "cat_promedio_pct": "UNKNOWN",
+    "base_reward_type": "points",
+    "base_reward_rate": "UNKNOWN",
+    "point_value_mxn": "UNKNOWN",
+    "effective_rate_pct": "UNKNOWN",
+    "points_program_name": "ScotiaPuntos / ScotiaPesos",
+    "min_income_mxn_monthly": 15000,
+    "invitation_only": false,
+    "other_eligibility_criteria": "INE",
+    "legacy_market_id": "scotia_travel_platinum",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/travel-platinum.aspx"
+        ]
+      },
+      "cost": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/travel-platinum.aspx"
+        ]
+      },
+      "rewards": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/travel-platinum.aspx"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/travel-platinum.aspx"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/travel-platinum.aspx"
+        ]
+      }
+    }
+  },
+  {
+    "card_id": "scotiabank_mexico__singular_by_scotiabank_infinite",
+    "issuer_id": "scotiabank_mexico",
+    "cobrand_partner": "",
+    "display_name": "Singular by Scotiabank Infinite",
+    "former_names": [],
+    "legacy_id": "Singular by Scotiabank Infinite",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "scotiabank_mexico__singular_by_scotiabank_signature",
+    "issuer_id": "scotiabank_mexico",
+    "cobrand_partner": "",
+    "display_name": "Singular by Scotiabank Signature",
+    "former_names": [],
+    "legacy_id": "Singular by Scotiabank Signature",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "scotiabank_mexico__singular_by_scotiabank_world_elite",
+    "issuer_id": "scotiabank_mexico",
+    "cobrand_partner": "",
+    "display_name": "Singular by Scotiabank World Elite",
+    "former_names": [],
+    "legacy_id": "Singular by Scotiabank World Elite",
+    "tier": "world elite / premium",
+    "network": "visa",
+    "lifecycle_status": "active",
+    "mapping_status": "mapped",
+    "census_confidence": "high",
+    "census_note": "",
+    "conflicts": [],
+    "notes": "Row added to resolve orphan key referenced in CardPerks; only the Elite Valet perk was captured from the official page. Fee, rate and eligibility NOT yet sourced - do not import as confirmed",
+    "annual_fee_mxn": "UNKNOWN",
+    "annual_fee_includes_iva": false,
+    "annual_fee_first_year_waived": "UNKNOWN",
+    "annual_fee_waiver_condition": "UNKNOWN",
+    "interest_rate_annual_pct": "UNKNOWN",
+    "cat_promedio_pct": "UNKNOWN",
+    "base_reward_type": "points",
+    "base_reward_rate": "UNKNOWN",
+    "point_value_mxn": "UNKNOWN",
+    "effective_rate_pct": "UNKNOWN",
+    "points_program_name": "ScotiaPuntos / ScotiaPesos",
+    "min_income_mxn_monthly": "UNKNOWN",
+    "invitation_only": false,
+    "other_eligibility_criteria": "UNKNOWN",
+    "legacy_market_id": "scotia_singular_world_elite",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/world-elite.aspx"
+        ]
+      },
+      "cost": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/world-elite.aspx"
+        ]
+      },
+      "rewards": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/world-elite.aspx"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/world-elite.aspx"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/world-elite.aspx"
+        ]
+      }
+    }
+  },
+  {
+    "card_id": "scotiabank_mexico__tasa_baja_clasica",
+    "issuer_id": "scotiabank_mexico",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta Tasa Baja Clásica",
+    "former_names": [],
+    "legacy_id": "Tarjeta Tasa Baja Clásica",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "scotiabank_mexico__tasa_baja_oro",
+    "issuer_id": "scotiabank_mexico",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta Tasa Baja Oro",
+    "former_names": [],
+    "legacy_id": "Tarjeta Tasa Baja Oro",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "banco_inbursa__aeromexico_ascend",
+    "issuer_id": "banco_inbursa",
+    "cobrand_partner": "aeromexico",
+    "display_name": "Aeroméxico Ascend",
+    "former_names": [],
+    "legacy_id": "Aeroméxico Ascend",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "co-brand with Aeroméxico",
+    "conflicts": [],
+    "notes": "Co-brand split from legacy issuer string 'Banco Inbursa (Aeroméxico)'."
+  },
+  {
+    "card_id": "banco_inbursa__aeromexico_elevate",
+    "issuer_id": "banco_inbursa",
+    "cobrand_partner": "aeromexico",
+    "display_name": "Aeroméxico Elevate",
+    "former_names": [],
+    "legacy_id": "Aeroméxico Elevate",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "co-brand with Aeroméxico",
+    "conflicts": [],
+    "notes": "Co-brand split from legacy issuer string 'Banco Inbursa (Aeroméxico)'."
+  },
+  {
+    "card_id": "banco_inbursa__aeromexico_horizon",
+    "issuer_id": "banco_inbursa",
+    "cobrand_partner": "aeromexico",
+    "display_name": "Aeroméxico Horizon",
+    "former_names": [],
+    "legacy_id": "Aeroméxico Horizon",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "co-brand with Aeroméxico",
+    "conflicts": [],
+    "notes": "Co-brand split from legacy issuer string 'Banco Inbursa (Aeroméxico)'."
+  },
+  {
+    "card_id": "invex__volaris",
+    "issuer_id": "invex",
+    "cobrand_partner": "volaris",
+    "display_name": "Volaris INVEX",
+    "former_names": [],
+    "legacy_id": "Volaris INVEX",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "co-brand (Volaris)",
+    "conflicts": [],
+    "notes": "Co-brand split from legacy issuer string 'Invex (Volaris)'."
+  },
+  {
+    "card_id": "invex__volaris_0",
+    "issuer_id": "invex",
+    "cobrand_partner": "volaris",
+    "display_name": "Volaris INVEX 0",
+    "former_names": [],
+    "legacy_id": "Volaris INVEX 0",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "co-brand (Volaris), no anualidad",
+    "conflicts": [],
+    "notes": "Co-brand split from legacy issuer string 'Invex (Volaris)'."
+  },
+  {
+    "card_id": "invex__volaris_2_0",
+    "issuer_id": "invex",
+    "cobrand_partner": "volaris",
+    "display_name": "Volaris INVEX 2.0",
+    "former_names": [],
+    "legacy_id": "Volaris INVEX 2.0",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "co-brand (Volaris), premium",
+    "conflicts": [],
+    "notes": "Co-brand split from legacy issuer string 'Invex (Volaris)'."
+  },
+  {
+    "card_id": "santander_mexico__aeromexico_blanca",
+    "issuer_id": "santander_mexico",
+    "cobrand_partner": "aeromexico",
+    "display_name": "Tarjeta de Crédito Aeroméxico Blanca",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito Aeroméxico Blanca",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "co-brand",
+    "conflicts": [],
+    "notes": "Co-brand split from legacy issuer string 'Santander México (Aeroméxico)'."
+  },
+  {
+    "card_id": "santander_mexico__aeromexico_infinite",
+    "issuer_id": "santander_mexico",
+    "cobrand_partner": "aeromexico",
+    "display_name": "Tarjeta de Crédito Aeroméxico Infinite",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito Aeroméxico Infinite",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "co-brand",
+    "conflicts": [],
+    "notes": "Co-brand split from legacy issuer string 'Santander México (Aeroméxico)'."
+  },
+  {
+    "card_id": "santander_mexico__aeromexico_platinum",
+    "issuer_id": "santander_mexico",
+    "cobrand_partner": "aeromexico",
+    "display_name": "Tarjeta de Crédito Aeroméxico Platinum",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito Aeroméxico Platinum",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "co-brand",
+    "conflicts": [],
+    "notes": "Co-brand split from legacy issuer string 'Santander México (Aeroméxico)'."
+  },
+  {
+    "card_id": "invex__despegar_gold",
+    "issuer_id": "invex",
+    "cobrand_partner": "despegar",
+    "display_name": "Despegar INVEX Gold",
+    "former_names": [],
+    "legacy_id": "Despegar INVEX Gold",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "co-brand",
+    "conflicts": [],
+    "notes": "Co-brand split from legacy issuer string 'Invex (Despegar)'."
+  },
+  {
+    "card_id": "invex__despegar_platinum",
+    "issuer_id": "invex",
+    "cobrand_partner": "despegar",
+    "display_name": "Despegar INVEX Platinum",
+    "former_names": [],
+    "legacy_id": "Despegar INVEX Platinum",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "co-brand",
+    "conflicts": [],
+    "notes": "Co-brand split from legacy issuer string 'Invex (Despegar)'."
+  },
+  {
+    "card_id": "invex__hilton_honors",
+    "issuer_id": "invex",
+    "cobrand_partner": "hilton",
+    "display_name": "Hilton Honors INVEX",
+    "former_names": [],
+    "legacy_id": "Hilton Honors INVEX",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "co-brand",
+    "conflicts": [],
+    "notes": "Co-brand split from legacy issuer string 'Invex (Hilton)'."
+  },
+  {
+    "card_id": "invex__hilton_honors_premium",
+    "issuer_id": "invex",
+    "cobrand_partner": "hilton",
+    "display_name": "Hilton Honors INVEX Premium",
+    "former_names": [],
+    "legacy_id": "Hilton Honors INVEX Premium",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "co-brand",
+    "conflicts": [],
+    "notes": "Co-brand split from legacy issuer string 'Invex (Hilton)'."
+  },
+  {
+    "card_id": "santander_mexico__fiesta_rewards_oro",
+    "issuer_id": "santander_mexico",
+    "cobrand_partner": "fiesta_rewards",
+    "display_name": "Tarjeta de Crédito Fiesta Rewards Oro",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito Fiesta Rewards Oro",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "co-brand (Fiesta Americana)",
+    "conflicts": [],
+    "notes": "Co-brand split from legacy issuer string 'Santander México (Fiesta Rewards)'."
+  },
+  {
+    "card_id": "santander_mexico__fiesta_rewards_platino",
+    "issuer_id": "santander_mexico",
+    "cobrand_partner": "fiesta_rewards",
+    "display_name": "Tarjeta de Crédito Fiesta Rewards Platino",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito Fiesta Rewards Platino",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "co-brand (Fiesta Americana)",
+    "conflicts": [],
+    "notes": "Co-brand split from legacy issuer string 'Santander México (Fiesta Rewards)'."
+  },
+  {
+    "card_id": "afirme__cemex",
+    "issuer_id": "afirme",
+    "cobrand_partner": "cemex",
+    "display_name": "Tarjeta de Crédito Afirme Cemex",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito Afirme Cemex",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "medium",
+    "census_note": "co-brand; in cost table",
+    "conflicts": [],
+    "notes": "Co-brand split from legacy issuer string 'Afirme (Cemex)'."
+  },
+  {
+    "card_id": "afirme__construrama",
+    "issuer_id": "afirme",
+    "cobrand_partner": "construrama",
+    "display_name": "Tarjeta de Crédito Afirme Construrama",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito Afirme Construrama",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "medium",
+    "census_note": "co-brand; in cost table",
+    "conflicts": [],
+    "notes": "Co-brand split from legacy issuer string 'Afirme (Construrama)'."
+  },
+  {
+    "card_id": "afirme__heb",
+    "issuer_id": "afirme",
+    "cobrand_partner": "heb",
+    "display_name": "Tarjeta de Crédito Afirme HEB",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito Afirme HEB",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "medium",
+    "census_note": "co-brand; in Afirme cost table",
+    "conflicts": [],
+    "notes": "Co-brand split from legacy issuer string 'Afirme (HEB)'."
+  },
+  {
+    "card_id": "afirme__tigres",
+    "issuer_id": "afirme",
+    "cobrand_partner": "tigres",
+    "display_name": "Tarjeta de Crédito Afirme Tigres",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito Afirme Tigres",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "medium",
+    "census_note": "co-brand; in cost table",
+    "conflicts": [],
+    "notes": "Co-brand split from legacy issuer string 'Afirme (Tigres)'."
+  },
+  {
+    "card_id": "bbva_mexico__rayados_bbva",
+    "issuer_id": "bbva_mexico",
+    "cobrand_partner": "rayados",
+    "display_name": "Tarjeta Rayados BBVA",
+    "former_names": [],
+    "legacy_id": "Tarjeta Rayados BBVA",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "co-brand (C.F. Monterrey)",
+    "conflicts": [],
+    "notes": "Co-brand split from legacy issuer string 'BBVA México (Rayados)'."
+  },
+  {
+    "card_id": "banco_inbursa__bodega_aurrera_inbursa",
+    "issuer_id": "banco_inbursa",
+    "cobrand_partner": "bodega_aurrera",
+    "display_name": "Tarjeta Bodega Aurrera Inbursa",
+    "former_names": [],
+    "legacy_id": "Tarjeta Bodega Aurrera Inbursa",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "co-brand",
+    "conflicts": [],
+    "notes": "Co-brand split from legacy issuer string 'Banco Inbursa (Bodega Aurrera)'."
+  },
+  {
+    "card_id": "banco_inbursa__sams_club_inbursa",
+    "issuer_id": "banco_inbursa",
+    "cobrand_partner": "sams_club",
+    "display_name": "Tarjeta Sam's Club Inbursa",
+    "former_names": [],
+    "legacy_id": "Tarjeta Sam's Club Inbursa",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "co-brand",
+    "conflicts": [],
+    "notes": "Co-brand split from legacy issuer string 'Banco Inbursa (Sam's Club)'."
+  },
+  {
+    "card_id": "banco_inbursa__walmart_inbursa",
+    "issuer_id": "banco_inbursa",
+    "cobrand_partner": "walmart",
+    "display_name": "Tarjeta Walmart Inbursa",
+    "former_names": [],
+    "legacy_id": "Tarjeta Walmart Inbursa",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "co-brand",
+    "conflicts": [],
+    "notes": "Co-brand split from legacy issuer string 'Banco Inbursa (Walmart)'."
+  },
+  {
+    "card_id": "citibanamex__costco_banamex",
+    "issuer_id": "citibanamex",
+    "cobrand_partner": "costco",
+    "display_name": "Tarjeta de Crédito Costco Banamex",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito Costco Banamex",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "co-brand",
+    "conflicts": [],
+    "notes": "Co-brand split from legacy issuer string 'Citibanamex (Costco)'."
+  },
+  {
+    "card_id": "citibanamex__affinity_card_banamex",
+    "issuer_id": "citibanamex",
+    "cobrand_partner": "inditex",
+    "display_name": "Tarjeta de Crédito Affinity Card Banamex",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito Affinity Card Banamex",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "co-brand",
+    "conflicts": [],
+    "notes": "Co-brand split from legacy issuer string 'Citibanamex (Inditex)'."
+  },
+  {
+    "card_id": "citibanamex__la_comer_card_banamex",
+    "issuer_id": "citibanamex",
+    "cobrand_partner": "la_comer",
+    "display_name": "Tarjeta de Crédito La Comer Card Banamex",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito La Comer Card Banamex",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "co-brand",
+    "conflicts": [],
+    "notes": "Co-brand split from legacy issuer string 'Citibanamex (La Comer)'."
+  },
+  {
+    "card_id": "citibanamex__lineup_banamex",
+    "issuer_id": "citibanamex",
+    "cobrand_partner": "lineup",
+    "display_name": "Tarjeta de Crédito LineUp Banamex",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito LineUp Banamex",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "co-brand (Ticketmaster/LineUp)",
+    "conflicts": [],
+    "notes": "Co-brand split from legacy issuer string 'Citibanamex (LineUp)'."
+  },
+  {
+    "card_id": "citibanamex__teleton_banamex",
+    "issuer_id": "citibanamex",
+    "cobrand_partner": "teleton",
+    "display_name": "Tarjeta de Crédito Teletón Banamex",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito Teletón Banamex",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "affinity",
+    "conflicts": [],
+    "notes": "Co-brand split from legacy issuer string 'Citibanamex (Teletón)'."
+  },
+  {
+    "card_id": "citibanamex__the_home_depot_banamex",
+    "issuer_id": "citibanamex",
+    "cobrand_partner": "the_home_depot",
+    "display_name": "Tarjeta de Crédito The Home Depot Banamex",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito The Home Depot Banamex",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "co-brand",
+    "conflicts": [],
+    "notes": "Co-brand split from legacy issuer string 'Citibanamex (The Home Depot)'."
+  },
+  {
+    "card_id": "invex__farmacias_guadalajara",
+    "issuer_id": "invex",
+    "cobrand_partner": "farmacias_guadalajara",
+    "display_name": "INVEX Farmacias Guadalajara",
+    "former_names": [],
+    "legacy_id": "INVEX Farmacias Guadalajara",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "co-brand",
+    "conflicts": [],
+    "notes": "Co-brand split from legacy issuer string 'Invex (Farmacias Guadalajara)'."
+  },
+  {
+    "card_id": "invex__ikea",
+    "issuer_id": "invex",
+    "cobrand_partner": "ikea",
+    "display_name": "IKEA INVEX",
+    "former_names": [],
+    "legacy_id": "IKEA INVEX",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "co-brand",
+    "conflicts": [],
+    "notes": "Co-brand split from legacy issuer string 'Invex (IKEA)'."
+  },
+  {
+    "card_id": "invex__manchester_united",
+    "issuer_id": "invex",
+    "cobrand_partner": "manchester_united",
+    "display_name": "Manchester United INVEX",
+    "former_names": [],
+    "legacy_id": "Manchester United INVEX",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "co-brand",
+    "conflicts": [],
+    "notes": "Co-brand split from legacy issuer string 'Invex (Manchester United)'."
+  },
+  {
+    "card_id": "invex__sams_club",
+    "issuer_id": "invex",
+    "cobrand_partner": "sams_club",
+    "display_name": "Sam's Club INVEX",
+    "former_names": [],
+    "legacy_id": "Sam's Club INVEX",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "co-brand",
+    "conflicts": [],
+    "notes": "Co-brand split from legacy issuer string 'Invex (Sam's Club)'."
+  },
+  {
+    "card_id": "invex__walmart",
+    "issuer_id": "invex",
+    "cobrand_partner": "walmart",
+    "display_name": "Walmart INVEX",
+    "former_names": [],
+    "legacy_id": "Walmart INVEX",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "co-brand",
+    "conflicts": [],
+    "notes": "Co-brand split from legacy issuer string 'Invex (Walmart)'."
+  },
+  {
+    "card_id": "klar__con_garantia",
+    "issuer_id": "klar",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito con Garantía Klar",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito con Garantía Klar",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "secured card",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "klar__tarjeta_de_credito_klar",
+    "issuer_id": "klar",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito Klar",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito Klar",
+    "tier": "sin anualidad",
+    "network": "mastercard",
+    "lifecycle_status": "active",
+    "mapping_status": "mapped",
+    "census_confidence": "high",
+    "census_note": "",
+    "conflicts": [],
+    "notes": "CAT/tasa from aggregator; classic tier",
+    "annual_fee_mxn": 0,
+    "annual_fee_includes_iva": "UNKNOWN",
+    "annual_fee_first_year_waived": "UNKNOWN",
+    "annual_fee_waiver_condition": "Sin anualidad de por vida",
+    "interest_rate_annual_pct": 123.1,
+    "cat_promedio_pct": 187,
+    "base_reward_type": "cashback",
+    "base_reward_rate": "UNKNOWN",
+    "point_value_mxn": 1.0,
+    "effective_rate_pct": "UNKNOWN",
+    "points_program_name": "NOT_APPLICABLE",
+    "min_income_mxn_monthly": "UNKNOWN",
+    "invitation_only": false,
+    "other_eligibility_criteria": "18+, sin historial requerido",
+    "legacy_market_id": "klar_credito",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://www.klar.mx/"
+        ]
+      },
+      "cost": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://www.klar.mx/"
+        ]
+      },
+      "rewards": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://www.klar.mx/"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://www.klar.mx/"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://www.klar.mx/"
+        ]
+      }
+    }
+  },
+  {
+    "card_id": "klar__platino",
+    "issuer_id": "klar",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito Klar Platino",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito Klar Platino",
+    "tier": "platino",
+    "network": "mastercard",
+    "lifecycle_status": "active",
+    "mapping_status": "mapped",
+    "census_confidence": "high",
+    "census_note": "metal, por invitación",
+    "conflicts": [],
+    "notes": "Lower tasa than classic; aggregator figures",
+    "annual_fee_mxn": 0,
+    "annual_fee_includes_iva": "UNKNOWN",
+    "annual_fee_first_year_waived": "UNKNOWN",
+    "annual_fee_waiver_condition": "Sin anualidad",
+    "interest_rate_annual_pct": 61.1,
+    "cat_promedio_pct": 85,
+    "base_reward_type": "cashback",
+    "base_reward_rate": "UNKNOWN",
+    "point_value_mxn": 1.0,
+    "effective_rate_pct": "UNKNOWN",
+    "points_program_name": "NOT_APPLICABLE",
+    "min_income_mxn_monthly": "UNKNOWN",
+    "invitation_only": false,
+    "other_eligibility_criteria": "18+",
+    "legacy_market_id": "klar_platino",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://www.klar.mx/"
+        ]
+      },
+      "cost": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://www.klar.mx/"
+        ]
+      },
+      "rewards": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://www.klar.mx/"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://www.klar.mx/"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://www.klar.mx/"
+        ]
+      }
+    }
+  },
+  {
+    "card_id": "stori__tarjeta_de_credito_stori",
+    "issuer_id": "stori",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito Stori",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito Stori",
+    "tier": "sin anualidad",
+    "network": "mastercard",
+    "lifecycle_status": "active",
+    "mapping_status": "mapped",
+    "census_confidence": "high",
+    "census_note": "",
+    "conflicts": [],
+    "notes": "CAT from aggregator",
+    "annual_fee_mxn": 0,
+    "annual_fee_includes_iva": "UNKNOWN",
+    "annual_fee_first_year_waived": "UNKNOWN",
+    "annual_fee_waiver_condition": "Sin anualidad",
+    "interest_rate_annual_pct": "UNKNOWN",
+    "cat_promedio_pct": 158.3,
+    "base_reward_type": "none",
+    "base_reward_rate": "UNKNOWN",
+    "point_value_mxn": "NOT_APPLICABLE",
+    "effective_rate_pct": 0,
+    "points_program_name": "NOT_APPLICABLE",
+    "min_income_mxn_monthly": "UNKNOWN",
+    "invitation_only": false,
+    "other_eligibility_criteria": "INE, comprobante domicilio",
+    "legacy_market_id": "stori_card",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://www.storicard.com/"
+        ]
+      },
+      "cost": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://www.storicard.com/"
+        ]
+      },
+      "rewards": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://www.storicard.com/"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://www.storicard.com/"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://www.storicard.com/"
+        ]
+      }
+    }
+  },
+  {
+    "card_id": "stori__black",
+    "issuer_id": "stori",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito Stori Black",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito Stori Black",
+    "tier": "cashback",
+    "network": "mastercard",
+    "lifecycle_status": "active",
+    "mapping_status": "mapped",
+    "census_confidence": "high",
+    "census_note": "1% cashback",
+    "conflicts": [],
+    "notes": "1% cashback",
+    "annual_fee_mxn": 0,
+    "annual_fee_includes_iva": "UNKNOWN",
+    "annual_fee_first_year_waived": "UNKNOWN",
+    "annual_fee_waiver_condition": "Sin anualidad",
+    "interest_rate_annual_pct": "UNKNOWN",
+    "cat_promedio_pct": "UNKNOWN",
+    "base_reward_type": "cashback",
+    "base_reward_rate": 1.0,
+    "point_value_mxn": 1.0,
+    "effective_rate_pct": 1.0,
+    "points_program_name": "NOT_APPLICABLE",
+    "min_income_mxn_monthly": "UNKNOWN",
+    "invitation_only": false,
+    "other_eligibility_criteria": "18+",
+    "legacy_market_id": "stori_black",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://apps.apple.com/MX/app/id1486481718"
+        ]
+      },
+      "cost": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://apps.apple.com/MX/app/id1486481718"
+        ]
+      },
+      "rewards": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://apps.apple.com/MX/app/id1486481718"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://apps.apple.com/MX/app/id1486481718"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://apps.apple.com/MX/app/id1486481718"
+        ]
+      }
+    }
+  },
+  {
+    "card_id": "stori__con_garantia",
+    "issuer_id": "stori",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito Stori con Garantía",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito Stori con Garantía",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "secured card",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "cuenca__tarjeta_de_credito_cuenca",
+    "issuer_id": "cuenca",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito Cuenca",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito Cuenca",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "low",
+    "census_note": "credit card unconfirmed; Cuenca is primarily debit - verify",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "jp_sofiexpress__didi_card",
+    "issuer_id": "jp_sofiexpress",
+    "cobrand_partner": "didi",
+    "display_name": "DiDi Card",
+    "former_names": [],
+    "legacy_id": "DiDi Card",
+    "tier": "sin anualidad / cashback",
+    "network": "mastercard",
+    "lifecycle_status": "active",
+    "mapping_status": "mapped",
+    "census_confidence": "high",
+    "census_note": "Mastercard; issuer Regigold SOFOM E.N.R.",
+    "conflicts": [],
+    "notes": "Regulated by PROFECO not CONDUSEF; cashback within DiDi ecosystem",
+    "annual_fee_mxn": 0,
+    "annual_fee_includes_iva": "UNKNOWN",
+    "annual_fee_first_year_waived": "UNKNOWN",
+    "annual_fee_waiver_condition": "Sin anualidad de por vida",
+    "interest_rate_annual_pct": 85.27,
+    "cat_promedio_pct": 130.4,
+    "base_reward_type": "cashback",
+    "base_reward_rate": 2.0,
+    "point_value_mxn": 1.0,
+    "effective_rate_pct": 2.0,
+    "points_program_name": "NOT_APPLICABLE",
+    "min_income_mxn_monthly": "UNKNOWN",
+    "invitation_only": false,
+    "other_eligibility_criteria": "Usuario DiDi; no ingreso mínimo",
+    "legacy_market_id": "didi_card",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-05-31",
+        "sources": [
+          "https://didifinance.com/tarjeta-de-credito"
+        ]
+      },
+      "cost": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-05-31",
+        "sources": [
+          "https://didifinance.com/tarjeta-de-credito"
+        ]
+      },
+      "rewards": {
+        "score": "low",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-05-31",
+        "sources": [
+          "https://didifinance.com/tarjeta-de-credito"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-05-31",
+        "sources": [
+          "https://didifinance.com/tarjeta-de-credito"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-05-31",
+        "sources": [
+          "https://didifinance.com/tarjeta-de-credito"
+        ]
+      }
+    }
+  },
+  {
+    "card_id": "mercado_pago__tarjeta_de_credito_mercado_pago",
+    "issuer_id": "mercado_pago",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de crédito Mercado Pago",
+    "former_names": [],
+    "legacy_id": "Tarjeta de crédito Mercado Pago",
+    "tier": "línea de crédito",
+    "network": "mastercard",
+    "lifecycle_status": "active",
+    "mapping_status": "mapped",
+    "census_confidence": "high",
+    "census_note": "Visa; issuer Mercado Lending S.A. de C.V.",
+    "conflicts": [],
+    "notes": "Credit line, not classic plastic; CAT from aggregator citing MP; interest_rate is a published range not a single rate Issuer publishes a 15-120% range, not a single rate; a representative rate must be sourced before this card can be compared on cost.",
+    "annual_fee_mxn": 0,
+    "annual_fee_includes_iva": "UNKNOWN",
+    "annual_fee_first_year_waived": "UNKNOWN",
+    "annual_fee_waiver_condition": "Sin comisión de apertura",
+    "interest_rate_annual_pct": "UNKNOWN",
+    "cat_promedio_pct": 127.7,
+    "base_reward_type": "none",
+    "base_reward_rate": "UNKNOWN",
+    "point_value_mxn": "NOT_APPLICABLE",
+    "effective_rate_pct": 0,
+    "points_program_name": "NOT_APPLICABLE",
+    "min_income_mxn_monthly": "UNKNOWN",
+    "invitation_only": true,
+    "other_eligibility_criteria": "Preaprobado por historial en Mercado Libre",
+    "legacy_market_id": "mp_credito",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://bancario.com.mx/mercado-pago"
+        ]
+      },
+      "cost": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://bancario.com.mx/mercado-pago"
+        ]
+      },
+      "rewards": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://bancario.com.mx/mercado-pago"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://bancario.com.mx/mercado-pago"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://bancario.com.mx/mercado-pago"
+        ]
+      }
+    }
+  },
+  {
+    "card_id": "nu_mx__tarjeta_de_credito_nu",
+    "issuer_id": "nu_mx",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito Nu",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito Nu",
+    "tier": "sin anualidad",
+    "network": "mastercard",
+    "lifecycle_status": "active",
+    "mapping_status": "mapped",
+    "census_confidence": "high",
+    "census_note": "Mastercard; 6.6M cardholders (Q2 2025)",
+    "conflicts": [],
+    "notes": "Sofipo; no penalización por uso mínimo",
+    "annual_fee_mxn": 0,
+    "annual_fee_includes_iva": "UNKNOWN",
+    "annual_fee_first_year_waived": "UNKNOWN",
+    "annual_fee_waiver_condition": "Sin anualidad de por vida",
+    "interest_rate_annual_pct": "UNKNOWN",
+    "cat_promedio_pct": 148.1,
+    "base_reward_type": "none",
+    "base_reward_rate": "UNKNOWN",
+    "point_value_mxn": "NOT_APPLICABLE",
+    "effective_rate_pct": 0,
+    "points_program_name": "NOT_APPLICABLE",
+    "min_income_mxn_monthly": "UNKNOWN",
+    "invitation_only": false,
+    "other_eligibility_criteria": "18+, vivir en México",
+    "legacy_market_id": "nu_credito",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://nu.com.mx/credito/"
+        ]
+      },
+      "cost": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://nu.com.mx/credito/"
+        ]
+      },
+      "rewards": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://nu.com.mx/credito/"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://nu.com.mx/credito/"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://nu.com.mx/credito/"
+        ]
+      }
+    }
+  },
+  {
+    "card_id": "stori__shein_x",
+    "issuer_id": "stori",
+    "cobrand_partner": "shein",
+    "display_name": "Tarjeta de Crédito SHEIN x Stori",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito SHEIN x Stori",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "co-brand",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "american_express__gold_elite_credit_card",
+    "issuer_id": "american_express",
+    "cobrand_partner": "",
+    "display_name": "Gold Elite Credit Card American Express",
+    "former_names": [],
+    "legacy_id": "Gold Elite Credit Card American Express",
+    "tier": "UNKNOWN",
+    "network": "amex",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "american_express__the_gold_card",
+    "issuer_id": "american_express",
+    "cobrand_partner": "",
+    "display_name": "The Gold Card American Express",
+    "former_names": [],
+    "legacy_id": "The Gold Card American Express",
+    "tier": "oro / premium",
+    "network": "amex",
+    "lifecycle_status": "active",
+    "mapping_status": "mapped",
+    "census_confidence": "high",
+    "census_note": "",
+    "conflicts": [],
+    "notes": "Fee = 450 USD + IVA (~8,100 MXN at ~18 MXN/USD) diferida en 3 meses, per Kardmatch; official site shows no static MXN figure. $3,000 MXN annual travel credit; Golden Cashbacks",
+    "annual_fee_mxn": 8100,
+    "annual_fee_includes_iva": false,
+    "annual_fee_first_year_waived": "UNKNOWN",
+    "annual_fee_waiver_condition": "UNKNOWN",
+    "interest_rate_annual_pct": "UNKNOWN",
+    "cat_promedio_pct": "UNKNOWN",
+    "base_reward_type": "points",
+    "base_reward_rate": "UNKNOWN",
+    "point_value_mxn": "UNKNOWN",
+    "effective_rate_pct": "UNKNOWN",
+    "points_program_name": "Membership Rewards",
+    "min_income_mxn_monthly": "UNKNOWN",
+    "invitation_only": false,
+    "other_eligibility_criteria": "Buen historial",
+    "legacy_market_id": "amex_gold",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://www.americanexpress.com/mx/cards/gold-card/learn-more.html"
+        ]
+      },
+      "cost": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://www.americanexpress.com/mx/cards/gold-card/learn-more.html"
+        ]
+      },
+      "rewards": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://www.americanexpress.com/mx/cards/gold-card/learn-more.html"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://www.americanexpress.com/mx/cards/gold-card/learn-more.html"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://www.americanexpress.com/mx/cards/gold-card/learn-more.html"
+        ]
+      }
+    }
+  },
+  {
+    "card_id": "american_express__the_green_card",
+    "issuer_id": "american_express",
+    "cobrand_partner": "",
+    "display_name": "The Green Card American Express",
+    "former_names": [],
+    "legacy_id": "The Green Card American Express",
+    "tier": "UNKNOWN",
+    "network": "amex",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "american_express__the_platinum_card",
+    "issuer_id": "american_express",
+    "cobrand_partner": "",
+    "display_name": "The Platinum Card American Express",
+    "former_names": [],
+    "legacy_id": "The Platinum Card American Express",
+    "tier": "UNKNOWN",
+    "network": "amex",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "american_express__the_platinum_credit_card",
+    "issuer_id": "american_express",
+    "cobrand_partner": "",
+    "display_name": "The Platinum Credit Card American Express",
+    "former_names": [],
+    "legacy_id": "The Platinum Credit Card American Express",
+    "tier": "UNKNOWN",
+    "network": "amex",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "american_express__aeromexico",
+    "issuer_id": "american_express",
+    "cobrand_partner": "aeromexico",
+    "display_name": "American Express Aeroméxico",
+    "former_names": [],
+    "legacy_id": "American Express Aeroméxico",
+    "tier": "UNKNOWN",
+    "network": "amex",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "co-brand",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "american_express__the_gold_aeromexico",
+    "issuer_id": "american_express",
+    "cobrand_partner": "aeromexico",
+    "display_name": "The Gold American Express Aeroméxico",
+    "former_names": [],
+    "legacy_id": "The Gold American Express Aeroméxico",
+    "tier": "UNKNOWN",
+    "network": "amex",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "co-brand",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "american_express__the_platinum_card_aeromexico",
+    "issuer_id": "american_express",
+    "cobrand_partner": "aeromexico",
+    "display_name": "The Platinum Card American Express Aeroméxico",
+    "former_names": [],
+    "legacy_id": "The Platinum Card American Express Aeroméxico",
+    "tier": "UNKNOWN",
+    "network": "amex",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "co-brand",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "banco_del_bajio__clasica_garantizada",
+    "issuer_id": "banco_del_bajio",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito Clásica Garantizada",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito Clásica Garantizada",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "secured card",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "banco_del_bajio__exclusive_banbajio_infinite",
+    "issuer_id": "banco_del_bajio",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito Exclusive+ BanBajío Infinite",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito Exclusive+ BanBajío Infinite",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "banco_del_bajio__visa_clasica_internacional",
+    "issuer_id": "banco_del_bajio",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito Visa Clásica Internacional",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito Visa Clásica Internacional",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "banco_del_bajio__visa_oro_internacional",
+    "issuer_id": "banco_del_bajio",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito Visa Oro Internacional",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito Visa Oro Internacional",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "banco_del_bajio__visa_platinum_internacional",
+    "issuer_id": "banco_del_bajio",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito Visa Platinum Internacional",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito Visa Platinum Internacional",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "hey_banco__hey_garantia",
+    "issuer_id": "hey_banco",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito Hey Garantía",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito Hey Garantía",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "secured card",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "hey_banco__hey_personal",
+    "issuer_id": "hey_banco",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito Hey Personal",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito Hey Personal",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "no anualidad",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "uala_mx__tarjeta_de_credito_uala",
+    "issuer_id": "uala_mx",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito Ualá",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito Ualá",
+    "tier": "sin anualidad",
+    "network": "mastercard",
+    "lifecycle_status": "active",
+    "mapping_status": "mapped",
+    "census_confidence": "high",
+    "census_note": "Mastercard; issued by Banco ABC Capital",
+    "conflicts": [],
+    "notes": "Banca múltiple; MSI available",
+    "annual_fee_mxn": 0,
+    "annual_fee_includes_iva": "UNKNOWN",
+    "annual_fee_first_year_waived": "UNKNOWN",
+    "annual_fee_waiver_condition": "Sin anualidad",
+    "interest_rate_annual_pct": 111.66,
+    "cat_promedio_pct": "UNKNOWN",
+    "base_reward_type": "cashback",
+    "base_reward_rate": "UNKNOWN",
+    "point_value_mxn": 1.0,
+    "effective_rate_pct": "UNKNOWN",
+    "points_program_name": "NOT_APPLICABLE",
+    "min_income_mxn_monthly": "UNKNOWN",
+    "invitation_only": false,
+    "other_eligibility_criteria": "18+, INE",
+    "legacy_market_id": "uala_credito",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-03-04",
+        "sources": [
+          "https://www.uala.mx/tarjeta-credito"
+        ]
+      },
+      "cost": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-03-04",
+        "sources": [
+          "https://www.uala.mx/tarjeta-credito"
+        ]
+      },
+      "rewards": {
+        "score": "low",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-03-04",
+        "sources": [
+          "https://www.uala.mx/tarjeta-credito"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-03-04",
+        "sources": [
+          "https://www.uala.mx/tarjeta-credito"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-03-04",
+        "sources": [
+          "https://www.uala.mx/tarjeta-credito"
+        ]
+      }
+    }
+  },
+  {
+    "card_id": "uala_mx__con_garantia",
+    "issuer_id": "uala_mx",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito Ualá con Garantía",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito Ualá con Garantía",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "secured card",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "banco_azteca__elektra",
+    "issuer_id": "banco_azteca",
+    "cobrand_partner": "elektra",
+    "display_name": "Tarjeta de Crédito Elektra",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito Elektra",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "low",
+    "census_note": "store credit program; classification vs network card unconfirmed - verify",
+    "conflicts": [],
+    "notes": ""
+  },
+  {
+    "card_id": "plata__plata",
+    "issuer_id": "plata",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito Plata",
+    "former_names": [],
+    "legacy_id": "Tarjeta de Crédito Plata",
+    "tier": "cashback",
+    "network": "mastercard",
+    "lifecycle_status": "active",
+    "mapping_status": "mapped",
+    "census_confidence": "high",
+    "census_note": "Mastercard; Plata now a licensed bank",
+    "conflicts": [],
+    "notes": "Bank since Feb 2026; Plata Plus membership $39/mo",
+    "annual_fee_mxn": 199,
+    "annual_fee_includes_iva": false,
+    "annual_fee_first_year_waived": "UNKNOWN",
+    "annual_fee_waiver_condition": "Annuity charged after month 3; promos may waive",
+    "interest_rate_annual_pct": 99.9,
+    "cat_promedio_pct": 164.22,
+    "base_reward_type": "cashback",
+    "base_reward_rate": 0.5,
+    "point_value_mxn": 1.0,
+    "effective_rate_pct": 0.5,
+    "points_program_name": "NOT_APPLICABLE",
+    "min_income_mxn_monthly": 4000,
+    "invitation_only": false,
+    "other_eligibility_criteria": "Historial crediticio, INE",
+    "legacy_market_id": "plata_card",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://prime.platacard.mx/file-service/static/ContratoPlata.pdf"
+        ]
+      },
+      "cost": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://prime.platacard.mx/file-service/static/ContratoPlata.pdf"
+        ]
+      },
+      "rewards": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://prime.platacard.mx/file-service/static/ContratoPlata.pdf"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://prime.platacard.mx/file-service/static/ContratoPlata.pdf"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://prime.platacard.mx/file-service/static/ContratoPlata.pdf"
+        ]
+      }
+    }
+  },
+  {
+    "card_id": "banorte__rappicard",
+    "issuer_id": "banorte",
+    "cobrand_partner": "rappi",
+    "display_name": "RappiCard",
+    "former_names": [],
+    "legacy_id": "RappiCard",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "Visa; issued via Banorte",
+    "conflicts": [],
+    "notes": ""
+  }
+]

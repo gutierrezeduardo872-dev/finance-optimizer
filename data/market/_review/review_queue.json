@@ -1,0 +1,1144 @@
+{
+  "generated_on": "2026-08-05",
+  "total_issuers_for_review": 48,
+  "total_cards_held_back": 77,
+  "issuers": [
+    {
+      "legacy_issuer": "American Express",
+      "census_issuer_type": "amex",
+      "card_count": 5,
+      "reasons": [
+        "entity_type",
+        "not_an_entity_type"
+      ],
+      "proposed": {
+        "regulated_entity_type": "banco",
+        "insurance_scheme": "IPAB",
+        "insurance_coverage_udis": 400000,
+        "entity_type_note": "American Express Bank (México) operates as banca múltiple — confirm against CNBV."
+      },
+      "cards": [
+        "Gold Elite Credit Card American Express",
+        "The Gold Card American Express",
+        "The Green Card American Express",
+        "The Platinum Card American Express",
+        "The Platinum Credit Card American Express"
+      ],
+      "resolved": {
+        "status": "applied",
+        "issuer_id": "american_express"
+      }
+    },
+    {
+      "legacy_issuer": "Banco del Bajío (BanBajío)",
+      "census_issuer_type": "bank",
+      "card_count": 5,
+      "reasons": [
+        "parenthetical"
+      ],
+      "proposed": {
+        "reading": "alias",
+        "issuer_id": "banco_del_bajio",
+        "issuer_display": "Banco del Bajío",
+        "cobrand_partner": "",
+        "warning": "Parenthetical is a short name, not a partner."
+      },
+      "cards": [
+        "Tarjeta de Crédito Clásica Garantizada",
+        "Tarjeta de Crédito Exclusive+ BanBajío Infinite",
+        "Tarjeta de Crédito Visa Clásica Internacional",
+        "Tarjeta de Crédito Visa Oro Internacional",
+        "Tarjeta de Crédito Visa Platinum Internacional"
+      ],
+      "resolved": {
+        "issuer_id": "banco_del_bajio",
+        "legal_name": "Banco del Bajío, S.A., Institución de Banca Múltiple",
+        "regulated_entity_type": "banco",
+        "insurance_scheme": "IPAB",
+        "insurance_coverage_udis": 400000,
+        "cobrand_partner": "",
+        "evidence_type": "comparator_secondary",
+        "sources": [
+          "https://en.wikipedia.org/wiki/BanBaj%C3%ADo"
+        ],
+        "note": "ALIAS confirmed — BanBajío is a trading name, not a co-brand.",
+        "status": "applied"
+      }
+    },
+    {
+      "legacy_issuer": "Liverpool",
+      "census_issuer_type": "retail_cobrand",
+      "card_count": 4,
+      "reasons": [
+        "not_an_entity_type"
+      ],
+      "proposed": {
+        "entity_type_note": "census issuer_type 'retail_cobrand' describes the card, not the institution; the real issuer must be identified."
+      },
+      "cards": [
+        "Liverpool Premium Card Visa",
+        "Tarjeta de Crédito Liverpool (Departamental)",
+        "Tarjeta de Crédito Liverpool Visa",
+        "Tarjeta Liverpool Just Me"
+      ],
+      "resolved": {
+        "status": "excluded",
+        "issuer_id": "liverpool"
+      }
+    },
+    {
+      "legacy_issuer": "American Express (Aeroméxico)",
+      "census_issuer_type": "amex",
+      "card_count": 3,
+      "reasons": [
+        "parenthetical",
+        "not_an_entity_type"
+      ],
+      "proposed": {
+        "reading": "cobrand",
+        "issuer_id": "american_express",
+        "issuer_display": "American Express",
+        "cobrand_partner": "aeromexico",
+        "entity_type_note": "census issuer_type 'amex' describes the card, not the institution; the real issuer must be identified."
+      },
+      "cards": [
+        "American Express Aeroméxico",
+        "The Gold American Express Aeroméxico",
+        "The Platinum Card American Express Aeroméxico"
+      ],
+      "resolved": {
+        "status": "applied",
+        "issuer_id": "american_express"
+      }
+    },
+    {
+      "legacy_issuer": "Banco Inbursa (Aeroméxico)",
+      "census_issuer_type": "bank",
+      "card_count": 3,
+      "reasons": [
+        "parenthetical"
+      ],
+      "proposed": {
+        "reading": "cobrand",
+        "issuer_id": "banco_inbursa",
+        "issuer_display": "Banco Inbursa",
+        "cobrand_partner": "aeromexico"
+      },
+      "cards": [
+        "Aeroméxico Ascend",
+        "Aeroméxico Elevate",
+        "Aeroméxico Horizon"
+      ],
+      "resolved": {
+        "status": "applied_cobrand_split",
+        "issuer_id": "banco_inbursa",
+        "cobrand_partner": "aeromexico"
+      }
+    },
+    {
+      "legacy_issuer": "Invex (Volaris)",
+      "census_issuer_type": "bank",
+      "card_count": 3,
+      "reasons": [
+        "parenthetical"
+      ],
+      "proposed": {
+        "reading": "cobrand",
+        "issuer_id": "invex",
+        "issuer_display": "Invex",
+        "cobrand_partner": "volaris"
+      },
+      "cards": [
+        "Volaris INVEX",
+        "Volaris INVEX 0",
+        "Volaris INVEX 2.0"
+      ],
+      "resolved": {
+        "status": "applied_cobrand_split",
+        "issuer_id": "invex",
+        "cobrand_partner": "volaris"
+      }
+    },
+    {
+      "legacy_issuer": "Klar",
+      "census_issuer_type": "fintech_sofipo",
+      "card_count": 3,
+      "reasons": [
+        "ambiguous_issuer_type"
+      ],
+      "proposed": {},
+      "cards": [
+        "Tarjeta de Crédito con Garantía Klar",
+        "Tarjeta de Crédito Klar",
+        "Tarjeta de Crédito Klar Platino"
+      ],
+      "resolved": {
+        "status": "applied",
+        "issuer_id": "klar"
+      }
+    },
+    {
+      "legacy_issuer": "Santander México (Aeroméxico)",
+      "census_issuer_type": "bank",
+      "card_count": 3,
+      "reasons": [
+        "parenthetical"
+      ],
+      "proposed": {
+        "reading": "cobrand",
+        "issuer_id": "santander_mexico",
+        "issuer_display": "Santander México",
+        "cobrand_partner": "aeromexico"
+      },
+      "cards": [
+        "Tarjeta de Crédito Aeroméxico Blanca",
+        "Tarjeta de Crédito Aeroméxico Infinite",
+        "Tarjeta de Crédito Aeroméxico Platinum"
+      ],
+      "resolved": {
+        "status": "applied_cobrand_split",
+        "issuer_id": "santander_mexico",
+        "cobrand_partner": "aeromexico"
+      }
+    },
+    {
+      "legacy_issuer": "Stori",
+      "census_issuer_type": "fintech_sofipo",
+      "card_count": 3,
+      "reasons": [
+        "ambiguous_issuer_type"
+      ],
+      "proposed": {},
+      "cards": [
+        "Tarjeta de Crédito Stori",
+        "Tarjeta de Crédito Stori Black",
+        "Tarjeta de Crédito Stori con Garantía"
+      ],
+      "resolved": {
+        "status": "applied",
+        "issuer_id": "stori"
+      }
+    },
+    {
+      "legacy_issuer": "Hey Banco",
+      "census_issuer_type": "fintech_sofipo",
+      "card_count": 2,
+      "reasons": [
+        "entity_type"
+      ],
+      "proposed": {
+        "regulated_entity_type": "banco",
+        "insurance_scheme": "IPAB",
+        "insurance_coverage_udis": 400000,
+        "entity_type_note": "Banregio's digital arm — a bank, not a sofipo. IPAB 400k, not PROSOFIPO 25k."
+      },
+      "cards": [
+        "Tarjeta de Crédito Hey Garantía",
+        "Tarjeta de Crédito Hey Personal"
+      ],
+      "resolved": {
+        "issuer_id": "hey_banco",
+        "legal_name": "Hey Banco, S.A., Institución de Banca Múltiple, Banregio Grupo Financiero",
+        "regulated_entity_type": "banco",
+        "insurance_scheme": "IPAB",
+        "insurance_coverage_udis": 400000,
+        "cobrand_partner": "",
+        "evidence_type": "regulator",
+        "sources": [
+          "https://www.dof.gob.mx/nota_detalle.php?codigo=5696333&fecha=21%2F07%2F2023"
+        ],
+        "note": "DOF authorization for organization and operation as banca múltiple.",
+        "status": "applied"
+      }
+    },
+    {
+      "legacy_issuer": "Invex (Despegar)",
+      "census_issuer_type": "bank",
+      "card_count": 2,
+      "reasons": [
+        "parenthetical"
+      ],
+      "proposed": {
+        "reading": "cobrand",
+        "issuer_id": "invex",
+        "issuer_display": "Invex",
+        "cobrand_partner": "despegar"
+      },
+      "cards": [
+        "Despegar INVEX Gold",
+        "Despegar INVEX Platinum"
+      ],
+      "resolved": {
+        "status": "applied_cobrand_split",
+        "issuer_id": "invex",
+        "cobrand_partner": "despegar"
+      }
+    },
+    {
+      "legacy_issuer": "Invex (Hilton)",
+      "census_issuer_type": "bank",
+      "card_count": 2,
+      "reasons": [
+        "parenthetical"
+      ],
+      "proposed": {
+        "reading": "cobrand",
+        "issuer_id": "invex",
+        "issuer_display": "Invex",
+        "cobrand_partner": "hilton"
+      },
+      "cards": [
+        "Hilton Honors INVEX",
+        "Hilton Honors INVEX Premium"
+      ],
+      "resolved": {
+        "status": "applied_cobrand_split",
+        "issuer_id": "invex",
+        "cobrand_partner": "hilton"
+      }
+    },
+    {
+      "legacy_issuer": "Santander México (Fiesta Rewards)",
+      "census_issuer_type": "bank",
+      "card_count": 2,
+      "reasons": [
+        "parenthetical"
+      ],
+      "proposed": {
+        "reading": "cobrand",
+        "issuer_id": "santander_mexico",
+        "issuer_display": "Santander México",
+        "cobrand_partner": "fiesta_rewards"
+      },
+      "cards": [
+        "Tarjeta de Crédito Fiesta Rewards Oro",
+        "Tarjeta de Crédito Fiesta Rewards Platino"
+      ],
+      "resolved": {
+        "status": "applied_cobrand_split",
+        "issuer_id": "santander_mexico",
+        "cobrand_partner": "fiesta_rewards"
+      }
+    },
+    {
+      "legacy_issuer": "Ualá",
+      "census_issuer_type": "fintech_sofipo",
+      "card_count": 2,
+      "reasons": [
+        "entity_type"
+      ],
+      "proposed": {
+        "regulated_entity_type": "banco",
+        "insurance_scheme": "IPAB",
+        "insurance_coverage_udis": 400000,
+        "entity_type_note": "Operates through a banking licence — IPAB 400k, not PROSOFIPO 25k."
+      },
+      "cards": [
+        "Tarjeta de Crédito Ualá",
+        "Tarjeta de Crédito Ualá con Garantía"
+      ],
+      "resolved": {
+        "issuer_id": "uala_mx",
+        "legal_name": "Ualá México, S.A., Institución de Banca Múltiple",
+        "regulated_entity_type": "banco",
+        "insurance_scheme": "IPAB",
+        "insurance_coverage_udis": 400000,
+        "cobrand_partner": "",
+        "evidence_type": "issuer_primary",
+        "sources": [
+          "https://www.uala.mx/la-cnbv-autoriza-a-la-compania-de-tecnologia-uala-la-adquisicion-del-banco",
+          "https://es.wikipedia.org/wiki/Anexo:Bancos_de_M%C3%A9xico"
+        ],
+        "note": "Acquired ABC Capital; renamed to Ualá after SHCP authorization.",
+        "status": "applied"
+      }
+    },
+    {
+      "legacy_issuer": "Vexi",
+      "census_issuer_type": "fintech_sofipo",
+      "card_count": 2,
+      "reasons": [
+        "entity_type"
+      ],
+      "proposed": {
+        "regulated_entity_type": "sofom_enr",
+        "insurance_scheme": "none",
+        "insurance_coverage_udis": "NOT_APPLICABLE",
+        "entity_type_note": "SOFOM — no deposit insurance."
+      },
+      "cards": [
+        "Vexi American Express",
+        "Vexi Carnet"
+      ],
+      "resolved": {
+        "status": "excluded",
+        "issuer_id": "vexi"
+      }
+    },
+    {
+      "legacy_issuer": "Afirme (Cemex)",
+      "census_issuer_type": "bank",
+      "card_count": 1,
+      "reasons": [
+        "parenthetical"
+      ],
+      "proposed": {
+        "reading": "cobrand",
+        "issuer_id": "afirme",
+        "issuer_display": "Afirme",
+        "cobrand_partner": "cemex"
+      },
+      "cards": [
+        "Tarjeta de Crédito Afirme Cemex"
+      ],
+      "resolved": {
+        "status": "applied_cobrand_split",
+        "issuer_id": "afirme",
+        "cobrand_partner": "cemex"
+      }
+    },
+    {
+      "legacy_issuer": "Afirme (Construrama)",
+      "census_issuer_type": "bank",
+      "card_count": 1,
+      "reasons": [
+        "parenthetical"
+      ],
+      "proposed": {
+        "reading": "cobrand",
+        "issuer_id": "afirme",
+        "issuer_display": "Afirme",
+        "cobrand_partner": "construrama"
+      },
+      "cards": [
+        "Tarjeta de Crédito Afirme Construrama"
+      ],
+      "resolved": {
+        "status": "applied_cobrand_split",
+        "issuer_id": "afirme",
+        "cobrand_partner": "construrama"
+      }
+    },
+    {
+      "legacy_issuer": "Afirme (HEB)",
+      "census_issuer_type": "bank",
+      "card_count": 1,
+      "reasons": [
+        "parenthetical"
+      ],
+      "proposed": {
+        "reading": "cobrand",
+        "issuer_id": "afirme",
+        "issuer_display": "Afirme",
+        "cobrand_partner": "heb"
+      },
+      "cards": [
+        "Tarjeta de Crédito Afirme HEB"
+      ],
+      "resolved": {
+        "status": "applied_cobrand_split",
+        "issuer_id": "afirme",
+        "cobrand_partner": "heb"
+      }
+    },
+    {
+      "legacy_issuer": "Afirme (Tigres)",
+      "census_issuer_type": "bank",
+      "card_count": 1,
+      "reasons": [
+        "parenthetical"
+      ],
+      "proposed": {
+        "reading": "cobrand",
+        "issuer_id": "afirme",
+        "issuer_display": "Afirme",
+        "cobrand_partner": "tigres"
+      },
+      "cards": [
+        "Tarjeta de Crédito Afirme Tigres"
+      ],
+      "resolved": {
+        "status": "applied_cobrand_split",
+        "issuer_id": "afirme",
+        "cobrand_partner": "tigres"
+      }
+    },
+    {
+      "legacy_issuer": "Amazon (bank partner)",
+      "census_issuer_type": "retail_cobrand",
+      "card_count": 1,
+      "reasons": [
+        "parenthetical",
+        "not_an_entity_type"
+      ],
+      "proposed": {
+        "reading": "unknown",
+        "issuer_id": "",
+        "issuer_display": "Amazon",
+        "cobrand_partner": "",
+        "warning": "Issuing institution not established — must be identified before any ID is assigned.",
+        "entity_type_note": "census issuer_type 'retail_cobrand' describes the card, not the institution; the real issuer must be identified."
+      },
+      "cards": [
+        "Amazon Recompensas"
+      ],
+      "resolved": {
+        "status": "excluded",
+        "issuer_id": "amazon"
+      }
+    },
+    {
+      "legacy_issuer": "BBVA México (Rayados)",
+      "census_issuer_type": "bank",
+      "card_count": 1,
+      "reasons": [
+        "parenthetical"
+      ],
+      "proposed": {
+        "reading": "cobrand",
+        "issuer_id": "bbva_mexico",
+        "issuer_display": "BBVA México",
+        "cobrand_partner": "rayados"
+      },
+      "cards": [
+        "Tarjeta Rayados BBVA"
+      ],
+      "resolved": {
+        "status": "applied_cobrand_split",
+        "issuer_id": "bbva_mexico",
+        "cobrand_partner": "rayados"
+      }
+    },
+    {
+      "legacy_issuer": "Banco Inbursa (Bodega Aurrera)",
+      "census_issuer_type": "retail_cobrand",
+      "card_count": 1,
+      "reasons": [
+        "parenthetical",
+        "not_an_entity_type"
+      ],
+      "proposed": {
+        "reading": "cobrand",
+        "issuer_id": "banco_inbursa",
+        "issuer_display": "Banco Inbursa",
+        "cobrand_partner": "bodega_aurrera",
+        "entity_type_note": "census issuer_type 'retail_cobrand' describes the card, not the institution; the real issuer must be identified."
+      },
+      "cards": [
+        "Tarjeta Bodega Aurrera Inbursa"
+      ],
+      "resolved": {
+        "status": "applied_cobrand_split",
+        "issuer_id": "banco_inbursa",
+        "cobrand_partner": "bodega_aurrera"
+      }
+    },
+    {
+      "legacy_issuer": "Banco Inbursa (Sam's Club)",
+      "census_issuer_type": "retail_cobrand",
+      "card_count": 1,
+      "reasons": [
+        "parenthetical",
+        "not_an_entity_type"
+      ],
+      "proposed": {
+        "reading": "cobrand",
+        "issuer_id": "banco_inbursa",
+        "issuer_display": "Banco Inbursa",
+        "cobrand_partner": "sam_s_club",
+        "entity_type_note": "census issuer_type 'retail_cobrand' describes the card, not the institution; the real issuer must be identified."
+      },
+      "cards": [
+        "Tarjeta Sam's Club Inbursa"
+      ],
+      "resolved": {
+        "status": "applied_cobrand_split",
+        "issuer_id": "banco_inbursa",
+        "cobrand_partner": "sams_club"
+      }
+    },
+    {
+      "legacy_issuer": "Banco Inbursa (Walmart)",
+      "census_issuer_type": "retail_cobrand",
+      "card_count": 1,
+      "reasons": [
+        "parenthetical",
+        "not_an_entity_type"
+      ],
+      "proposed": {
+        "reading": "cobrand",
+        "issuer_id": "banco_inbursa",
+        "issuer_display": "Banco Inbursa",
+        "cobrand_partner": "walmart",
+        "entity_type_note": "census issuer_type 'retail_cobrand' describes the card, not the institution; the real issuer must be identified."
+      },
+      "cards": [
+        "Tarjeta Walmart Inbursa"
+      ],
+      "resolved": {
+        "status": "applied_cobrand_split",
+        "issuer_id": "banco_inbursa",
+        "cobrand_partner": "walmart"
+      }
+    },
+    {
+      "legacy_issuer": "Chedraui",
+      "census_issuer_type": "retail_cobrand",
+      "card_count": 1,
+      "reasons": [
+        "not_an_entity_type"
+      ],
+      "proposed": {
+        "entity_type_note": "census issuer_type 'retail_cobrand' describes the card, not the institution; the real issuer must be identified."
+      },
+      "cards": [
+        "Tarjeta de Crédito Chedraui"
+      ],
+      "resolved": {
+        "status": "excluded",
+        "issuer_id": "chedraui"
+      }
+    },
+    {
+      "legacy_issuer": "Citibanamex (Costco)",
+      "census_issuer_type": "retail_cobrand",
+      "card_count": 1,
+      "reasons": [
+        "parenthetical",
+        "not_an_entity_type"
+      ],
+      "proposed": {
+        "reading": "cobrand",
+        "issuer_id": "citibanamex",
+        "issuer_display": "Citibanamex",
+        "cobrand_partner": "costco",
+        "entity_type_note": "census issuer_type 'retail_cobrand' describes the card, not the institution; the real issuer must be identified."
+      },
+      "cards": [
+        "Tarjeta de Crédito Costco Banamex"
+      ],
+      "resolved": {
+        "status": "applied_cobrand_split",
+        "issuer_id": "citibanamex",
+        "cobrand_partner": "costco"
+      }
+    },
+    {
+      "legacy_issuer": "Citibanamex (Inditex)",
+      "census_issuer_type": "retail_cobrand",
+      "card_count": 1,
+      "reasons": [
+        "parenthetical",
+        "not_an_entity_type"
+      ],
+      "proposed": {
+        "reading": "cobrand",
+        "issuer_id": "citibanamex",
+        "issuer_display": "Citibanamex",
+        "cobrand_partner": "inditex",
+        "entity_type_note": "census issuer_type 'retail_cobrand' describes the card, not the institution; the real issuer must be identified."
+      },
+      "cards": [
+        "Tarjeta de Crédito Affinity Card Banamex"
+      ],
+      "resolved": {
+        "status": "applied_cobrand_split",
+        "issuer_id": "citibanamex",
+        "cobrand_partner": "inditex"
+      }
+    },
+    {
+      "legacy_issuer": "Citibanamex (La Comer)",
+      "census_issuer_type": "retail_cobrand",
+      "card_count": 1,
+      "reasons": [
+        "parenthetical",
+        "not_an_entity_type"
+      ],
+      "proposed": {
+        "reading": "cobrand",
+        "issuer_id": "citibanamex",
+        "issuer_display": "Citibanamex",
+        "cobrand_partner": "la_comer",
+        "entity_type_note": "census issuer_type 'retail_cobrand' describes the card, not the institution; the real issuer must be identified."
+      },
+      "cards": [
+        "Tarjeta de Crédito La Comer Card Banamex"
+      ],
+      "resolved": {
+        "status": "applied_cobrand_split",
+        "issuer_id": "citibanamex",
+        "cobrand_partner": "la_comer"
+      }
+    },
+    {
+      "legacy_issuer": "Citibanamex (LineUp)",
+      "census_issuer_type": "retail_cobrand",
+      "card_count": 1,
+      "reasons": [
+        "parenthetical",
+        "not_an_entity_type"
+      ],
+      "proposed": {
+        "reading": "cobrand",
+        "issuer_id": "citibanamex",
+        "issuer_display": "Citibanamex",
+        "cobrand_partner": "lineup",
+        "entity_type_note": "census issuer_type 'retail_cobrand' describes the card, not the institution; the real issuer must be identified."
+      },
+      "cards": [
+        "Tarjeta de Crédito LineUp Banamex"
+      ],
+      "resolved": {
+        "status": "applied_cobrand_split",
+        "issuer_id": "citibanamex",
+        "cobrand_partner": "lineup"
+      }
+    },
+    {
+      "legacy_issuer": "Citibanamex (Teletón)",
+      "census_issuer_type": "bank",
+      "card_count": 1,
+      "reasons": [
+        "parenthetical"
+      ],
+      "proposed": {
+        "reading": "cobrand",
+        "issuer_id": "citibanamex",
+        "issuer_display": "Citibanamex",
+        "cobrand_partner": "teleton"
+      },
+      "cards": [
+        "Tarjeta de Crédito Teletón Banamex"
+      ],
+      "resolved": {
+        "status": "applied_cobrand_split",
+        "issuer_id": "citibanamex",
+        "cobrand_partner": "teleton"
+      }
+    },
+    {
+      "legacy_issuer": "Citibanamex (The Home Depot)",
+      "census_issuer_type": "retail_cobrand",
+      "card_count": 1,
+      "reasons": [
+        "parenthetical",
+        "not_an_entity_type"
+      ],
+      "proposed": {
+        "reading": "cobrand",
+        "issuer_id": "citibanamex",
+        "issuer_display": "Citibanamex",
+        "cobrand_partner": "the_home_depot",
+        "entity_type_note": "census issuer_type 'retail_cobrand' describes the card, not the institution; the real issuer must be identified."
+      },
+      "cards": [
+        "Tarjeta de Crédito The Home Depot Banamex"
+      ],
+      "resolved": {
+        "status": "applied_cobrand_split",
+        "issuer_id": "citibanamex",
+        "cobrand_partner": "the_home_depot"
+      }
+    },
+    {
+      "legacy_issuer": "Coppel",
+      "census_issuer_type": "retail_cobrand",
+      "card_count": 1,
+      "reasons": [
+        "not_an_entity_type"
+      ],
+      "proposed": {
+        "entity_type_note": "census issuer_type 'retail_cobrand' describes the card, not the institution; the real issuer must be identified."
+      },
+      "cards": [
+        "Crédito Coppel (tarjeta departamental)"
+      ],
+      "resolved": {
+        "status": "excluded",
+        "issuer_id": "coppel"
+      }
+    },
+    {
+      "legacy_issuer": "Cuenca",
+      "census_issuer_type": "fintech_sofipo",
+      "card_count": 1,
+      "reasons": [
+        "entity_type"
+      ],
+      "proposed": {
+        "regulated_entity_type": "ifpe",
+        "insurance_scheme": "none",
+        "insurance_coverage_udis": "NOT_APPLICABLE",
+        "entity_type_note": "Electronic payment funds institution — NO deposit insurance."
+      },
+      "cards": [
+        "Tarjeta de Crédito Cuenca"
+      ],
+      "resolved": {
+        "status": "applied",
+        "issuer_id": "cuenca"
+      }
+    },
+    {
+      "legacy_issuer": "DiDi (Regigold SOFOM)",
+      "census_issuer_type": "fintech_sofipo",
+      "card_count": 1,
+      "reasons": [
+        "parenthetical",
+        "entity_type"
+      ],
+      "proposed": {
+        "reading": "legal_entity_in_parens",
+        "issuer_id": "regigold_sofom",
+        "issuer_display": "Regigold SOFOM",
+        "cobrand_partner": "didi",
+        "warning": "REVERSED vs the co-brand pattern — the parenthetical is the issuing entity, the leading name is the consumer brand.",
+        "regulated_entity_type": "sofipo",
+        "insurance_scheme": "PROSOFIPO",
+        "insurance_coverage_udis": 25000,
+        "entity_type_note": "Census names Regigold SOFOM; the market dataset names JP Sofiexpress. These disagree."
+      },
+      "cards": [
+        "DiDi Card"
+      ],
+      "resolved": {
+        "status": "applied",
+        "issuer_id": "jp_sofiexpress"
+      }
+    },
+    {
+      "legacy_issuer": "Elektra (Banco Azteca)",
+      "census_issuer_type": "retail_cobrand",
+      "card_count": 1,
+      "reasons": [
+        "parenthetical",
+        "not_an_entity_type"
+      ],
+      "proposed": {
+        "reading": "legal_entity_in_parens",
+        "issuer_id": "banco_azteca",
+        "issuer_display": "Banco Azteca",
+        "cobrand_partner": "elektra",
+        "warning": "REVERSED vs the co-brand pattern — the parenthetical is the issuing entity, the leading name is the consumer brand.",
+        "entity_type_note": "census issuer_type 'retail_cobrand' describes the card, not the institution; the real issuer must be identified."
+      },
+      "cards": [
+        "Tarjeta de Crédito Elektra"
+      ],
+      "resolved": {
+        "issuer_id": "banco_azteca",
+        "legal_name": "Banco Azteca, S.A., Institución de Banca Múltiple",
+        "regulated_entity_type": "banco",
+        "insurance_scheme": "IPAB",
+        "insurance_coverage_udis": 400000,
+        "cobrand_partner": "elektra",
+        "evidence_type": "comparator_secondary",
+        "sources": [
+          "https://es.wikipedia.org/wiki/Anexo:Bancos_de_M%C3%A9xico"
+        ],
+        "note": "REVERSAL confirmed — Banco Azteca issues, Elektra is the retail brand.",
+        "status": "applied"
+      }
+    },
+    {
+      "legacy_issuer": "Invex (Farmacias Guadalajara)",
+      "census_issuer_type": "retail_cobrand",
+      "card_count": 1,
+      "reasons": [
+        "parenthetical",
+        "not_an_entity_type"
+      ],
+      "proposed": {
+        "reading": "cobrand",
+        "issuer_id": "invex",
+        "issuer_display": "Invex",
+        "cobrand_partner": "farmacias_guadalajara",
+        "entity_type_note": "census issuer_type 'retail_cobrand' describes the card, not the institution; the real issuer must be identified."
+      },
+      "cards": [
+        "INVEX Farmacias Guadalajara"
+      ],
+      "resolved": {
+        "status": "applied_cobrand_split",
+        "issuer_id": "invex",
+        "cobrand_partner": "farmacias_guadalajara"
+      }
+    },
+    {
+      "legacy_issuer": "Invex (IKEA)",
+      "census_issuer_type": "retail_cobrand",
+      "card_count": 1,
+      "reasons": [
+        "parenthetical",
+        "not_an_entity_type"
+      ],
+      "proposed": {
+        "reading": "cobrand",
+        "issuer_id": "invex",
+        "issuer_display": "Invex",
+        "cobrand_partner": "ikea",
+        "entity_type_note": "census issuer_type 'retail_cobrand' describes the card, not the institution; the real issuer must be identified."
+      },
+      "cards": [
+        "IKEA INVEX"
+      ],
+      "resolved": {
+        "status": "applied_cobrand_split",
+        "issuer_id": "invex",
+        "cobrand_partner": "ikea"
+      }
+    },
+    {
+      "legacy_issuer": "Invex (Manchester United)",
+      "census_issuer_type": "bank",
+      "card_count": 1,
+      "reasons": [
+        "parenthetical"
+      ],
+      "proposed": {
+        "reading": "cobrand",
+        "issuer_id": "invex",
+        "issuer_display": "Invex",
+        "cobrand_partner": "manchester_united"
+      },
+      "cards": [
+        "Manchester United INVEX"
+      ],
+      "resolved": {
+        "status": "applied_cobrand_split",
+        "issuer_id": "invex",
+        "cobrand_partner": "manchester_united"
+      }
+    },
+    {
+      "legacy_issuer": "Invex (Sam's Club)",
+      "census_issuer_type": "retail_cobrand",
+      "card_count": 1,
+      "reasons": [
+        "parenthetical",
+        "not_an_entity_type"
+      ],
+      "proposed": {
+        "reading": "cobrand",
+        "issuer_id": "invex",
+        "issuer_display": "Invex",
+        "cobrand_partner": "sam_s_club",
+        "entity_type_note": "census issuer_type 'retail_cobrand' describes the card, not the institution; the real issuer must be identified."
+      },
+      "cards": [
+        "Sam's Club INVEX"
+      ],
+      "resolved": {
+        "status": "applied_cobrand_split",
+        "issuer_id": "invex",
+        "cobrand_partner": "sams_club"
+      }
+    },
+    {
+      "legacy_issuer": "Invex (Walmart)",
+      "census_issuer_type": "retail_cobrand",
+      "card_count": 1,
+      "reasons": [
+        "parenthetical",
+        "not_an_entity_type"
+      ],
+      "proposed": {
+        "reading": "cobrand",
+        "issuer_id": "invex",
+        "issuer_display": "Invex",
+        "cobrand_partner": "walmart",
+        "entity_type_note": "census issuer_type 'retail_cobrand' describes the card, not the institution; the real issuer must be identified."
+      },
+      "cards": [
+        "Walmart INVEX"
+      ],
+      "resolved": {
+        "status": "applied_cobrand_split",
+        "issuer_id": "invex",
+        "cobrand_partner": "walmart"
+      }
+    },
+    {
+      "legacy_issuer": "Mercado Pago (Mercado Lending)",
+      "census_issuer_type": "fintech_sofipo",
+      "card_count": 1,
+      "reasons": [
+        "parenthetical",
+        "entity_type"
+      ],
+      "proposed": {
+        "reading": "legal_entity_in_parens",
+        "issuer_id": "mercado_lending",
+        "issuer_display": "Mercado Lending",
+        "cobrand_partner": "mercado_pago",
+        "warning": "REVERSED vs the co-brand pattern — the parenthetical is the issuing entity, the leading name is the consumer brand.",
+        "regulated_entity_type": "ifpe",
+        "insurance_scheme": "none",
+        "insurance_coverage_udis": "NOT_APPLICABLE",
+        "entity_type_note": "E-money institution — no PROSOFIPO cover."
+      },
+      "cards": [
+        "Tarjeta de crédito Mercado Pago"
+      ],
+      "resolved": {
+        "status": "applied",
+        "issuer_id": "mercado_pago"
+      }
+    },
+    {
+      "legacy_issuer": "Nu México",
+      "census_issuer_type": "fintech_sofipo",
+      "card_count": 1,
+      "reasons": [
+        "ambiguous_issuer_type"
+      ],
+      "proposed": {},
+      "cards": [
+        "Tarjeta de Crédito Nu"
+      ],
+      "resolved": {
+        "status": "applied",
+        "issuer_id": "nu_mx"
+      }
+    },
+    {
+      "legacy_issuer": "Palacio de Hierro",
+      "census_issuer_type": "retail_cobrand",
+      "card_count": 1,
+      "reasons": [
+        "not_an_entity_type"
+      ],
+      "proposed": {
+        "entity_type_note": "census issuer_type 'retail_cobrand' describes the card, not the institution; the real issuer must be identified."
+      },
+      "cards": [
+        "Tarjeta de Crédito Palacio de Hierro"
+      ],
+      "resolved": {
+        "status": "excluded",
+        "issuer_id": "palacio_de_hierro"
+      }
+    },
+    {
+      "legacy_issuer": "Plata Card",
+      "census_issuer_type": "fintech_sofipo",
+      "card_count": 1,
+      "reasons": [
+        "entity_type"
+      ],
+      "proposed": {
+        "regulated_entity_type": "banco",
+        "insurance_scheme": "IPAB",
+        "insurance_coverage_udis": 400000,
+        "entity_type_note": "Banco Plata — IPAB 400k, not PROSOFIPO 25k."
+      },
+      "cards": [
+        "Tarjeta de Crédito Plata"
+      ],
+      "resolved": {
+        "issuer_id": "plata",
+        "legal_name": "Plata, S.A., Institución de Banca Múltiple",
+        "regulated_entity_type": "banco",
+        "insurance_scheme": "IPAB",
+        "insurance_coverage_udis": 400000,
+        "cobrand_partner": "",
+        "evidence_type": "comparator_secondary",
+        "sources": [
+          "https://elceo.com/negocios/del-colapso-de-famsa-a-la-autorizacion-de-plata-mexico-llega-al-record-de-53-bancos/",
+          "https://es.wikipedia.org/wiki/Anexo:Bancos_de_M%C3%A9xico"
+        ],
+        "note": "Banking licence Dec 2024; began banca múltiple operations 18 Mar 2026.",
+        "status": "applied"
+      }
+    },
+    {
+      "legacy_issuer": "RappiCard",
+      "census_issuer_type": "fintech_sofipo",
+      "card_count": 1,
+      "reasons": [
+        "entity_type"
+      ],
+      "proposed": {
+        "regulated_entity_type": "sofom_enr",
+        "insurance_scheme": "none",
+        "insurance_coverage_udis": "NOT_APPLICABLE",
+        "entity_type_note": "SOFOM — no deposit insurance."
+      },
+      "cards": [
+        "RappiCard"
+      ],
+      "resolved": {
+        "issuer_id": "banorte",
+        "legal_name": "Banco Mercantil del Norte, S.A., Institución de Banca Múltiple",
+        "regulated_entity_type": "banco",
+        "insurance_scheme": "IPAB",
+        "insurance_coverage_udis": 400000,
+        "cobrand_partner": "rappi",
+        "evidence_type": "comparator_secondary",
+        "sources": [
+          "https://www.fintechexpert.mx/p/banorte-compra-total-rappicard-venta-bineo-klar"
+        ],
+        "note": "CORRECTION to my earlier proposal: Banorte took full ownership Apr 2025 with a 15-yr exclusive. Issuer is Banorte (IPAB), not a SOFOM.",
+        "status": "applied"
+      }
+    },
+    {
+      "legacy_issuer": "Sears",
+      "census_issuer_type": "retail_cobrand",
+      "card_count": 1,
+      "reasons": [
+        "not_an_entity_type"
+      ],
+      "proposed": {
+        "entity_type_note": "census issuer_type 'retail_cobrand' describes the card, not the institution; the real issuer must be identified."
+      },
+      "cards": [
+        "Tarjeta de Crédito Sears"
+      ],
+      "resolved": {
+        "status": "excluded",
+        "issuer_id": "sears"
+      }
+    },
+    {
+      "legacy_issuer": "Soriana",
+      "census_issuer_type": "retail_cobrand",
+      "card_count": 1,
+      "reasons": [
+        "not_an_entity_type"
+      ],
+      "proposed": {
+        "entity_type_note": "census issuer_type 'retail_cobrand' describes the card, not the institution; the real issuer must be identified."
+      },
+      "cards": [
+        "Tarjeta de Crédito Soriana"
+      ],
+      "resolved": {
+        "status": "excluded",
+        "issuer_id": "soriana"
+      }
+    },
+    {
+      "legacy_issuer": "Stori (SHEIN)",
+      "census_issuer_type": "fintech_sofipo",
+      "card_count": 1,
+      "reasons": [
+        "parenthetical"
+      ],
+      "proposed": {
+        "reading": "cobrand",
+        "issuer_id": "stori",
+        "issuer_display": "Stori",
+        "cobrand_partner": "shein"
+      },
+      "cards": [
+        "Tarjeta de Crédito SHEIN x Stori"
+      ],
+      "resolved": {
+        "status": "applied",
+        "issuer_id": "stori"
+      }
+    }
+  ]
+}

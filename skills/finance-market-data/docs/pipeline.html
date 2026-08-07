@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Finance Optimizer — Market Data Pipeline</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#EDEEF0; --surface:#FFFFFF; --ink:#16181D; --rule:#C6CAD1;
+  --muted:#6B717C; --faint:#9AA0AA;
+  --hold:#B4700E; --pass:#14635C; --alert:#A3282A;
+  --hold-bg:#FAF1E1; --pass-bg:#E4EFED; --alert-bg:#F8E9E9;
+  --rail:64px;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:'Archivo',system-ui,sans-serif; font-size:16px; line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+code,.mono{font-family:'IBM Plex Mono',ui-monospace,monospace}
+.wrap{max-width:1080px;margin:0 auto;padding:0 28px}
+h1,h2,h3{margin:0;letter-spacing:-.025em;line-height:1.1}
+p{margin:0 0 14px}
+a{color:var(--pass)}
+
+/* ---------- eyebrow / labels ---------- */
+.eyebrow{
+  font-family:'IBM Plex Mono',monospace; font-size:11px; font-weight:500;
+  letter-spacing:.16em; text-transform:uppercase; color:var(--muted);
+}
+
+/* ---------- hero ---------- */
+.hero{padding:76px 0 56px;border-bottom:1px solid var(--rule)}
+.hero h1{
+  font-size:clamp(38px,6.4vw,74px); font-weight:800; max-width:15ch; margin:16px 0 0;
+}
+.hero h1 em{font-style:normal;color:var(--hold)}
+.lede{max-width:60ch;margin-top:22px;font-size:18px;color:#33373F}
+.metabar{
+  display:flex;flex-wrap:wrap;gap:0;margin-top:40px;
+  border-top:1px solid var(--rule);border-left:1px solid var(--rule);
+}
+.metabar div{
+  flex:1 1 130px;padding:12px 16px;
+  border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);
+}
+.metabar b{display:block;font-family:'IBM Plex Mono',monospace;font-size:21px;font-weight:600}
+.metabar span{font-size:11.5px;color:var(--muted);letter-spacing:.04em}
+
+/* ---------- sections ---------- */
+section{padding:60px 0;border-bottom:1px solid var(--rule)}
+.shead{display:flex;align-items:baseline;gap:16px;margin-bottom:8px}
+.shead h2{font-size:clamp(24px,3.2vw,34px);font-weight:700}
+.sintro{max-width:66ch;color:#3A3E46;margin-bottom:30px}
+
+/* ---------- gate rail ---------- */
+.rail{position:relative;padding-left:var(--rail)}
+.rail:before{
+  content:"";position:absolute;left:27px;top:8px;bottom:8px;width:2px;background:var(--rule);
+}
+.stage{position:relative;margin-bottom:14px}
+.stage-node{
+  position:absolute;left:calc(-1 * var(--rail) + 12px);top:14px;
+  width:32px;height:32px;border-radius:50%;
+  background:var(--surface);border:2px solid var(--rule);
+  display:grid;place-items:center;
+  font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:600;
+  transition:border-color .18s, background .18s, color .18s;
+}
+.stage.gate .stage-node{border-color:var(--hold);color:var(--hold)}
+.stage.hit .stage-node{background:var(--hold);border-color:var(--hold);color:#fff}
+.stage-card{
+  background:var(--surface);border:1px solid var(--rule);
+  padding:18px 20px;cursor:pointer;transition:border-color .18s, box-shadow .18s;
+}
+.stage-card:hover{border-color:var(--muted)}
+.stage.hit .stage-card{border-color:var(--hold);box-shadow:0 0 0 3px var(--hold-bg)}
+.stage-top{display:flex;align-items:baseline;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.stage-top h3{font-size:19px;font-weight:600}
+.gatetag{
+  font-family:'IBM Plex Mono',monospace;font-size:10.5px;font-weight:500;
+  letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;white-space:nowrap;
+  color:var(--hold);background:var(--hold-bg);border:1px solid #E5CFA5;
+}
+.gatetag.none{color:var(--muted);background:#E7E9EC;border-color:var(--rule)}
+.stage-sum{margin:8px 0 0;color:#3A3E46;font-size:15px}
+.stage-body{display:none;margin-top:14px;padding-top:14px;border-top:1px solid var(--rule)}
+.stage.open .stage-body{display:block}
+.stage-body ul{margin:0;padding-left:18px}
+.stage-body li{margin-bottom:7px;font-size:14.5px;color:#3A3E46}
+.io{display:flex;gap:22px;flex-wrap:wrap;margin-top:12px;font-size:12.5px}
+.io span{color:var(--muted)}
+.io b{font-family:'IBM Plex Mono',monospace;font-weight:500;color:var(--ink)}
+
+/* ---------- trace ---------- */
+.trace{background:var(--surface);border:1px solid var(--rule);padding:22px;margin-bottom:26px}
+.trace h3{font-size:16px;font-weight:600;margin-bottom:4px}
+.trace p{font-size:14px;color:var(--muted);margin-bottom:14px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{
+  font-family:'IBM Plex Mono',monospace;font-size:12.5px;
+  padding:7px 12px;background:var(--paper);border:1px solid var(--rule);
+  cursor:pointer;transition:all .16s;color:var(--ink);
+}
+.chip:hover{border-color:var(--muted)}
+.chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+.verdict{margin-top:16px;padding:14px 16px;border-left:3px solid var(--hold);background:var(--hold-bg);display:none}
+.verdict.show{display:block}
+.verdict .vwhere{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--hold);font-weight:600}
+.verdict .vmsg{
+  font-family:'IBM Plex Mono',monospace;font-size:13px;margin-top:7px;
+  color:var(--ink);line-height:1.55;
+}
+.verdict .vwhy{margin-top:9px;font-size:14px;color:#4A4038}
+
+/* ---------- generic table ---------- */
+table{width:100%;border-collapse:collapse;font-size:14px;background:var(--surface)}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--rule);vertical-align:top}
+th{
+  font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;
+  letter-spacing:.09em;text-transform:uppercase;color:var(--muted);
+  border-bottom:1px solid var(--ink);
+}
+td.m,th.m{font-family:'IBM Plex Mono',monospace;font-size:13px}
+.tw{overflow-x:auto;border:1px solid var(--rule)}
+tr:last-child td{border-bottom:none}
+
+/* ---------- flow ---------- */
+.flow{display:flex;align-items:stretch;gap:0;flex-wrap:wrap;margin-bottom:26px}
+.fbox{
+  flex:1 1 200px;background:var(--surface);border:1px solid var(--rule);padding:16px 18px;
+}
+.fbox + .fbox{border-left:none}
+.fbox .eyebrow{margin-bottom:6px}
+.fbox b{display:block;font-size:16px;font-weight:600;margin-bottom:5px}
+.fbox p{font-size:13.5px;color:var(--muted);margin:0}
+.fbox.canon{border-top:3px solid var(--pass)}
+.fbox.derived{border-top:3px solid var(--faint)}
+.fbox.native{border-top:3px solid var(--hold)}
+
+/* ---------- confidence calculator ---------- */
+.calc{background:var(--surface);border:1px solid var(--rule);padding:22px}
+.calcrow{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
+.calcrow > label{
+  font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--muted);width:118px;flex-shrink:0;
+}
+.out{
+  margin-top:18px;padding:16px;border:1px solid var(--rule);background:var(--paper);
+  display:flex;align-items:center;gap:18px;flex-wrap:wrap;
+}
+.score{
+  font-family:'IBM Plex Mono',monospace;font-size:26px;font-weight:600;
+  padding:6px 16px;letter-spacing:.02em;
+}
+.score.high{background:var(--pass-bg);color:var(--pass)}
+.score.medium{background:var(--hold-bg);color:var(--hold)}
+.score.low{background:var(--alert-bg);color:var(--alert)}
+.out p{margin:0;font-size:14px;color:#3A3E46;flex:1 1 220px}
+
+/* ---------- concept cards ---------- */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:0;
+  border-top:1px solid var(--rule);border-left:1px solid var(--rule)}
+.gcard{background:var(--surface);padding:20px;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.gcard h3{font-size:15px;font-weight:600;margin-bottom:8px}
+.gcard h3 code{font-size:13px;background:var(--paper);padding:2px 6px;border:1px solid var(--rule)}
+.gcard p{font-size:14px;color:#3A3E46;margin-bottom:9px}
+.gcard .bad{
+  font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--alert);
+  background:var(--alert-bg);padding:8px 10px;border-left:2px solid var(--alert);margin:0;
+}
+
+/* ---------- notes ---------- */
+.note{border-left:3px solid var(--ink);padding:2px 0 2px 16px;margin:22px 0;max-width:68ch}
+.note b{font-weight:600}
+
+footer{padding:40px 0 64px;color:var(--muted);font-size:13px}
+footer code{font-size:12px}
+
+@media (max-width:640px){
+  :root{--rail:46px}
+  .rail:before{left:18px}
+  .stage-node{left:calc(-1 * var(--rail) + 4px);width:26px;height:26px;font-size:11px}
+  .hero{padding:52px 0 40px}
+  .fbox + .fbox{border-left:1px solid var(--rule);border-top:none}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+:focus-visible{outline:2px solid var(--pass);outline-offset:2px}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Finance Optimizer · market data infrastructure</div>
+    <h1>The pipeline's job is to <em>stop</em>.</h1>
+    <p class="lede">
+      This dataset decides which card someone swipes and where they park their savings.
+      A wrong cashback rate doesn't throw an error — it produces a fluent, confident,
+      wrong recommendation. So every stage below is built to hold data back: block on a
+      conflict, force a confidence score down, refuse to rank a card it can't value.
+      What follows is what each gate catches and why it exists.
+    </p>
+    <div class="metabar">
+      <div><b>39</b><span>issuers</span></div>
+      <div><b>173</b><span>cards</span></div>
+      <div><b>23</b><span>accounts</span></div>
+      <div><b>26</b><span>fully mapped</span></div>
+      <div><b>7</b><span>stages</span></div>
+      <div><b>0</b><span>validation errors</span></div>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="shead"><span class="eyebrow">01</span><h2>Where the data lives</h2></div>
+    <p class="sintro">
+      The JSON files in git are the source of truth. The Google Sheet is a generated view of
+      them. This matters because the Sheet used to be editable and live — which meant a
+      reviewed dataset and a hand-edited one could quietly diverge with no record of which
+      was right.
+    </p>
+    <div class="flow">
+      <div class="fbox canon">
+        <div class="eyebrow">canonical</div>
+        <b>data/market/*.json</b>
+        <p>Seven tables in git. One commit per approved run, so every change has a diff, an
+        author and a rollback.</p>
+      </div>
+      <div class="fbox derived">
+        <div class="eyebrow">generated</div>
+        <b>Sheet market tabs</b>
+        <p>Written by <code>publish.py</code>. Safe to read, safe to overwrite. Hand-edits
+        are allowed for urgent fixes but get caught by the drift check.</p>
+      </div>
+      <div class="fbox native">
+        <div class="eyebrow">sheet-native</div>
+        <b>Users · UserProducts · Movements</b>
+        <p>The app writes these. The pipeline never touches them.</p>
+      </div>
+    </div>
+    <div class="note">
+      <b>Why hand-edits are still allowed.</b> A strict one-way pipeline has no path for an
+      urgent correction. So the Sheet stays editable, and Stage&nbsp;0 compares it against
+      canonical before anything is published. Drift is reported cell by cell and must be
+      back-ported or discarded — publishing over it is how a correct manual fix gets lost.
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="shead"><span class="eyebrow">02</span><h2>The seven stages</h2></div>
+    <p class="sintro">
+      Each stage is invocable on its own and scoped to one issuer. Stages marked
+      <span class="gatetag" style="display:inline-block">holds data</span> can stop the run.
+      Pick a broken row below to see which gate catches it and what it says.
+    </p>
+
+    <div class="trace">
+      <h3>Trace a bad row</h3>
+      <p>These are real failures from building this dataset, with the messages the tooling
+        actually produces.</p>
+      <div class="chips" id="chips"></div>
+      <div class="verdict" id="verdict">
+        <div class="vwhere" id="vwhere"></div>
+        <div class="vmsg" id="vmsg"></div>
+        <div class="vwhy" id="vwhy"></div>
+      </div>
+    </div>
+
+    <div class="rail" id="rail"></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="shead"><span class="eyebrow">03</span><h2>How confident is a number?</h2></div>
+    <p class="sintro">
+      Confidence is computed, never judged. A person deciding "this feels solid" produces a
+      different answer next week; a rule produces the same one. Every field group carries a
+      score derived from how many independent sources back it, what kind they are, and how
+      old they are.
+    </p>
+    <div class="calc">
+      <div class="calcrow">
+        <label for="ev">Source type</label>
+        <select id="ev" class="mono">
+          <option value="regulator">regulator — CNBV, Banxico, CONDUSEF</option>
+          <option value="issuer_primary" selected>issuer_primary — the bank's own T&amp;C</option>
+          <option value="comparator_secondary">comparator_secondary — a comparison site</option>
+          <option value="inferred">inferred — computed from other fields</option>
+        </select>
+      </div>
+      <div class="calcrow">
+        <label for="grp">Field group</label>
+        <select id="grp" class="mono">
+          <option value="cost">cost — fees, interest, CAT</option>
+          <option value="rewards">rewards — rates, caps, points</option>
+          <option value="yield">yield — account rates</option>
+          <option value="identity">identity — names, tier, lifecycle</option>
+          <option value="perks">perks</option>
+          <option value="eligibility">eligibility</option>
+        </select>
+      </div>
+      <div class="calcrow">
+        <label for="src">Sources</label>
+        <select id="src" class="mono">
+          <option value="1">1 independent source</option>
+          <option value="2" selected>2 or more</option>
+        </select>
+      </div>
+      <div class="calcrow">
+        <label for="age">Last checked</label>
+        <select id="age" class="mono">
+          <option value="10" selected>10 days ago</option>
+          <option value="45">45 days ago</option>
+          <option value="120">120 days ago</option>
+          <option value="400">400 days ago</option>
+        </select>
+      </div>
+      <div class="calcrow">
+        <label for="cfl">Conflict</label>
+        <select id="cfl" class="mono">
+          <option value="no" selected>no unresolved conflict</option>
+          <option value="yes">sources disagree, unresolved</option>
+        </select>
+      </div>
+      <div class="out">
+        <div class="score high" id="scoreOut">high</div>
+        <p id="scoreWhy"></p>
+      </div>
+    </div>
+    <div class="note">
+      <b>Cost, rewards and yield need two independent sources.</b> They feed the
+      recommendation directly, so an error there produces wrong advice rather than a wrong
+      display. Single-sourcing doesn't block publishing — it caps the score below
+      <code>high</code>, which is the real protection. Blocking would leave the app with no
+      data instead of data marked uncertain.
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="shead"><span class="eyebrow">04</span><h2>Seven things that look simpler than they are</h2></div>
+    <p class="sintro">
+      Each of these came from a real row that broke. They're the parts most likely to be
+      re-broken by someone who hasn't hit them yet.
+    </p>
+    <div class="grid">
+      <div class="gcard">
+        <h3>A card is <code>active</code>, closed, or gone</h3>
+        <p>Three states, not a boolean. Cards closed to new applicants are still held by
+        existing customers — the advisor needs them, New Picks must exclude them. A binary
+        flag breaks one of those two features whichever way you set it.</p>
+      </div>
+      <div class="gcard">
+        <h3>A boost is a <code>replacement</code>, usually</h3>
+        <p>Mexican accounts quote totals. "Up to 13%" means 13% all-in, not 13 points on top
+        of 7. The old engine added them.</p>
+        <p class="bad">Ualá paid 21.75% instead of 15% — $1,688/yr overstated on a $25,000 balance.</p>
+      </div>
+      <div class="gcard">
+        <h3>A conditional rate is not a tier</h3>
+        <p>Ualá publishes 6.75%, 12% and 15% — all covering the same $0–30,000 band. They're
+        selected by <em>behaviour</em>, not balance. Recorded as tiers they overlap, break
+        contiguity, and leave the engine no way to know which rate a customer earns.</p>
+      </div>
+      <div class="gcard">
+        <h3><code>effective_rate_pct</code> is the only comparable rate</h3>
+        <p>BBVA Azul earns 9% — in points BBVA publishes no peso value for. Ranked against a
+        2% cashback card on the raw number, it wins on a value nobody can spend.</p>
+        <p class="bad">10 of 26 mapped cards return "not comparable" rather than a guess.</p>
+      </div>
+      <div class="gcard">
+        <h3>Insurance follows the issuer's licence</h3>
+        <p>Never researched per product. <code>banco</code>&nbsp;→&nbsp;IPAB 400k UDIS,
+        <code>sofipo</code>&nbsp;→&nbsp;PROSOFIPO 25k, <code>ifpe</code>&nbsp;→&nbsp;none.
+        Stored in UDIS, never pesos — a regulator page still quotes a peso figure roughly
+        35% below today's value.</p>
+      </div>
+      <div class="gcard">
+        <h3>A licence can be granted before it takes effect</h3>
+        <p>Nu was authorised as a bank on 10 July and began operating on 6 August. In
+        between, the registry showed "banca múltiple" while customer money was still under
+        PROSOFIPO. <code>pending_conversion</code> holds both, and errors once the date
+        passes without promotion.</p>
+      </div>
+      <div class="gcard">
+        <h3><code>UNKNOWN</code> is always acceptable</h3>
+        <p>A guessed number never is. Sentinels — <code>UNKNOWN</code>,
+        <code>NOT_APPLICABLE</code>, <code>UNCAPPED</code> — share columns with numbers, so
+        anything doing arithmetic must branch on type first. Coercing a sentinel to a default
+        is how an unknown becomes a fact.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="shead"><span class="eyebrow">05</span><h2>Where the numbers come from</h2></div>
+    <p class="sintro">
+      Regulators give you the skeleton. Issuers give you the flesh. The two are used
+      differently: enumerate products from the issuer, then reconcile against the regulator
+      to find what the issuer didn't advertise. Never concatenate the lists — produce a diff.
+    </p>
+    <div class="tw">
+      <table>
+        <thead><tr><th>What you need</th><th>Best source</th><th class="m">Kind</th></tr></thead>
+        <tbody>
+          <tr><td>Which institutions exist, and their licence type</td><td>CNBV Padrón · CONDUSEF SIPRES</td><td class="m">regulator</td></tr>
+          <tr><td>Deposit insurance scheme and limit</td><td>Derived from licence type</td><td class="m">derived</td></tr>
+          <tr><td>Every product an issuer actually offers</td><td>CONDUSEF Catálogo · RECA</td><td class="m">regulator</td></tr>
+          <tr><td>Annual fees and registered commissions</td><td>Banxico RECO · CONDUSEF RECO</td><td class="m">regulator</td></tr>
+          <tr><td>Interest rate and CAT benchmarks</td><td>Banxico RIB (per-institution averages)</td><td class="m">regulator</td></tr>
+          <tr><td>Cashback %, points, category bonuses, caps</td><td>Issuer T&amp;C only</td><td class="m">issuer</td></tr>
+          <tr><td>Perks, minimum income, invitation-only</td><td>Issuer T&amp;C only</td><td class="m">issuer</td></tr>
+          <tr><td>Per-product yield and boost conditions</td><td>Issuer T&amp;C only</td><td class="m">issuer</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note">
+      <b>The regulator is the completeness check, not the detail source.</b> An issuer's site
+      won't show cards closed to new applicants, invitation-only tiers, or quietly retired
+      products — but the institution filed those with CONDUSEF itself. That's why the
+      reconciliation runs in that direction. Note also that CNBV and CONDUSEF portals block
+      automated access, so Stage&nbsp;1 needs a person to pull the registry.
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="shead"><span class="eyebrow">06</span><h2>What the engine got wrong</h2></div>
+    <p class="sintro">
+      Correct data still produces wrong advice if the engine reads it wrong. Seven fixes,
+      each measured against the migrated dataset.
+    </p>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Bug</th><th>What the user saw</th></tr></thead>
+        <tbody>
+          <tr><td>Unsourced point value defaulted to 1 peso/point</td><td>A 9%-in-points card outranked real 2% cashback</td></tr>
+          <tr><td>Yield boosts added to the base rate</td><td>Ualá shown at 21.75% instead of 15%</td></tr>
+          <tr><td>Monthly cap compared against one transaction</td><td>$500/mo cap paid out $1,200 in a month</td></tr>
+          <tr><td>Category bonus always replaced the base rate</td><td><code class="m">replaces_or_adds_to_base</code> never read</td></tr>
+          <tr><td>One boost per account</td><td>Ualá's three non-stacking routes unrepresentable</td></tr>
+          <tr><td>Split ignored min_balance per allocation</td><td>Promised a rate the customer wouldn't earn</td></tr>
+          <tr><td>Withdrawal sorted on cost, ignoring balance</td><td>Could suggest an account without the money in it</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note">
+      <b>An unmet condition is advice, not a missing value.</b> Rather than silently scoring
+      Ualá at 6.75%, the engine now returns what unlocks the better rate and what it's worth
+      — <code>+$2,063/yr</code> on a $25,000 balance. That turns the gap in what we know about
+      a customer into the most useful screen in the product.
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="shead"><span class="eyebrow">07</span><h2>Known gaps</h2></div>
+    <p class="sintro">Current, and honest. None of these block a run.</p>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Gap</th><th>Consequence</th></tr></thead>
+        <tbody>
+          <tr><td>147 cards are identity-only skeletons</td><td>They exist and are correctly linked, but carry no rates yet</td></tr>
+          <tr><td>Every migrated row has one source</td><td>Cost, rewards and yield capped below <code class="m">high</code> until re-verified</td></tr>
+          <tr><td>Vexi not found in SIPRES</td><td>Registered but unpublished — regulatory status unestablished</td></tr>
+          <tr><td>7 retail brands are closed-loop</td><td>Out of scope; kept in the registry so they aren't rediscovered</td></tr>
+          <tr><td>Boost conditions read <code class="m">userFlags</code> the app doesn't collect</td><td>Boosts default to not applying — under-promising, never over-promising</td></tr>
+          <tr><td>Caps only see spend logged through the app</td><td>Off-app spend invisible; caps read as less consumed than they are</td></tr>
+          <tr><td>10 legacy conditional boosts store rates as free text</td><td>Held for manual reading rather than parsed into numbers</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    Skill: <code>finance-market-data</code> · run <code>python3 scripts/validate.py data/market/</code>
+    before every publish · <code>scripts/publish.py</code> writes the Sheet view, never the
+    app-written tabs.
+  </div>
+</footer>
+
+<script>
+const STAGES = [
+  {n:"0", name:"Triage", gate:"holds data", inp:"live Sheet + canonical JSON", out:"drift + staleness report",
+   sum:"Compares the Sheet against canonical and lists what's gone stale. The entry point for any routine refresh.",
+   pts:["Reports every cell where the Sheet diverges from canonical, so urgent hand-edits get back-ported instead of overwritten.",
+        "Computes staleness per field group: yields expire in 30 days, rewards 60, fees 180, perks 365.",
+        "Orders the refresh queue by how many users hold the affected products."]},
+  {n:"1", name:"Issuer census", gate:"holds data", inp:"CNBV Padrón, SIPRES", out:"approved issuers",
+   sum:"Every institution in the market, including ones whose products we don't publish.",
+   pts:["Excluded issuers stay in the file with a reason — that record is what stops the same gap being rediscovered every run.",
+        "Insurance scheme is derived from licence type, never researched separately.",
+        "Checks existing issuers for revocations, mergers and pending conversions. A revoked licence moves its products to withdrawn.",
+        "New issuers are approved one at a time."]},
+  {n:"2", name:"Product census", gate:"holds data", inp:"one approved issuer", out:"identity-only skeletons",
+   sum:"Enumerate from the issuer, then reconcile against the regulator. Produces a three-way diff.",
+   pts:["Matched on both → confirmed active.",
+        "In the regulator but not on the issuer's site → usually closed to new applications, or business/PyME, or a legal name we didn't recognise.",
+        "On the site but not filed → a marketing name differing from the contract name, or genuinely new.",
+        "Products never create issuers. An unrecognised issuer goes back to Stage 1."]},
+  {n:"3", name:"Attribute mapping", gate:"holds data", inp:"skeletons", out:"populated rows + conflicts",
+   sum:"Where the money fields get filled, and where most of the risk lives.",
+   pts:["Cost, rewards and yield need two independent sources; identity, perks and eligibility need one.",
+        "When two sources disagree, the value stays UNKNOWN and both are recorded in conflicts[] — never averaged, never picked.",
+        "A contractual rate and a promotional rate are two facts, not a conflict.",
+        "Known traps: category bonuses that add rather than replace, points with no published peso value, caps that aren't monthly-in-pesos."]},
+  {n:"4", name:"Validation", gate:"holds data", inp:"populated rows", out:"pass / fail",
+   sum:"Runs as code, not by eye. Structure, enums, referential integrity, semantic ranges, and the confidence rule itself.",
+   pts:["Re-derives every confidence score and errors if the stated one contradicts the rule.",
+        "Checks tier contiguity, sentinel-vs-numeric type branching, and ID prefix against issuer link.",
+        "Errors block. Warnings are judgement calls and get surfaced, not decided alone."]},
+  {n:"5", name:"Approval", gate:"holds data", inp:"validated rows", out:"approved changeset",
+   sum:"Presents a diff, never the dataset. Conflicts first, then money changes, then everything else.",
+   pts:["Unresolved conflicts and deleted rows block publishing outright.",
+        "Money-field changes get individual review with old → new, source and confidence.",
+        "A new value with lower confidence never overwrites an approved one — it's flagged as possible source degradation.",
+        "Cosmetic changes can be approved in bulk."]},
+  {n:"6", name:"Publish", gate:"", inp:"approved changeset", out:"git commit + Sheet view",
+   sum:"Re-checks drift, commits to git, then writes the Sheet's market tabs.",
+   pts:["Aborts if new drift appeared during the run.",
+        "One commit per approved run names the issuer and the change counts.",
+        "Git is the backup — no manual copy of the previous version is needed.",
+        "Users, UserProducts and Movements are never touched."]}
+];
+
+const CASES = [
+  {label:"Klar recorded as a bank", stage:"1",
+   msg:"insurance_scheme='IPAB' contradicts entity type 'sofipo' (expected 'PROSOFIPO')",
+   why:"Insurance is derived from the licence, so it can't be set independently. Calling a sofipo a bank would overstate protected balance by 16×."},
+  {label:"Two Nu pages, two Cajita rates", stage:"3",
+   msg:"unresolved conflict but flat_rate_pct=6.5; must be UNKNOWN",
+   why:"When sources disagree the value is withheld and both are recorded. Picking one silently produces a confident wrong number that looks exactly like a right one."},
+  {label:"Points card valued at 1 peso/point", stage:"4",
+   msg:"point_value_mxn is exactly 1.0 on a points/miles reward — this is the silent-default value; set UNKNOWN unless a source states 1 peso per point",
+   why:"Cashback cards legitimately carry 1.0, so a defaulted 1.0 is indistinguishable from a real one. This is what let a 9%-in-points card outrank real cashback."},
+  {label:"A 13% boost with no basis", stage:"4",
+   msg:"boost_basis='' is not one of ['additive', 'replacement']",
+   why:"Assuming additive on a product that quotes a total turns 13% into 20%, and it wins every recommendation it appears in."},
+  {label:"Ualá's three rates as tiers", stage:"4",
+   msg:"tiers not contiguous: 30000 then next starts at 0",
+   why:"They all cover the same balance band — they're conditional alternatives, not tiers. A tier is selected by balance, a boost by behaviour."},
+  {label:"Boost condition written as \"$0 minimum\"", stage:"4",
+   msg:"condition_amount_mxn=0 with condition_type=linked_card_spend reads as 'no condition'; if any qualifying transaction counts, use condition_type=min_transaction_count",
+   why:"A count condition encoded as a zero amount means the engine awards the boosted rate unconditionally."},
+  {label:"A withdrawn card row deleted", stage:"5",
+   msg:"ROWS DELETED — deprecation sets lifecycle_status; it never deletes rows",
+   why:"Users may still hold the product and its movement history has to stay resolvable."},
+  {label:"Someone edited the Sheet by hand", stage:"0",
+   msg:"DRIFT — [Cards] bbva_mexico__azul_bbva · annual_fee_mxn: Sheet='0'  canonical='748'",
+   why:"Hand-edits are allowed for urgent fixes, but publishing over one would silently discard it. It has to be back-ported or explicitly dropped."},
+  {label:"Nu's bank licence took effect", stage:"1",
+   msg:"conversion took effect 2026-08-06 — promote regulated_entity_type to 'banco' and re-derive the insurance scheme",
+   why:"A licence is granted before it takes effect. Between those dates the registry says one thing and customer protection is still another."}
+];
+
+// ---- render stages ----
+const rail = document.getElementById('rail');
+rail.innerHTML = STAGES.map(s => `
+  <div class="stage${s.gate?' gate':''}" data-stage="${s.n}">
+    <div class="stage-node">${s.n}</div>
+    <div class="stage-card" role="button" tabindex="0" aria-expanded="false">
+      <div class="stage-top">
+        <h3>${s.name}</h3>
+        <span class="gatetag${s.gate?'':' none'}">${s.gate||'no gate'}</span>
+      </div>
+      <p class="stage-sum">${s.sum}</p>
+      <div class="stage-body">
+        <ul>${s.pts.map(p=>`<li>${p}</li>`).join('')}</ul>
+        <div class="io"><span>in&nbsp; <b>${s.inp}</b></span><span>out&nbsp; <b>${s.out}</b></span></div>
+      </div>
+    </div>
+  </div>`).join('');
+
+rail.querySelectorAll('.stage-card').forEach(card=>{
+  const toggle=()=>{
+    const st=card.closest('.stage');
+    const open=st.classList.toggle('open');
+    card.setAttribute('aria-expanded', open?'true':'false');
+  };
+  card.addEventListener('click',toggle);
+  card.addEventListener('keydown',e=>{
+    if(e.key==='Enter'||e.key===' '){e.preventDefault();toggle();}
+  });
+});
+
+// ---- render trace chips ----
+const chips=document.getElementById('chips');
+chips.innerHTML=CASES.map((c,i)=>
+  `<button class="chip" data-i="${i}" aria-pressed="false">${c.label}</button>`).join('');
+
+const verdict=document.getElementById('verdict');
+chips.addEventListener('click',e=>{
+  const btn=e.target.closest('.chip'); if(!btn) return;
+  const already=btn.getAttribute('aria-pressed')==='true';
+  chips.querySelectorAll('.chip').forEach(b=>b.setAttribute('aria-pressed','false'));
+  rail.querySelectorAll('.stage').forEach(s=>s.classList.remove('hit'));
+  if(already){ verdict.classList.remove('show'); return; }
+  btn.setAttribute('aria-pressed','true');
+  const c=CASES[+btn.dataset.i];
+  document.getElementById('vwhere').textContent='caught at stage '+c.stage;
+  document.getElementById('vmsg').textContent=c.msg;
+  document.getElementById('vwhy').textContent=c.why;
+  verdict.classList.add('show');
+  const st=rail.querySelector(`.stage[data-stage="${c.stage}"]`);
+  if(st){
+    st.classList.add('hit');
+    if(!st.classList.contains('open')) st.querySelector('.stage-card').click();
+    st.scrollIntoView({behavior:'smooth',block:'center'});
+  }
+});
+
+// ---- confidence calculator ----
+const TTL={yield:30,rewards:60,cost:180,eligibility:180,perks:365,identity:365};
+const DOUBLE=new Set(['cost','rewards','yield']);
+function derive(ev,grp,src,age,conflict){
+  if(conflict==='yes') return ['low','An unresolved conflict forces the group to low regardless of sourcing, and blocks publishing until you rule on it.'];
+  if(ev==='inferred') return ['low','Inferred values are always low — they are computed, not observed.'];
+  let base, why;
+  const needsTwo=DOUBLE.has(grp);
+  if(ev==='regulator'){ base='high'; why='A regulator filing is authoritative on its own.'; }
+  else if(ev==='issuer_primary'){
+    base=(!needsTwo||src>=2)?'high':'medium';
+    why=(!needsTwo)?'One good issuer source is enough for this group.'
+      :(src>=2?'Two independent sources agree on a money field.'
+              :'This group drives the recommendation, so one source caps it below high.');
+  } else {
+    base=src>=2?'medium':'low';
+    why=src>=2?'Comparison sites agreeing is worth medium, not high.'
+              :'A single comparison site is the weakest evidence we accept.';
+  }
+  if(age>TTL[grp]){
+    base={high:'medium',medium:'low',low:'low'}[base];
+    why+=` Past the ${TTL[grp]}-day limit for ${grp}, so it drops one step.`;
+  }
+  return [base,why];
+}
+function runCalc(){
+  const ev=ev_.value, grp=grp_.value, src=+src_.value, age=+age_.value, cfl=cfl_.value;
+  const [score,why]=derive(ev,grp,src,age,cfl);
+  const out=document.getElementById('scoreOut');
+  out.textContent=score; out.className='score '+score;
+  document.getElementById('scoreWhy').textContent=why;
+}
+const ev_=document.getElementById('ev'), grp_=document.getElementById('grp'),
+      src_=document.getElementById('src'), age_=document.getElementById('age'),
+      cfl_=document.getElementById('cfl');
+[ev_,grp_,src_,age_,cfl_].forEach(el=>el.addEventListener('change',runCalc));
+runCalc();
+</script>
+</body>
+</html>

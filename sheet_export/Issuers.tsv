@@ -1,0 +1,40 @@
+issuer_id	display_name	legal_name	regulated_entity_type	insurance_scheme	insurance_coverage_udis	offers_deposit_products	status	pending_entity_type	conversion_effective_date	in_dataset	exclusion_reason	notes
+afirme	Afirme	UNKNOWN	banco	IPAB	400000	TRUE	active			TRUE		Migrated from card census. legal_name and source_urls pending confirmation against the CNBV Padrón.
+amazon	Amazon	UNKNOWN	other	UNKNOWN	UNKNOWN	TRUE	active			FALSE	Closed-loop store card — no general-purpose network, out of scope per scope.md.	
+american_express	American Express	UNKNOWN	other	NOT_APPLICABLE	NOT_APPLICABLE	FALSE	active			TRUE		Not a bank in Mexico — a financial services company issuing credit cards only. The former banca múltiple licence shows as revoked in SIPRES. Deposit insurance is NOT_APPLICABLE because it offers no deposit products, not because cover is unknown.
+banca_mifel	Banca Mifel	UNKNOWN	banco	IPAB	400000	TRUE	active			TRUE		Migrated from card census. legal_name and source_urls pending confirmation against the CNBV Padrón.
+banco_azteca	Banco Azteca	UNKNOWN	banco	IPAB	400000	TRUE	active			TRUE		Migrated from card census. legal_name and source_urls pending confirmation against the CNBV Padrón.
+banco_del_bajio	Banco del Bajío	Banco del Bajío, S.A., Institución de Banca Múltiple	banco	IPAB	400000	TRUE	active			TRUE		ALIAS confirmed — BanBajío is a trading name, not a co-brand.
+banco_inbursa	Banco Inbursa	UNKNOWN	banco	IPAB	400000	TRUE	active			TRUE		Migrated from card census. legal_name and source_urls pending confirmation against the CNBV Padrón.
+bancoppel	BanCoppel	UNKNOWN	banco	IPAB	400000	TRUE	active			TRUE		Migrated from card census. legal_name and source_urls pending confirmation against the CNBV Padrón.
+banjercito	Banjercito	UNKNOWN	banco	IPAB	400000	TRUE	active			TRUE		Migrated from card census. legal_name and source_urls pending confirmation against the CNBV Padrón.
+banorte	Banorte	UNKNOWN	banco	IPAB	400000	TRUE	active			TRUE		Migrated from card census. legal_name and source_urls pending confirmation against the CNBV Padrón.
+banregio	Banregio	UNKNOWN	banco	IPAB	400000	TRUE	active			TRUE		Migrated from card census. legal_name and source_urls pending confirmation against the CNBV Padrón.
+bbva_mexico	BBVA México	UNKNOWN	banco	IPAB	400000	TRUE	active			TRUE		Migrated from card census. legal_name and source_urls pending confirmation against the CNBV Padrón.
+chedraui	Chedraui	UNKNOWN	other	UNKNOWN	UNKNOWN	TRUE	active			FALSE	Closed-loop store card — no general-purpose network, out of scope per scope.md.	
+cibanco	CIBanco	UNKNOWN	banco	IPAB	400000	TRUE	active			TRUE		Migrated from card census. legal_name and source_urls pending confirmation against the CNBV Padrón.
+citibanamex	Citibanamex	UNKNOWN	banco	IPAB	400000	TRUE	active			TRUE		Migrated from card census. legal_name and source_urls pending confirmation against the CNBV Padrón.
+coppel	Coppel	UNKNOWN	other	UNKNOWN	UNKNOWN	TRUE	active			FALSE	Closed-loop store card — no general-purpose network, out of scope per scope.md.	
+crediclub	Crediclub (SuperTasas)	UNKNOWN	sofipo	PROSOFIPO	25000	TRUE	active			TRUE		Deposit-only issuer — absent from the card census. Entity type inherited from the legacy market dataset; verify against SIPRES.
+cuenca	Cuenca	UNKNOWN	ifpe	none	NOT_APPLICABLE	TRUE	active			TRUE		
+finsus	Finsus	UNKNOWN	sofipo	PROSOFIPO	25000	TRUE	active			TRUE		Deposit-only issuer — absent from the card census. Entity type inherited from the legacy market dataset; verify against SIPRES.
+fondeadora	Fondeadora	UNKNOWN	ifpe	none	NOT_APPLICABLE	TRUE	active			TRUE		Deposit-only issuer — absent from the card census. Entity type inherited from the legacy market dataset; verify against SIPRES.
+hey_banco	Hey Banco	Hey Banco, S.A., Institución de Banca Múltiple, Banregio Grupo Financiero	banco	IPAB	400000	TRUE	active			TRUE		DOF authorization for organization and operation as banca múltiple.
+hsbc_mexico	HSBC México	UNKNOWN	banco	IPAB	400000	TRUE	active			TRUE		Migrated from card census. legal_name and source_urls pending confirmation against the CNBV Padrón.
+invex	Invex	UNKNOWN	banco	IPAB	400000	TRUE	active			TRUE		Migrated from card census. legal_name and source_urls pending confirmation against the CNBV Padrón.
+jp_sofiexpress	JP Sofiexpress	UNKNOWN	sofipo	PROSOFIPO	25000	TRUE	active			TRUE		CONFLICT RESOLVED — SIPRES names JP Sofiexpress. The market dataset was right; the census 'Regigold SOFOM' was wrong.
+klar	Klar	UNKNOWN	sofipo	PROSOFIPO	25000	TRUE	active			TRUE		
+liverpool	Liverpool	UNKNOWN	other	UNKNOWN	UNKNOWN	TRUE	active			FALSE	Closed-loop store card — no general-purpose network, out of scope per scope.md.	
+mercado_pago	Mercado Pago	UNKNOWN	ifpe	none	NOT_APPLICABLE	TRUE	active			TRUE		
+multiva	Multiva	UNKNOWN	banco	IPAB	400000	TRUE	active			TRUE		Migrated from card census. legal_name and source_urls pending confirmation against the CNBV Padrón.
+nu_mx	Nu	UNKNOWN	sofipo	PROSOFIPO	25000	TRUE	pending_conversion	banco	2026-08-06	TRUE		CNBV authorised 10 Jul 2026; operates as banco from 6 Aug 2026. Until then PROSOFIPO 25k UDIS governs, then IPAB 400k.
+palacio_de_hierro	Palacio de Hierro	UNKNOWN	other	UNKNOWN	UNKNOWN	TRUE	active			FALSE	Closed-loop store card — no general-purpose network, out of scope per scope.md.	
+plata	Plata Card	Plata, S.A., Institución de Banca Múltiple	banco	IPAB	400000	TRUE	active			TRUE		Banking licence Dec 2024; began banca múltiple operations 18 Mar 2026.
+santander_mexico	Santander México	UNKNOWN	banco	IPAB	400000	TRUE	active			TRUE		Migrated from card census. legal_name and source_urls pending confirmation against the CNBV Padrón.
+scotiabank_mexico	Scotiabank México	UNKNOWN	banco	IPAB	400000	TRUE	active			TRUE		Migrated from card census. legal_name and source_urls pending confirmation against the CNBV Padrón.
+sears	Sears	UNKNOWN	other	UNKNOWN	UNKNOWN	TRUE	active			FALSE	Closed-loop store card — no general-purpose network, out of scope per scope.md.	
+soriana	Soriana	UNKNOWN	other	UNKNOWN	UNKNOWN	TRUE	active			FALSE	Closed-loop store card — no general-purpose network, out of scope per scope.md.	
+spin_oxxo	Spin by Oxxo	UNKNOWN	ifpe	none	NOT_APPLICABLE	TRUE	active			TRUE		Deposit-only issuer — absent from the card census. Entity type inherited from the legacy market dataset; verify against SIPRES.
+stori	Stori	UNKNOWN	sofipo	PROSOFIPO	25000	TRUE	active			TRUE		
+uala_mx	Ualá	Ualá México, S.A., Institución de Banca Múltiple	banco	IPAB	400000	TRUE	active			TRUE		Acquired ABC Capital; renamed to Ualá after SHCP authorization.
+vexi	Vexi	UNKNOWN	other	UNKNOWN	UNKNOWN	TRUE	active			FALSE	Not found in SIPRES — regulatory status unestablished.	

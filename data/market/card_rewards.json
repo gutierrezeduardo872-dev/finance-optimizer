@@ -1,0 +1,353 @@
+[
+  {
+    "reward_id": "santander_mexico__likeu__pharmacy",
+    "card_id": "santander_mexico__likeu",
+    "category": "pharmacy",
+    "rate": 6.0,
+    "reward_type": "cashback",
+    "point_value_mxn": 1.0,
+    "effective_rate_pct": 6.0,
+    "replaces_or_adds_to_base": "replaces",
+    "cap_amount": 500,
+    "cap_basis": "mxn",
+    "cap_period": "monthly",
+    "min_spend": "NOT_APPLICABLE",
+    "promo_end_date": "NOT_APPLICABLE",
+    "user_selectable": false,
+    "confidence": {
+      "rewards": {
+        "score": "low",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-01-01",
+        "sources": [
+          "https://www.santander.com.mx/cashback/likeu.html"
+        ]
+      }
+    },
+    "notes": "$500/mo cap shared across all cashback categories"
+  },
+  {
+    "reward_id": "santander_mexico__likeu__restaurant",
+    "card_id": "santander_mexico__likeu",
+    "category": "restaurant",
+    "rate": 5.0,
+    "reward_type": "cashback",
+    "point_value_mxn": 1.0,
+    "effective_rate_pct": 5.0,
+    "replaces_or_adds_to_base": "replaces",
+    "cap_amount": 500,
+    "cap_basis": "mxn",
+    "cap_period": "monthly",
+    "min_spend": "NOT_APPLICABLE",
+    "promo_end_date": "NOT_APPLICABLE",
+    "user_selectable": false,
+    "confidence": {
+      "rewards": {
+        "score": "low",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-01-01",
+        "sources": [
+          "https://www.santander.com.mx/cashback/likeu.html"
+        ]
+      }
+    },
+    "notes": "Shared $500 cap"
+  },
+  {
+    "reward_id": "santander_mexico__likeu__utilities",
+    "card_id": "santander_mexico__likeu",
+    "category": "utilities",
+    "rate": 4.0,
+    "reward_type": "cashback",
+    "point_value_mxn": 1.0,
+    "effective_rate_pct": 4.0,
+    "replaces_or_adds_to_base": "replaces",
+    "cap_amount": 500,
+    "cap_basis": "mxn",
+    "cap_period": "monthly",
+    "min_spend": "NOT_APPLICABLE",
+    "promo_end_date": "NOT_APPLICABLE",
+    "user_selectable": false,
+    "confidence": {
+      "rewards": {
+        "score": "low",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-01-01",
+        "sources": [
+          "https://www.santander.com.mx/cashback/likeu.html"
+        ]
+      }
+    },
+    "notes": "Telecomunicaciones mapped to utilities"
+  },
+  {
+    "reward_id": "santander_mexico__likeu__supermarket",
+    "card_id": "santander_mexico__likeu",
+    "category": "supermarket",
+    "rate": 1.0,
+    "reward_type": "cashback",
+    "point_value_mxn": 1.0,
+    "effective_rate_pct": 1.0,
+    "replaces_or_adds_to_base": "replaces",
+    "cap_amount": 500,
+    "cap_basis": "mxn",
+    "cap_period": "monthly",
+    "min_spend": "NOT_APPLICABLE",
+    "promo_end_date": "NOT_APPLICABLE",
+    "user_selectable": false,
+    "confidence": {
+      "rewards": {
+        "score": "low",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-01-01",
+        "sources": [
+          "https://www.santander.com.mx/cashback/likeu.html"
+        ]
+      }
+    },
+    "notes": "Added July 2025"
+  },
+  {
+    "reward_id": "banorte__por_ti__gas",
+    "card_id": "banorte__por_ti",
+    "category": "gas",
+    "rate": 1.0,
+    "reward_type": "cashback",
+    "point_value_mxn": 1.0,
+    "effective_rate_pct": 1.0,
+    "replaces_or_adds_to_base": "adds",
+    "cap_amount": "UNKNOWN",
+    "cap_basis": "mxn",
+    "cap_period": "monthly",
+    "min_spend": 4000,
+    "promo_end_date": "NOT_APPLICABLE",
+    "user_selectable": false,
+    "confidence": {
+      "rewards": {
+        "score": "low",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2025-12-02",
+        "sources": [
+          "https://www.tarjetas.creditobanorte.com/?url=portibnt"
+        ]
+      }
+    },
+    "notes": "+1% preferred Mon-Fri gas on top of 1% base"
+  },
+  {
+    "reward_id": "banorte__por_ti__restaurant",
+    "card_id": "banorte__por_ti",
+    "category": "restaurant",
+    "rate": 1.0,
+    "reward_type": "cashback",
+    "point_value_mxn": 1.0,
+    "effective_rate_pct": 1.0,
+    "replaces_or_adds_to_base": "adds",
+    "cap_amount": "UNKNOWN",
+    "cap_basis": "mxn",
+    "cap_period": "monthly",
+    "min_spend": 4000,
+    "promo_end_date": "NOT_APPLICABLE",
+    "user_selectable": false,
+    "confidence": {
+      "rewards": {
+        "score": "low",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2025-12-02",
+        "sources": [
+          "https://www.tarjetas.creditobanorte.com/?url=portibnt"
+        ]
+      }
+    },
+    "notes": "+1% preferred Sat-Sun restaurants"
+  },
+  {
+    "reward_id": "citibanamex__oro_banamex__gas",
+    "card_id": "citibanamex__oro_banamex",
+    "category": "gas",
+    "rate": 14.0,
+    "reward_type": "points",
+    "point_value_mxn": "UNKNOWN",
+    "effective_rate_pct": "UNKNOWN",
+    "replaces_or_adds_to_base": "replaces",
+    "cap_amount": 1000,
+    "cap_basis": "points",
+    "cap_period": "weekly",
+    "min_spend": "NOT_APPLICABLE",
+    "promo_end_date": "2026-09-24",
+    "user_selectable": false,
+    "confidence": {
+      "rewards": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://www.banamex.com/es/personas/tarjetas-credito/tarjeta-oro.html"
+        ]
+      }
+    },
+    "notes": "Double Premia on gas; cap 1000 pts/week"
+  },
+  {
+    "reward_id": "klar__tarjeta_de_credito_klar__other",
+    "card_id": "klar__tarjeta_de_credito_klar",
+    "category": "other",
+    "rate": 3.0,
+    "reward_type": "cashback",
+    "point_value_mxn": 1.0,
+    "effective_rate_pct": 3.0,
+    "replaces_or_adds_to_base": "replaces",
+    "cap_amount": "UNKNOWN",
+    "cap_basis": "mxn",
+    "cap_period": "monthly",
+    "min_spend": 3000,
+    "promo_end_date": "NOT_APPLICABLE",
+    "user_selectable": false,
+    "confidence": {
+      "rewards": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://www.kardmatch.com.mx/klar/tarjeta-de-credito-klar.asp"
+        ]
+      }
+    },
+    "notes": "Up to 3% at participating giros for Plus users (>=$3000/mo spend)"
+  },
+  {
+    "reward_id": "jp_sofiexpress__didi_card__supermarket",
+    "card_id": "jp_sofiexpress__didi_card",
+    "category": "supermarket",
+    "rate": 2.0,
+    "reward_type": "cashback",
+    "point_value_mxn": 1.0,
+    "effective_rate_pct": 2.0,
+    "replaces_or_adds_to_base": "replaces",
+    "cap_amount": "UNKNOWN",
+    "cap_basis": "mxn",
+    "cap_period": "monthly",
+    "min_spend": "NOT_APPLICABLE",
+    "promo_end_date": "NOT_APPLICABLE",
+    "user_selectable": false,
+    "confidence": {
+      "rewards": {
+        "score": "low",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-05-31",
+        "sources": [
+          "https://didifinance.com/tarjeta-de-credito"
+        ]
+      }
+    },
+    "notes": "2% supers/gas/DiDi; total cashback cap $5000/mo"
+  },
+  {
+    "reward_id": "jp_sofiexpress__didi_card__gas",
+    "card_id": "jp_sofiexpress__didi_card",
+    "category": "gas",
+    "rate": 2.0,
+    "reward_type": "cashback",
+    "point_value_mxn": 1.0,
+    "effective_rate_pct": 2.0,
+    "replaces_or_adds_to_base": "replaces",
+    "cap_amount": "UNKNOWN",
+    "cap_basis": "mxn",
+    "cap_period": "monthly",
+    "min_spend": "NOT_APPLICABLE",
+    "promo_end_date": "NOT_APPLICABLE",
+    "user_selectable": false,
+    "confidence": {
+      "rewards": {
+        "score": "low",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-05-31",
+        "sources": [
+          "https://didifinance.com/tarjeta-de-credito"
+        ]
+      }
+    },
+    "notes": "Part of $5000/mo total cap"
+  },
+  {
+    "reward_id": "jp_sofiexpress__didi_card__other",
+    "card_id": "jp_sofiexpress__didi_card",
+    "category": "other",
+    "rate": 6.0,
+    "reward_type": "cashback",
+    "point_value_mxn": 1.0,
+    "effective_rate_pct": 6.0,
+    "replaces_or_adds_to_base": "replaces",
+    "cap_amount": 5000,
+    "cap_basis": "mxn",
+    "cap_period": "monthly",
+    "min_spend": "NOT_APPLICABLE",
+    "promo_end_date": "NOT_APPLICABLE",
+    "user_selectable": false,
+    "confidence": {
+      "rewards": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://financera.mx/opiniones/didi-card/"
+        ]
+      }
+    },
+    "notes": "6% in one chosen category/month (pharmacy, cinema, airlines, etc.); $5000 total cap"
+  },
+  {
+    "reward_id": "plata__plata__other",
+    "card_id": "plata__plata",
+    "category": "other",
+    "rate": 15.0,
+    "reward_type": "cashback",
+    "point_value_mxn": 1.0,
+    "effective_rate_pct": 15.0,
+    "replaces_or_adds_to_base": "replaces",
+    "cap_amount": 1000,
+    "cap_basis": "mxn",
+    "cap_period": "monthly",
+    "min_spend": "NOT_APPLICABLE",
+    "promo_end_date": "NOT_APPLICABLE",
+    "user_selectable": false,
+    "confidence": {
+      "rewards": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://www.kardmatch.com.mx/plata/tarjeta-de-credito-plata-card.asp"
+        ]
+      }
+    },
+    "notes": "Up to 4 chosen categories; cap $1000/mo ($3000 with Plus)"
+  },
+  {
+    "reward_id": "uala_mx__tarjeta_de_credito_uala__supermarket",
+    "card_id": "uala_mx__tarjeta_de_credito_uala",
+    "category": "supermarket",
+    "rate": 10.0,
+    "reward_type": "cashback",
+    "point_value_mxn": 1.0,
+    "effective_rate_pct": 10.0,
+    "replaces_or_adds_to_base": "replaces",
+    "cap_amount": 500,
+    "cap_basis": "mxn",
+    "cap_period": "monthly",
+    "min_spend": "NOT_APPLICABLE",
+    "promo_end_date": "UNKNOWN",
+    "user_selectable": false,
+    "confidence": {
+      "rewards": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://apps.apple.com/MX/app/id1279808159"
+        ]
+      }
+    },
+    "notes": "10% supermercados promo, cashback up to $500"
+  }
+]

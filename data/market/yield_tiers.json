@@ -1,0 +1,122 @@
+[
+  {
+    "tier_id": "uala_mx__cuenta_con_rendimiento_uala__t1",
+    "account_id": "uala_mx__cuenta_con_rendimiento_uala",
+    "tier_min_mxn": 0,
+    "tier_max_mxn": 30000,
+    "rate_pct": 6.75,
+    "rate_type": "rendimiento_anual_nominal",
+    "marginal_or_blended": "blended",
+    "confidence": {
+      "yield": {
+        "score": "low",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-03-26",
+        "sources": [
+          "https://www.uala.mx/cuenta-con-rendimiento"
+        ]
+      }
+    },
+    "notes": "Base tier; whole <=$30000 earns this if no spend threshold met"
+  },
+  {
+    "tier_id": "uala_mx__cuenta_con_rendimiento_uala__t4",
+    "account_id": "uala_mx__cuenta_con_rendimiento_uala",
+    "tier_min_mxn": 30000,
+    "tier_max_mxn": "UNCAPPED",
+    "rate_pct": 0,
+    "rate_type": "rendimiento_anual_nominal",
+    "marginal_or_blended": "marginal",
+    "confidence": {
+      "yield": {
+        "score": "low",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-03-26",
+        "sources": [
+          "https://www.uala.mx/cuenta-con-rendimiento"
+        ]
+      }
+    },
+    "notes": "Balance above $30000 earns nothing"
+  },
+  {
+    "tier_id": "jp_sofiexpress__didi_cuenta__t1",
+    "account_id": "jp_sofiexpress__didi_cuenta",
+    "tier_min_mxn": 0,
+    "tier_max_mxn": 10000,
+    "rate_pct": 15.0,
+    "rate_type": "rendimiento_anual_nominal",
+    "marginal_or_blended": "marginal",
+    "confidence": {
+      "yield": {
+        "score": "low",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-01-20",
+        "sources": [
+          "https://web.didiglobal.com"
+        ]
+      }
+    },
+    "notes": "First $10000 (GAT nominal 16.18%)"
+  },
+  {
+    "tier_id": "jp_sofiexpress__didi_cuenta__t2",
+    "account_id": "jp_sofiexpress__didi_cuenta",
+    "tier_min_mxn": 10000,
+    "tier_max_mxn": "UNCAPPED",
+    "rate_pct": 7.5,
+    "rate_type": "rendimiento_anual_nominal",
+    "marginal_or_blended": "marginal",
+    "confidence": {
+      "yield": {
+        "score": "low",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-01-20",
+        "sources": [
+          "https://web.didiglobal.com"
+        ]
+      }
+    },
+    "notes": "Balance above $10000"
+  },
+  {
+    "tier_id": "mercado_pago__cuenta_mercado_pago_rendimientos__t1",
+    "account_id": "mercado_pago__cuenta_mercado_pago_rendimientos",
+    "tier_min_mxn": 0,
+    "tier_max_mxn": 25000,
+    "rate_pct": 7.0,
+    "rate_type": "rendimiento_anual_nominal",
+    "marginal_or_blended": "blended",
+    "confidence": {
+      "yield": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://www.elfinanciero.com.mx/mis-finanzas/2026/02/14/donde-invertir-mi-dinero-en-2026-estos-son-los-rendimientos-de-cetes-nu-revolut-y-otras-fintech/"
+        ]
+      }
+    },
+    "notes": "Base 7% up to $25000"
+  },
+  {
+    "tier_id": "mercado_pago__cuenta_mercado_pago_rendimientos__t3",
+    "account_id": "mercado_pago__cuenta_mercado_pago_rendimientos",
+    "tier_min_mxn": 25000,
+    "tier_max_mxn": "UNCAPPED",
+    "rate_pct": 0,
+    "rate_type": "rendimiento_anual_nominal",
+    "marginal_or_blended": "marginal",
+    "confidence": {
+      "yield": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-07-22",
+        "sources": [
+          "https://bancario.com.mx/mercado-pago"
+        ]
+      }
+    },
+    "notes": "Balance above $25000 excluded from yield"
+  }
+]

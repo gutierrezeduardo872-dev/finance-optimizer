@@ -1,0 +1,172 @@
+[
+  {
+    "legacy_product_id": "mp_cuenta",
+    "resolved_account_id": "mercado_pago__cuenta_mercado_pago_rendimientos",
+    "boost_type": "direct_deposit",
+    "boost_condition_text": "Ingresar >=$3000/mes a la cuenta",
+    "boost_value_text": "to 13% total",
+    "boost_duration_text": "Monthly cycle",
+    "stacks_with_base": "no",
+    "source_url": "https://www.elfinanciero.com.mx/mis-finanzas/2026/02/14/donde-invertir-mi-dinero-en-2026-estos-son-los-rendimientos-de-cetes-nu-revolut-y-otras-fintech/",
+    "retrieved_on": "2026-07-22",
+    "needs": [
+      "boost_rate_pct (numeric)",
+      "condition_type (enum)",
+      "condition_amount_mxn or condition_count",
+      "max_balance_mxn"
+    ]
+  },
+  {
+    "legacy_product_id": "uala_cuenta",
+    "resolved_account_id": "uala_mx__cuenta_con_rendimiento_uala",
+    "boost_type": "min_linked_credit_card_spend",
+    "boost_condition_text": "Consumo >=$3000/mes con tarjeta Ualá",
+    "boost_value_text": "to 12%",
+    "boost_duration_text": "Rest of month",
+    "stacks_with_base": "no",
+    "source_url": "https://www.uala.mx/cuenta-con-rendimiento",
+    "retrieved_on": "2026-03-26",
+    "needs": [
+      "boost_rate_pct (numeric)",
+      "condition_type (enum)",
+      "condition_amount_mxn or condition_count",
+      "max_balance_mxn"
+    ]
+  },
+  {
+    "legacy_product_id": "uala_cuenta",
+    "resolved_account_id": "uala_mx__cuenta_con_rendimiento_uala",
+    "boost_type": "payroll_client",
+    "boost_condition_text": "Portabilidad de nómina >=$6000 o consumo >=$6000/mes",
+    "boost_value_text": "to 15%",
+    "boost_duration_text": "Rest of month",
+    "stacks_with_base": "no",
+    "source_url": "https://www.uala.mx/portabilidad-nomina",
+    "retrieved_on": "2026-03-26",
+    "needs": [
+      "boost_rate_pct (numeric)",
+      "condition_type (enum)",
+      "condition_amount_mxn or condition_count",
+      "max_balance_mxn"
+    ]
+  },
+  {
+    "legacy_product_id": "nu_cajita",
+    "resolved_account_id": "nu_mx__cajita_nu",
+    "boost_type": "new_customer_promo",
+    "boost_condition_text": "Congelar saldo (Ahorro Congelado) / Cajita Turbo",
+    "boost_value_text": "to 13.00% (GAT nominal 13.88%)",
+    "boost_duration_text": "Term-based",
+    "stacks_with_base": "no",
+    "source_url": "https://nu.com.mx/cuenta/",
+    "retrieved_on": "2026-06-25",
+    "needs": [
+      "boost_rate_pct (numeric)",
+      "condition_type (enum)",
+      "condition_amount_mxn or condition_count",
+      "max_balance_mxn"
+    ]
+  },
+  {
+    "legacy_product_id": "klar_cuenta",
+    "resolved_account_id": "klar__cuenta_klar_saldo_disponible",
+    "boost_type": "min_linked_credit_card_spend",
+    "boost_condition_text": "Gastar >=$3000/mes para membresía Plus/Platino",
+    "boost_value_text": "+2 (to 5% on saldo)",
+    "boost_duration_text": "While Plus status",
+    "stacks_with_base": "no",
+    "source_url": "https://financera.mx/opiniones/klar/",
+    "retrieved_on": "2026-07-22",
+    "needs": [
+      "boost_rate_pct (numeric)",
+      "condition_type (enum)",
+      "condition_amount_mxn or condition_count",
+      "max_balance_mxn"
+    ]
+  },
+  {
+    "legacy_product_id": "klar_cuenta",
+    "resolved_account_id": "klar__cuenta_klar_saldo_disponible",
+    "boost_type": "other",
+    "boost_condition_text": "Inversión Max (Plus/Platino)",
+    "boost_value_text": "to 15%",
+    "boost_duration_text": "Term-based",
+    "stacks_with_base": "no",
+    "source_url": "https://bancario.com.mx/klar",
+    "retrieved_on": "2026-07-22",
+    "needs": [
+      "boost_rate_pct (numeric)",
+      "condition_type (enum)",
+      "condition_amount_mxn or condition_count",
+      "max_balance_mxn"
+    ]
+  },
+  {
+    "legacy_product_id": "hey_pagare",
+    "resolved_account_id": "hey_banco__pagare_hey_inversion",
+    "boost_type": "min_linked_credit_card_spend",
+    "boost_condition_text": "6 compras de $100/mes (Hey Pro status)",
+    "boost_value_text": "to 7.5% (28d pagaré)",
+    "boost_duration_text": "Following month",
+    "stacks_with_base": "no",
+    "source_url": "https://banco.hey.inc/gana-con-hey/estilo-hey/hey-pro",
+    "retrieved_on": "2026-07-22",
+    "needs": [
+      "boost_rate_pct (numeric)",
+      "condition_type (enum)",
+      "condition_amount_mxn or condition_count",
+      "max_balance_mxn"
+    ]
+  },
+  {
+    "legacy_product_id": "stori_cuentamas",
+    "resolved_account_id": "stori__stori_cuenta_apartados",
+    "boost_type": "other",
+    "boost_condition_text": "Stori Pro membership + Inversión+ plazo fijo",
+    "boost_value_text": "to 15% GAT nominal",
+    "boost_duration_text": "Term-based",
+    "stacks_with_base": "no",
+    "source_url": "https://www.storicard.com/stori-cuentamas",
+    "retrieved_on": "2026-07-22",
+    "needs": [
+      "boost_rate_pct (numeric)",
+      "condition_type (enum)",
+      "condition_amount_mxn or condition_count",
+      "max_balance_mxn"
+    ]
+  },
+  {
+    "legacy_product_id": "bbva_azul",
+    "resolved_account_id": "UNRESOLVED",
+    "boost_type": "new_customer_promo",
+    "boost_condition_text": "Contratar 100% en línea (cliente nuevo)",
+    "boost_value_text": "Sin anualidad de por vida",
+    "boost_duration_text": "Permanent while al corriente",
+    "stacks_with_base": "NOT_APPLICABLE",
+    "source_url": "https://www.bbva.mx/personas/productos/tarjetas-de-credito/tarjeta-de-credito-sin-anualidad.html",
+    "retrieved_on": "2026-07-22",
+    "needs": [
+      "boost_rate_pct (numeric)",
+      "condition_type (enum)",
+      "condition_amount_mxn or condition_count",
+      "max_balance_mxn"
+    ]
+  },
+  {
+    "legacy_product_id": "santander_likeu",
+    "resolved_account_id": "UNRESOLVED",
+    "boost_type": "linked_debit_card_activity",
+    "boost_condition_text": "Cuenta débito Santander + inscripción al programa",
+    "boost_value_text": "Enables cashback",
+    "boost_duration_text": "Ongoing",
+    "stacks_with_base": "NOT_APPLICABLE",
+    "source_url": "https://www.santander.com.mx/cashback/likeu.html",
+    "retrieved_on": "2026-01-01",
+    "needs": [
+      "boost_rate_pct (numeric)",
+      "condition_type (enum)",
+      "condition_amount_mxn or condition_count",
+      "max_balance_mxn"
+    ]
+  }
+]

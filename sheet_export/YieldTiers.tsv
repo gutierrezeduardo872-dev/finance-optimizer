@@ -1,0 +1,7 @@
+tier_id	account_id	tier_min_mxn	tier_max_mxn	rate_pct	rate_type	marginal_or_blended	notes
+uala_mx__cuenta_con_rendimiento_uala__t1	uala_mx__cuenta_con_rendimiento_uala	0	30000	6.75	rendimiento_anual_nominal	blended	Base tier; whole <=$30000 earns this if no spend threshold met
+uala_mx__cuenta_con_rendimiento_uala__t4	uala_mx__cuenta_con_rendimiento_uala	30000	UNCAPPED	0	rendimiento_anual_nominal	marginal	Balance above $30000 earns nothing
+jp_sofiexpress__didi_cuenta__t1	jp_sofiexpress__didi_cuenta	0	10000	15.0	rendimiento_anual_nominal	marginal	First $10000 (GAT nominal 16.18%)
+jp_sofiexpress__didi_cuenta__t2	jp_sofiexpress__didi_cuenta	10000	UNCAPPED	7.5	rendimiento_anual_nominal	marginal	Balance above $10000
+mercado_pago__cuenta_mercado_pago_rendimientos__t1	mercado_pago__cuenta_mercado_pago_rendimientos	0	25000	7.0	rendimiento_anual_nominal	blended	Base 7% up to $25000
+mercado_pago__cuenta_mercado_pago_rendimientos__t3	mercado_pago__cuenta_mercado_pago_rendimientos	25000	UNCAPPED	0	rendimiento_anual_nominal	marginal	Balance above $25000 excluded from yield
