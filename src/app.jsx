@@ -284,12 +284,13 @@ function App() {
       token: (res && res.token) || null,
     };
     LS.set(K_SESSION, s);
+    LS.set(ONB_SEEN_KEY, true);   // this device has signed in before
     setSession(s);
     setView('home');
   };
 
   if (!session) {
-    return <Login onLogin={onLogin} seedUsers={db ? db.users : null} />;
+    return <Entry onLogin={onLogin} />;
   }
 
   if (!db) {

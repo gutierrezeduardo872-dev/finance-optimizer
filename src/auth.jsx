@@ -90,7 +90,7 @@ function GoogleButton({ onCredential, onError }) {
 
 /* ------------------------------- L1 login -------------------------------- */
 
-function Login({ onLogin }) {
+function Login({ onLogin, onCreateAccount }) {
   const [mode, setMode] = useState('login');   // login | upgrade | recover
   const [identifier, setIdentifier] = useState('');
   const [password, setPassword] = useState('');
@@ -212,6 +212,13 @@ function Login({ onLogin }) {
 
           <div className="note center">Se recordará tu sesión en este dispositivo.</div>
         </div>
+
+        {onCreateAccount && (
+          <div className="note center">
+            ¿Primera vez?{' '}
+            <button className="link" onClick={onCreateAccount}>Crea tu cuenta</button>
+          </div>
+        )}
 
         <div className="note center">
           Norte es informativo. No movemos tu dinero ni pedimos claves de banca en línea.
