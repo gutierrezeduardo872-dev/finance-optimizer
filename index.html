@@ -361,6 +361,20 @@ button{font:inherit;color:inherit;cursor:pointer}
 .skeleton-grid .skel{height:70px;margin:0}
 @keyframes sh{0%{background-position:200% 0}100%{background-position:-200% 0}}
 
+/* ---------- auth: google button, divider, input affordances ---------- */
+.gwrap{display:flex;justify-content:center;min-height:44px;margin-bottom:2px}
+.gbtn-host{display:flex;justify-content:center;width:100%}
+.gbtn-skel{position:absolute;width:100%;max-width:360px;height:44px;border-radius:999px;
+  background:linear-gradient(90deg,#EDEBE6,#F5F3EF,#EDEBE6);background-size:200% 100%;
+  animation:shim 1.2s linear infinite}
+.divide{display:flex;align-items:center;gap:10px;margin:14px 0;color:var(--muted);font-size:12.5px}
+.divide:before,.divide:after{content:"";flex:1;height:1px;background:var(--line)}
+.in-wrap{position:relative}
+.in-wrap .text-in{padding-right:64px}
+.in-act{position:absolute;right:10px;top:50%;transform:translateY(-50%);background:none;border:0;
+  color:var(--copper);font-size:12.5px;font-weight:600;padding:6px 4px}
+.right-link{text-align:right;margin-top:8px}
+
 /* ---------- auth ---------- */
 .auth{min-height:100vh;background:var(--bg);display:flex;align-items:center;justify-content:center;
   padding:24px 16px calc(24px + var(--safe-b))}
@@ -409,6 +423,10 @@ button{font:inherit;color:inherit;cursor:pointer}
      Serve over HTTP, not file:// — the browser will not fetch src/ from disk:
          python3 -m http.server 8000
      --------------------------------------------------------------------- -->
+<!-- Google Identity Services. async/defer per Google's docs; auth.jsx polls
+     for it rather than assuming it has arrived. -->
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+
 <script defer src="https://unpkg.com/@babel/standalone@7.24.7/babel.min.js"></script>
 
 <script defer type="text/babel" data-presets="react" src="src/lib.js"></script>
@@ -418,6 +436,7 @@ button{font:inherit;color:inherit;cursor:pointer}
 <script defer type="text/babel" data-presets="react" src="src/advisors.jsx"></script>
 <script defer type="text/babel" data-presets="react" src="src/screens.jsx"></script>
 <script defer type="text/babel" data-presets="react" src="src/account.jsx"></script>
+<script defer type="text/babel" data-presets="react" src="src/auth.jsx"></script>
 <script defer type="text/babel" data-presets="react" src="src/app.jsx"></script>
 </body>
 </html>

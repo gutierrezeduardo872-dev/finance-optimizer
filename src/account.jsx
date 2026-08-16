@@ -5,92 +5,12 @@
    Migration notes are marked MIGRATED.
    =========================================================================== */
 
-/* -------------------------------- login --------------------------------- */
-
-function Login({ onLogin, seedUsers }) {
-  const [users, setUsers] = useState(seedUsers || null);
-  const [selected, setSelected] = useState(null);
-  const [pin, setPin] = useState('');
-  const [error, setError] = useState('');
-  const [busy, setBusy] = useState(false);
-
-  useEffect(() => {
-    if (users) return;
-    apiGet({ action: 'bootstrap' })
-      .then((r) => {
-        if (r.ok) setUsers(r.data.users);
-        else setError('No se pudo cargar. ' + (r.error || ''));
-      })
-      .catch((e) => setError('Error de red: ' + e.message));
-  }, []);
-
-  const submit = async () => {
-    setError('');
-    setBusy(true);
-    try {
-      const r = await apiGet({ action: 'login', user_id: selected, pin });
-      if (r.ok) onLogin(r.user);
-      else setError('NIP incorrecto, inténtalo de nuevo.');
-    } catch (e) {
-      setError('Error de red: ' + e.message);
-    }
-    setBusy(false);
-  };
-
-  return (
-    <div className="auth">
-      <div className="auth-inner">
-        <div className="auth-brand">
-          <Logo size={52} />
-          <h1>Norte</h1>
-          <p>Tu norte financiero.</p>
-        </div>
-
-        <div className="panel">
-          <label className="fld">¿Quién entra?</label>
-
-          {!users && (
-            <div className="skeleton-grid">
-              {[0, 1, 2, 3].map((i) => <div key={i} className="skel" />)}
-            </div>
-          )}
-
-          <div className="ulist">
-            {users && users.map((u) => (
-              <button key={u.user_id}
-                      className={'ucard' + (selected === u.user_id ? ' sel' : '')}
-                      onClick={() => { setSelected(u.user_id); setError(''); setPin(''); }}>
-                <div className="uavatar" style={{ background: bankColor(u.name) }}>
-                  {String(u.name || '?').slice(0, 1).toUpperCase()}
-                </div>
-                <div className="unm">{u.name}</div>
-              </button>
-            ))}
-          </div>
-
-          {selected && (
-            <div className="auth-pin">
-              <label className="fld">Ingresa tu NIP</label>
-              <input className="pin-in" type="password" inputMode="numeric" autoFocus
-                     value={pin} onChange={(e) => setPin(e.target.value)}
-                     placeholder="••••"
-                     onKeyDown={(e) => { if (e.key === 'Enter' && pin) submit(); }} />
-              <div style={{ height: 12 }} />
-              <button className="btn" disabled={!pin || busy} onClick={submit}>
-                {busy ? <span className="spin" /> : 'Entrar'}
-              </button>
-              <div className="note center">
-                Se recordará tu sesión en este dispositivo.
-              </div>
-            </div>
-          )}
-
-          {error && <div className="err">{error}</div>}
-        </div>
-      </div>
-    </div>
-  );
-}
+/* -------------------------------- login ---------------------------------
+   MOVED to src/auth.jsx (2026-08). The old pick-a-user-and-type-a-NIP screen
+   fetched every account before authenticating, which is what leaked the user
+   list. Declaring Login here as well would shadow the new one — plain
+   scripts share one scope.
+   ------------------------------------------------------------------------ */
 
 /* ------------------------------- history -------------------------------- */
 

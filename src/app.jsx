@@ -131,7 +131,9 @@ function App() {
     if (!session) return;
     setSyncing(true);
     try {
-      const r = await apiGet({ action: 'bootstrap', user_id: session.user_id });
+      const r = await apiGet(session.token
+        ? { action: 'bootstrap', user_id: session.user_id, token: session.token }
+        : { action: 'bootstrap', user_id: session.user_id });
       if (r.ok) {
         const next = { ...EMPTY_DB, ...r.data };
         setDb(next);
@@ -264,8 +266,23 @@ function App() {
     setView('home');
   };
 
-  const onLogin = (u) => {
-    const s = { user_id: u.user_id, name: u.name, is_admin: u.is_admin };
+  /**
+   * AUTH: the login screen now returns the whole auth result, not a bare user
+   * row. The token is what scopes every later bootstrap to this account.
+   * Accepts the old shape too, so a session cached before this deploy still
+   * works instead of bouncing the user to the login screen.
+   */
+  const onLogin = (res) => {
+    const u = res && res.user ? res.user : res;
+    const s = {
+      user_id: u.user_id,
+      name: u.name,
+      first_name: u.first_name || '',
+      last_name: u.last_name || '',
+      email: u.email || '',
+      is_admin: u.is_admin,
+      token: (res && res.token) || null,
+    };
     LS.set(K_SESSION, s);
     setSession(s);
     setView('home');
