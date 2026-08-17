@@ -821,5 +821,34 @@
     "rate_after_cap": "NOT_APPLICABLE",
     "payout_frequency": "statement",
     "point_value_source": "https://www.invextarjetas.com.mx/invex/Documentos/CONDUSEF/FolletoFragua.pdf"
+  },
+  {
+    "reward_id": "banco_inbursa__walmart_inbursa__supermarket",
+    "card_id": "banco_inbursa__walmart_inbursa",
+    "category": "supermarket",
+    "rate": 3.0,
+    "reward_type": "cashback",
+    "point_value_mxn": 1.0,
+    "effective_rate_pct": 3.0,
+    "replaces_or_adds_to_base": "replaces",
+    "cap_amount": "UNCAPPED",
+    "cap_basis": "NOT_APPLICABLE",
+    "cap_period": "NOT_APPLICABLE",
+    "min_spend": "NOT_APPLICABLE",
+    "promo_end_date": "NOT_APPLICABLE",
+    "user_selectable": false,
+    "confidence": {
+      "rewards": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.inbursa.com/sites/gfi/document/tdc-walmart-folleto.pdf"
+        ]
+      }
+    },
+    "notes": "3% en Walmart, Bodega Aurrera, Walmart Express y Sam's Club, en tienda, en línea, pick-up y servicio a domicilio. Se abona directo al estado de cuenta del periodo siguiente, no a un monedero. Se revierte si se devuelve la mercancía. El emisor no publica tope.",
+    "rate_after_cap": "NOT_APPLICABLE",
+    "payout_frequency": "statement"
   }
 ]

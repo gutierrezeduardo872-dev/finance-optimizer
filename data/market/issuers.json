@@ -190,7 +190,7 @@
         "sources": []
       }
     },
-    "notes": "Las tarjetas las emite SOFOM Inbursa, S.A. de C.V. (entidad regulada del mismo grupo), no Banco Inbursa. Se mantiene un solo emisor por decisión de producto: el seguro de depósito no aplica a tarjetas de crédito, y separarlos duplicaría el emisor sin cambiar ninguna recomendación. Si algún día se mapean cuentas de depósito de Inbursa, revisar esta decisión.",
+    "notes": "Las tarjetas las emite SOFOM Inbursa, S.A. de C.V. (entidad regulada del mismo grupo), no Banco Inbursa. Se mantiene un solo emisor por decisión de producto: el seguro de depósito no aplica a tarjetas de crédito, y separarlos duplicaría el emisor sin cambiar ninguna recomendación. Si algún día se mapean cuentas de depósito de Inbursa, revisar esta decisión. Parte de la cartera de tarjetas de crédito la emite SOFOM Inbursa, S.A. de C.V., S.F.O.M. E.R. (entidad distinta de Banco Inbursa, tipo sofom_er, sin IPAB): confirmado en Telcel Oro, Fundación UNAM, Walmart, Black American Express y la gama Aeroméxico. Por decisión de producto del 2026-08-17 esas filas se mantienen bajo issuer_id banco_inbursa; revisar si alguna vez se muestran datos del emisor o del esquema de protección al usuario.",
     "offers_deposit_products": true
   },
   {

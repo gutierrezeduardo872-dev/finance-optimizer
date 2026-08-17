@@ -390,22 +390,78 @@
     "display_name": "Tarjeta de Crédito Inbursa Black American Express",
     "former_names": [],
     "legacy_id": "Tarjeta de Crédito Inbursa Black American Express",
-    "tier": "UNKNOWN",
-    "network": "UNKNOWN",
+    "tier": "black",
+    "network": "american_express",
     "lifecycle_status": "active",
-    "mapping_status": "skeleton",
+    "mapping_status": "mapped",
     "census_confidence": "high",
     "census_note": "Amex network product",
     "conflicts": [],
-    "notes": "",
+    "notes": "CAT VENCIDO: calculado al 31 de diciembre de 2025, vigencia hasta el 30 de junio de 2026. Tasa de interés fija anual del 27.0% con cualquier forma de pago — a diferencia del resto de la gama Inbursa, que usa tasa fija personalizada. Tasa de acumulación no publicada: UNKNOWN. Emitida por SOFOM Inbursa, S.A. de C.V., S.F.O.M. E.R., no por Banco Inbursa. Se conserva bajo issuer_id banco_inbursa por decisión de producto (2026-08-17); la distinción no afecta ninguna recomendación de tarjeta porque el seguro de depósito no aplica a productos de crédito.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
     "inactivity_min_spend_mxn": "NOT_APPLICABLE",
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "annual",
-    "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_calculated_on": "2025-12-31",
+    "cat_valid_until": "2026-06-30",
+    "annual_fee_mxn": 2500,
+    "annual_fee_includes_iva": false,
+    "annual_fee_first_year_waived": false,
+    "annual_fee_waiver_condition": "NOT_APPLICABLE",
+    "interest_rate_annual_pct": 27.8,
+    "cat_promedio_pct": 32.8,
+    "base_reward_type": "points",
+    "base_reward_rate": "UNKNOWN",
+    "point_value_mxn": "UNKNOWN",
+    "effective_rate_pct": "UNKNOWN",
+    "points_program_name": "Puntos Inbursa",
+    "min_income_mxn_monthly": "UNKNOWN",
+    "invitation_only": false,
+    "other_eligibility_criteria": "Antigüedad laboral mínima de un año.",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.inbursa.com/sites/gfi/document/tdc-black-amex-folleto.pdf"
+        ]
+      },
+      "cost": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.inbursa.com/sites/gfi/document/tdc-black-amex-folleto.pdf"
+        ]
+      },
+      "rewards": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.inbursa.com/sites/gfi/document/tdc-black-amex-folleto.pdf"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.inbursa.com/sites/gfi/document/tdc-black-amex-folleto.pdf"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.inbursa.com/sites/gfi/document/tdc-black-amex-folleto.pdf"
+        ]
+      }
+    }
   },
   {
     "card_id": "banco_inbursa__inbursa_clasica",
@@ -610,66 +666,67 @@
     "display_name": "Tarjeta de Crédito Inbursa Platinum",
     "former_names": [],
     "legacy_id": "Tarjeta de Crédito Inbursa Platinum",
-    "tier": "platinum",
-    "network": "visa_mastercard",
+    "tier": "platino",
+    "network": "UNKNOWN",
     "lifecycle_status": "active",
     "mapping_status": "mapped",
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": "Comisión $1320 sin IVA; lowest CAT among listed",
+    "notes": "El emisor publica dos CAT distintos: la página del producto da 42.1% / 33.85% calculado al 30 de junio de 2026, y el folleto PDF da 43.9% / 34.77% calculado al 31 de diciembre de 2025. Se toma la cifra más reciente por fecha de cálculo. La anualidad coincide en ambas fuentes ($1,320 + IVA), así que no hay conflicto de costo. Puntos Inbursa transferibles a cadenas hoteleras y aerolíneas SkyTeam; tasa de acumulación no publicada.",
     "annual_fee_mxn": 1320,
     "annual_fee_includes_iva": false,
-    "annual_fee_first_year_waived": "UNKNOWN",
-    "annual_fee_waiver_condition": "UNKNOWN",
+    "annual_fee_first_year_waived": false,
+    "annual_fee_waiver_condition": "NOT_APPLICABLE",
     "interest_rate_annual_pct": 33.85,
     "cat_promedio_pct": 42.1,
-    "base_reward_type": "none",
+    "base_reward_type": "points",
     "base_reward_rate": "UNKNOWN",
-    "point_value_mxn": 0.1,
-    "effective_rate_pct": 0,
+    "point_value_mxn": "UNKNOWN",
+    "effective_rate_pct": "UNKNOWN",
     "points_program_name": "Puntos Inbursa",
     "min_income_mxn_monthly": "UNKNOWN",
     "invitation_only": false,
-    "other_eligibility_criteria": "UNKNOWN",
+    "other_eligibility_criteria": "Antigüedad laboral mínima de un año.",
     "legacy_market_id": "inbursa_platinum",
     "confidence": {
       "identity": {
         "score": "high",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-06-30",
+        "verified_on": "2026-08-17",
         "sources": [
           "https://www.inbursa.com/sites/gfi/tdc-platinum"
         ]
       },
       "cost": {
-        "score": "medium",
+        "score": "high",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-06-30",
+        "verified_on": "2026-08-17",
         "sources": [
-          "https://www.inbursa.com/sites/gfi/tdc-platinum"
+          "https://www.inbursa.com/sites/gfi/tdc-platinum",
+          "https://www.inbursa.com/sites/gfi/document/tdc-platinum-folleto.pdf"
         ]
       },
       "rewards": {
         "score": "medium",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-06-30",
+        "verified_on": "2026-08-17",
         "sources": [
-          "https://www.inbursa.com/sites/gfi/tdc-platinum"
+          "https://www.inbursa.com/sites/gfi/document/tdc-platinum-folleto.pdf"
         ]
       },
       "perks": {
         "score": "high",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-06-30",
+        "verified_on": "2026-08-17",
         "sources": [
-          "https://www.inbursa.com/sites/gfi/tdc-platinum"
+          "https://www.inbursa.com/sites/gfi/document/tdc-platinum-folleto.pdf"
         ]
       },
       "eligibility": {
         "score": "high",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-06-30",
+        "verified_on": "2026-08-17",
         "sources": [
           "https://www.inbursa.com/sites/gfi/tdc-platinum"
         ]
@@ -681,8 +738,8 @@
     "inactivity_min_spend_mxn": "NOT_APPLICABLE",
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "annual",
-    "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_calculated_on": "2026-06-30",
+    "cat_valid_until": "2026-12-30"
   },
   {
     "card_id": "banco_inbursa__inbursa_optima",
@@ -691,22 +748,78 @@
     "display_name": "Tarjeta de Crédito Inbursa Óptima",
     "former_names": [],
     "legacy_id": "Tarjeta de Crédito Inbursa Óptima",
-    "tier": "UNKNOWN",
+    "tier": "clasica",
     "network": "UNKNOWN",
     "lifecycle_status": "active",
-    "mapping_status": "skeleton",
+    "mapping_status": "mapped",
     "census_confidence": "high",
     "census_note": "On the issuer's product list. Terms not sourced this run.",
     "conflicts": [],
-    "notes": "",
+    "notes": "CAT VENCIDO: calculado al 31 de diciembre de 2025 con vigencia al 30 de junio de 2026, es decir caducó antes de esta verificación. Inbursa refrescó parte de su gama en junio de 2026 y esta tarjeta no. El valor se registra tal cual con cat_valid_until en el pasado para que el triage lo levante. Puntos Inbursa transferibles a programas de lealtad hoteleros (Marriott, Sheraton, Westin y otros) y a Star Médica a razón de 1 punto por 2; durante 2026 el emisor ofrece el doble de puntos al transferir a cadenas hoteleras. La tasa de acumulación base no se publica: UNKNOWN.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
     "inactivity_min_spend_mxn": "NOT_APPLICABLE",
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "annual",
-    "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_calculated_on": "2025-12-31",
+    "cat_valid_until": "2026-06-30",
+    "annual_fee_mxn": 650,
+    "annual_fee_includes_iva": false,
+    "annual_fee_first_year_waived": false,
+    "annual_fee_waiver_condition": "NOT_APPLICABLE",
+    "interest_rate_annual_pct": 39.44,
+    "cat_promedio_pct": 48.7,
+    "base_reward_type": "points",
+    "base_reward_rate": "UNKNOWN",
+    "point_value_mxn": "UNKNOWN",
+    "effective_rate_pct": "UNKNOWN",
+    "points_program_name": "Puntos Inbursa",
+    "min_income_mxn_monthly": "UNKNOWN",
+    "invitation_only": false,
+    "other_eligibility_criteria": "Antigüedad laboral mínima de un año.",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.inbursa.com/sites/gfi/document/tdc-optima-folleto.pdf"
+        ]
+      },
+      "cost": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.inbursa.com/sites/gfi/document/tdc-optima-folleto.pdf"
+        ]
+      },
+      "rewards": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.inbursa.com/sites/gfi/document/tdc-optima-folleto.pdf"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.inbursa.com/sites/gfi/document/tdc-optima-folleto.pdf"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.inbursa.com/sites/gfi/document/tdc-optima-folleto.pdf"
+        ]
+      }
+    }
   },
   {
     "card_id": "banco_inbursa__telcel_oro",
@@ -722,60 +835,62 @@
     "census_confidence": "high",
     "census_note": "co-brand (Telcel)",
     "conflicts": [],
-    "notes": "Co-brand partner corrected to Telcel — the migration missed it because the census issuer string carried no parenthetical. Reported as Inbursa's no-annual-fee option.",
-    "annual_fee_mxn": 0,
-    "annual_fee_includes_iva": true,
+    "notes": "CORRECCIÓN 2026-08-17: la anualidad estaba registrada como $0. El anexo de comisiones de marca compartida y la página del producto coinciden en $540 + IVA anuales. Tarjeta adicional sin costo. Tasa preferencial al domiciliar el pago a una cuenta de cheques Inbursa. Tasa de acumulación no publicada. Emitida por SOFOM Inbursa, S.A. de C.V., S.F.O.M. E.R., no por Banco Inbursa. Se conserva bajo issuer_id banco_inbursa por decisión de producto (2026-08-17); la distinción no afecta ninguna recomendación de tarjeta porque el seguro de depósito no aplica a productos de crédito.",
+    "annual_fee_mxn": 540,
+    "annual_fee_includes_iva": false,
     "annual_fee_first_year_waived": false,
     "annual_fee_waiver_condition": "NOT_APPLICABLE",
-    "interest_rate_annual_pct": "UNKNOWN",
-    "cat_promedio_pct": "UNKNOWN",
-    "base_reward_type": "none",
-    "base_reward_rate": 0,
-    "point_value_mxn": "NOT_APPLICABLE",
-    "effective_rate_pct": 0,
-    "points_program_name": "NOT_APPLICABLE",
+    "interest_rate_annual_pct": 63.95,
+    "cat_promedio_pct": 88.2,
+    "base_reward_type": "points",
+    "base_reward_rate": "UNKNOWN",
+    "point_value_mxn": "UNKNOWN",
+    "effective_rate_pct": "UNKNOWN",
+    "points_program_name": "UNKNOWN",
     "min_income_mxn_monthly": "UNKNOWN",
     "invitation_only": false,
-    "other_eligibility_criteria": "NOT_APPLICABLE",
+    "other_eligibility_criteria": "Requiere un Plan Tarifario Telcel (postpago).",
     "confidence": {
       "identity": {
-        "score": "low",
-        "evidence_type": "comparator_secondary",
-        "verified_on": "2026-08-07",
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
         "sources": [
-          "https://datacards.mx/blog/mejores-tarjetas-inbursa-mexico-guia-2026"
+          "https://www.inbursa.com/sites/gfi/document/comisiones-tdc-inbursa-mc.pdf",
+          "https://www.inbursa.com/sites/gfi/tdc-telcel"
         ]
       },
       "cost": {
-        "score": "low",
-        "evidence_type": "comparator_secondary",
-        "verified_on": "2026-08-07",
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
         "sources": [
-          "https://datacards.mx/blog/mejores-tarjetas-inbursa-mexico-guia-2026"
+          "https://www.inbursa.com/sites/gfi/document/comisiones-tdc-inbursa-mc.pdf",
+          "https://www.inbursa.com/sites/gfi/tdc-telcel"
         ]
       },
       "rewards": {
-        "score": "low",
-        "evidence_type": "comparator_secondary",
-        "verified_on": "2026-08-07",
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
         "sources": [
-          "https://datacards.mx/blog/mejores-tarjetas-inbursa-mexico-guia-2026"
+          "https://www.inbursa.com/sites/gfi/tdc-telcel"
         ]
       },
       "perks": {
-        "score": "low",
-        "evidence_type": "comparator_secondary",
-        "verified_on": "2026-08-07",
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
         "sources": [
-          "https://datacards.mx/blog/mejores-tarjetas-inbursa-mexico-guia-2026"
+          "https://www.inbursa.com/sites/gfi/tdc-telcel"
         ]
       },
       "eligibility": {
-        "score": "low",
-        "evidence_type": "comparator_secondary",
-        "verified_on": "2026-08-07",
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
         "sources": [
-          "https://datacards.mx/blog/mejores-tarjetas-inbursa-mexico-guia-2026"
+          "https://www.inbursa.com/sites/gfi/tdc-telcel"
         ]
       }
     },
@@ -784,9 +899,9 @@
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
     "inactivity_min_spend_mxn": "NOT_APPLICABLE",
     "inactivity_spend_period": "NOT_APPLICABLE",
-    "fee_billing_period": "NOT_APPLICABLE",
-    "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "fee_billing_period": "annual",
+    "cat_calculated_on": "2026-06-30",
+    "cat_valid_until": "2026-12-30"
   },
   {
     "card_id": "bancoppel__tarjeta_de_credito_bancoppel",
@@ -4862,22 +4977,80 @@
     "display_name": "Aeroméxico Ascend",
     "former_names": [],
     "legacy_id": "Aeroméxico Ascend",
-    "tier": "UNKNOWN",
+    "tier": "clasica",
     "network": "UNKNOWN",
     "lifecycle_status": "active",
-    "mapping_status": "skeleton",
+    "mapping_status": "mapped",
     "census_confidence": "high",
     "census_note": "co-brand with Aeroméxico",
     "conflicts": [],
-    "notes": "Co-brand split from legacy issuer string 'Banco Inbursa (Aeroméxico)'.",
+    "notes": "ACUMULACIÓN DENOMINADA EN DÓLARES: 2 Puntos Aeroméxico Rewards por dólar en Aeroméxico, 1 por dólar en el resto. El esquema no admite una tasa como porcentaje del gasto sin suponer un tipo de cambio, así que base_reward_rate queda UNKNOWN. Aeroméxico no publica el valor en pesos de un Punto Rewards. No acumulan puntos disposiciones de efectivo, intereses, impuestos, comisiones ni compras en casinos. Bono de bienvenida 5,000 puntos con $15,000 de gasto en 3 meses; bono de aniversario 5,000 puntos con $150,000 de gasto anual. Un certificado de vuelo 2x1 al año con $75,000 de gasto anual. Equipaje de mano 10 kg y documentado 25 kg sin costo. Emitida por SOFOM Inbursa, S.A. de C.V., S.F.O.M. E.R., no por Banco Inbursa. Se conserva bajo issuer_id banco_inbursa por decisión de producto (2026-08-17); la distinción no afecta ninguna recomendación de tarjeta porque el seguro de depósito no aplica a productos de crédito.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
     "inactivity_min_spend_mxn": "NOT_APPLICABLE",
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "annual",
-    "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_calculated_on": "2026-04-15",
+    "cat_valid_until": "2026-10-15",
+    "annual_fee_mxn": 1650,
+    "annual_fee_includes_iva": false,
+    "annual_fee_first_year_waived": false,
+    "annual_fee_waiver_condition": "NOT_APPLICABLE",
+    "interest_rate_annual_pct": 40.0,
+    "cat_promedio_pct": 64.8,
+    "base_reward_type": "points",
+    "base_reward_rate": "UNKNOWN",
+    "point_value_mxn": "UNKNOWN",
+    "effective_rate_pct": "UNKNOWN",
+    "points_program_name": "Aeroméxico Rewards",
+    "min_income_mxn_monthly": "UNKNOWN",
+    "invitation_only": false,
+    "other_eligibility_criteria": "Antigüedad laboral mínima de un año.",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.inbursa.com/sites/gfi/document/tdc-ascend-folleto.pdf"
+        ]
+      },
+      "cost": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.inbursa.com/sites/gfi/document/tdc-ascend-folleto.pdf",
+          "https://www.inbursa.com/sites/gfi/document/tyc-tarjetas-aeromexico.pdf"
+        ]
+      },
+      "rewards": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.inbursa.com/sites/gfi/document/tdc-ascend-folleto.pdf",
+          "https://www.inbursa.com/sites/gfi/document/tyc-tarjetas-aeromexico.pdf"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.inbursa.com/sites/gfi/document/tyc-tarjetas-aeromexico.pdf"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.inbursa.com/sites/gfi/document/tdc-ascend-folleto.pdf"
+        ]
+      }
+    }
   },
   {
     "card_id": "banco_inbursa__aeromexico_elevate",
@@ -4886,22 +5059,80 @@
     "display_name": "Aeroméxico Elevate",
     "former_names": [],
     "legacy_id": "Aeroméxico Elevate",
-    "tier": "UNKNOWN",
+    "tier": "oro",
     "network": "UNKNOWN",
     "lifecycle_status": "active",
-    "mapping_status": "skeleton",
+    "mapping_status": "mapped",
     "census_confidence": "high",
     "census_note": "Confirmed active on the issuer's site. Rewards accrue in Puntos Aeroméxico Rewards at an unpublished per-peso rate; spend bonuses and Priority Pass documented but not yet modelled.",
     "conflicts": [],
-    "notes": "Co-brand split from legacy issuer string 'Banco Inbursa (Aeroméxico)'.",
+    "notes": "ACUMULACIÓN DENOMINADA EN DÓLARES: 2.4 Puntos Aeroméxico Rewards por dólar en Aeroméxico, 1.2 por dólar en el resto. El esquema no admite una tasa como porcentaje del gasto sin suponer un tipo de cambio, así que base_reward_rate queda UNKNOWN. Aeroméxico no publica el valor en pesos de un Punto Rewards. No acumulan puntos disposiciones de efectivo, intereses, impuestos, comisiones ni compras en casinos. Bono de bienvenida 7,500 puntos con $25,000 de gasto en 3 meses; bono de aniversario 7,500 puntos con $250,000 de gasto anual. Certificado 2x1 con $75,000 de gasto anual. Sky Priority Zona 2. Emitida por SOFOM Inbursa, S.A. de C.V., S.F.O.M. E.R., no por Banco Inbursa. Se conserva bajo issuer_id banco_inbursa por decisión de producto (2026-08-17); la distinción no afecta ninguna recomendación de tarjeta porque el seguro de depósito no aplica a productos de crédito.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
     "inactivity_min_spend_mxn": "NOT_APPLICABLE",
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "annual",
-    "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_calculated_on": "2026-04-15",
+    "cat_valid_until": "2026-10-15",
+    "annual_fee_mxn": 3300,
+    "annual_fee_includes_iva": false,
+    "annual_fee_first_year_waived": false,
+    "annual_fee_waiver_condition": "NOT_APPLICABLE",
+    "interest_rate_annual_pct": 35.0,
+    "cat_promedio_pct": 48.0,
+    "base_reward_type": "points",
+    "base_reward_rate": "UNKNOWN",
+    "point_value_mxn": "UNKNOWN",
+    "effective_rate_pct": "UNKNOWN",
+    "points_program_name": "Aeroméxico Rewards",
+    "min_income_mxn_monthly": "UNKNOWN",
+    "invitation_only": false,
+    "other_eligibility_criteria": "Antigüedad laboral mínima de un año.",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.inbursa.com/sites/gfi/document/tdc-elevate-folleto.pdf"
+        ]
+      },
+      "cost": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.inbursa.com/sites/gfi/document/tdc-elevate-folleto.pdf",
+          "https://www.inbursa.com/sites/gfi/document/tyc-tarjetas-aeromexico.pdf"
+        ]
+      },
+      "rewards": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.inbursa.com/sites/gfi/document/tdc-elevate-folleto.pdf",
+          "https://www.inbursa.com/sites/gfi/document/tyc-tarjetas-aeromexico.pdf"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.inbursa.com/sites/gfi/document/tyc-tarjetas-aeromexico.pdf"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.inbursa.com/sites/gfi/document/tdc-elevate-folleto.pdf"
+        ]
+      }
+    }
   },
   {
     "card_id": "banco_inbursa__aeromexico_horizon",
@@ -4910,22 +5141,80 @@
     "display_name": "Aeroméxico Horizon",
     "former_names": [],
     "legacy_id": "Aeroméxico Horizon",
-    "tier": "UNKNOWN",
+    "tier": "platino",
     "network": "UNKNOWN",
     "lifecycle_status": "active",
-    "mapping_status": "skeleton",
+    "mapping_status": "mapped",
     "census_confidence": "high",
     "census_note": "Confirmed active on the issuer's site. Rewards accrue in Puntos Aeroméxico Rewards at an unpublished per-peso rate; spend bonuses and Priority Pass documented but not yet modelled.",
     "conflicts": [],
-    "notes": "Co-brand split from legacy issuer string 'Banco Inbursa (Aeroméxico)'.",
+    "notes": "ACUMULACIÓN DENOMINADA EN DÓLARES: 3 Puntos Aeroméxico Rewards por dólar en Aeroméxico, 2 por dólar en el resto. El esquema no admite una tasa como porcentaje del gasto sin suponer un tipo de cambio, así que base_reward_rate queda UNKNOWN. Aeroméxico no publica el valor en pesos de un Punto Rewards. No acumulan puntos disposiciones de efectivo, intereses, impuestos, comisiones ni compras en casinos. Bono de bienvenida 30,000 puntos con $50,000 de gasto en 3 meses; dos bonos de aniversario de 15,000 puntos con $500,000 y $750,000 de gasto anual. Certificado 2x1 válido en vuelos nacionales, Estados Unidos y Canadá; el gasto anual que lo desbloquea no se pudo leer completo en el T&C del emisor y queda sin registrar (un comparador dice $300,000, sin corroborar). Emitida por SOFOM Inbursa, S.A. de C.V., S.F.O.M. E.R., no por Banco Inbursa. Se conserva bajo issuer_id banco_inbursa por decisión de producto (2026-08-17); la distinción no afecta ninguna recomendación de tarjeta porque el seguro de depósito no aplica a productos de crédito.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
     "inactivity_min_spend_mxn": "NOT_APPLICABLE",
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "annual",
-    "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_calculated_on": "2026-04-15",
+    "cat_valid_until": "2026-10-15",
+    "annual_fee_mxn": 8100,
+    "annual_fee_includes_iva": false,
+    "annual_fee_first_year_waived": false,
+    "annual_fee_waiver_condition": "NOT_APPLICABLE",
+    "interest_rate_annual_pct": 30.0,
+    "cat_promedio_pct": 51.2,
+    "base_reward_type": "points",
+    "base_reward_rate": "UNKNOWN",
+    "point_value_mxn": "UNKNOWN",
+    "effective_rate_pct": "UNKNOWN",
+    "points_program_name": "Aeroméxico Rewards",
+    "min_income_mxn_monthly": "UNKNOWN",
+    "invitation_only": false,
+    "other_eligibility_criteria": "Antigüedad laboral mínima de un año.",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.inbursa.com/sites/gfi/document/tdc-horizon-folleto.pdf"
+        ]
+      },
+      "cost": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.inbursa.com/sites/gfi/document/tdc-horizon-folleto.pdf",
+          "https://www.inbursa.com/sites/gfi/document/tyc-tarjetas-aeromexico.pdf"
+        ]
+      },
+      "rewards": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.inbursa.com/sites/gfi/document/tdc-horizon-folleto.pdf",
+          "https://www.inbursa.com/sites/gfi/document/tyc-tarjetas-aeromexico.pdf"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.inbursa.com/sites/gfi/document/tyc-tarjetas-aeromexico.pdf"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.inbursa.com/sites/gfi/document/tdc-horizon-folleto.pdf"
+        ]
+      }
+    }
   },
   {
     "card_id": "invex__volaris",
@@ -5876,22 +6165,78 @@
     "display_name": "Tarjeta Walmart Inbursa",
     "former_names": [],
     "legacy_id": "Tarjeta Walmart Inbursa",
-    "tier": "UNKNOWN",
-    "network": "UNKNOWN",
+    "tier": "clasica",
+    "network": "mastercard",
     "lifecycle_status": "active",
-    "mapping_status": "skeleton",
+    "mapping_status": "mapped",
     "census_confidence": "high",
     "census_note": "Cashback rate reported by a comparator as '0.03%' — almost certainly 3% written as a decimal fraction. Not recorded until confirmed from the issuer.",
     "conflicts": [],
-    "notes": "Co-brand split from legacy issuer string 'Banco Inbursa (Walmart)'.",
+    "notes": "Bonifica 3% DIRECTO AL ESTADO DE CUENTA en Walmart, Bodega Aurrera, Walmart Express y Sam's Club, por cualquier canal — a diferencia de Walmart INVEX, que paga la bonificación en la app Cashi. No hay bonificación base fuera del grupo Walmart, por eso base_reward_rate es 0. Aceptada como pago en efectivo en Sam's Club, lo que el emisor cuantifica como 2.3% adicional de ahorro. La anualidad de $750 se cobra en 3 mensualidades sin intereses tras la activación y después en cada aniversario. El folleto de julio de 2026 sustituye al de enero (CAT 101.2%, tasa 67.19%). Emitida por SOFOM Inbursa, S.A. de C.V., S.F.O.M. E.R., no por Banco Inbursa. Se conserva bajo issuer_id banco_inbursa por decisión de producto (2026-08-17); la distinción no afecta ninguna recomendación de tarjeta porque el seguro de depósito no aplica a productos de crédito.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
     "inactivity_min_spend_mxn": "NOT_APPLICABLE",
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "annual",
-    "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_calculated_on": "2026-06-30",
+    "cat_valid_until": "2026-12-30",
+    "annual_fee_mxn": 750,
+    "annual_fee_includes_iva": false,
+    "annual_fee_first_year_waived": false,
+    "annual_fee_waiver_condition": "NOT_APPLICABLE",
+    "interest_rate_annual_pct": 66.65,
+    "cat_promedio_pct": 100.6,
+    "base_reward_type": "cashback",
+    "base_reward_rate": 0,
+    "point_value_mxn": 1.0,
+    "effective_rate_pct": 0,
+    "points_program_name": "NOT_APPLICABLE",
+    "min_income_mxn_monthly": "UNKNOWN",
+    "invitation_only": false,
+    "other_eligibility_criteria": "Antigüedad laboral mínima de un año.",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.inbursa.com/sites/gfi/document/tdc-walmart-folleto.pdf"
+        ]
+      },
+      "cost": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.inbursa.com/sites/gfi/document/tdc-walmart-folleto.pdf"
+        ]
+      },
+      "rewards": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.inbursa.com/sites/gfi/document/tdc-walmart-folleto.pdf"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.inbursa.com/sites/gfi/document/tdc-walmart-folleto.pdf"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.inbursa.com/sites/gfi/document/tdc-walmart-folleto.pdf"
+        ]
+      }
+    }
   },
   {
     "card_id": "citibanamex__costco_banamex",
@@ -7893,22 +8238,78 @@
     "display_name": "Tarjeta de Crédito Enlace Médico",
     "former_names": [],
     "legacy_id": "",
-    "tier": "UNKNOWN",
+    "tier": "clasica",
     "network": "UNKNOWN",
     "lifecycle_status": "active",
-    "mapping_status": "skeleton",
+    "mapping_status": "mapped",
     "census_confidence": "high",
     "census_note": "Found on the issuer's own product list; absent from the card census.",
     "conflicts": [],
-    "notes": "",
+    "notes": "Tarjeta dirigida al gremio médico. Tasa de acumulación y programa de lealtad no publicados en la página del producto: UNKNOWN. Tasa preferencial al domiciliar el pago a una cuenta de cheques Inbursa.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
     "inactivity_min_spend_mxn": "NOT_APPLICABLE",
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "annual",
-    "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_calculated_on": "2026-06-30",
+    "cat_valid_until": "2026-12-30",
+    "annual_fee_mxn": 540,
+    "annual_fee_includes_iva": false,
+    "annual_fee_first_year_waived": false,
+    "annual_fee_waiver_condition": "NOT_APPLICABLE",
+    "interest_rate_annual_pct": 55.59,
+    "cat_promedio_pct": 72.9,
+    "base_reward_type": "points",
+    "base_reward_rate": "UNKNOWN",
+    "point_value_mxn": "UNKNOWN",
+    "effective_rate_pct": "UNKNOWN",
+    "points_program_name": "UNKNOWN",
+    "min_income_mxn_monthly": "UNKNOWN",
+    "invitation_only": false,
+    "other_eligibility_criteria": "Dirigida a médicos.",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.inbursa.com/sites/gfi/tdc-enlacemedico"
+        ]
+      },
+      "cost": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.inbursa.com/sites/gfi/tdc-enlacemedico"
+        ]
+      },
+      "rewards": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.inbursa.com/sites/gfi/tdc-enlacemedico"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.inbursa.com/sites/gfi/tdc-enlacemedico"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.inbursa.com/sites/gfi/tdc-enlacemedico"
+        ]
+      }
+    }
   },
   {
     "card_id": "banco_inbursa__fundacion_unam",
@@ -7917,22 +8318,78 @@
     "display_name": "Tarjeta de Crédito Fundación UNAM",
     "former_names": [],
     "legacy_id": "",
-    "tier": "UNKNOWN",
+    "tier": "clasica",
     "network": "UNKNOWN",
     "lifecycle_status": "active",
-    "mapping_status": "skeleton",
+    "mapping_status": "mapped",
     "census_confidence": "high",
     "census_note": "Found on the issuer's own product list; absent from the card census.",
     "conflicts": [],
-    "notes": "",
+    "notes": "Tarjeta de afinidad Fundación UNAM. El anexo de comisiones de marca compartida no publica tasa de acumulación ni programa de lealtad: base_reward_rate y effective_rate_pct quedan UNKNOWN. Sin costo de tarjeta adicional. Emitida por SOFOM Inbursa, S.A. de C.V., S.F.O.M. E.R., no por Banco Inbursa. Se conserva bajo issuer_id banco_inbursa por decisión de producto (2026-08-17); la distinción no afecta ninguna recomendación de tarjeta porque el seguro de depósito no aplica a productos de crédito.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
     "inactivity_min_spend_mxn": "NOT_APPLICABLE",
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "annual",
-    "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_calculated_on": "2026-06-30",
+    "cat_valid_until": "2026-12-30",
+    "annual_fee_mxn": 750,
+    "annual_fee_includes_iva": false,
+    "annual_fee_first_year_waived": false,
+    "annual_fee_waiver_condition": "NOT_APPLICABLE",
+    "interest_rate_annual_pct": 64.34,
+    "cat_promedio_pct": 90.6,
+    "base_reward_type": "points",
+    "base_reward_rate": "UNKNOWN",
+    "point_value_mxn": "UNKNOWN",
+    "effective_rate_pct": "UNKNOWN",
+    "points_program_name": "UNKNOWN",
+    "min_income_mxn_monthly": "UNKNOWN",
+    "invitation_only": false,
+    "other_eligibility_criteria": "Antigüedad laboral mínima de un año.",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.inbursa.com/sites/gfi/document/comisiones-tdc-inbursa-mc.pdf"
+        ]
+      },
+      "cost": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.inbursa.com/sites/gfi/document/comisiones-tdc-inbursa-mc.pdf"
+        ]
+      },
+      "rewards": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.inbursa.com/sites/gfi/document/comisiones-tdc-inbursa-mc.pdf"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.inbursa.com/sites/gfi/document/comisiones-tdc-inbursa-mc.pdf"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.inbursa.com/sites/gfi/document/comisiones-tdc-inbursa-mc.pdf"
+        ]
+      }
+    }
   },
   {
     "card_id": "invex__now",
