@@ -46,6 +46,8 @@ RATE_TYPES = {"rendimiento_anual_nominal", "GAT_nominal", "GAT_real",
               "NOT_APPLICABLE", "UNKNOWN"}
 LIQUIDITY = {"instant", "same_day", "term_locked"}
 REWARD_TYPES = {"cashback", "points", "miles", "none"}
+ACCRUAL_BASIS = {"pct_of_spend", "per_usd", "per_mxn_block",
+                 "NOT_APPLICABLE", "UNKNOWN"}
 REPLACE_ADD = {"replaces", "adds"}
 CAP_BASIS = {"reward_mxn", "spend_mxn", "mxn", "points", "NOT_APPLICABLE"}
 CAP_PERIOD = {"monthly", "weekly", "annual", "statement", "NOT_APPLICABLE"}
@@ -456,6 +458,39 @@ def check_effective_rate(row, rate_field, where, report):
                 )
 
 
+def check_accrual(row, rate_field, where, report):
+    """accrual_* holds the accrual as the issuer states it. Only pct_of_spend can
+    also be expressed in the percentage column; the other bases need arithmetic
+    the dataset must not bake in, so their percentage field stays UNKNOWN."""
+    basis = row.get("accrual_basis")
+    if basis is None:
+        return
+    check_enum(row, "accrual_basis", ACCRUAL_BASIS, where, report)
+    rate = row.get("accrual_rate")
+    block = row.get("accrual_block_mxn")
+
+    if basis in {"per_usd", "per_mxn_block"}:
+        if not is_num(rate):
+            report.error(where, f"accrual_basis={basis} requires a numeric accrual_rate")
+        if row.get(rate_field) != "UNKNOWN":
+            report.error(
+                where,
+                f"accrual_basis={basis} but {rate_field}={row.get(rate_field)!r} — a "
+                "per-dollar or per-block accrual has no percentage-of-spend form; "
+                "converting one needs an FX rate and must not be stored",
+            )
+    if basis == "per_mxn_block" and not is_num(block):
+        report.error(where, "accrual_basis=per_mxn_block requires a numeric accrual_block_mxn")
+    if basis != "per_mxn_block" and is_num(block):
+        report.error(where, f"accrual_block_mxn only applies to per_mxn_block, got {basis}")
+    if basis == "pct_of_spend" and is_num(rate) and is_num(row.get(rate_field)):
+        if round(rate, 6) != round(row[rate_field], 6):
+            report.error(
+                where,
+                f"accrual_rate {rate} != {rate_field} {row[rate_field]} on pct_of_spend",
+            )
+
+
 def validate_cards(cards, issuer_ids, live_issuers, report, today):
     seen = set()
     for row in cards:
@@ -512,6 +547,7 @@ def validate_cards(cards, issuer_ids, live_issuers, report, today):
             report.error(where, "annual_fee_mxn cannot be negative")
 
         check_effective_rate(row, "base_reward_rate", where, report)
+        check_accrual(row, "base_reward_rate", where, report)
 
         # A CAT carries its own expiry, independent of the cost group's TTL.
         # Re-verifying the row does not refresh it — only the issuer can. Warn
@@ -729,6 +765,7 @@ def validate_rewards(rewards, card_ids, report, today):
             report.error(where, f"rate={rate} outside plausible range 0-100")
 
         check_effective_rate(row, "rate", where, report)
+        check_accrual(row, "rate", where, report)
 
         if "cap_amount" in row and not num_or_sentinel(row["cap_amount"]):
             report.error(where, f"cap_amount={row['cap_amount']!r} invalid")

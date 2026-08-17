@@ -291,6 +291,40 @@ customer to spend three times what they need to.
   the card cannot be ranked on rewards at all, which is the correct outcome — it is not the
   same as ranking it zero, and it must be surfaced to the user rather than hidden.
 
+### Accrual basis
+
+```
+accrual_basis      pct_of_spend | per_usd | per_mxn_block | NOT_APPLICABLE | UNKNOWN
+accrual_rate       numeric — reward units earned per unit of the basis
+accrual_block_mxn  numeric | NOT_APPLICABLE — block size for per_mxn_block
+```
+
+`base_reward_rate` is a percentage of spend. Several Mexican co-brands do not
+accrue that way, and forcing them into the column either loses the rate or bakes
+in an exchange rate:
+
+| Issuer wording | `accrual_basis` | `accrual_rate` | `accrual_block_mxn` |
+|---|---|---|---|
+| "9% en Puntos BBVA" | `pct_of_spend` | 9 | `NOT_APPLICABLE` |
+| "2 Puntos por cada dólar" | `per_usd` | 2 | `NOT_APPLICABLE` |
+| "7 Puntos por cada $20 pesos" | `per_mxn_block` | 7 | 20 |
+| No reward | `NOT_APPLICABLE` | `NOT_APPLICABLE` | `NOT_APPLICABLE` |
+
+**Only `pct_of_spend` may also carry a percentage.** For `per_usd` and
+`per_mxn_block`, `base_reward_rate` (or `rate` on a CardRewards row) must be
+`UNKNOWN` — a per-dollar accrual has no percentage-of-spend form without an FX
+rate, and a stored FX rate is a guess that drifts daily while looking like a
+fact. The validator enforces this. Conversion, where it is wanted at all,
+belongs in the engine at scoring time with a rate it can date.
+
+`effective_rate_pct` is unaffected: it stays `UNKNOWN` wherever the peso value of
+a point is unpublished, which is true of every `per_usd` card mapped so far.
+
+Twelve mapped cards across four issuers use a non-percentage basis — the Volaris
+family, Aeroméxico Inbursa, Despegar, Hilton, Unique Rewards and Fiesta Rewards.
+Before this field existed their published accrual sat in `notes`, where nothing
+downstream could read it.
+
 ### CardRewards (one row per card per category)
 
 ```
