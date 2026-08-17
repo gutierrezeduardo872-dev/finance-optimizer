@@ -513,6 +513,25 @@ def validate_cards(cards, issuer_ids, live_issuers, report, today):
 
         check_effective_rate(row, "base_reward_rate", where, report)
 
+        # A CAT carries its own expiry, independent of the cost group's TTL.
+        # Re-verifying the row does not refresh it — only the issuer can. Warn
+        # rather than error: the value is still what the issuer published, it is
+        # just no longer current, and blocking publish on it would strand rows
+        # nobody can fix.
+        valid_until = row.get("cat_valid_until")
+        if valid_until and valid_until not in SENTINELS:
+            try:
+                lapsed = (today - datetime.strptime(valid_until, "%Y-%m-%d").date()).days
+            except ValueError:
+                lapsed = None
+            if lapsed is not None and lapsed > 0:
+                report.warn(
+                    where,
+                    f"cat_valid_until {valid_until} passed {lapsed}d ago — CAT "
+                    f"{row.get('cat_promedio_pct')!r} (calculated "
+                    f"{row.get('cat_calculated_on')!r}) is stale at source",
+                )
+
         # An inactivity penalty is meaningless without the threshold that avoids
         # it and the period it recurs on — the engine needs all three to price it.
         infee = row.get("inactivity_fee_mxn")

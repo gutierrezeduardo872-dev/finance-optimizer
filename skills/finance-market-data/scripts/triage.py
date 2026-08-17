@@ -79,6 +79,7 @@ def main():
             print(f"could not read held products: {e}\n", file=sys.stderr)
 
     report = {"stale": [], "backlog": [], "conflicts": [], "unverified_issuers": [],
+              "expired_cat": [],
               "expiring": [], "pending_conversion": []}
 
     # ---- staleness on mapped rows -------------------------------------------
@@ -114,6 +115,9 @@ def main():
         e = per_issuer[iid]
         e["skeletons"] += 1
         partner = str(c.get("cobrand_partner") or "")
+        # Sentinels mean "no co-brand", not a partner named NOT_APPLICABLE.
+        if partner in {"NOT_APPLICABLE", "UNKNOWN"}:
+            partner = ""
         w = WEIGHT_BASE
         if str(c.get("card_id")) in held:
             w = WEIGHT_HELD
@@ -135,7 +139,10 @@ def main():
             "published": bool(i.get("in_dataset")),
             **{k: (sorted(v) if isinstance(v, set) else v) for k, v in e.items()},
         })
-    report["backlog"].sort(key=lambda r: -r["score"])
+    # An issuer with in_dataset=false is tracked but not published, so mapping it
+    # buys nothing today. Keep it in the report — deleting it means rediscovering
+    # the same gap every run — but rank it below everything publishable.
+    report["backlog"].sort(key=lambda r: (not r["published"], -r["score"]))
 
     # ---- unresolved conflicts block publish ---------------------------------
     for rows, idf in ((cards, "card_id"), (accounts, "account_id")):
@@ -192,6 +199,24 @@ def main():
                 "on": a_.get("promotional_rate_end_date"), "days": -a,
             })
 
+    # ---- CAT past its stated validity ---------------------------------------
+    # A CAT is a dated regulatory snapshot with its own expiry, independent of
+    # the cost group's TTL. A row re-verified today still carries a stale CAT if
+    # the issuer has not recalculated it, so this cannot be derived from
+    # verified_on — it has to read cat_valid_until directly.
+    for c in cards:
+        if c.get("mapping_status") == "skeleton":
+            continue
+        a = age_days(c.get("cat_valid_until"), today)
+        if a is not None and a > 0:
+            report["expired_cat"].append({
+                "id": c.get("card_id"), "issuer": c.get("issuer_id"),
+                "on": c.get("cat_valid_until"), "days": a,
+                "cat": c.get("cat_promedio_pct"),
+                "calculated_on": c.get("cat_calculated_on"),
+            })
+    report["expired_cat"].sort(key=lambda r: -r["days"])
+
     if "--json" in sys.argv:
         print(json.dumps(report, indent=2, ensure_ascii=False))
         return 0
@@ -226,6 +251,15 @@ def main():
         for e in sorted(report["expiring"], key=lambda x: x["days"]):
             when = f"in {e['days']}d" if e["days"] > 0 else f"ended {-e['days']}d ago"
             print(f"    {e['kind']:11s} {e['id']:44s} {e['on']}  {when}")
+        print()
+
+    if report["expired_cat"]:
+        print(f"3b. CAT PAST ITS VALIDITY DATE ({len(report['expired_cat'])})")
+        print("    The issuer has not recalculated these. The field-group TTL")
+        print("    cannot see it — a row verified today still carries a stale CAT.")
+        for e in report["expired_cat"]:
+            print(f"    {e['id']:44s} {str(e['cat']):>7}%  expired {e['on']}"
+                  f" ({e['days']}d ago, calc {e['calculated_on']})")
         print()
 
     if report["stale"]:
@@ -266,13 +300,17 @@ def main():
             partners = ", ".join(b["partners"][:4]) if b["partners"] else ""
             if len(b["partners"]) > 4:
                 partners += f" +{len(b['partners']) - 4}"
-            print(f"    {b['name'][:23]:24s} {b['skeletons']:>5} {b['held']:>5} "
+            name = b["name"][:21] + ("" if b["published"] else " *")
+            print(f"    {name[:23]:24s} {b['skeletons']:>5} {b['held']:>5} "
                   f"{b['cobrand']:>5} {b['score']:>6}  {partners}")
+        if any(not b["published"] for b in report["backlog"][:15]):
+            print("    * issuer is in_dataset=false — tracked, not published,")
+            print("      so mapping it changes nothing until that is reversed.")
         if len(report["backlog"]) > 15:
             print(f"    … and {len(report['backlog']) - 15} more issuers")
         print()
 
-    top = report["backlog"][0] if report["backlog"] else None
+    top = next((b for b in report["backlog"] if b["published"]), None)
     print("=" * 70)
     if report["conflicts"]:
         print("Resolve the conflicts first — nothing publishes until they clear.")
