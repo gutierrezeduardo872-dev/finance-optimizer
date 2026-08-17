@@ -1,2 +1,6 @@
 .DS_Store
 index.html.backup
+
+# Generated Sheet exports — regenerate with publish.py, never commit
+out/
+sheet_export/

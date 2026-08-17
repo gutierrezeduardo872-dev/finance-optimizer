@@ -5986,22 +5986,83 @@
     "display_name": "Tarjeta de Crédito Fiesta Rewards Oro",
     "former_names": [],
     "legacy_id": "Tarjeta de Crédito Fiesta Rewards Oro",
-    "tier": "UNKNOWN",
-    "network": "UNKNOWN",
+    "tier": "oro",
+    "network": "visa",
     "lifecycle_status": "active",
-    "mapping_status": "skeleton",
+    "mapping_status": "mapped",
     "census_confidence": "high",
     "census_note": "co-brand (Fiesta Americana)",
     "conflicts": [],
-    "notes": "Co-brand split from legacy issuer string 'Santander México (Fiesta Rewards)'.",
+    "notes": "Co-brand con Grupo Posadas (Fiesta Americana, Fiesta Inn, Live Aqua). Estatus Socio Oro inmediato, 10% de descuento en alimentos, sin accesos a salas VIP. ACUMULACIÓN EN DÓLARES: base_reward_rate UNKNOWN. Santander no publica la tasa por dólar de la Oro en fuente propia; un comparador la iguala a la Platino (3/USD general, 10/USD en Posadas) pero no se corrobora. Puntos con vigencia de 2 años y sin valor en pesos publicado — su valor depende del canje: alto en noches de hotel, bajo en catálogo. La cifra de CAT proviene de fiestarewards.com, el sitio del programa de lealtad co-emisor, que reproduce la leyenda regulatoria de Santander; la página del producto en santander.com.mx inserta ese bloque por JavaScript y no lo entrega. Ambas fuentes coinciden en fecha de cálculo 1 de julio de 2026, vigente al 31 de diciembre de 2026.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
     "inactivity_min_spend_mxn": "NOT_APPLICABLE",
     "inactivity_spend_period": "NOT_APPLICABLE",
-    "fee_billing_period": "UNKNOWN",
-    "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "fee_billing_period": "annual",
+    "cat_calculated_on": "2026-07-01",
+    "cat_valid_until": "2026-12-31",
+    "annual_fee_mxn": 1099,
+    "annual_fee_includes_iva": false,
+    "annual_fee_first_year_waived": false,
+    "annual_fee_waiver_condition": "NOT_APPLICABLE",
+    "interest_rate_annual_pct": 62.68,
+    "cat_promedio_pct": 92.0,
+    "base_reward_type": "points",
+    "base_reward_rate": "UNKNOWN",
+    "point_value_mxn": "UNKNOWN",
+    "effective_rate_pct": "UNKNOWN",
+    "points_program_name": "Fiesta Rewards",
+    "min_income_mxn_monthly": "UNKNOWN",
+    "invitation_only": false,
+    "other_eligibility_criteria": "NOT_APPLICABLE",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.fiestarewards.com/en/fr_santander_card",
+          "https://www.santander.com.mx/personas/credito-y-financiamiento/tarjetas-de-credito/fiesta-rewards-oro/"
+        ]
+      },
+      "cost": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.fiestarewards.com/en/fr_santander_card",
+          "https://www.santander.com.mx/personas/credito-y-financiamiento/tarjetas-de-credito/fiesta-rewards-oro/"
+        ]
+      },
+      "rewards": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.fiestarewards.com/en/fr_santander_card",
+          "https://www.santander.com.mx/personas/credito-y-financiamiento/tarjetas-de-credito/fiesta-rewards-oro/"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.fiestarewards.com/en/fr_santander_card",
+          "https://www.santander.com.mx/personas/credito-y-financiamiento/tarjetas-de-credito/fiesta-rewards-oro/"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.fiestarewards.com/en/fr_santander_card",
+          "https://www.santander.com.mx/personas/credito-y-financiamiento/tarjetas-de-credito/fiesta-rewards-oro/"
+        ]
+      }
+    }
   },
   {
     "card_id": "santander_mexico__fiesta_rewards_platino",
@@ -6010,22 +6071,83 @@
     "display_name": "Tarjeta de Crédito Fiesta Rewards Platino",
     "former_names": [],
     "legacy_id": "Tarjeta de Crédito Fiesta Rewards Platino",
-    "tier": "UNKNOWN",
-    "network": "UNKNOWN",
+    "tier": "platino",
+    "network": "visa",
     "lifecycle_status": "active",
-    "mapping_status": "skeleton",
+    "mapping_status": "mapped",
     "census_confidence": "high",
     "census_note": "co-brand (Fiesta Americana)",
     "conflicts": [],
-    "notes": "Co-brand split from legacy issuer string 'Santander México (Fiesta Rewards)'.",
+    "notes": "Co-brand con Grupo Posadas. Estatus Platino, 15% de descuento en alimentos, upgrade de habitación y 10 accesos anuales a salas VIP (la página del producto dice 10; un comparador dice 2 — se toma la cifra del emisor). Bono de bienvenida 10,500 puntos al usarla en los primeros 100 días. ACUMULACIÓN EN DÓLARES: 3 Puntos Fiesta Rewards por cada $1 USD y 10 por USD en hoteles participantes, así que base_reward_rate queda UNKNOWN. Tasa 57.70% VARIABLE. Un comparador publica una anualidad de $1,650 y menciona una versión Clásica de $925 que no está en el censo — no corroborado, ver notas de censo. La cifra de CAT proviene de fiestarewards.com, el sitio del programa de lealtad co-emisor, que reproduce la leyenda regulatoria de Santander; la página del producto en santander.com.mx inserta ese bloque por JavaScript y no lo entrega. Ambas fuentes coinciden en fecha de cálculo 1 de julio de 2026, vigente al 31 de diciembre de 2026.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
     "inactivity_min_spend_mxn": "NOT_APPLICABLE",
     "inactivity_spend_period": "NOT_APPLICABLE",
-    "fee_billing_period": "UNKNOWN",
-    "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "fee_billing_period": "annual",
+    "cat_calculated_on": "2026-07-01",
+    "cat_valid_until": "2026-12-31",
+    "annual_fee_mxn": 2199,
+    "annual_fee_includes_iva": false,
+    "annual_fee_first_year_waived": false,
+    "annual_fee_waiver_condition": "NOT_APPLICABLE",
+    "interest_rate_annual_pct": 57.7,
+    "cat_promedio_pct": 79.8,
+    "base_reward_type": "points",
+    "base_reward_rate": "UNKNOWN",
+    "point_value_mxn": "UNKNOWN",
+    "effective_rate_pct": "UNKNOWN",
+    "points_program_name": "Fiesta Rewards",
+    "min_income_mxn_monthly": "UNKNOWN",
+    "invitation_only": false,
+    "other_eligibility_criteria": "NOT_APPLICABLE",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.fiestarewards.com/en/fr_santander_card",
+          "https://www.santander.com.mx/personas/credito-y-financiamiento/tarjetas-de-credito/fiesta-rewards-platino/"
+        ]
+      },
+      "cost": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.fiestarewards.com/en/fr_santander_card",
+          "https://www.santander.com.mx/personas/credito-y-financiamiento/tarjetas-de-credito/fiesta-rewards-platino/"
+        ]
+      },
+      "rewards": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.fiestarewards.com/en/fr_santander_card",
+          "https://www.santander.com.mx/personas/credito-y-financiamiento/tarjetas-de-credito/fiesta-rewards-platino/"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.fiestarewards.com/en/fr_santander_card",
+          "https://www.santander.com.mx/personas/credito-y-financiamiento/tarjetas-de-credito/fiesta-rewards-platino/"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.fiestarewards.com/en/fr_santander_card",
+          "https://www.santander.com.mx/personas/credito-y-financiamiento/tarjetas-de-credito/fiesta-rewards-platino/"
+        ]
+      }
+    }
   },
   {
     "card_id": "afirme__cemex",

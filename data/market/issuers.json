@@ -897,7 +897,7 @@
         "sources": []
       }
     },
-    "notes": "Migrated from card census. legal_name and source_urls pending confirmation against the CNBV Padrón.",
+    "notes": "Migrated from card census. legal_name and source_urls pending confirmation against the CNBV Padrón. PISTAS DE CENSO 2026-08-17, sin corroborar, no se crearon filas: (1) Santander publica DOS productos American Express con páginas distintas — 'Legacy American Express' (cálculo 1 jul 2026, vigente) y 'Access American Express' (cálculo 1 jul 2025, posiblemente cerrada); el censo tiene una sola fila. (2) Existe una página 'Gold' separada de Unique Rewards Gold, posible producto heredado. (3) Un comparador menciona una Fiesta Rewards Clásica de $925 + IVA que no está en el censo. Requieren una pasada de Stage 2 dedicada.",
     "offers_deposit_products": true
   },
   {
