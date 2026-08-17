@@ -175,9 +175,10 @@ card_id, issuer_id, cobrand_partner, display_name, former_names[], legacy_id,
 tier, network, lifecycle_status, lifecycle_changed_on,
 
 annual_fee_mxn, annual_fee_includes_iva, annual_fee_first_year_waived,
-annual_fee_waiver_condition, inactivity_fee_mxn, inactivity_fee_period,
+annual_fee_waiver_condition, fee_billing_period,
+inactivity_fee_mxn, inactivity_fee_period,
 inactivity_fee_includes_iva, inactivity_min_spend_mxn,
-interest_rate_annual_pct, cat_promedio_pct,
+interest_rate_annual_pct, cat_promedio_pct, cat_calculated_on, cat_valid_until,
 
 base_reward_rate, base_reward_type, point_value_mxn, effective_rate_pct,
 
@@ -193,6 +194,48 @@ confidence{}, conflicts[], notes
   flag breaks one of those two features.
 - `cobrand_partner` is its own field, never folded into the issuer name. `"Invex (Volaris)"`
   is two facts in one string and makes every downstream join fragile.
+### Fee billing period
+
+```
+fee_billing_period    annual | monthly | NOT_APPLICABLE
+```
+
+`annual_fee_mxn` is always the **yearly total**, whatever the billing cadence.
+`fee_billing_period` records how the issuer actually charges it.
+
+Banamex moved every card except six to a monthly *Comisión por Administración* on
+2026-07-30. The yearly figure did not change, so scoring is unaffected — but cancellation
+is. Under annual billing you pay up front and lose the remainder if you leave mid-year;
+under monthly billing you stop paying when you cancel. Monthly billing makes a card
+*cheaper to leave*, which is the opposite of what "they're charging monthly now" sounds
+like.
+
+**Display the figure the issuer quotes.** Show "$815/año, cobrado mensualmente", not
+"$68/mes". People reconcile against their statement, and converting puts our number out of
+step with theirs.
+
+### CAT calculation date
+
+```
+cat_calculated_on    YYYY-MM-DD | UNKNOWN
+cat_valid_until      YYYY-MM-DD | UNKNOWN
+```
+
+CAT is a regulatory snapshot built from a credit line, an average rate and a set of
+assumptions on a specific date. The same card can carry two different CAT figures on the
+same day from the same issuer — BBVA Azul reads 90.9% on its product page and 90.5% in the
+tarifario; Oro reads 68.3% and 71.3%. Neither is wrong; they were calculated on different
+dates.
+
+**Rule: prefer the tarifario over the product page.** The tarifario is the consolidated fee
+schedule, updated as a set and therefore internally consistent across products. Product
+pages drift independently — Banamex's Costco page was still showing a CAT calculated
+2025-03-31 and expired 2025-09-30.
+
+Record `cat_calculated_on` either way, so the choice is auditable and staleness shows up in
+triage rather than only in a note. A CAT past its `cat_valid_until` is stale regardless of
+what the field-group TTL says.
+
 ### Inactivity penalties
 
 Several Mexican cards advertise "sin anualidad de por vida" and then charge a **monthly**
@@ -201,7 +244,8 @@ in a separate charge that depends on behaviour.
 
 ```
 inactivity_fee_mxn          numeric | NOT_APPLICABLE
-inactivity_fee_period       monthly | annual | NOT_APPLICABLE
+inactivity_fee_period       monthly | quarterly | annual | NOT_APPLICABLE
+inactivity_spend_period     monthly | quarterly | annual | NOT_APPLICABLE
 inactivity_fee_includes_iva boolean | NOT_APPLICABLE
 inactivity_min_spend_mxn    numeric | NOT_APPLICABLE   -- spend that avoids it
 ```
@@ -217,6 +261,11 @@ collapsed into a single headline number.
 
 `annual_fee_waiver_condition` remains free text for the human-readable rule.
 `inactivity_min_spend_mxn` is the machine-readable threshold the engine tests.
+
+**The fee period and the spend period are not the same thing.** Banorte Por Ti charges $450
+and waives it for $7,500 of spend *per quarter*; Invex charges $195 monthly against a monthly
+threshold. Assuming they match turns a quarterly target into a monthly one and tells the
+customer to spend three times what they need to.
 
 - `base_reward_type`: `cashback` · `points` · `miles` · `none`. This also declares the UNIT
   that `base_reward_rate` is denominated in.
@@ -246,8 +295,8 @@ collapsed into a single headline number.
 
 ```
 reward_id, card_id, category, rate, reward_type, point_value_mxn, effective_rate_pct,
-replaces_or_adds_to_base, cap_amount, cap_basis, cap_period, min_spend,
-promo_end_date, user_selectable, confidence{}, notes
+replaces_or_adds_to_base, cap_amount, cap_basis, cap_period, rate_after_cap,
+payout_frequency, min_spend, promo_end_date, user_selectable, confidence{}, notes
 ```
 
 - `replaces_or_adds_to_base`: `replaces` · `adds`. Determine it; do not assume. Real cards do
@@ -255,7 +304,31 @@ promo_end_date, user_selectable, confidence{}, notes
 - `rate` and `effective_rate_pct` follow exactly the same unit rules as the card-level
   fields above. A category bonus in points is no more comparable to one in cashback than a
   base rate is.
-- `cap_basis`: `mxn` · `points` · `NOT_APPLICABLE`
+- `cap_basis`: `reward_mxn` · `spend_mxn` · `points` · `NOT_APPLICABLE`
+
+  **What the cap counts matters.** `reward_mxn` caps the money paid back;
+  `spend_mxn` caps the spend that earns the headline rate. Costco Banamex pays 5% on fuel
+  "topado a $10,000 mensuales de facturación" — that is $10,000 of *spend*, not $500 of
+  reward. Treating a spend cap as a reward cap understates the benefit by the rate factor.
+
+- `rate_after_cap`: numeric | `NOT_APPLICABLE`
+
+  Several cards do not stop earning at the cap, they step down. Costco drops from 5% to 3%
+  once the fuel cap is passed, uncapped from there. Recording only the cap loses the tail;
+  recording only the headline rate overstates it.
+
+- `payout_frequency`: `statement` · `monthly` · `annual` · `UNKNOWN`
+
+  Costco pays its *Reembolso Anual* once, in the December statement, and only if the account
+  is current. A peso paid in December is not the same as a peso credited this month, and a
+  card that pays annually is worth less to someone who may close it mid-year.
+
+  **Do not discount it numerically.** Any haircut would be an invented rate presented as
+  precision. Surface the timing instead — the card detail and any recommendation that
+  depends on it should say when the money actually arrives, and let the person judge
+  whether the wait matters. Where the projected rebate is large, say so prominently rather
+  than in a footnote: the December condition is exactly the kind of term people discover
+  too late.
 - `cap_period`: `monthly` · `weekly` · `annual` · `statement` · `NOT_APPLICABLE`
 - `user_selectable`: `true` where the cardholder chooses which categories earn the bonus.
   Several Mexican cards work this way, and the engine cannot treat a chosen category the same

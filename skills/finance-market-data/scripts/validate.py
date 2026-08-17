@@ -47,7 +47,7 @@ RATE_TYPES = {"rendimiento_anual_nominal", "GAT_nominal", "GAT_real",
 LIQUIDITY = {"instant", "same_day", "term_locked"}
 REWARD_TYPES = {"cashback", "points", "miles", "none"}
 REPLACE_ADD = {"replaces", "adds"}
-CAP_BASIS = {"mxn", "points", "NOT_APPLICABLE"}
+CAP_BASIS = {"reward_mxn", "spend_mxn", "mxn", "points", "NOT_APPLICABLE"}
 CAP_PERIOD = {"monthly", "weekly", "annual", "statement", "NOT_APPLICABLE"}
 EVIDENCE_TYPES = {"regulator", "issuer_primary", "comparator_secondary", "inferred"}
 SCORES = {"high", "medium", "low"}
@@ -474,6 +474,30 @@ def validate_cards(cards, issuer_ids, live_issuers, report, today):
             if field in row and not num_or_sentinel(row[field]):
                 report.error(where, f"{field}={row[field]!r} must be numeric or a sentinel")
 
+        if row.get("fee_billing_period") not in (None, "", "annual", "monthly",
+                                                 "NOT_APPLICABLE", "UNKNOWN"):
+            report.error(where,
+                         f"fee_billing_period={row.get('fee_billing_period')!r} invalid")
+        if is_num(row.get("annual_fee_mxn")) and row["annual_fee_mxn"] > 0:
+            if row.get("fee_billing_period") in (None, "", "UNKNOWN"):
+                report.warn(where, "annual fee with no fee_billing_period recorded")
+
+        # A CAT past its own validity is stale regardless of the group TTL — the
+        # issuer has said so itself.
+        for field in ("cat_calculated_on", "cat_valid_until"):
+            val = row.get(field)
+            if val in (None, "", "UNKNOWN", "NOT_APPLICABLE"):
+                continue
+            parsed = check_date(val, where, field, report)
+            if field == "cat_valid_until" and parsed and parsed < today:
+                report.warn(
+                    where,
+                    f"CAT expired {parsed} per the issuer's own validity date; "
+                    "re-check before relying on it",
+                )
+        if is_num(row.get("cat_promedio_pct")) and not row.get("cat_calculated_on"):
+            report.warn(where, "CAT recorded without cat_calculated_on")
+
         if "effective_rate_pct" in row and is_num(row["effective_rate_pct"]):
             if not (0 <= row["effective_rate_pct"] <= 100):
                 report.error(where, f"effective_rate_pct={row['effective_rate_pct']} out of range")
@@ -494,7 +518,10 @@ def validate_cards(cards, issuer_ids, live_issuers, report, today):
         if infee is not None and not num_or_sentinel(infee):
             report.error(where, f"inactivity_fee_mxn={infee!r} must be numeric or a sentinel")
         if is_num(infee) and infee > 0:
-            if row.get("inactivity_fee_period") not in {"monthly", "annual"}:
+            if row.get("inactivity_spend_period") not in {"monthly", "quarterly",
+                                                         "annual", None, ""}:
+                report.error(where, "inactivity_spend_period invalid")
+            if row.get("inactivity_fee_period") not in {"monthly", "quarterly", "annual"}:
                 report.error(where, "inactivity_fee_mxn requires inactivity_fee_period")
             if not is_num(row.get("inactivity_min_spend_mxn")):
                 if row.get("inactivity_min_spend_mxn") not in SENTINELS:
@@ -689,6 +716,22 @@ def validate_rewards(rewards, card_ids, report, today):
             report.error(where, "cap_amount must be positive when numeric")
 
         # A cap without a basis and period is unusable by the engine.
+        # A step-down rate must be below the headline rate, or the cap is
+        # working backwards.
+        after = row.get("rate_after_cap")
+        if after is not None and not num_or_sentinel(after):
+            report.error(where, f"rate_after_cap={after!r} invalid")
+        if is_num(after):
+            if not is_num(row.get("cap_amount")):
+                report.error(where, "rate_after_cap requires a numeric cap_amount")
+            if is_num(rate) and after >= rate:
+                report.warn(where,
+                            f"rate_after_cap {after} is not below the headline {rate}")
+
+        if row.get("payout_frequency") not in (None, "", "statement", "monthly",
+                                               "annual", "UNKNOWN"):
+            report.error(where, f"payout_frequency={row.get('payout_frequency')!r} invalid")
+
         if is_num(row.get("cap_amount")):
             if row.get("cap_basis") == "NOT_APPLICABLE":
                 report.error(where, "numeric cap_amount but cap_basis=NOT_APPLICABLE")

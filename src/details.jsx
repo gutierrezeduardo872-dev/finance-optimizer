@@ -57,12 +57,16 @@ function CardDetails({ d, c }) {
         <span>{c.tier && c.tier !== 'UNKNOWN' ? c.tier : '—'}</span>
       </div>
 
+      {/* MIGRATED: always show the yearly total the issuer quotes, and say how
+          it is billed. Converting to a monthly figure would put our number out
+          of step with the customer's statement. */}
       <div className="drow">
         <span>Anualidad</span>
         <span>
           {fee === null ? 'Sin dato'
             : fee ? mxn(fee) + '/año' + (c.annual_fee_includes_iva === false ? ' + IVA' : '')
                   : 'Sin anualidad'}
+          {fee && c.fee_billing_period === 'monthly' ? ', cobrada mensualmente' : ''}
         </span>
       </div>
 
@@ -103,7 +107,20 @@ function CardDetails({ d, c }) {
       {cat !== null && (
         <div className="drow">
           <span>CAT promedio</span>
-          <span>{pct(cat)}</span>
+          <span>
+            {pct(cat)}
+            {c.cat_calculated_on && c.cat_calculated_on !== 'UNKNOWN'
+              ? ' · calculado ' + String(c.cat_calculated_on) : ''}
+          </span>
+        </div>
+      )}
+      {/* The issuer's own validity date beats our TTL: if they say it expired,
+          it expired. */}
+      {c.cat_valid_until && c.cat_valid_until !== 'UNKNOWN' &&
+       String(c.cat_valid_until) < new Date().toISOString().slice(0, 10) && (
+        <div className="note warn">
+          El emisor publica este CAT con vigencia hasta el {String(c.cat_valid_until)},
+          así que ya venció. Tómalo como referencia, no como cifra actual.
         </div>
       )}
       {apr !== null && (

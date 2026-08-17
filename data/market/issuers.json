@@ -190,7 +190,7 @@
         "sources": []
       }
     },
-    "notes": "Migrated from card census. legal_name and source_urls pending confirmation against the CNBV Padrón.",
+    "notes": "Las tarjetas las emite SOFOM Inbursa, S.A. de C.V. (entidad regulada del mismo grupo), no Banco Inbursa. Se mantiene un solo emisor por decisión de producto: el seguro de depósito no aplica a tarjetas de crédito, y separarlos duplicaría el emisor sin cambiar ninguna recomendación. Si algún día se mapean cuentas de depósito de Inbursa, revisar esta decisión.",
     "offers_deposit_products": true
   },
   {
@@ -381,8 +381,8 @@
   },
   {
     "issuer_id": "citibanamex",
-    "legal_name": "UNKNOWN",
-    "display_name": "Citibanamex",
+    "legal_name": "Banco Nacional de México, S.A., Grupo Financiero Banamex",
+    "display_name": "Banamex",
     "regulated_entity_type": "banco",
     "insurance_scheme": "IPAB",
     "insurance_coverage_udis": 400000,
@@ -390,20 +390,27 @@
     "status": "active",
     "in_dataset": true,
     "exclusion_reason": "",
-    "source_urls": [],
+    "source_urls": [
+      "https://www.banamex.com/landings/tarjetas-de-credito/"
+    ],
     "enumerated_on": "2026-08-05",
     "approved_on": "",
     "legacy_id": "Citibanamex",
     "confidence": {
       "identity": {
-        "score": "low",
-        "evidence_type": "inferred",
-        "verified_on": "2026-08-05",
-        "sources": []
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-07",
+        "sources": [
+          "https://www.banamex.com/landings/tarjetas-de-credito/"
+        ]
       }
     },
-    "notes": "Migrated from card census. legal_name and source_urls pending confirmation against the CNBV Padrón.",
-    "offers_deposit_products": true
+    "notes": "La separación de Citi se concretó en diciembre de 2024; los productos se emiten de nuevo bajo la marca Banamex. issuer_id se conserva como 'citibanamex' porque los IDs son inmutables una vez aprobados.",
+    "offers_deposit_products": true,
+    "former_names": [
+      "Citibanamex"
+    ]
   },
   {
     "issuer_id": "coppel",

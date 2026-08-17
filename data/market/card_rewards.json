@@ -9,7 +9,7 @@
     "effective_rate_pct": 6.0,
     "replaces_or_adds_to_base": "replaces",
     "cap_amount": 500,
-    "cap_basis": "mxn",
+    "cap_basis": "reward_mxn",
     "cap_period": "monthly",
     "min_spend": "NOT_APPLICABLE",
     "promo_end_date": "NOT_APPLICABLE",
@@ -24,7 +24,9 @@
         ]
       }
     },
-    "notes": "$500/mo cap shared across all cashback categories"
+    "notes": "$500/mo cap shared across all cashback categories",
+    "rate_after_cap": "NOT_APPLICABLE",
+    "payout_frequency": "statement"
   },
   {
     "reward_id": "santander_mexico__likeu__restaurant",
@@ -36,7 +38,7 @@
     "effective_rate_pct": 5.0,
     "replaces_or_adds_to_base": "replaces",
     "cap_amount": 500,
-    "cap_basis": "mxn",
+    "cap_basis": "reward_mxn",
     "cap_period": "monthly",
     "min_spend": "NOT_APPLICABLE",
     "promo_end_date": "NOT_APPLICABLE",
@@ -51,7 +53,9 @@
         ]
       }
     },
-    "notes": "Shared $500 cap"
+    "notes": "Shared $500 cap",
+    "rate_after_cap": "NOT_APPLICABLE",
+    "payout_frequency": "statement"
   },
   {
     "reward_id": "santander_mexico__likeu__utilities",
@@ -63,7 +67,7 @@
     "effective_rate_pct": 4.0,
     "replaces_or_adds_to_base": "replaces",
     "cap_amount": 500,
-    "cap_basis": "mxn",
+    "cap_basis": "reward_mxn",
     "cap_period": "monthly",
     "min_spend": "NOT_APPLICABLE",
     "promo_end_date": "NOT_APPLICABLE",
@@ -78,7 +82,9 @@
         ]
       }
     },
-    "notes": "Telecomunicaciones mapped to utilities"
+    "notes": "Telecomunicaciones mapped to utilities",
+    "rate_after_cap": "NOT_APPLICABLE",
+    "payout_frequency": "statement"
   },
   {
     "reward_id": "santander_mexico__likeu__supermarket",
@@ -90,7 +96,7 @@
     "effective_rate_pct": 1.0,
     "replaces_or_adds_to_base": "replaces",
     "cap_amount": 500,
-    "cap_basis": "mxn",
+    "cap_basis": "reward_mxn",
     "cap_period": "monthly",
     "min_spend": "NOT_APPLICABLE",
     "promo_end_date": "NOT_APPLICABLE",
@@ -105,7 +111,9 @@
         ]
       }
     },
-    "notes": "Added July 2025"
+    "notes": "Added July 2025",
+    "rate_after_cap": "NOT_APPLICABLE",
+    "payout_frequency": "statement"
   },
   {
     "reward_id": "banorte__por_ti__gas",
@@ -117,7 +125,7 @@
     "effective_rate_pct": 1.0,
     "replaces_or_adds_to_base": "adds",
     "cap_amount": "UNKNOWN",
-    "cap_basis": "mxn",
+    "cap_basis": "reward_mxn",
     "cap_period": "monthly",
     "min_spend": 4000,
     "promo_end_date": "NOT_APPLICABLE",
@@ -132,7 +140,9 @@
         ]
       }
     },
-    "notes": "+1% preferred Mon-Fri gas on top of 1% base"
+    "notes": "+1% preferred Mon-Fri gas on top of 1% base",
+    "rate_after_cap": "NOT_APPLICABLE",
+    "payout_frequency": "statement"
   },
   {
     "reward_id": "banorte__por_ti__restaurant",
@@ -144,7 +154,7 @@
     "effective_rate_pct": 1.0,
     "replaces_or_adds_to_base": "adds",
     "cap_amount": "UNKNOWN",
-    "cap_basis": "mxn",
+    "cap_basis": "reward_mxn",
     "cap_period": "monthly",
     "min_spend": 4000,
     "promo_end_date": "NOT_APPLICABLE",
@@ -159,7 +169,9 @@
         ]
       }
     },
-    "notes": "+1% preferred Sat-Sun restaurants"
+    "notes": "+1% preferred Sat-Sun restaurants",
+    "rate_after_cap": "NOT_APPLICABLE",
+    "payout_frequency": "statement"
   },
   {
     "reward_id": "citibanamex__oro_banamex__gas",
@@ -186,7 +198,9 @@
         ]
       }
     },
-    "notes": "Double Premia on gas; cap 1000 pts/week"
+    "notes": "Double Premia on gas; cap 1000 pts/week",
+    "rate_after_cap": "NOT_APPLICABLE",
+    "payout_frequency": "statement"
   },
   {
     "reward_id": "klar__tarjeta_de_credito_klar__other",
@@ -198,7 +212,7 @@
     "effective_rate_pct": 3.0,
     "replaces_or_adds_to_base": "replaces",
     "cap_amount": "UNKNOWN",
-    "cap_basis": "mxn",
+    "cap_basis": "reward_mxn",
     "cap_period": "monthly",
     "min_spend": 3000,
     "promo_end_date": "NOT_APPLICABLE",
@@ -213,7 +227,9 @@
         ]
       }
     },
-    "notes": "Up to 3% at participating giros for Plus users (>=$3000/mo spend)"
+    "notes": "Up to 3% at participating giros for Plus users (>=$3000/mo spend)",
+    "rate_after_cap": "NOT_APPLICABLE",
+    "payout_frequency": "statement"
   },
   {
     "reward_id": "jp_sofiexpress__didi_card__supermarket",
@@ -225,7 +241,7 @@
     "effective_rate_pct": 2.0,
     "replaces_or_adds_to_base": "replaces",
     "cap_amount": "UNKNOWN",
-    "cap_basis": "mxn",
+    "cap_basis": "reward_mxn",
     "cap_period": "monthly",
     "min_spend": "NOT_APPLICABLE",
     "promo_end_date": "NOT_APPLICABLE",
@@ -240,7 +256,9 @@
         ]
       }
     },
-    "notes": "2% supers/gas/DiDi; total cashback cap $5000/mo"
+    "notes": "2% supers/gas/DiDi; total cashback cap $5000/mo",
+    "rate_after_cap": "NOT_APPLICABLE",
+    "payout_frequency": "statement"
   },
   {
     "reward_id": "jp_sofiexpress__didi_card__gas",
@@ -252,7 +270,7 @@
     "effective_rate_pct": 2.0,
     "replaces_or_adds_to_base": "replaces",
     "cap_amount": "UNKNOWN",
-    "cap_basis": "mxn",
+    "cap_basis": "reward_mxn",
     "cap_period": "monthly",
     "min_spend": "NOT_APPLICABLE",
     "promo_end_date": "NOT_APPLICABLE",
@@ -267,7 +285,9 @@
         ]
       }
     },
-    "notes": "Part of $5000/mo total cap"
+    "notes": "Part of $5000/mo total cap",
+    "rate_after_cap": "NOT_APPLICABLE",
+    "payout_frequency": "statement"
   },
   {
     "reward_id": "jp_sofiexpress__didi_card__other",
@@ -279,7 +299,7 @@
     "effective_rate_pct": 6.0,
     "replaces_or_adds_to_base": "replaces",
     "cap_amount": 5000,
-    "cap_basis": "mxn",
+    "cap_basis": "reward_mxn",
     "cap_period": "monthly",
     "min_spend": "NOT_APPLICABLE",
     "promo_end_date": "NOT_APPLICABLE",
@@ -294,7 +314,9 @@
         ]
       }
     },
-    "notes": "6% in one chosen category/month (pharmacy, cinema, airlines, etc.); $5000 total cap"
+    "notes": "6% in one chosen category/month (pharmacy, cinema, airlines, etc.); $5000 total cap",
+    "rate_after_cap": "NOT_APPLICABLE",
+    "payout_frequency": "statement"
   },
   {
     "reward_id": "plata__plata__other",
@@ -306,7 +328,7 @@
     "effective_rate_pct": 15.0,
     "replaces_or_adds_to_base": "replaces",
     "cap_amount": 1000,
-    "cap_basis": "mxn",
+    "cap_basis": "reward_mxn",
     "cap_period": "monthly",
     "min_spend": "NOT_APPLICABLE",
     "promo_end_date": "NOT_APPLICABLE",
@@ -321,7 +343,9 @@
         ]
       }
     },
-    "notes": "Up to 4 chosen categories; cap $1000/mo ($3000 with Plus)"
+    "notes": "Up to 4 chosen categories; cap $1000/mo ($3000 with Plus)",
+    "rate_after_cap": "NOT_APPLICABLE",
+    "payout_frequency": "statement"
   },
   {
     "reward_id": "uala_mx__tarjeta_de_credito_uala__supermarket",
@@ -333,7 +357,7 @@
     "effective_rate_pct": 10.0,
     "replaces_or_adds_to_base": "replaces",
     "cap_amount": 500,
-    "cap_basis": "mxn",
+    "cap_basis": "reward_mxn",
     "cap_period": "monthly",
     "min_spend": "NOT_APPLICABLE",
     "promo_end_date": "UNKNOWN",
@@ -348,7 +372,9 @@
         ]
       }
     },
-    "notes": "10% supermercados promo, cashback up to $500"
+    "notes": "10% supermercados promo, cashback up to $500",
+    "rate_after_cap": "NOT_APPLICABLE",
+    "payout_frequency": "statement"
   },
   {
     "reward_id": "banco_inbursa__sams_club_inbursa__supermarket",
@@ -360,7 +386,7 @@
     "effective_rate_pct": 3.0,
     "replaces_or_adds_to_base": "replaces",
     "cap_amount": "UNKNOWN",
-    "cap_basis": "mxn",
+    "cap_basis": "reward_mxn",
     "cap_period": "monthly",
     "min_spend": "NOT_APPLICABLE",
     "promo_end_date": "NOT_APPLICABLE",
@@ -375,7 +401,9 @@
         ]
       }
     },
-    "notes": "3% bonificado al estado de cuenta en Sam's Club, Walmart y Bodega Aurrera. Cap not published — recorded UNKNOWN rather than assumed uncapped."
+    "notes": "3% bonificado al estado de cuenta en Sam's Club, Walmart y Bodega Aurrera. Cap not published — recorded UNKNOWN rather than assumed uncapped.",
+    "rate_after_cap": "NOT_APPLICABLE",
+    "payout_frequency": "statement"
   },
   {
     "reward_id": "invex__walmart__supermarket",
@@ -387,7 +415,7 @@
     "effective_rate_pct": 3.5,
     "replaces_or_adds_to_base": "replaces",
     "cap_amount": "UNKNOWN",
-    "cap_basis": "mxn",
+    "cap_basis": "reward_mxn",
     "cap_period": "monthly",
     "min_spend": "NOT_APPLICABLE",
     "promo_end_date": "NOT_APPLICABLE",
@@ -402,7 +430,9 @@
         ]
       }
     },
-    "notes": "3.5% en Walmart, Sam's Club y Bodega Aurrera, en tienda y en línea. Pagado en Cashi."
+    "notes": "3.5% en Walmart, Sam's Club y Bodega Aurrera, en tienda y en línea. Pagado en Cashi.",
+    "rate_after_cap": "NOT_APPLICABLE",
+    "payout_frequency": "statement"
   },
   {
     "reward_id": "invex__voyage_platinum__travel",
@@ -414,7 +444,7 @@
     "effective_rate_pct": 2.0,
     "replaces_or_adds_to_base": "replaces",
     "cap_amount": "UNKNOWN",
-    "cap_basis": "mxn",
+    "cap_basis": "reward_mxn",
     "cap_period": "monthly",
     "min_spend": "NOT_APPLICABLE",
     "promo_end_date": "NOT_APPLICABLE",
@@ -429,7 +459,9 @@
         ]
       }
     },
-    "notes": "2% Travel Cash en comercios de viajes."
+    "notes": "2% Travel Cash en comercios de viajes.",
+    "rate_after_cap": "NOT_APPLICABLE",
+    "payout_frequency": "statement"
   },
   {
     "reward_id": "invex__volaris__travel",
@@ -456,7 +488,9 @@
         ]
       }
     },
-    "notes": "15 Puntos altitude por cada $20 en compras Volaris."
+    "notes": "15 Puntos altitude por cada $20 en compras Volaris.",
+    "rate_after_cap": "NOT_APPLICABLE",
+    "payout_frequency": "statement"
   },
   {
     "reward_id": "invex__volaris_2_0__travel",
@@ -483,6 +517,128 @@
         ]
       }
     },
-    "notes": "17 Puntos altitude por cada $20 en compras Volaris."
+    "notes": "17 Puntos altitude por cada $20 en compras Volaris.",
+    "rate_after_cap": "NOT_APPLICABLE",
+    "payout_frequency": "statement"
+  },
+  {
+    "reward_id": "citibanamex__costco_banamex__gas",
+    "card_id": "citibanamex__costco_banamex",
+    "category": "gas",
+    "rate": 5.0,
+    "reward_type": "cashback",
+    "point_value_mxn": 1.0,
+    "effective_rate_pct": 5.0,
+    "replaces_or_adds_to_base": "replaces",
+    "cap_amount": 10000,
+    "cap_basis": "spend_mxn",
+    "cap_period": "monthly",
+    "rate_after_cap": 3.0,
+    "payout_frequency": "annual",
+    "min_spend": "NOT_APPLICABLE",
+    "promo_end_date": "NOT_APPLICABLE",
+    "user_selectable": false,
+    "confidence": {
+      "rewards": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-07",
+        "sources": [
+          "https://www.banamex.com/es/personas/tarjetas-credito/tarjeta-costco.html",
+          "https://www.banamex.com/es/personas/tarjetas-credito/tarjeta-costco/tarifas-comisiones.html"
+        ]
+      }
+    },
+    "notes": "5% en gasolineras Costco topado a $10,000 de FACTURACIÓN mensual; después 3% sin tope."
+  },
+  {
+    "reward_id": "citibanamex__costco_banamex__education",
+    "card_id": "citibanamex__costco_banamex",
+    "category": "education",
+    "rate": 4.0,
+    "reward_type": "cashback",
+    "point_value_mxn": 1.0,
+    "effective_rate_pct": 4.0,
+    "replaces_or_adds_to_base": "replaces",
+    "cap_amount": 20000,
+    "cap_basis": "spend_mxn",
+    "cap_period": "monthly",
+    "rate_after_cap": "NOT_APPLICABLE",
+    "payout_frequency": "annual",
+    "min_spend": "NOT_APPLICABLE",
+    "promo_end_date": "NOT_APPLICABLE",
+    "user_selectable": false,
+    "confidence": {
+      "rewards": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-07",
+        "sources": [
+          "https://www.banamex.com/es/personas/tarjetas-credito/tarjeta-costco.html",
+          "https://www.banamex.com/es/personas/tarjetas-credito/tarjeta-costco/tarifas-comisiones.html"
+        ]
+      }
+    },
+    "notes": "4% en educación topado a $20,000 de facturación mensual."
+  },
+  {
+    "reward_id": "citibanamex__costco_banamex__supermarket",
+    "card_id": "citibanamex__costco_banamex",
+    "category": "supermarket",
+    "rate": 3.0,
+    "reward_type": "cashback",
+    "point_value_mxn": 1.0,
+    "effective_rate_pct": 3.0,
+    "replaces_or_adds_to_base": "replaces",
+    "cap_amount": "NOT_APPLICABLE",
+    "cap_basis": "NOT_APPLICABLE",
+    "cap_period": "NOT_APPLICABLE",
+    "rate_after_cap": "NOT_APPLICABLE",
+    "payout_frequency": "annual",
+    "min_spend": "NOT_APPLICABLE",
+    "promo_end_date": "NOT_APPLICABLE",
+    "user_selectable": false,
+    "confidence": {
+      "rewards": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-07",
+        "sources": [
+          "https://www.banamex.com/es/personas/tarjetas-credito/tarjeta-costco.html",
+          "https://www.banamex.com/es/personas/tarjetas-credito/tarjeta-costco/tarifas-comisiones.html"
+        ]
+      }
+    },
+    "notes": "3% en compras Costco México, EE.UU. y costco.com.mx. Sin tope."
+  },
+  {
+    "reward_id": "citibanamex__costco_banamex__dining",
+    "card_id": "citibanamex__costco_banamex",
+    "category": "dining",
+    "rate": 2.0,
+    "reward_type": "cashback",
+    "point_value_mxn": 1.0,
+    "effective_rate_pct": 2.0,
+    "replaces_or_adds_to_base": "replaces",
+    "cap_amount": "NOT_APPLICABLE",
+    "cap_basis": "NOT_APPLICABLE",
+    "cap_period": "NOT_APPLICABLE",
+    "rate_after_cap": "NOT_APPLICABLE",
+    "payout_frequency": "annual",
+    "min_spend": "NOT_APPLICABLE",
+    "promo_end_date": "NOT_APPLICABLE",
+    "user_selectable": false,
+    "confidence": {
+      "rewards": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-07",
+        "sources": [
+          "https://www.banamex.com/es/personas/tarjetas-credito/tarjeta-costco.html",
+          "https://www.banamex.com/es/personas/tarjetas-credito/tarjeta-costco/tarifas-comisiones.html"
+        ]
+      }
+    },
+    "notes": "2% en restaurantes, streaming, TV de paga e internet."
   }
 ]

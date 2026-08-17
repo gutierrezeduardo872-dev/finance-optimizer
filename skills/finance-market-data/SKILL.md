@@ -219,6 +219,10 @@ that looks identical to a confident right one.
   card's own unit; `effective_rate_pct` is the peso-denominated figure and must be `UNKNOWN`
   whenever the point value is unpublished. Ranking on the raw rate puts a 9%-in-points card
   above a 2%-cashback card on a number nobody can spend.
+- **An issuer can disagree with itself.** Product pages and the tarifario often publish
+  different CAT figures for the same card, calculated on different dates. Prefer the
+  tarifario — it is updated as a consistent set — and always record `cat_calculated_on`.
+  Issuer-primary settles which *source* wins, not which *page*.
 - **Term ladders are their own axis.** One named product with 7/28/90/180-day rates is one
   account row with `yield_structure: term_tiered` plus `TermTiers` children — not four
   accounts, and not `YieldTiers`, which is keyed on balance.
