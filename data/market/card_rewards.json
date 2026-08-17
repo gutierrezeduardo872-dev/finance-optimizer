@@ -1,34 +1,5 @@
 [
   {
-    "reward_id": "santander_mexico__likeu__pharmacy",
-    "card_id": "santander_mexico__likeu",
-    "category": "pharmacy",
-    "rate": 6.0,
-    "reward_type": "cashback",
-    "point_value_mxn": 1.0,
-    "effective_rate_pct": 6.0,
-    "replaces_or_adds_to_base": "replaces",
-    "cap_amount": 500,
-    "cap_basis": "reward_mxn",
-    "cap_period": "monthly",
-    "min_spend": "NOT_APPLICABLE",
-    "promo_end_date": "NOT_APPLICABLE",
-    "user_selectable": false,
-    "confidence": {
-      "rewards": {
-        "score": "low",
-        "evidence_type": "issuer_primary",
-        "verified_on": "2026-01-01",
-        "sources": [
-          "https://www.santander.com.mx/cashback/likeu.html"
-        ]
-      }
-    },
-    "notes": "$500/mo cap shared across all cashback categories",
-    "rate_after_cap": "NOT_APPLICABLE",
-    "payout_frequency": "statement"
-  },
-  {
     "reward_id": "santander_mexico__likeu__restaurant",
     "card_id": "santander_mexico__likeu",
     "category": "restaurant",
@@ -83,35 +54,6 @@
       }
     },
     "notes": "Telecomunicaciones mapped to utilities",
-    "rate_after_cap": "NOT_APPLICABLE",
-    "payout_frequency": "statement"
-  },
-  {
-    "reward_id": "santander_mexico__likeu__supermarket",
-    "card_id": "santander_mexico__likeu",
-    "category": "supermarket",
-    "rate": 1.0,
-    "reward_type": "cashback",
-    "point_value_mxn": 1.0,
-    "effective_rate_pct": 1.0,
-    "replaces_or_adds_to_base": "replaces",
-    "cap_amount": 500,
-    "cap_basis": "reward_mxn",
-    "cap_period": "monthly",
-    "min_spend": "NOT_APPLICABLE",
-    "promo_end_date": "NOT_APPLICABLE",
-    "user_selectable": false,
-    "confidence": {
-      "rewards": {
-        "score": "low",
-        "evidence_type": "issuer_primary",
-        "verified_on": "2026-01-01",
-        "sources": [
-          "https://www.santander.com.mx/cashback/likeu.html"
-        ]
-      }
-    },
-    "notes": "Added July 2025",
     "rate_after_cap": "NOT_APPLICABLE",
     "payout_frequency": "statement"
   },
@@ -640,5 +582,154 @@
       }
     },
     "notes": "2% en restaurantes, streaming, TV de paga e internet."
+  },
+  {
+    "reward_id": "hsbc_mexico__hsbc_viva_plus__travel",
+    "card_id": "hsbc_mexico__hsbc_viva_plus",
+    "category": "travel",
+    "rate": 30.0,
+    "reward_type": "points",
+    "point_value_mxn": "UNKNOWN",
+    "effective_rate_pct": "UNKNOWN",
+    "replaces_or_adds_to_base": "replaces",
+    "cap_amount": "NOT_APPLICABLE",
+    "cap_basis": "NOT_APPLICABLE",
+    "cap_period": "NOT_APPLICABLE",
+    "rate_after_cap": "NOT_APPLICABLE",
+    "payout_frequency": "statement",
+    "min_spend": "NOT_APPLICABLE",
+    "promo_end_date": "NOT_APPLICABLE",
+    "user_selectable": false,
+    "confidence": {
+      "rewards": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-07",
+        "sources": [
+          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/viva/"
+        ]
+      }
+    },
+    "notes": "3 Puntos Doters por cada $10 en productos y servicios Viva."
+  },
+  {
+    "reward_id": "santander_mexico__likeu__pharmacy",
+    "card_id": "santander_mexico__likeu",
+    "category": "pharmacy",
+    "rate": 6.0,
+    "reward_type": "cashback",
+    "point_value_mxn": 1.0,
+    "effective_rate_pct": 6.0,
+    "replaces_or_adds_to_base": "replaces",
+    "cap_amount": 500,
+    "cap_basis": "reward_mxn",
+    "cap_period": "monthly",
+    "rate_after_cap": "NOT_APPLICABLE",
+    "payout_frequency": "monthly",
+    "min_spend": "NOT_APPLICABLE",
+    "promo_end_date": "NOT_APPLICABLE",
+    "user_selectable": false,
+    "confidence": {
+      "rewards": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-07",
+        "sources": [
+          "https://www.santander.com.mx/personas/credito-y-financiamiento/tarjetas-de-credito/likeu/",
+          "https://www.santander.com.mx/cashback/likeu.html"
+        ]
+      }
+    },
+    "notes": "Tope de $500 mensuales compartido entre todas las categorías Cashback Baby."
+  },
+  {
+    "reward_id": "santander_mexico__likeu__dining",
+    "card_id": "santander_mexico__likeu",
+    "category": "dining",
+    "rate": 5.0,
+    "reward_type": "cashback",
+    "point_value_mxn": 1.0,
+    "effective_rate_pct": 5.0,
+    "replaces_or_adds_to_base": "replaces",
+    "cap_amount": 500,
+    "cap_basis": "reward_mxn",
+    "cap_period": "monthly",
+    "rate_after_cap": "NOT_APPLICABLE",
+    "payout_frequency": "monthly",
+    "min_spend": "NOT_APPLICABLE",
+    "promo_end_date": "NOT_APPLICABLE",
+    "user_selectable": false,
+    "confidence": {
+      "rewards": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-07",
+        "sources": [
+          "https://www.santander.com.mx/personas/credito-y-financiamiento/tarjetas-de-credito/likeu/",
+          "https://www.santander.com.mx/cashback/likeu.html"
+        ]
+      }
+    },
+    "notes": "Tope de $500 mensuales compartido entre todas las categorías Cashback Baby."
+  },
+  {
+    "reward_id": "santander_mexico__likeu__telecom",
+    "card_id": "santander_mexico__likeu",
+    "category": "telecom",
+    "rate": 4.0,
+    "reward_type": "cashback",
+    "point_value_mxn": 1.0,
+    "effective_rate_pct": 4.0,
+    "replaces_or_adds_to_base": "replaces",
+    "cap_amount": 500,
+    "cap_basis": "reward_mxn",
+    "cap_period": "monthly",
+    "rate_after_cap": "NOT_APPLICABLE",
+    "payout_frequency": "monthly",
+    "min_spend": "NOT_APPLICABLE",
+    "promo_end_date": "NOT_APPLICABLE",
+    "user_selectable": false,
+    "confidence": {
+      "rewards": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-07",
+        "sources": [
+          "https://www.santander.com.mx/personas/credito-y-financiamiento/tarjetas-de-credito/likeu/",
+          "https://www.santander.com.mx/cashback/likeu.html"
+        ]
+      }
+    },
+    "notes": "Tope de $500 mensuales compartido entre todas las categorías Cashback Baby."
+  },
+  {
+    "reward_id": "santander_mexico__likeu__supermarket",
+    "card_id": "santander_mexico__likeu",
+    "category": "supermarket",
+    "rate": 1.0,
+    "reward_type": "cashback",
+    "point_value_mxn": 1.0,
+    "effective_rate_pct": 1.0,
+    "replaces_or_adds_to_base": "replaces",
+    "cap_amount": 500,
+    "cap_basis": "reward_mxn",
+    "cap_period": "monthly",
+    "rate_after_cap": "NOT_APPLICABLE",
+    "payout_frequency": "monthly",
+    "min_spend": "NOT_APPLICABLE",
+    "promo_end_date": "NOT_APPLICABLE",
+    "user_selectable": false,
+    "confidence": {
+      "rewards": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-07",
+        "sources": [
+          "https://www.santander.com.mx/personas/credito-y-financiamiento/tarjetas-de-credito/likeu/",
+          "https://www.santander.com.mx/cashback/likeu.html"
+        ]
+      }
+    },
+    "notes": "Tope de $500 mensuales compartido entre todas las categorías Cashback Baby."
   }
 ]

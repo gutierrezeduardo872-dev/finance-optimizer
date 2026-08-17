@@ -3100,20 +3100,20 @@
     "display_name": "Tarjeta de Crédito HSBC 2Now",
     "former_names": [],
     "legacy_id": "Tarjeta de Crédito HSBC 2Now",
-    "tier": "cashback digital",
-    "network": "visa_mastercard",
+    "tier": "clasica",
+    "network": "UNKNOWN",
     "lifecycle_status": "active",
     "mapping_status": "mapped",
     "census_confidence": "high",
     "census_note": "cashback",
     "conflicts": [],
-    "notes": "2% cashback digital compras per issuer",
-    "annual_fee_mxn": "UNKNOWN",
+    "notes": "Saldo HSBC 2Now: 2% sobre los primeros $42,500 de compras cada mes — el tope es de GASTO, no de recompensa (equivale a $850 de reembolso). Se refleja en un máximo de 2 días hábiles.",
+    "annual_fee_mxn": 0,
     "annual_fee_includes_iva": false,
-    "annual_fee_first_year_waived": "UNKNOWN",
-    "annual_fee_waiver_condition": "UNKNOWN",
-    "interest_rate_annual_pct": "UNKNOWN",
-    "cat_promedio_pct": "UNKNOWN",
+    "annual_fee_first_year_waived": false,
+    "annual_fee_waiver_condition": "NOT_APPLICABLE",
+    "interest_rate_annual_pct": 48.88,
+    "cat_promedio_pct": 88.3,
     "base_reward_type": "cashback",
     "base_reward_rate": 2.0,
     "point_value_mxn": 1.0,
@@ -3121,46 +3121,51 @@
     "points_program_name": "NOT_APPLICABLE",
     "min_income_mxn_monthly": "UNKNOWN",
     "invitation_only": false,
-    "other_eligibility_criteria": "UNKNOWN",
+    "other_eligibility_criteria": "NOT_APPLICABLE",
     "legacy_market_id": "hsbc_2now",
     "confidence": {
       "identity": {
         "score": "high",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-03-10",
+        "verified_on": "2026-08-07",
         "sources": [
+          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/2now/",
           "https://www.hsbc.com.mx/tarjetas-de-credito/productos/"
         ]
       },
       "cost": {
-        "score": "medium",
+        "score": "high",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-03-10",
+        "verified_on": "2026-08-07",
         "sources": [
+          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/2now/",
           "https://www.hsbc.com.mx/tarjetas-de-credito/productos/"
         ]
       },
       "rewards": {
-        "score": "low",
+        "score": "high",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-03-10",
+        "verified_on": "2026-08-07",
         "sources": [
+          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/2now/",
           "https://www.hsbc.com.mx/tarjetas-de-credito/productos/"
         ]
       },
       "perks": {
         "score": "high",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-03-10",
+        "verified_on": "2026-08-07",
         "sources": [
+          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/2now/",
           "https://www.hsbc.com.mx/tarjetas-de-credito/productos/"
         ]
       },
       "eligibility": {
         "score": "high",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-03-10",
+        "verified_on": "2026-08-07",
         "sources": [
+          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/2now/",
           "https://www.hsbc.com.mx/tarjetas-de-credito/productos/"
         ]
       }
@@ -3170,9 +3175,9 @@
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
     "inactivity_min_spend_mxn": "NOT_APPLICABLE",
     "inactivity_spend_period": "NOT_APPLICABLE",
-    "fee_billing_period": "UNKNOWN",
-    "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "fee_billing_period": "NOT_APPLICABLE",
+    "cat_calculated_on": "2026-03-10",
+    "cat_valid_until": "2026-09-10"
   },
   {
     "card_id": "hsbc_mexico__hsbc_advance_platinum",
@@ -3205,22 +3210,83 @@
     "display_name": "Tarjeta de Crédito HSBC AIR",
     "former_names": [],
     "legacy_id": "Tarjeta de Crédito HSBC AIR",
-    "tier": "UNKNOWN",
+    "tier": "oro",
     "network": "UNKNOWN",
     "lifecycle_status": "active",
-    "mapping_status": "skeleton",
+    "mapping_status": "mapped",
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": "",
+    "notes": "No participa en el Programa Más de HSBC según el folleto; programa de recompensas propio por confirmar.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
     "inactivity_min_spend_mxn": "NOT_APPLICABLE",
     "inactivity_spend_period": "NOT_APPLICABLE",
-    "fee_billing_period": "UNKNOWN",
-    "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "fee_billing_period": "annual",
+    "cat_calculated_on": "2026-03-10",
+    "cat_valid_until": "2026-09-10",
+    "annual_fee_includes_iva": false,
+    "annual_fee_first_year_waived": false,
+    "annual_fee_waiver_condition": "NOT_APPLICABLE",
+    "point_value_mxn": "UNKNOWN",
+    "effective_rate_pct": "UNKNOWN",
+    "min_income_mxn_monthly": "UNKNOWN",
+    "invitation_only": false,
+    "other_eligibility_criteria": "NOT_APPLICABLE",
+    "points_program_name": "Más de HSBC",
+    "annual_fee_mxn": 915,
+    "cat_promedio_pct": 49.4,
+    "interest_rate_annual_pct": 27.15,
+    "base_reward_type": "points",
+    "base_reward_rate": "UNKNOWN",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-07",
+        "sources": [
+          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/",
+          "https://www.hsbc.com.mx/content/dam/hsbc/mx/documents/tarjetas/folleto_digital_tarjetas.pdf"
+        ]
+      },
+      "cost": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-07",
+        "sources": [
+          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/",
+          "https://www.hsbc.com.mx/content/dam/hsbc/mx/documents/tarjetas/folleto_digital_tarjetas.pdf"
+        ]
+      },
+      "rewards": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-07",
+        "sources": [
+          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/",
+          "https://www.hsbc.com.mx/content/dam/hsbc/mx/documents/tarjetas/folleto_digital_tarjetas.pdf"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-07",
+        "sources": [
+          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/",
+          "https://www.hsbc.com.mx/content/dam/hsbc/mx/documents/tarjetas/folleto_digital_tarjetas.pdf"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-07",
+        "sources": [
+          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/",
+          "https://www.hsbc.com.mx/content/dam/hsbc/mx/documents/tarjetas/folleto_digital_tarjetas.pdf"
+        ]
+      }
+    }
   },
   {
     "card_id": "hsbc_mexico__hsbc_basica",
@@ -3397,79 +3463,84 @@
     "display_name": "Tarjeta de Crédito HSBC Viva",
     "former_names": [],
     "legacy_id": "Tarjeta de Crédito HSBC Viva",
-    "tier": "cashback",
-    "network": "visa_mastercard",
+    "tier": "clasica",
+    "network": "UNKNOWN",
     "lifecycle_status": "active",
     "mapping_status": "mapped",
     "census_confidence": "high",
     "census_note": "co-brand (Viva Aerobús)",
     "conflicts": [],
-    "notes": "1% cashback on all purchases",
+    "notes": "Comisión por administración mensual exentable con $300 de compra al mes. El emisor no publica el monto de la comisión, así que queda UNKNOWN — el umbral sí está registrado.",
     "annual_fee_mxn": 0,
-    "annual_fee_includes_iva": "UNKNOWN",
-    "annual_fee_first_year_waived": "UNKNOWN",
-    "annual_fee_waiver_condition": "$300 purchase/month waives titular management fee",
+    "annual_fee_includes_iva": false,
+    "annual_fee_first_year_waived": false,
+    "annual_fee_waiver_condition": "Comisión por administración exentable con una compra de $300 al mes",
     "interest_rate_annual_pct": 44.9,
     "cat_promedio_pct": 99.0,
-    "base_reward_type": "cashback",
-    "base_reward_rate": 1.0,
-    "point_value_mxn": 1.0,
-    "effective_rate_pct": 1.0,
-    "points_program_name": "NOT_APPLICABLE",
-    "min_income_mxn_monthly": 5000,
+    "base_reward_type": "points",
+    "base_reward_rate": "UNKNOWN",
+    "point_value_mxn": "UNKNOWN",
+    "effective_rate_pct": "UNKNOWN",
+    "points_program_name": "Doters",
+    "min_income_mxn_monthly": "UNKNOWN",
     "invitation_only": false,
-    "other_eligibility_criteria": "18-74 años",
+    "other_eligibility_criteria": "NOT_APPLICABLE",
     "legacy_market_id": "hsbc_viva",
     "confidence": {
       "identity": {
         "score": "high",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-03-10",
+        "verified_on": "2026-08-07",
         "sources": [
-          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/viva/"
+          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/viva/",
+          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/"
         ]
       },
       "cost": {
-        "score": "medium",
+        "score": "high",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-03-10",
+        "verified_on": "2026-08-07",
         "sources": [
-          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/viva/"
+          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/viva/",
+          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/"
         ]
       },
       "rewards": {
-        "score": "low",
+        "score": "high",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-03-10",
+        "verified_on": "2026-08-07",
         "sources": [
-          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/viva/"
+          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/viva/",
+          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/"
         ]
       },
       "perks": {
         "score": "high",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-03-10",
+        "verified_on": "2026-08-07",
         "sources": [
-          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/viva/"
+          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/viva/",
+          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/"
         ]
       },
       "eligibility": {
         "score": "high",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-03-10",
+        "verified_on": "2026-08-07",
         "sources": [
-          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/viva/"
+          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/viva/",
+          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/"
         ]
       }
     },
-    "inactivity_fee_mxn": "NOT_APPLICABLE",
-    "inactivity_fee_period": "NOT_APPLICABLE",
-    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
-    "inactivity_min_spend_mxn": "NOT_APPLICABLE",
-    "inactivity_spend_period": "NOT_APPLICABLE",
+    "inactivity_fee_mxn": "UNKNOWN",
+    "inactivity_fee_period": "monthly",
+    "inactivity_fee_includes_iva": "UNKNOWN",
+    "inactivity_min_spend_mxn": 300,
+    "inactivity_spend_period": "monthly",
     "fee_billing_period": "NOT_APPLICABLE",
-    "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_calculated_on": "2026-03-10",
+    "cat_valid_until": "2026-09-10"
   },
   {
     "card_id": "hsbc_mexico__hsbc_viva_plus",
@@ -3478,22 +3549,83 @@
     "display_name": "Tarjeta de Crédito HSBC Viva Plus",
     "former_names": [],
     "legacy_id": "Tarjeta de Crédito HSBC Viva Plus",
-    "tier": "UNKNOWN",
+    "tier": "platinum",
     "network": "UNKNOWN",
     "lifecycle_status": "active",
-    "mapping_status": "skeleton",
+    "mapping_status": "mapped",
     "census_confidence": "high",
     "census_note": "co-brand (Viva Aerobús)",
     "conflicts": [],
-    "notes": "",
+    "notes": "Doters: 3 puntos por cada $10 en compras Viva, 2 puntos por cada $10 en el resto. Doters no publica valor en pesos, así que effective_rate_pct queda UNKNOWN.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
     "inactivity_min_spend_mxn": "NOT_APPLICABLE",
     "inactivity_spend_period": "NOT_APPLICABLE",
-    "fee_billing_period": "UNKNOWN",
-    "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "fee_billing_period": "annual",
+    "cat_calculated_on": "2026-03-10",
+    "cat_valid_until": "2026-09-10",
+    "annual_fee_includes_iva": false,
+    "annual_fee_first_year_waived": false,
+    "annual_fee_waiver_condition": "NOT_APPLICABLE",
+    "point_value_mxn": "UNKNOWN",
+    "effective_rate_pct": "UNKNOWN",
+    "min_income_mxn_monthly": "UNKNOWN",
+    "invitation_only": false,
+    "other_eligibility_criteria": "NOT_APPLICABLE",
+    "points_program_name": "Doters",
+    "annual_fee_mxn": 3124,
+    "cat_promedio_pct": 81.5,
+    "interest_rate_annual_pct": 41.89,
+    "base_reward_type": "points",
+    "base_reward_rate": 20.0,
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-07",
+        "sources": [
+          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/viva/",
+          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/"
+        ]
+      },
+      "cost": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-07",
+        "sources": [
+          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/viva/",
+          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/"
+        ]
+      },
+      "rewards": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-07",
+        "sources": [
+          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/viva/",
+          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-07",
+        "sources": [
+          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/viva/",
+          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-07",
+        "sources": [
+          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/viva/",
+          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/"
+        ]
+      }
+    }
   },
   {
     "card_id": "hsbc_mexico__hsbc_world_elite",
@@ -3526,68 +3658,73 @@
     "display_name": "Tarjeta de Crédito HSBC Zero",
     "former_names": [],
     "legacy_id": "Tarjeta de Crédito HSBC Zero",
-    "tier": "sin anualidad",
-    "network": "visa_mastercard",
+    "tier": "basica",
+    "network": "UNKNOWN",
     "lifecycle_status": "active",
     "mapping_status": "mapped",
     "census_confidence": "high",
     "census_note": "no anualidad",
     "conflicts": [],
-    "notes": "No rewards; entry card",
+    "notes": "Sin anualidad y sin programa de puntos. No participa en el Programa Más de HSBC.",
     "annual_fee_mxn": 0,
-    "annual_fee_includes_iva": "UNKNOWN",
-    "annual_fee_first_year_waived": "UNKNOWN",
-    "annual_fee_waiver_condition": "$186/month management fee waived by >=1 purchase of $300/mo",
+    "annual_fee_includes_iva": false,
+    "annual_fee_first_year_waived": false,
+    "annual_fee_waiver_condition": "NOT_APPLICABLE",
     "interest_rate_annual_pct": 49.04,
     "cat_promedio_pct": 95.5,
     "base_reward_type": "none",
-    "base_reward_rate": "UNKNOWN",
+    "base_reward_rate": 0,
     "point_value_mxn": "NOT_APPLICABLE",
     "effective_rate_pct": 0,
     "points_program_name": "NOT_APPLICABLE",
-    "min_income_mxn_monthly": 5000,
+    "min_income_mxn_monthly": "UNKNOWN",
     "invitation_only": false,
-    "other_eligibility_criteria": "18-74 años",
+    "other_eligibility_criteria": "NOT_APPLICABLE",
     "legacy_market_id": "hsbc_zero",
     "confidence": {
       "identity": {
         "score": "high",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-03-10",
+        "verified_on": "2026-08-07",
         "sources": [
-          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/zero/"
+          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/zero/",
+          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/"
         ]
       },
       "cost": {
-        "score": "medium",
+        "score": "high",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-03-10",
+        "verified_on": "2026-08-07",
         "sources": [
-          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/zero/"
+          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/zero/",
+          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/"
         ]
       },
       "rewards": {
-        "score": "low",
+        "score": "high",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-03-10",
+        "verified_on": "2026-08-07",
         "sources": [
-          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/zero/"
+          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/zero/",
+          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/"
         ]
       },
       "perks": {
         "score": "high",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-03-10",
+        "verified_on": "2026-08-07",
         "sources": [
-          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/zero/"
+          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/zero/",
+          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/"
         ]
       },
       "eligibility": {
         "score": "high",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-03-10",
+        "verified_on": "2026-08-07",
         "sources": [
-          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/zero/"
+          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/zero/",
+          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/"
         ]
       }
     },
@@ -3597,8 +3734,8 @@
     "inactivity_min_spend_mxn": "NOT_APPLICABLE",
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "NOT_APPLICABLE",
-    "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_calculated_on": "2026-03-10",
+    "cat_valid_until": "2026-09-10"
   },
   {
     "card_id": "invex__voyage",
@@ -3911,18 +4048,18 @@
     "display_name": "Tarjeta de Crédito LikeU",
     "former_names": [],
     "legacy_id": "Tarjeta de Crédito LikeU",
-    "tier": "sin anualidad / cashback",
+    "tier": "clasica",
     "network": "visa_mastercard",
     "lifecycle_status": "active",
     "mapping_status": "mapped",
     "census_confidence": "high",
     "census_note": "cashback (Red/Blue/White variants)",
     "conflicts": [],
-    "notes": "Base 1% super; higher cashback by category (see CardRewards)",
+    "notes": "Cashback Baby: el reembolso se deposita en una cuenta de débito Santander, así que sin esa cuenta no se cobra. Tope de $500 al mes en total. Diferir una compra a MSI puede desactivar su cashback.",
     "annual_fee_mxn": 0,
-    "annual_fee_includes_iva": "UNKNOWN",
+    "annual_fee_includes_iva": false,
     "annual_fee_first_year_waived": "UNKNOWN",
-    "annual_fee_waiver_condition": "$0 if >=$200 spend/month; else $169/month management fee",
+    "annual_fee_waiver_condition": "Sin anualidad; comisión de administración de $169 mensuales si no se acumulan $200 de compras en el mes",
     "interest_rate_annual_pct": 66.35,
     "cat_promedio_pct": 90.6,
     "base_reward_type": "cashback",
@@ -3932,58 +4069,63 @@
     "points_program_name": "NOT_APPLICABLE",
     "min_income_mxn_monthly": 7500,
     "invitation_only": false,
-    "other_eligibility_criteria": "20-69 años; débito Santander requerido para cashback",
+    "other_eligibility_criteria": "Requiere cuenta de débito Santander para recibir el cashback e inscripción al programa",
     "legacy_market_id": "santander_likeu",
     "confidence": {
       "identity": {
         "score": "high",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-01-01",
+        "verified_on": "2026-08-07",
         "sources": [
-          "https://www.santander.com.mx/personas/credito-y-financiamiento/tarjetas-de-credito/likeu/"
+          "https://www.santander.com.mx/personas/credito-y-financiamiento/tarjetas-de-credito/likeu/",
+          "https://www.santander.com.mx/cashback/likeu.html"
         ]
       },
       "cost": {
-        "score": "low",
+        "score": "high",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-01-01",
+        "verified_on": "2026-08-07",
         "sources": [
-          "https://www.santander.com.mx/personas/credito-y-financiamiento/tarjetas-de-credito/likeu/"
+          "https://www.santander.com.mx/personas/credito-y-financiamiento/tarjetas-de-credito/likeu/",
+          "https://www.santander.com.mx/cashback/likeu.html"
         ]
       },
       "rewards": {
-        "score": "low",
+        "score": "high",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-01-01",
+        "verified_on": "2026-08-07",
         "sources": [
-          "https://www.santander.com.mx/personas/credito-y-financiamiento/tarjetas-de-credito/likeu/"
+          "https://www.santander.com.mx/personas/credito-y-financiamiento/tarjetas-de-credito/likeu/",
+          "https://www.santander.com.mx/cashback/likeu.html"
         ]
       },
       "perks": {
         "score": "high",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-01-01",
+        "verified_on": "2026-08-07",
         "sources": [
-          "https://www.santander.com.mx/personas/credito-y-financiamiento/tarjetas-de-credito/likeu/"
+          "https://www.santander.com.mx/personas/credito-y-financiamiento/tarjetas-de-credito/likeu/",
+          "https://www.santander.com.mx/cashback/likeu.html"
         ]
       },
       "eligibility": {
-        "score": "medium",
+        "score": "high",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-01-01",
+        "verified_on": "2026-08-07",
         "sources": [
-          "https://www.santander.com.mx/personas/credito-y-financiamiento/tarjetas-de-credito/likeu/"
+          "https://www.santander.com.mx/personas/credito-y-financiamiento/tarjetas-de-credito/likeu/",
+          "https://www.santander.com.mx/cashback/likeu.html"
         ]
       }
     },
-    "inactivity_fee_mxn": "NOT_APPLICABLE",
-    "inactivity_fee_period": "NOT_APPLICABLE",
-    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
-    "inactivity_min_spend_mxn": "NOT_APPLICABLE",
-    "inactivity_spend_period": "NOT_APPLICABLE",
+    "inactivity_fee_mxn": 169,
+    "inactivity_fee_period": "monthly",
+    "inactivity_fee_includes_iva": false,
+    "inactivity_min_spend_mxn": 200,
+    "inactivity_spend_period": "monthly",
     "fee_billing_period": "NOT_APPLICABLE",
-    "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_calculated_on": "2026-07-01",
+    "cat_valid_until": "2026-12-31"
   },
   {
     "card_id": "santander_mexico__santander_american_express",

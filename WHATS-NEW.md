@@ -1,47 +1,53 @@
-# Handoff — three schema decisions
+# Handoff — HSBC and Santander
 
-Unzip over `~/finance-optimizer`, then:
+Data only. No schema or app changes this time, so the new fields all landed in
+the existing structure.
 
 ```bash
+cd ~/finance-optimizer
+unzip -o ~/Downloads/norte-batch4.zip
 python3 skills/finance-market-data/scripts/validate.py data/market/
 git add -A
-git commit -m "schema: fee billing period, CAT calculation date, payout guidance"
+git commit -m "market data: HSBC and Santander LikeU from issuer sources"
 git push
 ```
-Then in the Sheet: **Norte → Vista previa**, then **Sincronizar desde GitHub**.
-
-The preview should now say "✓ Nadie editó la hoja a mano" — the snapshot from
-your last sync makes that check meaningful for the first time.
-
-## 1. fee_billing_period — annual | monthly
-
-`annual_fee_mxn` stays the yearly total whatever the cadence; this records how the
-issuer charges it. Banamex moved 6 of its cards to monthly billing on 2026-07-30;
-Beyond, Home Depot, LineUp, Costco and Joy stayed annual.
-
-The UI shows "$815/año, cobrada mensualmente" rather than converting to $68/mes,
-because people reconcile against their statement.
-
-Worth knowing: monthly billing makes a card *cheaper to leave* — you stop paying at
-cancellation instead of forfeiting the rest of a prepaid year.
-
-## 2. cat_calculated_on + cat_valid_until
-
-A CAT is a snapshot tied to a date, and the same issuer can publish two figures for
-one card. Rule now written into SKILL.md: **prefer the tarifario over the product
-page** — it is updated as a consistent set — and always record the calculation date.
-
-The validator warns when a CAT is past the issuer's own validity date. That already
-caught one: Costco Banamex's page still shows a CAT calculated 2025-03-31 and expired
-2025-09-30. The card detail now says so to the user.
-
-## 3. Costco's December payout — no numeric discount
-
-`payout_frequency` records it and the UI surfaces it, but no haircut is applied. Any
-discount rate would be invented and would look like precision. Show the timing, let
-the person judge.
+Then: **Norte → Vista previa**, then **Sincronizar desde GitHub**.
 
 ## Coverage
 
-49 of 175 cards mapped. `fee_billing_period` recorded on 57; the remaining 118 are
-UNKNOWN, which is honest — they are unmapped skeletons.
+51 of 175 cards mapped, up from 49.
+Banamex 9 · Banorte 6 · BBVA 6 · Inbursa 5 · HSBC 5 · Invex 5 · Scotiabank 3.
+
+## HSBC — 5 cards, all from hsbc.com.mx
+
+Every figure carries the same calculation date (2026-03-10) and validity
+(2026-09-10), so `cat_calculated_on` is populated throughout.
+
+- **2Now** — CAT 88.30%, 2% cashback. The cap is $42,500 of **spend** per month,
+  not $850 of reward. Same economics, but recorded as the issuer frames it, which
+  is why `cap_basis: spend_mxn` exists.
+- **Zero** — CAT 95.50%, no fee, no rewards programme.
+- **VIVA PLUS** — CAT 81.50%, $3,124/yr. Doters points: 3 per $10 at Viva, 2 per
+  $10 elsewhere. Doters publishes no peso value, so not rankable against cashback.
+- **VIVA** — CAT 99.00%, no annual fee, but a monthly admin fee waived by $300 of
+  spend. HSBC does not publish the fee amount, so it is `UNKNOWN` with the
+  threshold recorded. Half a fact, stored as half a fact.
+- **AIR** — CAT 49.40%, $915/yr, the lowest CAT in the HSBC range.
+
+## Santander LikeU — corrected from the issuer
+
+Was previously mapped from the legacy dataset at a flat 1% with no fee.
+
+- Admin fee is **$169/month** if monthly spend is under $200. Three separate
+  comparators said $150; Santander's own page says $169. Fourth issuer running
+  where comparators were wrong on a fee.
+- Cashback: 6% pharmacy, 5% dining, 4% telecom, 1% supermarket — **$500/month cap
+  shared across all four**, not per category.
+- Two conditions worth knowing: the rebate is paid into a Santander debit account,
+  so without one you earn nothing; and deferring a purchase to MSI can cancel its
+  cashback.
+
+## Not done
+
+124 skeletons remain. Santander's other 10 cards (Aeroméxico, Fiesta Rewards,
+Unique) returned no issuer folletos this pass.
