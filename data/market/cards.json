@@ -461,7 +461,10 @@
           "https://www.inbursa.com/sites/gfi/document/tdc-black-amex-folleto.pdf"
         ]
       }
-    }
+    },
+    "accrual_basis": "UNKNOWN",
+    "accrual_rate": "UNKNOWN",
+    "accrual_block_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "banco_inbursa__inbursa_clasica",
@@ -571,7 +574,10 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "annual",
     "cat_calculated_on": "2025-12-31",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "accrual_basis": "pct_of_spend",
+    "accrual_rate": 5.4,
+    "accrual_block_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "banco_inbursa__inbursa_oro",
@@ -657,7 +663,10 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "annual",
     "cat_calculated_on": "2025-12-31",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "accrual_basis": "pct_of_spend",
+    "accrual_rate": 5.4,
+    "accrual_block_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "banco_inbursa__inbursa_platinum",
@@ -739,7 +748,10 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "annual",
     "cat_calculated_on": "2026-06-30",
-    "cat_valid_until": "2026-12-30"
+    "cat_valid_until": "2026-12-30",
+    "accrual_basis": "UNKNOWN",
+    "accrual_rate": "UNKNOWN",
+    "accrual_block_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "banco_inbursa__inbursa_optima",
@@ -819,7 +831,10 @@
           "https://www.inbursa.com/sites/gfi/document/tdc-optima-folleto.pdf"
         ]
       }
-    }
+    },
+    "accrual_basis": "UNKNOWN",
+    "accrual_rate": "UNKNOWN",
+    "accrual_block_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "banco_inbursa__telcel_oro",
@@ -901,7 +916,10 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "annual",
     "cat_calculated_on": "2026-06-30",
-    "cat_valid_until": "2026-12-30"
+    "cat_valid_until": "2026-12-30",
+    "accrual_basis": "UNKNOWN",
+    "accrual_rate": "UNKNOWN",
+    "accrual_block_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "bancoppel__tarjeta_de_credito_bancoppel",
@@ -982,7 +1000,10 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "NOT_APPLICABLE",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "accrual_basis": "NOT_APPLICABLE",
+    "accrual_rate": "NOT_APPLICABLE",
+    "accrual_block_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "bancoppel__infinite",
@@ -1235,7 +1256,10 @@
     },
     "fee_billing_period": "NOT_APPLICABLE",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "accrual_basis": "NOT_APPLICABLE",
+    "accrual_rate": "NOT_APPLICABLE",
+    "accrual_block_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "banorte__clasica",
@@ -1316,7 +1340,10 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "accrual_basis": "UNKNOWN",
+    "accrual_rate": "UNKNOWN",
+    "accrual_block_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "banorte__infinite",
@@ -1444,7 +1471,10 @@
     },
     "fee_billing_period": "NOT_APPLICABLE",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "accrual_basis": "UNKNOWN",
+    "accrual_rate": "UNKNOWN",
+    "accrual_block_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "banorte__oro",
@@ -1529,7 +1559,10 @@
     },
     "fee_billing_period": "annual",
     "cat_calculated_on": "2026-04-16",
-    "cat_valid_until": "2026-10-16"
+    "cat_valid_until": "2026-10-16",
+    "accrual_basis": "pct_of_spend",
+    "accrual_rate": 11.5,
+    "accrual_block_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "banorte__platinum",
@@ -1614,7 +1647,10 @@
     },
     "fee_billing_period": "annual",
     "cat_calculated_on": "2026-04-16",
-    "cat_valid_until": "2026-10-16"
+    "cat_valid_until": "2026-10-16",
+    "accrual_basis": "pct_of_spend",
+    "accrual_rate": 12.5,
+    "accrual_block_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "banorte__por_ti",
@@ -1695,7 +1731,10 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "accrual_basis": "pct_of_spend",
+    "accrual_rate": 1.0,
+    "accrual_block_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "banorte__marriott_bonvoy",
@@ -2039,7 +2078,10 @@
     },
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "2026-03-01",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "accrual_basis": "UNKNOWN",
+    "accrual_rate": "UNKNOWN",
+    "accrual_block_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "bbva_mexico__afinidad_unam_bbva",
@@ -2144,7 +2186,10 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "accrual_basis": "pct_of_spend",
+    "accrual_rate": 9.0,
+    "accrual_block_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "bbva_mexico__crea_bbva",
@@ -2224,7 +2269,10 @@
     },
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "2026-03-01",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "accrual_basis": "UNKNOWN",
+    "accrual_rate": "UNKNOWN",
+    "accrual_block_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "bbva_mexico__educacion_bbva",
@@ -2353,7 +2401,10 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "accrual_basis": "UNKNOWN",
+    "accrual_rate": "UNKNOWN",
+    "accrual_block_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "bbva_mexico__platinum_bbva",
@@ -2433,7 +2484,10 @@
     },
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "2026-03-01",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "accrual_basis": "UNKNOWN",
+    "accrual_rate": "UNKNOWN",
+    "accrual_block_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "bbva_mexico__start_bbva",
@@ -2513,7 +2567,10 @@
     },
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "2026-03-01",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "accrual_basis": "UNKNOWN",
+    "accrual_rate": "UNKNOWN",
+    "accrual_block_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "bbva_mexico__vive_bbva",
@@ -2670,7 +2727,10 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "annual",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "accrual_basis": "UNKNOWN",
+    "accrual_rate": "UNKNOWN",
+    "accrual_block_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "citibanamex__clasica_banamex",
@@ -2756,7 +2816,10 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "monthly",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "accrual_basis": "UNKNOWN",
+    "accrual_rate": "UNKNOWN",
+    "accrual_block_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "citibanamex__conquista_banamex",
@@ -2865,7 +2928,10 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "monthly",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "accrual_basis": "UNKNOWN",
+    "accrual_rate": "UNKNOWN",
+    "accrual_block_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "citibanamex__explora_banamex",
@@ -2950,7 +3016,10 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "monthly",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "accrual_basis": "UNKNOWN",
+    "accrual_rate": "UNKNOWN",
+    "accrual_block_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "citibanamex__joy_banamex",
@@ -3035,7 +3104,10 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "NOT_APPLICABLE",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "accrual_basis": "NOT_APPLICABLE",
+    "accrual_rate": "NOT_APPLICABLE",
+    "accrual_block_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "citibanamex__oro_banamex",
@@ -3121,7 +3193,10 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "monthly",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "accrual_basis": "UNKNOWN",
+    "accrual_rate": "UNKNOWN",
+    "accrual_block_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "citibanamex__platinum_banamex",
@@ -3206,7 +3281,10 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "monthly",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "accrual_basis": "pct_of_spend",
+    "accrual_rate": 10.0,
+    "accrual_block_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "hsbc_mexico__hsbc_2now",
@@ -3292,7 +3370,10 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "NOT_APPLICABLE",
     "cat_calculated_on": "2026-03-10",
-    "cat_valid_until": "2026-09-10"
+    "cat_valid_until": "2026-09-10",
+    "accrual_basis": "pct_of_spend",
+    "accrual_rate": 2.0,
+    "accrual_block_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "hsbc_mexico__hsbc_advance_platinum",
@@ -3401,7 +3482,10 @@
           "https://www.hsbc.com.mx/content/dam/hsbc/mx/documents/tarjetas/folleto_digital_tarjetas.pdf"
         ]
       }
-    }
+    },
+    "accrual_basis": "UNKNOWN",
+    "accrual_rate": "UNKNOWN",
+    "accrual_block_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "hsbc_mexico__hsbc_basica",
@@ -3655,7 +3739,10 @@
     "inactivity_spend_period": "monthly",
     "fee_billing_period": "NOT_APPLICABLE",
     "cat_calculated_on": "2026-03-10",
-    "cat_valid_until": "2026-09-10"
+    "cat_valid_until": "2026-09-10",
+    "accrual_basis": "UNKNOWN",
+    "accrual_rate": "UNKNOWN",
+    "accrual_block_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "hsbc_mexico__hsbc_viva_plus",
@@ -3740,7 +3827,10 @@
           "https://www.hsbc.com.mx/tarjetas-de-credito/productos/"
         ]
       }
-    }
+    },
+    "accrual_basis": "pct_of_spend",
+    "accrual_rate": 20.0,
+    "accrual_block_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "hsbc_mexico__hsbc_world_elite",
@@ -3850,7 +3940,10 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "NOT_APPLICABLE",
     "cat_calculated_on": "2026-03-10",
-    "cat_valid_until": "2026-09-10"
+    "cat_valid_until": "2026-09-10",
+    "accrual_basis": "NOT_APPLICABLE",
+    "accrual_rate": "NOT_APPLICABLE",
+    "accrual_block_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "invex__voyage",
@@ -3931,7 +4024,10 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "annual",
     "cat_calculated_on": "2026-04-30",
-    "cat_valid_until": "2026-09-30"
+    "cat_valid_until": "2026-09-30",
+    "accrual_basis": "pct_of_spend",
+    "accrual_rate": 1.0,
+    "accrual_block_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "invex__voyage_platinum",
@@ -4012,7 +4108,10 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "annual",
     "cat_calculated_on": "2026-04-30",
-    "cat_valid_until": "2026-09-30"
+    "cat_valid_until": "2026-09-30",
+    "accrual_basis": "pct_of_spend",
+    "accrual_rate": 1.0,
+    "accrual_block_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "invex__sicard_basica",
@@ -4093,7 +4192,10 @@
           "https://www.invextarjetas.com.mx/invex/Documentos/Sitios%20de%20Interes/MapaSitioInvex.pdf"
         ]
       }
-    }
+    },
+    "accrual_basis": "NOT_APPLICABLE",
+    "accrual_rate": "NOT_APPLICABLE",
+    "accrual_block_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "invex__sicard_platinum",
@@ -4174,7 +4276,10 @@
           "https://www.invextarjetas.com.mx/invex/Documentos/Sitios%20de%20Interes/MapaSitioInvex.pdf"
         ]
       }
-    }
+    },
+    "accrual_basis": "UNKNOWN",
+    "accrual_rate": "UNKNOWN",
+    "accrual_block_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "invex__sicard_plus",
@@ -4255,7 +4360,10 @@
           "https://www.invextarjetas.com.mx/invex/Documentos/Sitios%20de%20Interes/MapaSitioInvex.pdf"
         ]
       }
-    }
+    },
+    "accrual_basis": "UNKNOWN",
+    "accrual_rate": "UNKNOWN",
+    "accrual_block_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "multiva__clasica",
@@ -4413,7 +4521,10 @@
     "inactivity_spend_period": "monthly",
     "fee_billing_period": "NOT_APPLICABLE",
     "cat_calculated_on": "2026-07-01",
-    "cat_valid_until": "2026-12-31"
+    "cat_valid_until": "2026-12-31",
+    "accrual_basis": "pct_of_spend",
+    "accrual_rate": 1.0,
+    "accrual_block_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "santander_mexico__santander_american_express",
@@ -4589,7 +4700,10 @@
           "https://www.santander.com.mx/personas/select/beneficios.html"
         ]
       }
-    }
+    },
+    "accrual_basis": "per_usd",
+    "accrual_rate": 2,
+    "accrual_block_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "santander_mexico__world_elite",
@@ -4694,7 +4808,10 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "NOT_APPLICABLE",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "accrual_basis": "NOT_APPLICABLE",
+    "accrual_rate": "NOT_APPLICABLE",
+    "accrual_block_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "scotiabank_mexico__infinite_scotia_wealth_management",
@@ -4847,7 +4964,10 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "accrual_basis": "UNKNOWN",
+    "accrual_rate": "UNKNOWN",
+    "accrual_block_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "scotiabank_mexico__singular_by_scotiabank_infinite",
@@ -4976,7 +5096,10 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "accrual_basis": "UNKNOWN",
+    "accrual_rate": "UNKNOWN",
+    "accrual_block_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "scotiabank_mexico__tasa_baja_clasica",
@@ -5106,7 +5229,10 @@
           "https://www.inbursa.com/sites/gfi/document/tdc-ascend-folleto.pdf"
         ]
       }
-    }
+    },
+    "accrual_basis": "per_usd",
+    "accrual_rate": 1,
+    "accrual_block_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "banco_inbursa__aeromexico_elevate",
@@ -5188,7 +5314,10 @@
           "https://www.inbursa.com/sites/gfi/document/tdc-elevate-folleto.pdf"
         ]
       }
-    }
+    },
+    "accrual_basis": "per_usd",
+    "accrual_rate": 1.2,
+    "accrual_block_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "banco_inbursa__aeromexico_horizon",
@@ -5270,7 +5399,10 @@
           "https://www.inbursa.com/sites/gfi/document/tdc-horizon-folleto.pdf"
         ]
       }
-    }
+    },
+    "accrual_basis": "per_usd",
+    "accrual_rate": 2,
+    "accrual_block_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "invex__volaris",
@@ -5298,7 +5430,7 @@
     "annual_fee_mxn": 3221,
     "annual_fee_waiver_condition": "Primer año sin costo para clientes nuevos. A partir del segundo año, comisión por Administración de tarjeta del titular de $3,221 + IVA al año.",
     "base_reward_type": "points",
-    "base_reward_rate": 35.0,
+    "base_reward_rate": "UNKNOWN",
     "point_value_mxn": "UNKNOWN",
     "effective_rate_pct": "UNKNOWN",
     "confidence": {
@@ -5353,7 +5485,10 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "annual",
     "cat_calculated_on": "2026-04-30",
-    "cat_valid_until": "2026-09-30"
+    "cat_valid_until": "2026-09-30",
+    "accrual_basis": "per_mxn_block",
+    "accrual_rate": 7,
+    "accrual_block_mxn": 20
   },
   {
     "card_id": "invex__volaris_0",
@@ -5405,7 +5540,7 @@
     "interest_rate_annual_pct": 32.7,
     "cat_promedio_pct": 27.9,
     "base_reward_type": "points",
-    "base_reward_rate": 25.0,
+    "base_reward_rate": "UNKNOWN",
     "point_value_mxn": "UNKNOWN",
     "effective_rate_pct": "UNKNOWN",
     "points_program_name": "altitude by Volaris",
@@ -5455,7 +5590,10 @@
           "https://solicitala.invextarjetas.com.mx/todas-sitiocorporativo/"
         ]
       }
-    }
+    },
+    "accrual_basis": "per_mxn_block",
+    "accrual_rate": 5,
+    "accrual_block_mxn": 20
   },
   {
     "card_id": "invex__volaris_2_0",
@@ -5483,7 +5621,7 @@
     "annual_fee_mxn": 4791,
     "annual_fee_waiver_condition": "Primer año sin costo para clientes nuevos. A partir del segundo año, comisión por Administración de tarjeta del titular de $4,791 + IVA al año.",
     "base_reward_type": "points",
-    "base_reward_rate": 50.0,
+    "base_reward_rate": "UNKNOWN",
     "point_value_mxn": "UNKNOWN",
     "effective_rate_pct": "UNKNOWN",
     "confidence": {
@@ -5536,7 +5674,10 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "annual",
     "cat_calculated_on": "2026-04-30",
-    "cat_valid_until": "2026-09-30"
+    "cat_valid_until": "2026-09-30",
+    "accrual_basis": "per_mxn_block",
+    "accrual_rate": 10,
+    "accrual_block_mxn": 20
   },
   {
     "card_id": "santander_mexico__aeromexico_blanca",
@@ -5733,7 +5874,10 @@
           "https://www.invextarjetas.com.mx/invex/Documentos/CONDUSEF/FolletoDespegarGold.pdf"
         ]
       }
-    }
+    },
+    "accrual_basis": "per_usd",
+    "accrual_rate": 1,
+    "accrual_block_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "invex__despegar_platinum",
@@ -5815,7 +5959,10 @@
           "https://solicitala.invextarjetas.com.mx/todas-sitiocorporativo/"
         ]
       }
-    }
+    },
+    "accrual_basis": "UNKNOWN",
+    "accrual_rate": "UNKNOWN",
+    "accrual_block_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "invex__hilton_honors",
@@ -5896,7 +6043,10 @@
           "https://solicitala.invextarjetas.com.mx/todas-sitiocorporativo/"
         ]
       }
-    }
+    },
+    "accrual_basis": "UNKNOWN",
+    "accrual_rate": "UNKNOWN",
+    "accrual_block_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "invex__hilton_honors_premium",
@@ -5977,7 +6127,10 @@
           "https://solicitala.invextarjetas.com.mx/todas-sitiocorporativo/"
         ]
       }
-    }
+    },
+    "accrual_basis": "UNKNOWN",
+    "accrual_rate": "UNKNOWN",
+    "accrual_block_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "santander_mexico__fiesta_rewards_oro",
@@ -6062,7 +6215,10 @@
           "https://www.santander.com.mx/personas/credito-y-financiamiento/tarjetas-de-credito/fiesta-rewards-oro/"
         ]
       }
-    }
+    },
+    "accrual_basis": "UNKNOWN",
+    "accrual_rate": "UNKNOWN",
+    "accrual_block_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "santander_mexico__fiesta_rewards_platino",
@@ -6147,7 +6303,10 @@
           "https://www.santander.com.mx/personas/credito-y-financiamiento/tarjetas-de-credito/fiesta-rewards-platino/"
         ]
       }
-    }
+    },
+    "accrual_basis": "per_usd",
+    "accrual_rate": 3,
+    "accrual_block_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "afirme__cemex",
@@ -6376,7 +6535,10 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "annual",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "accrual_basis": "pct_of_spend",
+    "accrual_rate": 0,
+    "accrual_block_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "banco_inbursa__walmart_inbursa",
@@ -6456,7 +6618,10 @@
           "https://www.inbursa.com/sites/gfi/document/tdc-walmart-folleto.pdf"
         ]
       }
-    }
+    },
+    "accrual_basis": "pct_of_spend",
+    "accrual_rate": 0,
+    "accrual_block_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "citibanamex__costco_banamex",
@@ -6539,7 +6704,10 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "monthly",
     "cat_calculated_on": "2025-03-31",
-    "cat_valid_until": "2025-09-30"
+    "cat_valid_until": "2025-09-30",
+    "accrual_basis": "pct_of_spend",
+    "accrual_rate": 1.0,
+    "accrual_block_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "citibanamex__affinity_card_banamex",
@@ -6620,7 +6788,10 @@
           "https://www.banamex.com/es/personas/tarjetas-credito/tarjeta-affinity/tarifas-comisiones.html"
         ]
       }
-    }
+    },
+    "accrual_basis": "pct_of_spend",
+    "accrual_rate": 5.0,
+    "accrual_block_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "citibanamex__la_comer_card_banamex",
@@ -6701,7 +6872,10 @@
           "https://www.banamex.com/es/personas/tarjetas-credito/tarjeta-lacomer/tarifas-comisiones.html"
         ]
       }
-    }
+    },
+    "accrual_basis": "pct_of_spend",
+    "accrual_rate": 1.0,
+    "accrual_block_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "citibanamex__lineup_banamex",
@@ -6781,7 +6955,10 @@
           "https://www.banamex.com/es/personas/tarjetas-credito/tarjeta-lineup/tarifas-comisiones.html"
         ]
       }
-    }
+    },
+    "accrual_basis": "UNKNOWN",
+    "accrual_rate": "UNKNOWN",
+    "accrual_block_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "citibanamex__teleton_banamex",
@@ -6866,7 +7043,10 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "monthly",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "accrual_basis": "UNKNOWN",
+    "accrual_rate": "UNKNOWN",
+    "accrual_block_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "citibanamex__the_home_depot_banamex",
@@ -6974,7 +7154,10 @@
         ]
       }
     },
-    "point_value_source": "https://www.invextarjetas.com.mx/invex/Documentos/CONDUSEF/FolletoFragua.pdf"
+    "point_value_source": "https://www.invextarjetas.com.mx/invex/Documentos/CONDUSEF/FolletoFragua.pdf",
+    "accrual_basis": "pct_of_spend",
+    "accrual_rate": 1.0,
+    "accrual_block_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "invex__ikea",
@@ -7057,7 +7240,10 @@
           "https://solicitala.invextarjetas.com.mx/todas-sitiocorporativo/"
         ]
       }
-    }
+    },
+    "accrual_basis": "UNKNOWN",
+    "accrual_rate": "UNKNOWN",
+    "accrual_block_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "invex__manchester_united",
@@ -7139,7 +7325,10 @@
           "https://solicitala.invextarjetas.com.mx/todas-sitiocorporativo/"
         ]
       }
-    }
+    },
+    "accrual_basis": "UNKNOWN",
+    "accrual_rate": "UNKNOWN",
+    "accrual_block_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "invex__sams_club",
@@ -7221,7 +7410,10 @@
           "https://solicitala.invextarjetas.com.mx/todas-sitiocorporativo/"
         ]
       }
-    }
+    },
+    "accrual_basis": "pct_of_spend",
+    "accrual_rate": 1.0,
+    "accrual_block_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "invex__walmart",
@@ -7303,7 +7495,10 @@
     "inactivity_spend_period": "monthly",
     "fee_billing_period": "NOT_APPLICABLE",
     "cat_calculated_on": "2026-04-30",
-    "cat_valid_until": "2026-09-30"
+    "cat_valid_until": "2026-09-30",
+    "accrual_basis": "pct_of_spend",
+    "accrual_rate": 1.0,
+    "accrual_block_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "klar__con_garantia",
@@ -7408,7 +7603,10 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "NOT_APPLICABLE",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "accrual_basis": "UNKNOWN",
+    "accrual_rate": "UNKNOWN",
+    "accrual_block_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "klar__platino",
@@ -7489,7 +7687,10 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "NOT_APPLICABLE",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "accrual_basis": "UNKNOWN",
+    "accrual_rate": "UNKNOWN",
+    "accrual_block_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "stori__tarjeta_de_credito_stori",
@@ -7570,7 +7771,10 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "NOT_APPLICABLE",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "accrual_basis": "NOT_APPLICABLE",
+    "accrual_rate": "NOT_APPLICABLE",
+    "accrual_block_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "stori__black",
@@ -7651,7 +7855,10 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "NOT_APPLICABLE",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "accrual_basis": "pct_of_spend",
+    "accrual_rate": 1.0,
+    "accrual_block_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "stori__con_garantia",
@@ -7780,7 +7987,10 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "NOT_APPLICABLE",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "accrual_basis": "pct_of_spend",
+    "accrual_rate": 2.0,
+    "accrual_block_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "mercado_pago__tarjeta_de_credito_mercado_pago",
@@ -7861,7 +8071,10 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "NOT_APPLICABLE",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "accrual_basis": "NOT_APPLICABLE",
+    "accrual_rate": "NOT_APPLICABLE",
+    "accrual_block_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "nu_mx__tarjeta_de_credito_nu",
@@ -7942,7 +8155,10 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "NOT_APPLICABLE",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "accrual_basis": "NOT_APPLICABLE",
+    "accrual_rate": "NOT_APPLICABLE",
+    "accrual_block_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "stori__shein_x",
@@ -8071,7 +8287,10 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "accrual_basis": "UNKNOWN",
+    "accrual_rate": "UNKNOWN",
+    "accrual_block_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "american_express__the_green_card",
@@ -8464,7 +8683,10 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "NOT_APPLICABLE",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "accrual_basis": "UNKNOWN",
+    "accrual_rate": "UNKNOWN",
+    "accrual_block_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "uala_mx__con_garantia",
@@ -8593,7 +8815,10 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "accrual_basis": "pct_of_spend",
+    "accrual_rate": 0.5,
+    "accrual_block_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "banorte__rappicard",
@@ -8697,7 +8922,10 @@
           "https://www.inbursa.com/sites/gfi/tdc-enlacemedico"
         ]
       }
-    }
+    },
+    "accrual_basis": "UNKNOWN",
+    "accrual_rate": "UNKNOWN",
+    "accrual_block_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "banco_inbursa__fundacion_unam",
@@ -8777,7 +9005,10 @@
           "https://www.inbursa.com/sites/gfi/document/comisiones-tdc-inbursa-mc.pdf"
         ]
       }
-    }
+    },
+    "accrual_basis": "UNKNOWN",
+    "accrual_rate": "UNKNOWN",
+    "accrual_block_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "invex__now",
