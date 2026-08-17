@@ -4518,22 +4518,78 @@
     "display_name": "Tarjeta de Crédito Unique Rewards Platinum",
     "former_names": [],
     "legacy_id": "Tarjeta de Crédito Unique Rewards Platinum",
-    "tier": "UNKNOWN",
+    "tier": "platino",
     "network": "UNKNOWN",
     "lifecycle_status": "active",
-    "mapping_status": "skeleton",
+    "mapping_status": "mapped",
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": "",
+    "notes": "Comisión anual $2,500 + IVA. Tasa ordinaria 58.75% VARIABLE, no fija — distinta del resto de la cartera mapeada, que es de tasa fija. ACUMULACIÓN DENOMINADA EN DÓLARES: 2 puntos por dólar gastado y hasta 3 por dólar en aerolíneas, así que base_reward_rate queda UNKNOWN igual que en Despegar, Hilton y la gama Aeroméxico de Inbursa. Santander no publica el valor en pesos del punto. 10 accesos a salas VIP LoungeKey y asesoría en trámites de visa y pasaporte. Destino de migración de los titulares de Santander Aeroméxico Platinum. El CAT proviene de la página de Mundo Select con fecha de cálculo 1 de enero de 2026; la página del producto publica un juego más reciente calculado el 1 de julio de 2026 cuyos valores no renderizan.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
     "inactivity_min_spend_mxn": "NOT_APPLICABLE",
     "inactivity_spend_period": "NOT_APPLICABLE",
-    "fee_billing_period": "UNKNOWN",
-    "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "fee_billing_period": "annual",
+    "cat_calculated_on": "2026-01-01",
+    "cat_valid_until": "UNKNOWN",
+    "annual_fee_mxn": 2500,
+    "annual_fee_includes_iva": false,
+    "annual_fee_first_year_waived": false,
+    "annual_fee_waiver_condition": "NOT_APPLICABLE",
+    "interest_rate_annual_pct": 58.75,
+    "cat_promedio_pct": 82.6,
+    "base_reward_type": "points",
+    "base_reward_rate": "UNKNOWN",
+    "point_value_mxn": "UNKNOWN",
+    "effective_rate_pct": "UNKNOWN",
+    "points_program_name": "Santander Rewards",
+    "min_income_mxn_monthly": "UNKNOWN",
+    "invitation_only": false,
+    "other_eligibility_criteria": "NOT_APPLICABLE",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.santander.com.mx/personas/select/beneficios.html"
+        ]
+      },
+      "cost": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.santander.com.mx/personas/select/beneficios.html"
+        ]
+      },
+      "rewards": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.santander.com.mx/personas/select/beneficios.html"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.santander.com.mx/personas/select/beneficios.html"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.santander.com.mx/personas/select/beneficios.html"
+        ]
+      }
+    }
   },
   {
     "card_id": "santander_mexico__world_elite",
@@ -4549,7 +4605,7 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": "",
+    "notes": " REVISAR CLASIFICACIÓN (2026-08-17): la página de Mundo Select describe World Elite como TARJETA DE DÉBITO, no de crédito. Si se confirma, esta fila pertenece a accounts.json con account_type debit y debe retirarse de cards.json — pero el ID ya está asignado, así que requiere decisión antes de moverla.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
@@ -5491,12 +5547,12 @@
     "legacy_id": "Tarjeta de Crédito Aeroméxico Blanca",
     "tier": "UNKNOWN",
     "network": "UNKNOWN",
-    "lifecycle_status": "active",
+    "lifecycle_status": "closed_to_new_applications",
     "mapping_status": "skeleton",
     "census_confidence": "high",
     "census_note": "co-brand",
     "conflicts": [],
-    "notes": "Co-brand split from legacy issuer string 'Santander México (Aeroméxico)'.",
+    "notes": "ALIANZA TERMINADA. Santander y Aeroméxico disolvieron su acuerdo de marca compartida: las tarjetas dejaron de ofertarse a nuevos clientes y, desde el 30 de junio de 2026, perdieron todos los beneficios ligados a la aerolínea. El plástico sigue funcionando como tarjeta de crédito ordinaria y los puntos acumulados no se transfirieron a la nueva línea Aeroméxico de Inbursa. Se marca closed_to_new_applications y no withdrawn porque todavía hay tarjetahabientes vigentes; la migración a productos propios de Santander es progresiva. NO SE MAPEAN ATRIBUTOS: la recompensa que estas filas describían ya no existe, y publicar la tasa de puntos histórica daría una recomendación falsa. Fuentes de prensa, no del emisor — Santander retiró las páginas de producto. Titulares migrados a: Tarjeta de Crédito LikeU (santander_mexico__likeu).",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
@@ -5504,7 +5560,21 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "lifecycle_changed_on": "2026-06-30",
+    "confidence": {
+      "identity": {
+        "score": "medium",
+        "evidence_type": "comparator_secondary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://blog.kardmatch.com.mx/inbursa-aeromexico",
+          "https://www.sdpnoticias.com/negocios/tarjeta-santander-aeromexico-desaparecera-el-30-de-junio-clientes-reclaman-beneficios/",
+          "https://www.credidebit.com/aeromexico-cambia-de-banco-inbursa-lanzara-tres-nuevas-tarjetas-tras-el-fin-de-la-alianza-con-santander/",
+          "https://www.dedinero.com.mx/consumo/santander-rompe-con-aeromexico-que-pasara-con-tu-tarjeta-y-tu-deuda/"
+        ]
+      }
+    }
   },
   {
     "card_id": "santander_mexico__aeromexico_infinite",
@@ -5515,12 +5585,12 @@
     "legacy_id": "Tarjeta de Crédito Aeroméxico Infinite",
     "tier": "UNKNOWN",
     "network": "UNKNOWN",
-    "lifecycle_status": "active",
+    "lifecycle_status": "closed_to_new_applications",
     "mapping_status": "skeleton",
     "census_confidence": "high",
     "census_note": "co-brand",
     "conflicts": [],
-    "notes": "Co-brand split from legacy issuer string 'Santander México (Aeroméxico)'.",
+    "notes": "ALIANZA TERMINADA. Santander y Aeroméxico disolvieron su acuerdo de marca compartida: las tarjetas dejaron de ofertarse a nuevos clientes y, desde el 30 de junio de 2026, perdieron todos los beneficios ligados a la aerolínea. El plástico sigue funcionando como tarjeta de crédito ordinaria y los puntos acumulados no se transfirieron a la nueva línea Aeroméxico de Inbursa. Se marca closed_to_new_applications y no withdrawn porque todavía hay tarjetahabientes vigentes; la migración a productos propios de Santander es progresiva. NO SE MAPEAN ATRIBUTOS: la recompensa que estas filas describían ya no existe, y publicar la tasa de puntos histórica daría una recomendación falsa. Fuentes de prensa, no del emisor — Santander retiró las páginas de producto. Titulares migrados a: Unique Rewards Black (santander_mexico__unique_rewards_black).",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
@@ -5528,7 +5598,21 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "lifecycle_changed_on": "2026-06-30",
+    "confidence": {
+      "identity": {
+        "score": "medium",
+        "evidence_type": "comparator_secondary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://blog.kardmatch.com.mx/inbursa-aeromexico",
+          "https://www.sdpnoticias.com/negocios/tarjeta-santander-aeromexico-desaparecera-el-30-de-junio-clientes-reclaman-beneficios/",
+          "https://www.credidebit.com/aeromexico-cambia-de-banco-inbursa-lanzara-tres-nuevas-tarjetas-tras-el-fin-de-la-alianza-con-santander/",
+          "https://www.dedinero.com.mx/consumo/santander-rompe-con-aeromexico-que-pasara-con-tu-tarjeta-y-tu-deuda/"
+        ]
+      }
+    }
   },
   {
     "card_id": "santander_mexico__aeromexico_platinum",
@@ -5539,12 +5623,12 @@
     "legacy_id": "Tarjeta de Crédito Aeroméxico Platinum",
     "tier": "UNKNOWN",
     "network": "UNKNOWN",
-    "lifecycle_status": "active",
+    "lifecycle_status": "closed_to_new_applications",
     "mapping_status": "skeleton",
     "census_confidence": "high",
     "census_note": "co-brand",
     "conflicts": [],
-    "notes": "Co-brand split from legacy issuer string 'Santander México (Aeroméxico)'.",
+    "notes": "ALIANZA TERMINADA. Santander y Aeroméxico disolvieron su acuerdo de marca compartida: las tarjetas dejaron de ofertarse a nuevos clientes y, desde el 30 de junio de 2026, perdieron todos los beneficios ligados a la aerolínea. El plástico sigue funcionando como tarjeta de crédito ordinaria y los puntos acumulados no se transfirieron a la nueva línea Aeroméxico de Inbursa. Se marca closed_to_new_applications y no withdrawn porque todavía hay tarjetahabientes vigentes; la migración a productos propios de Santander es progresiva. NO SE MAPEAN ATRIBUTOS: la recompensa que estas filas describían ya no existe, y publicar la tasa de puntos histórica daría una recomendación falsa. Fuentes de prensa, no del emisor — Santander retiró las páginas de producto. Titulares migrados a: Unique Rewards Platinum (santander_mexico__unique_rewards_platinum).",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
@@ -5552,7 +5636,21 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "lifecycle_changed_on": "2026-06-30",
+    "confidence": {
+      "identity": {
+        "score": "medium",
+        "evidence_type": "comparator_secondary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://blog.kardmatch.com.mx/inbursa-aeromexico",
+          "https://www.sdpnoticias.com/negocios/tarjeta-santander-aeromexico-desaparecera-el-30-de-junio-clientes-reclaman-beneficios/",
+          "https://www.credidebit.com/aeromexico-cambia-de-banco-inbursa-lanzara-tres-nuevas-tarjetas-tras-el-fin-de-la-alianza-con-santander/",
+          "https://www.dedinero.com.mx/consumo/santander-rompe-con-aeromexico-que-pasara-con-tu-tarjeta-y-tu-deuda/"
+        ]
+      }
+    }
   },
   {
     "card_id": "invex__despegar_gold",
@@ -6252,12 +6350,12 @@
     "census_confidence": "high",
     "census_note": "co-brand",
     "conflicts": [],
-    "notes": "Reembolso Anual: se paga UNA vez al año, en el corte de diciembre, y sólo si la cuenta está al corriente. No es cashback mensual. CAT calculado el 31-mar-2025 y vigente al 30-sep-2025 — la propia página del emisor trae la cifra vencida.",
+    "notes": "Reembolso Anual: se paga UNA vez al año, en el corte de diciembre, y sólo si la cuenta está al corriente. No es cashback mensual. CAT calculado el 31-mar-2025 y vigente al 30-sep-2025 — la propia página del emisor trae la cifra vencida. CORRECCIÓN 2026-08-17: la anualidad estaba registrada como $450 con cobro anual. La página de costos y comisiones de Banamex indica Comisión por Administración mensual de $54.17 + IVA para el titular y $27.08 para la adicional, es decir $650 + IVA al año cobrados mensualmente. El cobro mensual abarata cancelar a media anualidad. Tasa ordinaria TIIE + 54.0 puntos. El CAT sigue siendo el calculado el 31 de marzo de 2025 con vigencia al 30 de septiembre de 2025 — vencido hace más de diez meses.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
     "inactivity_min_spend_mxn": "NOT_APPLICABLE",
-    "annual_fee_mxn": 450,
+    "annual_fee_mxn": 650,
     "annual_fee_includes_iva": false,
     "annual_fee_first_year_waived": false,
     "annual_fee_waiver_condition": "NOT_APPLICABLE",
@@ -6274,18 +6372,16 @@
       "identity": {
         "score": "high",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-08-07",
+        "verified_on": "2026-08-17",
         "sources": [
-          "https://www.banamex.com/es/personas/tarjetas-credito/tarjeta-costco.html",
           "https://www.banamex.com/es/personas/tarjetas-credito/tarjeta-costco/tarifas-comisiones.html"
         ]
       },
       "cost": {
-        "score": "high",
+        "score": "medium",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-08-07",
+        "verified_on": "2026-08-17",
         "sources": [
-          "https://www.banamex.com/es/personas/tarjetas-credito/tarjeta-costco.html",
           "https://www.banamex.com/es/personas/tarjetas-credito/tarjeta-costco/tarifas-comisiones.html"
         ]
       },
@@ -6319,7 +6415,7 @@
     },
     "base_reward_rate": 1.0,
     "inactivity_spend_period": "NOT_APPLICABLE",
-    "fee_billing_period": "annual",
+    "fee_billing_period": "monthly",
     "cat_calculated_on": "2025-03-31",
     "cat_valid_until": "2025-09-30"
   },
@@ -6330,22 +6426,79 @@
     "display_name": "Tarjeta de Crédito Affinity Card Banamex",
     "former_names": [],
     "legacy_id": "Tarjeta de Crédito Affinity Card Banamex",
-    "tier": "UNKNOWN",
-    "network": "UNKNOWN",
+    "tier": "clasica",
+    "network": "visa",
     "lifecycle_status": "active",
-    "mapping_status": "skeleton",
+    "mapping_status": "mapped",
     "census_confidence": "high",
     "census_note": "co-brand",
     "conflicts": [],
-    "notes": "Co-brand split from legacy issuer string 'Citibanamex (Inditex)'.",
+    "notes": "10% en Puntos Premia en tiendas de Grupo Inditex (Zara, Bershka, Pull&Bear, Stradivarius, Zara Home, Oysho, Massimo Dutti, Lefties) y 5% en otros establecimientos. Banamex no publica el valor en pesos del Punto Premia, así que effective_rate_pct es UNKNOWN pese a que los puntos son canjeables por efectivo en cajeros Banamex — el tipo de cambio no está publicado. LA ANUALIDAD NO SE PUDO OBTENER: la tabla de comisiones de esta tarjeta no renderiza el importe de Administración del titular. Su página indica cobro anual (1 vez al año), no mensual. Banamex inserta el bloque de CAT por JavaScript; la página entrega 'Calculado el ___ y vigente al ___' en blanco. cat_promedio_pct queda UNKNOWN por acuerdo (2026-08-17), no por falta de búsqueda.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
     "inactivity_min_spend_mxn": "NOT_APPLICABLE",
     "inactivity_spend_period": "NOT_APPLICABLE",
-    "fee_billing_period": "UNKNOWN",
+    "fee_billing_period": "annual",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "annual_fee_mxn": "UNKNOWN",
+    "annual_fee_includes_iva": false,
+    "annual_fee_first_year_waived": false,
+    "annual_fee_waiver_condition": "UNKNOWN",
+    "interest_rate_annual_pct": "UNKNOWN",
+    "cat_promedio_pct": "UNKNOWN",
+    "base_reward_type": "points",
+    "base_reward_rate": 5.0,
+    "point_value_mxn": "UNKNOWN",
+    "effective_rate_pct": "UNKNOWN",
+    "points_program_name": "Puntos Premia",
+    "min_income_mxn_monthly": "UNKNOWN",
+    "invitation_only": false,
+    "other_eligibility_criteria": "NOT_APPLICABLE",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.banamex.com/es/personas/tarjetas-credito/tarjeta-affinity/tarifas-comisiones.html",
+          "https://www.banamex.com/es/personas/tarjetas-credito/tarjeta-affinity.html"
+        ]
+      },
+      "cost": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.banamex.com/es/personas/tarjetas-credito/tarjeta-affinity/tarifas-comisiones.html"
+        ]
+      },
+      "rewards": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.banamex.com/es/personas/tarjetas-credito/tarjeta-affinity.html"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.banamex.com/es/personas/tarjetas-credito/tarjeta-affinity.html"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.banamex.com/es/personas/tarjetas-credito/tarjeta-affinity/tarifas-comisiones.html"
+        ]
+      }
+    }
   },
   {
     "card_id": "citibanamex__la_comer_card_banamex",
@@ -6354,22 +6507,79 @@
     "display_name": "Tarjeta de Crédito La Comer Card Banamex",
     "former_names": [],
     "legacy_id": "Tarjeta de Crédito La Comer Card Banamex",
-    "tier": "UNKNOWN",
+    "tier": "clasica",
     "network": "UNKNOWN",
     "lifecycle_status": "active",
-    "mapping_status": "skeleton",
+    "mapping_status": "mapped",
     "census_confidence": "high",
     "census_note": "co-brand",
     "conflicts": [],
-    "notes": "Co-brand split from legacy issuer string 'Citibanamex (La Comer)'.",
+    "notes": "Comisión por Administración de $102.50 + IVA mensuales para el titular y $51.67 para la adicional; el total anual es $1,230 + IVA, cobrado mensualmente. La bonificación se abona al MONEDERO NARANJA, utilizable únicamente en tiendas de Grupo La Comer (La Comer, City Market, Fresko, Sumesa y La Comer en tu Casa) — es dinero cerrado, no crédito al estado de cuenta. En tiendas físicas se abona de inmediato; en app y tienda en línea puede tardar hasta un mes. Además 3 timbres por cada $150 de compra en Grupo La Comer, sin valor en pesos publicado. Tasa ordinaria TIIE + 55.5 puntos. Banamex inserta el bloque de CAT por JavaScript; la página entrega 'Calculado el ___ y vigente al ___' en blanco. cat_promedio_pct queda UNKNOWN por acuerdo (2026-08-17), no por falta de búsqueda.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
     "inactivity_min_spend_mxn": "NOT_APPLICABLE",
     "inactivity_spend_period": "NOT_APPLICABLE",
-    "fee_billing_period": "UNKNOWN",
+    "fee_billing_period": "monthly",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "annual_fee_mxn": 1230,
+    "annual_fee_includes_iva": false,
+    "annual_fee_first_year_waived": false,
+    "annual_fee_waiver_condition": "NOT_APPLICABLE",
+    "interest_rate_annual_pct": "UNKNOWN",
+    "cat_promedio_pct": "UNKNOWN",
+    "base_reward_type": "cashback",
+    "base_reward_rate": 1.0,
+    "point_value_mxn": 1.0,
+    "effective_rate_pct": 1.0,
+    "points_program_name": "Monedero Naranja",
+    "min_income_mxn_monthly": "UNKNOWN",
+    "invitation_only": false,
+    "other_eligibility_criteria": "NOT_APPLICABLE",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.banamex.com/es/personas/tarjetas-credito/tarjeta-lacomer/tarifas-comisiones.html",
+          "https://www.banamex.com/es/personas/tarjetas-credito/tarjeta-lacomer.html"
+        ]
+      },
+      "cost": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.banamex.com/es/personas/tarjetas-credito/tarjeta-lacomer/tarifas-comisiones.html"
+        ]
+      },
+      "rewards": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.banamex.com/es/personas/tarjetas-credito/tarjeta-lacomer.html"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.banamex.com/es/personas/tarjetas-credito/tarjeta-lacomer.html"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.banamex.com/es/personas/tarjetas-credito/tarjeta-lacomer/tarifas-comisiones.html"
+        ]
+      }
+    }
   },
   {
     "card_id": "citibanamex__lineup_banamex",
@@ -6378,22 +6588,78 @@
     "display_name": "Tarjeta de Crédito LineUp Banamex",
     "former_names": [],
     "legacy_id": "Tarjeta de Crédito LineUp Banamex",
-    "tier": "UNKNOWN",
+    "tier": "clasica",
     "network": "UNKNOWN",
     "lifecycle_status": "active",
-    "mapping_status": "skeleton",
+    "mapping_status": "mapped",
     "census_confidence": "high",
     "census_note": "co-brand (Ticketmaster/LineUp)",
     "conflicts": [],
-    "notes": "Co-brand split from legacy issuer string 'Citibanamex (LineUp)'.",
+    "notes": "Comisión por Administración $1,230 + IVA al año, cobrada mensualmente. Tasa promedio ponderada 61.81%. El CAT se calculó el 9 de julio de 2025 con vigencia al 9 de enero de 2026 — caducó hace más de siete meses y Banamex no lo ha recalculado. Se registran las fechas aunque el valor del CAT no renderice, para que el triage lo levante. Co-brand con Ticketmaster: 6 puntos por cada $10 gastados en Ticketmaster y 2x1 en eventos, según comparador — sin corroborar en fuente del emisor, por eso base_reward_rate queda UNKNOWN.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
     "inactivity_min_spend_mxn": "NOT_APPLICABLE",
     "inactivity_spend_period": "NOT_APPLICABLE",
-    "fee_billing_period": "UNKNOWN",
-    "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "fee_billing_period": "monthly",
+    "cat_calculated_on": "2025-07-09",
+    "cat_valid_until": "2026-01-09",
+    "annual_fee_mxn": 1230,
+    "annual_fee_includes_iva": false,
+    "annual_fee_first_year_waived": false,
+    "annual_fee_waiver_condition": "NOT_APPLICABLE",
+    "interest_rate_annual_pct": 61.81,
+    "cat_promedio_pct": "UNKNOWN",
+    "base_reward_type": "points",
+    "base_reward_rate": "UNKNOWN",
+    "point_value_mxn": "UNKNOWN",
+    "effective_rate_pct": "UNKNOWN",
+    "points_program_name": "Puntos Premia",
+    "min_income_mxn_monthly": "UNKNOWN",
+    "invitation_only": false,
+    "other_eligibility_criteria": "NOT_APPLICABLE",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.banamex.com/es/personas/tarjetas-credito/tarjeta-lineup/tarifas-comisiones.html"
+        ]
+      },
+      "cost": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.banamex.com/es/personas/tarjetas-credito/tarjeta-lineup/tarifas-comisiones.html"
+        ]
+      },
+      "rewards": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.banamex.com/es/personas/tarjetas-credito/tarjeta-lineup/tarifas-comisiones.html"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.banamex.com/es/personas/tarjetas-credito/tarjeta-lineup/tarifas-comisiones.html"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.banamex.com/es/personas/tarjetas-credito/tarjeta-lineup/tarifas-comisiones.html"
+        ]
+      }
+    }
   },
   {
     "card_id": "citibanamex__teleton_banamex",
@@ -8394,7 +8660,7 @@
   {
     "card_id": "invex__now",
     "issuer_id": "invex",
-    "cobrand_partner": "NOT_APPLICABLE",
+    "cobrand_partner": "",
     "display_name": "Tarjeta de Crédito Now",
     "former_names": [],
     "legacy_id": "NOT_APPLICABLE",
@@ -8407,6 +8673,31 @@
     "census_note": "issuer fee schedule only",
     "conflicts": [],
     "notes": "Hallazgo de censo Stage 2: aparece en la tabla de CAT del tarifario de INVEX (CAT 46.2%, tasa 48.0%, sin comisión de administración) pero NO en el mapa de sitio de tarjetas de crédito ni en la página de adquisición corporativa — se comercializa bajo la marca digital Now (now.bank). Emisor legal: Banco INVEX. Pendiente de aprobación antes de mapear atributos en Stage 3.",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE",
+    "inactivity_spend_period": "NOT_APPLICABLE",
+    "fee_billing_period": "annual",
+    "cat_calculated_on": "UNKNOWN",
+    "cat_valid_until": "UNKNOWN"
+  },
+  {
+    "card_id": "santander_mexico__unique_rewards_black",
+    "issuer_id": "santander_mexico",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito Unique Rewards Black",
+    "former_names": [],
+    "legacy_id": "NOT_APPLICABLE",
+    "tier": "black",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "lifecycle_changed_on": "2026-08-17",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "issuer product page + Select benefits page",
+    "conflicts": [],
+    "notes": "Hallazgo de censo Stage 2: falta en el censo pese a ser el destino de migración de los titulares de Santander Aeroméxico Infinite. CAT 82.6% / 34.9% según la página de Mundo Select (fecha de cálculo 1 de enero de 2026); la página del producto indica un juego vigente del 1 de julio al 31 de diciembre de 2026. Pendiente de aprobación antes de mapear en Stage 3.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",

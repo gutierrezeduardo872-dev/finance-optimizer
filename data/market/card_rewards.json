@@ -850,5 +850,63 @@
     "notes": "3% en Walmart, Bodega Aurrera, Walmart Express y Sam's Club, en tienda, en línea, pick-up y servicio a domicilio. Se abona directo al estado de cuenta del periodo siguiente, no a un monedero. Se revierte si se devuelve la mercancía. El emisor no publica tope.",
     "rate_after_cap": "NOT_APPLICABLE",
     "payout_frequency": "statement"
+  },
+  {
+    "reward_id": "citibanamex__la_comer_card_banamex__supermarket",
+    "card_id": "citibanamex__la_comer_card_banamex",
+    "category": "supermarket",
+    "rate": 3.0,
+    "reward_type": "cashback",
+    "point_value_mxn": 1.0,
+    "effective_rate_pct": 3.0,
+    "replaces_or_adds_to_base": "replaces",
+    "cap_amount": "UNKNOWN",
+    "cap_basis": "reward_mxn",
+    "cap_period": "monthly",
+    "min_spend": "NOT_APPLICABLE",
+    "promo_end_date": "NOT_APPLICABLE",
+    "user_selectable": false,
+    "confidence": {
+      "rewards": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.banamex.com/es/personas/tarjetas-credito/tarjeta-lacomer.html"
+        ]
+      }
+    },
+    "notes": "Banamex dice 'hasta 3%' en Grupo La Comer, así que 3% es el techo y reemplaza al 1% base, no se suma. Se abona al Monedero Naranja, utilizable sólo en tiendas de Grupo La Comer. El emisor no publica tope.",
+    "rate_after_cap": "NOT_APPLICABLE",
+    "payout_frequency": "statement"
+  },
+  {
+    "reward_id": "citibanamex__affinity_card_banamex__retail",
+    "card_id": "citibanamex__affinity_card_banamex",
+    "category": "retail",
+    "rate": 10.0,
+    "reward_type": "points",
+    "point_value_mxn": "UNKNOWN",
+    "effective_rate_pct": "UNKNOWN",
+    "replaces_or_adds_to_base": "replaces",
+    "cap_amount": "UNKNOWN",
+    "cap_basis": "points",
+    "cap_period": "monthly",
+    "min_spend": "NOT_APPLICABLE",
+    "promo_end_date": "NOT_APPLICABLE",
+    "user_selectable": false,
+    "confidence": {
+      "rewards": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.banamex.com/es/personas/tarjetas-credito/tarjeta-affinity.html"
+        ]
+      }
+    },
+    "notes": "10% en Puntos Premia en tiendas físicas de Grupo Inditex México. Reemplaza el 5% base. Valor en pesos del punto no publicado, así que effective_rate_pct es UNKNOWN y la tarjeta no es comparable con cashback.",
+    "rate_after_cap": "NOT_APPLICABLE",
+    "payout_frequency": "statement"
   }
 ]

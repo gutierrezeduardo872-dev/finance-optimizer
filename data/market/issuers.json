@@ -8,8 +8,8 @@
     "insurance_coverage_udis": 400000,
     "cnbv_registered": true,
     "status": "active",
-    "in_dataset": true,
-    "exclusion_reason": "",
+    "in_dataset": false,
+    "exclusion_reason": "afirme.com bloquea el acceso automatizado (robots) tanto en las páginas de producto como en la Tabla de Costos y Comisiones, así que no hay forma de establecer costos ni recompensas desde fuente primaria del emisor. Las 10 filas se conservan como esqueletos. Reversible en cuanto se obtengan los PDFs a mano. Decisión de Eduardo, 2026-08-17.",
     "source_urls": [],
     "enumerated_on": "2026-08-05",
     "approved_on": "",
@@ -22,7 +22,7 @@
         "sources": []
       }
     },
-    "notes": "Migrated from card census. legal_name and source_urls pending confirmation against the CNBV Padrón.",
+    "notes": "Migrated from card census. legal_name and source_urls pending confirmation against the CNBV Padrón. Datos parciales observados vía snippets, sin corroborar: Básica sin anualidad (CAT 49.0%, tasa 40.6%, vigencia 2026-10-15); Clásica $750 + IVA con CAT en conflicto entre www.afirme.com (105.1%) e innovacion.afirme.com (108.2%); programa Bonus con paridad publicada de 1 punto = $0.10 MXN y 6% de acumulación en Clásica, es decir 0.6% efectivo.",
     "offers_deposit_products": true
   },
   {
