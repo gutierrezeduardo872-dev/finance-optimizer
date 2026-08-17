@@ -440,11 +440,12 @@ def check_effective_rate(row, rate_field, where, report):
                     f"got {eff!r} — an unconverted points rate must never be rankable",
                 )
             return
-        if pv == 1.0:
+        if pv == 1.0 and not row.get("point_value_source"):
             report.error(
                 where,
                 "point_value_mxn is exactly 1.0 on a points/miles reward — this is the "
-                "silent-default value; set UNKNOWN unless a source states 1 peso per point",
+                "silent-default value; set UNKNOWN, or cite the issuer document that "
+                "states the parity in point_value_source",
             )
         if is_num(rate):
             expected = round(rate * pv, 6)

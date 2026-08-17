@@ -409,35 +409,6 @@
     "reward_id": "invex__volaris__travel",
     "card_id": "invex__volaris",
     "category": "travel",
-    "rate": 75.0,
-    "reward_type": "points",
-    "point_value_mxn": "UNKNOWN",
-    "effective_rate_pct": "UNKNOWN",
-    "replaces_or_adds_to_base": "replaces",
-    "cap_amount": "UNKNOWN",
-    "cap_basis": "points",
-    "cap_period": "monthly",
-    "min_spend": "NOT_APPLICABLE",
-    "promo_end_date": "NOT_APPLICABLE",
-    "user_selectable": false,
-    "confidence": {
-      "rewards": {
-        "score": "medium",
-        "evidence_type": "issuer_primary",
-        "verified_on": "2026-08-07",
-        "sources": [
-          "https://solicitala.invextarjetas.com.mx/home-corporativo/"
-        ]
-      }
-    },
-    "notes": "15 Puntos altitude por cada $20 en compras Volaris.",
-    "rate_after_cap": "NOT_APPLICABLE",
-    "payout_frequency": "statement"
-  },
-  {
-    "reward_id": "invex__volaris_2_0__travel",
-    "card_id": "invex__volaris_2_0",
-    "category": "travel",
     "rate": 85.0,
     "reward_type": "points",
     "point_value_mxn": "UNKNOWN",
@@ -451,15 +422,45 @@
     "user_selectable": false,
     "confidence": {
       "rewards": {
-        "score": "medium",
+        "score": "high",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-08-07",
+        "verified_on": "2026-08-17",
         "sources": [
-          "https://solicitala.invextarjetas.com.mx/home-corporativo/"
+          "https://solicitala.invextarjetas.com.mx/todas-sitiocorporativo/",
+          "https://www.invextarjetas.com.mx/invex/Documentos/CONDUSEF/FolletoVolaris.pdf"
         ]
       }
     },
-    "notes": "17 Puntos altitude por cada $20 en compras Volaris.",
+    "notes": "17 Puntos altitude por cada $20 en compras Volaris (85% del gasto en puntos). Valor en pesos del punto no publicado.",
+    "rate_after_cap": "NOT_APPLICABLE",
+    "payout_frequency": "statement"
+  },
+  {
+    "reward_id": "invex__volaris_2_0__travel",
+    "card_id": "invex__volaris_2_0",
+    "category": "travel",
+    "rate": 100.0,
+    "reward_type": "points",
+    "point_value_mxn": "UNKNOWN",
+    "effective_rate_pct": "UNKNOWN",
+    "replaces_or_adds_to_base": "replaces",
+    "cap_amount": "UNKNOWN",
+    "cap_basis": "points",
+    "cap_period": "monthly",
+    "min_spend": "NOT_APPLICABLE",
+    "promo_end_date": "NOT_APPLICABLE",
+    "user_selectable": false,
+    "confidence": {
+      "rewards": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://solicitala.invextarjetas.com.mx/todas-sitiocorporativo/"
+        ]
+      }
+    },
+    "notes": "20 Puntos altitude por cada $20 en compras Volaris. Valor del punto no publicado.",
     "rate_after_cap": "NOT_APPLICABLE",
     "payout_frequency": "statement"
   },
@@ -731,5 +732,94 @@
       }
     },
     "notes": "Tope de $500 mensuales compartido entre todas las categorías Cashback Baby."
+  },
+  {
+    "reward_id": "invex__volaris_0__travel",
+    "card_id": "invex__volaris_0",
+    "category": "travel",
+    "rate": 75.0,
+    "reward_type": "points",
+    "point_value_mxn": "UNKNOWN",
+    "effective_rate_pct": "UNKNOWN",
+    "replaces_or_adds_to_base": "replaces",
+    "cap_amount": "UNKNOWN",
+    "cap_basis": "points",
+    "cap_period": "monthly",
+    "min_spend": "NOT_APPLICABLE",
+    "promo_end_date": "NOT_APPLICABLE",
+    "user_selectable": false,
+    "confidence": {
+      "rewards": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://solicitala.invextarjetas.com.mx/todas-sitiocorporativo/",
+          "https://www.invextarjetas.com.mx/invex/Documentos/CONDUSEF/FolletoVolaris0.pdf"
+        ]
+      }
+    },
+    "notes": "15 Puntos altitude por cada $20 en compras Volaris. Valor del punto no publicado.",
+    "rate_after_cap": "NOT_APPLICABLE",
+    "payout_frequency": "statement"
+  },
+  {
+    "reward_id": "invex__sams_club__supermarket",
+    "card_id": "invex__sams_club",
+    "category": "supermarket",
+    "rate": 3.5,
+    "reward_type": "cashback",
+    "point_value_mxn": 1.0,
+    "effective_rate_pct": 3.5,
+    "replaces_or_adds_to_base": "replaces",
+    "cap_amount": "UNKNOWN",
+    "cap_basis": "reward_mxn",
+    "cap_period": "monthly",
+    "min_spend": "NOT_APPLICABLE",
+    "promo_end_date": "NOT_APPLICABLE",
+    "user_selectable": false,
+    "confidence": {
+      "rewards": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://solicitala.invextarjetas.com.mx/todas-sitiocorporativo/"
+        ]
+      }
+    },
+    "notes": "3.5% en Sam's Club y Walmart, en tienda, Club y en línea. Pagado en Cashi.",
+    "rate_after_cap": "NOT_APPLICABLE",
+    "payout_frequency": "statement"
+  },
+  {
+    "reward_id": "invex__farmacias_guadalajara__pharmacy",
+    "card_id": "invex__farmacias_guadalajara",
+    "category": "pharmacy",
+    "rate": 2.0,
+    "reward_type": "points",
+    "point_value_mxn": 1.0,
+    "effective_rate_pct": 2.0,
+    "replaces_or_adds_to_base": "replaces",
+    "cap_amount": "UNKNOWN",
+    "cap_basis": "points",
+    "cap_period": "monthly",
+    "min_spend": "NOT_APPLICABLE",
+    "promo_end_date": "NOT_APPLICABLE",
+    "user_selectable": false,
+    "confidence": {
+      "rewards": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.invextarjetas.com.mx/invex/Documentos/CONDUSEF/FolletoFragua.pdf"
+        ]
+      }
+    },
+    "notes": "2% en Súper Puntos en compras dentro de sucursales Farmacias Guadalajara. El emisor publica la paridad 1 Súper Punto = $1 MXN.",
+    "rate_after_cap": "NOT_APPLICABLE",
+    "payout_frequency": "statement",
+    "point_value_source": "https://www.invextarjetas.com.mx/invex/Documentos/CONDUSEF/FolletoFragua.pdf"
   }
 ]

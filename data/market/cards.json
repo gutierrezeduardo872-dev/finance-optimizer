@@ -3751,17 +3751,17 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": "Travel Cash canjeable únicamente en la plataforma INVEX VOYAGE — no es efectivo.",
+    "notes": "Travel Cash: 1% de bonificación en todas las compras, canjeable únicamente en la plataforma INVEX Voyage. Acceso a Elite Lounge de Mastercard y vuelo de aniversario nacional. CORRECCIÓN 2026-08-17: no es sin anualidad — $2,903 + IVA a partir del segundo año.",
     "annual_fee_includes_iva": false,
-    "annual_fee_first_year_waived": false,
-    "interest_rate_annual_pct": "UNKNOWN",
-    "cat_promedio_pct": "UNKNOWN",
+    "annual_fee_first_year_waived": true,
+    "interest_rate_annual_pct": 40.4,
+    "cat_promedio_pct": 35.0,
     "min_income_mxn_monthly": "UNKNOWN",
     "invitation_only": false,
     "other_eligibility_criteria": "NOT_APPLICABLE",
-    "points_program_name": "NOT_APPLICABLE",
-    "annual_fee_mxn": 0,
-    "annual_fee_waiver_condition": "Compra mínima de $300 al mes. Sin anualidad de por vida acumulando compras por un mínimo mensual; si no se alcanza, aplica comisión de penalización por inactividad de $195 + IVA al mes.",
+    "points_program_name": "Travel Cash / Bon Voyage",
+    "annual_fee_mxn": 2903,
+    "annual_fee_waiver_condition": "Primer año sin costo para clientes nuevos. A partir del segundo año, comisión por Administración de tarjeta del titular de $2,903 + IVA al año.",
     "base_reward_type": "cashback",
     "base_reward_rate": 1.0,
     "point_value_mxn": 1.0,
@@ -3770,52 +3770,53 @@
       "identity": {
         "score": "high",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-08-07",
+        "verified_on": "2026-08-17",
         "sources": [
-          "https://solicitala.invextarjetas.com.mx/home-corporativo/"
+          "https://www.invextarjetas.com.mx/invex/Documentos/CONDUSEF/Cuotas.pdf",
+          "https://solicitala.invextarjetas.com.mx/todas-sitiocorporativo/"
         ]
       },
       "cost": {
         "score": "medium",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-08-07",
+        "verified_on": "2026-08-17",
         "sources": [
-          "https://solicitala.invextarjetas.com.mx/home-corporativo/"
+          "https://www.invextarjetas.com.mx/invex/Documentos/CONDUSEF/Cuotas.pdf"
         ]
       },
       "rewards": {
         "score": "medium",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-08-07",
+        "verified_on": "2026-08-17",
         "sources": [
-          "https://solicitala.invextarjetas.com.mx/home-corporativo/"
+          "https://solicitala.invextarjetas.com.mx/todas-sitiocorporativo/"
         ]
       },
       "perks": {
         "score": "high",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-08-07",
+        "verified_on": "2026-08-17",
         "sources": [
-          "https://solicitala.invextarjetas.com.mx/home-corporativo/"
+          "https://solicitala.invextarjetas.com.mx/todas-sitiocorporativo/"
         ]
       },
       "eligibility": {
         "score": "high",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-08-07",
+        "verified_on": "2026-08-17",
         "sources": [
-          "https://solicitala.invextarjetas.com.mx/home-corporativo/"
+          "https://solicitala.invextarjetas.com.mx/todas-sitiocorporativo/"
         ]
       }
     },
-    "inactivity_fee_mxn": 195,
-    "inactivity_fee_period": "monthly",
-    "inactivity_fee_includes_iva": false,
-    "inactivity_min_spend_mxn": 300,
-    "inactivity_spend_period": "monthly",
-    "fee_billing_period": "NOT_APPLICABLE",
-    "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE",
+    "inactivity_spend_period": "NOT_APPLICABLE",
+    "fee_billing_period": "annual",
+    "cat_calculated_on": "2026-04-30",
+    "cat_valid_until": "2026-09-30"
   },
   {
     "card_id": "invex__voyage_platinum",
@@ -3824,24 +3825,24 @@
     "display_name": "INVEX Voyage Platinum",
     "former_names": [],
     "legacy_id": "INVEX Voyage Platinum",
-    "tier": "platinum",
+    "tier": "platino",
     "network": "mastercard",
     "lifecycle_status": "active",
     "mapping_status": "mapped",
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": "Travel Cash 1% general, 2% en comercios de viajes. Canjeable sólo en INVEX VOYAGE.",
+    "notes": "Travel Cash: 1% en todas las compras y 2% en comercios de viajes, canjeable sólo en la plataforma INVEX Voyage. 4 accesos al año a salas VIP LoungeKey. CORRECCIÓN 2026-08-17: anualidad resuelta de UNKNOWN a $4,043 + IVA vía tarifario.",
     "annual_fee_includes_iva": false,
-    "annual_fee_first_year_waived": false,
-    "interest_rate_annual_pct": "UNKNOWN",
-    "cat_promedio_pct": "UNKNOWN",
+    "annual_fee_first_year_waived": true,
+    "interest_rate_annual_pct": 33.4,
+    "cat_promedio_pct": 34.6,
     "min_income_mxn_monthly": "UNKNOWN",
     "invitation_only": false,
     "other_eligibility_criteria": "NOT_APPLICABLE",
-    "points_program_name": "NOT_APPLICABLE",
-    "annual_fee_mxn": "UNKNOWN",
-    "annual_fee_waiver_condition": "UNKNOWN",
+    "points_program_name": "Travel Cash / Bon Voyage",
+    "annual_fee_mxn": 4043,
+    "annual_fee_waiver_condition": "Primer año sin costo para clientes nuevos. A partir del segundo año, comisión por Administración de tarjeta del titular de $4,043 + IVA al año.",
     "base_reward_type": "cashback",
     "base_reward_rate": 1.0,
     "point_value_mxn": 1.0,
@@ -3850,52 +3851,53 @@
       "identity": {
         "score": "high",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-08-07",
+        "verified_on": "2026-08-17",
         "sources": [
-          "https://solicitala.invextarjetas.com.mx/home-corporativo/"
+          "https://www.invextarjetas.com.mx/invex/Documentos/CONDUSEF/Cuotas.pdf",
+          "https://solicitala.invextarjetas.com.mx/todas-sitiocorporativo/"
         ]
       },
       "cost": {
         "score": "medium",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-08-07",
+        "verified_on": "2026-08-17",
         "sources": [
-          "https://solicitala.invextarjetas.com.mx/home-corporativo/"
+          "https://www.invextarjetas.com.mx/invex/Documentos/CONDUSEF/Cuotas.pdf"
         ]
       },
       "rewards": {
         "score": "medium",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-08-07",
+        "verified_on": "2026-08-17",
         "sources": [
-          "https://solicitala.invextarjetas.com.mx/home-corporativo/"
+          "https://solicitala.invextarjetas.com.mx/todas-sitiocorporativo/"
         ]
       },
       "perks": {
         "score": "high",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-08-07",
+        "verified_on": "2026-08-17",
         "sources": [
-          "https://solicitala.invextarjetas.com.mx/home-corporativo/"
+          "https://solicitala.invextarjetas.com.mx/todas-sitiocorporativo/"
         ]
       },
       "eligibility": {
         "score": "high",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-08-07",
+        "verified_on": "2026-08-17",
         "sources": [
-          "https://solicitala.invextarjetas.com.mx/home-corporativo/"
+          "https://solicitala.invextarjetas.com.mx/todas-sitiocorporativo/"
         ]
       }
     },
-    "inactivity_fee_mxn": "UNKNOWN",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
-    "inactivity_min_spend_mxn": "UNKNOWN",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE",
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "annual",
-    "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_calculated_on": "2026-04-30",
+    "cat_valid_until": "2026-09-30"
   },
   {
     "card_id": "invex__sicard_basica",
@@ -3904,22 +3906,79 @@
     "display_name": "SíCard Básica INVEX",
     "former_names": [],
     "legacy_id": "SíCard Básica INVEX",
-    "tier": "UNKNOWN",
-    "network": "UNKNOWN",
+    "tier": "clasica",
+    "network": "visa",
     "lifecycle_status": "active",
-    "mapping_status": "skeleton",
+    "mapping_status": "mapped",
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": "",
+    "notes": "El tarifario la lista como 'SíCard Plus Básica' con Administración de tarjeta del titular y adicional 'Sin costo'. No aparece en la tabla de CAT del tarifario, así que CAT y tasa de interés quedan UNKNOWN. Las Preguntas Frecuentes de INVEX excluyen explícitamente a SíCard Básica del Programa de Lealtad, de modo que base_reward_type 'none' está sustentado, no supuesto.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
     "inactivity_min_spend_mxn": "NOT_APPLICABLE",
     "inactivity_spend_period": "NOT_APPLICABLE",
-    "fee_billing_period": "annual",
+    "fee_billing_period": "NOT_APPLICABLE",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "annual_fee_mxn": 0,
+    "annual_fee_includes_iva": false,
+    "annual_fee_first_year_waived": false,
+    "annual_fee_waiver_condition": "NOT_APPLICABLE",
+    "interest_rate_annual_pct": "UNKNOWN",
+    "cat_promedio_pct": "UNKNOWN",
+    "base_reward_type": "none",
+    "base_reward_rate": 0,
+    "point_value_mxn": "NOT_APPLICABLE",
+    "effective_rate_pct": 0,
+    "points_program_name": "NOT_APPLICABLE",
+    "min_income_mxn_monthly": "UNKNOWN",
+    "invitation_only": false,
+    "other_eligibility_criteria": "NOT_APPLICABLE",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.invextarjetas.com.mx/invex/Documentos/CONDUSEF/Cuotas.pdf",
+          "https://www.invextarjetas.com.mx/invex/Documentos/Sitios%20de%20Interes/MapaSitioInvex.pdf"
+        ]
+      },
+      "cost": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.invextarjetas.com.mx/invex/Documentos/CONDUSEF/Cuotas.pdf"
+        ]
+      },
+      "rewards": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.invextarjetas.com.mx/invex/Documentos/Sitios%20de%20Interes/Preguntas_Frecuentes_INVEX.pdf"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.invextarjetas.com.mx/invex/Documentos/Sitios%20de%20Interes/MapaSitioInvex.pdf"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.invextarjetas.com.mx/invex/Documentos/Sitios%20de%20Interes/MapaSitioInvex.pdf"
+        ]
+      }
+    }
   },
   {
     "card_id": "invex__sicard_platinum",
@@ -3928,22 +3987,79 @@
     "display_name": "SíCard Platinum INVEX",
     "former_names": [],
     "legacy_id": "SíCard Platinum INVEX",
-    "tier": "UNKNOWN",
-    "network": "UNKNOWN",
+    "tier": "platino",
+    "network": "visa",
     "lifecycle_status": "active",
-    "mapping_status": "skeleton",
+    "mapping_status": "mapped",
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": "",
+    "notes": "No aparece en la página de adquisición corporativa, pero sí en el mapa de sitio y en el tarifario, así que se mantiene 'active' — la ausencia de una página de marketing no basta para deprecar. Tasa de acumulación no publicada. 'Contratación de beneficios; puntos' $150 + IVA al mes (Recompensas Índigo) es opcional. El tarifario no indica exención del primer año.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
     "inactivity_min_spend_mxn": "NOT_APPLICABLE",
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "annual",
-    "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_calculated_on": "2026-04-30",
+    "cat_valid_until": "2026-09-30",
+    "annual_fee_mxn": 3003,
+    "annual_fee_includes_iva": false,
+    "annual_fee_first_year_waived": false,
+    "annual_fee_waiver_condition": "NOT_APPLICABLE",
+    "interest_rate_annual_pct": 26.5,
+    "cat_promedio_pct": 64.7,
+    "base_reward_type": "points",
+    "base_reward_rate": "UNKNOWN",
+    "point_value_mxn": "UNKNOWN",
+    "effective_rate_pct": "UNKNOWN",
+    "points_program_name": "Recompensas Select",
+    "min_income_mxn_monthly": "UNKNOWN",
+    "invitation_only": false,
+    "other_eligibility_criteria": "NOT_APPLICABLE",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.invextarjetas.com.mx/invex/Documentos/CONDUSEF/Cuotas.pdf",
+          "https://www.invextarjetas.com.mx/invex/Documentos/Sitios%20de%20Interes/MapaSitioInvex.pdf"
+        ]
+      },
+      "cost": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.invextarjetas.com.mx/invex/Documentos/CONDUSEF/Cuotas.pdf"
+        ]
+      },
+      "rewards": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.invextarjetas.com.mx/invex/Documentos/Sitios%20de%20Interes/Preguntas_Frecuentes_INVEX.pdf"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.invextarjetas.com.mx/invex/Documentos/Sitios%20de%20Interes/MapaSitioInvex.pdf"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.invextarjetas.com.mx/invex/Documentos/Sitios%20de%20Interes/MapaSitioInvex.pdf"
+        ]
+      }
+    }
   },
   {
     "card_id": "invex__sicard_plus",
@@ -3952,22 +4068,79 @@
     "display_name": "SíCard Plus INVEX",
     "former_names": [],
     "legacy_id": "SíCard Plus INVEX",
-    "tier": "UNKNOWN",
-    "network": "UNKNOWN",
+    "tier": "clasica",
+    "network": "visa",
     "lifecycle_status": "active",
-    "mapping_status": "skeleton",
+    "mapping_status": "mapped",
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": "",
+    "notes": "CAT promedio de 100.0% — el más alto de la cartera INVEX; verificado en el tarifario de abril 2026, no es un error de captura. Tasa de acumulación no publicada. 'Contratación de beneficios; puntos' $150 + IVA al mes es opcional.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
     "inactivity_min_spend_mxn": "NOT_APPLICABLE",
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "annual",
-    "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_calculated_on": "2026-04-30",
+    "cat_valid_until": "2026-09-30",
+    "annual_fee_mxn": 1240,
+    "annual_fee_includes_iva": false,
+    "annual_fee_first_year_waived": false,
+    "annual_fee_waiver_condition": "NOT_APPLICABLE",
+    "interest_rate_annual_pct": 27.7,
+    "cat_promedio_pct": 100.0,
+    "base_reward_type": "points",
+    "base_reward_rate": "UNKNOWN",
+    "point_value_mxn": "UNKNOWN",
+    "effective_rate_pct": "UNKNOWN",
+    "points_program_name": "Recompensas Select",
+    "min_income_mxn_monthly": "UNKNOWN",
+    "invitation_only": false,
+    "other_eligibility_criteria": "NOT_APPLICABLE",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.invextarjetas.com.mx/invex/Documentos/CONDUSEF/Cuotas.pdf",
+          "https://www.invextarjetas.com.mx/invex/Documentos/Sitios%20de%20Interes/MapaSitioInvex.pdf"
+        ]
+      },
+      "cost": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.invextarjetas.com.mx/invex/Documentos/CONDUSEF/Cuotas.pdf"
+        ]
+      },
+      "rewards": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.invextarjetas.com.mx/invex/Documentos/Sitios%20de%20Interes/Preguntas_Frecuentes_INVEX.pdf"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.invextarjetas.com.mx/invex/Documentos/Sitios%20de%20Interes/MapaSitioInvex.pdf"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.invextarjetas.com.mx/invex/Documentos/Sitios%20de%20Interes/MapaSitioInvex.pdf"
+        ]
+      }
+    }
   },
   {
     "card_id": "multiva__clasica",
@@ -4768,126 +4941,17 @@
     "census_confidence": "high",
     "census_note": "co-brand (Volaris)",
     "conflicts": [],
-    "notes": "El 20 de mayo de 2026 el Monedero Volaris INVEX se convirtió en Puntos altitude. Los datos previos de bonificación en pesos (1.5% / 2% en Monedero) quedaron obsoletos. Volaris no publica el valor en pesos de un Punto altitude, así que effective_rate_pct es UNKNOWN y la tarjeta no es comparable con cashback.",
+    "notes": "Acumula 7 Puntos altitude por cada $20 de compra general y 17 por cada $20 en Volaris. Volaris no publica el valor en pesos de un Punto altitude, así que effective_rate_pct es UNKNOWN y la tarjeta no es comparable con cashback. El Monedero Volaris INVEX se convirtió en Puntos altitude el 20 de mayo de 2026. CORRECCIÓN 2026-08-17: la tarjeta NO es sin anualidad — el folleto y el tarifario coinciden en $3,221 + IVA a partir del segundo año.",
     "annual_fee_includes_iva": false,
-    "annual_fee_first_year_waived": false,
-    "interest_rate_annual_pct": "UNKNOWN",
-    "cat_promedio_pct": "UNKNOWN",
+    "annual_fee_first_year_waived": true,
+    "interest_rate_annual_pct": 31.5,
+    "cat_promedio_pct": 37.3,
     "min_income_mxn_monthly": "UNKNOWN",
     "invitation_only": false,
     "other_eligibility_criteria": "NOT_APPLICABLE",
-    "points_program_name": "altitude",
-    "annual_fee_mxn": 0,
-    "annual_fee_waiver_condition": "Compra mínima de $300 al mes. Sin anualidad de por vida acumulando compras por un mínimo mensual; si no se alcanza, aplica comisión de penalización por inactividad de $195 + IVA al mes.",
-    "base_reward_type": "points",
-    "base_reward_rate": 25.0,
-    "point_value_mxn": "UNKNOWN",
-    "effective_rate_pct": "UNKNOWN",
-    "confidence": {
-      "identity": {
-        "score": "high",
-        "evidence_type": "issuer_primary",
-        "verified_on": "2026-08-07",
-        "sources": [
-          "https://solicitala.invextarjetas.com.mx/home-corporativo/",
-          "https://cms.volaris.com/es/informacion-util/opciones-de-pago/tarjetas-volaris-invex/"
-        ]
-      },
-      "cost": {
-        "score": "high",
-        "evidence_type": "issuer_primary",
-        "verified_on": "2026-08-07",
-        "sources": [
-          "https://solicitala.invextarjetas.com.mx/home-corporativo/",
-          "https://cms.volaris.com/es/informacion-util/opciones-de-pago/tarjetas-volaris-invex/"
-        ]
-      },
-      "rewards": {
-        "score": "high",
-        "evidence_type": "issuer_primary",
-        "verified_on": "2026-08-07",
-        "sources": [
-          "https://solicitala.invextarjetas.com.mx/home-corporativo/",
-          "https://cms.volaris.com/es/informacion-util/opciones-de-pago/tarjetas-volaris-invex/"
-        ]
-      },
-      "perks": {
-        "score": "high",
-        "evidence_type": "issuer_primary",
-        "verified_on": "2026-08-07",
-        "sources": [
-          "https://solicitala.invextarjetas.com.mx/home-corporativo/",
-          "https://cms.volaris.com/es/informacion-util/opciones-de-pago/tarjetas-volaris-invex/"
-        ]
-      },
-      "eligibility": {
-        "score": "high",
-        "evidence_type": "issuer_primary",
-        "verified_on": "2026-08-07",
-        "sources": [
-          "https://solicitala.invextarjetas.com.mx/home-corporativo/",
-          "https://cms.volaris.com/es/informacion-util/opciones-de-pago/tarjetas-volaris-invex/"
-        ]
-      }
-    },
-    "inactivity_fee_mxn": 195,
-    "inactivity_fee_period": "monthly",
-    "inactivity_fee_includes_iva": false,
-    "inactivity_min_spend_mxn": 300,
-    "inactivity_spend_period": "monthly",
-    "fee_billing_period": "NOT_APPLICABLE",
-    "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
-  },
-  {
-    "card_id": "invex__volaris_0",
-    "issuer_id": "invex",
-    "cobrand_partner": "volaris",
-    "display_name": "Volaris INVEX 0",
-    "former_names": [],
-    "legacy_id": "Volaris INVEX 0",
-    "tier": "UNKNOWN",
-    "network": "UNKNOWN",
-    "lifecycle_status": "active",
-    "mapping_status": "skeleton",
-    "census_confidence": "high",
-    "census_note": "Sin anualidad y sin comisiones según fuente secundaria; términos no verificados con el emisor.",
-    "conflicts": [],
-    "notes": "Co-brand split from legacy issuer string 'Invex (Volaris)'.",
-    "inactivity_fee_mxn": "NOT_APPLICABLE",
-    "inactivity_fee_period": "NOT_APPLICABLE",
-    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
-    "inactivity_min_spend_mxn": "NOT_APPLICABLE",
-    "inactivity_spend_period": "NOT_APPLICABLE",
-    "fee_billing_period": "annual",
-    "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
-  },
-  {
-    "card_id": "invex__volaris_2_0",
-    "issuer_id": "invex",
-    "cobrand_partner": "volaris",
-    "display_name": "Volaris INVEX 2.0",
-    "former_names": [],
-    "legacy_id": "Volaris INVEX 2.0",
-    "tier": "clasica",
-    "network": "mastercard",
-    "lifecycle_status": "active",
-    "mapping_status": "mapped",
-    "census_confidence": "high",
-    "census_note": "co-brand (Volaris), premium",
-    "conflicts": [],
-    "notes": "El 20 de mayo de 2026 el Monedero Volaris INVEX se convirtió en Puntos altitude. Los datos previos de bonificación en pesos (1.5% / 2% en Monedero) quedaron obsoletos. Volaris no publica el valor en pesos de un Punto altitude, así que effective_rate_pct es UNKNOWN y la tarjeta no es comparable con cashback.",
-    "annual_fee_includes_iva": false,
-    "annual_fee_first_year_waived": false,
-    "interest_rate_annual_pct": "UNKNOWN",
-    "cat_promedio_pct": "UNKNOWN",
-    "min_income_mxn_monthly": "UNKNOWN",
-    "invitation_only": false,
-    "other_eligibility_criteria": "NOT_APPLICABLE",
-    "points_program_name": "altitude",
-    "annual_fee_mxn": 0,
-    "annual_fee_waiver_condition": "Compra mínima de $300 al mes. Sin anualidad de por vida acumulando compras por un mínimo mensual; si no se alcanza, aplica comisión de penalización por inactividad de $195 + IVA al mes.",
+    "points_program_name": "altitude by Volaris",
+    "annual_fee_mxn": 3221,
+    "annual_fee_waiver_condition": "Primer año sin costo para clientes nuevos. A partir del segundo año, comisión por Administración de tarjeta del titular de $3,221 + IVA al año.",
     "base_reward_type": "points",
     "base_reward_rate": 35.0,
     "point_value_mxn": "UNKNOWN",
@@ -4896,57 +4960,238 @@
       "identity": {
         "score": "high",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-08-07",
+        "verified_on": "2026-08-17",
         "sources": [
-          "https://solicitala.invextarjetas.com.mx/home-corporativo/",
-          "https://cms.volaris.com/es/informacion-util/opciones-de-pago/tarjetas-volaris-invex/"
+          "https://www.invextarjetas.com.mx/invex/Documentos/CONDUSEF/Cuotas.pdf",
+          "https://solicitala.invextarjetas.com.mx/todas-sitiocorporativo/"
         ]
       },
       "cost": {
         "score": "high",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-08-07",
+        "verified_on": "2026-08-17",
         "sources": [
-          "https://solicitala.invextarjetas.com.mx/home-corporativo/",
-          "https://cms.volaris.com/es/informacion-util/opciones-de-pago/tarjetas-volaris-invex/"
+          "https://www.invextarjetas.com.mx/invex/Documentos/CONDUSEF/Cuotas.pdf",
+          "https://www.invextarjetas.com.mx/invex/Documentos/CONDUSEF/FolletoVolaris.pdf"
         ]
       },
       "rewards": {
         "score": "high",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-08-07",
+        "verified_on": "2026-08-17",
         "sources": [
-          "https://solicitala.invextarjetas.com.mx/home-corporativo/",
-          "https://cms.volaris.com/es/informacion-util/opciones-de-pago/tarjetas-volaris-invex/"
+          "https://solicitala.invextarjetas.com.mx/todas-sitiocorporativo/",
+          "https://www.invextarjetas.com.mx/invex/Documentos/CONDUSEF/FolletoVolaris.pdf"
         ]
       },
       "perks": {
         "score": "high",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-08-07",
+        "verified_on": "2026-08-17",
         "sources": [
-          "https://solicitala.invextarjetas.com.mx/home-corporativo/",
-          "https://cms.volaris.com/es/informacion-util/opciones-de-pago/tarjetas-volaris-invex/"
+          "https://solicitala.invextarjetas.com.mx/todas-sitiocorporativo/"
         ]
       },
       "eligibility": {
         "score": "high",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-08-07",
+        "verified_on": "2026-08-17",
         "sources": [
-          "https://solicitala.invextarjetas.com.mx/home-corporativo/",
-          "https://cms.volaris.com/es/informacion-util/opciones-de-pago/tarjetas-volaris-invex/"
+          "https://solicitala.invextarjetas.com.mx/todas-sitiocorporativo/"
         ]
       }
     },
-    "inactivity_fee_mxn": 195,
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE",
+    "inactivity_spend_period": "NOT_APPLICABLE",
+    "fee_billing_period": "annual",
+    "cat_calculated_on": "2026-04-30",
+    "cat_valid_until": "2026-09-30"
+  },
+  {
+    "card_id": "invex__volaris_0",
+    "issuer_id": "invex",
+    "cobrand_partner": "volaris",
+    "display_name": "Volaris INVEX 0",
+    "former_names": [],
+    "legacy_id": "Volaris INVEX 0",
+    "tier": "clasica",
+    "network": "mastercard",
+    "lifecycle_status": "active",
+    "mapping_status": "mapped",
+    "census_confidence": "high",
+    "census_note": "Sin anualidad y sin comisiones según fuente secundaria; términos no verificados con el emisor.",
+    "conflicts": [
+      {
+        "field": "inactivity_min_spend_mxn",
+        "field_group": "cost",
+        "values": [
+          {
+            "value": 300,
+            "source_url": "https://www.invextarjetas.com.mx/invex/Documentos/CONDUSEF/FolletoVolaris0.pdf",
+            "evidence_type": "issuer_primary"
+          },
+          {
+            "value": 500,
+            "source_url": "https://solicitala.invextarjetas.com.mx/todas-sitiocorporativo/",
+            "evidence_type": "issuer_primary"
+          }
+        ],
+        "detected_on": "2026-08-17",
+        "status": "resolved",
+        "resolution": "Se toma $500 de la pagina de adquisicion del emisor sobre los $300 del folleto informativo. El folleto parece desactualizado: $500 es la cifra vigente en la pagina corporativa tanto para Volaris INVEX 0 como para IKEA INVEX, y el folleto de Farmacias Guadalajara tambien exige $500. Resuelto por Eduardo, 2026-08-17."
+      }
+    ],
+    "notes": "Acumula 5 Puntos altitude por cada $20 de compra general y 15 por cada $20 en Volaris. Equipaje de mano y documentado hasta 25 kg sin costo 2 veces al año (las variantes de pago lo dan en todos los vuelos). El gasto mínimo que exenta la penalización por inactividad está en conflicto entre fuentes del propio emisor — ver conflicts[].",
+    "inactivity_fee_mxn": 202,
     "inactivity_fee_period": "monthly",
     "inactivity_fee_includes_iva": false,
-    "inactivity_min_spend_mxn": 300,
+    "inactivity_min_spend_mxn": 500,
     "inactivity_spend_period": "monthly",
     "fee_billing_period": "NOT_APPLICABLE",
-    "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_calculated_on": "2026-04-30",
+    "cat_valid_until": "2026-09-30",
+    "annual_fee_mxn": 0,
+    "annual_fee_includes_iva": false,
+    "annual_fee_first_year_waived": false,
+    "annual_fee_waiver_condition": "Sin comision por Administracion de tarjeta del titular. Para exentar la Penalizacion por inactividad de $202 + IVA al mes se requiere una compra minima mensual de $500 en cualquier establecimiento.",
+    "interest_rate_annual_pct": 32.7,
+    "cat_promedio_pct": 27.9,
+    "base_reward_type": "points",
+    "base_reward_rate": 25.0,
+    "point_value_mxn": "UNKNOWN",
+    "effective_rate_pct": "UNKNOWN",
+    "points_program_name": "altitude by Volaris",
+    "min_income_mxn_monthly": "UNKNOWN",
+    "invitation_only": false,
+    "other_eligibility_criteria": "NOT_APPLICABLE",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.invextarjetas.com.mx/invex/Documentos/CONDUSEF/Cuotas.pdf",
+          "https://solicitala.invextarjetas.com.mx/todas-sitiocorporativo/"
+        ]
+      },
+      "cost": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.invextarjetas.com.mx/invex/Documentos/CONDUSEF/Cuotas.pdf",
+          "https://www.invextarjetas.com.mx/invex/Documentos/CONDUSEF/FolletoVolaris0.pdf"
+        ]
+      },
+      "rewards": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://solicitala.invextarjetas.com.mx/todas-sitiocorporativo/"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://solicitala.invextarjetas.com.mx/todas-sitiocorporativo/"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://solicitala.invextarjetas.com.mx/todas-sitiocorporativo/"
+        ]
+      }
+    }
+  },
+  {
+    "card_id": "invex__volaris_2_0",
+    "issuer_id": "invex",
+    "cobrand_partner": "volaris",
+    "display_name": "Volaris INVEX 2.0",
+    "former_names": [],
+    "legacy_id": "Volaris INVEX 2.0",
+    "tier": "platino",
+    "network": "mastercard",
+    "lifecycle_status": "active",
+    "mapping_status": "mapped",
+    "census_confidence": "high",
+    "census_note": "co-brand (Volaris), premium",
+    "conflicts": [],
+    "notes": "Acumula 10 Puntos altitude por cada $20 de compra general y 20 por cada $20 en Volaris. Valor en pesos del punto no publicado. Bono de bienvenida 15,000 puntos con gasto mínimo de $55,000 en los primeros 3 meses. NOTA DE FUENTE: el folleto individual (FolletoVolaris2.pdf) sigue mostrando $4,621 / CAT 36.5% / tasa 31.7% con fecha de cálculo febrero 2025. Se tomó el tarifario (abril 2026) por la regla de preferir el tarifario; el folleto está desactualizado, no en conflicto.",
+    "annual_fee_includes_iva": false,
+    "annual_fee_first_year_waived": true,
+    "interest_rate_annual_pct": 32.9,
+    "cat_promedio_pct": 38.7,
+    "min_income_mxn_monthly": "UNKNOWN",
+    "invitation_only": false,
+    "other_eligibility_criteria": "NOT_APPLICABLE",
+    "points_program_name": "altitude by Volaris",
+    "annual_fee_mxn": 4791,
+    "annual_fee_waiver_condition": "Primer año sin costo para clientes nuevos. A partir del segundo año, comisión por Administración de tarjeta del titular de $4,791 + IVA al año.",
+    "base_reward_type": "points",
+    "base_reward_rate": 50.0,
+    "point_value_mxn": "UNKNOWN",
+    "effective_rate_pct": "UNKNOWN",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.invextarjetas.com.mx/invex/Documentos/CONDUSEF/Cuotas.pdf",
+          "https://solicitala.invextarjetas.com.mx/todas-sitiocorporativo/"
+        ]
+      },
+      "cost": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.invextarjetas.com.mx/invex/Documentos/CONDUSEF/Cuotas.pdf"
+        ]
+      },
+      "rewards": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://solicitala.invextarjetas.com.mx/todas-sitiocorporativo/"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://solicitala.invextarjetas.com.mx/todas-sitiocorporativo/"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://solicitala.invextarjetas.com.mx/todas-sitiocorporativo/"
+        ]
+      }
+    },
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE",
+    "inactivity_spend_period": "NOT_APPLICABLE",
+    "fee_billing_period": "annual",
+    "cat_calculated_on": "2026-04-30",
+    "cat_valid_until": "2026-09-30"
   },
   {
     "card_id": "santander_mexico__aeromexico_blanca",
@@ -5027,22 +5272,81 @@
     "display_name": "Despegar INVEX Gold",
     "former_names": [],
     "legacy_id": "Despegar INVEX Gold",
-    "tier": "UNKNOWN",
-    "network": "UNKNOWN",
+    "tier": "oro",
+    "network": "mastercard",
     "lifecycle_status": "active",
-    "mapping_status": "skeleton",
+    "mapping_status": "mapped",
     "census_confidence": "high",
     "census_note": "co-brand",
     "conflicts": [],
-    "notes": "Co-brand split from legacy issuer string 'Invex (Despegar)'.",
+    "notes": "ACUMULACIÓN DENOMINADA EN DÓLARES, no en pesos: 1 punto por cada USD fuera de Despegar, 1.8 por USD en aéreos Despegar y 2.6 por USD en no-aéreos. El esquema no admite una tasa como porcentaje del gasto sin suponer un tipo de cambio, así que base_reward_rate queda UNKNOWN — ver la brecha de esquema reportada. Bono de bienvenida 8,000 puntos con $11,500 de compras en 3 meses; bono de aniversario 6,000 puntos con $70,000 de compras anuales. Nivel Viajero.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
     "inactivity_min_spend_mxn": "NOT_APPLICABLE",
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "annual",
-    "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_calculated_on": "2026-04-30",
+    "cat_valid_until": "2026-09-30",
+    "annual_fee_mxn": 1696,
+    "annual_fee_includes_iva": false,
+    "annual_fee_first_year_waived": true,
+    "annual_fee_waiver_condition": "Primer año sin costo para clientes nuevos. A partir del segundo año, comisión por Administración de tarjeta del titular de $1,696 + IVA al año.",
+    "interest_rate_annual_pct": 36.6,
+    "cat_promedio_pct": 31.1,
+    "base_reward_type": "points",
+    "base_reward_rate": "UNKNOWN",
+    "point_value_mxn": "UNKNOWN",
+    "effective_rate_pct": "UNKNOWN",
+    "points_program_name": "Pasaporte Despegar",
+    "min_income_mxn_monthly": 5000,
+    "invitation_only": false,
+    "other_eligibility_criteria": "NOT_APPLICABLE",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.invextarjetas.com.mx/invex/Documentos/CONDUSEF/Cuotas.pdf",
+          "https://solicitala.invextarjetas.com.mx/todas-sitiocorporativo/"
+        ]
+      },
+      "cost": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.invextarjetas.com.mx/invex/Documentos/CONDUSEF/Cuotas.pdf",
+          "https://www.invextarjetas.com.mx/invex/Documentos/CONDUSEF/FolletoDespegarGold.pdf"
+        ]
+      },
+      "rewards": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.invextarjetas.com.mx/invex/Documentos/CONDUSEF/FolletoDespegarGold.pdf"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.invextarjetas.com.mx/invex/Documentos/CONDUSEF/FolletoDespegarGold.pdf",
+          "https://solicitala.invextarjetas.com.mx/todas-sitiocorporativo/"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.invextarjetas.com.mx/invex/Documentos/CONDUSEF/FolletoDespegarGold.pdf"
+        ]
+      }
+    }
   },
   {
     "card_id": "invex__despegar_platinum",
@@ -5051,22 +5355,80 @@
     "display_name": "Despegar INVEX Platinum",
     "former_names": [],
     "legacy_id": "Despegar INVEX Platinum",
-    "tier": "UNKNOWN",
-    "network": "UNKNOWN",
+    "tier": "platino",
+    "network": "mastercard",
     "lifecycle_status": "active",
-    "mapping_status": "skeleton",
+    "mapping_status": "mapped",
     "census_confidence": "high",
     "census_note": "co-brand",
     "conflicts": [],
-    "notes": "Co-brand split from legacy issuer string 'Invex (Despegar)'.",
+    "notes": "Nivel Explorador del Pasaporte Despegar. Bono de bienvenida 12,000 puntos; bono de aniversario 10,000 puntos con $120,000 de compras anuales. La tasa de acumulación por dólar no se obtuvo del folleto: UNKNOWN.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
     "inactivity_min_spend_mxn": "NOT_APPLICABLE",
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "annual",
-    "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_calculated_on": "2026-04-30",
+    "cat_valid_until": "2026-09-30",
+    "annual_fee_mxn": 3957,
+    "annual_fee_includes_iva": false,
+    "annual_fee_first_year_waived": true,
+    "annual_fee_waiver_condition": "Primer año sin costo para clientes nuevos. A partir del segundo año, comisión por Administración de tarjeta del titular de $3,957 + IVA al año.",
+    "interest_rate_annual_pct": 32.9,
+    "cat_promedio_pct": 33.6,
+    "base_reward_type": "points",
+    "base_reward_rate": "UNKNOWN",
+    "point_value_mxn": "UNKNOWN",
+    "effective_rate_pct": "UNKNOWN",
+    "points_program_name": "Pasaporte Despegar",
+    "min_income_mxn_monthly": "UNKNOWN",
+    "invitation_only": false,
+    "other_eligibility_criteria": "NOT_APPLICABLE",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.invextarjetas.com.mx/invex/Documentos/CONDUSEF/Cuotas.pdf",
+          "https://solicitala.invextarjetas.com.mx/todas-sitiocorporativo/"
+        ]
+      },
+      "cost": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.invextarjetas.com.mx/invex/Documentos/CONDUSEF/Cuotas.pdf"
+        ]
+      },
+      "rewards": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.invextarjetas.com.mx/invex/Documentos/CONDUSEF/FolletoDespegarPlatinum.pdf",
+          "https://solicitala.invextarjetas.com.mx/todas-sitiocorporativo/"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://solicitala.invextarjetas.com.mx/todas-sitiocorporativo/"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://solicitala.invextarjetas.com.mx/todas-sitiocorporativo/"
+        ]
+      }
+    }
   },
   {
     "card_id": "invex__hilton_honors",
@@ -5075,22 +5437,79 @@
     "display_name": "Hilton Honors INVEX",
     "former_names": [],
     "legacy_id": "Hilton Honors INVEX",
-    "tier": "UNKNOWN",
-    "network": "UNKNOWN",
+    "tier": "clasica",
+    "network": "mastercard",
     "lifecycle_status": "active",
-    "mapping_status": "skeleton",
+    "mapping_status": "mapped",
     "census_confidence": "high",
     "census_note": "co-brand",
     "conflicts": [],
-    "notes": "Co-brand split from legacy issuer string 'Invex (Hilton)'.",
+    "notes": "Acumulación de Puntos Hilton Honors por cada dólar gastado dentro y fuera de Hilton; INVEX no publica la tasa por dólar ni el valor en pesos del punto. Bono de bienvenida 20,000 puntos. 3 MSI en hoteles y resorts Hilton.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
     "inactivity_min_spend_mxn": "NOT_APPLICABLE",
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "annual",
-    "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_calculated_on": "2026-04-30",
+    "cat_valid_until": "2026-09-30",
+    "annual_fee_mxn": 1200,
+    "annual_fee_includes_iva": false,
+    "annual_fee_first_year_waived": true,
+    "annual_fee_waiver_condition": "Primer año sin costo para clientes nuevos. A partir del segundo año, comisión por Administración de tarjeta del titular de $1,200 + IVA al año.",
+    "interest_rate_annual_pct": 34.0,
+    "cat_promedio_pct": 47.5,
+    "base_reward_type": "points",
+    "base_reward_rate": "UNKNOWN",
+    "point_value_mxn": "UNKNOWN",
+    "effective_rate_pct": "UNKNOWN",
+    "points_program_name": "Hilton Honors",
+    "min_income_mxn_monthly": "UNKNOWN",
+    "invitation_only": false,
+    "other_eligibility_criteria": "NOT_APPLICABLE",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.invextarjetas.com.mx/invex/Documentos/CONDUSEF/Cuotas.pdf",
+          "https://solicitala.invextarjetas.com.mx/todas-sitiocorporativo/"
+        ]
+      },
+      "cost": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.invextarjetas.com.mx/invex/Documentos/CONDUSEF/Cuotas.pdf"
+        ]
+      },
+      "rewards": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://solicitala.invextarjetas.com.mx/todas-sitiocorporativo/"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://solicitala.invextarjetas.com.mx/todas-sitiocorporativo/"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://solicitala.invextarjetas.com.mx/todas-sitiocorporativo/"
+        ]
+      }
+    }
   },
   {
     "card_id": "invex__hilton_honors_premium",
@@ -5099,22 +5518,79 @@
     "display_name": "Hilton Honors INVEX Premium",
     "former_names": [],
     "legacy_id": "Hilton Honors INVEX Premium",
-    "tier": "UNKNOWN",
-    "network": "UNKNOWN",
+    "tier": "platino",
+    "network": "mastercard",
     "lifecycle_status": "active",
-    "mapping_status": "skeleton",
+    "mapping_status": "mapped",
     "census_confidence": "high",
     "census_note": "co-brand",
     "conflicts": [],
-    "notes": "Co-brand split from legacy issuer string 'Invex (Hilton)'.",
+    "notes": "Acumulación de Puntos Hilton Honors por dólar, tasa no publicada. Bono de bienvenida 40,000 puntos. 4 accesos al año a salas VIP LoungeKey.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
     "inactivity_min_spend_mxn": "NOT_APPLICABLE",
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "annual",
-    "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_calculated_on": "2026-04-30",
+    "cat_valid_until": "2026-09-30",
+    "annual_fee_mxn": 3900,
+    "annual_fee_includes_iva": false,
+    "annual_fee_first_year_waived": true,
+    "annual_fee_waiver_condition": "Primer año sin costo para clientes nuevos. A partir del segundo año, comisión por Administración de tarjeta del titular de $3,900 + IVA al año.",
+    "interest_rate_annual_pct": 34.0,
+    "cat_promedio_pct": 45.5,
+    "base_reward_type": "points",
+    "base_reward_rate": "UNKNOWN",
+    "point_value_mxn": "UNKNOWN",
+    "effective_rate_pct": "UNKNOWN",
+    "points_program_name": "Hilton Honors",
+    "min_income_mxn_monthly": "UNKNOWN",
+    "invitation_only": false,
+    "other_eligibility_criteria": "NOT_APPLICABLE",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.invextarjetas.com.mx/invex/Documentos/CONDUSEF/Cuotas.pdf",
+          "https://solicitala.invextarjetas.com.mx/todas-sitiocorporativo/"
+        ]
+      },
+      "cost": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.invextarjetas.com.mx/invex/Documentos/CONDUSEF/Cuotas.pdf"
+        ]
+      },
+      "rewards": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://solicitala.invextarjetas.com.mx/todas-sitiocorporativo/"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://solicitala.invextarjetas.com.mx/todas-sitiocorporativo/"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://solicitala.invextarjetas.com.mx/todas-sitiocorporativo/"
+        ]
+      }
+    }
   },
   {
     "card_id": "santander_mexico__fiesta_rewards_oro",
@@ -5690,22 +6166,82 @@
     "display_name": "INVEX Farmacias Guadalajara",
     "former_names": [],
     "legacy_id": "INVEX Farmacias Guadalajara",
-    "tier": "UNKNOWN",
-    "network": "UNKNOWN",
-    "lifecycle_status": "active",
-    "mapping_status": "skeleton",
+    "tier": "clasica",
+    "network": "mastercard",
+    "lifecycle_status": "closed_to_new_applications",
+    "mapping_status": "mapped",
     "census_confidence": "high",
     "census_note": "co-brand",
     "conflicts": [],
-    "notes": "Co-brand split from legacy issuer string 'Invex (Farmacias Guadalajara)'.",
-    "inactivity_fee_mxn": "NOT_APPLICABLE",
-    "inactivity_fee_period": "NOT_APPLICABLE",
-    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
-    "inactivity_min_spend_mxn": "NOT_APPLICABLE",
-    "inactivity_spend_period": "NOT_APPLICABLE",
-    "fee_billing_period": "annual",
-    "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "notes": "CERRADA A NUEVAS CONTRATACIONES: el folleto informativo dice literalmente 'Por el momento, este producto ya no se oferta al público en general', y la tarjeta no aparece en el mapa de sitio de tarjetas de crédito de INVEX. Se conserva la fila porque hay tarjetahabientes vigentes. El emisor SÍ publica la paridad: 1 Súper Punto = $1 peso mexicano, así que a diferencia del resto de la cartera de puntos de INVEX esta tarjeta sí es comparable con cashback. Vigencia de los puntos 24 meses; redención mínima 100 puntos. DISCREPANCIA INTERNA DEL FOLLETO: la lista de beneficios dice 'sólo tienes que usar tu Tarjeta una vez al mes' (un conteo de transacciones) mientras la nota al pie exige 'compra mínima mensual de $500' (un importe). Se registró el importe por ser el texto operativo. El tarifario cobra además 'Administración de beneficios; puntos' $120 + IVA al mes.",
+    "inactivity_fee_mxn": 195,
+    "inactivity_fee_period": "monthly",
+    "inactivity_fee_includes_iva": false,
+    "inactivity_min_spend_mxn": 500,
+    "inactivity_spend_period": "monthly",
+    "fee_billing_period": "NOT_APPLICABLE",
+    "cat_calculated_on": "2026-04-30",
+    "cat_valid_until": "2026-09-30",
+    "annual_fee_mxn": 0,
+    "annual_fee_includes_iva": false,
+    "annual_fee_first_year_waived": false,
+    "annual_fee_waiver_condition": "Sin comisión por Administración de tarjeta del titular. Para exentar la Penalización por inactividad de $195 + IVA al mes se requiere una compra mínima mensual de $500 en cualquier establecimiento.",
+    "interest_rate_annual_pct": 25.2,
+    "cat_promedio_pct": 91.7,
+    "lifecycle_changed_on": "2026-08-17",
+    "base_reward_type": "points",
+    "base_reward_rate": 1.0,
+    "point_value_mxn": 1.0,
+    "effective_rate_pct": 1.0,
+    "points_program_name": "Súper Puntos Farmacias Guadalajara",
+    "min_income_mxn_monthly": 5000,
+    "invitation_only": false,
+    "other_eligibility_criteria": "NOT_APPLICABLE",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.invextarjetas.com.mx/invex/Documentos/CONDUSEF/FolletoFragua.pdf",
+          "https://www.invextarjetas.com.mx/invex/Documentos/Sitios%20de%20Interes/MapaSitioInvex.pdf"
+        ]
+      },
+      "cost": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.invextarjetas.com.mx/invex/Documentos/CONDUSEF/Cuotas.pdf",
+          "https://www.invextarjetas.com.mx/invex/Documentos/CONDUSEF/FolletoFragua.pdf"
+        ]
+      },
+      "rewards": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.invextarjetas.com.mx/invex/Documentos/CONDUSEF/FolletoFragua.pdf"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.invextarjetas.com.mx/invex/Documentos/CONDUSEF/FolletoFragua.pdf"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.invextarjetas.com.mx/invex/Documentos/CONDUSEF/FolletoFragua.pdf"
+        ]
+      }
+    },
+    "point_value_source": "https://www.invextarjetas.com.mx/invex/Documentos/CONDUSEF/FolletoFragua.pdf"
   },
   {
     "card_id": "invex__ikea",
@@ -5714,22 +6250,81 @@
     "display_name": "IKEA INVEX",
     "former_names": [],
     "legacy_id": "IKEA INVEX",
-    "tier": "UNKNOWN",
-    "network": "UNKNOWN",
+    "tier": "clasica",
+    "network": "mastercard",
     "lifecycle_status": "active",
-    "mapping_status": "skeleton",
+    "mapping_status": "mapped",
     "census_confidence": "high",
     "census_note": "co-brand",
     "conflicts": [],
-    "notes": "Co-brand split from legacy issuer string 'Invex (IKEA)'.",
-    "inactivity_fee_mxn": "NOT_APPLICABLE",
-    "inactivity_fee_period": "NOT_APPLICABLE",
-    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
-    "inactivity_min_spend_mxn": "NOT_APPLICABLE",
-    "inactivity_spend_period": "NOT_APPLICABLE",
-    "fee_billing_period": "annual",
-    "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "notes": "Participa en el Programa de Lealtad Recompensas Select (según Preguntas Frecuentes INVEX, aplica a todas las tarjetas salvo Volaris, Farmacias Guadalajara y SíCard Básica), pero INVEX no publica la tasa de acumulación ni el valor en pesos del punto: base_reward_rate y effective_rate_pct quedan UNKNOWN. 5% de bonificación en la primera compra en IKEA es un bono de bienvenida, no una tasa recurrente. Hasta 24 MSI en IKEA.",
+    "inactivity_fee_mxn": 283,
+    "inactivity_fee_period": "monthly",
+    "inactivity_fee_includes_iva": false,
+    "inactivity_min_spend_mxn": 500,
+    "inactivity_spend_period": "monthly",
+    "fee_billing_period": "NOT_APPLICABLE",
+    "cat_calculated_on": "2026-04-30",
+    "cat_valid_until": "2026-09-30",
+    "annual_fee_mxn": 0,
+    "annual_fee_includes_iva": false,
+    "annual_fee_first_year_waived": false,
+    "annual_fee_waiver_condition": "Sin comisión por Administración de tarjeta del titular. Para exentar la Penalización por inactividad de $283 + IVA al mes se requiere una compra mínima mensual de $500 en cualquier establecimiento.",
+    "interest_rate_annual_pct": 32.3,
+    "cat_promedio_pct": 25.5,
+    "base_reward_type": "points",
+    "base_reward_rate": "UNKNOWN",
+    "point_value_mxn": "UNKNOWN",
+    "effective_rate_pct": "UNKNOWN",
+    "points_program_name": "Recompensas Select",
+    "min_income_mxn_monthly": "UNKNOWN",
+    "invitation_only": false,
+    "other_eligibility_criteria": "NOT_APPLICABLE",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.invextarjetas.com.mx/invex/Documentos/CONDUSEF/Cuotas.pdf",
+          "https://solicitala.invextarjetas.com.mx/todas-sitiocorporativo/"
+        ]
+      },
+      "cost": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.invextarjetas.com.mx/invex/Documentos/CONDUSEF/Cuotas.pdf",
+          "https://solicitala.invextarjetas.com.mx/todas-sitiocorporativo/"
+        ]
+      },
+      "rewards": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://solicitala.invextarjetas.com.mx/todas-sitiocorporativo/",
+          "https://www.invextarjetas.com.mx/invex/Documentos/Sitios%20de%20Interes/Preguntas_Frecuentes_INVEX.pdf"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://solicitala.invextarjetas.com.mx/todas-sitiocorporativo/"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://solicitala.invextarjetas.com.mx/todas-sitiocorporativo/"
+        ]
+      }
+    }
   },
   {
     "card_id": "invex__manchester_united",
@@ -5738,22 +6333,80 @@
     "display_name": "Manchester United INVEX",
     "former_names": [],
     "legacy_id": "Manchester United INVEX",
-    "tier": "UNKNOWN",
-    "network": "UNKNOWN",
+    "tier": "clasica",
+    "network": "mastercard",
     "lifecycle_status": "active",
-    "mapping_status": "skeleton",
+    "mapping_status": "mapped",
     "census_confidence": "high",
     "census_note": "co-brand",
     "conflicts": [],
-    "notes": "Co-brand split from legacy issuer string 'Invex (Manchester United)'.",
+    "notes": "Bono de bienvenida 3,000 puntos y artículos exclusivos del Manchester United. Tasa de acumulación no publicada. El tarifario cobra además 'Contratación de beneficios; puntos' $150 + IVA mensuales (Recompensas Índigo), que es opcional y no forma parte de la anualidad.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
     "inactivity_min_spend_mxn": "NOT_APPLICABLE",
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "annual",
-    "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_calculated_on": "2026-04-30",
+    "cat_valid_until": "2026-09-30",
+    "annual_fee_mxn": 1240,
+    "annual_fee_includes_iva": false,
+    "annual_fee_first_year_waived": true,
+    "annual_fee_waiver_condition": "Primer año sin costo para clientes nuevos. A partir del segundo año, comisión por Administración de tarjeta del titular de $1,240 + IVA al año.",
+    "interest_rate_annual_pct": 28.1,
+    "cat_promedio_pct": 35.2,
+    "base_reward_type": "points",
+    "base_reward_rate": "UNKNOWN",
+    "point_value_mxn": "UNKNOWN",
+    "effective_rate_pct": "UNKNOWN",
+    "points_program_name": "Recompensas Select",
+    "min_income_mxn_monthly": "UNKNOWN",
+    "invitation_only": false,
+    "other_eligibility_criteria": "NOT_APPLICABLE",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.invextarjetas.com.mx/invex/Documentos/CONDUSEF/Cuotas.pdf",
+          "https://solicitala.invextarjetas.com.mx/todas-sitiocorporativo/"
+        ]
+      },
+      "cost": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.invextarjetas.com.mx/invex/Documentos/CONDUSEF/Cuotas.pdf"
+        ]
+      },
+      "rewards": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://solicitala.invextarjetas.com.mx/todas-sitiocorporativo/",
+          "https://www.invextarjetas.com.mx/invex/Documentos/Sitios%20de%20Interes/Preguntas_Frecuentes_INVEX.pdf"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://solicitala.invextarjetas.com.mx/todas-sitiocorporativo/"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://solicitala.invextarjetas.com.mx/todas-sitiocorporativo/"
+        ]
+      }
+    }
   },
   {
     "card_id": "invex__sams_club",
@@ -5762,22 +6415,80 @@
     "display_name": "Sam's Club INVEX",
     "former_names": [],
     "legacy_id": "Sam's Club INVEX",
-    "tier": "UNKNOWN",
-    "network": "UNKNOWN",
+    "tier": "clasica",
+    "network": "mastercard",
     "lifecycle_status": "active",
-    "mapping_status": "skeleton",
+    "mapping_status": "mapped",
     "census_confidence": "high",
     "census_note": "co-brand",
     "conflicts": [],
-    "notes": "Co-brand split from legacy issuer string 'Invex (Sam's Club)'.",
-    "inactivity_fee_mxn": "NOT_APPLICABLE",
-    "inactivity_fee_period": "NOT_APPLICABLE",
-    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
-    "inactivity_min_spend_mxn": "NOT_APPLICABLE",
-    "inactivity_spend_period": "NOT_APPLICABLE",
-    "fee_billing_period": "annual",
-    "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "notes": "Bonificación pagada en la app Cashi, no al estado de cuenta. 10% de descuento en la primera compra en tiendas físicas Sam's Club. Precio especial de efectivo en Sam's Club. Comparte tabla de CAT y tasa con Walmart INVEX en el tarifario.",
+    "inactivity_fee_mxn": 350,
+    "inactivity_fee_period": "monthly",
+    "inactivity_fee_includes_iva": false,
+    "inactivity_min_spend_mxn": 2000,
+    "inactivity_spend_period": "monthly",
+    "fee_billing_period": "NOT_APPLICABLE",
+    "cat_calculated_on": "2026-04-30",
+    "cat_valid_until": "2026-09-30",
+    "annual_fee_mxn": 0,
+    "annual_fee_includes_iva": false,
+    "annual_fee_first_year_waived": false,
+    "annual_fee_waiver_condition": "Sin comisión por Administración de tarjeta del titular. Para exentar la Penalización por inactividad de $350 + IVA al mes se requiere una compra mínima mensual de $2,000 en cualquier establecimiento.",
+    "interest_rate_annual_pct": 27.4,
+    "cat_promedio_pct": 31.2,
+    "base_reward_type": "cashback",
+    "base_reward_rate": 1.0,
+    "point_value_mxn": 1.0,
+    "effective_rate_pct": 1.0,
+    "points_program_name": "Cashi",
+    "min_income_mxn_monthly": "UNKNOWN",
+    "invitation_only": false,
+    "other_eligibility_criteria": "Requiere contratar la membresía Sam's Club para comprar en Sam's Club.",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.invextarjetas.com.mx/invex/Documentos/CONDUSEF/Cuotas.pdf",
+          "https://solicitala.invextarjetas.com.mx/todas-sitiocorporativo/"
+        ]
+      },
+      "cost": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.invextarjetas.com.mx/invex/Documentos/CONDUSEF/Cuotas.pdf",
+          "https://solicitala.invextarjetas.com.mx/todas-sitiocorporativo/"
+        ]
+      },
+      "rewards": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://solicitala.invextarjetas.com.mx/todas-sitiocorporativo/"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://solicitala.invextarjetas.com.mx/todas-sitiocorporativo/"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://solicitala.invextarjetas.com.mx/todas-sitiocorporativo/"
+        ]
+      }
+    }
   },
   {
     "card_id": "invex__walmart",
@@ -5793,17 +6504,17 @@
     "census_confidence": "high",
     "census_note": "co-brand",
     "conflicts": [],
-    "notes": "Bonificación pagada en la app Cashi, no al estado de cuenta — es dinero utilizable sólo dentro del ecosistema Walmart. Vigencia del saldo 24 meses. La anualidad es cero sólo si se cumple el gasto mínimo; de lo contrario hay penalización mensual.",
+    "notes": "Bonificación pagada en la app Cashi, no al estado de cuenta — dinero utilizable sólo dentro del ecosistema Walmart. Vigencia del saldo 24 meses. CORRECCIÓN 2026-08-17: la penalización por inactividad es de $273 + IVA al mes (antes registrada como $195, que corresponde a INVEX Farmacias Guadalajara).",
     "annual_fee_includes_iva": false,
     "annual_fee_first_year_waived": false,
-    "interest_rate_annual_pct": "UNKNOWN",
-    "cat_promedio_pct": "UNKNOWN",
+    "interest_rate_annual_pct": 27.4,
+    "cat_promedio_pct": 31.2,
     "min_income_mxn_monthly": "UNKNOWN",
     "invitation_only": false,
     "other_eligibility_criteria": "NOT_APPLICABLE",
-    "points_program_name": "NOT_APPLICABLE",
+    "points_program_name": "Cashi",
     "annual_fee_mxn": 0,
-    "annual_fee_waiver_condition": "Compras mínimas de $1,200 al mes. Sin anualidad de por vida acumulando compras por un mínimo mensual; si no se alcanza, aplica comisión de penalización por inactividad de $195 + IVA al mes.",
+    "annual_fee_waiver_condition": "Sin comisión por Administración de tarjeta del titular. Para exentar la Penalización por inactividad de $273 + IVA al mes se requiere una compra mínima mensual de $1,200 en cualquier establecimiento.",
     "base_reward_type": "cashback",
     "base_reward_rate": 1.0,
     "point_value_mxn": 1.0,
@@ -5812,52 +6523,54 @@
       "identity": {
         "score": "high",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-08-07",
+        "verified_on": "2026-08-17",
         "sources": [
-          "https://solicitala.invextarjetas.com.mx/gen-g-pm/"
+          "https://www.invextarjetas.com.mx/invex/Documentos/CONDUSEF/Cuotas.pdf",
+          "https://solicitala.invextarjetas.com.mx/todas-sitiocorporativo/"
         ]
       },
       "cost": {
-        "score": "medium",
+        "score": "high",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-08-07",
+        "verified_on": "2026-08-17",
         "sources": [
-          "https://solicitala.invextarjetas.com.mx/gen-g-pm/"
+          "https://www.invextarjetas.com.mx/invex/Documentos/CONDUSEF/Cuotas.pdf",
+          "https://solicitala.invextarjetas.com.mx/todas-sitiocorporativo/"
         ]
       },
       "rewards": {
         "score": "medium",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-08-07",
+        "verified_on": "2026-08-17",
         "sources": [
-          "https://solicitala.invextarjetas.com.mx/gen-g-pm/"
+          "https://solicitala.invextarjetas.com.mx/todas-sitiocorporativo/"
         ]
       },
       "perks": {
         "score": "high",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-08-07",
+        "verified_on": "2026-08-17",
         "sources": [
-          "https://solicitala.invextarjetas.com.mx/gen-g-pm/"
+          "https://solicitala.invextarjetas.com.mx/todas-sitiocorporativo/"
         ]
       },
       "eligibility": {
         "score": "high",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-08-07",
+        "verified_on": "2026-08-17",
         "sources": [
-          "https://solicitala.invextarjetas.com.mx/gen-g-pm/"
+          "https://solicitala.invextarjetas.com.mx/todas-sitiocorporativo/"
         ]
       }
     },
-    "inactivity_fee_mxn": 195,
+    "inactivity_fee_mxn": 273,
     "inactivity_fee_period": "monthly",
     "inactivity_fee_includes_iva": false,
     "inactivity_min_spend_mxn": 1200,
     "inactivity_spend_period": "monthly",
     "fee_billing_period": "NOT_APPLICABLE",
-    "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_calculated_on": "2026-04-30",
+    "cat_valid_until": "2026-09-30"
   },
   {
     "card_id": "klar__con_garantia",
@@ -7212,6 +7925,31 @@
     "census_note": "Found on the issuer's own product list; absent from the card census.",
     "conflicts": [],
     "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE",
+    "inactivity_spend_period": "NOT_APPLICABLE",
+    "fee_billing_period": "annual",
+    "cat_calculated_on": "UNKNOWN",
+    "cat_valid_until": "UNKNOWN"
+  },
+  {
+    "card_id": "invex__now",
+    "issuer_id": "invex",
+    "cobrand_partner": "NOT_APPLICABLE",
+    "display_name": "Tarjeta de Crédito Now",
+    "former_names": [],
+    "legacy_id": "NOT_APPLICABLE",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "lifecycle_changed_on": "2026-08-17",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "issuer fee schedule only",
+    "conflicts": [],
+    "notes": "Hallazgo de censo Stage 2: aparece en la tabla de CAT del tarifario de INVEX (CAT 46.2%, tasa 48.0%, sin comisión de administración) pero NO en el mapa de sitio de tarjetas de crédito ni en la página de adquisición corporativa — se comercializa bajo la marca digital Now (now.bank). Emisor legal: Banco INVEX. Pendiente de aprobación antes de mapear atributos en Stage 3.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
