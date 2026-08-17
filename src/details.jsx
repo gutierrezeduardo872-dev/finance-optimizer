@@ -66,6 +66,33 @@ function CardDetails({ d, c }) {
         </span>
       </div>
 
+      {/* MIGRATED: "sin anualidad" is often conditional. A monthly penalty for
+          low spend can exceed any annual fee in the dataset, so it is shown
+          next to the fee rather than buried in the conditions text. */}
+      {knownNum(c.inactivity_fee_mxn) !== null && knownNum(c.inactivity_fee_mxn) > 0 && (
+        <>
+          <div className="drow">
+            <span>Penalización por inactividad</span>
+            <span style={{ color: 'var(--danger)' }}>
+              {mxn(num(c.inactivity_fee_mxn))}
+              {c.inactivity_fee_includes_iva === false ? ' + IVA' : ''}
+              /{String(c.inactivity_fee_period) === 'monthly' ? 'mes' : 'año'}
+            </span>
+          </div>
+          {knownNum(c.inactivity_min_spend_mxn) !== null && (
+            <div className="note warn">
+              Esta tarjeta se anuncia sin anualidad, pero cobra{' '}
+              {mxn(num(c.inactivity_fee_mxn))}
+              {c.inactivity_fee_includes_iva === false ? ' + IVA' : ''} al mes si no
+              gastas al menos {mxn(num(c.inactivity_min_spend_mxn))} en el mes. Sin
+              usarla, eso son{' '}
+              <b>{mxn(num(c.inactivity_fee_mxn) *
+                   (String(c.inactivity_fee_period) === 'monthly' ? 12 : 1))} al año</b>.
+            </div>
+          )}
+        </>
+      )}
+
       {c.annual_fee_first_year_waived === true && (
         <div className="drow">
           <span>Primer año</span>

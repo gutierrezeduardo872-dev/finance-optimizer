@@ -906,7 +906,7 @@
         ]
       },
       "yield": {
-        "score": "medium",
+        "score": "low",
         "evidence_type": "issuer_primary",
         "verified_on": "2026-07-09",
         "sources": [

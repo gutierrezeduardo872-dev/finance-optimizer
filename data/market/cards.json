@@ -13,7 +13,11 @@
     "census_confidence": "medium",
     "census_note": "in Afirme official cost table",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "afirme__basica",
@@ -29,7 +33,11 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "afirme__clasica",
@@ -45,7 +53,11 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "afirme__gc",
@@ -61,7 +73,11 @@
     "census_confidence": "low",
     "census_note": "appears in fee tables; distinct consumer tier unconfirmed - verify",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "afirme__oro",
@@ -77,7 +93,11 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "afirme__platinum",
@@ -93,7 +113,11 @@
     "census_confidence": "high",
     "census_note": "anualidad $2,500 + IVA",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "banca_mifel__mifel_basica",
@@ -109,7 +133,11 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "banca_mifel__mifel_leones",
@@ -125,7 +153,11 @@
     "census_confidence": "medium",
     "census_note": "co-brand/affinity - verify",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "banca_mifel__mifel_mexicana",
@@ -141,7 +173,11 @@
     "census_confidence": "high",
     "census_note": "co-brand (Mexicana de Aviación)",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "banca_mifel__mifel_miles_more_world_elite",
@@ -157,7 +193,11 @@
     "census_confidence": "high",
     "census_note": "co-brand (Lufthansa Miles & More)",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "banca_mifel__mifel_oro",
@@ -173,7 +213,11 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "banca_mifel__mifel_platino",
@@ -189,7 +233,11 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "banca_mifel__mifel_world_elite",
@@ -205,7 +253,11 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "banco_azteca__oro_garantizada",
@@ -221,7 +273,11 @@
     "census_confidence": "high",
     "census_note": "secured card",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "banco_azteca__oro_garantizada_vas",
@@ -237,7 +293,11 @@
     "census_confidence": "high",
     "census_note": "secured card",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "banco_azteca__vas",
@@ -253,7 +313,11 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "banco_inbursa__inbursa_black_american_express",
@@ -269,7 +333,11 @@
     "census_confidence": "high",
     "census_note": "Amex network product",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "banco_inbursa__inbursa_clasica",
@@ -278,14 +346,104 @@
     "display_name": "Tarjeta de Crédito Inbursa Clásica",
     "former_names": [],
     "legacy_id": "Tarjeta de Crédito Inbursa Clásica",
-    "tier": "UNKNOWN",
-    "network": "UNKNOWN",
+    "tier": "clasica",
+    "network": "mastercard",
     "lifecycle_status": "active",
-    "mapping_status": "skeleton",
+    "mapping_status": "mapped",
     "census_confidence": "high",
     "census_note": "",
-    "conflicts": [],
-    "notes": ""
+    "conflicts": [
+      {
+        "field": "annual_fee_mxn",
+        "field_group": "cost",
+        "values": [
+          {
+            "value": 500,
+            "source_url": "https://www.rankia.mx/blog/tarjetas-bancarias-credito-debito-prepago-virtuales/4330217-tarjetas-credito-inbursa-walmart-clasica-sam-s",
+            "evidence_type": "comparator_secondary"
+          },
+          {
+            "value": 420,
+            "source_url": "https://datacards.mx/blog/mejores-tarjetas-inbursa-mexico-guia-2026",
+            "evidence_type": "comparator_secondary"
+          },
+          {
+            "value": 390,
+            "source_url": "https://www.inbursa.com.mx/sites/gfi/document/tdc-clasica-folleto.pdf",
+            "evidence_type": "issuer_primary"
+          }
+        ],
+        "detected_on": "2026-08-07",
+        "status": "resolved",
+        "resolution": "Issuer folleto (calculado 31-dic-2025) states $390 sin IVA. Both comparator figures superseded; the 2023 one was three years stale."
+      }
+    ],
+    "notes": "Puntos Inbursa: 1 punto por dólar gastado (o su equivalente en pesos), valorado en 0.10 MXN por punto. A ~18.5 MXN/USD eso equivale a ~0.55% del gasto. El rendimiento efectivo se mueve con el tipo de cambio: la tasa está fijada en dólares, no en pesos. Canje mínimo 1,000 puntos; vigencia 48 meses.",
+    "annual_fee_mxn": 390,
+    "annual_fee_includes_iva": false,
+    "annual_fee_first_year_waived": true,
+    "annual_fee_waiver_condition": "Primer año sin costo para el titular; adicionales sin anualidad de por vida",
+    "interest_rate_annual_pct": 53.97,
+    "cat_promedio_pct": 77.1,
+    "base_reward_type": "points",
+    "base_reward_rate": 5.4,
+    "point_value_mxn": 0.1,
+    "effective_rate_pct": 0.54,
+    "points_program_name": "Puntos Inbursa",
+    "min_income_mxn_monthly": 10000,
+    "invitation_only": false,
+    "other_eligibility_criteria": "Edad mínima 18 años; historial medio",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-07",
+        "sources": [
+          "https://www.inbursa.com.mx/sites/gfi/document/tdc-clasica-folleto.pdf",
+          "https://www.kardmatch.com.mx/inbursa/tarjeta-de-credito-clasica-inbursa.asp"
+        ]
+      },
+      "cost": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-07",
+        "sources": [
+          "https://www.inbursa.com.mx/sites/gfi/document/tdc-clasica-folleto.pdf",
+          "https://www.kardmatch.com.mx/inbursa/tarjeta-de-credito-clasica-inbursa.asp"
+        ]
+      },
+      "rewards": {
+        "score": "low",
+        "evidence_type": "inferred",
+        "verified_on": "2026-08-07",
+        "sources": [
+          "https://www.kardmatch.com.mx/inbursa/tarjeta-de-credito-clasica-inbursa.asp",
+          "https://www.inbursa.com.mx/sites/gfi/document/tdc-clasica-folleto.pdf"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-07",
+        "sources": [
+          "https://www.inbursa.com.mx/sites/gfi/document/tdc-clasica-folleto.pdf",
+          "https://www.kardmatch.com.mx/inbursa/tarjeta-de-credito-clasica-inbursa.asp"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-07",
+        "sources": [
+          "https://www.inbursa.com.mx/sites/gfi/document/tdc-clasica-folleto.pdf",
+          "https://www.kardmatch.com.mx/inbursa/tarjeta-de-credito-clasica-inbursa.asp"
+        ]
+      }
+    },
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "banco_inbursa__inbursa_oro",
@@ -301,18 +459,18 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": "Comisión administración $540 sin IVA",
+    "notes": "Puntos Inbursa: 1 punto por dólar gastado (o su equivalente en pesos), valorado en 0.10 MXN por punto. A ~18.5 MXN/USD eso equivale a ~0.55% del gasto. El rendimiento efectivo se mueve con el tipo de cambio: la tasa está fijada en dólares, no en pesos. Canje mínimo 1,000 puntos; vigencia 48 meses.",
     "annual_fee_mxn": 540,
     "annual_fee_includes_iva": false,
     "annual_fee_first_year_waived": "UNKNOWN",
     "annual_fee_waiver_condition": "UNKNOWN",
     "interest_rate_annual_pct": 52.31,
     "cat_promedio_pct": 70.2,
-    "base_reward_type": "none",
-    "base_reward_rate": "UNKNOWN",
-    "point_value_mxn": "NOT_APPLICABLE",
-    "effective_rate_pct": 0,
-    "points_program_name": "NOT_APPLICABLE",
+    "base_reward_type": "points",
+    "base_reward_rate": 5.4,
+    "point_value_mxn": 0.1,
+    "effective_rate_pct": 0.54,
+    "points_program_name": "Puntos Inbursa",
     "min_income_mxn_monthly": "UNKNOWN",
     "invitation_only": false,
     "other_eligibility_criteria": "UNKNOWN",
@@ -321,44 +479,53 @@
       "identity": {
         "score": "high",
         "evidence_type": "issuer_primary",
-        "verified_on": "2025-12-31",
+        "verified_on": "2026-08-07",
         "sources": [
-          "https://www.inbursa.com/sites/gfi/tdc-oro"
+          "https://www.inbursa.com/sites/gfi/tdc-oro",
+          "https://www.inbursa.com.mx/sites/gfi/document/tdc-clasica-folleto.pdf"
         ]
       },
       "cost": {
-        "score": "low",
+        "score": "high",
         "evidence_type": "issuer_primary",
-        "verified_on": "2025-12-31",
+        "verified_on": "2026-08-07",
         "sources": [
-          "https://www.inbursa.com/sites/gfi/tdc-oro"
+          "https://www.inbursa.com/sites/gfi/tdc-oro",
+          "https://www.inbursa.com.mx/sites/gfi/document/tdc-clasica-folleto.pdf"
         ]
       },
       "rewards": {
         "score": "low",
-        "evidence_type": "issuer_primary",
-        "verified_on": "2025-12-31",
+        "evidence_type": "inferred",
+        "verified_on": "2026-08-07",
         "sources": [
-          "https://www.inbursa.com/sites/gfi/tdc-oro"
+          "https://www.kardmatch.com.mx/inbursa/tarjeta-de-credito-clasica-inbursa.asp",
+          "https://www.inbursa.com.mx/sites/gfi/document/tdc-clasica-folleto.pdf"
         ]
       },
       "perks": {
         "score": "high",
         "evidence_type": "issuer_primary",
-        "verified_on": "2025-12-31",
+        "verified_on": "2026-08-07",
         "sources": [
-          "https://www.inbursa.com/sites/gfi/tdc-oro"
+          "https://www.inbursa.com/sites/gfi/tdc-oro",
+          "https://www.inbursa.com.mx/sites/gfi/document/tdc-clasica-folleto.pdf"
         ]
       },
       "eligibility": {
-        "score": "medium",
+        "score": "high",
         "evidence_type": "issuer_primary",
-        "verified_on": "2025-12-31",
+        "verified_on": "2026-08-07",
         "sources": [
-          "https://www.inbursa.com/sites/gfi/tdc-oro"
+          "https://www.inbursa.com/sites/gfi/tdc-oro",
+          "https://www.inbursa.com.mx/sites/gfi/document/tdc-clasica-folleto.pdf"
         ]
       }
-    }
+    },
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "banco_inbursa__inbursa_platinum",
@@ -383,9 +550,9 @@
     "cat_promedio_pct": 42.1,
     "base_reward_type": "none",
     "base_reward_rate": "UNKNOWN",
-    "point_value_mxn": "NOT_APPLICABLE",
+    "point_value_mxn": 0.1,
     "effective_rate_pct": 0,
-    "points_program_name": "NOT_APPLICABLE",
+    "points_program_name": "Puntos Inbursa",
     "min_income_mxn_monthly": "UNKNOWN",
     "invitation_only": false,
     "other_eligibility_criteria": "UNKNOWN",
@@ -431,7 +598,11 @@
           "https://www.inbursa.com/sites/gfi/tdc-platinum"
         ]
       }
-    }
+    },
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "banco_inbursa__inbursa_optima",
@@ -445,25 +616,89 @@
     "lifecycle_status": "active",
     "mapping_status": "skeleton",
     "census_confidence": "high",
-    "census_note": "",
+    "census_note": "On the issuer's product list. Terms not sourced this run.",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "banco_inbursa__telcel_oro",
     "issuer_id": "banco_inbursa",
-    "cobrand_partner": "",
+    "cobrand_partner": "telcel",
     "display_name": "Tarjeta Telcel Oro",
     "former_names": [],
     "legacy_id": "Tarjeta Telcel Oro",
-    "tier": "UNKNOWN",
+    "tier": "oro",
     "network": "UNKNOWN",
     "lifecycle_status": "active",
-    "mapping_status": "skeleton",
+    "mapping_status": "mapped",
     "census_confidence": "high",
     "census_note": "co-brand (Telcel)",
     "conflicts": [],
-    "notes": ""
+    "notes": "Co-brand partner corrected to Telcel — the migration missed it because the census issuer string carried no parenthetical. Reported as Inbursa's no-annual-fee option.",
+    "annual_fee_mxn": 0,
+    "annual_fee_includes_iva": true,
+    "annual_fee_first_year_waived": false,
+    "annual_fee_waiver_condition": "NOT_APPLICABLE",
+    "interest_rate_annual_pct": "UNKNOWN",
+    "cat_promedio_pct": "UNKNOWN",
+    "base_reward_type": "none",
+    "base_reward_rate": 0,
+    "point_value_mxn": "NOT_APPLICABLE",
+    "effective_rate_pct": 0,
+    "points_program_name": "NOT_APPLICABLE",
+    "min_income_mxn_monthly": "UNKNOWN",
+    "invitation_only": false,
+    "other_eligibility_criteria": "NOT_APPLICABLE",
+    "confidence": {
+      "identity": {
+        "score": "low",
+        "evidence_type": "comparator_secondary",
+        "verified_on": "2026-08-07",
+        "sources": [
+          "https://datacards.mx/blog/mejores-tarjetas-inbursa-mexico-guia-2026"
+        ]
+      },
+      "cost": {
+        "score": "low",
+        "evidence_type": "comparator_secondary",
+        "verified_on": "2026-08-07",
+        "sources": [
+          "https://datacards.mx/blog/mejores-tarjetas-inbursa-mexico-guia-2026"
+        ]
+      },
+      "rewards": {
+        "score": "low",
+        "evidence_type": "comparator_secondary",
+        "verified_on": "2026-08-07",
+        "sources": [
+          "https://datacards.mx/blog/mejores-tarjetas-inbursa-mexico-guia-2026"
+        ]
+      },
+      "perks": {
+        "score": "low",
+        "evidence_type": "comparator_secondary",
+        "verified_on": "2026-08-07",
+        "sources": [
+          "https://datacards.mx/blog/mejores-tarjetas-inbursa-mexico-guia-2026"
+        ]
+      },
+      "eligibility": {
+        "score": "low",
+        "evidence_type": "comparator_secondary",
+        "verified_on": "2026-08-07",
+        "sources": [
+          "https://datacards.mx/blog/mejores-tarjetas-inbursa-mexico-guia-2026"
+        ]
+      }
+    },
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "bancoppel__tarjeta_de_credito_bancoppel",
@@ -536,7 +771,11 @@
           "https://www.milenio.com/negocios/banco-azteca-vs-bancoppel-cual-es-mejor-para-una-tarjeta-de-creditio"
         ]
       }
-    }
+    },
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "bancoppel__infinite",
@@ -552,7 +791,11 @@
     "census_confidence": "high",
     "census_note": "por invitación",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "bancoppel__oro",
@@ -568,7 +811,11 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "bancoppel__platinum",
@@ -584,7 +831,11 @@
     "census_confidence": "high",
     "census_note": "por invitación",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "banjercito__basica",
@@ -600,7 +851,11 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "banjercito__infinite",
@@ -616,7 +871,11 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "banjercito__platinum",
@@ -632,7 +891,11 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "banjercito__tradicional_clasica",
@@ -648,7 +911,11 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "banorte__basica",
@@ -664,7 +931,11 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "banorte__clasica",
@@ -737,7 +1008,11 @@
           "https://www.banorte.com/Personal/TDC/Clasica.html"
         ]
       }
-    }
+    },
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "banorte__infinite",
@@ -753,7 +1028,11 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "banorte__ke_buena",
@@ -769,7 +1048,11 @@
     "census_confidence": "medium",
     "census_note": "affinity - verify current",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "banorte__one_up",
@@ -785,7 +1068,11 @@
     "census_confidence": "high",
     "census_note": "no anualidad",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "banorte__oro",
@@ -801,7 +1088,11 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "banorte__platinum",
@@ -817,7 +1108,11 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "banorte__por_ti",
@@ -890,7 +1185,11 @@
           "https://www.tarjetas.creditobanorte.com/?url=portibnt"
         ]
       }
-    }
+    },
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "banorte__marriott_bonvoy",
@@ -906,7 +1205,11 @@
     "census_confidence": "high",
     "census_note": "co-brand",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "banorte__marriott_bonvoy_inspire",
@@ -922,7 +1225,11 @@
     "census_confidence": "high",
     "census_note": "co-brand",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "banorte__mujer",
@@ -938,7 +1245,11 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "banorte__seleccion_nacional",
@@ -954,7 +1265,11 @@
     "census_confidence": "high",
     "census_note": "co-brand",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "banorte__united",
@@ -970,7 +1285,11 @@
     "census_confidence": "high",
     "census_note": "co-brand",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "banorte__united_universe",
@@ -986,7 +1305,11 @@
     "census_confidence": "high",
     "census_note": "co-brand",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "banregio__acceso_gold",
@@ -1002,7 +1325,11 @@
     "census_confidence": "high",
     "census_note": "secured card",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "banregio__basica",
@@ -1018,7 +1345,11 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "banregio__mas",
@@ -1034,7 +1365,11 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "banregio__platinum",
@@ -1050,7 +1385,11 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "banregio__win",
@@ -1066,7 +1405,11 @@
     "census_confidence": "medium",
     "census_note": "co-brand/affinity - verify",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "bbva_mexico__mi_primera_tarjeta_bbva",
@@ -1082,7 +1425,11 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "bbva_mexico__afinidad_unam_bbva",
@@ -1098,7 +1445,11 @@
     "census_confidence": "high",
     "census_note": "affinity",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "bbva_mexico__azul_bbva",
@@ -1171,7 +1522,11 @@
           "https://www.bbva.mx/personas/productos/tarjetas-de-credito/tarjeta-de-credito-azul.html"
         ]
       }
-    }
+    },
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "bbva_mexico__crea_bbva",
@@ -1187,7 +1542,11 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "bbva_mexico__educacion_bbva",
@@ -1203,7 +1562,11 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "bbva_mexico__ipn_bbva",
@@ -1219,7 +1582,11 @@
     "census_confidence": "high",
     "census_note": "affinity",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "bbva_mexico__oro_bbva",
@@ -1292,7 +1659,11 @@
           "https://www.bbva.mx/content/dam/public-web/mexico/documents/landing/cats_ago_2023.pdf"
         ]
       }
-    }
+    },
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "bbva_mexico__platinum_bbva",
@@ -1308,7 +1679,11 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "bbva_mexico__start_bbva",
@@ -1324,7 +1699,11 @@
     "census_confidence": "high",
     "census_note": "no anualidad",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "bbva_mexico__vive_bbva",
@@ -1340,7 +1719,11 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "cibanco__clasica_platinum",
@@ -1356,7 +1739,11 @@
     "census_confidence": "low",
     "census_note": "additional tiers referenced but unverified - verify",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "cibanco__oro",
@@ -1372,7 +1759,11 @@
     "census_confidence": "medium",
     "census_note": "Visa; issued by Banco INVEX; other tiers unverified",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "citibanamex__beyond_banamex",
@@ -1388,7 +1779,11 @@
     "census_confidence": "high",
     "census_note": "por invitación",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "citibanamex__clasica_banamex",
@@ -1461,7 +1856,11 @@
           "https://www.banamex.com/es/personas/tarjetas-credito/tarjeta-clasica.html"
         ]
       }
-    }
+    },
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "citibanamex__conquista_banamex",
@@ -1477,7 +1876,11 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "citibanamex__descubre_banamex",
@@ -1493,7 +1896,11 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "citibanamex__explora_banamex",
@@ -1509,7 +1916,11 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "citibanamex__joy_banamex",
@@ -1525,7 +1936,11 @@
     "census_confidence": "high",
     "census_note": "no anualidad",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "citibanamex__oro_banamex",
@@ -1598,7 +2013,11 @@
           "https://www.banamex.com/es/personas/tarjetas-credito/tarjeta-oro.html"
         ]
       }
-    }
+    },
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "citibanamex__platinum_banamex",
@@ -1614,7 +2033,11 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "hsbc_mexico__hsbc_2now",
@@ -1687,7 +2110,11 @@
           "https://www.hsbc.com.mx/tarjetas-de-credito/productos/"
         ]
       }
-    }
+    },
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "hsbc_mexico__hsbc_advance_platinum",
@@ -1703,7 +2130,11 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "hsbc_mexico__hsbc_air",
@@ -1719,7 +2150,11 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "hsbc_mexico__hsbc_basica",
@@ -1735,7 +2170,11 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "hsbc_mexico__hsbc_clasica",
@@ -1751,7 +2190,11 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "hsbc_mexico__hsbc_easy_points",
@@ -1767,7 +2210,11 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "hsbc_mexico__hsbc_oro",
@@ -1783,7 +2230,11 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "hsbc_mexico__hsbc_platinum",
@@ -1799,7 +2250,11 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "hsbc_mexico__hsbc_premier",
@@ -1815,7 +2270,11 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "hsbc_mexico__hsbc_titanium",
@@ -1831,7 +2290,11 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "hsbc_mexico__hsbc_viva",
@@ -1904,7 +2367,11 @@
           "https://www.hsbc.com.mx/tarjetas-de-credito/productos/viva/"
         ]
       }
-    }
+    },
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "hsbc_mexico__hsbc_viva_plus",
@@ -1920,7 +2387,11 @@
     "census_confidence": "high",
     "census_note": "co-brand (Viva Aerobús)",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "hsbc_mexico__hsbc_world_elite",
@@ -1936,7 +2407,11 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "hsbc_mexico__hsbc_zero",
@@ -2009,7 +2484,11 @@
           "https://www.hsbc.com.mx/tarjetas-de-credito/productos/zero/"
         ]
       }
-    }
+    },
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "invex__voyage",
@@ -2018,14 +2497,74 @@
     "display_name": "INVEX Voyage",
     "former_names": [],
     "legacy_id": "INVEX Voyage",
-    "tier": "UNKNOWN",
-    "network": "UNKNOWN",
+    "tier": "clasica",
+    "network": "mastercard",
     "lifecycle_status": "active",
-    "mapping_status": "skeleton",
+    "mapping_status": "mapped",
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": ""
+    "notes": "Travel Cash canjeable únicamente en la plataforma INVEX VOYAGE — no es efectivo.",
+    "annual_fee_includes_iva": false,
+    "annual_fee_first_year_waived": false,
+    "interest_rate_annual_pct": "UNKNOWN",
+    "cat_promedio_pct": "UNKNOWN",
+    "min_income_mxn_monthly": "UNKNOWN",
+    "invitation_only": false,
+    "other_eligibility_criteria": "NOT_APPLICABLE",
+    "points_program_name": "NOT_APPLICABLE",
+    "annual_fee_mxn": 0,
+    "annual_fee_waiver_condition": "Compra mínima de $300 al mes. Sin anualidad de por vida acumulando compras por un mínimo mensual; si no se alcanza, aplica comisión de penalización por inactividad de $195 + IVA al mes.",
+    "base_reward_type": "cashback",
+    "base_reward_rate": 1.0,
+    "point_value_mxn": 1.0,
+    "effective_rate_pct": 1.0,
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-07",
+        "sources": [
+          "https://solicitala.invextarjetas.com.mx/home-corporativo/"
+        ]
+      },
+      "cost": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-07",
+        "sources": [
+          "https://solicitala.invextarjetas.com.mx/home-corporativo/"
+        ]
+      },
+      "rewards": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-07",
+        "sources": [
+          "https://solicitala.invextarjetas.com.mx/home-corporativo/"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-07",
+        "sources": [
+          "https://solicitala.invextarjetas.com.mx/home-corporativo/"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-07",
+        "sources": [
+          "https://solicitala.invextarjetas.com.mx/home-corporativo/"
+        ]
+      }
+    },
+    "inactivity_fee_mxn": 195,
+    "inactivity_fee_period": "monthly",
+    "inactivity_fee_includes_iva": false,
+    "inactivity_min_spend_mxn": 300
   },
   {
     "card_id": "invex__voyage_platinum",
@@ -2034,14 +2573,74 @@
     "display_name": "INVEX Voyage Platinum",
     "former_names": [],
     "legacy_id": "INVEX Voyage Platinum",
-    "tier": "UNKNOWN",
-    "network": "UNKNOWN",
+    "tier": "platinum",
+    "network": "mastercard",
     "lifecycle_status": "active",
-    "mapping_status": "skeleton",
+    "mapping_status": "mapped",
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": ""
+    "notes": "Travel Cash 1% general, 2% en comercios de viajes. Canjeable sólo en INVEX VOYAGE.",
+    "annual_fee_includes_iva": false,
+    "annual_fee_first_year_waived": false,
+    "interest_rate_annual_pct": "UNKNOWN",
+    "cat_promedio_pct": "UNKNOWN",
+    "min_income_mxn_monthly": "UNKNOWN",
+    "invitation_only": false,
+    "other_eligibility_criteria": "NOT_APPLICABLE",
+    "points_program_name": "NOT_APPLICABLE",
+    "annual_fee_mxn": "UNKNOWN",
+    "annual_fee_waiver_condition": "UNKNOWN",
+    "base_reward_type": "cashback",
+    "base_reward_rate": 1.0,
+    "point_value_mxn": 1.0,
+    "effective_rate_pct": 1.0,
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-07",
+        "sources": [
+          "https://solicitala.invextarjetas.com.mx/home-corporativo/"
+        ]
+      },
+      "cost": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-07",
+        "sources": [
+          "https://solicitala.invextarjetas.com.mx/home-corporativo/"
+        ]
+      },
+      "rewards": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-07",
+        "sources": [
+          "https://solicitala.invextarjetas.com.mx/home-corporativo/"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-07",
+        "sources": [
+          "https://solicitala.invextarjetas.com.mx/home-corporativo/"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-07",
+        "sources": [
+          "https://solicitala.invextarjetas.com.mx/home-corporativo/"
+        ]
+      }
+    },
+    "inactivity_fee_mxn": "UNKNOWN",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "UNKNOWN"
   },
   {
     "card_id": "invex__sicard_basica",
@@ -2057,7 +2656,11 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "invex__sicard_platinum",
@@ -2073,7 +2676,11 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "invex__sicard_plus",
@@ -2089,7 +2696,11 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "multiva__clasica",
@@ -2105,7 +2716,11 @@
     "census_confidence": "high",
     "census_note": "issued via INVEX",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "multiva__oro",
@@ -2121,7 +2736,11 @@
     "census_confidence": "high",
     "census_note": "issued via INVEX",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "multiva__platinum",
@@ -2137,7 +2756,11 @@
     "census_confidence": "high",
     "census_note": "issued via INVEX",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "santander_mexico__likeu",
@@ -2210,7 +2833,11 @@
           "https://www.santander.com.mx/personas/credito-y-financiamiento/tarjetas-de-credito/likeu/"
         ]
       }
-    }
+    },
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "santander_mexico__santander_american_express",
@@ -2226,7 +2853,11 @@
     "census_confidence": "high",
     "census_note": "Amex network product",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "santander_mexico__santander_basica",
@@ -2242,7 +2873,11 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "santander_mexico__santander_free",
@@ -2258,7 +2893,11 @@
     "census_confidence": "high",
     "census_note": "no anualidad",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "santander_mexico__unique_rewards_gold",
@@ -2274,7 +2913,11 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "santander_mexico__unique_rewards_platinum",
@@ -2290,7 +2933,11 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "santander_mexico__world_elite",
@@ -2306,7 +2953,11 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "scotiabank_mexico__ideal_scotiabank",
@@ -2379,7 +3030,11 @@
           "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/scotia-basica.aspx"
         ]
       }
-    }
+    },
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "scotiabank_mexico__infinite_scotia_wealth_management",
@@ -2395,7 +3050,11 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "scotiabank_mexico__scotia_travel_clasica",
@@ -2411,7 +3070,11 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "scotiabank_mexico__scotia_travel_oro",
@@ -2427,7 +3090,11 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "scotiabank_mexico__scotia_travel_platinum",
@@ -2500,7 +3167,11 @@
           "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/travel-platinum.aspx"
         ]
       }
-    }
+    },
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "scotiabank_mexico__singular_by_scotiabank_infinite",
@@ -2516,7 +3187,11 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "scotiabank_mexico__singular_by_scotiabank_signature",
@@ -2532,7 +3207,11 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "scotiabank_mexico__singular_by_scotiabank_world_elite",
@@ -2605,7 +3284,11 @@
           "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/world-elite.aspx"
         ]
       }
-    }
+    },
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "scotiabank_mexico__tasa_baja_clasica",
@@ -2621,7 +3304,11 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "scotiabank_mexico__tasa_baja_oro",
@@ -2637,7 +3324,11 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "banco_inbursa__aeromexico_ascend",
@@ -2653,7 +3344,11 @@
     "census_confidence": "high",
     "census_note": "co-brand with Aeroméxico",
     "conflicts": [],
-    "notes": "Co-brand split from legacy issuer string 'Banco Inbursa (Aeroméxico)'."
+    "notes": "Co-brand split from legacy issuer string 'Banco Inbursa (Aeroméxico)'.",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "banco_inbursa__aeromexico_elevate",
@@ -2667,9 +3362,13 @@
     "lifecycle_status": "active",
     "mapping_status": "skeleton",
     "census_confidence": "high",
-    "census_note": "co-brand with Aeroméxico",
+    "census_note": "Confirmed active on the issuer's site. Rewards accrue in Puntos Aeroméxico Rewards at an unpublished per-peso rate; spend bonuses and Priority Pass documented but not yet modelled.",
     "conflicts": [],
-    "notes": "Co-brand split from legacy issuer string 'Banco Inbursa (Aeroméxico)'."
+    "notes": "Co-brand split from legacy issuer string 'Banco Inbursa (Aeroméxico)'.",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "banco_inbursa__aeromexico_horizon",
@@ -2683,9 +3382,13 @@
     "lifecycle_status": "active",
     "mapping_status": "skeleton",
     "census_confidence": "high",
-    "census_note": "co-brand with Aeroméxico",
+    "census_note": "Confirmed active on the issuer's site. Rewards accrue in Puntos Aeroméxico Rewards at an unpublished per-peso rate; spend bonuses and Priority Pass documented but not yet modelled.",
     "conflicts": [],
-    "notes": "Co-brand split from legacy issuer string 'Banco Inbursa (Aeroméxico)'."
+    "notes": "Co-brand split from legacy issuer string 'Banco Inbursa (Aeroméxico)'.",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "invex__volaris",
@@ -2694,14 +3397,79 @@
     "display_name": "Volaris INVEX",
     "former_names": [],
     "legacy_id": "Volaris INVEX",
-    "tier": "UNKNOWN",
-    "network": "UNKNOWN",
+    "tier": "clasica",
+    "network": "mastercard",
     "lifecycle_status": "active",
-    "mapping_status": "skeleton",
+    "mapping_status": "mapped",
     "census_confidence": "high",
     "census_note": "co-brand (Volaris)",
     "conflicts": [],
-    "notes": "Co-brand split from legacy issuer string 'Invex (Volaris)'."
+    "notes": "El 20 de mayo de 2026 el Monedero Volaris INVEX se convirtió en Puntos altitude. Los datos previos de bonificación en pesos (1.5% / 2% en Monedero) quedaron obsoletos. Volaris no publica el valor en pesos de un Punto altitude, así que effective_rate_pct es UNKNOWN y la tarjeta no es comparable con cashback.",
+    "annual_fee_includes_iva": false,
+    "annual_fee_first_year_waived": false,
+    "interest_rate_annual_pct": "UNKNOWN",
+    "cat_promedio_pct": "UNKNOWN",
+    "min_income_mxn_monthly": "UNKNOWN",
+    "invitation_only": false,
+    "other_eligibility_criteria": "NOT_APPLICABLE",
+    "points_program_name": "altitude",
+    "annual_fee_mxn": 0,
+    "annual_fee_waiver_condition": "Compra mínima de $300 al mes. Sin anualidad de por vida acumulando compras por un mínimo mensual; si no se alcanza, aplica comisión de penalización por inactividad de $195 + IVA al mes.",
+    "base_reward_type": "points",
+    "base_reward_rate": 25.0,
+    "point_value_mxn": "UNKNOWN",
+    "effective_rate_pct": "UNKNOWN",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-07",
+        "sources": [
+          "https://solicitala.invextarjetas.com.mx/home-corporativo/",
+          "https://cms.volaris.com/es/informacion-util/opciones-de-pago/tarjetas-volaris-invex/"
+        ]
+      },
+      "cost": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-07",
+        "sources": [
+          "https://solicitala.invextarjetas.com.mx/home-corporativo/",
+          "https://cms.volaris.com/es/informacion-util/opciones-de-pago/tarjetas-volaris-invex/"
+        ]
+      },
+      "rewards": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-07",
+        "sources": [
+          "https://solicitala.invextarjetas.com.mx/home-corporativo/",
+          "https://cms.volaris.com/es/informacion-util/opciones-de-pago/tarjetas-volaris-invex/"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-07",
+        "sources": [
+          "https://solicitala.invextarjetas.com.mx/home-corporativo/",
+          "https://cms.volaris.com/es/informacion-util/opciones-de-pago/tarjetas-volaris-invex/"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-07",
+        "sources": [
+          "https://solicitala.invextarjetas.com.mx/home-corporativo/",
+          "https://cms.volaris.com/es/informacion-util/opciones-de-pago/tarjetas-volaris-invex/"
+        ]
+      }
+    },
+    "inactivity_fee_mxn": 195,
+    "inactivity_fee_period": "monthly",
+    "inactivity_fee_includes_iva": false,
+    "inactivity_min_spend_mxn": 300
   },
   {
     "card_id": "invex__volaris_0",
@@ -2715,9 +3483,13 @@
     "lifecycle_status": "active",
     "mapping_status": "skeleton",
     "census_confidence": "high",
-    "census_note": "co-brand (Volaris), no anualidad",
+    "census_note": "Sin anualidad y sin comisiones según fuente secundaria; términos no verificados con el emisor.",
     "conflicts": [],
-    "notes": "Co-brand split from legacy issuer string 'Invex (Volaris)'."
+    "notes": "Co-brand split from legacy issuer string 'Invex (Volaris)'.",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "invex__volaris_2_0",
@@ -2726,14 +3498,79 @@
     "display_name": "Volaris INVEX 2.0",
     "former_names": [],
     "legacy_id": "Volaris INVEX 2.0",
-    "tier": "UNKNOWN",
-    "network": "UNKNOWN",
+    "tier": "clasica",
+    "network": "mastercard",
     "lifecycle_status": "active",
-    "mapping_status": "skeleton",
+    "mapping_status": "mapped",
     "census_confidence": "high",
     "census_note": "co-brand (Volaris), premium",
     "conflicts": [],
-    "notes": "Co-brand split from legacy issuer string 'Invex (Volaris)'."
+    "notes": "El 20 de mayo de 2026 el Monedero Volaris INVEX se convirtió en Puntos altitude. Los datos previos de bonificación en pesos (1.5% / 2% en Monedero) quedaron obsoletos. Volaris no publica el valor en pesos de un Punto altitude, así que effective_rate_pct es UNKNOWN y la tarjeta no es comparable con cashback.",
+    "annual_fee_includes_iva": false,
+    "annual_fee_first_year_waived": false,
+    "interest_rate_annual_pct": "UNKNOWN",
+    "cat_promedio_pct": "UNKNOWN",
+    "min_income_mxn_monthly": "UNKNOWN",
+    "invitation_only": false,
+    "other_eligibility_criteria": "NOT_APPLICABLE",
+    "points_program_name": "altitude",
+    "annual_fee_mxn": 0,
+    "annual_fee_waiver_condition": "Compra mínima de $300 al mes. Sin anualidad de por vida acumulando compras por un mínimo mensual; si no se alcanza, aplica comisión de penalización por inactividad de $195 + IVA al mes.",
+    "base_reward_type": "points",
+    "base_reward_rate": 35.0,
+    "point_value_mxn": "UNKNOWN",
+    "effective_rate_pct": "UNKNOWN",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-07",
+        "sources": [
+          "https://solicitala.invextarjetas.com.mx/home-corporativo/",
+          "https://cms.volaris.com/es/informacion-util/opciones-de-pago/tarjetas-volaris-invex/"
+        ]
+      },
+      "cost": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-07",
+        "sources": [
+          "https://solicitala.invextarjetas.com.mx/home-corporativo/",
+          "https://cms.volaris.com/es/informacion-util/opciones-de-pago/tarjetas-volaris-invex/"
+        ]
+      },
+      "rewards": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-07",
+        "sources": [
+          "https://solicitala.invextarjetas.com.mx/home-corporativo/",
+          "https://cms.volaris.com/es/informacion-util/opciones-de-pago/tarjetas-volaris-invex/"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-07",
+        "sources": [
+          "https://solicitala.invextarjetas.com.mx/home-corporativo/",
+          "https://cms.volaris.com/es/informacion-util/opciones-de-pago/tarjetas-volaris-invex/"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-07",
+        "sources": [
+          "https://solicitala.invextarjetas.com.mx/home-corporativo/",
+          "https://cms.volaris.com/es/informacion-util/opciones-de-pago/tarjetas-volaris-invex/"
+        ]
+      }
+    },
+    "inactivity_fee_mxn": 195,
+    "inactivity_fee_period": "monthly",
+    "inactivity_fee_includes_iva": false,
+    "inactivity_min_spend_mxn": 300
   },
   {
     "card_id": "santander_mexico__aeromexico_blanca",
@@ -2749,7 +3586,11 @@
     "census_confidence": "high",
     "census_note": "co-brand",
     "conflicts": [],
-    "notes": "Co-brand split from legacy issuer string 'Santander México (Aeroméxico)'."
+    "notes": "Co-brand split from legacy issuer string 'Santander México (Aeroméxico)'.",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "santander_mexico__aeromexico_infinite",
@@ -2765,7 +3606,11 @@
     "census_confidence": "high",
     "census_note": "co-brand",
     "conflicts": [],
-    "notes": "Co-brand split from legacy issuer string 'Santander México (Aeroméxico)'."
+    "notes": "Co-brand split from legacy issuer string 'Santander México (Aeroméxico)'.",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "santander_mexico__aeromexico_platinum",
@@ -2781,7 +3626,11 @@
     "census_confidence": "high",
     "census_note": "co-brand",
     "conflicts": [],
-    "notes": "Co-brand split from legacy issuer string 'Santander México (Aeroméxico)'."
+    "notes": "Co-brand split from legacy issuer string 'Santander México (Aeroméxico)'.",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "invex__despegar_gold",
@@ -2797,7 +3646,11 @@
     "census_confidence": "high",
     "census_note": "co-brand",
     "conflicts": [],
-    "notes": "Co-brand split from legacy issuer string 'Invex (Despegar)'."
+    "notes": "Co-brand split from legacy issuer string 'Invex (Despegar)'.",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "invex__despegar_platinum",
@@ -2813,7 +3666,11 @@
     "census_confidence": "high",
     "census_note": "co-brand",
     "conflicts": [],
-    "notes": "Co-brand split from legacy issuer string 'Invex (Despegar)'."
+    "notes": "Co-brand split from legacy issuer string 'Invex (Despegar)'.",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "invex__hilton_honors",
@@ -2829,7 +3686,11 @@
     "census_confidence": "high",
     "census_note": "co-brand",
     "conflicts": [],
-    "notes": "Co-brand split from legacy issuer string 'Invex (Hilton)'."
+    "notes": "Co-brand split from legacy issuer string 'Invex (Hilton)'.",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "invex__hilton_honors_premium",
@@ -2845,7 +3706,11 @@
     "census_confidence": "high",
     "census_note": "co-brand",
     "conflicts": [],
-    "notes": "Co-brand split from legacy issuer string 'Invex (Hilton)'."
+    "notes": "Co-brand split from legacy issuer string 'Invex (Hilton)'.",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "santander_mexico__fiesta_rewards_oro",
@@ -2861,7 +3726,11 @@
     "census_confidence": "high",
     "census_note": "co-brand (Fiesta Americana)",
     "conflicts": [],
-    "notes": "Co-brand split from legacy issuer string 'Santander México (Fiesta Rewards)'."
+    "notes": "Co-brand split from legacy issuer string 'Santander México (Fiesta Rewards)'.",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "santander_mexico__fiesta_rewards_platino",
@@ -2877,7 +3746,11 @@
     "census_confidence": "high",
     "census_note": "co-brand (Fiesta Americana)",
     "conflicts": [],
-    "notes": "Co-brand split from legacy issuer string 'Santander México (Fiesta Rewards)'."
+    "notes": "Co-brand split from legacy issuer string 'Santander México (Fiesta Rewards)'.",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "afirme__cemex",
@@ -2893,7 +3766,11 @@
     "census_confidence": "medium",
     "census_note": "co-brand; in cost table",
     "conflicts": [],
-    "notes": "Co-brand split from legacy issuer string 'Afirme (Cemex)'."
+    "notes": "Co-brand split from legacy issuer string 'Afirme (Cemex)'.",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "afirme__construrama",
@@ -2909,7 +3786,11 @@
     "census_confidence": "medium",
     "census_note": "co-brand; in cost table",
     "conflicts": [],
-    "notes": "Co-brand split from legacy issuer string 'Afirme (Construrama)'."
+    "notes": "Co-brand split from legacy issuer string 'Afirme (Construrama)'.",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "afirme__heb",
@@ -2925,7 +3806,11 @@
     "census_confidence": "medium",
     "census_note": "co-brand; in Afirme cost table",
     "conflicts": [],
-    "notes": "Co-brand split from legacy issuer string 'Afirme (HEB)'."
+    "notes": "Co-brand split from legacy issuer string 'Afirme (HEB)'.",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "afirme__tigres",
@@ -2941,7 +3826,11 @@
     "census_confidence": "medium",
     "census_note": "co-brand; in cost table",
     "conflicts": [],
-    "notes": "Co-brand split from legacy issuer string 'Afirme (Tigres)'."
+    "notes": "Co-brand split from legacy issuer string 'Afirme (Tigres)'.",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "bbva_mexico__rayados_bbva",
@@ -2957,7 +3846,11 @@
     "census_confidence": "high",
     "census_note": "co-brand (C.F. Monterrey)",
     "conflicts": [],
-    "notes": "Co-brand split from legacy issuer string 'BBVA México (Rayados)'."
+    "notes": "Co-brand split from legacy issuer string 'BBVA México (Rayados)'.",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "banco_inbursa__bodega_aurrera_inbursa",
@@ -2973,7 +3866,11 @@
     "census_confidence": "high",
     "census_note": "co-brand",
     "conflicts": [],
-    "notes": "Co-brand split from legacy issuer string 'Banco Inbursa (Bodega Aurrera)'."
+    "notes": "Co-brand split from legacy issuer string 'Banco Inbursa (Bodega Aurrera)'.",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "banco_inbursa__sams_club_inbursa",
@@ -2982,14 +3879,79 @@
     "display_name": "Tarjeta Sam's Club Inbursa",
     "former_names": [],
     "legacy_id": "Tarjeta Sam's Club Inbursa",
-    "tier": "UNKNOWN",
-    "network": "UNKNOWN",
+    "tier": "clasica",
+    "network": "mastercard",
     "lifecycle_status": "active",
-    "mapping_status": "skeleton",
+    "mapping_status": "mapped",
     "census_confidence": "high",
     "census_note": "co-brand",
     "conflicts": [],
-    "notes": "Co-brand split from legacy issuer string 'Banco Inbursa (Sam's Club)'."
+    "notes": "3% bonificado al estado de cuenta en Sam's Club, Walmart y Bodega Aurrera — recorded as a category bonus. Anualidad calculada al 7-dic-2025.",
+    "annual_fee_mxn": 750,
+    "annual_fee_includes_iva": false,
+    "annual_fee_first_year_waived": false,
+    "annual_fee_waiver_condition": "NOT_APPLICABLE",
+    "interest_rate_annual_pct": "UNKNOWN",
+    "cat_promedio_pct": "UNKNOWN",
+    "base_reward_type": "cashback",
+    "base_reward_rate": 0,
+    "point_value_mxn": 1.0,
+    "effective_rate_pct": 0,
+    "points_program_name": "NOT_APPLICABLE",
+    "min_income_mxn_monthly": "UNKNOWN",
+    "invitation_only": false,
+    "other_eligibility_criteria": "NOT_APPLICABLE",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-07",
+        "sources": [
+          "https://www.inbursa.com/sites/gfi/document/tdc-sams-folleto.pdf",
+          "https://www.inbursa.com/sites/gfi/walmart-msi"
+        ]
+      },
+      "cost": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-07",
+        "sources": [
+          "https://www.inbursa.com/sites/gfi/document/tdc-sams-folleto.pdf",
+          "https://www.inbursa.com/sites/gfi/walmart-msi"
+        ]
+      },
+      "rewards": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-07",
+        "sources": [
+          "https://www.inbursa.com/sites/gfi/document/tdc-sams-folleto.pdf",
+          "https://www.inbursa.com/sites/gfi/walmart-msi"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-07",
+        "sources": [
+          "https://www.inbursa.com/sites/gfi/document/tdc-sams-folleto.pdf",
+          "https://www.inbursa.com/sites/gfi/walmart-msi"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-07",
+        "sources": [
+          "https://www.inbursa.com/sites/gfi/document/tdc-sams-folleto.pdf",
+          "https://www.inbursa.com/sites/gfi/walmart-msi"
+        ]
+      }
+    },
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "banco_inbursa__walmart_inbursa",
@@ -3003,9 +3965,13 @@
     "lifecycle_status": "active",
     "mapping_status": "skeleton",
     "census_confidence": "high",
-    "census_note": "co-brand",
+    "census_note": "Cashback rate reported by a comparator as '0.03%' — almost certainly 3% written as a decimal fraction. Not recorded until confirmed from the issuer.",
     "conflicts": [],
-    "notes": "Co-brand split from legacy issuer string 'Banco Inbursa (Walmart)'."
+    "notes": "Co-brand split from legacy issuer string 'Banco Inbursa (Walmart)'.",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "citibanamex__costco_banamex",
@@ -3021,7 +3987,11 @@
     "census_confidence": "high",
     "census_note": "co-brand",
     "conflicts": [],
-    "notes": "Co-brand split from legacy issuer string 'Citibanamex (Costco)'."
+    "notes": "Co-brand split from legacy issuer string 'Citibanamex (Costco)'.",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "citibanamex__affinity_card_banamex",
@@ -3037,7 +4007,11 @@
     "census_confidence": "high",
     "census_note": "co-brand",
     "conflicts": [],
-    "notes": "Co-brand split from legacy issuer string 'Citibanamex (Inditex)'."
+    "notes": "Co-brand split from legacy issuer string 'Citibanamex (Inditex)'.",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "citibanamex__la_comer_card_banamex",
@@ -3053,7 +4027,11 @@
     "census_confidence": "high",
     "census_note": "co-brand",
     "conflicts": [],
-    "notes": "Co-brand split from legacy issuer string 'Citibanamex (La Comer)'."
+    "notes": "Co-brand split from legacy issuer string 'Citibanamex (La Comer)'.",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "citibanamex__lineup_banamex",
@@ -3069,7 +4047,11 @@
     "census_confidence": "high",
     "census_note": "co-brand (Ticketmaster/LineUp)",
     "conflicts": [],
-    "notes": "Co-brand split from legacy issuer string 'Citibanamex (LineUp)'."
+    "notes": "Co-brand split from legacy issuer string 'Citibanamex (LineUp)'.",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "citibanamex__teleton_banamex",
@@ -3085,7 +4067,11 @@
     "census_confidence": "high",
     "census_note": "affinity",
     "conflicts": [],
-    "notes": "Co-brand split from legacy issuer string 'Citibanamex (Teletón)'."
+    "notes": "Co-brand split from legacy issuer string 'Citibanamex (Teletón)'.",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "citibanamex__the_home_depot_banamex",
@@ -3101,7 +4087,11 @@
     "census_confidence": "high",
     "census_note": "co-brand",
     "conflicts": [],
-    "notes": "Co-brand split from legacy issuer string 'Citibanamex (The Home Depot)'."
+    "notes": "Co-brand split from legacy issuer string 'Citibanamex (The Home Depot)'.",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "invex__farmacias_guadalajara",
@@ -3117,7 +4107,11 @@
     "census_confidence": "high",
     "census_note": "co-brand",
     "conflicts": [],
-    "notes": "Co-brand split from legacy issuer string 'Invex (Farmacias Guadalajara)'."
+    "notes": "Co-brand split from legacy issuer string 'Invex (Farmacias Guadalajara)'.",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "invex__ikea",
@@ -3133,7 +4127,11 @@
     "census_confidence": "high",
     "census_note": "co-brand",
     "conflicts": [],
-    "notes": "Co-brand split from legacy issuer string 'Invex (IKEA)'."
+    "notes": "Co-brand split from legacy issuer string 'Invex (IKEA)'.",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "invex__manchester_united",
@@ -3149,7 +4147,11 @@
     "census_confidence": "high",
     "census_note": "co-brand",
     "conflicts": [],
-    "notes": "Co-brand split from legacy issuer string 'Invex (Manchester United)'."
+    "notes": "Co-brand split from legacy issuer string 'Invex (Manchester United)'.",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "invex__sams_club",
@@ -3165,7 +4167,11 @@
     "census_confidence": "high",
     "census_note": "co-brand",
     "conflicts": [],
-    "notes": "Co-brand split from legacy issuer string 'Invex (Sam's Club)'."
+    "notes": "Co-brand split from legacy issuer string 'Invex (Sam's Club)'.",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "invex__walmart",
@@ -3174,14 +4180,74 @@
     "display_name": "Walmart INVEX",
     "former_names": [],
     "legacy_id": "Walmart INVEX",
-    "tier": "UNKNOWN",
-    "network": "UNKNOWN",
+    "tier": "clasica",
+    "network": "mastercard",
     "lifecycle_status": "active",
-    "mapping_status": "skeleton",
+    "mapping_status": "mapped",
     "census_confidence": "high",
     "census_note": "co-brand",
     "conflicts": [],
-    "notes": "Co-brand split from legacy issuer string 'Invex (Walmart)'."
+    "notes": "Bonificación pagada en la app Cashi, no al estado de cuenta — es dinero utilizable sólo dentro del ecosistema Walmart. Vigencia del saldo 24 meses. La anualidad es cero sólo si se cumple el gasto mínimo; de lo contrario hay penalización mensual.",
+    "annual_fee_includes_iva": false,
+    "annual_fee_first_year_waived": false,
+    "interest_rate_annual_pct": "UNKNOWN",
+    "cat_promedio_pct": "UNKNOWN",
+    "min_income_mxn_monthly": "UNKNOWN",
+    "invitation_only": false,
+    "other_eligibility_criteria": "NOT_APPLICABLE",
+    "points_program_name": "NOT_APPLICABLE",
+    "annual_fee_mxn": 0,
+    "annual_fee_waiver_condition": "Compras mínimas de $1,200 al mes. Sin anualidad de por vida acumulando compras por un mínimo mensual; si no se alcanza, aplica comisión de penalización por inactividad de $195 + IVA al mes.",
+    "base_reward_type": "cashback",
+    "base_reward_rate": 1.0,
+    "point_value_mxn": 1.0,
+    "effective_rate_pct": 1.0,
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-07",
+        "sources": [
+          "https://solicitala.invextarjetas.com.mx/gen-g-pm/"
+        ]
+      },
+      "cost": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-07",
+        "sources": [
+          "https://solicitala.invextarjetas.com.mx/gen-g-pm/"
+        ]
+      },
+      "rewards": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-07",
+        "sources": [
+          "https://solicitala.invextarjetas.com.mx/gen-g-pm/"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-07",
+        "sources": [
+          "https://solicitala.invextarjetas.com.mx/gen-g-pm/"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-07",
+        "sources": [
+          "https://solicitala.invextarjetas.com.mx/gen-g-pm/"
+        ]
+      }
+    },
+    "inactivity_fee_mxn": 195,
+    "inactivity_fee_period": "monthly",
+    "inactivity_fee_includes_iva": false,
+    "inactivity_min_spend_mxn": 1200
   },
   {
     "card_id": "klar__con_garantia",
@@ -3197,7 +4263,11 @@
     "census_confidence": "high",
     "census_note": "secured card",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "klar__tarjeta_de_credito_klar",
@@ -3270,7 +4340,11 @@
           "https://www.klar.mx/"
         ]
       }
-    }
+    },
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "klar__platino",
@@ -3343,7 +4417,11 @@
           "https://www.klar.mx/"
         ]
       }
-    }
+    },
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "stori__tarjeta_de_credito_stori",
@@ -3416,7 +4494,11 @@
           "https://www.storicard.com/"
         ]
       }
-    }
+    },
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "stori__black",
@@ -3489,7 +4571,11 @@
           "https://apps.apple.com/MX/app/id1486481718"
         ]
       }
-    }
+    },
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "stori__con_garantia",
@@ -3505,7 +4591,11 @@
     "census_confidence": "high",
     "census_note": "secured card",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "cuenca__tarjeta_de_credito_cuenca",
@@ -3521,7 +4611,11 @@
     "census_confidence": "low",
     "census_note": "credit card unconfirmed; Cuenca is primarily debit - verify",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "jp_sofiexpress__didi_card",
@@ -3594,7 +4688,11 @@
           "https://didifinance.com/tarjeta-de-credito"
         ]
       }
-    }
+    },
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "mercado_pago__tarjeta_de_credito_mercado_pago",
@@ -3667,7 +4765,11 @@
           "https://bancario.com.mx/mercado-pago"
         ]
       }
-    }
+    },
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "nu_mx__tarjeta_de_credito_nu",
@@ -3740,7 +4842,11 @@
           "https://nu.com.mx/credito/"
         ]
       }
-    }
+    },
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "stori__shein_x",
@@ -3756,7 +4862,11 @@
     "census_confidence": "high",
     "census_note": "co-brand",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "american_express__gold_elite_credit_card",
@@ -3772,7 +4882,11 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "american_express__the_gold_card",
@@ -3845,7 +4959,11 @@
           "https://www.americanexpress.com/mx/cards/gold-card/learn-more.html"
         ]
       }
-    }
+    },
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "american_express__the_green_card",
@@ -3861,7 +4979,11 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "american_express__the_platinum_card",
@@ -3877,7 +4999,11 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "american_express__the_platinum_credit_card",
@@ -3893,7 +5019,11 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "american_express__aeromexico",
@@ -3909,7 +5039,11 @@
     "census_confidence": "high",
     "census_note": "co-brand",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "american_express__the_gold_aeromexico",
@@ -3925,7 +5059,11 @@
     "census_confidence": "high",
     "census_note": "co-brand",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "american_express__the_platinum_card_aeromexico",
@@ -3941,7 +5079,11 @@
     "census_confidence": "high",
     "census_note": "co-brand",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "banco_del_bajio__clasica_garantizada",
@@ -3957,7 +5099,11 @@
     "census_confidence": "high",
     "census_note": "secured card",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "banco_del_bajio__exclusive_banbajio_infinite",
@@ -3973,7 +5119,11 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "banco_del_bajio__visa_clasica_internacional",
@@ -3989,7 +5139,11 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "banco_del_bajio__visa_oro_internacional",
@@ -4005,7 +5159,11 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "banco_del_bajio__visa_platinum_internacional",
@@ -4021,7 +5179,11 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "hey_banco__hey_garantia",
@@ -4037,7 +5199,11 @@
     "census_confidence": "high",
     "census_note": "secured card",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "hey_banco__hey_personal",
@@ -4053,7 +5219,11 @@
     "census_confidence": "high",
     "census_note": "no anualidad",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "uala_mx__tarjeta_de_credito_uala",
@@ -4126,7 +5296,11 @@
           "https://www.uala.mx/tarjeta-credito"
         ]
       }
-    }
+    },
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "uala_mx__con_garantia",
@@ -4142,7 +5316,11 @@
     "census_confidence": "high",
     "census_note": "secured card",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "banco_azteca__elektra",
@@ -4158,7 +5336,11 @@
     "census_confidence": "low",
     "census_note": "store credit program; classification vs network card unconfirmed - verify",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "plata__plata",
@@ -4231,7 +5413,11 @@
           "https://prime.platacard.mx/file-service/static/ContratoPlata.pdf"
         ]
       }
-    }
+    },
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   },
   {
     "card_id": "banorte__rappicard",
@@ -4247,6 +5433,50 @@
     "census_confidence": "high",
     "census_note": "Visa; issued via Banorte",
     "conflicts": [],
-    "notes": ""
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
+  },
+  {
+    "card_id": "banco_inbursa__enlace_medico",
+    "issuer_id": "banco_inbursa",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito Enlace Médico",
+    "former_names": [],
+    "legacy_id": "",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "Found on the issuer's own product list; absent from the card census.",
+    "conflicts": [],
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
+  },
+  {
+    "card_id": "banco_inbursa__fundacion_unam",
+    "issuer_id": "banco_inbursa",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito Fundación UNAM",
+    "former_names": [],
+    "legacy_id": "",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "Found on the issuer's own product list; absent from the card census.",
+    "conflicts": [],
+    "notes": "",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE"
   }
 ]

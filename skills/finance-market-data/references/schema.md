@@ -175,7 +175,9 @@ card_id, issuer_id, cobrand_partner, display_name, former_names[], legacy_id,
 tier, network, lifecycle_status, lifecycle_changed_on,
 
 annual_fee_mxn, annual_fee_includes_iva, annual_fee_first_year_waived,
-annual_fee_waiver_condition, interest_rate_annual_pct, cat_promedio_pct,
+annual_fee_waiver_condition, inactivity_fee_mxn, inactivity_fee_period,
+inactivity_fee_includes_iva, inactivity_min_spend_mxn,
+interest_rate_annual_pct, cat_promedio_pct,
 
 base_reward_rate, base_reward_type, point_value_mxn, effective_rate_pct,
 
@@ -191,6 +193,31 @@ confidence{}, conflicts[], notes
   flag breaks one of those two features.
 - `cobrand_partner` is its own field, never folded into the issuer name. `"Invex (Volaris)"`
   is two facts in one string and makes every downstream join fragile.
+### Inactivity penalties
+
+Several Mexican cards advertise "sin anualidad de por vida" and then charge a **monthly**
+penalty when spend falls below a threshold. The annual fee genuinely is zero; the cost sits
+in a separate charge that depends on behaviour.
+
+```
+inactivity_fee_mxn          numeric | NOT_APPLICABLE
+inactivity_fee_period       monthly | annual | NOT_APPLICABLE
+inactivity_fee_includes_iva boolean | NOT_APPLICABLE
+inactivity_min_spend_mxn    numeric | NOT_APPLICABLE   -- spend that avoids it
+```
+
+Recording only `annual_fee_mxn: 0` is true and misleading. Three of five mapped Invex cards
+carry one: $195 + IVA per month unless $300–$1,200 is spent that month. A light user pays
+**$2,714/year** on a card the issuer calls free — more than any annual fee in the dataset.
+
+This is the mirror image of a conditional yield boost: a boost pays more when a condition is
+met, an inactivity fee charges more when one is missed. Both are behaviour-dependent, both
+must be surfaced as advice ("spend $300 this month to avoid $195"), and neither can be
+collapsed into a single headline number.
+
+`annual_fee_waiver_condition` remains free text for the human-readable rule.
+`inactivity_min_spend_mxn` is the machine-readable threshold the engine tests.
+
 - `base_reward_type`: `cashback` · `points` · `miles` · `none`. This also declares the UNIT
   that `base_reward_rate` is denominated in.
 - `base_reward_rate` is expressed **as a percentage of spend, in the card's own currency of

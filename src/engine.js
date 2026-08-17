@@ -481,6 +481,54 @@ function savingsOut(d, userId, amount) {
   return { ranked, best: ranked[0] };
 }
 
+/* --------------------------- cost of carrying --------------------------- */
+
+/**
+ * What a card actually costs this user per year.
+ *
+ * Several cards advertise "sin anualidad de por vida" and then charge a monthly
+ * penalty when spend falls below a threshold. The annual fee genuinely is zero,
+ * so scoring on annual_fee_mxn alone reports a card as free while the user pays
+ * $195/month for not using it enough.
+ *
+ * `monthlySpend` is the user's own average spend on that card. Where it is
+ * unknown, the penalty is NOT assumed — an unmeasured user is not a light user.
+ */
+function carryingCost(card, monthlySpend) {
+  const annual = knownNum(card.annual_fee_mxn) || 0;
+  const fee = knownNum(card.inactivity_fee_mxn);
+  const threshold = knownNum(card.inactivity_min_spend_mxn);
+
+  if (fee === null || fee <= 0 || threshold === null || monthlySpend === null) {
+    return { total: annual, annual, penalty: 0, avoidable: 0, threshold, meets: null };
+  }
+
+  const period = String(card.inactivity_fee_period || 'monthly').toLowerCase();
+  const perYear = period === 'monthly' ? fee * 12 : fee;
+  const meets = monthlySpend >= threshold;
+
+  return {
+    total: annual + (meets ? 0 : perYear),
+    annual,
+    penalty: meets ? 0 : perYear,
+    // What the user would save by reaching the threshold — this is the advice.
+    avoidable: meets ? 0 : perYear,
+    shortfall: meets ? 0 : threshold - monthlySpend,
+    threshold, meets,
+  };
+}
+
+/** Average monthly spend on a card, from logged movements. */
+function avgMonthlySpend(d, userId, cardId) {
+  const rows = d.movements.filter(
+    (m) => m.user_id === userId && m.flow === 'cc' &&
+           m.recommended_product_id === cardId);
+  if (!rows.length) return null;
+  const months = new Set(rows.map((m) => String(m.timestamp).slice(0, 7)));
+  const total = rows.reduce((s, m) => s + num(m.amount), 0);
+  return total / months.size;
+}
+
 /* ------------------------------ new picks ------------------------------- */
 
 /**
@@ -534,9 +582,17 @@ function newCardPicks(d, userId) {
         }
       });
       reasons.sort((a, b) => b.gain - a.gain);
-      const fee = num(c.annual_fee_mxn);
-      return { type: 'card', card: c, uplift: proj - base - fee / 12,
-               monthlyExtra: proj - base, fee, reasons };
+      // Assume the user would put the same spend through a new card as they do
+      // today across all cards; that is what decides whether a penalty applies.
+      const wouldSpend = Object.values(spend).reduce((s, v) => s + v, 0) /
+        Math.max(1, new Set(d.movements
+          .filter((m) => m.user_id === userId && m.flow === 'cc')
+          .map((m) => String(m.timestamp).slice(0, 7))).size);
+      const cost = carryingCost(c, wouldSpend);
+      return { type: 'card', card: c,
+               uplift: proj - base - cost.total / 12,
+               monthlyExtra: proj - base,
+               fee: cost.annual, cost, reasons };
     })
     .filter((p) => p.uplift > 0)
     .sort((a, b) => b.uplift - a.uplift)

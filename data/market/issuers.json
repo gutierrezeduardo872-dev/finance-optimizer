@@ -16,7 +16,7 @@
     "legacy_id": "Afirme",
     "confidence": {
       "identity": {
-        "score": "medium",
+        "score": "low",
         "evidence_type": "inferred",
         "verified_on": "2026-08-05",
         "sources": []
@@ -44,7 +44,7 @@
     "legacy_id": "Amazon (bank partner)",
     "confidence": {
       "identity": {
-        "score": "medium",
+        "score": "high",
         "evidence_type": "regulator",
         "verified_on": "2026-08-05",
         "sources": [
@@ -74,7 +74,7 @@
     "legacy_id": "American Express",
     "confidence": {
       "identity": {
-        "score": "medium",
+        "score": "high",
         "evidence_type": "regulator",
         "verified_on": "2026-08-05",
         "sources": [
@@ -102,7 +102,7 @@
     "legacy_id": "Banca Mifel",
     "confidence": {
       "identity": {
-        "score": "medium",
+        "score": "low",
         "evidence_type": "inferred",
         "verified_on": "2026-08-05",
         "sources": []
@@ -128,7 +128,7 @@
     "legacy_id": "Banco Azteca",
     "confidence": {
       "identity": {
-        "score": "medium",
+        "score": "low",
         "evidence_type": "inferred",
         "verified_on": "2026-08-05",
         "sources": []
@@ -156,7 +156,7 @@
     "legacy_id": "Banco del Bajío (BanBajío)",
     "confidence": {
       "identity": {
-        "score": "medium",
+        "score": "low",
         "evidence_type": "comparator_secondary",
         "verified_on": "2026-08-05",
         "sources": [
@@ -184,7 +184,7 @@
     "legacy_id": "Banco Inbursa",
     "confidence": {
       "identity": {
-        "score": "medium",
+        "score": "low",
         "evidence_type": "inferred",
         "verified_on": "2026-08-05",
         "sources": []
@@ -210,7 +210,7 @@
     "legacy_id": "BanCoppel",
     "confidence": {
       "identity": {
-        "score": "medium",
+        "score": "low",
         "evidence_type": "inferred",
         "verified_on": "2026-08-05",
         "sources": []
@@ -236,7 +236,7 @@
     "legacy_id": "Banjercito",
     "confidence": {
       "identity": {
-        "score": "medium",
+        "score": "low",
         "evidence_type": "inferred",
         "verified_on": "2026-08-05",
         "sources": []
@@ -262,7 +262,7 @@
     "legacy_id": "Banorte",
     "confidence": {
       "identity": {
-        "score": "medium",
+        "score": "low",
         "evidence_type": "inferred",
         "verified_on": "2026-08-05",
         "sources": []
@@ -288,7 +288,7 @@
     "legacy_id": "Banregio",
     "confidence": {
       "identity": {
-        "score": "medium",
+        "score": "low",
         "evidence_type": "inferred",
         "verified_on": "2026-08-05",
         "sources": []
@@ -314,7 +314,7 @@
     "legacy_id": "BBVA México",
     "confidence": {
       "identity": {
-        "score": "medium",
+        "score": "low",
         "evidence_type": "inferred",
         "verified_on": "2026-08-05",
         "sources": []
@@ -342,7 +342,7 @@
     "legacy_id": "Chedraui",
     "confidence": {
       "identity": {
-        "score": "medium",
+        "score": "high",
         "evidence_type": "regulator",
         "verified_on": "2026-08-05",
         "sources": [
@@ -370,7 +370,7 @@
     "legacy_id": "CIBanco",
     "confidence": {
       "identity": {
-        "score": "medium",
+        "score": "low",
         "evidence_type": "inferred",
         "verified_on": "2026-08-05",
         "sources": []
@@ -396,7 +396,7 @@
     "legacy_id": "Citibanamex",
     "confidence": {
       "identity": {
-        "score": "medium",
+        "score": "low",
         "evidence_type": "inferred",
         "verified_on": "2026-08-05",
         "sources": []
@@ -424,7 +424,7 @@
     "legacy_id": "Coppel",
     "confidence": {
       "identity": {
-        "score": "medium",
+        "score": "high",
         "evidence_type": "regulator",
         "verified_on": "2026-08-05",
         "sources": [
@@ -590,7 +590,7 @@
     "legacy_id": "HSBC México",
     "confidence": {
       "identity": {
-        "score": "medium",
+        "score": "low",
         "evidence_type": "inferred",
         "verified_on": "2026-08-05",
         "sources": []
@@ -616,7 +616,7 @@
     "legacy_id": "Invex",
     "confidence": {
       "identity": {
-        "score": "medium",
+        "score": "low",
         "evidence_type": "inferred",
         "verified_on": "2026-08-05",
         "sources": []
@@ -704,7 +704,7 @@
     "legacy_id": "Liverpool",
     "confidence": {
       "identity": {
-        "score": "medium",
+        "score": "high",
         "evidence_type": "regulator",
         "verified_on": "2026-08-05",
         "sources": [
@@ -762,7 +762,7 @@
     "legacy_id": "Multiva",
     "confidence": {
       "identity": {
-        "score": "medium",
+        "score": "low",
         "evidence_type": "inferred",
         "verified_on": "2026-08-05",
         "sources": []
@@ -824,7 +824,7 @@
     "legacy_id": "Palacio de Hierro",
     "confidence": {
       "identity": {
-        "score": "medium",
+        "score": "high",
         "evidence_type": "regulator",
         "verified_on": "2026-08-05",
         "sources": [
@@ -884,7 +884,7 @@
     "legacy_id": "Santander México",
     "confidence": {
       "identity": {
-        "score": "medium",
+        "score": "low",
         "evidence_type": "inferred",
         "verified_on": "2026-08-05",
         "sources": []
@@ -910,7 +910,7 @@
     "legacy_id": "Scotiabank México",
     "confidence": {
       "identity": {
-        "score": "medium",
+        "score": "low",
         "evidence_type": "inferred",
         "verified_on": "2026-08-05",
         "sources": []
@@ -938,7 +938,7 @@
     "legacy_id": "Sears",
     "confidence": {
       "identity": {
-        "score": "medium",
+        "score": "high",
         "evidence_type": "regulator",
         "verified_on": "2026-08-05",
         "sources": [
@@ -968,7 +968,7 @@
     "legacy_id": "Soriana",
     "confidence": {
       "identity": {
-        "score": "medium",
+        "score": "high",
         "evidence_type": "regulator",
         "verified_on": "2026-08-05",
         "sources": [
@@ -1055,7 +1055,7 @@
     "legacy_id": "Ualá",
     "confidence": {
       "identity": {
-        "score": "medium",
+        "score": "high",
         "evidence_type": "issuer_primary",
         "verified_on": "2026-08-05",
         "sources": [
@@ -1086,7 +1086,7 @@
     "legacy_id": "Vexi",
     "confidence": {
       "identity": {
-        "score": "medium",
+        "score": "high",
         "evidence_type": "regulator",
         "verified_on": "2026-08-05",
         "sources": [

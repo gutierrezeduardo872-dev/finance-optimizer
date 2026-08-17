@@ -68,10 +68,17 @@ Run this first for any routine refresh, and any time the user asks "what's out o
 1. Fetch the live Sheet via the Apps Script bootstrap endpoint and compare against the
    canonical JSON. Report every divergence as **drift** — do not proceed to publish until the
    user decides whether to back-port or discard each one.
-2. Compute staleness per field group using the TTLs in `references/schema.md`, based on
-   `verified_on`.
-3. Report: drift items, then stale field groups grouped by issuer, ordered by how many users
-   hold the affected products.
+2. Compute staleness and the mapping backlog:
+
+   ```bash
+   python3 scripts/triage.py data/market/
+   ```
+
+   It reports stale field groups against the TTLs, unmapped skeletons ranked by how much they
+   are worth mapping, issuers whose entity type was never verified, and rows carrying
+   unresolved conflicts.
+3. Report drift first, then the triage output. Do not start re-verifying anything until the
+   user picks an issuer.
 
 Output a short table. Do not start re-verifying anything until the user picks an issuer.
 
@@ -92,6 +99,14 @@ time; deleting it means rediscovering it every run.
 4. Check existing issuers for status changes: license revocations, mergers, name changes.
    These appear in the DOF and CNBV press releases. A revoked license is a material event —
    its products must move to `withdrawn`.
+   **A licence is granted before it takes effect.** A registry may already show the new entity
+   type while customer money is still protected under the old scheme. Use
+   `status: pending_conversion` with `pending_entity_type` and `conversion_effective_date`;
+   the validator errors once that date passes without promotion. This is not hypothetical —
+   it applied to two issuers in the first census.
+5. An issuer that takes no deposits has no scheme to be covered by. Set
+   `offers_deposit_products: false` and insurance `NOT_APPLICABLE`. That is a different
+   statement from "cover unknown" and must not be collapsed into it.
 5. Present new issuers for approval **one at a time**, each with: legal name, entity type,
    derived insurance scheme, whether it plausibly offers consumer cards or deposit accounts,
    and a recommendation on `in_dataset`.
@@ -131,6 +146,10 @@ Procedure:
 5. Apply the scope and unit-of-record rules in `references/scope.md` before creating any row.
    These decide what counts as one product and what is out of scope entirely.
 6. Assign IDs per `references/schema.md`.
+7. Stage 2 output is `mapping_status: skeleton` — identity and lifecycle only. Skeletons are
+   exempt from the attribute evidence rules until Stage 3 fills them, and the publish filter
+   keeps them out of the app, where a rate-less card would score as nothing and crowd out real
+   candidates.
 
 Present the reconciliation as a table, then ask for approval. On a **first** census for an
 issuer, present the full list for one bulk approval — everything is new and per-item approval
@@ -149,6 +168,17 @@ The short version:
 - **`cost`, `rewards`, `yield` require two independent sources.** These drive the
   recommendation directly — an error here produces wrong advice, not just a wrong display.
 - `identity`, `eligibility`, `perks` need one good source.
+
+**Always go to the issuer first.** Open the product's own page and its *folleto
+informativo* before consulting any comparator. Comparators are for corroboration and for
+finding products, never for establishing a number. This is not a preference — on the first
+real run, two comparators disagreed on an annual fee ($500 vs $420) and the issuer's folleto
+said $390. Neither was right, and the same page corrected a CAT that was 35 points too high
+and three years stale, which nothing had flagged because it was not in conflict.
+
+A corollary: when a conflict sends you to the primary source, **re-check the whole field
+group while you are there**, not just the disputed field. Stale values do not announce
+themselves.
 
 For every field group record: `score`, `evidence_type`, `verified_on`, and `sources[]`.
 Derive `score` from the rule table — do not assign it by feel.
@@ -178,6 +208,20 @@ that looks identical to a confident right one.
   to the engine as no condition at all, awarding the boosted rate unconditionally.
 - Conditional yield boosts (minimum monthly deposit, linked card spend) and balance caps are
   the norm in this market, not the exception. A headline rate without its conditions is wrong.
+- **A boost is a replacement unless proven otherwise.** Mexican products quote a total: "hasta
+  13%" means 13% all-in, not 13 points on top of 7. Record `boost_basis`. Assuming additive on
+  a replacement product turned a real 15% account into 21.75% and made it win every
+  recommendation it appeared in.
+- **A conditional alternative is not a tier.** Several accounts publish what looks like a rate
+  table where every row covers the *same* balance band and the rate depends on spend or
+  membership. Those are boosts. A tier is selected by balance; a boost by behaviour.
+- **A points rate is not comparable to a cashback rate.** `base_reward_rate` stays in the
+  card's own unit; `effective_rate_pct` is the peso-denominated figure and must be `UNKNOWN`
+  whenever the point value is unpublished. Ranking on the raw rate puts a 9%-in-points card
+  above a 2%-cashback card on a number nobody can spend.
+- **Term ladders are their own axis.** One named product with 7/28/90/180-day rates is one
+  account row with `yield_structure: term_tiered` plus `TermTiers` children — not four
+  accounts, and not `YieldTiers`, which is keyed on balance.
 
 ---
 

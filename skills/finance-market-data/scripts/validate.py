@@ -488,7 +488,28 @@ def validate_cards(cards, issuer_ids, live_issuers, report, today):
 
         check_effective_rate(row, "base_reward_rate", where, report)
 
+        # An inactivity penalty is meaningless without the threshold that avoids
+        # it and the period it recurs on — the engine needs all three to price it.
+        infee = row.get("inactivity_fee_mxn")
+        if infee is not None and not num_or_sentinel(infee):
+            report.error(where, f"inactivity_fee_mxn={infee!r} must be numeric or a sentinel")
+        if is_num(infee) and infee > 0:
+            if row.get("inactivity_fee_period") not in {"monthly", "annual"}:
+                report.error(where, "inactivity_fee_mxn requires inactivity_fee_period")
+            if not is_num(row.get("inactivity_min_spend_mxn")):
+                if row.get("inactivity_min_spend_mxn") not in SENTINELS:
+                    report.error(where, "inactivity_fee_mxn requires inactivity_min_spend_mxn")
+                else:
+                    report.warn(where, "inactivity fee with no recorded spend threshold")
+            if row.get("annual_fee_mxn") == 0 and not row.get("annual_fee_waiver_condition"):
+                report.warn(
+                    where,
+                    "annual_fee_mxn=0 alongside an inactivity fee — record the condition "
+                    "so the UI does not present the card as free",
+                )
+
         for field in ("annual_fee_includes_iva", "annual_fee_first_year_waived",
+                      "inactivity_fee_includes_iva",
                       "invitation_only"):
             if field in row and not isinstance(row[field], bool):
                 if row[field] not in SENTINELS:

@@ -1,0 +1,19 @@
+reward_id	card_id	category	reward_type	rate	point_value_mxn	effective_rate_pct	replaces_or_adds_to_base	cap_amount	cap_basis	cap_period	min_spend	promo_end_date	user_selectable	notes
+santander_mexico__likeu__pharmacy	santander_mexico__likeu	pharmacy	cashback	6.0	1.0	6.0	replaces	500	mxn	monthly	NOT_APPLICABLE	NOT_APPLICABLE	FALSE	$500/mo cap shared across all cashback categories
+santander_mexico__likeu__restaurant	santander_mexico__likeu	restaurant	cashback	5.0	1.0	5.0	replaces	500	mxn	monthly	NOT_APPLICABLE	NOT_APPLICABLE	FALSE	Shared $500 cap
+santander_mexico__likeu__utilities	santander_mexico__likeu	utilities	cashback	4.0	1.0	4.0	replaces	500	mxn	monthly	NOT_APPLICABLE	NOT_APPLICABLE	FALSE	Telecomunicaciones mapped to utilities
+santander_mexico__likeu__supermarket	santander_mexico__likeu	supermarket	cashback	1.0	1.0	1.0	replaces	500	mxn	monthly	NOT_APPLICABLE	NOT_APPLICABLE	FALSE	Added July 2025
+banorte__por_ti__gas	banorte__por_ti	gas	cashback	1.0	1.0	1.0	adds	UNKNOWN	mxn	monthly	4000	NOT_APPLICABLE	FALSE	+1% preferred Mon-Fri gas on top of 1% base
+banorte__por_ti__restaurant	banorte__por_ti	restaurant	cashback	1.0	1.0	1.0	adds	UNKNOWN	mxn	monthly	4000	NOT_APPLICABLE	FALSE	+1% preferred Sat-Sun restaurants
+citibanamex__oro_banamex__gas	citibanamex__oro_banamex	gas	points	14.0	UNKNOWN	UNKNOWN	replaces	1000	points	weekly	NOT_APPLICABLE	2026-09-24	FALSE	Double Premia on gas; cap 1000 pts/week
+klar__tarjeta_de_credito_klar__other	klar__tarjeta_de_credito_klar	other	cashback	3.0	1.0	3.0	replaces	UNKNOWN	mxn	monthly	3000	NOT_APPLICABLE	FALSE	Up to 3% at participating giros for Plus users (>=$3000/mo spend)
+jp_sofiexpress__didi_card__supermarket	jp_sofiexpress__didi_card	supermarket	cashback	2.0	1.0	2.0	replaces	UNKNOWN	mxn	monthly	NOT_APPLICABLE	NOT_APPLICABLE	FALSE	2% supers/gas/DiDi; total cashback cap $5000/mo
+jp_sofiexpress__didi_card__gas	jp_sofiexpress__didi_card	gas	cashback	2.0	1.0	2.0	replaces	UNKNOWN	mxn	monthly	NOT_APPLICABLE	NOT_APPLICABLE	FALSE	Part of $5000/mo total cap
+jp_sofiexpress__didi_card__other	jp_sofiexpress__didi_card	other	cashback	6.0	1.0	6.0	replaces	5000	mxn	monthly	NOT_APPLICABLE	NOT_APPLICABLE	FALSE	6% in one chosen category/month (pharmacy, cinema, airlines, etc.); $5000 total cap
+plata__plata__other	plata__plata	other	cashback	15.0	1.0	15.0	replaces	1000	mxn	monthly	NOT_APPLICABLE	NOT_APPLICABLE	FALSE	Up to 4 chosen categories; cap $1000/mo ($3000 with Plus)
+uala_mx__tarjeta_de_credito_uala__supermarket	uala_mx__tarjeta_de_credito_uala	supermarket	cashback	10.0	1.0	10.0	replaces	500	mxn	monthly	NOT_APPLICABLE	UNKNOWN	FALSE	10% supermercados promo, cashback up to $500
+banco_inbursa__sams_club_inbursa__supermarket	banco_inbursa__sams_club_inbursa	supermarket	cashback	3.0	1.0	3.0	replaces	UNKNOWN	mxn	monthly	NOT_APPLICABLE	NOT_APPLICABLE	FALSE	3% bonificado al estado de cuenta en Sam's Club, Walmart y Bodega Aurrera. Cap not published — recorded UNKNOWN rather than assumed uncapped.
+invex__walmart__supermarket	invex__walmart	supermarket	cashback	3.5	1.0	3.5	replaces	UNKNOWN	mxn	monthly	NOT_APPLICABLE	NOT_APPLICABLE	FALSE	3.5% en Walmart, Sam's Club y Bodega Aurrera, en tienda y en línea. Pagado en Cashi.
+invex__voyage_platinum__travel	invex__voyage_platinum	travel	cashback	2.0	1.0	2.0	replaces	UNKNOWN	mxn	monthly	NOT_APPLICABLE	NOT_APPLICABLE	FALSE	2% Travel Cash en comercios de viajes.
+invex__volaris__travel	invex__volaris	travel	points	75.0	UNKNOWN	UNKNOWN	replaces	UNKNOWN	points	monthly	NOT_APPLICABLE	NOT_APPLICABLE	FALSE	15 Puntos altitude por cada $20 en compras Volaris.
+invex__volaris_2_0__travel	invex__volaris_2_0	travel	points	85.0	UNKNOWN	UNKNOWN	replaces	UNKNOWN	points	monthly	NOT_APPLICABLE	NOT_APPLICABLE	FALSE	17 Puntos altitude por cada $20 en compras Volaris.
