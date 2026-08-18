@@ -1001,5 +1001,37 @@
     "accrual_basis": "pct_of_spend",
     "accrual_rate": 10.0,
     "accrual_block_mxn": "NOT_APPLICABLE"
+  },
+  {
+    "reward_id": "santander_mexico__unique_rewards_gold__travel",
+    "card_id": "santander_mexico__unique_rewards_gold",
+    "category": "travel",
+    "rate": "UNKNOWN",
+    "reward_type": "points",
+    "point_value_mxn": "UNKNOWN",
+    "effective_rate_pct": "UNKNOWN",
+    "replaces_or_adds_to_base": "replaces",
+    "cap_amount": "UNKNOWN",
+    "cap_basis": "points",
+    "cap_period": "monthly",
+    "min_spend": "NOT_APPLICABLE",
+    "promo_end_date": "NOT_APPLICABLE",
+    "user_selectable": false,
+    "confidence": {
+      "rewards": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://assets.santandermedia.com/adobe/assets/urn:aaid:aem:8ac520f1-070c-42cc-ba2c-c9993e231d1b/original/as/MDP_Folleto_GoldMastercard_Dic2025_CAT2026_V3_291225.pdf"
+        ]
+      }
+    },
+    "notes": "2 Unique Points por cada dólar gastado en aerolíneas, frente a 1 por dólar en el resto. Acumulación en dólares, por eso rate queda UNKNOWN y el dato vive en accrual_basis/accrual_rate.",
+    "rate_after_cap": "NOT_APPLICABLE",
+    "payout_frequency": "statement",
+    "accrual_basis": "per_usd",
+    "accrual_rate": 2,
+    "accrual_block_mxn": "NOT_APPLICABLE"
   }
 ]

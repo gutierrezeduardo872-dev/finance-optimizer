@@ -5283,22 +5283,86 @@
     "display_name": "Tarjeta de Crédito Santander Free",
     "former_names": [],
     "legacy_id": "Tarjeta de Crédito Santander Free",
-    "tier": "UNKNOWN",
-    "network": "UNKNOWN",
+    "tier": "clasica",
+    "network": "mastercard",
     "lifecycle_status": "active",
-    "mapping_status": "skeleton",
+    "mapping_status": "mapped",
     "census_confidence": "high",
     "census_note": "no anualidad",
     "conflicts": [],
-    "notes": "",
-    "inactivity_fee_mxn": "NOT_APPLICABLE",
-    "inactivity_fee_period": "NOT_APPLICABLE",
-    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
-    "inactivity_min_spend_mxn": "NOT_APPLICABLE",
-    "inactivity_spend_period": "NOT_APPLICABLE",
-    "fee_billing_period": "UNKNOWN",
-    "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "notes": "Sin programa de recompensas: la sección de beneficios del folleto sólo describe la exención de comisiones y las protecciones Mastercard, por eso base_reward_type es 'none' con sustento y no por omisión. Comparte exactamente la estructura de LikeU — $169 + IVA al mes si el gasto mensual no llega a $200 — así que la tarjeta 'sin anualidad' cuesta hasta $2,028 al año sin usarla. Tarjeta adicional $84.50 al mes bajo la misma condición. Tasa máxima contractual TIIE DE FONDEO + 59.9%. CAT VENCIDO: el folleto informativo del emisor lo calcula al 1 de enero de 2026 con vigencia al 30 de junio de 2026. Las páginas de producto anuncian un juego nuevo calculado el 1 de julio de 2026, pero santander.com.mx bloquea el acceso automatizado y sus valores no renderizan, así que se registra la cifra del folleto —completa y auditable— con su fecha real. El triage la levantará en la sección 3b.",
+    "inactivity_fee_mxn": 169,
+    "inactivity_fee_period": "monthly",
+    "inactivity_fee_includes_iva": false,
+    "inactivity_min_spend_mxn": 200,
+    "inactivity_spend_period": "monthly",
+    "fee_billing_period": "NOT_APPLICABLE",
+    "cat_calculated_on": "2026-01-01",
+    "cat_valid_until": "2026-06-30",
+    "annual_fee_mxn": 0,
+    "annual_fee_includes_iva": false,
+    "annual_fee_first_year_waived": false,
+    "annual_fee_waiver_condition": "Sin comisión de administración al acumular al menos $200 M.N. de compras en el periodo mensual; de lo contrario se cobran $169 + IVA al mes.",
+    "interest_rate_annual_pct": 68.37,
+    "cat_promedio_pct": 95.7,
+    "base_reward_type": "none",
+    "base_reward_rate": 0,
+    "point_value_mxn": "NOT_APPLICABLE",
+    "effective_rate_pct": 0,
+    "points_program_name": "NOT_APPLICABLE",
+    "accrual_basis": "NOT_APPLICABLE",
+    "accrual_rate": "NOT_APPLICABLE",
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "min_income_mxn_monthly": 7500,
+    "invitation_only": false,
+    "other_eligibility_criteria": "Entre 20 y 69 años 11 meses de edad.",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://assets.santandermedia.com/adobe/assets/urn:aaid:aem:eae921bb-5dbf-4d1c-8ddf-86d745ebfb2a/original/as/MDP_Folletos_FreeMastercard_Dic2025_V3_CAT2026_291225.pdf",
+          "https://www.santander.com.mx/personas/credito-y-financiamiento/tarjetas-de-credito/free/"
+        ]
+      },
+      "cost": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://assets.santandermedia.com/adobe/assets/urn:aaid:aem:eae921bb-5dbf-4d1c-8ddf-86d745ebfb2a/original/as/MDP_Folletos_FreeMastercard_Dic2025_V3_CAT2026_291225.pdf",
+          "https://www.santander.com.mx/personas/credito-y-financiamiento/tarjetas-de-credito/free/"
+        ]
+      },
+      "rewards": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://assets.santandermedia.com/adobe/assets/urn:aaid:aem:eae921bb-5dbf-4d1c-8ddf-86d745ebfb2a/original/as/MDP_Folletos_FreeMastercard_Dic2025_V3_CAT2026_291225.pdf",
+          "https://www.santander.com.mx/personas/credito-y-financiamiento/tarjetas-de-credito/free/"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://assets.santandermedia.com/adobe/assets/urn:aaid:aem:eae921bb-5dbf-4d1c-8ddf-86d745ebfb2a/original/as/MDP_Folletos_FreeMastercard_Dic2025_V3_CAT2026_291225.pdf",
+          "https://www.santander.com.mx/personas/credito-y-financiamiento/tarjetas-de-credito/free/"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://assets.santandermedia.com/adobe/assets/urn:aaid:aem:eae921bb-5dbf-4d1c-8ddf-86d745ebfb2a/original/as/MDP_Folletos_FreeMastercard_Dic2025_V3_CAT2026_291225.pdf",
+          "https://www.santander.com.mx/personas/credito-y-financiamiento/tarjetas-de-credito/free/"
+        ]
+      }
+    }
   },
   {
     "card_id": "santander_mexico__unique_rewards_gold",
@@ -5307,22 +5371,81 @@
     "display_name": "Tarjeta de Crédito Unique Rewards Gold",
     "former_names": [],
     "legacy_id": "Tarjeta de Crédito Unique Rewards Gold",
-    "tier": "UNKNOWN",
-    "network": "UNKNOWN",
+    "tier": "oro",
+    "network": "mastercard",
     "lifecycle_status": "active",
-    "mapping_status": "skeleton",
+    "mapping_status": "mapped",
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": "",
+    "notes": "ACUMULACIÓN EN DÓLARES: 1 Unique Point por cada dólar gastado en compras nacionales e internacionales y 2 por dólar en aerolíneas. Los puntos vencen a los 3 años y Santander no publica su valor en pesos, así que effective_rate_pct queda UNKNOWN. Tasa ordinaria variable TIIE DE FONDEO + 44.90% garantizada por contrato. 2 accesos anuales a salas VIP LoungeKey y 2 gestiones anuales de pasaporte o visa. Tarjeta adicional $315 + IVA al año. CAT VENCIDO: el folleto informativo del emisor lo calcula al 1 de enero de 2026 con vigencia al 30 de junio de 2026. Las páginas de producto anuncian un juego nuevo calculado el 1 de julio de 2026, pero santander.com.mx bloquea el acceso automatizado y sus valores no renderizan, así que se registra la cifra del folleto —completa y auditable— con su fecha real. El triage la levantará en la sección 3b.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
     "inactivity_min_spend_mxn": "NOT_APPLICABLE",
     "inactivity_spend_period": "NOT_APPLICABLE",
-    "fee_billing_period": "UNKNOWN",
-    "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "fee_billing_period": "annual",
+    "cat_calculated_on": "2026-01-01",
+    "cat_valid_until": "2026-06-30",
+    "annual_fee_mxn": 630,
+    "annual_fee_includes_iva": false,
+    "annual_fee_first_year_waived": false,
+    "annual_fee_waiver_condition": "NOT_APPLICABLE",
+    "interest_rate_annual_pct": 49.64,
+    "cat_promedio_pct": 65.6,
+    "base_reward_type": "points",
+    "base_reward_rate": "UNKNOWN",
+    "point_value_mxn": "UNKNOWN",
+    "effective_rate_pct": "UNKNOWN",
+    "points_program_name": "Santander Unique Rewards",
+    "accrual_basis": "per_usd",
+    "accrual_rate": 1,
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "min_income_mxn_monthly": 7500,
+    "invitation_only": false,
+    "other_eligibility_criteria": "Entre 20 y 69 años 11 meses de edad.",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://assets.santandermedia.com/adobe/assets/urn:aaid:aem:8ac520f1-070c-42cc-ba2c-c9993e231d1b/original/as/MDP_Folleto_GoldMastercard_Dic2025_CAT2026_V3_291225.pdf"
+        ]
+      },
+      "cost": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://assets.santandermedia.com/adobe/assets/urn:aaid:aem:8ac520f1-070c-42cc-ba2c-c9993e231d1b/original/as/MDP_Folleto_GoldMastercard_Dic2025_CAT2026_V3_291225.pdf"
+        ]
+      },
+      "rewards": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://assets.santandermedia.com/adobe/assets/urn:aaid:aem:8ac520f1-070c-42cc-ba2c-c9993e231d1b/original/as/MDP_Folleto_GoldMastercard_Dic2025_CAT2026_V3_291225.pdf"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://assets.santandermedia.com/adobe/assets/urn:aaid:aem:8ac520f1-070c-42cc-ba2c-c9993e231d1b/original/as/MDP_Folleto_GoldMastercard_Dic2025_CAT2026_V3_291225.pdf"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://assets.santandermedia.com/adobe/assets/urn:aaid:aem:8ac520f1-070c-42cc-ba2c-c9993e231d1b/original/as/MDP_Folleto_GoldMastercard_Dic2025_CAT2026_V3_291225.pdf"
+        ]
+      }
+    }
   },
   {
     "card_id": "santander_mexico__unique_rewards_platinum",
