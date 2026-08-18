@@ -35,12 +35,23 @@ TABS = {
         "annual_fee_includes_iva", "annual_fee_first_year_waived",
         "interest_rate_annual_pct", "cat_promedio_pct", "base_reward_type",
         "base_reward_rate", "point_value_mxn", "effective_rate_pct",
-        "min_income_mxn_monthly", "invitation_only", "notes"]),
+        "min_income_mxn_monthly", "invitation_only", "notes",
+        # Appended 2026-08-17. Order matters: append only, never insert.
+        "fee_billing_period", "annual_fee_waiver_condition",
+        "inactivity_fee_mxn", "inactivity_fee_period",
+        "inactivity_fee_includes_iva", "inactivity_min_spend_mxn",
+        "inactivity_spend_period", "cat_calculated_on", "cat_valid_until",
+        "accrual_basis", "accrual_rate", "accrual_block_mxn",
+        "points_program_name", "point_value_source",
+        "other_eligibility_criteria"]),
     "CardRewards": ("card_rewards.json", [
         "reward_id", "card_id", "category", "reward_type", "rate",
         "point_value_mxn", "effective_rate_pct", "replaces_or_adds_to_base",
         "cap_amount", "cap_basis", "cap_period", "min_spend", "promo_end_date",
-        "user_selectable", "notes"]),
+        "user_selectable", "notes",
+        # Appended 2026-08-17. Order matters: append only, never insert.
+        "accrual_basis", "accrual_rate", "accrual_block_mxn",
+        "rate_after_cap", "payout_frequency"]),
     "Accounts": ("accounts.json", [
         "account_id", "issuer_id", "display_name", "account_type",
         "lifecycle_status", "mapping_status", "yield_structure", "flat_rate_pct",
