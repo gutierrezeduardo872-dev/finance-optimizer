@@ -1187,7 +1187,7 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": "Producto básico exigido por Banxico: sin anualidad y sin programa de puntos.",
+    "notes": "Producto básico exigido por Banxico: sin anualidad y sin programa de puntos. El Anexo confirma que Básica no genera comisión alguna a cargo del titular y que su tasa es FIJA (69.00%), a diferencia del resto de la cartera, que es variable. No participa en la promoción de primera anualidad sin costo.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
@@ -1200,8 +1200,8 @@
     "other_eligibility_criteria": "NOT_APPLICABLE",
     "point_value_mxn": "NOT_APPLICABLE",
     "effective_rate_pct": 0,
-    "interest_rate_annual_pct": "UNKNOWN",
-    "cat_promedio_pct": "UNKNOWN",
+    "interest_rate_annual_pct": 69.0,
+    "cat_promedio_pct": 95.6,
     "annual_fee_mxn": 0,
     "base_reward_type": "none",
     "base_reward_rate": 0,
@@ -1218,12 +1218,12 @@
         ]
       },
       "cost": {
-        "score": "medium",
-        "evidence_type": "comparator_secondary",
-        "verified_on": "2026-08-07",
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
         "sources": [
-          "https://datacards.mx/tarjeta/banorte-basica-banorte",
-          "https://www.tarjetas.creditobanorte.com/"
+          "https://www.banorte.com/dam/jcr:f5016a29-3ea2-47f2-9474-a7cd59f60a16/Tarjetas-de-Cr-dito-emitidas-por-Banco-Mercantil-del-Norte.pdf",
+          "https://www.banorte.com/Personal/TDC/Primera-anualidad-sin-costo.html"
         ]
       },
       "rewards": {
@@ -1255,8 +1255,8 @@
       }
     },
     "fee_billing_period": "NOT_APPLICABLE",
-    "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN",
+    "cat_calculated_on": "2026-04-16",
+    "cat_valid_until": "2026-10-16",
     "accrual_basis": "NOT_APPLICABLE",
     "accrual_rate": "NOT_APPLICABLE",
     "accrual_block_mxn": "NOT_APPLICABLE"
@@ -1275,13 +1275,13 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": "Up to 3 puntos per purchase",
-    "annual_fee_mxn": "UNKNOWN",
+    "notes": "Up to 3 puntos per purchase CORRECCIÓN 2026-08-17: anualidad resuelta de UNKNOWN a $695 + IVA y CAT a 121.4% — el más alto de la cartera Banorte. Cifra tomada de la nota al pie del CAT del Anexo de Comisiones, que nombra la tarjeta de forma explícita. La tabla tarifaria del mismo documento, encabezada 'vigentes a partir de mayo a octubre 2026', muestra importes mayores, pero es una rejilla posicional cuyo mapeo columna-tarjeta no es recuperable del texto extraído. Requiere lectura humana del PDF antes de sustituir estas cifras.",
+    "annual_fee_mxn": 695,
     "annual_fee_includes_iva": false,
     "annual_fee_first_year_waived": true,
-    "annual_fee_waiver_condition": "1st annuity free with min spend within 30 days",
-    "interest_rate_annual_pct": "UNKNOWN",
-    "cat_promedio_pct": "UNKNOWN",
+    "annual_fee_waiver_condition": "Promoción 1ª anualidad sin costo para clientes nuevos, vigente para tarjetas solicitadas del 1 de enero al 31 de diciembre de 2026, condicionada a acumular compras dentro de los primeros 30 días. La anualidad se cobra con la primera compra y se bonifica dentro de los 45 días hábiles siguientes. ES UNA PROMOCIÓN CON FECHA DE TÉRMINO, no una característica permanente del producto — el esquema no tiene un campo de vigencia para exenciones de anualidad, así que la fecha sólo vive en esta nota.",
+    "interest_rate_annual_pct": 67.77,
+    "cat_promedio_pct": 121.4,
     "base_reward_type": "points",
     "base_reward_rate": "UNKNOWN",
     "point_value_mxn": "UNKNOWN",
@@ -1301,11 +1301,12 @@
         ]
       },
       "cost": {
-        "score": "medium",
+        "score": "high",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-07-22",
+        "verified_on": "2026-08-17",
         "sources": [
-          "https://www.banorte.com/Personal/TDC/Clasica.html"
+          "https://www.banorte.com/dam/jcr:f5016a29-3ea2-47f2-9474-a7cd59f60a16/Tarjetas-de-Cr-dito-emitidas-por-Banco-Mercantil-del-Norte.pdf",
+          "https://www.banorte.com/Personal/TDC/Primera-anualidad-sin-costo.html"
         ]
       },
       "rewards": {
@@ -1339,8 +1340,8 @@
     "inactivity_min_spend_mxn": "NOT_APPLICABLE",
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "UNKNOWN",
-    "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN",
+    "cat_calculated_on": "2026-04-16",
+    "cat_valid_until": "2026-10-16",
     "accrual_basis": "UNKNOWN",
     "accrual_rate": "UNKNOWN",
     "accrual_block_mxn": "NOT_APPLICABLE"
@@ -1352,22 +1353,86 @@
     "display_name": "Tarjeta de Crédito Banorte Infinite",
     "former_names": [],
     "legacy_id": "Tarjeta de Crédito Banorte Infinite",
-    "tier": "UNKNOWN",
+    "tier": "infinite",
     "network": "UNKNOWN",
     "lifecycle_status": "active",
-    "mapping_status": "skeleton",
+    "mapping_status": "mapped",
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": "",
+    "notes": "La anualidad más alta de la cartera Banorte y, a la vez, el CAT más bajo (33.5%) — tasa T.I.I.E.F. + 20 puntos frente a los +57 a +63 de la gama de entrada. Platinum e Infinite pueden exentar la anualidad desde el segundo año mediante el programa 1,2,3 Por Mí. Tasa de acumulación no publicada. Cifra tomada de la nota al pie del CAT del Anexo de Comisiones, que nombra la tarjeta de forma explícita. La tabla tarifaria del mismo documento, encabezada 'vigentes a partir de mayo a octubre 2026', muestra importes mayores, pero es una rejilla posicional cuyo mapeo columna-tarjeta no es recuperable del texto extraído. Requiere lectura humana del PDF antes de sustituir estas cifras. Tasa ordinaria variable, referenciada a T.I.I.E.F. 28 días más un margen fijo. Promoción 1ª anualidad sin costo para clientes nuevos, vigente para tarjetas solicitadas del 1 de enero al 31 de diciembre de 2026, condicionada a acumular compras dentro de los primeros 30 días. La anualidad se cobra con la primera compra y se bonifica dentro de los 45 días hábiles siguientes. ES UNA PROMOCIÓN CON FECHA DE TÉRMINO, no una característica permanente del producto — el esquema no tiene un campo de vigencia para exenciones de anualidad, así que la fecha sólo vive en esta nota.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
     "inactivity_min_spend_mxn": "NOT_APPLICABLE",
     "inactivity_spend_period": "NOT_APPLICABLE",
-    "fee_billing_period": "UNKNOWN",
-    "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "fee_billing_period": "annual",
+    "cat_calculated_on": "2026-04-16",
+    "cat_valid_until": "2026-10-16",
+    "annual_fee_mxn": 6000,
+    "annual_fee_includes_iva": false,
+    "annual_fee_first_year_waived": true,
+    "annual_fee_waiver_condition": "Promoción 1ª anualidad sin costo para clientes nuevos, vigente para tarjetas solicitadas del 1 de enero al 31 de diciembre de 2026, condicionada a acumular compras dentro de los primeros 30 días. La anualidad se cobra con la primera compra y se bonifica dentro de los 45 días hábiles siguientes. ES UNA PROMOCIÓN CON FECHA DE TÉRMINO, no una característica permanente del producto — el esquema no tiene un campo de vigencia para exenciones de anualidad, así que la fecha sólo vive en esta nota.",
+    "interest_rate_annual_pct": 27.72,
+    "cat_promedio_pct": 33.5,
+    "base_reward_type": "points",
+    "base_reward_rate": "UNKNOWN",
+    "point_value_mxn": "UNKNOWN",
+    "effective_rate_pct": "UNKNOWN",
+    "points_program_name": "Banorte Recompensas",
+    "accrual_basis": "UNKNOWN",
+    "accrual_rate": "UNKNOWN",
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "min_income_mxn_monthly": "UNKNOWN",
+    "invitation_only": false,
+    "other_eligibility_criteria": "NOT_APPLICABLE",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.banorte.com/dam/jcr:f5016a29-3ea2-47f2-9474-a7cd59f60a16/Tarjetas-de-Cr-dito-emitidas-por-Banco-Mercantil-del-Norte.pdf",
+          "https://www.banorte.com/Personal/TDC/Primera-anualidad-sin-costo.html"
+        ]
+      },
+      "cost": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.banorte.com/dam/jcr:f5016a29-3ea2-47f2-9474-a7cd59f60a16/Tarjetas-de-Cr-dito-emitidas-por-Banco-Mercantil-del-Norte.pdf",
+          "https://www.banorte.com/Personal/TDC/Primera-anualidad-sin-costo.html"
+        ]
+      },
+      "rewards": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.banorte.com/dam/jcr:f5016a29-3ea2-47f2-9474-a7cd59f60a16/Tarjetas-de-Cr-dito-emitidas-por-Banco-Mercantil-del-Norte.pdf",
+          "https://www.banorte.com/Personal/TDC/Primera-anualidad-sin-costo.html"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.banorte.com/dam/jcr:f5016a29-3ea2-47f2-9474-a7cd59f60a16/Tarjetas-de-Cr-dito-emitidas-por-Banco-Mercantil-del-Norte.pdf",
+          "https://www.banorte.com/Personal/TDC/Primera-anualidad-sin-costo.html"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.banorte.com/dam/jcr:f5016a29-3ea2-47f2-9474-a7cd59f60a16/Tarjetas-de-Cr-dito-emitidas-por-Banco-Mercantil-del-Norte.pdf",
+          "https://www.banorte.com/Personal/TDC/Primera-anualidad-sin-costo.html"
+        ]
+      }
+    }
   },
   {
     "card_id": "banorte__ke_buena",
@@ -1383,7 +1448,7 @@
     "census_confidence": "medium",
     "census_note": "affinity - verify current",
     "conflicts": [],
-    "notes": "",
+    "notes": " REVISAR CICLO DE VIDA (2026-08-17): no aparece en el Anexo de Comisiones de mayo-octubre 2026 ni en la lista de productos participantes de la promoción de primera anualidad. Ausencia de dos documentos del emisor sugiere que ya no se oferta, pero no hay declaración explícita, así que se deja 'active' pendiente de confirmación.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
@@ -1407,7 +1472,7 @@
     "census_confidence": "high",
     "census_note": "no anualidad",
     "conflicts": [],
-    "notes": "El umbral se mide POR TRIMESTRE, no por mes. Hasta 3 puntos por compra según comunidad elegida.",
+    "notes": "El umbral se mide POR TRIMESTRE, no por mes. Hasta 3 puntos por compra según comunidad elegida. CAT y tasa añadidos del Anexo de Comisiones de abril de 2026.",
     "inactivity_fee_mxn": 450,
     "inactivity_fee_period": "quarterly",
     "inactivity_fee_includes_iva": false,
@@ -1420,8 +1485,8 @@
     "other_eligibility_criteria": "NOT_APPLICABLE",
     "point_value_mxn": "UNKNOWN",
     "effective_rate_pct": "UNKNOWN",
-    "interest_rate_annual_pct": "UNKNOWN",
-    "cat_promedio_pct": "UNKNOWN",
+    "interest_rate_annual_pct": 64.7,
+    "cat_promedio_pct": 87.8,
     "annual_fee_mxn": 0,
     "base_reward_type": "points",
     "base_reward_rate": "UNKNOWN",
@@ -1437,11 +1502,12 @@
         ]
       },
       "cost": {
-        "score": "medium",
+        "score": "high",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-08-07",
+        "verified_on": "2026-08-17",
         "sources": [
-          "https://www.tarjetas.creditobanorte.com/"
+          "https://www.banorte.com/dam/jcr:f5016a29-3ea2-47f2-9474-a7cd59f60a16/Tarjetas-de-Cr-dito-emitidas-por-Banco-Mercantil-del-Norte.pdf",
+          "https://www.banorte.com/Personal/TDC/Primera-anualidad-sin-costo.html"
         ]
       },
       "rewards": {
@@ -1470,8 +1536,8 @@
       }
     },
     "fee_billing_period": "NOT_APPLICABLE",
-    "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN",
+    "cat_calculated_on": "2026-04-16",
+    "cat_valid_until": "2026-10-16",
     "accrual_basis": "UNKNOWN",
     "accrual_rate": "UNKNOWN",
     "accrual_block_mxn": "NOT_APPLICABLE"
@@ -1490,7 +1556,7 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": "Recompensa Total Banorte: los puntos no tienen valor en pesos publicado, así que effective_rate_pct queda UNKNOWN. Vigencia 5 años. Primera anualidad sin costo hasta el 31-dic-2026 cumpliendo un gasto mínimo en los primeros 30 días. 1.15 puntos por cada $10.",
+    "notes": "Recompensa Total Banorte: los puntos no tienen valor en pesos publicado, así que effective_rate_pct queda UNKNOWN. Vigencia 5 años. Primera anualidad sin costo hasta el 31-dic-2026 cumpliendo un gasto mínimo en los primeros 30 días. 1.15 puntos por cada $10. CAT y tasa añadidos del Anexo de Comisiones de abril de 2026.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
@@ -1498,13 +1564,13 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "annual_fee_includes_iva": false,
     "annual_fee_first_year_waived": true,
-    "annual_fee_waiver_condition": "NOT_APPLICABLE",
+    "annual_fee_waiver_condition": "Promoción 1ª anualidad sin costo para clientes nuevos, vigente para tarjetas solicitadas del 1 de enero al 31 de diciembre de 2026, condicionada a acumular compras dentro de los primeros 30 días. La anualidad se cobra con la primera compra y se bonifica dentro de los 45 días hábiles siguientes. ES UNA PROMOCIÓN CON FECHA DE TÉRMINO, no una característica permanente del producto — el esquema no tiene un campo de vigencia para exenciones de anualidad, así que la fecha sólo vive en esta nota.",
     "invitation_only": false,
     "other_eligibility_criteria": "Edad 18 a 69 años 11 meses",
     "point_value_mxn": "UNKNOWN",
     "effective_rate_pct": "UNKNOWN",
-    "interest_rate_annual_pct": "UNKNOWN",
-    "cat_promedio_pct": "UNKNOWN",
+    "interest_rate_annual_pct": 64.75,
+    "cat_promedio_pct": 96.7,
     "annual_fee_mxn": 1100,
     "base_reward_type": "points",
     "base_reward_rate": 11.5,
@@ -1523,10 +1589,10 @@
       "cost": {
         "score": "high",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-08-07",
+        "verified_on": "2026-08-17",
         "sources": [
-          "https://www.banorte.com/wps/portal/banorte/Home/cuentas-y-tarjetas/tarjetas-de-credito/oro",
-          "https://www.tarjetas.creditobanorte.com/"
+          "https://www.banorte.com/dam/jcr:f5016a29-3ea2-47f2-9474-a7cd59f60a16/Tarjetas-de-Cr-dito-emitidas-por-Banco-Mercantil-del-Norte.pdf",
+          "https://www.banorte.com/Personal/TDC/Primera-anualidad-sin-costo.html"
         ]
       },
       "rewards": {
@@ -1578,7 +1644,7 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": "Recompensa Total Banorte: los puntos no tienen valor en pesos publicado, así que effective_rate_pct queda UNKNOWN. Vigencia 5 años. Primera anualidad sin costo hasta el 31-dic-2026 cumpliendo un gasto mínimo en los primeros 30 días. 1.25 puntos por cada $10. Cifras calculadas el 16-abr-2026, vigentes al 16-oct-2026.",
+    "notes": "Recompensa Total Banorte: los puntos no tienen valor en pesos publicado, así que effective_rate_pct queda UNKNOWN. Vigencia 5 años. Primera anualidad sin costo hasta el 31-dic-2026 cumpliendo un gasto mínimo en los primeros 30 días. 1.25 puntos por cada $10. Cifras calculadas el 16-abr-2026, vigentes al 16-oct-2026. Tasa actualizada a 43.69% y fechas de CAT registradas. Puede exentar la anualidad desde el segundo año mediante el programa 1,2,3 Por Mí.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
@@ -1586,7 +1652,7 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "annual_fee_includes_iva": false,
     "annual_fee_first_year_waived": true,
-    "annual_fee_waiver_condition": "NOT_APPLICABLE",
+    "annual_fee_waiver_condition": "Promoción 1ª anualidad sin costo para clientes nuevos, vigente para tarjetas solicitadas del 1 de enero al 31 de diciembre de 2026, condicionada a acumular compras dentro de los primeros 30 días. La anualidad se cobra con la primera compra y se bonifica dentro de los 45 días hábiles siguientes. ES UNA PROMOCIÓN CON FECHA DE TÉRMINO, no una característica permanente del producto — el esquema no tiene un campo de vigencia para exenciones de anualidad, así que la fecha sólo vive en esta nota.",
     "invitation_only": false,
     "other_eligibility_criteria": "Edad 18 a 74 años 11 meses",
     "point_value_mxn": "UNKNOWN",
@@ -1611,9 +1677,9 @@
       "cost": {
         "score": "high",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-08-07",
+        "verified_on": "2026-08-17",
         "sources": [
-          "https://www.banorte.com/Preferente/Tarjetas-de-Credito-Preferente/Platinum.html",
+          "https://www.banorte.com/dam/jcr:f5016a29-3ea2-47f2-9474-a7cd59f60a16/Tarjetas-de-Cr-dito-emitidas-por-Banco-Mercantil-del-Norte.pdf",
           "https://www.banorte.com/Personal/TDC/Primera-anualidad-sin-costo.html"
         ]
       },
@@ -1666,12 +1732,12 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": "1% base + 1% preferred categories; MSI diferir 23% fija",
-    "annual_fee_mxn": "UNKNOWN",
+    "notes": "1% base + 1% preferred categories; MSI diferir 23% fija CORRECCIÓN 2026-08-17: anualidad resuelta de UNKNOWN a $1,100 + IVA. Cifra tomada de la nota al pie del CAT del Anexo de Comisiones, que nombra la tarjeta de forma explícita. La tabla tarifaria del mismo documento, encabezada 'vigentes a partir de mayo a octubre 2026', muestra importes mayores, pero es una rejilla posicional cuyo mapeo columna-tarjeta no es recuperable del texto extraído. Requiere lectura humana del PDF antes de sustituir estas cifras.",
+    "annual_fee_mxn": 1100,
     "annual_fee_includes_iva": false,
     "annual_fee_first_year_waived": true,
-    "annual_fee_waiver_condition": "1st year free; from 2nd year via program",
-    "interest_rate_annual_pct": 96.2,
+    "annual_fee_waiver_condition": "Promoción 1ª anualidad sin costo para clientes nuevos, vigente para tarjetas solicitadas del 1 de enero al 31 de diciembre de 2026, condicionada a acumular compras dentro de los primeros 30 días. La anualidad se cobra con la primera compra y se bonifica dentro de los 45 días hábiles siguientes. ES UNA PROMOCIÓN CON FECHA DE TÉRMINO, no una característica permanente del producto — el esquema no tiene un campo de vigencia para exenciones de anualidad, así que la fecha sólo vive en esta nota.",
+    "interest_rate_annual_pct": 64.73,
     "cat_promedio_pct": 96.2,
     "base_reward_type": "cashback",
     "base_reward_rate": 1.0,
@@ -1692,11 +1758,12 @@
         ]
       },
       "cost": {
-        "score": "low",
+        "score": "high",
         "evidence_type": "issuer_primary",
-        "verified_on": "2025-12-02",
+        "verified_on": "2026-08-17",
         "sources": [
-          "https://www.tarjetas.creditobanorte.com/?url=portibnt"
+          "https://www.banorte.com/dam/jcr:f5016a29-3ea2-47f2-9474-a7cd59f60a16/Tarjetas-de-Cr-dito-emitidas-por-Banco-Mercantil-del-Norte.pdf",
+          "https://www.banorte.com/Personal/TDC/Primera-anualidad-sin-costo.html"
         ]
       },
       "rewards": {
@@ -1730,8 +1797,8 @@
     "inactivity_min_spend_mxn": "NOT_APPLICABLE",
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "UNKNOWN",
-    "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN",
+    "cat_calculated_on": "2026-04-16",
+    "cat_valid_until": "2026-10-16",
     "accrual_basis": "pct_of_spend",
     "accrual_rate": 1.0,
     "accrual_block_mxn": "NOT_APPLICABLE"
@@ -1743,22 +1810,86 @@
     "display_name": "Tarjeta de Crédito Marriott Bonvoy",
     "former_names": [],
     "legacy_id": "Tarjeta de Crédito Marriott Bonvoy",
-    "tier": "UNKNOWN",
+    "tier": "oro",
     "network": "UNKNOWN",
     "lifecycle_status": "active",
-    "mapping_status": "skeleton",
+    "mapping_status": "mapped",
     "census_confidence": "high",
     "census_note": "co-brand",
     "conflicts": [],
-    "notes": "",
+    "notes": "ACUMULACIÓN EN DÓLARES: 4 puntos Marriott Bonvoy por cada dólar gastado en hoteles Marriott. La tasa fuera de Marriott no se publica. Estatus Silver Elite automático, 10 créditos de noche Elite al año y certificado de noche gratis de hasta 25,000 puntos al gastar USD 7,500 anuales. Bono de bienvenida 12,500 puntos. Cifra tomada de la nota al pie del CAT del Anexo de Comisiones, que nombra la tarjeta de forma explícita. La tabla tarifaria del mismo documento, encabezada 'vigentes a partir de mayo a octubre 2026', muestra importes mayores, pero es una rejilla posicional cuyo mapeo columna-tarjeta no es recuperable del texto extraído. Requiere lectura humana del PDF antes de sustituir estas cifras. Tasa ordinaria variable, referenciada a T.I.I.E.F. 28 días más un margen fijo. Promoción 1ª anualidad sin costo para clientes nuevos, vigente para tarjetas solicitadas del 1 de enero al 31 de diciembre de 2026, condicionada a acumular compras dentro de los primeros 30 días. La anualidad se cobra con la primera compra y se bonifica dentro de los 45 días hábiles siguientes. ES UNA PROMOCIÓN CON FECHA DE TÉRMINO, no una característica permanente del producto — el esquema no tiene un campo de vigencia para exenciones de anualidad, así que la fecha sólo vive en esta nota.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
     "inactivity_min_spend_mxn": "NOT_APPLICABLE",
     "inactivity_spend_period": "NOT_APPLICABLE",
-    "fee_billing_period": "UNKNOWN",
-    "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "fee_billing_period": "annual",
+    "cat_calculated_on": "2026-04-16",
+    "cat_valid_until": "2026-10-16",
+    "annual_fee_mxn": 1500,
+    "annual_fee_includes_iva": false,
+    "annual_fee_first_year_waived": true,
+    "annual_fee_waiver_condition": "Promoción 1ª anualidad sin costo para clientes nuevos, vigente para tarjetas solicitadas del 1 de enero al 31 de diciembre de 2026, condicionada a acumular compras dentro de los primeros 30 días. La anualidad se cobra con la primera compra y se bonifica dentro de los 45 días hábiles siguientes. ES UNA PROMOCIÓN CON FECHA DE TÉRMINO, no una característica permanente del producto — el esquema no tiene un campo de vigencia para exenciones de anualidad, así que la fecha sólo vive en esta nota.",
+    "interest_rate_annual_pct": 64.83,
+    "cat_promedio_pct": 100.3,
+    "base_reward_type": "points",
+    "base_reward_rate": "UNKNOWN",
+    "point_value_mxn": "UNKNOWN",
+    "effective_rate_pct": "UNKNOWN",
+    "points_program_name": "Marriott Bonvoy",
+    "accrual_basis": "per_usd",
+    "accrual_rate": 4,
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "min_income_mxn_monthly": "UNKNOWN",
+    "invitation_only": false,
+    "other_eligibility_criteria": "NOT_APPLICABLE",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.banorte.com/dam/jcr:f5016a29-3ea2-47f2-9474-a7cd59f60a16/Tarjetas-de-Cr-dito-emitidas-por-Banco-Mercantil-del-Norte.pdf",
+          "https://www.banorte.com/wps/portal/banorte/Home/cuentas-y-tarjetas/tarjetas-de-credito/marriott"
+        ]
+      },
+      "cost": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.banorte.com/dam/jcr:f5016a29-3ea2-47f2-9474-a7cd59f60a16/Tarjetas-de-Cr-dito-emitidas-por-Banco-Mercantil-del-Norte.pdf",
+          "https://www.banorte.com/wps/portal/banorte/Home/cuentas-y-tarjetas/tarjetas-de-credito/marriott"
+        ]
+      },
+      "rewards": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.banorte.com/wps/portal/banorte/Home/cuentas-y-tarjetas/tarjetas-de-credito/marriott",
+          "https://www.marriott.com/es/credit-cards.mi"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.banorte.com/dam/jcr:f5016a29-3ea2-47f2-9474-a7cd59f60a16/Tarjetas-de-Cr-dito-emitidas-por-Banco-Mercantil-del-Norte.pdf",
+          "https://www.banorte.com/wps/portal/banorte/Home/cuentas-y-tarjetas/tarjetas-de-credito/marriott"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.banorte.com/dam/jcr:f5016a29-3ea2-47f2-9474-a7cd59f60a16/Tarjetas-de-Cr-dito-emitidas-por-Banco-Mercantil-del-Norte.pdf",
+          "https://www.banorte.com/wps/portal/banorte/Home/cuentas-y-tarjetas/tarjetas-de-credito/marriott"
+        ]
+      }
+    }
   },
   {
     "card_id": "banorte__marriott_bonvoy_inspire",
@@ -1767,22 +1898,86 @@
     "display_name": "Tarjeta de Crédito Marriott Bonvoy Inspire",
     "former_names": [],
     "legacy_id": "Tarjeta de Crédito Marriott Bonvoy Inspire",
-    "tier": "UNKNOWN",
+    "tier": "platino",
     "network": "UNKNOWN",
     "lifecycle_status": "active",
-    "mapping_status": "skeleton",
+    "mapping_status": "mapped",
     "census_confidence": "high",
     "census_note": "co-brand",
     "conflicts": [],
-    "notes": "",
+    "notes": "Estatus Gold Elite automático, 15 créditos de noche Elite y certificado de noche gratis de hasta 35,000 puntos al gastar USD 15,000 anuales. Bono de bienvenida 25,000 puntos con USD 2,000 de compras en 3 meses. La tasa de acumulación por dólar de esta variante no se publica por separado. Cifra tomada de la nota al pie del CAT del Anexo de Comisiones, que nombra la tarjeta de forma explícita. La tabla tarifaria del mismo documento, encabezada 'vigentes a partir de mayo a octubre 2026', muestra importes mayores, pero es una rejilla posicional cuyo mapeo columna-tarjeta no es recuperable del texto extraído. Requiere lectura humana del PDF antes de sustituir estas cifras. Tasa ordinaria variable, referenciada a T.I.I.E.F. 28 días más un margen fijo. Promoción 1ª anualidad sin costo para clientes nuevos, vigente para tarjetas solicitadas del 1 de enero al 31 de diciembre de 2026, condicionada a acumular compras dentro de los primeros 30 días. La anualidad se cobra con la primera compra y se bonifica dentro de los 45 días hábiles siguientes. ES UNA PROMOCIÓN CON FECHA DE TÉRMINO, no una característica permanente del producto — el esquema no tiene un campo de vigencia para exenciones de anualidad, así que la fecha sólo vive en esta nota.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
     "inactivity_min_spend_mxn": "NOT_APPLICABLE",
     "inactivity_spend_period": "NOT_APPLICABLE",
-    "fee_billing_period": "UNKNOWN",
-    "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "fee_billing_period": "annual",
+    "cat_calculated_on": "2026-04-16",
+    "cat_valid_until": "2026-10-16",
+    "annual_fee_mxn": 3100,
+    "annual_fee_includes_iva": false,
+    "annual_fee_first_year_waived": true,
+    "annual_fee_waiver_condition": "Promoción 1ª anualidad sin costo para clientes nuevos, vigente para tarjetas solicitadas del 1 de enero al 31 de diciembre de 2026, condicionada a acumular compras dentro de los primeros 30 días. La anualidad se cobra con la primera compra y se bonifica dentro de los 45 días hábiles siguientes. ES UNA PROMOCIÓN CON FECHA DE TÉRMINO, no una característica permanente del producto — el esquema no tiene un campo de vigencia para exenciones de anualidad, así que la fecha sólo vive en esta nota.",
+    "interest_rate_annual_pct": 55.73,
+    "cat_promedio_pct": 76.5,
+    "base_reward_type": "points",
+    "base_reward_rate": "UNKNOWN",
+    "point_value_mxn": "UNKNOWN",
+    "effective_rate_pct": "UNKNOWN",
+    "points_program_name": "Marriott Bonvoy",
+    "accrual_basis": "UNKNOWN",
+    "accrual_rate": "UNKNOWN",
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "min_income_mxn_monthly": "UNKNOWN",
+    "invitation_only": false,
+    "other_eligibility_criteria": "NOT_APPLICABLE",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.banorte.com/dam/jcr:f5016a29-3ea2-47f2-9474-a7cd59f60a16/Tarjetas-de-Cr-dito-emitidas-por-Banco-Mercantil-del-Norte.pdf",
+          "https://www.banorte.com/wps/portal/ixe/Home/alcanza-tus-metas/tarjetas-credito/marriottinspire"
+        ]
+      },
+      "cost": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.banorte.com/dam/jcr:f5016a29-3ea2-47f2-9474-a7cd59f60a16/Tarjetas-de-Cr-dito-emitidas-por-Banco-Mercantil-del-Norte.pdf",
+          "https://www.banorte.com/wps/portal/ixe/Home/alcanza-tus-metas/tarjetas-credito/marriottinspire"
+        ]
+      },
+      "rewards": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.banorte.com/dam/jcr:f5016a29-3ea2-47f2-9474-a7cd59f60a16/Tarjetas-de-Cr-dito-emitidas-por-Banco-Mercantil-del-Norte.pdf",
+          "https://www.banorte.com/wps/portal/ixe/Home/alcanza-tus-metas/tarjetas-credito/marriottinspire"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.banorte.com/dam/jcr:f5016a29-3ea2-47f2-9474-a7cd59f60a16/Tarjetas-de-Cr-dito-emitidas-por-Banco-Mercantil-del-Norte.pdf",
+          "https://www.banorte.com/wps/portal/ixe/Home/alcanza-tus-metas/tarjetas-credito/marriottinspire"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.banorte.com/dam/jcr:f5016a29-3ea2-47f2-9474-a7cd59f60a16/Tarjetas-de-Cr-dito-emitidas-por-Banco-Mercantil-del-Norte.pdf",
+          "https://www.banorte.com/wps/portal/ixe/Home/alcanza-tus-metas/tarjetas-credito/marriottinspire"
+        ]
+      }
+    }
   },
   {
     "card_id": "banorte__mujer",
@@ -1791,22 +1986,86 @@
     "display_name": "Tarjeta de Crédito Mujer Banorte",
     "former_names": [],
     "legacy_id": "Tarjeta de Crédito Mujer Banorte",
-    "tier": "UNKNOWN",
+    "tier": "clasica",
     "network": "UNKNOWN",
     "lifecycle_status": "active",
-    "mapping_status": "skeleton",
+    "mapping_status": "mapped",
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": "",
+    "notes": "Tarjeta de afinidad Mujer Banorte. Tasa de acumulación de Banorte Recompensas no publicada en el Anexo ni en la página de producto: accrual_basis UNKNOWN. Cifra tomada de la nota al pie del CAT del Anexo de Comisiones, que nombra la tarjeta de forma explícita. La tabla tarifaria del mismo documento, encabezada 'vigentes a partir de mayo a octubre 2026', muestra importes mayores, pero es una rejilla posicional cuyo mapeo columna-tarjeta no es recuperable del texto extraído. Requiere lectura humana del PDF antes de sustituir estas cifras. Tasa ordinaria variable, referenciada a T.I.I.E.F. 28 días más un margen fijo. Promoción 1ª anualidad sin costo para clientes nuevos, vigente para tarjetas solicitadas del 1 de enero al 31 de diciembre de 2026, condicionada a acumular compras dentro de los primeros 30 días. La anualidad se cobra con la primera compra y se bonifica dentro de los 45 días hábiles siguientes. ES UNA PROMOCIÓN CON FECHA DE TÉRMINO, no una característica permanente del producto — el esquema no tiene un campo de vigencia para exenciones de anualidad, así que la fecha sólo vive en esta nota.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
     "inactivity_min_spend_mxn": "NOT_APPLICABLE",
     "inactivity_spend_period": "NOT_APPLICABLE",
-    "fee_billing_period": "UNKNOWN",
-    "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "fee_billing_period": "annual",
+    "cat_calculated_on": "2026-04-16",
+    "cat_valid_until": "2026-10-16",
+    "annual_fee_mxn": 1100,
+    "annual_fee_includes_iva": false,
+    "annual_fee_first_year_waived": true,
+    "annual_fee_waiver_condition": "Promoción 1ª anualidad sin costo para clientes nuevos, vigente para tarjetas solicitadas del 1 de enero al 31 de diciembre de 2026, condicionada a acumular compras dentro de los primeros 30 días. La anualidad se cobra con la primera compra y se bonifica dentro de los 45 días hábiles siguientes. ES UNA PROMOCIÓN CON FECHA DE TÉRMINO, no una característica permanente del producto — el esquema no tiene un campo de vigencia para exenciones de anualidad, así que la fecha sólo vive en esta nota.",
+    "interest_rate_annual_pct": 64.84,
+    "cat_promedio_pct": 96.6,
+    "base_reward_type": "points",
+    "base_reward_rate": "UNKNOWN",
+    "point_value_mxn": "UNKNOWN",
+    "effective_rate_pct": "UNKNOWN",
+    "points_program_name": "Banorte Recompensas",
+    "accrual_basis": "UNKNOWN",
+    "accrual_rate": "UNKNOWN",
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "min_income_mxn_monthly": "UNKNOWN",
+    "invitation_only": false,
+    "other_eligibility_criteria": "NOT_APPLICABLE",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.banorte.com/dam/jcr:f5016a29-3ea2-47f2-9474-a7cd59f60a16/Tarjetas-de-Cr-dito-emitidas-por-Banco-Mercantil-del-Norte.pdf",
+          "https://www.banorte.com/Personal/TDC/Primera-anualidad-sin-costo.html"
+        ]
+      },
+      "cost": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.banorte.com/dam/jcr:f5016a29-3ea2-47f2-9474-a7cd59f60a16/Tarjetas-de-Cr-dito-emitidas-por-Banco-Mercantil-del-Norte.pdf",
+          "https://www.banorte.com/Personal/TDC/Primera-anualidad-sin-costo.html"
+        ]
+      },
+      "rewards": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.banorte.com/dam/jcr:f5016a29-3ea2-47f2-9474-a7cd59f60a16/Tarjetas-de-Cr-dito-emitidas-por-Banco-Mercantil-del-Norte.pdf",
+          "https://www.banorte.com/Personal/TDC/Primera-anualidad-sin-costo.html"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.banorte.com/dam/jcr:f5016a29-3ea2-47f2-9474-a7cd59f60a16/Tarjetas-de-Cr-dito-emitidas-por-Banco-Mercantil-del-Norte.pdf",
+          "https://www.banorte.com/Personal/TDC/Primera-anualidad-sin-costo.html"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.banorte.com/dam/jcr:f5016a29-3ea2-47f2-9474-a7cd59f60a16/Tarjetas-de-Cr-dito-emitidas-por-Banco-Mercantil-del-Norte.pdf",
+          "https://www.banorte.com/Personal/TDC/Primera-anualidad-sin-costo.html"
+        ]
+      }
+    }
   },
   {
     "card_id": "banorte__seleccion_nacional",
@@ -1815,22 +2074,86 @@
     "display_name": "Tarjeta de Crédito Selección Nacional",
     "former_names": [],
     "legacy_id": "Tarjeta de Crédito Selección Nacional",
-    "tier": "UNKNOWN",
+    "tier": "clasica",
     "network": "UNKNOWN",
     "lifecycle_status": "active",
-    "mapping_status": "skeleton",
+    "mapping_status": "mapped",
     "census_confidence": "high",
     "census_note": "co-brand",
     "conflicts": [],
-    "notes": "",
+    "notes": "Tarjeta de afinidad de la Selección Nacional de fútbol. Tasa de acumulación no publicada. Cifra tomada de la nota al pie del CAT del Anexo de Comisiones, que nombra la tarjeta de forma explícita. La tabla tarifaria del mismo documento, encabezada 'vigentes a partir de mayo a octubre 2026', muestra importes mayores, pero es una rejilla posicional cuyo mapeo columna-tarjeta no es recuperable del texto extraído. Requiere lectura humana del PDF antes de sustituir estas cifras. Tasa ordinaria variable, referenciada a T.I.I.E.F. 28 días más un margen fijo. Promoción 1ª anualidad sin costo para clientes nuevos, vigente para tarjetas solicitadas del 1 de enero al 31 de diciembre de 2026, condicionada a acumular compras dentro de los primeros 30 días. La anualidad se cobra con la primera compra y se bonifica dentro de los 45 días hábiles siguientes. ES UNA PROMOCIÓN CON FECHA DE TÉRMINO, no una característica permanente del producto — el esquema no tiene un campo de vigencia para exenciones de anualidad, así que la fecha sólo vive en esta nota.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
     "inactivity_min_spend_mxn": "NOT_APPLICABLE",
     "inactivity_spend_period": "NOT_APPLICABLE",
-    "fee_billing_period": "UNKNOWN",
-    "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "fee_billing_period": "annual",
+    "cat_calculated_on": "2026-04-16",
+    "cat_valid_until": "2026-10-16",
+    "annual_fee_mxn": 1100,
+    "annual_fee_includes_iva": false,
+    "annual_fee_first_year_waived": true,
+    "annual_fee_waiver_condition": "Promoción 1ª anualidad sin costo para clientes nuevos, vigente para tarjetas solicitadas del 1 de enero al 31 de diciembre de 2026, condicionada a acumular compras dentro de los primeros 30 días. La anualidad se cobra con la primera compra y se bonifica dentro de los 45 días hábiles siguientes. ES UNA PROMOCIÓN CON FECHA DE TÉRMINO, no una característica permanente del producto — el esquema no tiene un campo de vigencia para exenciones de anualidad, así que la fecha sólo vive en esta nota.",
+    "interest_rate_annual_pct": 64.71,
+    "cat_promedio_pct": 95.0,
+    "base_reward_type": "points",
+    "base_reward_rate": "UNKNOWN",
+    "point_value_mxn": "UNKNOWN",
+    "effective_rate_pct": "UNKNOWN",
+    "points_program_name": "Banorte Recompensas",
+    "accrual_basis": "UNKNOWN",
+    "accrual_rate": "UNKNOWN",
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "min_income_mxn_monthly": "UNKNOWN",
+    "invitation_only": false,
+    "other_eligibility_criteria": "NOT_APPLICABLE",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.banorte.com/dam/jcr:f5016a29-3ea2-47f2-9474-a7cd59f60a16/Tarjetas-de-Cr-dito-emitidas-por-Banco-Mercantil-del-Norte.pdf",
+          "https://www.banorte.com/Personal/TDC/Primera-anualidad-sin-costo.html"
+        ]
+      },
+      "cost": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.banorte.com/dam/jcr:f5016a29-3ea2-47f2-9474-a7cd59f60a16/Tarjetas-de-Cr-dito-emitidas-por-Banco-Mercantil-del-Norte.pdf",
+          "https://www.banorte.com/Personal/TDC/Primera-anualidad-sin-costo.html"
+        ]
+      },
+      "rewards": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.banorte.com/dam/jcr:f5016a29-3ea2-47f2-9474-a7cd59f60a16/Tarjetas-de-Cr-dito-emitidas-por-Banco-Mercantil-del-Norte.pdf",
+          "https://www.banorte.com/Personal/TDC/Primera-anualidad-sin-costo.html"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.banorte.com/dam/jcr:f5016a29-3ea2-47f2-9474-a7cd59f60a16/Tarjetas-de-Cr-dito-emitidas-por-Banco-Mercantil-del-Norte.pdf",
+          "https://www.banorte.com/Personal/TDC/Primera-anualidad-sin-costo.html"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.banorte.com/dam/jcr:f5016a29-3ea2-47f2-9474-a7cd59f60a16/Tarjetas-de-Cr-dito-emitidas-por-Banco-Mercantil-del-Norte.pdf",
+          "https://www.banorte.com/Personal/TDC/Primera-anualidad-sin-costo.html"
+        ]
+      }
+    }
   },
   {
     "card_id": "banorte__united",
@@ -1839,22 +2162,86 @@
     "display_name": "Tarjeta de Crédito United",
     "former_names": [],
     "legacy_id": "Tarjeta de Crédito United",
-    "tier": "UNKNOWN",
+    "tier": "platino",
     "network": "UNKNOWN",
     "lifecycle_status": "active",
-    "mapping_status": "skeleton",
+    "mapping_status": "mapped",
     "census_confidence": "high",
     "census_note": "co-brand",
     "conflicts": [],
-    "notes": "",
+    "notes": "Co-brand con United Airlines; acumula millas MileagePlus. Tasa de acumulación no publicada en fuente del emisor. Cifra tomada de la nota al pie del CAT del Anexo de Comisiones, que nombra la tarjeta de forma explícita. La tabla tarifaria del mismo documento, encabezada 'vigentes a partir de mayo a octubre 2026', muestra importes mayores, pero es una rejilla posicional cuyo mapeo columna-tarjeta no es recuperable del texto extraído. Requiere lectura humana del PDF antes de sustituir estas cifras. Tasa ordinaria variable, referenciada a T.I.I.E.F. 28 días más un margen fijo. Promoción 1ª anualidad sin costo para clientes nuevos, vigente para tarjetas solicitadas del 1 de enero al 31 de diciembre de 2026, condicionada a acumular compras dentro de los primeros 30 días. La anualidad se cobra con la primera compra y se bonifica dentro de los 45 días hábiles siguientes. ES UNA PROMOCIÓN CON FECHA DE TÉRMINO, no una característica permanente del producto — el esquema no tiene un campo de vigencia para exenciones de anualidad, así que la fecha sólo vive en esta nota.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
     "inactivity_min_spend_mxn": "NOT_APPLICABLE",
     "inactivity_spend_period": "NOT_APPLICABLE",
-    "fee_billing_period": "UNKNOWN",
-    "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "fee_billing_period": "annual",
+    "cat_calculated_on": "2026-04-16",
+    "cat_valid_until": "2026-10-16",
+    "annual_fee_mxn": 3100,
+    "annual_fee_includes_iva": false,
+    "annual_fee_first_year_waived": true,
+    "annual_fee_waiver_condition": "Promoción 1ª anualidad sin costo para clientes nuevos, vigente para tarjetas solicitadas del 1 de enero al 31 de diciembre de 2026, condicionada a acumular compras dentro de los primeros 30 días. La anualidad se cobra con la primera compra y se bonifica dentro de los 45 días hábiles siguientes. ES UNA PROMOCIÓN CON FECHA DE TÉRMINO, no una característica permanente del producto — el esquema no tiene un campo de vigencia para exenciones de anualidad, así que la fecha sólo vive en esta nota.",
+    "interest_rate_annual_pct": 55.71,
+    "cat_promedio_pct": 77.5,
+    "base_reward_type": "points",
+    "base_reward_rate": "UNKNOWN",
+    "point_value_mxn": "UNKNOWN",
+    "effective_rate_pct": "UNKNOWN",
+    "points_program_name": "United MileagePlus",
+    "accrual_basis": "UNKNOWN",
+    "accrual_rate": "UNKNOWN",
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "min_income_mxn_monthly": "UNKNOWN",
+    "invitation_only": false,
+    "other_eligibility_criteria": "NOT_APPLICABLE",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.banorte.com/dam/jcr:f5016a29-3ea2-47f2-9474-a7cd59f60a16/Tarjetas-de-Cr-dito-emitidas-por-Banco-Mercantil-del-Norte.pdf",
+          "https://www.banorte.com/Personal/TDC/Primera-anualidad-sin-costo.html"
+        ]
+      },
+      "cost": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.banorte.com/dam/jcr:f5016a29-3ea2-47f2-9474-a7cd59f60a16/Tarjetas-de-Cr-dito-emitidas-por-Banco-Mercantil-del-Norte.pdf",
+          "https://www.banorte.com/Personal/TDC/Primera-anualidad-sin-costo.html"
+        ]
+      },
+      "rewards": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.banorte.com/dam/jcr:f5016a29-3ea2-47f2-9474-a7cd59f60a16/Tarjetas-de-Cr-dito-emitidas-por-Banco-Mercantil-del-Norte.pdf",
+          "https://www.banorte.com/Personal/TDC/Primera-anualidad-sin-costo.html"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.banorte.com/dam/jcr:f5016a29-3ea2-47f2-9474-a7cd59f60a16/Tarjetas-de-Cr-dito-emitidas-por-Banco-Mercantil-del-Norte.pdf",
+          "https://www.banorte.com/Personal/TDC/Primera-anualidad-sin-costo.html"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.banorte.com/dam/jcr:f5016a29-3ea2-47f2-9474-a7cd59f60a16/Tarjetas-de-Cr-dito-emitidas-por-Banco-Mercantil-del-Norte.pdf",
+          "https://www.banorte.com/Personal/TDC/Primera-anualidad-sin-costo.html"
+        ]
+      }
+    }
   },
   {
     "card_id": "banorte__united_universe",
@@ -1863,22 +2250,86 @@
     "display_name": "Tarjeta de Crédito United Universe",
     "former_names": [],
     "legacy_id": "Tarjeta de Crédito United Universe",
-    "tier": "UNKNOWN",
+    "tier": "platino",
     "network": "UNKNOWN",
     "lifecycle_status": "active",
-    "mapping_status": "skeleton",
+    "mapping_status": "mapped",
     "census_confidence": "high",
     "census_note": "co-brand",
     "conflicts": [],
-    "notes": "",
+    "notes": "Ingreso mínimo comprobable de $50,000 mensuales. Tasa de acumulación no publicada. Cifra tomada de la nota al pie del CAT del Anexo de Comisiones, que nombra la tarjeta de forma explícita. La tabla tarifaria del mismo documento, encabezada 'vigentes a partir de mayo a octubre 2026', muestra importes mayores, pero es una rejilla posicional cuyo mapeo columna-tarjeta no es recuperable del texto extraído. Requiere lectura humana del PDF antes de sustituir estas cifras. Tasa ordinaria variable, referenciada a T.I.I.E.F. 28 días más un margen fijo. Promoción 1ª anualidad sin costo para clientes nuevos, vigente para tarjetas solicitadas del 1 de enero al 31 de diciembre de 2026, condicionada a acumular compras dentro de los primeros 30 días. La anualidad se cobra con la primera compra y se bonifica dentro de los 45 días hábiles siguientes. ES UNA PROMOCIÓN CON FECHA DE TÉRMINO, no una característica permanente del producto — el esquema no tiene un campo de vigencia para exenciones de anualidad, así que la fecha sólo vive en esta nota.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
     "inactivity_min_spend_mxn": "NOT_APPLICABLE",
     "inactivity_spend_period": "NOT_APPLICABLE",
-    "fee_billing_period": "UNKNOWN",
-    "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "fee_billing_period": "annual",
+    "cat_calculated_on": "2026-04-16",
+    "cat_valid_until": "2026-10-16",
+    "annual_fee_mxn": 5400,
+    "annual_fee_includes_iva": false,
+    "annual_fee_first_year_waived": true,
+    "annual_fee_waiver_condition": "Promoción 1ª anualidad sin costo para clientes nuevos, vigente para tarjetas solicitadas del 1 de enero al 31 de diciembre de 2026, condicionada a acumular compras dentro de los primeros 30 días. La anualidad se cobra con la primera compra y se bonifica dentro de los 45 días hábiles siguientes. ES UNA PROMOCIÓN CON FECHA DE TÉRMINO, no una característica permanente del producto — el esquema no tiene un campo de vigencia para exenciones de anualidad, así que la fecha sólo vive en esta nota.",
+    "interest_rate_annual_pct": 41.84,
+    "cat_promedio_pct": 54.8,
+    "base_reward_type": "points",
+    "base_reward_rate": "UNKNOWN",
+    "point_value_mxn": "UNKNOWN",
+    "effective_rate_pct": "UNKNOWN",
+    "points_program_name": "United MileagePlus",
+    "accrual_basis": "UNKNOWN",
+    "accrual_rate": "UNKNOWN",
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "min_income_mxn_monthly": 50000,
+    "invitation_only": false,
+    "other_eligibility_criteria": "NOT_APPLICABLE",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.banorte.com/dam/jcr:f5016a29-3ea2-47f2-9474-a7cd59f60a16/Tarjetas-de-Cr-dito-emitidas-por-Banco-Mercantil-del-Norte.pdf",
+          "https://www.banorte.com/Personal/TDC/Primera-anualidad-sin-costo.html"
+        ]
+      },
+      "cost": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.banorte.com/dam/jcr:f5016a29-3ea2-47f2-9474-a7cd59f60a16/Tarjetas-de-Cr-dito-emitidas-por-Banco-Mercantil-del-Norte.pdf",
+          "https://www.banorte.com/Personal/TDC/Primera-anualidad-sin-costo.html"
+        ]
+      },
+      "rewards": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.banorte.com/dam/jcr:f5016a29-3ea2-47f2-9474-a7cd59f60a16/Tarjetas-de-Cr-dito-emitidas-por-Banco-Mercantil-del-Norte.pdf",
+          "https://www.banorte.com/Personal/TDC/Primera-anualidad-sin-costo.html"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.banorte.com/dam/jcr:f5016a29-3ea2-47f2-9474-a7cd59f60a16/Tarjetas-de-Cr-dito-emitidas-por-Banco-Mercantil-del-Norte.pdf",
+          "https://www.banorte.com/Personal/TDC/Primera-anualidad-sin-costo.html"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.banorte.com/dam/jcr:f5016a29-3ea2-47f2-9474-a7cd59f60a16/Tarjetas-de-Cr-dito-emitidas-por-Banco-Mercantil-del-Norte.pdf",
+          "https://www.tarjetas.creditobanorte.com/"
+        ]
+      }
+    }
   },
   {
     "card_id": "banregio__acceso_gold",
@@ -8834,7 +9285,7 @@
     "census_confidence": "high",
     "census_note": "Visa; issued via Banorte",
     "conflicts": [],
-    "notes": "",
+    "notes": " REVISAR EMISOR (2026-08-17): RappiCard no aparece en el Anexo de Comisiones de Banco Mercantil del Norte. La tarjeta se emite a través de la sociedad conjunta RappiCard México, no directamente por Banorte, así que issuer_id=banorte puede ser una atribución incorrecta. Requiere una pasada de Stage 1 antes de mapear.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
@@ -9051,6 +9502,31 @@
     "census_note": "issuer product page + Select benefits page",
     "conflicts": [],
     "notes": "Hallazgo de censo Stage 2: falta en el censo pese a ser el destino de migración de los titulares de Santander Aeroméxico Infinite. CAT 82.6% / 34.9% según la página de Mundo Select (fecha de cálculo 1 de enero de 2026); la página del producto indica un juego vigente del 1 de julio al 31 de diciembre de 2026. Pendiente de aprobación antes de mapear en Stage 3.",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE",
+    "inactivity_spend_period": "NOT_APPLICABLE",
+    "fee_billing_period": "annual",
+    "cat_calculated_on": "UNKNOWN",
+    "cat_valid_until": "UNKNOWN"
+  },
+  {
+    "card_id": "banorte__conmigo",
+    "issuer_id": "banorte",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito Banorte Conmigo",
+    "former_names": [],
+    "legacy_id": "NOT_APPLICABLE",
+    "tier": "clasica",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "lifecycle_changed_on": "2026-08-17",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "issuer fee schedule (Anexo de Comisiones)",
+    "conflicts": [],
+    "notes": "Hallazgo de censo Stage 2: aparece en el Anexo de Comisiones de Banorte (CAT 98.8%, tasa 70.70%, sin comisión de administración) pero falta en el censo. No participa en la promoción de primera anualidad sin costo. Pendiente de aprobación antes de mapear en Stage 3.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",

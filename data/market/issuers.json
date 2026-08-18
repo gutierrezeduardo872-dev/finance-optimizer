@@ -268,7 +268,7 @@
         "sources": []
       }
     },
-    "notes": "Migrated from card census. legal_name and source_urls pending confirmation against the CNBV Padrón.",
+    "notes": "Migrated from card census. legal_name and source_urls pending confirmation against the CNBV Padrón. DISCREPANCIA INTERNA DEL ANEXO (2026-08-17): la tabla tarifaria y las notas al pie del CAT del mismo PDF publican anualidades distintas para las mismas tarjetas — la tabla, encabezada 'vigentes a partir de mayo a octubre 2026', es entre $100 y $400 más alta (p.ej. Platinum $2,650 vs $2,550; Infinite $6,200 vs $6,000). Lectura probable: la nota al pie cita la anualidad usada para calcular el CAT en abril y la tabla la vigente desde mayo. Se registraron las cifras de las notas al pie por ser las únicas atribuibles a una tarjeta concreta. Confirmar leyendo el PDF con su maquetación.",
     "offers_deposit_products": true
   },
   {
@@ -603,7 +603,7 @@
         "sources": []
       }
     },
-    "notes": "Migrated from card census. legal_name and source_urls pending confirmation against the CNBV Padrón.",
+    "notes": "Migrated from card census. legal_name and source_urls pending confirmation against the CNBV Padrón. TARIFARIO OBSOLETO PUBLICADO COMO VIGENTE (2026-08-17): el PDF 'Costos y Comisiones de los Productos de HSBC' en comisiones/comisiones_tdc_pfisicas.pdf sigue en línea pero está fechado 'Vigencia al 31 de diciembre de 2018' con CAT calculados el 8 de agosto de 2018. Sus anualidades son de 2018 y difieren de las vigentes: Clásica $630 vs $863 real, Oro $970 vs $1,249 real. NO USAR ESE PDF COMO FUENTE. Las cifras vigentes están en las páginas de producto individuales, con fecha de cálculo 10 de marzo de 2026 y vigencia al 10 de septiembre de 2026 — es decir, vencen en tres semanas. PISTA DE CENSO, no se creó fila: ese PDF lista una tarjeta 'HSBC Acceso' (anualidad $300, CAT 108.9%) que no está en el censo. No se pudo determinar si sigue existiendo — no hay página de producto vigente y la única evidencia es de 2018 — y lifecycle_status no admite un valor de 'se desconoce', así que crear la fila obligaría a afirmar 'active' o 'withdrawn' sin sustento. Requiere Stage 2.",
     "offers_deposit_products": true
   },
   {
