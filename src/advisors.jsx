@@ -136,9 +136,8 @@ function CardAdvisor({ d, user, logMovement, go }) {
                   ? [{ k: 'Empata con', v: runnerUp.card.display_name }]
                   : []),
               { k: 'Anualidad (informativo)',
-                v: num(best.card.annual_fee_mxn)
-                  ? mxn(num(best.card.annual_fee_mxn)) + '/año'
-                  : 'sin anualidad' },
+                v: feeLabel(best.card).text,
+                c: feeLabel(best.card).conditional ? 'var(--danger)' : undefined },
             ]} />
 
             {best.capped && (

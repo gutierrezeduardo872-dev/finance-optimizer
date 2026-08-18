@@ -647,6 +647,12 @@ function portfolio(d, userId) {
     lifeBenefit: cc.reduce((s, m) => s + num(m.computed_benefit_mxn), 0),
     monthSpend: cc.filter(thisMonth).reduce((s, m) => s + num(m.amount), 0),
     fees: cards.reduce((s, c) => s + num(c.annual_fee_mxn), 0),
+    // Annual fees alone understate what the portfolio costs. Cards billed at
+    // $0/year with a monthly inactivity penalty show as free here, so the
+    // exposure is reported separately rather than folded in — folding it in
+    // would overcharge users who do clear their thresholds.
+    feesAtRisk: cards.reduce((s, c) => s + (maxCarryingCost(c) - num(c.annual_fee_mxn)), 0),
+    penaltyCards: cards.filter((c) => maxCarryingCost(c) > num(c.annual_fee_mxn)),
     avgRate: balance > 0 ? (projYield / balance) * 100 : 0,
   };
 }

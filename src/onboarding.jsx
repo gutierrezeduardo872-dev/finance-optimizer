@@ -398,10 +398,7 @@ function PickProducts({ kind, market, selected, onToggle, onNext, onSkip, onBack
 
   const sub = (p) => {
     if (isCard) {
-      const fee = knownNum(p.annual_fee_mxn);
-      const feeTxt = fee === null ? 'anualidad no publicada'
-                   : fee === 0 ? 'sin anualidad' : 'anualidad ' + mxn(fee);
-      return feeTxt + ' · ' + rtl(p.base_reward_type);
+      return feeLabel(p).text + ' · ' + rtl(p.base_reward_type);
     }
     const rate = knownNum(p.flat_rate_pct);
     return (rate === null ? 'rendimiento variable' : pct(rate)) +

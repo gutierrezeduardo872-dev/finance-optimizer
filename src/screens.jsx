@@ -135,7 +135,9 @@ function Home({ d, user, go }) {
 
       <div className="mini-grid">
         <Stat label="Tarjetas" value={port.cards.length}
-              sub={port.fees ? mxn(port.fees) + '/año en anualidades' : 'sin anualidades'} />
+              sub={(port.fees ? mxn(port.fees) + '/año en anualidades' : 'sin anualidades') +
+                   (port.feesAtRisk ? ' · hasta ' + mxn(port.feesAtRisk) +
+                                      '/año más por inactividad' : '')} />
         <Stat label="Cuentas" value={port.accts.length}
               sub={port.balance > 0 ? pct(port.avgRate) + ' promedio' : 'sin saldo'} />
       </div>
@@ -238,9 +240,7 @@ function Products({ d, user, addProduct, removeProduct }) {
   const metaOf = (p) => {
     const iss = issuerById[p.issuer_id] || {};
     if (kind === 'card') {
-      const fee = knownNum(p.annual_fee_mxn);
-      return iss.display_name + ' · ' +
-        (fee === null ? 'anualidad sin dato' : fee ? mxn(fee) + '/año' : 'sin anualidad');
+      return iss.display_name + ' · ' + feeLabel(p).text;
     }
     return iss.display_name + ' · ' + pct(headlineRate(d, user.user_id, p)) + ' anual';
   };
@@ -492,7 +492,7 @@ function Suggestions({ d, user, addProduct, go }) {
           </div>
           {cardPicks.map((p) => {
             const iss = issuerOf(p.card);
-            const fee = knownNum(p.card.annual_fee_mxn);
+            const feeTxt = feeLabel(p.card);
             return (
               <button key={p.card.card_id} className="pick"
                       onClick={() => setSheetItem({ type: 'card', data: p.card,
@@ -503,7 +503,10 @@ function Suggestions({ d, user, addProduct, go }) {
                     <div className="pick-n">{p.card.display_name}</div>
                     <div className="pick-i">
                       {iss.display_name} ·{' '}
-                      {fee ? mxn(fee) + '/año' : 'sin anualidad'}
+                      <span style={feeTxt.conditional
+                                    ? { color: 'var(--danger)' } : undefined}>
+                        {feeTxt.text}
+                      </span>
                     </div>
                   </div>
                   <div className="pick-up">

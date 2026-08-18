@@ -245,7 +245,9 @@ function Profile({ d, user, onSignOut, onSwitch, saveName, go }) {
       <div className="panel">
         <div className="panel-head"><div className="ph-l">Mis productos</div></div>
         <Row icon="card" title="Tarjetas de crédito"
-             meta={port.fees ? mxn(port.fees) + '/año en anualidades' : 'Sin anualidades'}
+             meta={(port.fees ? mxn(port.fees) + '/año en anualidades' : 'Sin anualidades') +
+                   (port.feesAtRisk ? ' · hasta ' + mxn(port.feesAtRisk) +
+                                      '/año más por inactividad' : '')}
              right={port.cards.length} onClick={() => go('products')} />
         <Row icon="savings" title="Cuentas"
              meta={port.projYield > 0 ? mxn(port.projYield) + '/año proyectado'

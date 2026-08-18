@@ -54,6 +54,62 @@ const knownNum = (v) =>
     ? null
     : Number(v);
 
+
+/**
+ * What a card costs, as a label — never just the annual fee.
+ *
+ * Six mapped cards charge $0 a year and then a monthly penalty when spend falls
+ * below a threshold: Walmart INVEX is $273/mes under $1,200, which is $3,276 a
+ * year, more than any annual fee in the dataset except Infinite. Rendering
+ * annual_fee_mxn alone calls those cards free, so every surface that shows a
+ * fee goes through here.
+ *
+ * Returns { text, conditional } — `conditional` is true when the headline zero
+ * depends on the user's own spending, so callers can style it as a caveat.
+ */
+const PERIOD_SUFFIX = { monthly: "/mes", quarterly: "/trimestre", annual: "/año" };
+const PERIODS_PER_YEAR = { monthly: 12, quarterly: 4, annual: 1 };
+
+const feeLabel = (card) => {
+  const fee = knownNum(card.annual_fee_mxn);
+  const inact = knownNum(card.inactivity_fee_mxn);
+  const floor = knownNum(card.inactivity_min_spend_mxn);
+  const iva = card.annual_fee_includes_iva === false ? " + IVA" : "";
+  // Banorte measures per quarter where Invex and Santander measure per month.
+  // Both the penalty and the spend threshold carry their own period, and they
+  // are not always the same field, so neither may be assumed.
+  const per = PERIOD_SUFFIX[String(card.inactivity_fee_period || "").toLowerCase()] || "";
+  const spendPer =
+    PERIOD_SUFFIX[String(card.inactivity_spend_period || "").toLowerCase()] || "";
+
+  if (fee === null) return { text: "anualidad sin dato", conditional: false };
+
+  if (fee > 0) {
+    const billed = card.fee_billing_period === "monthly" ? ", cobrada mensualmente" : "";
+    return { text: mxn(fee) + "/año" + iva + billed, conditional: false };
+  }
+
+  // fee === 0. Free only if there is no penalty attached to it.
+  if (inact === null || inact <= 0) return { text: "sin anualidad", conditional: false };
+
+  const cond = floor === null
+    ? "sin anualidad, pero cobra " + mxn(inact) + per + " por inactividad"
+    : "sin anualidad si gastas " + mxn(floor) + spendPer + "; si no, " + mxn(inact) + per;
+  return { text: cond, conditional: true };
+};
+
+/** Yearly worst case, for portfolio totals: annual fee plus a full year of penalty. */
+const maxCarryingCost = (card) => {
+  const fee = knownNum(card.annual_fee_mxn) || 0;
+  const inact = knownNum(card.inactivity_fee_mxn);
+  if (inact === null || inact <= 0) return fee;
+  const mult = PERIODS_PER_YEAR[String(card.inactivity_fee_period || "").toLowerCase()];
+  // An unrecognised period must not silently become "once a year" — that would
+  // understate a quarterly penalty fourfold.
+  if (!mult) return fee;
+  return fee + inact * mult;
+};
+
 /* ------------------------------- labels --------------------------------- */
 
 const RTL = { points: "puntos", miles: "millas", cashback: "cashback", none: "sin recompensa" };
