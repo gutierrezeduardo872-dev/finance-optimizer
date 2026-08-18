@@ -2541,22 +2541,86 @@
     "display_name": "Tarjeta Afinidad UNAM BBVA",
     "former_names": [],
     "legacy_id": "Tarjeta Afinidad UNAM BBVA",
-    "tier": "UNKNOWN",
+    "tier": "clasica",
     "network": "UNKNOWN",
     "lifecycle_status": "active",
-    "mapping_status": "skeleton",
+    "mapping_status": "mapped",
     "census_confidence": "high",
     "census_note": "affinity",
     "conflicts": [],
-    "notes": "",
+    "notes": "Tarjeta de afinidad con la UNAM: BBVA dona el 1.5% del monto de cada compra al Programa de Becas de Titulación. Acumula 11% en Puntos BBVA, el nivel más alto de la gama de entrada, junto con IPN. La página del producto anuncia 'Sin anualidad* de por vida' junto a una comisión por administración del titular de $1,151 sin IVA. No se capturó el texto de la nota al pie, así que annual_fee_first_year_waived y la condición quedan UNKNOWN en lugar de suponer la condición de Azul BBVA (contratación 100% en línea). Se registra la comisión que el emisor publica. Las compras a meses sin intereses no acumulan Puntos. BBVA no publica el valor en pesos del Punto, así que effective_rate_pct queda UNKNOWN.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
     "inactivity_min_spend_mxn": "NOT_APPLICABLE",
     "inactivity_spend_period": "NOT_APPLICABLE",
-    "fee_billing_period": "UNKNOWN",
-    "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "fee_billing_period": "annual",
+    "cat_calculated_on": "2026-03-09",
+    "cat_valid_until": "2026-09-05",
+    "annual_fee_mxn": 1151,
+    "annual_fee_includes_iva": false,
+    "annual_fee_first_year_waived": "UNKNOWN",
+    "annual_fee_waiver_condition": "UNKNOWN",
+    "interest_rate_annual_pct": 53.87,
+    "cat_promedio_pct": 73.4,
+    "base_reward_type": "points",
+    "base_reward_rate": 11.0,
+    "point_value_mxn": "UNKNOWN",
+    "effective_rate_pct": "UNKNOWN",
+    "points_program_name": "Puntos BBVA",
+    "accrual_basis": "pct_of_spend",
+    "accrual_rate": 11.0,
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "min_income_mxn_monthly": "UNKNOWN",
+    "invitation_only": false,
+    "other_eligibility_criteria": "NOT_APPLICABLE",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.bbva.mx/personas/productos/tarjetas-de-credito/tarjeta-de-credito-afinidad-unam.html",
+          "https://www.bbva.mx/content/dam/public-web/mexico/documents/tycs/Terminos_y_Condiciones_Regreso_a_Clases_2026.pdf"
+        ]
+      },
+      "cost": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.bbva.mx/personas/productos/tarjetas-de-credito/tarjeta-de-credito-afinidad-unam.html",
+          "https://www.bbva.mx/content/dam/public-web/mexico/documents/tycs/Terminos_y_Condiciones_Regreso_a_Clases_2026.pdf"
+        ]
+      },
+      "rewards": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.bbva.mx/personas/productos/tarjetas-de-credito/tarjeta-de-credito-afinidad-unam.html",
+          "https://www.bbva.mx/content/dam/public-web/mexico/documents/tycs/Terminos_y_Condiciones_Regreso_a_Clases_2026.pdf"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.bbva.mx/personas/productos/tarjetas-de-credito/tarjeta-de-credito-afinidad-unam.html",
+          "https://www.bbva.mx/content/dam/public-web/mexico/documents/tycs/Terminos_y_Condiciones_Regreso_a_Clases_2026.pdf"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.bbva.mx/personas/productos/tarjetas-de-credito/tarjeta-de-credito-afinidad-unam.html",
+          "https://www.bbva.mx/content/dam/public-web/mexico/documents/tycs/Terminos_y_Condiciones_Regreso_a_Clases_2026.pdf"
+        ]
+      }
+    }
   },
   {
     "card_id": "bbva_mexico__azul_bbva",
@@ -2732,22 +2796,81 @@
     "display_name": "Tarjeta Educación BBVA",
     "former_names": [],
     "legacy_id": "Tarjeta Educación BBVA",
-    "tier": "UNKNOWN",
+    "tier": "clasica",
     "network": "UNKNOWN",
     "lifecycle_status": "active",
-    "mapping_status": "skeleton",
+    "mapping_status": "mapped",
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": "",
+    "notes": "Acumula 9% en Puntos BBVA. La página del producto anuncia 'Sin anualidad* de por vida' junto a una comisión por administración del titular de $748 sin IVA. No se capturó el texto de la nota al pie, así que annual_fee_first_year_waived y la condición quedan UNKNOWN en lugar de suponer la condición de Azul BBVA (contratación 100% en línea). Se registra la comisión que el emisor publica. Las compras a meses sin intereses no acumulan Puntos. BBVA no publica el valor en pesos del Punto, así que effective_rate_pct queda UNKNOWN.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
     "inactivity_min_spend_mxn": "NOT_APPLICABLE",
     "inactivity_spend_period": "NOT_APPLICABLE",
-    "fee_billing_period": "UNKNOWN",
-    "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "fee_billing_period": "annual",
+    "cat_calculated_on": "2026-03-09",
+    "cat_valid_until": "2026-09-05",
+    "annual_fee_mxn": 748,
+    "annual_fee_includes_iva": false,
+    "annual_fee_first_year_waived": "UNKNOWN",
+    "annual_fee_waiver_condition": "UNKNOWN",
+    "interest_rate_annual_pct": 60.79,
+    "cat_promedio_pct": 89.3,
+    "base_reward_type": "points",
+    "base_reward_rate": 9.0,
+    "point_value_mxn": "UNKNOWN",
+    "effective_rate_pct": "UNKNOWN",
+    "points_program_name": "Puntos BBVA",
+    "accrual_basis": "pct_of_spend",
+    "accrual_rate": 9.0,
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "min_income_mxn_monthly": "UNKNOWN",
+    "invitation_only": false,
+    "other_eligibility_criteria": "Exclusiva para empleados del sector educativo con nómina en BBVA.",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.bbva.mx/personas/productos/tarjetas-de-credito/tarjeta-de-credito-educacion.html"
+        ]
+      },
+      "cost": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.bbva.mx/personas/productos/tarjetas-de-credito/tarjeta-de-credito-educacion.html"
+        ]
+      },
+      "rewards": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.bbva.mx/personas/productos/tarjetas-de-credito/tarjeta-de-credito-educacion.html"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.bbva.mx/personas/productos/tarjetas-de-credito/tarjeta-de-credito-educacion.html"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.bbva.mx/personas/productos/tarjetas-de-credito/tarjeta-de-credito-educacion.html"
+        ]
+      }
+    }
   },
   {
     "card_id": "bbva_mexico__ipn_bbva",
@@ -2756,22 +2879,86 @@
     "display_name": "Tarjeta IPN BBVA",
     "former_names": [],
     "legacy_id": "Tarjeta IPN BBVA",
-    "tier": "UNKNOWN",
+    "tier": "clasica",
     "network": "UNKNOWN",
     "lifecycle_status": "active",
-    "mapping_status": "skeleton",
+    "mapping_status": "mapped",
     "census_confidence": "high",
     "census_note": "affinity",
     "conflicts": [],
-    "notes": "",
+    "notes": "Tarjeta de afinidad con el Instituto Politécnico Nacional: BBVA dona el 1.5% de cada compra al instituto. Acumula 11% en Puntos BBVA. Seguros sin costo de compra protegida y de pérdida o demora de equipaje. Tasa TIIEF + 55 puntos porcentuales. La página del producto anuncia 'Sin anualidad* de por vida' junto a una comisión por administración del titular de $748 sin IVA. No se capturó el texto de la nota al pie, así que annual_fee_first_year_waived y la condición quedan UNKNOWN en lugar de suponer la condición de Azul BBVA (contratación 100% en línea). Se registra la comisión que el emisor publica. Las compras a meses sin intereses no acumulan Puntos. BBVA no publica el valor en pesos del Punto, así que effective_rate_pct queda UNKNOWN.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
     "inactivity_min_spend_mxn": "NOT_APPLICABLE",
     "inactivity_spend_period": "NOT_APPLICABLE",
-    "fee_billing_period": "UNKNOWN",
-    "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "fee_billing_period": "annual",
+    "cat_calculated_on": "2026-03-09",
+    "cat_valid_until": "2026-09-05",
+    "annual_fee_mxn": 748,
+    "annual_fee_includes_iva": false,
+    "annual_fee_first_year_waived": "UNKNOWN",
+    "annual_fee_waiver_condition": "UNKNOWN",
+    "interest_rate_annual_pct": 63.84,
+    "cat_promedio_pct": 93.9,
+    "base_reward_type": "points",
+    "base_reward_rate": 11.0,
+    "point_value_mxn": "UNKNOWN",
+    "effective_rate_pct": "UNKNOWN",
+    "points_program_name": "Puntos BBVA",
+    "accrual_basis": "pct_of_spend",
+    "accrual_rate": 11.0,
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "min_income_mxn_monthly": "UNKNOWN",
+    "invitation_only": false,
+    "other_eligibility_criteria": "NOT_APPLICABLE",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.bbva.mx/personas/productos/tarjetas-de-credito/tarjeta-de-credito-ipn.html",
+          "https://www.bbva.mx/content/dam/public-web/mexico/documents/personas/tarjetas/TCR-IPN.pdf"
+        ]
+      },
+      "cost": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.bbva.mx/personas/productos/tarjetas-de-credito/tarjeta-de-credito-ipn.html",
+          "https://www.bbva.mx/content/dam/public-web/mexico/documents/personas/tarjetas/TCR-IPN.pdf"
+        ]
+      },
+      "rewards": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.bbva.mx/personas/productos/tarjetas-de-credito/tarjeta-de-credito-ipn.html",
+          "https://www.bbva.mx/content/dam/public-web/mexico/documents/personas/tarjetas/TCR-IPN.pdf"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.bbva.mx/personas/productos/tarjetas-de-credito/tarjeta-de-credito-ipn.html",
+          "https://www.bbva.mx/content/dam/public-web/mexico/documents/personas/tarjetas/TCR-IPN.pdf"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.bbva.mx/personas/productos/tarjetas-de-credito/tarjeta-de-credito-ipn.html",
+          "https://www.bbva.mx/content/dam/public-web/mexico/documents/personas/tarjetas/TCR-IPN.pdf"
+        ]
+      }
+    }
   },
   {
     "card_id": "bbva_mexico__oro_bbva",
@@ -2954,7 +3141,7 @@
     "census_confidence": "high",
     "census_note": "no anualidad",
     "conflicts": [],
-    "notes": "BBVA publica dos CAT distintos el mismo día: uno en la ficha del producto y otro en el tarifario general. Se registra el del tarifario por ser el más reciente; la cifra de la ficha queda anotada. No es un conflicto entre fuentes: ambas son del emisor. Ficha del producto: 124.8%. Tarifario: 122.9%.",
+    "notes": "BBVA publica dos CAT distintos el mismo día: uno en la ficha del producto y otro en el tarifario general. Se registra el del tarifario por ser el más reciente; la cifra de la ficha queda anotada. No es un conflicto entre fuentes: ambas son del emisor. Ficha del producto: 124.8%. Tarifario: 122.9%. CORRECCIÓN 2026-08-17: la comisión por administración del titular estaba en UNKNOWN; el folleto TCR-Start del emisor la fija en $0.00 sin IVA, con tasa promedio ponderada 83.39% e ingreso mínimo de $2,000 mensuales (18 a 75 años). Fecha de cálculo corregida al 9 de marzo de 2026 — las filas de BBVA traían 2026-03-01, que no coincide con ningún documento vigente del emisor; revisar el resto de la cartera.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
@@ -2967,9 +3154,9 @@
     "other_eligibility_criteria": "NOT_APPLICABLE",
     "point_value_mxn": "UNKNOWN",
     "effective_rate_pct": "UNKNOWN",
-    "interest_rate_annual_pct": "UNKNOWN",
+    "interest_rate_annual_pct": 83.39,
     "cat_promedio_pct": 122.9,
-    "annual_fee_mxn": "UNKNOWN",
+    "annual_fee_mxn": 0,
     "base_reward_type": "points",
     "base_reward_rate": "UNKNOWN",
     "points_program_name": "Puntos BBVA",
@@ -2986,9 +3173,9 @@
       "cost": {
         "score": "medium",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-08-07",
+        "verified_on": "2026-08-17",
         "sources": [
-          "https://bancario.com.mx/tarjeta-de-credito-bbva-mexico"
+          "https://www.bbva.mx/content/dam/public-web/mexico/documents/personas/tarjetas/TCR-Start.pdf"
         ]
       },
       "rewards": {
@@ -3010,15 +3197,15 @@
       "eligibility": {
         "score": "high",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-08-07",
+        "verified_on": "2026-08-17",
         "sources": [
-          "https://bancario.com.mx/tarjeta-de-credito-bbva-mexico"
+          "https://www.bbva.mx/content/dam/public-web/mexico/documents/personas/tarjetas/TCR-Start.pdf"
         ]
       }
     },
     "fee_billing_period": "UNKNOWN",
-    "cat_calculated_on": "2026-03-01",
-    "cat_valid_until": "UNKNOWN",
+    "cat_calculated_on": "2026-03-09",
+    "cat_valid_until": "2026-09-05",
     "accrual_basis": "UNKNOWN",
     "accrual_rate": "UNKNOWN",
     "accrual_block_mxn": "NOT_APPLICABLE"
@@ -3030,22 +3217,86 @@
     "display_name": "Tarjeta Vive BBVA",
     "former_names": [],
     "legacy_id": "Tarjeta Vive BBVA",
-    "tier": "UNKNOWN",
+    "tier": "clasica",
     "network": "UNKNOWN",
     "lifecycle_status": "active",
-    "mapping_status": "skeleton",
+    "mapping_status": "mapped",
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": "",
+    "notes": "Acumula 9% en Puntos BBVA. La página del producto y el folleto TCR-Vive del emisor coinciden en CAT, tasa y comisión. La página del producto anuncia 'Sin anualidad* de por vida' junto a una comisión por administración del titular de $748 sin IVA. No se capturó el texto de la nota al pie, así que annual_fee_first_year_waived y la condición quedan UNKNOWN en lugar de suponer la condición de Azul BBVA (contratación 100% en línea). Se registra la comisión que el emisor publica. Las compras a meses sin intereses no acumulan Puntos. BBVA no publica el valor en pesos del Punto, así que effective_rate_pct queda UNKNOWN.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
     "inactivity_min_spend_mxn": "NOT_APPLICABLE",
     "inactivity_spend_period": "NOT_APPLICABLE",
-    "fee_billing_period": "UNKNOWN",
-    "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "fee_billing_period": "annual",
+    "cat_calculated_on": "2026-03-09",
+    "cat_valid_until": "2026-09-05",
+    "annual_fee_mxn": 748,
+    "annual_fee_includes_iva": false,
+    "annual_fee_first_year_waived": "UNKNOWN",
+    "annual_fee_waiver_condition": "UNKNOWN",
+    "interest_rate_annual_pct": 60.47,
+    "cat_promedio_pct": 89.6,
+    "base_reward_type": "points",
+    "base_reward_rate": 9.0,
+    "point_value_mxn": "UNKNOWN",
+    "effective_rate_pct": "UNKNOWN",
+    "points_program_name": "Puntos BBVA",
+    "accrual_basis": "pct_of_spend",
+    "accrual_rate": 9.0,
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "min_income_mxn_monthly": "UNKNOWN",
+    "invitation_only": false,
+    "other_eligibility_criteria": "NOT_APPLICABLE",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.bbva.mx/personas/productos/tarjetas-de-credito/tarjeta-de-credito-vive.html",
+          "https://www.bbva.mx/content/dam/public-web/mexico/documents/personas/tarjetas/TCR-Vive.pdf"
+        ]
+      },
+      "cost": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.bbva.mx/personas/productos/tarjetas-de-credito/tarjeta-de-credito-vive.html",
+          "https://www.bbva.mx/content/dam/public-web/mexico/documents/personas/tarjetas/TCR-Vive.pdf"
+        ]
+      },
+      "rewards": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.bbva.mx/personas/productos/tarjetas-de-credito/tarjeta-de-credito-vive.html",
+          "https://www.bbva.mx/content/dam/public-web/mexico/documents/personas/tarjetas/TCR-Vive.pdf"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.bbva.mx/personas/productos/tarjetas-de-credito/tarjeta-de-credito-vive.html",
+          "https://www.bbva.mx/content/dam/public-web/mexico/documents/personas/tarjetas/TCR-Vive.pdf"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.bbva.mx/personas/productos/tarjetas-de-credito/tarjeta-de-credito-vive.html",
+          "https://www.bbva.mx/content/dam/public-web/mexico/documents/personas/tarjetas/TCR-Vive.pdf"
+        ]
+      }
+    }
   },
   {
     "card_id": "cibanco__clasica_platinum",
@@ -5194,13 +5445,13 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": "No annual fee entry card",
+    "notes": "No annual fee entry card CORRECCIÓN 2026-08-17: CAT 132.3%, el más alto del conjunto de datos. Sin costo de administración del titular de por vida, PERO cobra $165 al mes de penalización por inactividad si la tarjeta no acumula $1,500 en compras o cargos recurrentes en el corte — hasta $1,980 al año. Tabla consolidada de CAT del emisor (CAT, tasa promedio y comisión de administración del titular en un solo documento), fecha de cálculo 31 de marzo de 2026, vigencia al 30 de septiembre de 2026. Tasa VARIABLE referenciada a T.I.I.E. Diaria Compuesta Ajustada más un margen fijo.",
     "annual_fee_mxn": 0,
     "annual_fee_includes_iva": "UNKNOWN",
     "annual_fee_first_year_waived": "UNKNOWN",
     "annual_fee_waiver_condition": "Sin anualidad",
-    "interest_rate_annual_pct": "UNKNOWN",
-    "cat_promedio_pct": "UNKNOWN",
+    "interest_rate_annual_pct": 78.39,
+    "cat_promedio_pct": 132.3,
     "base_reward_type": "none",
     "base_reward_rate": "UNKNOWN",
     "point_value_mxn": "NOT_APPLICABLE",
@@ -5220,11 +5471,12 @@
         ]
       },
       "cost": {
-        "score": "medium",
+        "score": "high",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-07-22",
+        "verified_on": "2026-08-17",
         "sources": [
-          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/scotia-basica.aspx"
+          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/servicios/mas-informacion.aspx",
+          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/tarjetas-tradicionales/tarjeta-ideal.aspx"
         ]
       },
       "rewards": {
@@ -5252,14 +5504,14 @@
         ]
       }
     },
-    "inactivity_fee_mxn": "NOT_APPLICABLE",
-    "inactivity_fee_period": "NOT_APPLICABLE",
-    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
-    "inactivity_min_spend_mxn": "NOT_APPLICABLE",
-    "inactivity_spend_period": "NOT_APPLICABLE",
+    "inactivity_fee_mxn": 165,
+    "inactivity_fee_period": "monthly",
+    "inactivity_fee_includes_iva": false,
+    "inactivity_min_spend_mxn": 1500,
+    "inactivity_spend_period": "monthly",
     "fee_billing_period": "NOT_APPLICABLE",
-    "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN",
+    "cat_calculated_on": "2026-03-31",
+    "cat_valid_until": "2026-09-30",
     "accrual_basis": "NOT_APPLICABLE",
     "accrual_rate": "NOT_APPLICABLE",
     "accrual_block_mxn": "NOT_APPLICABLE"
@@ -5271,22 +5523,81 @@
     "display_name": "Infinite Scotia Wealth Management",
     "former_names": [],
     "legacy_id": "Infinite Scotia Wealth Management",
-    "tier": "UNKNOWN",
+    "tier": "infinite",
     "network": "UNKNOWN",
     "lifecycle_status": "active",
-    "mapping_status": "skeleton",
+    "mapping_status": "mapped",
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": "",
+    "notes": "La anualidad más alta del conjunto de datos: $20,000 + IVA, con el CAT más bajo (30.5%). Producto de Wealth Management. Tabla consolidada de CAT del emisor (CAT, tasa promedio y comisión de administración del titular en un solo documento), fecha de cálculo 31 de marzo de 2026, vigencia al 30 de septiembre de 2026. Tasa VARIABLE referenciada a T.I.I.E. Diaria Compuesta Ajustada más un margen fijo. Tasa de acumulación de ScotiaRewards no publicada en la tabla del emisor: accrual_basis UNKNOWN.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
     "inactivity_min_spend_mxn": "NOT_APPLICABLE",
     "inactivity_spend_period": "NOT_APPLICABLE",
-    "fee_billing_period": "UNKNOWN",
-    "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "fee_billing_period": "annual",
+    "cat_calculated_on": "2026-03-31",
+    "cat_valid_until": "2026-09-30",
+    "annual_fee_mxn": 20000,
+    "annual_fee_includes_iva": false,
+    "annual_fee_first_year_waived": "UNKNOWN",
+    "annual_fee_waiver_condition": "UNKNOWN",
+    "interest_rate_annual_pct": 24.68,
+    "cat_promedio_pct": 30.5,
+    "base_reward_type": "points",
+    "base_reward_rate": "UNKNOWN",
+    "point_value_mxn": "UNKNOWN",
+    "effective_rate_pct": "UNKNOWN",
+    "points_program_name": "ScotiaPuntos / ScotiaPesos",
+    "accrual_basis": "UNKNOWN",
+    "accrual_rate": "UNKNOWN",
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "min_income_mxn_monthly": "UNKNOWN",
+    "invitation_only": false,
+    "other_eligibility_criteria": "NOT_APPLICABLE",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/servicios/mas-informacion.aspx"
+        ]
+      },
+      "cost": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/servicios/mas-informacion.aspx"
+        ]
+      },
+      "rewards": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/servicios/mas-informacion.aspx"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/servicios/mas-informacion.aspx"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/servicios/mas-informacion.aspx"
+        ]
+      }
+    }
   },
   {
     "card_id": "scotiabank_mexico__scotia_travel_clasica",
@@ -5295,22 +5606,81 @@
     "display_name": "Scotia Travel Clásica",
     "former_names": [],
     "legacy_id": "Scotia Travel Clásica",
-    "tier": "UNKNOWN",
+    "tier": "clasica",
     "network": "UNKNOWN",
     "lifecycle_status": "active",
-    "mapping_status": "skeleton",
+    "mapping_status": "mapped",
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": "",
+    "notes": "RESUELVE EL BLOQUEO ORIGINAL: tres comparadores daban tres anualidades distintas ($720, $750, $760). El emisor publica $799 + IVA. Tabla consolidada de CAT del emisor (CAT, tasa promedio y comisión de administración del titular en un solo documento), fecha de cálculo 31 de marzo de 2026, vigencia al 30 de septiembre de 2026. Tasa VARIABLE referenciada a T.I.I.E. Diaria Compuesta Ajustada más un margen fijo. Tasa de acumulación de ScotiaRewards no publicada en la tabla del emisor: accrual_basis UNKNOWN.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
     "inactivity_min_spend_mxn": "NOT_APPLICABLE",
     "inactivity_spend_period": "NOT_APPLICABLE",
-    "fee_billing_period": "UNKNOWN",
-    "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "fee_billing_period": "annual",
+    "cat_calculated_on": "2026-03-31",
+    "cat_valid_until": "2026-09-30",
+    "annual_fee_mxn": 799,
+    "annual_fee_includes_iva": false,
+    "annual_fee_first_year_waived": "UNKNOWN",
+    "annual_fee_waiver_condition": "UNKNOWN",
+    "interest_rate_annual_pct": 75.69,
+    "cat_promedio_pct": 111.9,
+    "base_reward_type": "points",
+    "base_reward_rate": "UNKNOWN",
+    "point_value_mxn": "UNKNOWN",
+    "effective_rate_pct": "UNKNOWN",
+    "points_program_name": "ScotiaPuntos / ScotiaPesos",
+    "accrual_basis": "UNKNOWN",
+    "accrual_rate": "UNKNOWN",
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "min_income_mxn_monthly": "UNKNOWN",
+    "invitation_only": false,
+    "other_eligibility_criteria": "NOT_APPLICABLE",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/servicios/mas-informacion.aspx"
+        ]
+      },
+      "cost": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/servicios/mas-informacion.aspx"
+        ]
+      },
+      "rewards": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/servicios/mas-informacion.aspx"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/servicios/mas-informacion.aspx"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/servicios/mas-informacion.aspx"
+        ]
+      }
+    }
   },
   {
     "card_id": "scotiabank_mexico__scotia_travel_oro",
@@ -5319,22 +5689,81 @@
     "display_name": "Scotia Travel Oro",
     "former_names": [],
     "legacy_id": "Scotia Travel Oro",
-    "tier": "UNKNOWN",
+    "tier": "oro",
     "network": "UNKNOWN",
     "lifecycle_status": "active",
-    "mapping_status": "skeleton",
+    "mapping_status": "mapped",
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": "",
+    "notes": "Comparadores daban $1,099-$1,300; el emisor publica $1,209 + IVA. Tabla consolidada de CAT del emisor (CAT, tasa promedio y comisión de administración del titular en un solo documento), fecha de cálculo 31 de marzo de 2026, vigencia al 30 de septiembre de 2026. Tasa VARIABLE referenciada a T.I.I.E. Diaria Compuesta Ajustada más un margen fijo. Tasa de acumulación de ScotiaRewards no publicada en la tabla del emisor: accrual_basis UNKNOWN.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
     "inactivity_min_spend_mxn": "NOT_APPLICABLE",
     "inactivity_spend_period": "NOT_APPLICABLE",
-    "fee_billing_period": "UNKNOWN",
-    "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "fee_billing_period": "annual",
+    "cat_calculated_on": "2026-03-31",
+    "cat_valid_until": "2026-09-30",
+    "annual_fee_mxn": 1209,
+    "annual_fee_includes_iva": false,
+    "annual_fee_first_year_waived": "UNKNOWN",
+    "annual_fee_waiver_condition": "UNKNOWN",
+    "interest_rate_annual_pct": 70.22,
+    "cat_promedio_pct": 104.2,
+    "base_reward_type": "points",
+    "base_reward_rate": "UNKNOWN",
+    "point_value_mxn": "UNKNOWN",
+    "effective_rate_pct": "UNKNOWN",
+    "points_program_name": "ScotiaPuntos / ScotiaPesos",
+    "accrual_basis": "UNKNOWN",
+    "accrual_rate": "UNKNOWN",
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "min_income_mxn_monthly": "UNKNOWN",
+    "invitation_only": false,
+    "other_eligibility_criteria": "NOT_APPLICABLE",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/servicios/mas-informacion.aspx"
+        ]
+      },
+      "cost": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/servicios/mas-informacion.aspx"
+        ]
+      },
+      "rewards": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/servicios/mas-informacion.aspx"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/servicios/mas-informacion.aspx"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/servicios/mas-informacion.aspx"
+        ]
+      }
+    }
   },
   {
     "card_id": "scotiabank_mexico__scotia_travel_platinum",
@@ -5350,13 +5779,13 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": "Annual fee from aggregator; verify. Lounge access",
-    "annual_fee_mxn": 2600,
+    "notes": "Annual fee from aggregator; verify. Lounge access CORRECCIÓN 2026-08-17: anualidad $2,600 -> $2,776 + IVA y CAT 66.9%. Tabla consolidada de CAT del emisor (CAT, tasa promedio y comisión de administración del titular en un solo documento), fecha de cálculo 31 de marzo de 2026, vigencia al 30 de septiembre de 2026. Tasa VARIABLE referenciada a T.I.I.E. Diaria Compuesta Ajustada más un margen fijo.",
+    "annual_fee_mxn": 2776,
     "annual_fee_includes_iva": false,
     "annual_fee_first_year_waived": "UNKNOWN",
     "annual_fee_waiver_condition": "UNKNOWN",
-    "interest_rate_annual_pct": "UNKNOWN",
-    "cat_promedio_pct": "UNKNOWN",
+    "interest_rate_annual_pct": 48.2,
+    "cat_promedio_pct": 66.9,
     "base_reward_type": "points",
     "base_reward_rate": "UNKNOWN",
     "point_value_mxn": "UNKNOWN",
@@ -5378,9 +5807,9 @@
       "cost": {
         "score": "medium",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-07-22",
+        "verified_on": "2026-08-17",
         "sources": [
-          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/travel-platinum.aspx"
+          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/servicios/mas-informacion.aspx"
         ]
       },
       "rewards": {
@@ -5414,8 +5843,8 @@
     "inactivity_min_spend_mxn": "NOT_APPLICABLE",
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "UNKNOWN",
-    "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN",
+    "cat_calculated_on": "2026-03-31",
+    "cat_valid_until": "2026-09-30",
     "accrual_basis": "UNKNOWN",
     "accrual_rate": "UNKNOWN",
     "accrual_block_mxn": "NOT_APPLICABLE"
@@ -5427,22 +5856,81 @@
     "display_name": "Singular by Scotiabank Infinite",
     "former_names": [],
     "legacy_id": "Singular by Scotiabank Infinite",
-    "tier": "UNKNOWN",
+    "tier": "infinite",
     "network": "UNKNOWN",
     "lifecycle_status": "active",
-    "mapping_status": "skeleton",
+    "mapping_status": "mapped",
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": "",
+    "notes": "Tabla consolidada de CAT del emisor (CAT, tasa promedio y comisión de administración del titular en un solo documento), fecha de cálculo 31 de marzo de 2026, vigencia al 30 de septiembre de 2026. Tasa VARIABLE referenciada a T.I.I.E. Diaria Compuesta Ajustada más un margen fijo. Tasa de acumulación de ScotiaRewards no publicada en la tabla del emisor: accrual_basis UNKNOWN.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
     "inactivity_min_spend_mxn": "NOT_APPLICABLE",
     "inactivity_spend_period": "NOT_APPLICABLE",
-    "fee_billing_period": "UNKNOWN",
-    "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "fee_billing_period": "annual",
+    "cat_calculated_on": "2026-03-31",
+    "cat_valid_until": "2026-09-30",
+    "annual_fee_mxn": 6414,
+    "annual_fee_includes_iva": false,
+    "annual_fee_first_year_waived": "UNKNOWN",
+    "annual_fee_waiver_condition": "UNKNOWN",
+    "interest_rate_annual_pct": 34.47,
+    "cat_promedio_pct": 42.6,
+    "base_reward_type": "points",
+    "base_reward_rate": "UNKNOWN",
+    "point_value_mxn": "UNKNOWN",
+    "effective_rate_pct": "UNKNOWN",
+    "points_program_name": "ScotiaPuntos / ScotiaPesos",
+    "accrual_basis": "UNKNOWN",
+    "accrual_rate": "UNKNOWN",
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "min_income_mxn_monthly": "UNKNOWN",
+    "invitation_only": false,
+    "other_eligibility_criteria": "NOT_APPLICABLE",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/servicios/mas-informacion.aspx"
+        ]
+      },
+      "cost": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/servicios/mas-informacion.aspx"
+        ]
+      },
+      "rewards": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/servicios/mas-informacion.aspx"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/servicios/mas-informacion.aspx"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/servicios/mas-informacion.aspx"
+        ]
+      }
+    }
   },
   {
     "card_id": "scotiabank_mexico__singular_by_scotiabank_signature",
@@ -5451,22 +5939,81 @@
     "display_name": "Singular by Scotiabank Signature",
     "former_names": [],
     "legacy_id": "Singular by Scotiabank Signature",
-    "tier": "UNKNOWN",
+    "tier": "platino",
     "network": "UNKNOWN",
     "lifecycle_status": "active",
-    "mapping_status": "skeleton",
+    "mapping_status": "mapped",
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": "",
+    "notes": "Tabla consolidada de CAT del emisor (CAT, tasa promedio y comisión de administración del titular en un solo documento), fecha de cálculo 31 de marzo de 2026, vigencia al 30 de septiembre de 2026. Tasa VARIABLE referenciada a T.I.I.E. Diaria Compuesta Ajustada más un margen fijo. Tasa de acumulación de ScotiaRewards no publicada en la tabla del emisor: accrual_basis UNKNOWN.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
     "inactivity_min_spend_mxn": "NOT_APPLICABLE",
     "inactivity_spend_period": "NOT_APPLICABLE",
-    "fee_billing_period": "UNKNOWN",
-    "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "fee_billing_period": "annual",
+    "cat_calculated_on": "2026-03-31",
+    "cat_valid_until": "2026-09-30",
+    "annual_fee_mxn": 5100,
+    "annual_fee_includes_iva": false,
+    "annual_fee_first_year_waived": "UNKNOWN",
+    "annual_fee_waiver_condition": "UNKNOWN",
+    "interest_rate_annual_pct": 34.55,
+    "cat_promedio_pct": 45.6,
+    "base_reward_type": "points",
+    "base_reward_rate": "UNKNOWN",
+    "point_value_mxn": "UNKNOWN",
+    "effective_rate_pct": "UNKNOWN",
+    "points_program_name": "ScotiaPuntos / ScotiaPesos",
+    "accrual_basis": "UNKNOWN",
+    "accrual_rate": "UNKNOWN",
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "min_income_mxn_monthly": "UNKNOWN",
+    "invitation_only": false,
+    "other_eligibility_criteria": "NOT_APPLICABLE",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/servicios/mas-informacion.aspx"
+        ]
+      },
+      "cost": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/servicios/mas-informacion.aspx"
+        ]
+      },
+      "rewards": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/servicios/mas-informacion.aspx"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/servicios/mas-informacion.aspx"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/servicios/mas-informacion.aspx"
+        ]
+      }
+    }
   },
   {
     "card_id": "scotiabank_mexico__singular_by_scotiabank_world_elite",
@@ -5482,13 +6029,13 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": "Row added to resolve orphan key referenced in CardPerks; only the Elite Valet perk was captured from the official page. Fee, rate and eligibility NOT yet sourced - do not import as confirmed",
-    "annual_fee_mxn": "UNKNOWN",
+    "notes": "Row added to resolve orphan key referenced in CardPerks; only the Elite Valet perk was captured from the official page. Fee, rate and eligibility NOT yet sourced - do not import as confirmed CORRECCIÓN 2026-08-17: anualidad resuelta de UNKNOWN a $6,308 + IVA, CAT 57.0%. Tabla consolidada de CAT del emisor (CAT, tasa promedio y comisión de administración del titular en un solo documento), fecha de cálculo 31 de marzo de 2026, vigencia al 30 de septiembre de 2026. Tasa VARIABLE referenciada a T.I.I.E. Diaria Compuesta Ajustada más un margen fijo.",
+    "annual_fee_mxn": 6308,
     "annual_fee_includes_iva": false,
     "annual_fee_first_year_waived": "UNKNOWN",
     "annual_fee_waiver_condition": "UNKNOWN",
-    "interest_rate_annual_pct": "UNKNOWN",
-    "cat_promedio_pct": "UNKNOWN",
+    "interest_rate_annual_pct": 42.36,
+    "cat_promedio_pct": 57.0,
     "base_reward_type": "points",
     "base_reward_rate": "UNKNOWN",
     "point_value_mxn": "UNKNOWN",
@@ -5510,9 +6057,9 @@
       "cost": {
         "score": "medium",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-07-22",
+        "verified_on": "2026-08-17",
         "sources": [
-          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/world-elite.aspx"
+          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/servicios/mas-informacion.aspx"
         ]
       },
       "rewards": {
@@ -5546,8 +6093,8 @@
     "inactivity_min_spend_mxn": "NOT_APPLICABLE",
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "UNKNOWN",
-    "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN",
+    "cat_calculated_on": "2026-03-31",
+    "cat_valid_until": "2026-09-30",
     "accrual_basis": "UNKNOWN",
     "accrual_rate": "UNKNOWN",
     "accrual_block_mxn": "NOT_APPLICABLE"
@@ -5559,22 +6106,81 @@
     "display_name": "Tarjeta Tasa Baja Clásica",
     "former_names": [],
     "legacy_id": "Tarjeta Tasa Baja Clásica",
-    "tier": "UNKNOWN",
+    "tier": "clasica",
     "network": "UNKNOWN",
     "lifecycle_status": "active",
-    "mapping_status": "skeleton",
+    "mapping_status": "mapped",
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": "",
+    "notes": "Sin comisión de administración del titular y CAT de 58.7%, muy por debajo de la gama Travel — la propuesta es tasa baja, no recompensas. Tabla consolidada de CAT del emisor (CAT, tasa promedio y comisión de administración del titular en un solo documento), fecha de cálculo 31 de marzo de 2026, vigencia al 30 de septiembre de 2026. Tasa VARIABLE referenciada a T.I.I.E. Diaria Compuesta Ajustada más un margen fijo. Tasa de acumulación de ScotiaRewards no publicada en la tabla del emisor: accrual_basis UNKNOWN.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
     "inactivity_min_spend_mxn": "NOT_APPLICABLE",
     "inactivity_spend_period": "NOT_APPLICABLE",
-    "fee_billing_period": "UNKNOWN",
-    "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "fee_billing_period": "annual",
+    "cat_calculated_on": "2026-03-31",
+    "cat_valid_until": "2026-09-30",
+    "annual_fee_mxn": 0,
+    "annual_fee_includes_iva": false,
+    "annual_fee_first_year_waived": "UNKNOWN",
+    "annual_fee_waiver_condition": "UNKNOWN",
+    "interest_rate_annual_pct": 47.07,
+    "cat_promedio_pct": 58.7,
+    "base_reward_type": "points",
+    "base_reward_rate": "UNKNOWN",
+    "point_value_mxn": "UNKNOWN",
+    "effective_rate_pct": "UNKNOWN",
+    "points_program_name": "ScotiaPuntos / ScotiaPesos",
+    "accrual_basis": "UNKNOWN",
+    "accrual_rate": "UNKNOWN",
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "min_income_mxn_monthly": "UNKNOWN",
+    "invitation_only": false,
+    "other_eligibility_criteria": "NOT_APPLICABLE",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/servicios/mas-informacion.aspx"
+        ]
+      },
+      "cost": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/servicios/mas-informacion.aspx"
+        ]
+      },
+      "rewards": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/servicios/mas-informacion.aspx"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/servicios/mas-informacion.aspx"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/servicios/mas-informacion.aspx"
+        ]
+      }
+    }
   },
   {
     "card_id": "scotiabank_mexico__tasa_baja_oro",
@@ -5583,22 +6189,81 @@
     "display_name": "Tarjeta Tasa Baja Oro",
     "former_names": [],
     "legacy_id": "Tarjeta Tasa Baja Oro",
-    "tier": "UNKNOWN",
+    "tier": "oro",
     "network": "UNKNOWN",
     "lifecycle_status": "active",
-    "mapping_status": "skeleton",
+    "mapping_status": "mapped",
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": "",
+    "notes": "Tabla consolidada de CAT del emisor (CAT, tasa promedio y comisión de administración del titular en un solo documento), fecha de cálculo 31 de marzo de 2026, vigencia al 30 de septiembre de 2026. Tasa VARIABLE referenciada a T.I.I.E. Diaria Compuesta Ajustada más un margen fijo. Tasa de acumulación de ScotiaRewards no publicada en la tabla del emisor: accrual_basis UNKNOWN.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
     "inactivity_min_spend_mxn": "NOT_APPLICABLE",
     "inactivity_spend_period": "NOT_APPLICABLE",
-    "fee_billing_period": "UNKNOWN",
-    "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "fee_billing_period": "annual",
+    "cat_calculated_on": "2026-03-31",
+    "cat_valid_until": "2026-09-30",
+    "annual_fee_mxn": 0,
+    "annual_fee_includes_iva": false,
+    "annual_fee_first_year_waived": "UNKNOWN",
+    "annual_fee_waiver_condition": "UNKNOWN",
+    "interest_rate_annual_pct": 47.28,
+    "cat_promedio_pct": 59.0,
+    "base_reward_type": "points",
+    "base_reward_rate": "UNKNOWN",
+    "point_value_mxn": "UNKNOWN",
+    "effective_rate_pct": "UNKNOWN",
+    "points_program_name": "ScotiaPuntos / ScotiaPesos",
+    "accrual_basis": "UNKNOWN",
+    "accrual_rate": "UNKNOWN",
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "min_income_mxn_monthly": "UNKNOWN",
+    "invitation_only": false,
+    "other_eligibility_criteria": "NOT_APPLICABLE",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/servicios/mas-informacion.aspx"
+        ]
+      },
+      "cost": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/servicios/mas-informacion.aspx"
+        ]
+      },
+      "rewards": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/servicios/mas-informacion.aspx"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/servicios/mas-informacion.aspx"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/servicios/mas-informacion.aspx"
+        ]
+      }
+    }
   },
   {
     "card_id": "banco_inbursa__aeromexico_ascend",
@@ -6862,22 +7527,81 @@
     "display_name": "Tarjeta Rayados BBVA",
     "former_names": [],
     "legacy_id": "Tarjeta Rayados BBVA",
-    "tier": "UNKNOWN",
+    "tier": "clasica",
     "network": "UNKNOWN",
     "lifecycle_status": "active",
-    "mapping_status": "skeleton",
+    "mapping_status": "mapped",
     "census_confidence": "high",
     "census_note": "co-brand (C.F. Monterrey)",
     "conflicts": [],
-    "notes": "Co-brand split from legacy issuer string 'BBVA México (Rayados)'.",
+    "notes": "Tarjeta de afinidad con el club Rayados de Monterrey. Acumula 9% en Puntos BBVA. Seguros sin costo de compra protegida y de pérdida o demora de equipaje. La página del producto anuncia 'Sin anualidad* de por vida' junto a una comisión por administración del titular de $748 sin IVA. No se capturó el texto de la nota al pie, así que annual_fee_first_year_waived y la condición quedan UNKNOWN en lugar de suponer la condición de Azul BBVA (contratación 100% en línea). Se registra la comisión que el emisor publica. Las compras a meses sin intereses no acumulan Puntos. BBVA no publica el valor en pesos del Punto, así que effective_rate_pct queda UNKNOWN.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
     "inactivity_min_spend_mxn": "NOT_APPLICABLE",
     "inactivity_spend_period": "NOT_APPLICABLE",
-    "fee_billing_period": "UNKNOWN",
-    "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "fee_billing_period": "annual",
+    "cat_calculated_on": "2026-03-09",
+    "cat_valid_until": "2026-09-05",
+    "annual_fee_mxn": 748,
+    "annual_fee_includes_iva": false,
+    "annual_fee_first_year_waived": "UNKNOWN",
+    "annual_fee_waiver_condition": "UNKNOWN",
+    "interest_rate_annual_pct": 63.78,
+    "cat_promedio_pct": 92.3,
+    "base_reward_type": "points",
+    "base_reward_rate": 9.0,
+    "point_value_mxn": "UNKNOWN",
+    "effective_rate_pct": "UNKNOWN",
+    "points_program_name": "Puntos BBVA",
+    "accrual_basis": "pct_of_spend",
+    "accrual_rate": 9.0,
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "min_income_mxn_monthly": "UNKNOWN",
+    "invitation_only": false,
+    "other_eligibility_criteria": "NOT_APPLICABLE",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.bbva.mx/personas/productos/tarjetas-de-credito/tarjeta-de-credito-rayados.html"
+        ]
+      },
+      "cost": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.bbva.mx/personas/productos/tarjetas-de-credito/tarjeta-de-credito-rayados.html"
+        ]
+      },
+      "rewards": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.bbva.mx/personas/productos/tarjetas-de-credito/tarjeta-de-credito-rayados.html"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.bbva.mx/personas/productos/tarjetas-de-credito/tarjeta-de-credito-rayados.html"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.bbva.mx/personas/productos/tarjetas-de-credito/tarjeta-de-credito-rayados.html"
+        ]
+      }
+    }
   },
   {
     "card_id": "banco_inbursa__bodega_aurrera_inbursa",
