@@ -4002,7 +4002,7 @@
     "census_confidence": "high",
     "census_note": "cashback",
     "conflicts": [],
-    "notes": "Saldo HSBC 2Now: 2% sobre los primeros $42,500 de compras cada mes — el tope es de GASTO, no de recompensa (equivale a $850 de reembolso). Se refleja en un máximo de 2 días hábiles.",
+    "notes": "Saldo HSBC 2Now: 2% sobre los primeros $42,500 de compras cada mes — el tope es de GASTO, no de recompensa (equivale a $850 de reembolso). Se refleja en un máximo de 2 días hábiles. CUOTA CONDICIONADA: la comisión de administración del titular se exenta usando la tarjeta una vez al mes por al menos $300 M.N. (compras nacionales, internacionales, cargos automáticos, disposición de efectivo o transferencia de saldo). El emisor NO publica el importe que se cobra al no cumplirla, así que inactivity_fee_mxn queda UNKNOWN y sólo se registra el umbral. La nota al pie 8 dice literalmente 'Ahora comisión por administración de tarjeta del titular'. El umbral de 2Now es de $3,500 M.N. mensuales, no $300 (nota al pie 15). No participa en el Programa más de HSBC.",
     "annual_fee_mxn": 0,
     "annual_fee_includes_iva": false,
     "annual_fee_first_year_waived": false,
@@ -4029,11 +4029,10 @@
         ]
       },
       "cost": {
-        "score": "high",
+        "score": "medium",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-08-07",
+        "verified_on": "2026-08-17",
         "sources": [
-          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/2now/",
           "https://www.hsbc.com.mx/tarjetas-de-credito/productos/"
         ]
       },
@@ -4065,11 +4064,11 @@
         ]
       }
     },
-    "inactivity_fee_mxn": "NOT_APPLICABLE",
-    "inactivity_fee_period": "NOT_APPLICABLE",
-    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
-    "inactivity_min_spend_mxn": "NOT_APPLICABLE",
-    "inactivity_spend_period": "NOT_APPLICABLE",
+    "inactivity_fee_mxn": "UNKNOWN",
+    "inactivity_fee_period": "monthly",
+    "inactivity_fee_includes_iva": "UNKNOWN",
+    "inactivity_min_spend_mxn": 3500,
+    "inactivity_spend_period": "monthly",
     "fee_billing_period": "NOT_APPLICABLE",
     "cat_calculated_on": "2026-03-10",
     "cat_valid_until": "2026-09-10",
@@ -4115,7 +4114,7 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": "No participa en el Programa Más de HSBC según el folleto; programa de recompensas propio por confirmar.",
+    "notes": "No participa en el Programa Más de HSBC según el folleto; programa de recompensas propio por confirmar. Ingreso mínimo $25,000 mensuales, o $5,000 con Nómina HSBC. La comisión de administración de $915 se paga en 6 mensualidades sin intereses, pero es anual, no mensual.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
@@ -4129,7 +4128,7 @@
     "annual_fee_waiver_condition": "NOT_APPLICABLE",
     "point_value_mxn": "UNKNOWN",
     "effective_rate_pct": "UNKNOWN",
-    "min_income_mxn_monthly": "UNKNOWN",
+    "min_income_mxn_monthly": 25000,
     "invitation_only": false,
     "other_eligibility_criteria": "NOT_APPLICABLE",
     "points_program_name": "Más de HSBC",
@@ -4178,10 +4177,9 @@
       "eligibility": {
         "score": "high",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-08-07",
+        "verified_on": "2026-08-17",
         "sources": [
-          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/",
-          "https://www.hsbc.com.mx/content/dam/hsbc/mx/documents/tarjetas/folleto_digital_tarjetas.pdf"
+          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/"
         ]
       }
     },
@@ -4371,7 +4369,7 @@
     "census_confidence": "high",
     "census_note": "co-brand (Viva Aerobús)",
     "conflicts": [],
-    "notes": "Comisión por administración mensual exentable con $300 de compra al mes. El emisor no publica el monto de la comisión, así que queda UNKNOWN — el umbral sí está registrado.",
+    "notes": "Comisión por administración mensual exentable con $300 de compra al mes. El emisor no publica el monto de la comisión, así que queda UNKNOWN — el umbral sí está registrado. CUOTA CONDICIONADA: la comisión de administración del titular se exenta usando la tarjeta una vez al mes por al menos $300 M.N. (compras nacionales, internacionales, cargos automáticos, disposición de efectivo o transferencia de saldo). El emisor NO publica el importe que se cobra al no cumplirla, así que inactivity_fee_mxn queda UNKNOWN y sólo se registra el umbral. La nota al pie 8 dice literalmente 'Ahora comisión por administración de tarjeta del titular'.",
     "annual_fee_mxn": 0,
     "annual_fee_includes_iva": false,
     "annual_fee_first_year_waived": false,
@@ -4383,7 +4381,7 @@
     "point_value_mxn": "UNKNOWN",
     "effective_rate_pct": "UNKNOWN",
     "points_program_name": "Doters",
-    "min_income_mxn_monthly": "UNKNOWN",
+    "min_income_mxn_monthly": 5000,
     "invitation_only": false,
     "other_eligibility_criteria": "NOT_APPLICABLE",
     "legacy_market_id": "hsbc_viva",
@@ -4398,11 +4396,10 @@
         ]
       },
       "cost": {
-        "score": "high",
+        "score": "medium",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-08-07",
+        "verified_on": "2026-08-17",
         "sources": [
-          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/viva/",
           "https://www.hsbc.com.mx/tarjetas-de-credito/productos/"
         ]
       },
@@ -4427,9 +4424,8 @@
       "eligibility": {
         "score": "high",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-08-07",
+        "verified_on": "2026-08-17",
         "sources": [
-          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/viva/",
           "https://www.hsbc.com.mx/tarjetas-de-credito/productos/"
         ]
       }
@@ -4460,7 +4456,7 @@
     "census_confidence": "high",
     "census_note": "co-brand (Viva Aerobús)",
     "conflicts": [],
-    "notes": "Doters: 3 puntos por cada $10 en compras Viva, 2 puntos por cada $10 en el resto. Doters no publica valor en pesos, así que effective_rate_pct queda UNKNOWN.",
+    "notes": "Doters: 3 puntos por cada $10 en compras Viva, 2 puntos por cada $10 en el resto. Doters no publica valor en pesos, así que effective_rate_pct queda UNKNOWN. Primer año sin costo; $3,124 a partir del segundo. Accesos LoungeKey ilimitados a razón de uno por cada $8,000 de gasto.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
@@ -4470,11 +4466,11 @@
     "cat_calculated_on": "2026-03-10",
     "cat_valid_until": "2026-09-10",
     "annual_fee_includes_iva": false,
-    "annual_fee_first_year_waived": false,
+    "annual_fee_first_year_waived": true,
     "annual_fee_waiver_condition": "NOT_APPLICABLE",
     "point_value_mxn": "UNKNOWN",
     "effective_rate_pct": "UNKNOWN",
-    "min_income_mxn_monthly": "UNKNOWN",
+    "min_income_mxn_monthly": 35000,
     "invitation_only": false,
     "other_eligibility_criteria": "NOT_APPLICABLE",
     "points_program_name": "Doters",
@@ -4523,9 +4519,8 @@
       "eligibility": {
         "score": "high",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-08-07",
+        "verified_on": "2026-08-17",
         "sources": [
-          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/viva/",
           "https://www.hsbc.com.mx/tarjetas-de-credito/productos/"
         ]
       }
@@ -4572,19 +4567,19 @@
     "census_confidence": "high",
     "census_note": "no anualidad",
     "conflicts": [],
-    "notes": "Sin anualidad y sin programa de puntos. No participa en el Programa Más de HSBC.",
+    "notes": "Sin anualidad y sin programa de puntos. No participa en el Programa Más de HSBC. CUOTA CONDICIONADA: la comisión de administración del titular se exenta usando la tarjeta una vez al mes por al menos $300 M.N. (compras nacionales, internacionales, cargos automáticos, disposición de efectivo o transferencia de saldo). El emisor NO publica el importe que se cobra al no cumplirla, así que inactivity_fee_mxn queda UNKNOWN y sólo se registra el umbral. La nota al pie 8 dice literalmente 'Ahora comisión por administración de tarjeta del titular'. Acumula 1 punto del Programa más de HSBC por cada DÓLAR gastado.",
     "annual_fee_mxn": 0,
     "annual_fee_includes_iva": false,
     "annual_fee_first_year_waived": false,
     "annual_fee_waiver_condition": "NOT_APPLICABLE",
     "interest_rate_annual_pct": 49.04,
     "cat_promedio_pct": 95.5,
-    "base_reward_type": "none",
-    "base_reward_rate": 0,
-    "point_value_mxn": "NOT_APPLICABLE",
-    "effective_rate_pct": 0,
-    "points_program_name": "NOT_APPLICABLE",
-    "min_income_mxn_monthly": "UNKNOWN",
+    "base_reward_type": "points",
+    "base_reward_rate": "UNKNOWN",
+    "point_value_mxn": "UNKNOWN",
+    "effective_rate_pct": "UNKNOWN",
+    "points_program_name": "Programa más de HSBC",
+    "min_income_mxn_monthly": 25000,
     "invitation_only": false,
     "other_eligibility_criteria": "NOT_APPLICABLE",
     "legacy_market_id": "hsbc_zero",
@@ -4599,20 +4594,18 @@
         ]
       },
       "cost": {
-        "score": "high",
+        "score": "medium",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-08-07",
+        "verified_on": "2026-08-17",
         "sources": [
-          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/zero/",
           "https://www.hsbc.com.mx/tarjetas-de-credito/productos/"
         ]
       },
       "rewards": {
-        "score": "high",
+        "score": "medium",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-08-07",
+        "verified_on": "2026-08-17",
         "sources": [
-          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/zero/",
           "https://www.hsbc.com.mx/tarjetas-de-credito/productos/"
         ]
       },
@@ -4628,23 +4621,22 @@
       "eligibility": {
         "score": "high",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-08-07",
+        "verified_on": "2026-08-17",
         "sources": [
-          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/zero/",
           "https://www.hsbc.com.mx/tarjetas-de-credito/productos/"
         ]
       }
     },
-    "inactivity_fee_mxn": "NOT_APPLICABLE",
-    "inactivity_fee_period": "NOT_APPLICABLE",
-    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
-    "inactivity_min_spend_mxn": "NOT_APPLICABLE",
-    "inactivity_spend_period": "NOT_APPLICABLE",
+    "inactivity_fee_mxn": "UNKNOWN",
+    "inactivity_fee_period": "monthly",
+    "inactivity_fee_includes_iva": "UNKNOWN",
+    "inactivity_min_spend_mxn": 300,
+    "inactivity_spend_period": "monthly",
     "fee_billing_period": "NOT_APPLICABLE",
     "cat_calculated_on": "2026-03-10",
     "cat_valid_until": "2026-09-10",
-    "accrual_basis": "NOT_APPLICABLE",
-    "accrual_rate": "NOT_APPLICABLE",
+    "accrual_basis": "per_usd",
+    "accrual_rate": 1,
     "accrual_block_mxn": "NOT_APPLICABLE"
   },
   {
@@ -10374,6 +10366,31 @@
     "census_note": "issuer fee schedule (Anexo de Comisiones)",
     "conflicts": [],
     "notes": "Hallazgo de censo Stage 2: aparece en el Anexo de Comisiones de Banorte (CAT 98.8%, tasa 70.70%, sin comisión de administración) pero falta en el censo. No participa en la promoción de primera anualidad sin costo. Pendiente de aprobación antes de mapear en Stage 3.",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE",
+    "inactivity_spend_period": "NOT_APPLICABLE",
+    "fee_billing_period": "annual",
+    "cat_calculated_on": "UNKNOWN",
+    "cat_valid_until": "UNKNOWN"
+  },
+  {
+    "card_id": "hsbc_mexico__hsbc_one_plus",
+    "issuer_id": "hsbc_mexico",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito HSBC One+",
+    "former_names": [],
+    "legacy_id": "NOT_APPLICABLE",
+    "tier": "UNKNOWN",
+    "network": "UNKNOWN",
+    "lifecycle_status": "active",
+    "lifecycle_changed_on": "2026-08-17",
+    "mapping_status": "skeleton",
+    "census_confidence": "high",
+    "census_note": "issuer product index, marked '¡Nueva tarjeta!'",
+    "conflicts": [],
+    "notes": "Hallazgo de censo Stage 2: HSBC la anuncia como tarjeta nueva y no está en el censo. Comisión de administración del titular $2,900 M.N., ingreso mínimo $35,000. Devuelve 5% en entretenimiento, restaurantes, viajes, salud y compras internacionales — sería de las tasas de cashback más altas del conjunto de datos, así que conviene mapearla pronto. Pendiente de aprobación.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
