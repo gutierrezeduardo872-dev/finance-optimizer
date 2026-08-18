@@ -1,0 +1,11 @@
+[
+  {
+    "pair": "USD/MXN",
+    "rate": 17.0218,
+    "as_of": "2026-08-14",
+    "source": "Banxico SIE, serie SF43718 (tipo de cambio FIX)",
+    "source_url": "https://www.banxico.org.mx/SieAPIRest/service/v1/series/SF43718/datos/oportuno",
+    "ttl_days": 7,
+    "notes": "Tipo de cambio FIX de Banxico, la referencia oficial para obligaciones en moneda extranjera en México. Se publica cada día hábil hacia las 12:00 CDMX y aparece en el DOF al día hábil siguiente. Debe refrescarse desde la API del SIE, no capturarse a mano. Un solo registro para todo el conjunto de datos: ninguna fila de tarjeta almacena un tipo de cambio propio, porque un tipo de cambio guardado por fila se vuelve obsoleto de forma invisible y desigual."
+  }
+]

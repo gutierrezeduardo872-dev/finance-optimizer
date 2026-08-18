@@ -325,6 +325,39 @@ family, Aeroméxico Inbursa, Despegar, Hilton, Unique Rewards and Fiesta Rewards
 Before this field existed their published accrual sat in `notes`, where nothing
 downstream could read it.
 
+### Fee currency and product type
+
+```
+annual_fee_currency  MXN | USD
+product_type         credit | charge
+```
+
+**`annual_fee_currency`.** American Express prices its Mexican cards in dollars —
+the issuer's own wording is *"el equivalente en Moneda Nacional a $450 USD más
+IVA"*. Converting that into `annual_fee_mxn` at capture time freezes an exchange
+rate into the row, where it drifts invisibly and unevenly across rows captured on
+different days. Instead `annual_fee_mxn` holds the amount **in the currency named
+by `annual_fee_currency`**, and conversion happens at scoring time against
+`data/market/fx_rates.json`, which carries one dated USD/MXN FIX for the whole
+dataset.
+
+This is the same rule as `accrual_basis`: the dataset records what the issuer
+published, in the units the issuer published it, and arithmetic that needs a
+second variable belongs downstream where that variable can be dated.
+
+**`product_type`.** Most of what American Express sells in Mexico are *Tarjetas
+de Servicio* — charge cards, settled in full each month, with no revolving line.
+They have no ordinary interest rate and no CAT in the revolving sense, so
+`interest_rate_annual_pct` and `cat_promedio_pct` are `NOT_APPLICABLE`, not
+`UNKNOWN`. Without this field those cards look permanently under-researched, and
+an engine that reasons about carrying a balance will reason wrongly about them.
+
+### FxRates
+
+One row, refreshed from Banxico's SIE API (series SF43718, the FIX rate). Never
+hand-entered, never stored per card. `ttl_days` is 7; past that the rate is stale
+and any figure derived from it should be treated as such.
+
 ### CardRewards (one row per card per category)
 
 ```

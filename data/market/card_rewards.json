@@ -1033,5 +1033,71 @@
     "accrual_basis": "per_usd",
     "accrual_rate": 2,
     "accrual_block_mxn": "NOT_APPLICABLE"
+  },
+  {
+    "reward_id": "american_express__the_gold_aeromexico__travel",
+    "card_id": "american_express__the_gold_aeromexico",
+    "category": "travel",
+    "rate": "UNKNOWN",
+    "reward_type": "points",
+    "point_value_mxn": "UNKNOWN",
+    "effective_rate_pct": "UNKNOWN",
+    "replaces_or_adds_to_base": "replaces",
+    "cap_amount": "UNKNOWN",
+    "cap_basis": "points",
+    "cap_period": "monthly",
+    "min_spend": "NOT_APPLICABLE",
+    "promo_end_date": "NOT_APPLICABLE",
+    "user_selectable": false,
+    "confidence": {
+      "rewards": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.americanexpress.com/mx/tarjetas-de-credito/tipos-de-tarjetas/tarjetas-aeromexico/"
+        ]
+      }
+    },
+    "notes": "3.2 Puntos Aeroméxico Rewards por dólar en compras con Aeroméxico, frente a 1.6 por dólar en el resto. Acumulación en dólares.",
+    "rate_after_cap": "NOT_APPLICABLE",
+    "payout_frequency": "statement",
+    "accrual_basis": "per_usd",
+    "accrual_rate": 3.2,
+    "accrual_block_mxn": "NOT_APPLICABLE"
+  },
+  {
+    "reward_id": "american_express__the_platinum_card_aeromexico__travel",
+    "card_id": "american_express__the_platinum_card_aeromexico",
+    "category": "travel",
+    "rate": "UNKNOWN",
+    "reward_type": "points",
+    "point_value_mxn": "UNKNOWN",
+    "effective_rate_pct": "UNKNOWN",
+    "replaces_or_adds_to_base": "replaces",
+    "cap_amount": "UNKNOWN",
+    "cap_basis": "points",
+    "cap_period": "monthly",
+    "min_spend": "NOT_APPLICABLE",
+    "promo_end_date": "NOT_APPLICABLE",
+    "user_selectable": false,
+    "confidence": {
+      "rewards": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.americanexpress.com/mx/tarjetas-de-credito/tipos-de-tarjetas/tarjetas-aeromexico/",
+          "https://www.americanexpress.com/mx/cards/platinum-card-aeromexico/learn-more.html",
+          "https://www.americanexpress.com/content/dam/amex/es-mx/tarjetas-de-credito/aeromexico/TC_Platinum_Aeromexico.pdf"
+        ]
+      }
+    },
+    "notes": "4.8 Puntos Aeroméxico Rewards por dólar en compras con Aeroméxico, frente a 1.6 por dólar en el resto. Acumulación en dólares.",
+    "rate_after_cap": "NOT_APPLICABLE",
+    "payout_frequency": "statement",
+    "accrual_basis": "per_usd",
+    "accrual_rate": 4.8,
+    "accrual_block_mxn": "NOT_APPLICABLE"
   }
 ]

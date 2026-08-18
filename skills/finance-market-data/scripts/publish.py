@@ -43,7 +43,9 @@ TABS = {
         "inactivity_spend_period", "cat_calculated_on", "cat_valid_until",
         "accrual_basis", "accrual_rate", "accrual_block_mxn",
         "points_program_name", "point_value_source",
-        "other_eligibility_criteria"]),
+        "other_eligibility_criteria",
+        # Appended 2026-08-17. Order matters: append only, never insert.
+        "annual_fee_currency", "product_type"]),
     "CardRewards": ("card_rewards.json", [
         "reward_id", "card_id", "category", "reward_type", "rate",
         "point_value_mxn", "effective_rate_pct", "replaces_or_adds_to_base",
@@ -65,6 +67,8 @@ TABS = {
     "TermTiers": ("term_tiers.json", [
         "term_id", "account_id", "term_days", "rate_pct", "gat_nominal_pct",
         "gat_real_pct", "min_amount_mxn", "notes"]),
+    "FxRates": ("fx_rates.json", [
+        "pair", "rate", "as_of", "source", "source_url", "ttl_days", "notes"]),
     "ConditionalBoosts": ("conditional_boosts.json", [
         "boost_id", "account_id", "boost_rate_pct", "boost_basis",
         "condition_type", "condition_amount_mxn", "condition_count",

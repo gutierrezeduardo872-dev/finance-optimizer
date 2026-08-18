@@ -21,7 +21,9 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "afirme__basica",
@@ -45,7 +47,9 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "afirme__clasica",
@@ -69,7 +73,9 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "afirme__gc",
@@ -93,7 +99,9 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "afirme__oro",
@@ -117,7 +125,9 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "afirme__platinum",
@@ -141,7 +151,9 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "banca_mifel__mifel_basica",
@@ -165,7 +177,9 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "banca_mifel__mifel_leones",
@@ -189,7 +203,9 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "banca_mifel__mifel_mexicana",
@@ -213,7 +229,9 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "banca_mifel__mifel_miles_more_world_elite",
@@ -237,7 +255,9 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "banca_mifel__mifel_oro",
@@ -261,7 +281,9 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "banca_mifel__mifel_platino",
@@ -285,7 +307,9 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "banca_mifel__mifel_world_elite",
@@ -309,7 +333,9 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "banco_azteca__oro_garantizada",
@@ -333,7 +359,9 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "banco_azteca__oro_garantizada_vas",
@@ -357,7 +385,9 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "banco_azteca__vas",
@@ -381,7 +411,9 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "banco_inbursa__inbursa_black_american_express",
@@ -464,7 +496,9 @@
     },
     "accrual_basis": "UNKNOWN",
     "accrual_rate": "UNKNOWN",
-    "accrual_block_mxn": "NOT_APPLICABLE"
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "banco_inbursa__inbursa_clasica",
@@ -577,7 +611,9 @@
     "cat_valid_until": "UNKNOWN",
     "accrual_basis": "pct_of_spend",
     "accrual_rate": 5.4,
-    "accrual_block_mxn": "NOT_APPLICABLE"
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "banco_inbursa__inbursa_oro",
@@ -666,7 +702,9 @@
     "cat_valid_until": "UNKNOWN",
     "accrual_basis": "pct_of_spend",
     "accrual_rate": 5.4,
-    "accrual_block_mxn": "NOT_APPLICABLE"
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "banco_inbursa__inbursa_platinum",
@@ -751,7 +789,9 @@
     "cat_valid_until": "2026-12-30",
     "accrual_basis": "UNKNOWN",
     "accrual_rate": "UNKNOWN",
-    "accrual_block_mxn": "NOT_APPLICABLE"
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "banco_inbursa__inbursa_optima",
@@ -834,7 +874,9 @@
     },
     "accrual_basis": "UNKNOWN",
     "accrual_rate": "UNKNOWN",
-    "accrual_block_mxn": "NOT_APPLICABLE"
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "banco_inbursa__telcel_oro",
@@ -919,7 +961,9 @@
     "cat_valid_until": "2026-12-30",
     "accrual_basis": "UNKNOWN",
     "accrual_rate": "UNKNOWN",
-    "accrual_block_mxn": "NOT_APPLICABLE"
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "bancoppel__tarjeta_de_credito_bancoppel",
@@ -1003,7 +1047,9 @@
     "cat_valid_until": "UNKNOWN",
     "accrual_basis": "NOT_APPLICABLE",
     "accrual_rate": "NOT_APPLICABLE",
-    "accrual_block_mxn": "NOT_APPLICABLE"
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "bancoppel__infinite",
@@ -1027,7 +1073,9 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "bancoppel__oro",
@@ -1051,7 +1099,9 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "bancoppel__platinum",
@@ -1075,7 +1125,9 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "banjercito__basica",
@@ -1099,7 +1151,9 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "banjercito__infinite",
@@ -1123,7 +1177,9 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "banjercito__platinum",
@@ -1147,7 +1203,9 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "banjercito__tradicional_clasica",
@@ -1171,7 +1229,9 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "banorte__basica",
@@ -1259,7 +1319,9 @@
     "cat_valid_until": "2026-10-16",
     "accrual_basis": "NOT_APPLICABLE",
     "accrual_rate": "NOT_APPLICABLE",
-    "accrual_block_mxn": "NOT_APPLICABLE"
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "banorte__clasica",
@@ -1344,7 +1406,9 @@
     "cat_valid_until": "2026-10-16",
     "accrual_basis": "UNKNOWN",
     "accrual_rate": "UNKNOWN",
-    "accrual_block_mxn": "NOT_APPLICABLE"
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "banorte__infinite",
@@ -1432,7 +1496,9 @@
           "https://www.banorte.com/Personal/TDC/Primera-anualidad-sin-costo.html"
         ]
       }
-    }
+    },
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "banorte__ke_buena",
@@ -1456,7 +1522,9 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "banorte__one_up",
@@ -1540,7 +1608,9 @@
     "cat_valid_until": "2026-10-16",
     "accrual_basis": "UNKNOWN",
     "accrual_rate": "UNKNOWN",
-    "accrual_block_mxn": "NOT_APPLICABLE"
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "banorte__oro",
@@ -1628,7 +1698,9 @@
     "cat_valid_until": "2026-10-16",
     "accrual_basis": "pct_of_spend",
     "accrual_rate": 11.5,
-    "accrual_block_mxn": "NOT_APPLICABLE"
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "banorte__platinum",
@@ -1716,7 +1788,9 @@
     "cat_valid_until": "2026-10-16",
     "accrual_basis": "pct_of_spend",
     "accrual_rate": 12.5,
-    "accrual_block_mxn": "NOT_APPLICABLE"
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "banorte__por_ti",
@@ -1801,7 +1875,9 @@
     "cat_valid_until": "2026-10-16",
     "accrual_basis": "pct_of_spend",
     "accrual_rate": 1.0,
-    "accrual_block_mxn": "NOT_APPLICABLE"
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "banorte__marriott_bonvoy",
@@ -1889,7 +1965,9 @@
           "https://www.banorte.com/wps/portal/banorte/Home/cuentas-y-tarjetas/tarjetas-de-credito/marriott"
         ]
       }
-    }
+    },
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "banorte__marriott_bonvoy_inspire",
@@ -1977,7 +2055,9 @@
           "https://www.banorte.com/wps/portal/ixe/Home/alcanza-tus-metas/tarjetas-credito/marriottinspire"
         ]
       }
-    }
+    },
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "banorte__mujer",
@@ -2065,7 +2145,9 @@
           "https://www.banorte.com/Personal/TDC/Primera-anualidad-sin-costo.html"
         ]
       }
-    }
+    },
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "banorte__seleccion_nacional",
@@ -2153,7 +2235,9 @@
           "https://www.banorte.com/Personal/TDC/Primera-anualidad-sin-costo.html"
         ]
       }
-    }
+    },
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "banorte__united",
@@ -2241,7 +2325,9 @@
           "https://www.banorte.com/Personal/TDC/Primera-anualidad-sin-costo.html"
         ]
       }
-    }
+    },
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "banorte__united_universe",
@@ -2329,7 +2415,9 @@
           "https://www.tarjetas.creditobanorte.com/"
         ]
       }
-    }
+    },
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "banregio__acceso_gold",
@@ -2353,7 +2441,9 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "banregio__basica",
@@ -2377,7 +2467,9 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "banregio__mas",
@@ -2401,7 +2493,9 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "banregio__platinum",
@@ -2425,7 +2519,9 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "banregio__win",
@@ -2449,7 +2545,9 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "bbva_mexico__mi_primera_tarjeta_bbva",
@@ -2532,7 +2630,9 @@
     "cat_valid_until": "UNKNOWN",
     "accrual_basis": "UNKNOWN",
     "accrual_rate": "UNKNOWN",
-    "accrual_block_mxn": "NOT_APPLICABLE"
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "bbva_mexico__afinidad_unam_bbva",
@@ -2620,7 +2720,9 @@
           "https://www.bbva.mx/content/dam/public-web/mexico/documents/tycs/Terminos_y_Condiciones_Regreso_a_Clases_2026.pdf"
         ]
       }
-    }
+    },
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "bbva_mexico__azul_bbva",
@@ -2704,7 +2806,9 @@
     "cat_valid_until": "UNKNOWN",
     "accrual_basis": "pct_of_spend",
     "accrual_rate": 9.0,
-    "accrual_block_mxn": "NOT_APPLICABLE"
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "bbva_mexico__crea_bbva",
@@ -2787,7 +2891,9 @@
     "cat_valid_until": "UNKNOWN",
     "accrual_basis": "UNKNOWN",
     "accrual_rate": "UNKNOWN",
-    "accrual_block_mxn": "NOT_APPLICABLE"
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "bbva_mexico__educacion_bbva",
@@ -2870,7 +2976,9 @@
           "https://www.bbva.mx/personas/productos/tarjetas-de-credito/tarjeta-de-credito-educacion.html"
         ]
       }
-    }
+    },
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "bbva_mexico__ipn_bbva",
@@ -2958,7 +3066,9 @@
           "https://www.bbva.mx/content/dam/public-web/mexico/documents/personas/tarjetas/TCR-IPN.pdf"
         ]
       }
-    }
+    },
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "bbva_mexico__oro_bbva",
@@ -3042,7 +3152,9 @@
     "cat_valid_until": "UNKNOWN",
     "accrual_basis": "UNKNOWN",
     "accrual_rate": "UNKNOWN",
-    "accrual_block_mxn": "NOT_APPLICABLE"
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "bbva_mexico__platinum_bbva",
@@ -3125,7 +3237,9 @@
     "cat_valid_until": "UNKNOWN",
     "accrual_basis": "UNKNOWN",
     "accrual_rate": "UNKNOWN",
-    "accrual_block_mxn": "NOT_APPLICABLE"
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "bbva_mexico__start_bbva",
@@ -3208,7 +3322,9 @@
     "cat_valid_until": "2026-09-05",
     "accrual_basis": "UNKNOWN",
     "accrual_rate": "UNKNOWN",
-    "accrual_block_mxn": "NOT_APPLICABLE"
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "bbva_mexico__vive_bbva",
@@ -3296,7 +3412,9 @@
           "https://www.bbva.mx/content/dam/public-web/mexico/documents/personas/tarjetas/TCR-Vive.pdf"
         ]
       }
-    }
+    },
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "cibanco__clasica_platinum",
@@ -3320,7 +3438,9 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "cibanco__oro",
@@ -3344,7 +3464,9 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "citibanamex__beyond_banamex",
@@ -3432,7 +3554,9 @@
     "cat_valid_until": "UNKNOWN",
     "accrual_basis": "UNKNOWN",
     "accrual_rate": "UNKNOWN",
-    "accrual_block_mxn": "NOT_APPLICABLE"
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "citibanamex__clasica_banamex",
@@ -3521,7 +3645,9 @@
     "cat_valid_until": "UNKNOWN",
     "accrual_basis": "UNKNOWN",
     "accrual_rate": "UNKNOWN",
-    "accrual_block_mxn": "NOT_APPLICABLE"
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "citibanamex__conquista_banamex",
@@ -3545,7 +3671,9 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "citibanamex__descubre_banamex",
@@ -3633,7 +3761,9 @@
     "cat_valid_until": "UNKNOWN",
     "accrual_basis": "UNKNOWN",
     "accrual_rate": "UNKNOWN",
-    "accrual_block_mxn": "NOT_APPLICABLE"
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "citibanamex__explora_banamex",
@@ -3721,7 +3851,9 @@
     "cat_valid_until": "UNKNOWN",
     "accrual_basis": "UNKNOWN",
     "accrual_rate": "UNKNOWN",
-    "accrual_block_mxn": "NOT_APPLICABLE"
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "citibanamex__joy_banamex",
@@ -3809,7 +3941,9 @@
     "cat_valid_until": "UNKNOWN",
     "accrual_basis": "NOT_APPLICABLE",
     "accrual_rate": "NOT_APPLICABLE",
-    "accrual_block_mxn": "NOT_APPLICABLE"
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "citibanamex__oro_banamex",
@@ -3898,7 +4032,9 @@
     "cat_valid_until": "UNKNOWN",
     "accrual_basis": "UNKNOWN",
     "accrual_rate": "UNKNOWN",
-    "accrual_block_mxn": "NOT_APPLICABLE"
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "citibanamex__platinum_banamex",
@@ -3986,7 +4122,9 @@
     "cat_valid_until": "UNKNOWN",
     "accrual_basis": "pct_of_spend",
     "accrual_rate": 10.0,
-    "accrual_block_mxn": "NOT_APPLICABLE"
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "hsbc_mexico__hsbc_2now",
@@ -4074,7 +4212,9 @@
     "cat_valid_until": "2026-09-10",
     "accrual_basis": "pct_of_spend",
     "accrual_rate": 2.0,
-    "accrual_block_mxn": "NOT_APPLICABLE"
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "hsbc_mexico__hsbc_advance_platinum",
@@ -4098,7 +4238,9 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "hsbc_mexico__hsbc_air",
@@ -4185,7 +4327,9 @@
     },
     "accrual_basis": "UNKNOWN",
     "accrual_rate": "UNKNOWN",
-    "accrual_block_mxn": "NOT_APPLICABLE"
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "hsbc_mexico__hsbc_basica",
@@ -4209,7 +4353,9 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "hsbc_mexico__hsbc_clasica",
@@ -4233,7 +4379,9 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "hsbc_mexico__hsbc_easy_points",
@@ -4257,7 +4405,9 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "hsbc_mexico__hsbc_oro",
@@ -4281,7 +4431,9 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "hsbc_mexico__hsbc_platinum",
@@ -4305,7 +4457,9 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "hsbc_mexico__hsbc_premier",
@@ -4329,7 +4483,9 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "hsbc_mexico__hsbc_titanium",
@@ -4353,7 +4509,9 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "hsbc_mexico__hsbc_viva",
@@ -4440,7 +4598,9 @@
     "cat_valid_until": "2026-09-10",
     "accrual_basis": "UNKNOWN",
     "accrual_rate": "UNKNOWN",
-    "accrual_block_mxn": "NOT_APPLICABLE"
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "hsbc_mexico__hsbc_viva_plus",
@@ -4527,7 +4687,9 @@
     },
     "accrual_basis": "pct_of_spend",
     "accrual_rate": 20.0,
-    "accrual_block_mxn": "NOT_APPLICABLE"
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "hsbc_mexico__hsbc_world_elite",
@@ -4551,7 +4713,9 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "hsbc_mexico__hsbc_zero",
@@ -4637,7 +4801,9 @@
     "cat_valid_until": "2026-09-10",
     "accrual_basis": "per_usd",
     "accrual_rate": 1,
-    "accrual_block_mxn": "NOT_APPLICABLE"
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "invex__voyage",
@@ -4721,7 +4887,9 @@
     "cat_valid_until": "2026-09-30",
     "accrual_basis": "pct_of_spend",
     "accrual_rate": 1.0,
-    "accrual_block_mxn": "NOT_APPLICABLE"
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "invex__voyage_platinum",
@@ -4805,7 +4973,9 @@
     "cat_valid_until": "2026-09-30",
     "accrual_basis": "pct_of_spend",
     "accrual_rate": 1.0,
-    "accrual_block_mxn": "NOT_APPLICABLE"
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "invex__sicard_basica",
@@ -4889,7 +5059,9 @@
     },
     "accrual_basis": "NOT_APPLICABLE",
     "accrual_rate": "NOT_APPLICABLE",
-    "accrual_block_mxn": "NOT_APPLICABLE"
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "invex__sicard_platinum",
@@ -4973,7 +5145,9 @@
     },
     "accrual_basis": "UNKNOWN",
     "accrual_rate": "UNKNOWN",
-    "accrual_block_mxn": "NOT_APPLICABLE"
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "invex__sicard_plus",
@@ -5057,7 +5231,9 @@
     },
     "accrual_basis": "UNKNOWN",
     "accrual_rate": "UNKNOWN",
-    "accrual_block_mxn": "NOT_APPLICABLE"
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "multiva__clasica",
@@ -5081,7 +5257,9 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "multiva__oro",
@@ -5105,7 +5283,9 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "multiva__platinum",
@@ -5129,7 +5309,9 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "santander_mexico__likeu",
@@ -5218,7 +5400,9 @@
     "cat_valid_until": "2026-12-31",
     "accrual_basis": "pct_of_spend",
     "accrual_rate": 1.0,
-    "accrual_block_mxn": "NOT_APPLICABLE"
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "santander_mexico__santander_american_express",
@@ -5242,7 +5426,9 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "santander_mexico__santander_basica",
@@ -5266,7 +5452,9 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "santander_mexico__santander_free",
@@ -5354,7 +5542,9 @@
           "https://www.santander.com.mx/personas/credito-y-financiamiento/tarjetas-de-credito/free/"
         ]
       }
-    }
+    },
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "santander_mexico__unique_rewards_gold",
@@ -5437,7 +5627,9 @@
           "https://assets.santandermedia.com/adobe/assets/urn:aaid:aem:8ac520f1-070c-42cc-ba2c-c9993e231d1b/original/as/MDP_Folleto_GoldMastercard_Dic2025_CAT2026_V3_291225.pdf"
         ]
       }
-    }
+    },
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "santander_mexico__unique_rewards_platinum",
@@ -5520,7 +5712,9 @@
     },
     "accrual_basis": "per_usd",
     "accrual_rate": 2,
-    "accrual_block_mxn": "NOT_APPLICABLE"
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "santander_mexico__world_elite",
@@ -5544,7 +5738,9 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "scotiabank_mexico__ideal_scotiabank",
@@ -5629,7 +5825,9 @@
     "cat_valid_until": "2026-09-30",
     "accrual_basis": "NOT_APPLICABLE",
     "accrual_rate": "NOT_APPLICABLE",
-    "accrual_block_mxn": "NOT_APPLICABLE"
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "scotiabank_mexico__infinite_scotia_wealth_management",
@@ -5712,7 +5910,9 @@
           "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/servicios/mas-informacion.aspx"
         ]
       }
-    }
+    },
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "scotiabank_mexico__scotia_travel_clasica",
@@ -5795,7 +5995,9 @@
           "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/servicios/mas-informacion.aspx"
         ]
       }
-    }
+    },
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "scotiabank_mexico__scotia_travel_oro",
@@ -5878,7 +6080,9 @@
           "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/servicios/mas-informacion.aspx"
         ]
       }
-    }
+    },
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "scotiabank_mexico__scotia_travel_platinum",
@@ -5962,7 +6166,9 @@
     "cat_valid_until": "2026-09-30",
     "accrual_basis": "UNKNOWN",
     "accrual_rate": "UNKNOWN",
-    "accrual_block_mxn": "NOT_APPLICABLE"
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "scotiabank_mexico__singular_by_scotiabank_infinite",
@@ -6045,7 +6251,9 @@
           "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/servicios/mas-informacion.aspx"
         ]
       }
-    }
+    },
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "scotiabank_mexico__singular_by_scotiabank_signature",
@@ -6128,7 +6336,9 @@
           "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/servicios/mas-informacion.aspx"
         ]
       }
-    }
+    },
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "scotiabank_mexico__singular_by_scotiabank_world_elite",
@@ -6212,7 +6422,9 @@
     "cat_valid_until": "2026-09-30",
     "accrual_basis": "UNKNOWN",
     "accrual_rate": "UNKNOWN",
-    "accrual_block_mxn": "NOT_APPLICABLE"
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "scotiabank_mexico__tasa_baja_clasica",
@@ -6295,7 +6507,9 @@
           "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/servicios/mas-informacion.aspx"
         ]
       }
-    }
+    },
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "scotiabank_mexico__tasa_baja_oro",
@@ -6378,7 +6592,9 @@
           "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/servicios/mas-informacion.aspx"
         ]
       }
-    }
+    },
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "banco_inbursa__aeromexico_ascend",
@@ -6463,7 +6679,9 @@
     },
     "accrual_basis": "per_usd",
     "accrual_rate": 1,
-    "accrual_block_mxn": "NOT_APPLICABLE"
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "banco_inbursa__aeromexico_elevate",
@@ -6548,7 +6766,9 @@
     },
     "accrual_basis": "per_usd",
     "accrual_rate": 1.2,
-    "accrual_block_mxn": "NOT_APPLICABLE"
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "banco_inbursa__aeromexico_horizon",
@@ -6633,7 +6853,9 @@
     },
     "accrual_basis": "per_usd",
     "accrual_rate": 2,
-    "accrual_block_mxn": "NOT_APPLICABLE"
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "invex__volaris",
@@ -6719,7 +6941,9 @@
     "cat_valid_until": "2026-09-30",
     "accrual_basis": "per_mxn_block",
     "accrual_rate": 7,
-    "accrual_block_mxn": 20
+    "accrual_block_mxn": 20,
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "invex__volaris_0",
@@ -6824,7 +7048,9 @@
     },
     "accrual_basis": "per_mxn_block",
     "accrual_rate": 5,
-    "accrual_block_mxn": 20
+    "accrual_block_mxn": 20,
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "invex__volaris_2_0",
@@ -6908,7 +7134,9 @@
     "cat_valid_until": "2026-09-30",
     "accrual_basis": "per_mxn_block",
     "accrual_rate": 10,
-    "accrual_block_mxn": 20
+    "accrual_block_mxn": 20,
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "santander_mexico__aeromexico_blanca",
@@ -6946,7 +7174,9 @@
           "https://www.dedinero.com.mx/consumo/santander-rompe-con-aeromexico-que-pasara-con-tu-tarjeta-y-tu-deuda/"
         ]
       }
-    }
+    },
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "santander_mexico__aeromexico_infinite",
@@ -6984,7 +7214,9 @@
           "https://www.dedinero.com.mx/consumo/santander-rompe-con-aeromexico-que-pasara-con-tu-tarjeta-y-tu-deuda/"
         ]
       }
-    }
+    },
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "santander_mexico__aeromexico_platinum",
@@ -7022,7 +7254,9 @@
           "https://www.dedinero.com.mx/consumo/santander-rompe-con-aeromexico-que-pasara-con-tu-tarjeta-y-tu-deuda/"
         ]
       }
-    }
+    },
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "invex__despegar_gold",
@@ -7108,7 +7342,9 @@
     },
     "accrual_basis": "per_usd",
     "accrual_rate": 1,
-    "accrual_block_mxn": "NOT_APPLICABLE"
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "invex__despegar_platinum",
@@ -7193,7 +7429,9 @@
     },
     "accrual_basis": "UNKNOWN",
     "accrual_rate": "UNKNOWN",
-    "accrual_block_mxn": "NOT_APPLICABLE"
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "invex__hilton_honors",
@@ -7277,7 +7515,9 @@
     },
     "accrual_basis": "UNKNOWN",
     "accrual_rate": "UNKNOWN",
-    "accrual_block_mxn": "NOT_APPLICABLE"
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "invex__hilton_honors_premium",
@@ -7361,7 +7601,9 @@
     },
     "accrual_basis": "UNKNOWN",
     "accrual_rate": "UNKNOWN",
-    "accrual_block_mxn": "NOT_APPLICABLE"
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "santander_mexico__fiesta_rewards_oro",
@@ -7449,7 +7691,9 @@
     },
     "accrual_basis": "UNKNOWN",
     "accrual_rate": "UNKNOWN",
-    "accrual_block_mxn": "NOT_APPLICABLE"
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "santander_mexico__fiesta_rewards_platino",
@@ -7537,7 +7781,9 @@
     },
     "accrual_basis": "per_usd",
     "accrual_rate": 3,
-    "accrual_block_mxn": "NOT_APPLICABLE"
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "afirme__cemex",
@@ -7561,7 +7807,9 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "afirme__construrama",
@@ -7585,7 +7833,9 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "afirme__heb",
@@ -7609,7 +7859,9 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "afirme__tigres",
@@ -7633,7 +7885,9 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "bbva_mexico__rayados_bbva",
@@ -7716,7 +7970,9 @@
           "https://www.bbva.mx/personas/productos/tarjetas-de-credito/tarjeta-de-credito-rayados.html"
         ]
       }
-    }
+    },
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "banco_inbursa__bodega_aurrera_inbursa",
@@ -7740,7 +7996,9 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "annual",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "banco_inbursa__sams_club_inbursa",
@@ -7828,7 +8086,9 @@
     "cat_valid_until": "UNKNOWN",
     "accrual_basis": "pct_of_spend",
     "accrual_rate": 0,
-    "accrual_block_mxn": "NOT_APPLICABLE"
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "banco_inbursa__walmart_inbursa",
@@ -7911,7 +8171,9 @@
     },
     "accrual_basis": "pct_of_spend",
     "accrual_rate": 0,
-    "accrual_block_mxn": "NOT_APPLICABLE"
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "citibanamex__costco_banamex",
@@ -7997,7 +8259,9 @@
     "cat_valid_until": "2025-09-30",
     "accrual_basis": "pct_of_spend",
     "accrual_rate": 1.0,
-    "accrual_block_mxn": "NOT_APPLICABLE"
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "citibanamex__affinity_card_banamex",
@@ -8081,7 +8345,9 @@
     },
     "accrual_basis": "pct_of_spend",
     "accrual_rate": 5.0,
-    "accrual_block_mxn": "NOT_APPLICABLE"
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "citibanamex__la_comer_card_banamex",
@@ -8165,7 +8431,9 @@
     },
     "accrual_basis": "pct_of_spend",
     "accrual_rate": 1.0,
-    "accrual_block_mxn": "NOT_APPLICABLE"
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "citibanamex__lineup_banamex",
@@ -8248,7 +8516,9 @@
     },
     "accrual_basis": "UNKNOWN",
     "accrual_rate": "UNKNOWN",
-    "accrual_block_mxn": "NOT_APPLICABLE"
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "citibanamex__teleton_banamex",
@@ -8336,7 +8606,9 @@
     "cat_valid_until": "UNKNOWN",
     "accrual_basis": "UNKNOWN",
     "accrual_rate": "UNKNOWN",
-    "accrual_block_mxn": "NOT_APPLICABLE"
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "citibanamex__the_home_depot_banamex",
@@ -8360,7 +8632,9 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "invex__farmacias_guadalajara",
@@ -8447,7 +8721,9 @@
     "point_value_source": "https://www.invextarjetas.com.mx/invex/Documentos/CONDUSEF/FolletoFragua.pdf",
     "accrual_basis": "pct_of_spend",
     "accrual_rate": 1.0,
-    "accrual_block_mxn": "NOT_APPLICABLE"
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "invex__ikea",
@@ -8533,7 +8809,9 @@
     },
     "accrual_basis": "UNKNOWN",
     "accrual_rate": "UNKNOWN",
-    "accrual_block_mxn": "NOT_APPLICABLE"
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "invex__manchester_united",
@@ -8618,7 +8896,9 @@
     },
     "accrual_basis": "UNKNOWN",
     "accrual_rate": "UNKNOWN",
-    "accrual_block_mxn": "NOT_APPLICABLE"
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "invex__sams_club",
@@ -8703,7 +8983,9 @@
     },
     "accrual_basis": "pct_of_spend",
     "accrual_rate": 1.0,
-    "accrual_block_mxn": "NOT_APPLICABLE"
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "invex__walmart",
@@ -8788,7 +9070,9 @@
     "cat_valid_until": "2026-09-30",
     "accrual_basis": "pct_of_spend",
     "accrual_rate": 1.0,
-    "accrual_block_mxn": "NOT_APPLICABLE"
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "klar__con_garantia",
@@ -8812,7 +9096,9 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "klar__tarjeta_de_credito_klar",
@@ -8896,7 +9182,9 @@
     "cat_valid_until": "UNKNOWN",
     "accrual_basis": "UNKNOWN",
     "accrual_rate": "UNKNOWN",
-    "accrual_block_mxn": "NOT_APPLICABLE"
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "klar__platino",
@@ -8980,7 +9268,9 @@
     "cat_valid_until": "UNKNOWN",
     "accrual_basis": "UNKNOWN",
     "accrual_rate": "UNKNOWN",
-    "accrual_block_mxn": "NOT_APPLICABLE"
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "stori__tarjeta_de_credito_stori",
@@ -9064,7 +9354,9 @@
     "cat_valid_until": "UNKNOWN",
     "accrual_basis": "NOT_APPLICABLE",
     "accrual_rate": "NOT_APPLICABLE",
-    "accrual_block_mxn": "NOT_APPLICABLE"
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "stori__black",
@@ -9148,7 +9440,9 @@
     "cat_valid_until": "UNKNOWN",
     "accrual_basis": "pct_of_spend",
     "accrual_rate": 1.0,
-    "accrual_block_mxn": "NOT_APPLICABLE"
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "stori__con_garantia",
@@ -9172,7 +9466,9 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "cuenca__tarjeta_de_credito_cuenca",
@@ -9196,7 +9492,9 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "jp_sofiexpress__didi_card",
@@ -9280,7 +9578,9 @@
     "cat_valid_until": "UNKNOWN",
     "accrual_basis": "pct_of_spend",
     "accrual_rate": 2.0,
-    "accrual_block_mxn": "NOT_APPLICABLE"
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "mercado_pago__tarjeta_de_credito_mercado_pago",
@@ -9364,7 +9664,9 @@
     "cat_valid_until": "UNKNOWN",
     "accrual_basis": "NOT_APPLICABLE",
     "accrual_rate": "NOT_APPLICABLE",
-    "accrual_block_mxn": "NOT_APPLICABLE"
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "nu_mx__tarjeta_de_credito_nu",
@@ -9448,7 +9750,9 @@
     "cat_valid_until": "UNKNOWN",
     "accrual_basis": "NOT_APPLICABLE",
     "accrual_rate": "NOT_APPLICABLE",
-    "accrual_block_mxn": "NOT_APPLICABLE"
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "stori__shein_x",
@@ -9472,7 +9776,9 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "american_express__gold_elite_credit_card",
@@ -9488,7 +9794,7 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": "",
+    "notes": " Es tarjeta de CRÉDITO, no de servicio: American Express la publica bajo un folleto explicativo distinto, con cuotas, tasa de interés, comisiones y CAT propios.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
@@ -9496,7 +9802,9 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "american_express__the_gold_card",
@@ -9580,7 +9888,9 @@
     "cat_valid_until": "UNKNOWN",
     "accrual_basis": "UNKNOWN",
     "accrual_rate": "UNKNOWN",
-    "accrual_block_mxn": "NOT_APPLICABLE"
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "annual_fee_currency": "MXN",
+    "product_type": "charge"
   },
   {
     "card_id": "american_express__the_green_card",
@@ -9604,7 +9914,9 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "annual_fee_currency": "MXN",
+    "product_type": "charge"
   },
   {
     "card_id": "american_express__the_platinum_card",
@@ -9628,7 +9940,9 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "annual_fee_currency": "MXN",
+    "product_type": "charge"
   },
   {
     "card_id": "american_express__the_platinum_credit_card",
@@ -9644,7 +9958,7 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": "",
+    "notes": " Es tarjeta de CRÉDITO, no de servicio: American Express la publica bajo un folleto explicativo distinto, con cuotas, tasa de interés, comisiones y CAT propios.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
@@ -9652,7 +9966,9 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "american_express__aeromexico",
@@ -9661,22 +9977,88 @@
     "display_name": "American Express Aeroméxico",
     "former_names": [],
     "legacy_id": "American Express Aeroméxico",
-    "tier": "UNKNOWN",
-    "network": "amex",
+    "tier": "clasica",
+    "network": "american_express",
     "lifecycle_status": "active",
-    "mapping_status": "skeleton",
+    "mapping_status": "mapped",
     "census_confidence": "high",
     "census_note": "co-brand",
     "conflicts": [],
-    "notes": "",
+    "notes": "Nivel de entrada de la gama Aeroméxico. Hasta 5 tarjetas adicionales sin costo; desde la sexta, $45 USD + IVA cada una.  ANUALIDAD EN DÓLARES: el emisor la cotiza como 'el equivalente en Moneda Nacional a $160 USD más IVA', diferida a 3 meses. annual_fee_mxn guarda la cifra en dólares y annual_fee_currency='USD'; la conversión la hace el motor con el FIX de data/market/fx_rates.json, no se congela aquí. TARJETA DE SERVICIO (charge card), no de crédito revolvente: el saldo se liquida íntegro cada mes, por eso interest_rate_annual_pct y cat_promedio_pct son NOT_APPLICABLE y no datos faltantes. American Express la clasifica bajo 'Ley de Transparencia y CAT Tarjetas de Servicio', distinta de sus tarjetas de crédito Gold Elite y Platinum Credit. Acumula 1.6 Puntos Aeroméxico Rewards por dólar en compras generales y 1.84 por dólar en compras en moneda extranjera. No acumulan puntos disposiciones de efectivo, comisiones, impuestos ni cargos moratorios. Aeroméxico no publica el valor en pesos del punto, así que effective_rate_pct queda UNKNOWN.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
     "inactivity_min_spend_mxn": "NOT_APPLICABLE",
     "inactivity_spend_period": "NOT_APPLICABLE",
-    "fee_billing_period": "UNKNOWN",
-    "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "fee_billing_period": "annual",
+    "cat_calculated_on": "NOT_APPLICABLE",
+    "cat_valid_until": "NOT_APPLICABLE",
+    "annual_fee_currency": "USD",
+    "product_type": "charge",
+    "annual_fee_mxn": 160,
+    "annual_fee_includes_iva": false,
+    "annual_fee_first_year_waived": true,
+    "annual_fee_waiver_condition": "Sin costo de cuota anual el primer año.",
+    "interest_rate_annual_pct": "NOT_APPLICABLE",
+    "cat_promedio_pct": "NOT_APPLICABLE",
+    "base_reward_type": "points",
+    "base_reward_rate": "UNKNOWN",
+    "point_value_mxn": "UNKNOWN",
+    "effective_rate_pct": "UNKNOWN",
+    "points_program_name": "Aeroméxico Rewards",
+    "accrual_basis": "per_usd",
+    "accrual_rate": 1.6,
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "min_income_mxn_monthly": "UNKNOWN",
+    "invitation_only": false,
+    "other_eligibility_criteria": "NOT_APPLICABLE",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.americanexpress.com/mx/tarjetas-de-credito/tipos-de-tarjetas/tarjetas-aeromexico/",
+          "https://www.americanexpress.com/content/dam/amex/es-mx/tarjetas-de-credito/aeromexico/TC_Platinum_Aeromexico.pdf"
+        ]
+      },
+      "cost": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.americanexpress.com/mx/tarjetas-de-credito/tipos-de-tarjetas/tarjetas-aeromexico/",
+          "https://www.americanexpress.com/content/dam/amex/es-mx/tarjetas-de-credito/aeromexico/TC_Platinum_Aeromexico.pdf"
+        ]
+      },
+      "rewards": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.americanexpress.com/mx/tarjetas-de-credito/tipos-de-tarjetas/tarjetas-aeromexico/",
+          "https://www.americanexpress.com/content/dam/amex/es-mx/tarjetas-de-credito/aeromexico/TC_Platinum_Aeromexico.pdf"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.americanexpress.com/mx/tarjetas-de-credito/tipos-de-tarjetas/tarjetas-aeromexico/",
+          "https://www.americanexpress.com/content/dam/amex/es-mx/tarjetas-de-credito/aeromexico/TC_Platinum_Aeromexico.pdf"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.americanexpress.com/mx/tarjetas-de-credito/tipos-de-tarjetas/tarjetas-aeromexico/",
+          "https://www.americanexpress.com/content/dam/amex/es-mx/tarjetas-de-credito/aeromexico/TC_Platinum_Aeromexico.pdf"
+        ]
+      }
+    }
   },
   {
     "card_id": "american_express__the_gold_aeromexico",
@@ -9685,22 +10067,83 @@
     "display_name": "The Gold American Express Aeroméxico",
     "former_names": [],
     "legacy_id": "The Gold American Express Aeroméxico",
-    "tier": "UNKNOWN",
-    "network": "amex",
+    "tier": "oro",
+    "network": "american_express",
     "lifecycle_status": "active",
-    "mapping_status": "skeleton",
+    "mapping_status": "mapped",
     "census_confidence": "high",
     "census_note": "co-brand",
     "conflicts": [],
-    "notes": "",
+    "notes": "Bono de bienvenida $8,000 M.N. de cashback más 16,000 Puntos Aeroméxico Rewards. Hasta 3 boletos 2x1 al año. Acceso a Salones Premier y membresía Priority Pass. Hasta 3 tarjetas adicionales sin costo; desde la cuarta, $125 USD + IVA.  ANUALIDAD EN DÓLARES: el emisor la cotiza como 'el equivalente en Moneda Nacional a $450 USD más IVA', diferida a 3 meses. annual_fee_mxn guarda la cifra en dólares y annual_fee_currency='USD'; la conversión la hace el motor con el FIX de data/market/fx_rates.json, no se congela aquí. TARJETA DE SERVICIO (charge card), no de crédito revolvente: el saldo se liquida íntegro cada mes, por eso interest_rate_annual_pct y cat_promedio_pct son NOT_APPLICABLE y no datos faltantes. American Express la clasifica bajo 'Ley de Transparencia y CAT Tarjetas de Servicio', distinta de sus tarjetas de crédito Gold Elite y Platinum Credit. Acumula 1.6 Puntos Aeroméxico Rewards por dólar en compras generales y 1.84 por dólar en compras en moneda extranjera. No acumulan puntos disposiciones de efectivo, comisiones, impuestos ni cargos moratorios. Aeroméxico no publica el valor en pesos del punto, así que effective_rate_pct queda UNKNOWN.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
     "inactivity_min_spend_mxn": "NOT_APPLICABLE",
     "inactivity_spend_period": "NOT_APPLICABLE",
-    "fee_billing_period": "UNKNOWN",
-    "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "fee_billing_period": "annual",
+    "cat_calculated_on": "NOT_APPLICABLE",
+    "cat_valid_until": "NOT_APPLICABLE",
+    "annual_fee_currency": "USD",
+    "product_type": "charge",
+    "annual_fee_mxn": 450,
+    "annual_fee_includes_iva": false,
+    "annual_fee_first_year_waived": false,
+    "annual_fee_waiver_condition": "NOT_APPLICABLE",
+    "interest_rate_annual_pct": "NOT_APPLICABLE",
+    "cat_promedio_pct": "NOT_APPLICABLE",
+    "base_reward_type": "points",
+    "base_reward_rate": "UNKNOWN",
+    "point_value_mxn": "UNKNOWN",
+    "effective_rate_pct": "UNKNOWN",
+    "points_program_name": "Aeroméxico Rewards",
+    "accrual_basis": "per_usd",
+    "accrual_rate": 1.6,
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "min_income_mxn_monthly": "UNKNOWN",
+    "invitation_only": false,
+    "other_eligibility_criteria": "NOT_APPLICABLE",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.americanexpress.com/mx/tarjetas-de-credito/tipos-de-tarjetas/tarjetas-aeromexico/"
+        ]
+      },
+      "cost": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.americanexpress.com/mx/tarjetas-de-credito/tipos-de-tarjetas/tarjetas-aeromexico/"
+        ]
+      },
+      "rewards": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.americanexpress.com/mx/tarjetas-de-credito/tipos-de-tarjetas/tarjetas-aeromexico/"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.americanexpress.com/mx/tarjetas-de-credito/tipos-de-tarjetas/tarjetas-aeromexico/"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.americanexpress.com/mx/tarjetas-de-credito/tipos-de-tarjetas/tarjetas-aeromexico/"
+        ]
+      }
+    }
   },
   {
     "card_id": "american_express__the_platinum_card_aeromexico",
@@ -9709,22 +10152,93 @@
     "display_name": "The Platinum Card American Express Aeroméxico",
     "former_names": [],
     "legacy_id": "The Platinum Card American Express Aeroméxico",
-    "tier": "UNKNOWN",
-    "network": "amex",
+    "tier": "platino",
+    "network": "american_express",
     "lifecycle_status": "active",
-    "mapping_status": "skeleton",
+    "mapping_status": "mapped",
     "census_confidence": "high",
     "census_note": "co-brand",
     "conflicts": [],
-    "notes": "",
+    "notes": "Bono de bienvenida $30,000 M.N. de cashback más 32,000 Puntos Aeroméxico Rewards. Hasta 4 boletos 2x1 al año. Bonificación anual de $10,000 M.N. al gastar $30,000 o más en Aeroméxico. Hasta 3 tarjetas adicionales sin costo; desde la cuarta, $300 USD + IVA.  ANUALIDAD EN DÓLARES: el emisor la cotiza como 'el equivalente en Moneda Nacional a $1,300 USD más IVA', diferida a 3 meses. annual_fee_mxn guarda la cifra en dólares y annual_fee_currency='USD'; la conversión la hace el motor con el FIX de data/market/fx_rates.json, no se congela aquí. TARJETA DE SERVICIO (charge card), no de crédito revolvente: el saldo se liquida íntegro cada mes, por eso interest_rate_annual_pct y cat_promedio_pct son NOT_APPLICABLE y no datos faltantes. American Express la clasifica bajo 'Ley de Transparencia y CAT Tarjetas de Servicio', distinta de sus tarjetas de crédito Gold Elite y Platinum Credit. Acumula 1.6 Puntos Aeroméxico Rewards por dólar en compras generales y 1.84 por dólar en compras en moneda extranjera. No acumulan puntos disposiciones de efectivo, comisiones, impuestos ni cargos moratorios. Aeroméxico no publica el valor en pesos del punto, así que effective_rate_pct queda UNKNOWN.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
     "inactivity_min_spend_mxn": "NOT_APPLICABLE",
     "inactivity_spend_period": "NOT_APPLICABLE",
-    "fee_billing_period": "UNKNOWN",
-    "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "fee_billing_period": "annual",
+    "cat_calculated_on": "NOT_APPLICABLE",
+    "cat_valid_until": "NOT_APPLICABLE",
+    "annual_fee_currency": "USD",
+    "product_type": "charge",
+    "annual_fee_mxn": 1300,
+    "annual_fee_includes_iva": false,
+    "annual_fee_first_year_waived": false,
+    "annual_fee_waiver_condition": "NOT_APPLICABLE",
+    "interest_rate_annual_pct": "NOT_APPLICABLE",
+    "cat_promedio_pct": "NOT_APPLICABLE",
+    "base_reward_type": "points",
+    "base_reward_rate": "UNKNOWN",
+    "point_value_mxn": "UNKNOWN",
+    "effective_rate_pct": "UNKNOWN",
+    "points_program_name": "Aeroméxico Rewards",
+    "accrual_basis": "per_usd",
+    "accrual_rate": 1.6,
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "min_income_mxn_monthly": "UNKNOWN",
+    "invitation_only": false,
+    "other_eligibility_criteria": "NOT_APPLICABLE",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.americanexpress.com/mx/tarjetas-de-credito/tipos-de-tarjetas/tarjetas-aeromexico/",
+          "https://www.americanexpress.com/mx/cards/platinum-card-aeromexico/learn-more.html",
+          "https://www.americanexpress.com/content/dam/amex/es-mx/tarjetas-de-credito/aeromexico/TC_Platinum_Aeromexico.pdf"
+        ]
+      },
+      "cost": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.americanexpress.com/mx/tarjetas-de-credito/tipos-de-tarjetas/tarjetas-aeromexico/",
+          "https://www.americanexpress.com/mx/cards/platinum-card-aeromexico/learn-more.html",
+          "https://www.americanexpress.com/content/dam/amex/es-mx/tarjetas-de-credito/aeromexico/TC_Platinum_Aeromexico.pdf"
+        ]
+      },
+      "rewards": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.americanexpress.com/mx/tarjetas-de-credito/tipos-de-tarjetas/tarjetas-aeromexico/",
+          "https://www.americanexpress.com/mx/cards/platinum-card-aeromexico/learn-more.html",
+          "https://www.americanexpress.com/content/dam/amex/es-mx/tarjetas-de-credito/aeromexico/TC_Platinum_Aeromexico.pdf"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.americanexpress.com/mx/tarjetas-de-credito/tipos-de-tarjetas/tarjetas-aeromexico/",
+          "https://www.americanexpress.com/mx/cards/platinum-card-aeromexico/learn-more.html",
+          "https://www.americanexpress.com/content/dam/amex/es-mx/tarjetas-de-credito/aeromexico/TC_Platinum_Aeromexico.pdf"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.americanexpress.com/mx/tarjetas-de-credito/tipos-de-tarjetas/tarjetas-aeromexico/",
+          "https://www.americanexpress.com/mx/cards/platinum-card-aeromexico/learn-more.html",
+          "https://www.americanexpress.com/content/dam/amex/es-mx/tarjetas-de-credito/aeromexico/TC_Platinum_Aeromexico.pdf"
+        ]
+      }
+    }
   },
   {
     "card_id": "banco_del_bajio__clasica_garantizada",
@@ -9748,7 +10262,9 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "banco_del_bajio__exclusive_banbajio_infinite",
@@ -9772,7 +10288,9 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "banco_del_bajio__visa_clasica_internacional",
@@ -9796,7 +10314,9 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "banco_del_bajio__visa_oro_internacional",
@@ -9820,7 +10340,9 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "banco_del_bajio__visa_platinum_internacional",
@@ -9844,7 +10366,9 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "hey_banco__hey_garantia",
@@ -9868,7 +10392,9 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "hey_banco__hey_personal",
@@ -9892,7 +10418,9 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "uala_mx__tarjeta_de_credito_uala",
@@ -9976,7 +10504,9 @@
     "cat_valid_until": "UNKNOWN",
     "accrual_basis": "UNKNOWN",
     "accrual_rate": "UNKNOWN",
-    "accrual_block_mxn": "NOT_APPLICABLE"
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "uala_mx__con_garantia",
@@ -10000,7 +10530,9 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "banco_azteca__elektra",
@@ -10024,7 +10556,9 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "plata__plata",
@@ -10108,7 +10642,9 @@
     "cat_valid_until": "UNKNOWN",
     "accrual_basis": "pct_of_spend",
     "accrual_rate": 0.5,
-    "accrual_block_mxn": "NOT_APPLICABLE"
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "banorte__rappicard",
@@ -10132,7 +10668,9 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "banco_inbursa__enlace_medico",
@@ -10215,7 +10753,9 @@
     },
     "accrual_basis": "UNKNOWN",
     "accrual_rate": "UNKNOWN",
-    "accrual_block_mxn": "NOT_APPLICABLE"
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "banco_inbursa__fundacion_unam",
@@ -10298,7 +10838,9 @@
     },
     "accrual_basis": "UNKNOWN",
     "accrual_rate": "UNKNOWN",
-    "accrual_block_mxn": "NOT_APPLICABLE"
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "invex__now",
@@ -10323,7 +10865,9 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "annual",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "santander_mexico__unique_rewards_black",
@@ -10348,7 +10892,9 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "annual",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "banorte__conmigo",
@@ -10373,7 +10919,9 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "annual",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   },
   {
     "card_id": "hsbc_mexico__hsbc_one_plus",
@@ -10398,6 +10946,8 @@
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "annual",
     "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN"
+    "cat_valid_until": "UNKNOWN",
+    "annual_fee_currency": "MXN",
+    "product_type": "credit"
   }
 ]

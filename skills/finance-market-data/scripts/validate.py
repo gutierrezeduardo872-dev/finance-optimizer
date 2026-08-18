@@ -48,6 +48,8 @@ LIQUIDITY = {"instant", "same_day", "term_locked"}
 REWARD_TYPES = {"cashback", "points", "miles", "none"}
 ACCRUAL_BASIS = {"pct_of_spend", "per_usd", "per_mxn_block",
                  "NOT_APPLICABLE", "UNKNOWN"}
+FEE_CURRENCIES = {"MXN", "USD"}
+PRODUCT_TYPES = {"credit", "charge"}
 REPLACE_ADD = {"replaces", "adds"}
 CAP_BASIS = {"reward_mxn", "spend_mxn", "mxn", "points", "NOT_APPLICABLE"}
 CAP_PERIOD = {"monthly", "weekly", "annual", "statement", "NOT_APPLICABLE"}
@@ -491,6 +493,32 @@ def check_accrual(row, rate_field, where, report):
             )
 
 
+def check_currency_and_type(row, where, report):
+    """A USD-denominated fee is not a peso figure with a rounding error.
+
+    Amex prices its Mexican cards in dollars ("el equivalente en Moneda Nacional
+    a $450 USD"). Storing that as pesos requires an FX rate, and a rate frozen
+    into a row drifts invisibly. The amount stays in its own currency and the
+    engine converts at scoring time against data/market/fx_rates.json.
+
+    A charge card settles in full monthly, so it has no ordinary interest rate
+    and no CAT in the revolving sense. Those fields must be NOT_APPLICABLE
+    rather than UNKNOWN, or they look like research we failed to do.
+    """
+    check_enum(row, "annual_fee_currency", FEE_CURRENCIES, where, report)
+    check_enum(row, "product_type", PRODUCT_TYPES, where, report)
+
+    if row.get("product_type") == "charge":
+        for f in ("interest_rate_annual_pct", "cat_promedio_pct"):
+            if row.get(f) == "UNKNOWN":
+                report.warn(
+                    where,
+                    f"{f} is UNKNOWN on a charge card — a charge card cannot revolve, "
+                    "so NOT_APPLICABLE is the accurate value unless the issuer "
+                    "publishes one",
+                )
+
+
 def validate_cards(cards, issuer_ids, live_issuers, report, today):
     seen = set()
     for row in cards:
@@ -548,6 +576,7 @@ def validate_cards(cards, issuer_ids, live_issuers, report, today):
 
         check_effective_rate(row, "base_reward_rate", where, report)
         check_accrual(row, "base_reward_rate", where, report)
+        check_currency_and_type(row, where, report)
 
         # A CAT carries its own expiry, independent of the cost group's TTL.
         # Re-verifying the row does not refresh it — only the issuer can. Warn
