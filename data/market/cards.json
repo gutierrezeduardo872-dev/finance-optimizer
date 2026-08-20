@@ -5658,7 +5658,7 @@
     "census_confidence": "high",
     "census_note": "Amex network product",
     "conflicts": [],
-    "notes": "",
+    "notes": " AMBIGÜEDAD DE PRODUCTO (2026-08-17): Santander emite al menos dos tarjetas American Express y esta fila no distingue cuál. El folleto de 'Santander Legacy American Express' fija la comisión anual en $28,000 sin IVA (vigente del 1 de julio al 31 de diciembre de 2026) y es de invitación por Banca Privada o UHNW — sería con diferencia la tarjeta más cara del conjunto de datos. Existe además una 'Access American Express' de mercado masivo. Registrar los $28,000 en una fila genérica etiquetaría la tarjeta común como ultra premium, así que no se mapea hasta resolver a cuál corresponde.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
@@ -5684,7 +5684,7 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": "",
+    "notes": " FUENTE OBSOLETA (2026-08-17): el único folleto localizable publica CAT 99.6% con fecha de cálculo JULIO DE 2020, seis años atrás. No se registra ninguna cifra de ahí — es el mismo patrón del tarifario de 2018 de HSBC: un documento viejo servido en una URL viva.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
@@ -5963,24 +5963,83 @@
     "display_name": "Tarjeta de Crédito World Elite",
     "former_names": [],
     "legacy_id": "Tarjeta de Crédito World Elite",
-    "tier": "UNKNOWN",
-    "network": "UNKNOWN",
+    "tier": "infinite",
+    "network": "mastercard",
     "lifecycle_status": "active",
-    "mapping_status": "skeleton",
+    "mapping_status": "mapped",
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": " REVISAR CLASIFICACIÓN (2026-08-17): la página de Mundo Select describe World Elite como TARJETA DE DÉBITO, no de crédito. Si se confirma, esta fila pertenece a accounts.json con account_type debit y debe retirarse de cards.json — pero el ID ya está asignado, así que requiere decisión antes de moverla.",
+    "notes": "ES TARJETA DE CRÉDITO, no de débito: se retira la duda marcada el 2026-08-17. El folleto informativo del emisor la titula 'Tarjeta de Crédito World Elite'; lo que aparece como débito en la página de Mundo Select es otro producto con el mismo nombre comercial. ACUMULACIÓN EN DÓLARES: 4 Unique Points por cada dólar en compras nacionales e internacionales, la tasa más alta de la cartera Santander. Los puntos NO expiran, a diferencia de los 3 años de la Gold. Ingreso mínimo $100,000 mensuales, el más alto del conjunto de datos. Tasa máxima contractual TIIE DE FONDEO + 18.8%. Tarjeta adicional $1,000 + IVA al año. Comisión mensual opcional de $199 por el paquete Súper Asistencia, exenta para clientes de Private Banking. CAT VENCIDO: calculado el 1 de enero de 2026, vigente sólo hasta el 30 de junio.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
     "inactivity_min_spend_mxn": "NOT_APPLICABLE",
     "inactivity_spend_period": "NOT_APPLICABLE",
-    "fee_billing_period": "UNKNOWN",
-    "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN",
+    "fee_billing_period": "annual",
+    "cat_calculated_on": "2026-01-01",
+    "cat_valid_until": "2026-06-30",
     "annual_fee_currency": "MXN",
-    "product_type": "credit"
+    "product_type": "credit",
+    "annual_fee_mxn": 6000,
+    "annual_fee_includes_iva": false,
+    "annual_fee_first_year_waived": false,
+    "annual_fee_waiver_condition": "NOT_APPLICABLE",
+    "interest_rate_annual_pct": 27.8,
+    "cat_promedio_pct": 34.9,
+    "base_reward_type": "points",
+    "base_reward_rate": "UNKNOWN",
+    "point_value_mxn": "UNKNOWN",
+    "effective_rate_pct": "UNKNOWN",
+    "points_program_name": "Santander Unique Rewards",
+    "accrual_basis": "per_usd",
+    "accrual_rate": 4,
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "min_income_mxn_monthly": 100000,
+    "invitation_only": false,
+    "other_eligibility_criteria": "Entre 20 y 69 años 11 meses de edad.",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://assets.santandermedia.com/adobe/assets/urn:aaid:aem:67759521-d8f1-4d4b-bbd8-b81390f0641d/original/as/MDP_Folleto_Mastercard_WorldElite_Dic2025_CAT2026_V3_291225.pdf"
+        ]
+      },
+      "cost": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://assets.santandermedia.com/adobe/assets/urn:aaid:aem:67759521-d8f1-4d4b-bbd8-b81390f0641d/original/as/MDP_Folleto_Mastercard_WorldElite_Dic2025_CAT2026_V3_291225.pdf"
+        ]
+      },
+      "rewards": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://assets.santandermedia.com/adobe/assets/urn:aaid:aem:67759521-d8f1-4d4b-bbd8-b81390f0641d/original/as/MDP_Folleto_Mastercard_WorldElite_Dic2025_CAT2026_V3_291225.pdf"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://assets.santandermedia.com/adobe/assets/urn:aaid:aem:67759521-d8f1-4d4b-bbd8-b81390f0641d/original/as/MDP_Folleto_Mastercard_WorldElite_Dic2025_CAT2026_V3_291225.pdf"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://assets.santandermedia.com/adobe/assets/urn:aaid:aem:67759521-d8f1-4d4b-bbd8-b81390f0641d/original/as/MDP_Folleto_Mastercard_WorldElite_Dic2025_CAT2026_V3_291225.pdf"
+        ]
+      }
+    }
   },
   {
     "card_id": "scotiabank_mexico__ideal_scotiabank",
@@ -11365,7 +11424,7 @@
     "census_confidence": "high",
     "census_note": "issuer product page + Select benefits page",
     "conflicts": [],
-    "notes": "Hallazgo de censo Stage 2: falta en el censo pese a ser el destino de migración de los titulares de Santander Aeroméxico Infinite. CAT 82.6% / 34.9% según la página de Mundo Select (fecha de cálculo 1 de enero de 2026); la página del producto indica un juego vigente del 1 de julio al 31 de diciembre de 2026. Pendiente de aprobación antes de mapear en Stage 3.",
+    "notes": "Hallazgo de censo Stage 2: falta en el censo pese a ser el destino de migración de los titulares de Santander Aeroméxico Infinite. CAT 82.6% / 34.9% según la página de Mundo Select (fecha de cálculo 1 de enero de 2026); la página del producto indica un juego vigente del 1 de julio al 31 de diciembre de 2026. Pendiente de aprobación antes de mapear en Stage 3. PROBABLE DUPLICADO DE world_elite (2026-08-17): el folleto de la Tarjeta de Crédito World Elite publica CAT 34.9%, tasa 27.80% y comisión anual $6,000 — exactamente la misma terna que la página de Mundo Select atribuye a 'Unique Rewards Black'. Unique Rewards es el programa de lealtad, no un producto, así que 'Unique Rewards Black' parece ser el nombre comercial de la World Elite inscrita en el programa. AUTOCRÍTICA: esta fila la creé yo hoy a partir de una nota de prensa sobre la migración de titulares de Santander Aeroméxico Infinite, sin cotejarla contra el folleto. Se deja como esqueleto y marcada, no se borra, hasta que se confirme. Si se confirma, el destino de migración de aeromexico_infinite debe apuntar a world_elite.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
