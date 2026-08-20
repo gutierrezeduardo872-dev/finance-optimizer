@@ -460,6 +460,46 @@ def check_effective_rate(row, rate_field, where, report):
                 )
 
 
+DATA_ROOT = ["data/market"]
+_CATEGORY_CACHE = {}
+
+
+def _valid_categories():
+    """Category keys the app knows, read from the dataset being validated.
+
+    Returns an empty set when categories.json is absent, which disables the
+    check rather than failing every row — the file is new and a dataset
+    without it must still validate.
+    """
+    if "keys" not in _CATEGORY_CACHE:
+        try:
+            path = os.path.join(DATA_ROOT[0], "categories.json")
+            with open(path, encoding="utf-8") as fh:
+                _CATEGORY_CACHE["keys"] = {c.get("category_key") for c in json.load(fh)}
+        except Exception:
+            _CATEGORY_CACHE["keys"] = set()
+    return _CATEGORY_CACHE["keys"]
+
+
+def check_category(row, where, report, valid):
+    """A reward whose category the app does not know can never fire.
+
+    Categories used to live only in the Sheet, so a typo or an invented key was
+    invisible: the row validated, synced, and then silently never matched a
+    purchase. Five live rows were in that state when this check was written.
+    """
+    if valid and row.get("category") not in valid:
+        # Warning, not error, only while two known rows are unresolved
+        # (Costco 'education', Affinity 'retail'). Once those have real keys
+        # this should be promoted to error — an unmatched category is a reward
+        # the user is told about and never receives.
+        report.warn(
+            where,
+            f"category={row.get('category')!r} is not in categories.json — the "
+            "engine matches on this key, so the reward would never fire",
+        )
+
+
 def check_accrual(row, rate_field, where, report):
     """accrual_* holds the accrual as the issuer states it. Only pct_of_spend can
     also be expressed in the percentage column; the other bases need arithmetic
@@ -795,6 +835,7 @@ def validate_rewards(rewards, card_ids, report, today):
 
         check_effective_rate(row, "rate", where, report)
         check_accrual(row, "rate", where, report)
+        check_category(row, where, report, _valid_categories())
 
         if "cap_amount" in row and not num_or_sentinel(row["cap_amount"]):
             report.error(where, f"cap_amount={row['cap_amount']!r} invalid")
@@ -814,8 +855,12 @@ def validate_rewards(rewards, card_ids, report, today):
                 report.warn(where,
                             f"rate_after_cap {after} is not below the headline {rate}")
 
-        if row.get("payout_frequency") not in (None, "", "statement", "monthly",
-                                               "annual", "UNKNOWN"):
+        # "immediate" added 2026-08-17: HSBC One+ credits cashback within two
+        # business days, which is materially different from waiting for a
+        # statement and very different from Costco's once-a-year December
+        # payout. The scale exists to capture exactly that difference.
+        if row.get("payout_frequency") not in (None, "", "immediate", "statement",
+                                               "monthly", "annual", "UNKNOWN"):
             report.error(where, f"payout_frequency={row.get('payout_frequency')!r} invalid")
 
         if is_num(row.get("cap_amount")):
@@ -1032,6 +1077,7 @@ def main():
         return 2
 
     data_dir = args[0]
+    DATA_ROOT[0] = data_dir          # categories.json is read from here
     if not os.path.isdir(data_dir):
         print(f"Not a directory: {data_dir}", file=sys.stderr)
         return 2

@@ -10930,24 +10930,88 @@
     "display_name": "Tarjeta de Crédito HSBC One+",
     "former_names": [],
     "legacy_id": "NOT_APPLICABLE",
-    "tier": "UNKNOWN",
-    "network": "UNKNOWN",
+    "tier": "platino",
+    "network": "visa",
     "lifecycle_status": "active",
     "lifecycle_changed_on": "2026-08-17",
-    "mapping_status": "skeleton",
+    "mapping_status": "mapped",
     "census_confidence": "high",
     "census_note": "issuer product index, marked '¡Nueva tarjeta!'",
     "conflicts": [],
-    "notes": "Hallazgo de censo Stage 2: HSBC la anuncia como tarjeta nueva y no está en el censo. Comisión de administración del titular $2,900 M.N., ingreso mínimo $35,000. Devuelve 5% en entretenimiento, restaurantes, viajes, salud y compras internacionales — sería de las tasas de cashback más altas del conjunto de datos, así que conviene mapearla pronto. Pendiente de aprobación.",
+    "notes": "Devuelve 5% en cinco categorías: entretenimiento, restaurantes, viajes, salud y bienestar, y compras internacionales. FUERA de esas categorías no hay devolución, por eso base_reward_rate es 0 y no UNKNOWN. TOPE SOBRE EL GASTO, no sobre la recompensa: el 5% aplica únicamente a los primeros $30,000 M.N. de compras cada mes, es decir un máximo de $1,500 mensuales de cashback. Las compras a meses sin intereses no generan cashback. El saldo se abona en un máximo de 2 días hábiles. Las tarjetas adicionales suman al mismo tope. Punto de equilibrio: con la anualidad de $2,900 + IVA hay que gastar unos $67,000 al año dentro de las categorías elegibles para recuperarla. VIGENCIA DEL CAT EN CONFLICTO ENTRE DOS DOCUMENTOS DEL EMISOR: la página del producto dice vigencia al 15 de diciembre de 2027 y el folleto digital dice 9 de febrero de 2027, ambos con la misma fecha de cálculo (15 de junio de 2026). Se registra la más temprana para que la reverificación se dispare antes y no después. Dos comparadores publican una anualidad de $2,990; el emisor dice $2,900.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
     "inactivity_min_spend_mxn": "NOT_APPLICABLE",
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "annual",
-    "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN",
+    "cat_calculated_on": "2026-06-15",
+    "cat_valid_until": "2027-02-09",
     "annual_fee_currency": "MXN",
-    "product_type": "credit"
+    "product_type": "credit",
+    "annual_fee_mxn": 2900,
+    "annual_fee_includes_iva": false,
+    "annual_fee_first_year_waived": false,
+    "annual_fee_waiver_condition": "NOT_APPLICABLE",
+    "interest_rate_annual_pct": 45.9,
+    "cat_promedio_pct": 61.8,
+    "base_reward_type": "cashback",
+    "base_reward_rate": 0,
+    "point_value_mxn": 1.0,
+    "effective_rate_pct": 0,
+    "points_program_name": "Saldo Cashback HSBC",
+    "accrual_basis": "pct_of_spend",
+    "accrual_rate": 0,
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "min_income_mxn_monthly": 35000,
+    "invitation_only": false,
+    "other_eligibility_criteria": "NOT_APPLICABLE",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/one-plus/",
+          "https://www.hsbc.com.mx/content/dam/hsbc/mx/documents/tarjetas/folleto-digital-one-plus.pdf"
+        ]
+      },
+      "cost": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/one-plus/",
+          "https://www.hsbc.com.mx/content/dam/hsbc/mx/documents/tarjetas/folleto-digital-one-plus.pdf"
+        ]
+      },
+      "rewards": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/one-plus/",
+          "https://www.hsbc.com.mx/content/dam/hsbc/mx/documents/tarjetas/folleto-digital-one-plus.pdf"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/one-plus/",
+          "https://www.hsbc.com.mx/content/dam/hsbc/mx/documents/tarjetas/folleto-digital-one-plus.pdf"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/one-plus/",
+          "https://www.hsbc.com.mx/content/dam/hsbc/mx/documents/tarjetas/folleto-digital-one-plus.pdf"
+        ]
+      }
+    }
   }
 ]

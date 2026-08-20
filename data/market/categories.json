@@ -1,0 +1,42 @@
+[
+  {
+    "category_key": "supermarket",
+    "display_label": "Supermercado"
+  },
+  {
+    "category_key": "restaurant",
+    "display_label": "Restaurantes"
+  },
+  {
+    "category_key": "gas",
+    "display_label": "Gasolina"
+  },
+  {
+    "category_key": "pharmacy",
+    "display_label": "Farmacia"
+  },
+  {
+    "category_key": "utilities",
+    "display_label": "Servicios (luz, agua, tel)"
+  },
+  {
+    "category_key": "online",
+    "display_label": "Compras en línea"
+  },
+  {
+    "category_key": "department_store",
+    "display_label": "Tiendas departamentales"
+  },
+  {
+    "category_key": "cinema",
+    "display_label": "Cine"
+  },
+  {
+    "category_key": "travel",
+    "display_label": "Viajes"
+  },
+  {
+    "category_key": "other",
+    "display_label": "Otros"
+  }
+]

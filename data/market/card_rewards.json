@@ -573,7 +573,7 @@
         ]
       }
     },
-    "notes": "4% en educación topado a $20,000 de facturación mensual.",
+    "notes": "4% en educación topado a $20,000 de facturación mensual. SIN CLAVE DE CATEGORÍA VÁLIDA (2026-08-17): 'education' no existe en la pestaña Categories, así que este 4% nunca se activa. NO se remapea a 'other' porque eso aplicaría 4% a todo el gasto sin categorizar. Requiere agregar la categoría.",
     "accrual_basis": "pct_of_spend",
     "accrual_rate": 4.0,
     "accrual_block_mxn": "NOT_APPLICABLE"
@@ -614,7 +614,7 @@
   {
     "reward_id": "citibanamex__costco_banamex__dining",
     "card_id": "citibanamex__costco_banamex",
-    "category": "dining",
+    "category": "restaurant",
     "rate": 2.0,
     "reward_type": "cashback",
     "point_value_mxn": 1.0,
@@ -639,7 +639,7 @@
         ]
       }
     },
-    "notes": "2% en restaurantes, streaming, TV de paga e internet.",
+    "notes": "2% en restaurantes, streaming, TV de paga e internet. CORRECCIÓN 2026-08-17: la categoría era 'dining', clave que no existe en la pestaña Categories, así que esta bonificación del 2% nunca se activaba. Se corrige a 'restaurant'. El reward_id conserva el sufijo histórico porque los IDs no se cambian.",
     "accrual_basis": "pct_of_spend",
     "accrual_rate": 2.0,
     "accrual_block_mxn": "NOT_APPLICABLE"
@@ -707,72 +707,6 @@
     "notes": "Tope de $500 mensuales compartido entre todas las categorías Cashback Baby.",
     "accrual_basis": "pct_of_spend",
     "accrual_rate": 6.0,
-    "accrual_block_mxn": "NOT_APPLICABLE"
-  },
-  {
-    "reward_id": "santander_mexico__likeu__dining",
-    "card_id": "santander_mexico__likeu",
-    "category": "dining",
-    "rate": 5.0,
-    "reward_type": "cashback",
-    "point_value_mxn": 1.0,
-    "effective_rate_pct": 5.0,
-    "replaces_or_adds_to_base": "replaces",
-    "cap_amount": 500,
-    "cap_basis": "reward_mxn",
-    "cap_period": "monthly",
-    "rate_after_cap": "NOT_APPLICABLE",
-    "payout_frequency": "monthly",
-    "min_spend": "NOT_APPLICABLE",
-    "promo_end_date": "NOT_APPLICABLE",
-    "user_selectable": false,
-    "confidence": {
-      "rewards": {
-        "score": "high",
-        "evidence_type": "issuer_primary",
-        "verified_on": "2026-08-07",
-        "sources": [
-          "https://www.santander.com.mx/personas/credito-y-financiamiento/tarjetas-de-credito/likeu/",
-          "https://www.santander.com.mx/cashback/likeu.html"
-        ]
-      }
-    },
-    "notes": "Tope de $500 mensuales compartido entre todas las categorías Cashback Baby.",
-    "accrual_basis": "pct_of_spend",
-    "accrual_rate": 5.0,
-    "accrual_block_mxn": "NOT_APPLICABLE"
-  },
-  {
-    "reward_id": "santander_mexico__likeu__telecom",
-    "card_id": "santander_mexico__likeu",
-    "category": "telecom",
-    "rate": 4.0,
-    "reward_type": "cashback",
-    "point_value_mxn": 1.0,
-    "effective_rate_pct": 4.0,
-    "replaces_or_adds_to_base": "replaces",
-    "cap_amount": 500,
-    "cap_basis": "reward_mxn",
-    "cap_period": "monthly",
-    "rate_after_cap": "NOT_APPLICABLE",
-    "payout_frequency": "monthly",
-    "min_spend": "NOT_APPLICABLE",
-    "promo_end_date": "NOT_APPLICABLE",
-    "user_selectable": false,
-    "confidence": {
-      "rewards": {
-        "score": "high",
-        "evidence_type": "issuer_primary",
-        "verified_on": "2026-08-07",
-        "sources": [
-          "https://www.santander.com.mx/personas/credito-y-financiamiento/tarjetas-de-credito/likeu/",
-          "https://www.santander.com.mx/cashback/likeu.html"
-        ]
-      }
-    },
-    "notes": "Tope de $500 mensuales compartido entre todas las categorías Cashback Baby.",
-    "accrual_basis": "pct_of_spend",
-    "accrual_rate": 4.0,
     "accrual_block_mxn": "NOT_APPLICABLE"
   },
   {
@@ -995,7 +929,7 @@
         ]
       }
     },
-    "notes": "10% en Puntos Premia en tiendas físicas de Grupo Inditex México. Reemplaza el 5% base. Valor en pesos del punto no publicado, así que effective_rate_pct es UNKNOWN y la tarjeta no es comparable con cashback.",
+    "notes": "10% en Puntos Premia en tiendas físicas de Grupo Inditex México. Reemplaza el 5% base. Valor en pesos del punto no publicado, así que effective_rate_pct es UNKNOWN y la tarjeta no es comparable con cashback. SIN CLAVE DE CATEGORÍA VÁLIDA (2026-08-17): 'retail' no existe en Categories. 'department_store' es lo más cercano pero Inditex es ropa de especialidad, no tienda departamental. Este 10% no se activa hasta resolverlo.",
     "rate_after_cap": "NOT_APPLICABLE",
     "payout_frequency": "statement",
     "accrual_basis": "pct_of_spend",
@@ -1098,6 +1032,105 @@
     "payout_frequency": "statement",
     "accrual_basis": "per_usd",
     "accrual_rate": 4.8,
+    "accrual_block_mxn": "NOT_APPLICABLE"
+  },
+  {
+    "reward_id": "hsbc_mexico__hsbc_one_plus__restaurant",
+    "card_id": "hsbc_mexico__hsbc_one_plus",
+    "category": "restaurant",
+    "rate": 5.0,
+    "reward_type": "cashback",
+    "point_value_mxn": 1.0,
+    "effective_rate_pct": 5.0,
+    "replaces_or_adds_to_base": "replaces",
+    "cap_amount": 30000,
+    "cap_basis": "spend_mxn",
+    "cap_period": "monthly",
+    "min_spend": "NOT_APPLICABLE",
+    "promo_end_date": "NOT_APPLICABLE",
+    "user_selectable": false,
+    "confidence": {
+      "rewards": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/one-plus/",
+          "https://www.hsbc.com.mx/content/dam/hsbc/mx/documents/tarjetas/folleto-digital-one-plus.pdf"
+        ]
+      }
+    },
+    "notes": "5% en restaurantes, desde comida rápida hasta alta cocina. Tope de $30,000 de GASTO al mes compartido entre las cinco categorías elegibles y las tarjetas adicionales, no un tope por categoría. Sin devolución en compras a meses sin intereses.",
+    "rate_after_cap": 0,
+    "payout_frequency": "immediate",
+    "accrual_basis": "pct_of_spend",
+    "accrual_rate": 5.0,
+    "accrual_block_mxn": "NOT_APPLICABLE"
+  },
+  {
+    "reward_id": "hsbc_mexico__hsbc_one_plus__travel",
+    "card_id": "hsbc_mexico__hsbc_one_plus",
+    "category": "travel",
+    "rate": 5.0,
+    "reward_type": "cashback",
+    "point_value_mxn": 1.0,
+    "effective_rate_pct": 5.0,
+    "replaces_or_adds_to_base": "replaces",
+    "cap_amount": 30000,
+    "cap_basis": "spend_mxn",
+    "cap_period": "monthly",
+    "min_spend": "NOT_APPLICABLE",
+    "promo_end_date": "NOT_APPLICABLE",
+    "user_selectable": false,
+    "confidence": {
+      "rewards": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/one-plus/",
+          "https://www.hsbc.com.mx/content/dam/hsbc/mx/documents/tarjetas/folleto-digital-one-plus.pdf"
+        ]
+      }
+    },
+    "notes": "5% en viajes: vuelos, hospedaje y traslados. Tope de $30,000 de GASTO al mes compartido entre las cinco categorías elegibles y las tarjetas adicionales, no un tope por categoría. Sin devolución en compras a meses sin intereses.",
+    "rate_after_cap": 0,
+    "payout_frequency": "immediate",
+    "accrual_basis": "pct_of_spend",
+    "accrual_rate": 5.0,
+    "accrual_block_mxn": "NOT_APPLICABLE"
+  },
+  {
+    "reward_id": "hsbc_mexico__hsbc_one_plus__cinema",
+    "card_id": "hsbc_mexico__hsbc_one_plus",
+    "category": "cinema",
+    "rate": 5.0,
+    "reward_type": "cashback",
+    "point_value_mxn": 1.0,
+    "effective_rate_pct": 5.0,
+    "replaces_or_adds_to_base": "replaces",
+    "cap_amount": 30000,
+    "cap_basis": "spend_mxn",
+    "cap_period": "monthly",
+    "min_spend": "NOT_APPLICABLE",
+    "promo_end_date": "NOT_APPLICABLE",
+    "user_selectable": false,
+    "confidence": {
+      "rewards": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/one-plus/",
+          "https://www.hsbc.com.mx/content/dam/hsbc/mx/documents/tarjetas/folleto-digital-one-plus.pdf"
+        ]
+      }
+    },
+    "notes": "HSBC paga 5% en 'entretenimiento': conciertos, festivales, cine, eventos culturales, deportivos y espectáculos. La única clave válida que se solapa es 'cinema', MÁS ESTRECHA que la categoría real — la tarjeta también devuelve en conciertos y eventos deportivos, gasto que aquí no se captura. Se subestima el beneficio, que es el lado correcto en el que equivocarse. Tope de $30,000 de gasto al mes compartido entre las cinco categorías.",
+    "rate_after_cap": 0,
+    "payout_frequency": "immediate",
+    "accrual_basis": "pct_of_spend",
+    "accrual_rate": 5.0,
     "accrual_block_mxn": "NOT_APPLICABLE"
   }
 ]
