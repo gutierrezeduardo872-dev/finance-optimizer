@@ -1,42 +1,52 @@
 [
   {
     "category_key": "supermarket",
-    "display_label": "Supermercado"
+    "display_label": "Supermercado",
+    "notes": "Incluye tiendas de autoservicio y clubes de precio."
   },
   {
     "category_key": "restaurant",
-    "display_label": "Restaurantes"
+    "display_label": "Restaurantes",
+    "notes": ""
   },
   {
     "category_key": "gas",
-    "display_label": "Gasolina"
+    "display_label": "Gasolina",
+    "notes": ""
   },
   {
     "category_key": "pharmacy",
-    "display_label": "Farmacia"
+    "display_label": "Farmacia",
+    "notes": ""
   },
   {
     "category_key": "utilities",
-    "display_label": "Servicios (luz, agua, tel)"
+    "display_label": "Servicios (luz, agua, tel)",
+    "notes": ""
   },
   {
     "category_key": "online",
-    "display_label": "Compras en línea"
+    "display_label": "Compras en línea",
+    "notes": "Compras en línea que no encajen en otra categoría más específica."
   },
   {
     "category_key": "department_store",
-    "display_label": "Tiendas departamentales"
+    "display_label": "Tiendas departamentales",
+    "notes": ""
   },
   {
     "category_key": "cinema",
-    "display_label": "Cine"
+    "display_label": "Cine",
+    "notes": ""
   },
   {
     "category_key": "travel",
-    "display_label": "Viajes"
+    "display_label": "Viajes",
+    "notes": ""
   },
   {
     "category_key": "other",
-    "display_label": "Otros"
+    "display_label": "Otros",
+    "notes": "Cajón por defecto: no asignar aquí una tasa elevada de una categoría concreta."
   }
 ]
