@@ -45,6 +45,31 @@
     "notes": ""
   },
   {
+    "category_key": "home_improvement",
+    "display_label": "Mejoras del hogar",
+    "notes": "Ferreterías y tiendas de materiales: The Home Depot, Construrama, Cemex."
+  },
+  {
+    "category_key": "entertainment",
+    "display_label": "Entretenimiento",
+    "notes": "Conciertos, festivales, eventos deportivos y espectáculos. Más amplia que 'cinema', que se conserva porque hay tarjetas que sólo bonifican salas de cine."
+  },
+  {
+    "category_key": "health",
+    "display_label": "Salud y bienestar",
+    "notes": "Consultas, laboratorios, hospitales, gimnasios. Distinta de 'pharmacy', que es sólo compra de medicamentos y abarrotes en farmacia."
+  },
+  {
+    "category_key": "education",
+    "display_label": "Educación",
+    "notes": "Colegiaturas, inscripciones y material escolar."
+  },
+  {
+    "category_key": "clothing",
+    "display_label": "Ropa y calzado",
+    "notes": "Tiendas de ropa de especialidad como Zara y el resto de Grupo Inditex. Distinta de 'department_store', que son tiendas departamentales tipo Liverpool o Palacio."
+  },
+  {
     "category_key": "other",
     "display_label": "Otros",
     "notes": "Cajón por defecto: no asignar aquí una tasa elevada de una categoría concreta."

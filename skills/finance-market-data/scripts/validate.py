@@ -489,11 +489,10 @@ def check_category(row, where, report, valid):
     purchase. Five live rows were in that state when this check was written.
     """
     if valid and row.get("category") not in valid:
-        # Warning, not error, only while two known rows are unresolved
-        # (Costco 'education', Affinity 'retail'). Once those have real keys
-        # this should be promoted to error — an unmatched category is a reward
-        # the user is told about and never receives.
-        report.warn(
+        # Error since 2026-08-17, once the last two unmatched rows got real
+        # keys. A reward the app displays and never pays is worse than one it
+        # does not know about, so this blocks publish rather than warning.
+        report.error(
             where,
             f"category={row.get('category')!r} is not in categories.json — the "
             "engine matches on this key, so the reward would never fire",

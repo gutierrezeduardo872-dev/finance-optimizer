@@ -573,7 +573,7 @@
         ]
       }
     },
-    "notes": "4% en educación topado a $20,000 de facturación mensual. SIN CLAVE DE CATEGORÍA VÁLIDA (2026-08-17): 'education' no existe en la pestaña Categories, así que este 4% nunca se activa. NO se remapea a 'other' porque eso aplicaría 4% a todo el gasto sin categorizar. Requiere agregar la categoría.",
+    "notes": "4% en educación topado a $20,000 de facturación mensual. CORRECCIÓN 2026-08-17: 'education' no existía como clave y este 4% nunca se activaba. Se crea la categoría en vez de forzarlo a 'other', que habría aplicado 4% a todo el gasto sin categorizar.",
     "accrual_basis": "pct_of_spend",
     "accrual_rate": 4.0,
     "accrual_block_mxn": "NOT_APPLICABLE"
@@ -907,7 +907,7 @@
   {
     "reward_id": "citibanamex__affinity_card_banamex__retail",
     "card_id": "citibanamex__affinity_card_banamex",
-    "category": "retail",
+    "category": "clothing",
     "rate": 10.0,
     "reward_type": "points",
     "point_value_mxn": "UNKNOWN",
@@ -929,7 +929,7 @@
         ]
       }
     },
-    "notes": "10% en Puntos Premia en tiendas físicas de Grupo Inditex México. Reemplaza el 5% base. Valor en pesos del punto no publicado, así que effective_rate_pct es UNKNOWN y la tarjeta no es comparable con cashback. SIN CLAVE DE CATEGORÍA VÁLIDA (2026-08-17): 'retail' no existe en Categories. 'department_store' es lo más cercano pero Inditex es ropa de especialidad, no tienda departamental. Este 10% no se activa hasta resolverlo.",
+    "notes": "10% en Puntos Premia en tiendas físicas de Grupo Inditex México. Reemplaza el 5% base. Valor en pesos del punto no publicado, así que effective_rate_pct es UNKNOWN y la tarjeta no es comparable con cashback. CORRECCIÓN 2026-08-17: la categoría era 'retail', clave inexistente, así que este 10% nunca se activaba. Se crea 'clothing' para ropa de especialidad — Inditex no es tienda departamental — y se apunta ahí.",
     "rate_after_cap": "NOT_APPLICABLE",
     "payout_frequency": "statement",
     "accrual_basis": "pct_of_spend",
@@ -1101,9 +1101,42 @@
     "accrual_block_mxn": "NOT_APPLICABLE"
   },
   {
-    "reward_id": "hsbc_mexico__hsbc_one_plus__cinema",
+    "reward_id": "citibanamex__the_home_depot_banamex__home_improvement",
+    "card_id": "citibanamex__the_home_depot_banamex",
+    "category": "home_improvement",
+    "rate": 3.0,
+    "reward_type": "cashback",
+    "point_value_mxn": 1.0,
+    "effective_rate_pct": 3.0,
+    "replaces_or_adds_to_base": "replaces",
+    "cap_amount": "UNCAPPED",
+    "cap_basis": "NOT_APPLICABLE",
+    "cap_period": "NOT_APPLICABLE",
+    "min_spend": "NOT_APPLICABLE",
+    "promo_end_date": "NOT_APPLICABLE",
+    "user_selectable": false,
+    "confidence": {
+      "rewards": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.homedepot.com.mx/banamex",
+          "https://www.banamex.com/es/personas/tarjetas-credito/tarjeta-homedepot.html"
+        ]
+      }
+    },
+    "notes": "3% en Pesos Haz Más en compras en tiendas The Home Depot México, frente al 1% base en otros establecimientos. Dinero cerrado: sólo se puede gastar en The Home Depot, vence a los 12 meses y se pierde si la tarjeta no se usa en los primeros 6 meses.",
+    "rate_after_cap": "NOT_APPLICABLE",
+    "payout_frequency": "statement",
+    "accrual_basis": "pct_of_spend",
+    "accrual_rate": 3.0,
+    "accrual_block_mxn": "NOT_APPLICABLE"
+  },
+  {
+    "reward_id": "hsbc_mexico__hsbc_one_plus__entertainment",
     "card_id": "hsbc_mexico__hsbc_one_plus",
-    "category": "cinema",
+    "category": "entertainment",
     "rate": 5.0,
     "reward_type": "cashback",
     "point_value_mxn": 1.0,
@@ -1126,7 +1159,40 @@
         ]
       }
     },
-    "notes": "HSBC paga 5% en 'entretenimiento': conciertos, festivales, cine, eventos culturales, deportivos y espectáculos. La única clave válida que se solapa es 'cinema', MÁS ESTRECHA que la categoría real — la tarjeta también devuelve en conciertos y eventos deportivos, gasto que aquí no se captura. Se subestima el beneficio, que es el lado correcto en el que equivocarse. Tope de $30,000 de gasto al mes compartido entre las cinco categorías.",
+    "notes": "5% en entretenimiento: conciertos, festivales, cine, eventos culturales, deportivos y espectáculos. Tope de $30,000 de gasto al mes compartido entre las cinco categorías.",
+    "rate_after_cap": 0,
+    "payout_frequency": "immediate",
+    "accrual_basis": "pct_of_spend",
+    "accrual_rate": 5.0,
+    "accrual_block_mxn": "NOT_APPLICABLE"
+  },
+  {
+    "reward_id": "hsbc_mexico__hsbc_one_plus__health",
+    "card_id": "hsbc_mexico__hsbc_one_plus",
+    "category": "health",
+    "rate": 5.0,
+    "reward_type": "cashback",
+    "point_value_mxn": 1.0,
+    "effective_rate_pct": 5.0,
+    "replaces_or_adds_to_base": "replaces",
+    "cap_amount": 30000,
+    "cap_basis": "spend_mxn",
+    "cap_period": "monthly",
+    "min_spend": "NOT_APPLICABLE",
+    "promo_end_date": "NOT_APPLICABLE",
+    "user_selectable": false,
+    "confidence": {
+      "rewards": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/one-plus/",
+          "https://www.hsbc.com.mx/content/dam/hsbc/mx/documents/tarjetas/folleto-digital-one-plus.pdf"
+        ]
+      }
+    },
+    "notes": "5% en salud y bienestar. Tope de $30,000 de gasto al mes compartido entre las cinco categorías.",
     "rate_after_cap": 0,
     "payout_frequency": "immediate",
     "accrual_basis": "pct_of_spend",

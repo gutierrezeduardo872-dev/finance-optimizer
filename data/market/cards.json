@@ -3663,7 +3663,7 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": "",
+    "notes": " SIGUE BLOQUEADA (2026-08-17): la página de costos y comisiones de Conquista entrega el bloque de CAT vacío ('Calculado el y vigente al .') y su tabla tarifaria no renderiza ningún importe. Es la única tarjeta de Banamex sin cifras obtenibles. La página sí confirma que su Comisión por Administración se cobra UNA VEZ AL MES, no al año.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
@@ -4364,24 +4364,83 @@
     "display_name": "Tarjeta de Crédito HSBC Clásica",
     "former_names": [],
     "legacy_id": "Tarjeta de Crédito HSBC Clásica",
-    "tier": "UNKNOWN",
+    "tier": "clasica",
     "network": "UNKNOWN",
     "lifecycle_status": "active",
-    "mapping_status": "skeleton",
+    "mapping_status": "mapped",
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": "",
+    "notes": "La comisión de administración de la tarjeta ADICIONAL se exenta acumulando apenas $1.00 de compras al mes; la del titular no tiene exención publicada. Acumula Puntos del Programa más de HSBC; la tasa de acumulación no se publica en la página del producto, así que accrual_basis queda UNKNOWN. Clásica y Oro deben inscribirse al programa: no acumulan por defecto. OJO CON LA TASA: HSBC publica 'tasa de interés promedio ponderada por saldo', que parece calcularse sobre todos los saldos incluidos los de meses sin intereses al 0%. Por eso sus cifras (15.85%-25.87%) quedan muy por debajo de las de Banorte o Scotiabank para tarjetas equivalentes (60%-75%), pese a que los CAT sí son comparables. interest_rate_annual_pct NO es comparable entre emisores para HSBC; usar el CAT.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
     "inactivity_min_spend_mxn": "NOT_APPLICABLE",
     "inactivity_spend_period": "NOT_APPLICABLE",
-    "fee_billing_period": "UNKNOWN",
-    "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN",
+    "fee_billing_period": "annual",
+    "cat_calculated_on": "2026-03-10",
+    "cat_valid_until": "2026-09-10",
     "annual_fee_currency": "MXN",
-    "product_type": "credit"
+    "product_type": "credit",
+    "annual_fee_mxn": 863,
+    "annual_fee_includes_iva": false,
+    "annual_fee_first_year_waived": false,
+    "annual_fee_waiver_condition": "NOT_APPLICABLE",
+    "interest_rate_annual_pct": 19.44,
+    "cat_promedio_pct": 48.9,
+    "base_reward_type": "points",
+    "base_reward_rate": "UNKNOWN",
+    "point_value_mxn": "UNKNOWN",
+    "effective_rate_pct": "UNKNOWN",
+    "points_program_name": "Programa más de HSBC",
+    "accrual_basis": "UNKNOWN",
+    "accrual_rate": "UNKNOWN",
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "min_income_mxn_monthly": "UNKNOWN",
+    "invitation_only": false,
+    "other_eligibility_criteria": "NOT_APPLICABLE",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/clasica/"
+        ]
+      },
+      "cost": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/clasica/"
+        ]
+      },
+      "rewards": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/clasica/"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/clasica/"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/clasica/"
+        ]
+      }
+    }
   },
   {
     "card_id": "hsbc_mexico__hsbc_easy_points",
@@ -4416,24 +4475,83 @@
     "display_name": "Tarjeta de Crédito HSBC Oro",
     "former_names": [],
     "legacy_id": "Tarjeta de Crédito HSBC Oro",
-    "tier": "UNKNOWN",
+    "tier": "oro",
     "network": "UNKNOWN",
     "lifecycle_status": "active",
-    "mapping_status": "skeleton",
+    "mapping_status": "mapped",
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": "",
+    "notes": "Acumula Puntos del Programa más de HSBC; la tasa de acumulación no se publica en la página del producto, así que accrual_basis queda UNKNOWN. Clásica y Oro deben inscribirse al programa: no acumulan por defecto. OJO CON LA TASA: HSBC publica 'tasa de interés promedio ponderada por saldo', que parece calcularse sobre todos los saldos incluidos los de meses sin intereses al 0%. Por eso sus cifras (15.85%-25.87%) quedan muy por debajo de las de Banorte o Scotiabank para tarjetas equivalentes (60%-75%), pese a que los CAT sí son comparables. interest_rate_annual_pct NO es comparable entre emisores para HSBC; usar el CAT.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
     "inactivity_min_spend_mxn": "NOT_APPLICABLE",
     "inactivity_spend_period": "NOT_APPLICABLE",
-    "fee_billing_period": "UNKNOWN",
-    "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN",
+    "fee_billing_period": "annual",
+    "cat_calculated_on": "2026-03-10",
+    "cat_valid_until": "2026-09-10",
     "annual_fee_currency": "MXN",
-    "product_type": "credit"
+    "product_type": "credit",
+    "annual_fee_mxn": 1249,
+    "annual_fee_includes_iva": false,
+    "annual_fee_first_year_waived": false,
+    "annual_fee_waiver_condition": "NOT_APPLICABLE",
+    "interest_rate_annual_pct": 15.85,
+    "cat_promedio_pct": 57.2,
+    "base_reward_type": "points",
+    "base_reward_rate": "UNKNOWN",
+    "point_value_mxn": "UNKNOWN",
+    "effective_rate_pct": "UNKNOWN",
+    "points_program_name": "Programa más de HSBC",
+    "accrual_basis": "UNKNOWN",
+    "accrual_rate": "UNKNOWN",
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "min_income_mxn_monthly": "UNKNOWN",
+    "invitation_only": false,
+    "other_eligibility_criteria": "NOT_APPLICABLE",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/oro/"
+        ]
+      },
+      "cost": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/oro/"
+        ]
+      },
+      "rewards": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/oro/"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/oro/"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/oro/"
+        ]
+      }
+    }
   },
   {
     "card_id": "hsbc_mexico__hsbc_platinum",
@@ -4442,24 +4560,83 @@
     "display_name": "Tarjeta de Crédito HSBC Platinum",
     "former_names": [],
     "legacy_id": "Tarjeta de Crédito HSBC Platinum",
-    "tier": "UNKNOWN",
+    "tier": "platino",
     "network": "UNKNOWN",
     "lifecycle_status": "active",
-    "mapping_status": "skeleton",
+    "mapping_status": "mapped",
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": "",
+    "notes": "Acumula Puntos del Programa más de HSBC; la tasa de acumulación no se publica en la página del producto, así que accrual_basis queda UNKNOWN. Clásica y Oro deben inscribirse al programa: no acumulan por defecto. OJO CON LA TASA: HSBC publica 'tasa de interés promedio ponderada por saldo', que parece calcularse sobre todos los saldos incluidos los de meses sin intereses al 0%. Por eso sus cifras (15.85%-25.87%) quedan muy por debajo de las de Banorte o Scotiabank para tarjetas equivalentes (60%-75%), pese a que los CAT sí son comparables. interest_rate_annual_pct NO es comparable entre emisores para HSBC; usar el CAT.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
     "inactivity_min_spend_mxn": "NOT_APPLICABLE",
     "inactivity_spend_period": "NOT_APPLICABLE",
-    "fee_billing_period": "UNKNOWN",
-    "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN",
+    "fee_billing_period": "annual",
+    "cat_calculated_on": "2026-03-10",
+    "cat_valid_until": "2026-09-10",
     "annual_fee_currency": "MXN",
-    "product_type": "credit"
+    "product_type": "credit",
+    "annual_fee_mxn": 2968,
+    "annual_fee_includes_iva": false,
+    "annual_fee_first_year_waived": false,
+    "annual_fee_waiver_condition": "NOT_APPLICABLE",
+    "interest_rate_annual_pct": 19.22,
+    "cat_promedio_pct": 51.4,
+    "base_reward_type": "points",
+    "base_reward_rate": "UNKNOWN",
+    "point_value_mxn": "UNKNOWN",
+    "effective_rate_pct": "UNKNOWN",
+    "points_program_name": "Programa más de HSBC",
+    "accrual_basis": "UNKNOWN",
+    "accrual_rate": "UNKNOWN",
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "min_income_mxn_monthly": "UNKNOWN",
+    "invitation_only": false,
+    "other_eligibility_criteria": "NOT_APPLICABLE",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/platinum/"
+        ]
+      },
+      "cost": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/platinum/"
+        ]
+      },
+      "rewards": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/platinum/"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/platinum/"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/platinum/"
+        ]
+      }
+    }
   },
   {
     "card_id": "hsbc_mexico__hsbc_premier",
@@ -4475,7 +4652,7 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": "",
+    "notes": " REVISAR DUPLICADO (2026-08-17): el emisor sólo comercializa 'HSBC Premier World Elite', ya mapeada en hsbc_mexico__hsbc_world_elite. No hay página propia de una 'HSBC Premier' distinta. Puede ser la misma tarjeta con dos filas, o un producto heredado. Requiere Stage 2 antes de mapear.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
@@ -4616,7 +4793,7 @@
     "census_confidence": "high",
     "census_note": "co-brand (Viva Aerobús)",
     "conflicts": [],
-    "notes": "Doters: 3 puntos por cada $10 en compras Viva, 2 puntos por cada $10 en el resto. Doters no publica valor en pesos, así que effective_rate_pct queda UNKNOWN. Primer año sin costo; $3,124 a partir del segundo. Accesos LoungeKey ilimitados a razón de uno por cada $8,000 de gasto.",
+    "notes": "Doters: 3 puntos por cada $10 en compras Viva, 2 puntos por cada $10 en el resto. Doters no publica valor en pesos, así que effective_rate_pct queda UNKNOWN. Primer año sin costo; $3,124 a partir del segundo. Accesos LoungeKey ilimitados a razón de uno por cada $8,000 de gasto. Anualidad $3,124 + IVA y tasa 41.89% añadidas del emisor (cálculo 10 de marzo de 2026); la comisión puede diferirse a 3 meses sin intereses. OJO CON LA TASA: HSBC publica 'tasa de interés promedio ponderada por saldo', que parece calcularse sobre todos los saldos incluidos los de meses sin intereses al 0%. Por eso sus cifras (15.85%-25.87%) quedan muy por debajo de las de Banorte o Scotiabank para tarjetas equivalentes (60%-75%), pese a que los CAT sí son comparables. interest_rate_annual_pct NO es comparable entre emisores para HSBC; usar el CAT.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
@@ -4650,12 +4827,11 @@
         ]
       },
       "cost": {
-        "score": "high",
+        "score": "medium",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-08-07",
+        "verified_on": "2026-08-17",
         "sources": [
-          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/viva/",
-          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/"
+          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/viva/"
         ]
       },
       "rewards": {
@@ -4698,24 +4874,88 @@
     "display_name": "Tarjeta de Crédito HSBC World Elite",
     "former_names": [],
     "legacy_id": "Tarjeta de Crédito HSBC World Elite",
-    "tier": "UNKNOWN",
+    "tier": "infinite",
     "network": "UNKNOWN",
     "lifecycle_status": "active",
-    "mapping_status": "skeleton",
+    "mapping_status": "mapped",
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": "",
+    "notes": "Corresponde a 'HSBC Premier World Elite', el nombre con que el emisor la comercializa hoy. Accesos ilimitados a salas VIP LoungeKey para el titular y un acompañante. REVISAR DUPLICADO: el censo tiene además una fila hsbc_premier; la página del emisor lista un solo producto Premier World Elite, así que una de las dos filas podría sobrar. Acumula Puntos del Programa más de HSBC; la tasa de acumulación no se publica en la página del producto, así que accrual_basis queda UNKNOWN. Clásica y Oro deben inscribirse al programa: no acumulan por defecto. OJO CON LA TASA: HSBC publica 'tasa de interés promedio ponderada por saldo', que parece calcularse sobre todos los saldos incluidos los de meses sin intereses al 0%. Por eso sus cifras (15.85%-25.87%) quedan muy por debajo de las de Banorte o Scotiabank para tarjetas equivalentes (60%-75%), pese a que los CAT sí son comparables. interest_rate_annual_pct NO es comparable entre emisores para HSBC; usar el CAT.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
     "inactivity_min_spend_mxn": "NOT_APPLICABLE",
     "inactivity_spend_period": "NOT_APPLICABLE",
-    "fee_billing_period": "UNKNOWN",
-    "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN",
+    "fee_billing_period": "annual",
+    "cat_calculated_on": "2026-03-10",
+    "cat_valid_until": "2026-09-10",
     "annual_fee_currency": "MXN",
-    "product_type": "credit"
+    "product_type": "credit",
+    "annual_fee_mxn": 6770,
+    "annual_fee_includes_iva": false,
+    "annual_fee_first_year_waived": false,
+    "annual_fee_waiver_condition": "NOT_APPLICABLE",
+    "interest_rate_annual_pct": 25.87,
+    "cat_promedio_pct": 42.3,
+    "base_reward_type": "points",
+    "base_reward_rate": "UNKNOWN",
+    "point_value_mxn": "UNKNOWN",
+    "effective_rate_pct": "UNKNOWN",
+    "points_program_name": "Programa más de HSBC",
+    "accrual_basis": "UNKNOWN",
+    "accrual_rate": "UNKNOWN",
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "min_income_mxn_monthly": 60000,
+    "invitation_only": false,
+    "other_eligibility_criteria": "NOT_APPLICABLE",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.hsbc.com.mx/tarjetas-de-credito/comparador-de-tarjetas-de-credito/",
+          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/"
+        ]
+      },
+      "cost": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.hsbc.com.mx/tarjetas-de-credito/comparador-de-tarjetas-de-credito/",
+          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/"
+        ]
+      },
+      "rewards": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.hsbc.com.mx/tarjetas-de-credito/comparador-de-tarjetas-de-credito/",
+          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.hsbc.com.mx/tarjetas-de-credito/comparador-de-tarjetas-de-credito/",
+          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.hsbc.com.mx/tarjetas-de-credito/comparador-de-tarjetas-de-credito/",
+          "https://www.hsbc.com.mx/tarjetas-de-credito/productos/"
+        ]
+      }
+    }
   },
   {
     "card_id": "hsbc_mexico__hsbc_zero",
@@ -8617,24 +8857,88 @@
     "display_name": "Tarjeta de Crédito The Home Depot Banamex",
     "former_names": [],
     "legacy_id": "Tarjeta de Crédito The Home Depot Banamex",
-    "tier": "UNKNOWN",
+    "tier": "clasica",
     "network": "UNKNOWN",
     "lifecycle_status": "active",
-    "mapping_status": "skeleton",
+    "mapping_status": "mapped",
     "census_confidence": "high",
     "census_note": "co-brand",
     "conflicts": [],
-    "notes": "Co-brand split from legacy issuer string 'Citibanamex (The Home Depot)'.",
+    "notes": "3% en compras en tiendas The Home Depot y 1% en otros establecimientos a una sola exhibición. DINERO CERRADO: los Pesos Haz Más son dinero electrónico que sólo puede gastarse en tiendas The Home Depot México — la cuarta moneda cerrada del conjunto de datos, junto con Cashi, Monedero Naranja y Travel Cash. Vencen a los 12 meses y SE PIERDEN si la tarjeta no se usa al menos una vez durante los primeros 6 meses. La comisión de administración se cobra una vez al año, no mensualmente como Costco y La Comer. RESUELVE LA AMBIGÜEDAD DEL 2026-08-17: la tabla de Banamex mostraba un solo importe de $387 sin poder atribuirlo; resulta ser la comisión de la tarjeta ADICIONAL, justo la mitad de los $774 del titular. Cifras tomadas del sitio de The Home Depot, que reproduce la leyenda regulatoria de Banamex, porque la página del banco inserta el bloque por JavaScript. Tres comparadores publican $645, $689 y una anualidad 'variable'; el emisor dice $774. EL 3% NO SE PUEDE REGISTRAR COMO CATEGORÍA: no existe una clave para mejoras del hogar en categories.json, así que sólo se refleja el 1% base.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
     "inactivity_min_spend_mxn": "NOT_APPLICABLE",
     "inactivity_spend_period": "NOT_APPLICABLE",
-    "fee_billing_period": "UNKNOWN",
-    "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN",
+    "fee_billing_period": "annual",
+    "cat_calculated_on": "2026-03-24",
+    "cat_valid_until": "2026-09-24",
     "annual_fee_currency": "MXN",
-    "product_type": "credit"
+    "product_type": "credit",
+    "annual_fee_mxn": 774,
+    "annual_fee_includes_iva": false,
+    "annual_fee_first_year_waived": false,
+    "annual_fee_waiver_condition": "NOT_APPLICABLE",
+    "interest_rate_annual_pct": 61.73,
+    "cat_promedio_pct": 86.7,
+    "base_reward_type": "cashback",
+    "base_reward_rate": 1.0,
+    "point_value_mxn": 1.0,
+    "effective_rate_pct": 1.0,
+    "points_program_name": "Pesos Haz Más",
+    "accrual_basis": "pct_of_spend",
+    "accrual_rate": 1.0,
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "min_income_mxn_monthly": "UNKNOWN",
+    "invitation_only": false,
+    "other_eligibility_criteria": "NOT_APPLICABLE",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.homedepot.com.mx/banamex",
+          "https://www.banamex.com/es/personas/tarjetas-credito/tarjeta-homedepot.html"
+        ]
+      },
+      "cost": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.homedepot.com.mx/banamex",
+          "https://www.banamex.com/es/personas/tarjetas-credito/tarjeta-homedepot.html"
+        ]
+      },
+      "rewards": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.homedepot.com.mx/banamex",
+          "https://www.banamex.com/es/personas/tarjetas-credito/tarjeta-homedepot.html"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.homedepot.com.mx/banamex",
+          "https://www.banamex.com/es/personas/tarjetas-credito/tarjeta-homedepot.html"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.homedepot.com.mx/banamex",
+          "https://www.banamex.com/es/personas/tarjetas-credito/tarjeta-homedepot.html"
+        ]
+      }
+    }
   },
   {
     "card_id": "invex__farmacias_guadalajara",
@@ -9787,24 +10091,83 @@
     "display_name": "Gold Elite Credit Card American Express",
     "former_names": [],
     "legacy_id": "Gold Elite Credit Card American Express",
-    "tier": "UNKNOWN",
-    "network": "amex",
+    "tier": "oro",
+    "network": "american_express",
     "lifecycle_status": "active",
-    "mapping_status": "skeleton",
+    "mapping_status": "mapped",
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": " Es tarjeta de CRÉDITO, no de servicio: American Express la publica bajo un folleto explicativo distinto, con cuotas, tasa de interés, comisiones y CAT propios.",
+    "notes": "Tarjeta de CRÉDITO revolvente. Cuota anual $1,700 M.N. + IVA desde el segundo año, diferida a 3 meses. Un comparador publica CAT 91.3% y tasa 61.31% consultados en abril de 2026; no se registran por no haber fuente del emisor. El '0%' de la página es CAT de MSI. PATRÓN DE AMERICAN EXPRESS MÉXICO: las Tarjetas de Servicio (charge) se cotizan en DÓLARES y las Tarjetas de Crédito en PESOS. No es una inconsistencia del registro sino cómo el emisor fija precios en cada línea.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
     "inactivity_min_spend_mxn": "NOT_APPLICABLE",
     "inactivity_spend_period": "NOT_APPLICABLE",
-    "fee_billing_period": "UNKNOWN",
+    "fee_billing_period": "annual",
     "cat_calculated_on": "UNKNOWN",
     "cat_valid_until": "UNKNOWN",
     "annual_fee_currency": "MXN",
-    "product_type": "credit"
+    "product_type": "credit",
+    "annual_fee_mxn": 1700,
+    "annual_fee_includes_iva": false,
+    "annual_fee_first_year_waived": true,
+    "annual_fee_waiver_condition": "Cuota Anual sin costo el primer año por promoción para clientes nuevos; a partir del segundo año se cobra diferida a 3 meses sin intereses.",
+    "interest_rate_annual_pct": "UNKNOWN",
+    "cat_promedio_pct": "UNKNOWN",
+    "base_reward_type": "points",
+    "base_reward_rate": "UNKNOWN",
+    "point_value_mxn": "UNKNOWN",
+    "effective_rate_pct": "UNKNOWN",
+    "points_program_name": "Membership Rewards",
+    "accrual_basis": "UNKNOWN",
+    "accrual_rate": "UNKNOWN",
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "min_income_mxn_monthly": "UNKNOWN",
+    "invitation_only": false,
+    "other_eligibility_criteria": "NOT_APPLICABLE",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.americanexpress.com/mx/beneficios/the-gold-elite/"
+        ]
+      },
+      "cost": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.americanexpress.com/mx/beneficios/the-gold-elite/"
+        ]
+      },
+      "rewards": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.americanexpress.com/mx/beneficios/the-gold-elite/"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.americanexpress.com/mx/beneficios/the-gold-elite/"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.americanexpress.com/mx/beneficios/the-gold-elite/"
+        ]
+      }
+    }
   },
   {
     "card_id": "american_express__the_gold_card",
@@ -9820,7 +10183,7 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": "Fee = 450 USD + IVA (~8,100 MXN at ~18 MXN/USD) diferida en 3 meses, per Kardmatch; official site shows no static MXN figure. $3,000 MXN annual travel credit; Golden Cashbacks",
+    "notes": "Fee = 450 USD + IVA (~8,100 MXN at ~18 MXN/USD) diferida en 3 meses, per Kardmatch; official site shows no static MXN figure. $3,000 MXN annual travel credit; Golden Cashbacks REVISAR IMPORTE Y MONEDA (2026-08-17): la fila registra $8,100 en pesos, pero The Gold Card es Tarjeta de Servicio y American Express cotiza esa línea en dólares. Un comparador publica $450 USD, que al FIX de $17.0218 son unos $7,660 — no coincide con $8,100, así que la cifra actual puede venir de un tipo de cambio viejo o de una tarifa anterior. Requiere reverificación contra el emisor antes de confiar en ella.",
     "annual_fee_mxn": 8100,
     "annual_fee_includes_iva": false,
     "annual_fee_first_year_waived": "UNKNOWN",
@@ -9906,7 +10269,7 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": "",
+    "notes": " PENDIENTE DE FUENTE (2026-08-17): un comparador publica $160 USD de cuota anual e ingreso mínimo de $15,000, pero no se localizó página del emisor con la cifra. No se mapea con evidencia de comparador. Es Tarjeta de Servicio (charge).",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
@@ -9925,24 +10288,83 @@
     "display_name": "The Platinum Card American Express",
     "former_names": [],
     "legacy_id": "The Platinum Card American Express",
-    "tier": "UNKNOWN",
-    "network": "amex",
+    "tier": "platino",
+    "network": "american_express",
     "lifecycle_status": "active",
-    "mapping_status": "skeleton",
+    "mapping_status": "mapped",
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": "",
+    "notes": "TARJETA DE SERVICIO (charge): se liquida íntegra cada mes, sin línea revolvente, por eso CAT y tasa son NOT_APPLICABLE. Cuota anual equivalente en moneda nacional a $1,300 USD + IVA, diferida a 3 meses, convertida al tipo de cambio del día del cobro — exactamente el caso que motivó annual_fee_currency. Hasta 2 tarjetas adicionales sin costo y hasta 5 en total. Hasta 18 meses sin intereses. PATRÓN DE AMERICAN EXPRESS MÉXICO: las Tarjetas de Servicio (charge) se cotizan en DÓLARES y las Tarjetas de Crédito en PESOS. No es una inconsistencia del registro sino cómo el emisor fija precios en cada línea.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
     "inactivity_min_spend_mxn": "NOT_APPLICABLE",
     "inactivity_spend_period": "NOT_APPLICABLE",
-    "fee_billing_period": "UNKNOWN",
-    "cat_calculated_on": "UNKNOWN",
-    "cat_valid_until": "UNKNOWN",
-    "annual_fee_currency": "MXN",
-    "product_type": "charge"
+    "fee_billing_period": "annual",
+    "cat_calculated_on": "NOT_APPLICABLE",
+    "cat_valid_until": "NOT_APPLICABLE",
+    "annual_fee_currency": "USD",
+    "product_type": "charge",
+    "annual_fee_mxn": 1300,
+    "annual_fee_includes_iva": false,
+    "annual_fee_first_year_waived": true,
+    "annual_fee_waiver_condition": "Cuota Anual sin costo el primer año por promoción para clientes nuevos; a partir del segundo año se cobra diferida a 3 meses sin intereses.",
+    "interest_rate_annual_pct": "NOT_APPLICABLE",
+    "cat_promedio_pct": "NOT_APPLICABLE",
+    "base_reward_type": "points",
+    "base_reward_rate": "UNKNOWN",
+    "point_value_mxn": "UNKNOWN",
+    "effective_rate_pct": "UNKNOWN",
+    "points_program_name": "Membership Rewards",
+    "accrual_basis": "UNKNOWN",
+    "accrual_rate": "UNKNOWN",
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "min_income_mxn_monthly": "UNKNOWN",
+    "invitation_only": false,
+    "other_eligibility_criteria": "NOT_APPLICABLE",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.americanexpress.com/es-mx/tarjetas-de-servicio/the-platinum-card/"
+        ]
+      },
+      "cost": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.americanexpress.com/es-mx/tarjetas-de-servicio/the-platinum-card/"
+        ]
+      },
+      "rewards": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.americanexpress.com/es-mx/tarjetas-de-servicio/the-platinum-card/"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.americanexpress.com/es-mx/tarjetas-de-servicio/the-platinum-card/"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.americanexpress.com/es-mx/tarjetas-de-servicio/the-platinum-card/"
+        ]
+      }
+    }
   },
   {
     "card_id": "american_express__the_platinum_credit_card",
@@ -9951,24 +10373,83 @@
     "display_name": "The Platinum Credit Card American Express",
     "former_names": [],
     "legacy_id": "The Platinum Credit Card American Express",
-    "tier": "UNKNOWN",
-    "network": "amex",
+    "tier": "platino",
+    "network": "american_express",
     "lifecycle_status": "active",
-    "mapping_status": "skeleton",
+    "mapping_status": "mapped",
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": " Es tarjeta de CRÉDITO, no de servicio: American Express la publica bajo un folleto explicativo distinto, con cuotas, tasa de interés, comisiones y CAT propios.",
+    "notes": "Tarjeta de CRÉDITO revolvente, no de servicio: cuota anual $3,700 M.N. + IVA a partir del segundo año, diferida a 3 meses. El emisor no publica CAT ni tasa ordinaria en la página de beneficios; el '0%' que aparece ahí corresponde al CAT de meses sin intereses, no al CAT promedio de la tarjeta, y no debe registrarse como tal. PATRÓN DE AMERICAN EXPRESS MÉXICO: las Tarjetas de Servicio (charge) se cotizan en DÓLARES y las Tarjetas de Crédito en PESOS. No es una inconsistencia del registro sino cómo el emisor fija precios en cada línea.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
     "inactivity_min_spend_mxn": "NOT_APPLICABLE",
     "inactivity_spend_period": "NOT_APPLICABLE",
-    "fee_billing_period": "UNKNOWN",
+    "fee_billing_period": "annual",
     "cat_calculated_on": "UNKNOWN",
     "cat_valid_until": "UNKNOWN",
     "annual_fee_currency": "MXN",
-    "product_type": "credit"
+    "product_type": "credit",
+    "annual_fee_mxn": 3700,
+    "annual_fee_includes_iva": false,
+    "annual_fee_first_year_waived": true,
+    "annual_fee_waiver_condition": "Cuota Anual sin costo el primer año por promoción para clientes nuevos; a partir del segundo año se cobra diferida a 3 meses sin intereses.",
+    "interest_rate_annual_pct": "UNKNOWN",
+    "cat_promedio_pct": "UNKNOWN",
+    "base_reward_type": "points",
+    "base_reward_rate": "UNKNOWN",
+    "point_value_mxn": "UNKNOWN",
+    "effective_rate_pct": "UNKNOWN",
+    "points_program_name": "Membership Rewards",
+    "accrual_basis": "UNKNOWN",
+    "accrual_rate": "UNKNOWN",
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "min_income_mxn_monthly": "UNKNOWN",
+    "invitation_only": false,
+    "other_eligibility_criteria": "NOT_APPLICABLE",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.americanexpress.com/mx/beneficios/the-platinum-credit-card/"
+        ]
+      },
+      "cost": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.americanexpress.com/mx/beneficios/the-platinum-credit-card/"
+        ]
+      },
+      "rewards": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.americanexpress.com/mx/beneficios/the-platinum-credit-card/"
+        ]
+      },
+      "perks": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.americanexpress.com/mx/beneficios/the-platinum-credit-card/"
+        ]
+      },
+      "eligibility": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.americanexpress.com/mx/beneficios/the-platinum-credit-card/"
+        ]
+      }
+    }
   },
   {
     "card_id": "american_express__aeromexico",
