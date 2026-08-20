@@ -1,1 +1,78 @@
-[]
+[
+  {
+    "term_id": "nu_mx__ahorro_congelado__t7",
+    "account_id": "nu_mx__ahorro_congelado",
+    "term_days": 7,
+    "rate_pct": 6.55,
+    "rate_type": "rendimiento_anual_nominal",
+    "confidence": {
+      "yield": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://cdn.nubank.com.br/MX/folleto-informativo-cuenta.pdf",
+          "https://nu.com.mx/historico-de-rendimientos-cuenta/"
+        ]
+      }
+    },
+    "notes": "GAT nominal 6.77%, GAT real 2.88%, calculadas el 25 de junio de 2026."
+  },
+  {
+    "term_id": "nu_mx__ahorro_congelado__t28",
+    "account_id": "nu_mx__ahorro_congelado",
+    "term_days": 28,
+    "rate_pct": 6.6,
+    "rate_type": "rendimiento_anual_nominal",
+    "confidence": {
+      "yield": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://cdn.nubank.com.br/MX/folleto-informativo-cuenta.pdf",
+          "https://nu.com.mx/historico-de-rendimientos-cuenta/"
+        ]
+      }
+    },
+    "notes": "GAT nominal 6.82%, GAT real 2.93%, calculadas el 25 de junio de 2026."
+  },
+  {
+    "term_id": "nu_mx__ahorro_congelado__t90",
+    "account_id": "nu_mx__ahorro_congelado",
+    "term_days": 90,
+    "rate_pct": 6.7,
+    "rate_type": "rendimiento_anual_nominal",
+    "confidence": {
+      "yield": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://cdn.nubank.com.br/MX/folleto-informativo-cuenta.pdf",
+          "https://nu.com.mx/historico-de-rendimientos-cuenta/"
+        ]
+      }
+    },
+    "notes": "GAT nominal 6.93%, GAT real 3.03%, calculadas el 25 de junio de 2026."
+  },
+  {
+    "term_id": "nu_mx__ahorro_congelado__t180",
+    "account_id": "nu_mx__ahorro_congelado",
+    "term_days": 180,
+    "rate_pct": 6.8,
+    "rate_type": "rendimiento_anual_nominal",
+    "confidence": {
+      "yield": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://cdn.nubank.com.br/MX/folleto-informativo-cuenta.pdf",
+          "https://nu.com.mx/historico-de-rendimientos-cuenta/"
+        ]
+      }
+    },
+    "notes": "GAT nominal 7.04%, GAT real 3.14%, calculadas el 25 de junio de 2026."
+  }
+]

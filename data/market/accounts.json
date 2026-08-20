@@ -8,19 +8,19 @@
     "account_type": "savings",
     "lifecycle_status": "active",
     "mapping_status": "mapped",
-    "yield_structure": "tiered",
-    "flat_rate_pct": "NOT_APPLICABLE",
+    "yield_structure": "flat",
+    "flat_rate_pct": 6.5,
     "promotional_rate_pct": "NOT_APPLICABLE",
     "promotional_rate_end_date": "NOT_APPLICABLE",
     "rate_type": "rendimiento_anual_nominal",
     "max_balance_earning_stated_rate_mxn": "UNCAPPED",
     "monthly_fee_mxn": 0,
     "fee_waiver_condition": "NOT_APPLICABLE",
-    "min_balance_mxn": 0,
+    "min_balance_mxn": 0.01,
     "min_opening_deposit_mxn": 0,
     "liquidity": "instant",
     "term_days": "NOT_APPLICABLE",
-    "isr_withholding_note": "Rate before ISR; ISR withheld on interest",
+    "isr_withholding_note": "Before ISR",
     "insurance_scheme": "IPAB",
     "insurance_coverage_udis": 400000,
     "regulated_entity_type": "banco",
@@ -36,22 +36,23 @@
       "cost": {
         "score": "medium",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-06-25",
+        "verified_on": "2026-08-17",
         "sources": [
-          "https://nu.com.mx/cuenta/"
+          "https://cdn.nubank.com.br/MX/folleto-informativo-cuenta.pdf"
         ]
       },
       "yield": {
-        "score": "low",
+        "score": "high",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-06-25",
+        "verified_on": "2026-08-17",
         "sources": [
-          "https://nu.com.mx/cuenta/"
+          "https://cdn.nubank.com.br/MX/folleto-informativo-cuenta.pdf",
+          "https://nu.com.mx/historico-de-rendimientos-cuenta/"
         ]
       }
     },
     "conflicts": [],
-    "notes": "Contractual base 6.00% (GAT nominal 6.72%), promo preferencial 6.50%; congelada 6.80%; Cajita Turbo 13.00% (see ConditionalBoosts)"
+    "notes": "Cajitas 24/7: 6.50% anual fija, GAT nominal 6.72% y GAT real 2.83%. Disponibilidad inmediata. Monto mínimo $0.01, hasta 10 Cajitas activas a la vez. EL RENDIMIENTO SÓLO SE GENERA SOBRE EL SALDO APARTADO EN UNA CAJITA, no sobre el saldo corriente de la cuenta — un usuario que deja el dinero en el saldo principal no gana nada. CORRECCIÓN 2026-08-17: la fila estaba marcada yield_structure 'tiered' sin ninguna fila en YieldTiers, así que no tenía tasa en ninguna parte. La estructura es plana. Tasas calculadas el 25 de junio de 2026 con vigencia del 9 de julio al 19 de AGOSTO de 2026 — es decir, caducan en dos días. Nu revisa estas tasas cada seis semanas aproximadamente; conviene reverificar de inmediato. NOTA DE PROTECCIÓN: el folleto informativo de Nu, calculado el 25 de junio de 2026, todavía dice 'S.F.P.' y 'Fondo de Protección hasta por 25,000 UDIs'. La ficha del emisor registra la conversión a banca múltiple el 6 de agosto de 2026, posterior a ese folleto, así que se conserva IPAB 400,000 UDIS. Pero el material vigente de Nu sigue diciendo 25,000 UDIs: si un usuario compara la app con lo que dice Nu, verá cifras distintas. Reverificar la cobertura una vez que Nu actualice sus folletos."
   },
   {
     "account_id": "mercado_pago__cuenta_mercado_pago_rendimientos",
@@ -815,22 +816,22 @@
     "display_name": "Scotia Inversión Disponible",
     "former_names": [],
     "legacy_id": "scotia_inversion",
-    "account_type": "investment_term",
+    "account_type": "savings",
     "lifecycle_status": "active",
     "mapping_status": "mapped",
     "yield_structure": "tiered",
     "flat_rate_pct": "NOT_APPLICABLE",
     "promotional_rate_pct": "NOT_APPLICABLE",
     "promotional_rate_end_date": "NOT_APPLICABLE",
-    "rate_type": "GAT_nominal",
-    "max_balance_earning_stated_rate_mxn": "UNKNOWN",
+    "rate_type": "rendimiento_anual_nominal",
+    "max_balance_earning_stated_rate_mxn": "UNCAPPED",
     "monthly_fee_mxn": 0,
-    "fee_waiver_condition": "Saldo promedio >=$10000 to earn",
+    "fee_waiver_condition": "NOT_APPLICABLE",
     "min_balance_mxn": 10000,
     "min_opening_deposit_mxn": 10000,
-    "liquidity": "same_day",
+    "liquidity": "instant",
     "term_days": "NOT_APPLICABLE",
-    "isr_withholding_note": "GAT Real -2.96%",
+    "isr_withholding_note": "Before ISR",
     "insurance_scheme": "IPAB",
     "insurance_coverage_udis": 400000,
     "regulated_entity_type": "banco",
@@ -846,22 +847,23 @@
       "cost": {
         "score": "medium",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-04-07",
+        "verified_on": "2026-08-17",
         "sources": [
           "https://www.scotiabank.com.mx/personas/inversiones/productos/scotia-inversion-disponible.aspx"
         ]
       },
       "yield": {
-        "score": "low",
+        "score": "high",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-04-07",
+        "verified_on": "2026-08-17",
         "sources": [
-          "https://www.scotiabank.com.mx/personas/inversiones/productos/scotia-inversion-disponible.aspx"
+          "https://www.scotiabank.com.mx/personas/inversiones/productos/scotia-inversion-disponible.aspx",
+          "https://www.scotiabank.com.mx/promociones/invertir.aspx"
         ]
       }
     },
     "conflicts": [],
-    "notes": "Scotia debit accounts pay 0%"
+    "notes": "Inversión a la vista indizada a CETES 28 días, tasa VARIABLE. Sólo genera rendimientos si el saldo promedio mensual llega a $10,000. TRAMPA PROMOCIONAL: la campaña 'Tu dinero te da más 100% CETES' paga 6.29% anual, pero SÓLO durante los tres primeros meses desde la contratación; después la cuenta pasa automáticamente a Scotia Inversión Disponible Segmentos, cuyo primer tramo paga 0.63%. La caída es de casi diez veces y es automática, no requiere que el cliente haga nada. promotional_rate_pct registra el 6.29% y flat_rate_pct queda NOT_APPLICABLE porque la tasa de régimen depende del tramo de saldo. A 0.63% con inflación estimada de 3.95%, la GAT real es NEGATIVA (-3.32%): el saldo pierde poder adquisitivo. Es la peor tasa de régimen del conjunto de datos. CORRECCIÓN 2026-08-17: la fila estaba marcada 'tiered' sin ninguna fila en YieldTiers, así que no tenía tasa en ninguna parte. También estaba clasificada como investment_term, pero es inversión a la vista con liquidez inmediata, no a plazo. Sólo se pudo obtener el primer tramo de saldo; los tramos superiores no se publican en la página del producto."
   },
   {
     "account_id": "banco_inbursa__cuenta_inbursa_ct_max",
@@ -1240,5 +1242,62 @@
     },
     "conflicts": [],
     "notes": "Debit pays 0%; interest via Meta Ahorro"
+  },
+  {
+    "account_id": "nu_mx__ahorro_congelado",
+    "issuer_id": "nu_mx",
+    "display_name": "Ahorro Congelado Nu",
+    "former_names": [],
+    "legacy_id": "NOT_APPLICABLE",
+    "account_type": "investment_term",
+    "lifecycle_status": "active",
+    "mapping_status": "mapped",
+    "yield_structure": "term_tiered",
+    "flat_rate_pct": "NOT_APPLICABLE",
+    "promotional_rate_pct": "NOT_APPLICABLE",
+    "promotional_rate_end_date": "NOT_APPLICABLE",
+    "rate_type": "rendimiento_anual_nominal",
+    "max_balance_earning_stated_rate_mxn": "UNCAPPED",
+    "monthly_fee_mxn": 0,
+    "fee_waiver_condition": "NOT_APPLICABLE",
+    "min_balance_mxn": 50,
+    "min_opening_deposit_mxn": 50,
+    "liquidity": "term_locked",
+    "term_days": "NOT_APPLICABLE",
+    "isr_withholding_note": "Before ISR",
+    "insurance_scheme": "IPAB",
+    "insurance_coverage_udis": 400000,
+    "regulated_entity_type": "banco",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://cdn.nubank.com.br/MX/folleto-informativo-cuenta.pdf",
+          "https://nu.com.mx/historico-de-rendimientos-cuenta/"
+        ]
+      },
+      "cost": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://cdn.nubank.com.br/MX/folleto-informativo-cuenta.pdf",
+          "https://nu.com.mx/historico-de-rendimientos-cuenta/"
+        ]
+      },
+      "yield": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://cdn.nubank.com.br/MX/folleto-informativo-cuenta.pdf",
+          "https://nu.com.mx/historico-de-rendimientos-cuenta/"
+        ]
+      }
+    },
+    "conflicts": [],
+    "notes": "Escalera de plazos de 7, 28, 90 y 180 días — una sola fila con hijos en TermTiers, según la regla de escaleras de scope.md, no cuatro productos. Monto mínimo $50, frente a $0.01 de las Cajitas normales. El dinero queda inmovilizado durante el plazo. Curiosidad de precio: a 7 días paga 6.55%, POR DEBAJO del 6.50%... apenas 0.05 puntos más que la Cajita 24/7, que es totalmente líquida. El plazo corto casi no se paga. Tasas calculadas el 25 de junio de 2026 con vigencia del 9 de julio al 19 de AGOSTO de 2026 — es decir, caducan en dos días. Nu revisa estas tasas cada seis semanas aproximadamente; conviene reverificar de inmediato. NOTA DE PROTECCIÓN: el folleto informativo de Nu, calculado el 25 de junio de 2026, todavía dice 'S.F.P.' y 'Fondo de Protección hasta por 25,000 UDIs'. La ficha del emisor registra la conversión a banca múltiple el 6 de agosto de 2026, posterior a ese folleto, así que se conserva IPAB 400,000 UDIS. Pero el material vigente de Nu sigue diciendo 25,000 UDIs: si un usuario compara la app con lo que dice Nu, verá cifras distintas. Reverificar la cobertura una vez que Nu actualice sus folletos."
   }
 ]

@@ -1103,5 +1103,203 @@
     },
     "notes": "",
     "offers_deposit_products": true
+  },
+  {
+    "issuer_id": "kubo_financiero",
+    "legal_name": "Kubo Financiero, S.A.P.I. de C.V., S.F.P.",
+    "display_name": "kubo.financiero",
+    "regulated_entity_type": "sofipo",
+    "insurance_scheme": "PROSOFIPO",
+    "insurance_coverage_udis": 25000,
+    "cnbv_registered": true,
+    "status": "active",
+    "in_dataset": false,
+    "exclusion_reason": "Alta de censo 2026-08-17, pendiente de aprobación Stage 1. Sin verificar contra el Padrón de la CNBV porque el portal bloquea el acceso automatizado. El tipo de entidad se toma de la denominación social (S.F.P.) y el esquema de seguro se deriva de ahí, nunca se investiga por separado. Sus productos no se publican hasta que in_dataset pase a true.",
+    "source_urls": [
+      "https://deceroalinfinito.com/mejores-sofipos",
+      "https://laverdadnoticias.com/dinero-inteligente/finanzas-personales/condusef-mejores-peores-sofipos"
+    ],
+    "enumerated_on": "2026-08-17",
+    "approved_on": "",
+    "legacy_id": "",
+    "former_names": [],
+    "confidence": {
+      "identity": {
+        "score": "medium",
+        "evidence_type": "comparator_secondary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://deceroalinfinito.com/mejores-sofipos",
+          "https://laverdadnoticias.com/dinero-inteligente/finanzas-personales/condusef-mejores-peores-sofipos"
+        ]
+      }
+    },
+    "pending_entity_type": "",
+    "notes": "Sofipo 100% digital, de las más citadas del mercado. Aviso relevante: usuarios reportaron retiros bloqueados en mayo y junio de 2026 (incidente resuelto). Su propio blog publica dos tasas distintas de plazo fijo — 10.12% en mayo y 12.00% en junio — así que ninguna se registra sin la página de producto. Cobertura PROSOFIPO 25,000 UDIS, derivada del tipo de entidad."
+  },
+  {
+    "issuer_id": "libertad_servicios_financieros",
+    "legal_name": "Libertad Servicios Financieros, S.A. de C.V., S.F.P.",
+    "display_name": "Libertad Servicios Financieros",
+    "regulated_entity_type": "sofipo",
+    "insurance_scheme": "PROSOFIPO",
+    "insurance_coverage_udis": 25000,
+    "cnbv_registered": true,
+    "status": "active",
+    "in_dataset": false,
+    "exclusion_reason": "Alta de censo 2026-08-17, pendiente de aprobación Stage 1. Sin verificar contra el Padrón de la CNBV porque el portal bloquea el acceso automatizado. El tipo de entidad se toma de la denominación social (S.F.P.) y el esquema de seguro se deriva de ahí, nunca se investiga por separado. Sus productos no se publican hasta que in_dataset pase a true.",
+    "source_urls": [
+      "https://deceroalinfinito.com/mejores-sofipos",
+      "https://laverdadnoticias.com/dinero-inteligente/finanzas-personales/condusef-mejores-peores-sofipos"
+    ],
+    "enumerated_on": "2026-08-17",
+    "approved_on": "",
+    "legacy_id": "",
+    "former_names": [],
+    "confidence": {
+      "identity": {
+        "score": "medium",
+        "evidence_type": "comparator_secondary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://deceroalinfinito.com/mejores-sofipos",
+          "https://laverdadnoticias.com/dinero-inteligente/finanzas-personales/condusef-mejores-peores-sofipos"
+        ]
+      }
+    },
+    "pending_entity_type": "",
+    "notes": "Una de las sofipos más grandes por sucursales. IDATU de CONDUSEF 7.66 en el 3T de 2025, de los más bajos del sector. Cobertura PROSOFIPO 25,000 UDIS, derivada del tipo de entidad."
+  },
+  {
+    "issuer_id": "fincomun",
+    "legal_name": "Fincomún Servicios Financieros Comunitarios, S.A. de C.V., S.F.P.",
+    "display_name": "Fincomún",
+    "regulated_entity_type": "sofipo",
+    "insurance_scheme": "PROSOFIPO",
+    "insurance_coverage_udis": 25000,
+    "cnbv_registered": true,
+    "status": "active",
+    "in_dataset": false,
+    "exclusion_reason": "Alta de censo 2026-08-17, pendiente de aprobación Stage 1. Sin verificar contra el Padrón de la CNBV porque el portal bloquea el acceso automatizado. El tipo de entidad se toma de la denominación social (S.F.P.) y el esquema de seguro se deriva de ahí, nunca se investiga por separado. Sus productos no se publican hasta que in_dataset pase a true.",
+    "source_urls": [
+      "https://deceroalinfinito.com/mejores-sofipos",
+      "https://laverdadnoticias.com/dinero-inteligente/finanzas-personales/condusef-mejores-peores-sofipos"
+    ],
+    "enumerated_on": "2026-08-17",
+    "approved_on": "",
+    "legacy_id": "",
+    "former_names": [],
+    "confidence": {
+      "identity": {
+        "score": "medium",
+        "evidence_type": "comparator_secondary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://deceroalinfinito.com/mejores-sofipos",
+          "https://laverdadnoticias.com/dinero-inteligente/finanzas-personales/condusef-mejores-peores-sofipos"
+        ]
+      }
+    },
+    "pending_entity_type": "",
+    "notes": "Sofipo con enfoque en microempresarios. IDATU superior a 9.3 en el 3T de 2025. Cobertura PROSOFIPO 25,000 UDIS, derivada del tipo de entidad."
+  },
+  {
+    "issuer_id": "te_creemos",
+    "legal_name": "Te Creemos, S.A. de C.V., S.F.P.",
+    "display_name": "Te Creemos",
+    "regulated_entity_type": "sofipo",
+    "insurance_scheme": "PROSOFIPO",
+    "insurance_coverage_udis": 25000,
+    "cnbv_registered": true,
+    "status": "active",
+    "in_dataset": false,
+    "exclusion_reason": "Alta de censo 2026-08-17, pendiente de aprobación Stage 1. Sin verificar contra el Padrón de la CNBV porque el portal bloquea el acceso automatizado. El tipo de entidad se toma de la denominación social (S.F.P.) y el esquema de seguro se deriva de ahí, nunca se investiga por separado. Sus productos no se publican hasta que in_dataset pase a true.",
+    "source_urls": [
+      "https://deceroalinfinito.com/mejores-sofipos",
+      "https://laverdadnoticias.com/dinero-inteligente/finanzas-personales/condusef-mejores-peores-sofipos"
+    ],
+    "enumerated_on": "2026-08-17",
+    "approved_on": "",
+    "legacy_id": "",
+    "former_names": [],
+    "confidence": {
+      "identity": {
+        "score": "medium",
+        "evidence_type": "comparator_secondary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://deceroalinfinito.com/mejores-sofipos",
+          "https://laverdadnoticias.com/dinero-inteligente/finanzas-personales/condusef-mejores-peores-sofipos"
+        ]
+      }
+    },
+    "pending_entity_type": "",
+    "notes": "Sofipo con presencia nacional. Cobertura PROSOFIPO 25,000 UDIS, derivada del tipo de entidad."
+  },
+  {
+    "issuer_id": "financiera_sustentable",
+    "legal_name": "Financiera Sustentable de México, S.A. de C.V., S.F.P.",
+    "display_name": "Financiera Sustentable",
+    "regulated_entity_type": "sofipo",
+    "insurance_scheme": "PROSOFIPO",
+    "insurance_coverage_udis": 25000,
+    "cnbv_registered": true,
+    "status": "active",
+    "in_dataset": false,
+    "exclusion_reason": "Alta de censo 2026-08-17, pendiente de aprobación Stage 1. Sin verificar contra el Padrón de la CNBV porque el portal bloquea el acceso automatizado. El tipo de entidad se toma de la denominación social (S.F.P.) y el esquema de seguro se deriva de ahí, nunca se investiga por separado. Sus productos no se publican hasta que in_dataset pase a true.",
+    "source_urls": [
+      "https://deceroalinfinito.com/mejores-sofipos",
+      "https://laverdadnoticias.com/dinero-inteligente/finanzas-personales/condusef-mejores-peores-sofipos"
+    ],
+    "enumerated_on": "2026-08-17",
+    "approved_on": "",
+    "legacy_id": "",
+    "former_names": [],
+    "confidence": {
+      "identity": {
+        "score": "medium",
+        "evidence_type": "comparator_secondary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://deceroalinfinito.com/mejores-sofipos",
+          "https://laverdadnoticias.com/dinero-inteligente/finanzas-personales/condusef-mejores-peores-sofipos"
+        ]
+      }
+    },
+    "pending_entity_type": "",
+    "notes": "Inversiones desde $100 con rendimientos mensuales y plazo fijo. Cobertura PROSOFIPO 25,000 UDIS, derivada del tipo de entidad."
+  },
+  {
+    "issuer_id": "monte_de_piedad",
+    "legal_name": "Financiera Monte de Piedad, S.A. de C.V., S.F.P.",
+    "display_name": "Financiera Monte de Piedad",
+    "regulated_entity_type": "sofipo",
+    "insurance_scheme": "PROSOFIPO",
+    "insurance_coverage_udis": 25000,
+    "cnbv_registered": true,
+    "status": "active",
+    "in_dataset": false,
+    "exclusion_reason": "Alta de censo 2026-08-17, pendiente de aprobación Stage 1. Sin verificar contra el Padrón de la CNBV porque el portal bloquea el acceso automatizado. El tipo de entidad se toma de la denominación social (S.F.P.) y el esquema de seguro se deriva de ahí, nunca se investiga por separado. Sus productos no se publican hasta que in_dataset pase a true.",
+    "source_urls": [
+      "https://deceroalinfinito.com/mejores-sofipos",
+      "https://laverdadnoticias.com/dinero-inteligente/finanzas-personales/condusef-mejores-peores-sofipos"
+    ],
+    "enumerated_on": "2026-08-17",
+    "approved_on": "",
+    "legacy_id": "",
+    "former_names": [],
+    "confidence": {
+      "identity": {
+        "score": "medium",
+        "evidence_type": "comparator_secondary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://deceroalinfinito.com/mejores-sofipos",
+          "https://laverdadnoticias.com/dinero-inteligente/finanzas-personales/condusef-mejores-peores-sofipos"
+        ]
+      }
+    },
+    "pending_entity_type": "",
+    "notes": "De las mejor evaluadas por CONDUSEF: IDATU cercano a 9.8 en el 3T de 2025. Cobertura PROSOFIPO 25,000 UDIS, derivada del tipo de entidad."
   }
 ]

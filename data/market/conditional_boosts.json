@@ -118,5 +118,55 @@
       }
     },
     "notes": "Plus/Platino membership. Standard membership earns the 3% base."
+  },
+  {
+    "boost_id": "nu_mx__cajita_nu__boost_13_0",
+    "account_id": "nu_mx__cajita_nu",
+    "boost_rate_pct": 13.0,
+    "boost_basis": "replacement",
+    "condition_type": "min_transaction_count",
+    "condition_amount_mxn": "NOT_APPLICABLE",
+    "condition_count": 1,
+    "condition_period": "monthly",
+    "linked_product_id": "",
+    "max_balance_mxn": "UNKNOWN",
+    "promo_end_date": "2026-08-19",
+    "confidence": {
+      "yield": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://cdn.nubank.com.br/MX/folleto-informativo-cuenta.pdf",
+          "https://nu.com.mx/historico-de-rendimientos-cuenta/"
+        ]
+      }
+    },
+    "notes": "Cajita Turbo: 13.00% anual fija, GAT nominal 13.88% y GAT real 9.73% — la tasa más alta del conjunto de datos. REEMPLAZA el 6.50% base, no se suma. No está disponible a solicitud: Nu la ofrece por invitación mediante notificación en la app a clientes que usan la tarjeta al menos una vez al mes, así que no se puede recomendar como algo que un usuario nuevo pueda contratar. El rendimiento sólo corre sobre el saldo dentro de la Cajita Turbo activada. Nu no publica tope de saldo. Promoción con vigencia al 19 de agosto de 2026."
+  },
+  {
+    "boost_id": "scotiabank_mexico__scotia_inversion_disponible__boost_6_29",
+    "account_id": "scotiabank_mexico__scotia_inversion_disponible",
+    "boost_rate_pct": 6.29,
+    "boost_basis": "replacement",
+    "condition_type": "other",
+    "condition_amount_mxn": 10000,
+    "condition_count": "NOT_APPLICABLE",
+    "condition_period": "once",
+    "linked_product_id": "",
+    "max_balance_mxn": 10000000,
+    "promo_end_date": "UNKNOWN",
+    "confidence": {
+      "yield": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.scotiabank.com.mx/promociones/invertir.aspx",
+          "https://www.scotiabank.com.mx/personas/inversiones/productos/scotia-inversion-disponible.aspx"
+        ]
+      }
+    },
+    "notes": "Campaña 'Tu dinero te da más — 100% CETES': 6.29% anual, calculada al 14 de julio de 2026. REEMPLAZA la tasa por tramos, no se suma. DURA SÓLO TRES MESES desde la contratación; al terminar, Scotiabank asigna automáticamente Scotia Inversión Disponible Segmentos, cuyo primer tramo paga 0.63%. Sólo aplica a dinero nuevo: si el cliente ya tiene un pagaré activo debe abrir uno nuevo sobre el mismo contrato. El emisor no publica la fecha de término de la campaña, sólo la duración de tres meses por cliente, por eso promo_end_date es UNKNOWN."
   }
 ]

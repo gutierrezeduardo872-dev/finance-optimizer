@@ -118,5 +118,25 @@
       }
     },
     "notes": "Balance above $25000 excluded from yield"
+  },
+  {
+    "tier_id": "scotiabank_mexico__scotia_inversion_disponible__t1",
+    "account_id": "scotiabank_mexico__scotia_inversion_disponible",
+    "tier_min_mxn": 10000,
+    "tier_max_mxn": 99999,
+    "rate_pct": 0.63,
+    "rate_type": "rendimiento_anual_nominal",
+    "marginal_or_blended": "blended",
+    "confidence": {
+      "yield": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.scotiabank.com.mx/personas/inversiones/productos/scotia-inversion-disponible.aspx"
+        ]
+      }
+    },
+    "notes": "Tasa de régimen del primer tramo, calculada al 10 de julio de 2026, vigente al 30 de octubre de 2026. GAT nominal 0.63%, GAT real -3.32%. Los tramos por encima de $99,999 no se publican en la página del producto: faltan."
   }
 ]
