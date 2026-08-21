@@ -358,6 +358,38 @@ One row, refreshed from Banxico's SIE API (series SF43718, the FIX rate). Never
 hand-entered, never stored per card. `ttl_days` is 7; past that the rate is stale
 and any figure derived from it should be treated as such.
 
+### Indexed yield
+
+```
+yield_structure    ... | indexed
+rate_index         CETES_28 | TIIE_28 | NOT_APPLICABLE | UNKNOWN
+rate_index_pct     numeric — percentage of the index paid, e.g. 100
+```
+
+Many Mexican deposit products do not quote a rate at all: they quote a
+percentage of a reference rate. Inbursa's entire CT family pays *"100% de CETES
+a 28 días"*, Scotia Inversión Disponible tracks the same index, Banorte
+reprices weekly against it, and Banamex's promotional pagaré is sold as
+"100% CETE 60 días".
+
+Resolving that into `flat_rate_pct` freezes a number that moves every week —
+the same mistake as storing an exchange rate, and the reason Inbursa Clásica
+sat at a wrong 5.4% for months. The account stores the index and the
+multiplier; the engine resolves against `reference_rates.json`, where the value
+carries a date and a TTL. The validator rejects an `indexed` account that also
+carries a numeric `flat_rate_pct`.
+
+One caveat worth carrying into the engine: these products usually pay the
+**weighted monthly average** of the index, not the current auction. The stored
+reference is the current value, so any resolution is an approximation and
+should be presented as one.
+
+### ReferenceRates
+
+One row per index, refreshed from Banxico's SIE API — `CETES_28` from series
+SF43936, `TIIE_28` from SF43783. Never hand-entered, never stored per account.
+Same discipline as `FxRates`.
+
 ### CardRewards (one row per card per category)
 
 ```

@@ -41,7 +41,8 @@ INSURANCE_MAP = {
 ISSUER_STATUS = {"active", "pending_conversion", "license_revoked", "merged", "dissolved"}
 LIFECYCLE = {"active", "closed_to_new_applications", "withdrawn"}
 ACCOUNT_TYPES = {"debit", "savings", "investment_term", "hybrid"}
-YIELD_STRUCTURES = {"none", "flat", "tiered", "term_tiered"}
+YIELD_STRUCTURES = {"none", "flat", "tiered", "term_tiered", "indexed"}
+RATE_INDICES = {"CETES_28", "TIIE_28", "NOT_APPLICABLE", "UNKNOWN"}
 RATE_TYPES = {"rendimiento_anual_nominal", "GAT_nominal", "GAT_real",
               "NOT_APPLICABLE", "UNKNOWN"}
 LIQUIDITY = {"instant", "same_day", "term_locked"}
@@ -532,6 +533,45 @@ def check_accrual(row, rate_field, where, report):
             )
 
 
+def check_rate_index(row, where, report):
+    """An indexed account pays a percentage of a reference rate, not a rate.
+
+    Inbursa's whole CT family pays 100% of 28-day CETES; Scotia Inversión
+    Disponible tracks the same index. Recording a snapshot of the resolved rate
+    freezes a number that moves weekly, exactly like storing an FX rate. The
+    account stores the index and the multiplier; the engine resolves it against
+    reference_rates.json, where the value carries a date.
+    """
+    check_enum(row, "rate_index", RATE_INDICES, where, report)
+    idx = row.get("rate_index")
+    pct = row.get("rate_index_pct")
+    structure = row.get("yield_structure")
+
+    if structure == "indexed":
+        if idx in (None, "", "NOT_APPLICABLE"):
+            report.error(where, "yield_structure=indexed requires a rate_index")
+        if not is_num(pct):
+            report.error(
+                where,
+                "yield_structure=indexed requires a numeric rate_index_pct "
+                "(the percentage of the index paid, e.g. 100)",
+            )
+        if is_num(row.get("flat_rate_pct")):
+            report.error(
+                where,
+                f"yield_structure=indexed but flat_rate_pct={row.get('flat_rate_pct')} — "
+                "an indexed rate has no fixed value; resolving it here freezes a "
+                "figure that moves with the index",
+            )
+    else:
+        if is_num(pct) or idx not in (None, "", "NOT_APPLICABLE", "UNKNOWN"):
+            report.error(
+                where,
+                f"rate_index/rate_index_pct set but yield_structure={structure!r}; "
+                "use yield_structure=indexed",
+            )
+
+
 def check_currency_and_type(row, where, report):
     """A USD-denominated fee is not a peso figure with a rounding error.
 
@@ -684,6 +724,7 @@ def validate_accounts(accounts, issuer_ids, live_issuers, issuer_by_id, report, 
         check_enum(row, "account_type", ACCOUNT_TYPES, where, report)
         check_enum(row, "yield_structure", YIELD_STRUCTURES, where, report)
         check_enum(row, "rate_type", RATE_TYPES, where, report)
+        check_rate_index(row, where, report)
         check_enum(row, "liquidity", LIQUIDITY, where, report)
 
         for field in ("flat_rate_pct", "monthly_fee_mxn", "min_balance_mxn",

@@ -60,13 +60,18 @@ TABS = {
         "promotional_rate_pct", "promotional_rate_end_date", "rate_type",
         "max_balance_earning_stated_rate_mxn", "monthly_fee_mxn",
         "min_balance_mxn", "min_opening_deposit_mxn", "liquidity", "term_days",
-        "insurance_scheme", "insurance_coverage_udis", "notes"]),
+        "insurance_scheme", "insurance_coverage_udis", "notes",
+        # Appended 2026-08-17. Order matters: append only, never insert.
+        "rate_index", "rate_index_pct", "fee_waiver_condition",
+        "isr_withholding_note", "regulated_entity_type", "former_names"]),
     "YieldTiers": ("yield_tiers.json", [
         "tier_id", "account_id", "tier_min_mxn", "tier_max_mxn", "rate_pct",
         "rate_type", "marginal_or_blended", "notes"]),
     "TermTiers": ("term_tiers.json", [
         "term_id", "account_id", "term_days", "rate_pct", "gat_nominal_pct",
         "gat_real_pct", "min_amount_mxn", "notes"]),
+    "ReferenceRates": ("reference_rates.json", [
+        "index", "rate", "as_of", "source", "source_url", "ttl_days", "notes"]),
     "FxRates": ("fx_rates.json", [
         "pair", "rate", "as_of", "source", "source_url", "ttl_days", "notes"]),
     "ConditionalBoosts": ("conditional_boosts.json", [

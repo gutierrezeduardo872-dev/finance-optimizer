@@ -1,0 +1,20 @@
+[
+  {
+    "index": "CETES_28",
+    "rate": 6.05,
+    "as_of": "2026-08-13",
+    "source": "Banxico SIE, serie SF43936 (CETES 28 días, tasa de rendimiento en colocación primaria)",
+    "source_url": "https://www.banxico.org.mx/SieAPIRest/service/v1/series/SF43936/datos/oportuno",
+    "ttl_days": 7,
+    "notes": "Tasa primaria de CETES a 28 días. Se subasta cada martes, así que el TTL de 7 días corresponde al ciclo real de publicación. Varios emisores cotizan sus cuentas como un porcentaje de este índice en vez de una tasa propia: toda la familia CT de Inbursa paga 100%, Scotia Inversión Disponible está indizada a CETES 28, y Banorte reprecia cada semana contra el mismo índice. OJO: los productos suelen referirse al PROMEDIO PONDERADO del mes, no a la subasta del día; este valor es la referencia corriente y el motor debe tratarlo como aproximación cuando el contrato diga promedio mensual."
+  },
+  {
+    "index": "TIIE_28",
+    "rate": 7.52,
+    "as_of": "2026-08-13",
+    "source": "Banxico SIE, serie SF43783 (TIIE a 28 días)",
+    "source_url": "https://www.banxico.org.mx/SieAPIRest/service/v1/series/SF43783/datos/oportuno",
+    "ttl_days": 7,
+    "notes": "Tasa de Interés Interbancaria de Equilibrio a 28 días. Del lado del crédito, casi toda la banca fija su tasa ordinaria como TIIE más un margen: Banorte usa T.I.I.E.F. 28 más margen, Banamex TIIE + 54 a 55.5 puntos, Santander TIIE de fondeo más margen. Se registra por simetría con CETES_28 aunque hoy ninguna cuenta la use como índice."
+  }
+]
