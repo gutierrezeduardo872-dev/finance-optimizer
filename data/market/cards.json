@@ -10255,8 +10255,8 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": "Fee = 450 USD + IVA (~8,100 MXN at ~18 MXN/USD) diferida en 3 meses, per Kardmatch; official site shows no static MXN figure. $3,000 MXN annual travel credit; Golden Cashbacks REVISAR IMPORTE Y MONEDA (2026-08-17): la fila registra $8,100 en pesos, pero The Gold Card es Tarjeta de Servicio y American Express cotiza esa línea en dólares. Un comparador publica $450 USD, que al FIX de $17.0218 son unos $7,660 — no coincide con $8,100, así que la cifra actual puede venir de un tipo de cambio viejo o de una tarifa anterior. Requiere reverificación contra el emisor antes de confiar en ella.",
-    "annual_fee_mxn": 8100,
+    "notes": "Fee = 450 USD + IVA (~8,100 MXN at ~18 MXN/USD) diferida en 3 meses, per Kardmatch; official site shows no static MXN figure. $3,000 MXN annual travel credit; Golden Cashbacks REVISAR IMPORTE Y MONEDA (2026-08-17): la fila registra $8,100 en pesos, pero The Gold Card es Tarjeta de Servicio y American Express cotiza esa línea en dólares. Un comparador publica $450 USD, que al FIX de $17.0218 son unos $7,660 — no coincide con $8,100, así que la cifra actual puede venir de un tipo de cambio viejo o de una tarifa anterior. Requiere reverificación contra el emisor antes de confiar en ella. CORRECCIÓN 2026-08-17: la cuota estaba registrada como $8,100 MXN, cifra obtenida convirtiendo $450 USD a un tipo de cambio supuesto de ~18 MXN/USD — el mismo error de tipo de cambio congelado que tenían Inbursa Clásica y Oro. Al FIX de hoy ($17.0218) esos $450 son $7,660, no $8,100: la cifra estaba inflada ~6% y se movía sola. Ahora se guarda en la moneda en que American Express cotiza esta línea (USD) y el motor convierte con fx_rates.json. OJO: el importe de $450 USD sigue siendo de comparador, no del emisor — la página de The Gold Card no publica cifra estática. Coincide con la cuota de The Gold American Express Aeroméxico, lo que puede ser real o puede ser que el comparador copiara una por otra. Confidence 'low' a propósito.",
+    "annual_fee_mxn": 450,
     "annual_fee_includes_iva": false,
     "annual_fee_first_year_waived": "UNKNOWN",
     "annual_fee_waiver_condition": "UNKNOWN",
@@ -10282,10 +10282,11 @@
       },
       "cost": {
         "score": "medium",
-        "evidence_type": "issuer_primary",
-        "verified_on": "2026-07-22",
+        "evidence_type": "comparator_secondary",
+        "verified_on": "2026-08-17",
         "sources": [
-          "https://www.americanexpress.com/mx/cards/gold-card/learn-more.html"
+          "https://www.americanexpress.com/mx/cards/gold-card/learn-more.html",
+          "https://www.kardmatch.com.mx/"
         ]
       },
       "rewards": {
@@ -10324,7 +10325,7 @@
     "accrual_basis": "UNKNOWN",
     "accrual_rate": "UNKNOWN",
     "accrual_block_mxn": "NOT_APPLICABLE",
-    "annual_fee_currency": "MXN",
+    "annual_fee_currency": "USD",
     "product_type": "charge"
   },
   {

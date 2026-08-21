@@ -43,6 +43,19 @@ for k, ids in prof.items():
     if len(ids) > 1:
         F("duplicates", f"cards: identical fee+CAT+rate {k[1]}/{k[2]}%/{k[3]}% → {ids}")
 
+# Charge cards carry CAT=NOT_APPLICABLE, so the fingerprint above never matches
+# them. Fee plus currency catches same-priced rows the first pass misses — most
+# will be legitimate (a co-brand priced like its plain sibling), but an
+# accidental copy between two rows looks exactly like this.
+fee_prof = defaultdict(list)
+for c in mapped:
+    f = c.get("annual_fee_mxn")
+    if isnum(f) and f > 0:
+        fee_prof[(c.get("issuer_id"), f, c.get("annual_fee_currency"))].append(c["card_id"])
+for (i, f, cur), ids in fee_prof.items():
+    if len(ids) > 1:
+        F("duplicates", f"cards: {i} prices {len(ids)} rows at {f} {cur} — verify not a copy: {ids}")
+
 
 # ---- 2. rows the engine will render as zero ------------------------------
 for c in mapped:
