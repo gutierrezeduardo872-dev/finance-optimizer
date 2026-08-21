@@ -361,7 +361,7 @@
       "cost": {
         "score": "medium",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-07-22",
+        "verified_on": "2026-08-17",
         "sources": [
           "https://www.uala.mx/reserva-a-plazo"
         ]
@@ -369,14 +369,14 @@
       "yield": {
         "score": "medium",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-07-22",
+        "verified_on": "2026-08-17",
         "sources": [
           "https://www.uala.mx/reserva-a-plazo"
         ]
       }
     },
     "conflicts": [],
-    "notes": "365-day term; from $10"
+    "notes": "365-day term; from $10 Detalle del emisor 2026-08-17: 8.50% anual fija, GAT nominal 8.50% y GAT real 4.54%, con monto mínimo de $10 a un plazo de 365 días. Calculado el 26 de junio de 2026, OFERTA VIGENTE AL 1 DE SEPTIEMBRE DE 2026 — quedan dos semanas. Ualá, S.A. es Institución de Banca Múltiple, así que la protección es IPAB 400,000 UDIS: a 8.50% es la mejor combinación de tasa y cobertura del conjunto de datos, por encima de Invex Cuenta Now (7.25%)."
   },
   {
     "account_id": "crediclub__inversion_supertasas",
@@ -549,19 +549,19 @@
     "account_type": "investment_term",
     "lifecycle_status": "active",
     "mapping_status": "mapped",
-    "yield_structure": "tiered",
+    "yield_structure": "term_tiered",
     "flat_rate_pct": "NOT_APPLICABLE",
     "promotional_rate_pct": "NOT_APPLICABLE",
     "promotional_rate_end_date": "NOT_APPLICABLE",
-    "rate_type": "rendimiento_anual_nominal",
-    "max_balance_earning_stated_rate_mxn": "UNCAPPED",
+    "rate_type": "GAT_nominal",
+    "max_balance_earning_stated_rate_mxn": 50000000,
     "monthly_fee_mxn": 0,
     "fee_waiver_condition": "NOT_APPLICABLE",
     "min_balance_mxn": 1000,
     "min_opening_deposit_mxn": 1000,
     "liquidity": "term_locked",
-    "term_days": 28,
-    "isr_withholding_note": "Before impuestos; GAT nominal 7.76%",
+    "term_days": "NOT_APPLICABLE",
+    "isr_withholding_note": "Before ISR",
     "insurance_scheme": "IPAB",
     "insurance_coverage_udis": 400000,
     "regulated_entity_type": "banco",
@@ -569,30 +569,33 @@
       "identity": {
         "score": "high",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-06-16",
+        "verified_on": "2026-08-17",
         "sources": [
-          "https://banco.hey.inc/content/dam/heybanco/folletos/folletos-hey-you-biz.pdf"
+          "https://banco.hey.inc/universo-hey/ahorra-e-invierte/inversion-hey",
+          "https://banco.hey.inc/gana-con-hey/estilo-hey/hey-pro"
         ]
       },
       "cost": {
-        "score": "medium",
+        "score": "high",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-06-16",
+        "verified_on": "2026-08-17",
         "sources": [
-          "https://banco.hey.inc/content/dam/heybanco/folletos/folletos-hey-you-biz.pdf"
+          "https://banco.hey.inc/universo-hey/ahorra-e-invierte/inversion-hey",
+          "https://banco.hey.inc/gana-con-hey/estilo-hey/hey-pro"
         ]
       },
       "yield": {
-        "score": "low",
+        "score": "high",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-06-16",
+        "verified_on": "2026-08-17",
         "sources": [
-          "https://banco.hey.inc/content/dam/heybanco/folletos/folletos-hey-you-biz.pdf"
+          "https://banco.hey.inc/universo-hey/ahorra-e-invierte/inversion-hey",
+          "https://banco.hey.inc/gana-con-hey/estilo-hey/hey-pro"
         ]
       }
     },
     "conflicts": [],
-    "notes": "7% (7d) to 7.5% (28d) as Hey Pro; base without Pro lower"
+    "notes": "Inversión Hey: plazos de 7 y 28 días renovables, de $1,000 a $50,000,000. CORRECCIÓN 2026-08-17: la fila estaba marcada term_tiered sin ninguna fila en TermTiers, así que no tenía tasa en ninguna parte — era el último de los tres huecos de este tipo, junto con Nu y Scotiabank. La tasa BASE es de apenas 4%: GAT nominal 4.08% a 7 días y 4.07% a 28. La tasa alta que Hey publicita (7.0%-7.5%) requiere membresía Hey Pro y está registrada como boost, no como tasa base — mezclarlas mostraría 7.5% a quien no paga la membresía. Calculado el 16 de junio de 2026."
   },
   {
     "account_id": "bbva_mexico__meta_ahorro_bbva",
@@ -745,16 +748,17 @@
         ]
       },
       "yield": {
-        "score": "medium",
+        "score": "high",
         "evidence_type": "issuer_primary",
         "verified_on": "2026-08-17",
         "sources": [
-          "https://www.banorte.com/Personal/Ahorro-e-Inversion/Inversiones-a-Plazo/Pagare-Altos-Rendimientos.html"
+          "https://www.banorte.com/Personal/Ahorro-e-Inversion/Inversiones-a-Plazo/Pagare-Altos-Rendimientos.html",
+          "https://www.banorte.com/dam/jcr:32d360b9-f0fc-4f4c-a25f-b9a04cb9e297/GATS-personal.pdf"
         ]
       }
     },
     "conflicts": [],
-    "notes": "CORRECCIÓN 2026-08-17: el monto mínimo estaba registrado como $1,000,000. La página del producto de Banorte dice que el mínimo para invertir en Altos Rendimientos es de $250,000. Registrar el cuádruple ESCONDE el producto a quien sí califica. El 6.54% corresponde al plazo de 28 días. Banorte ofrece 28, 35, 60, 91, 182 y 366 días y actualiza las tasas cada semana según Cetes, sin publicar la escalera completa: remite a sucursal. Se mantiene yield_structure 'flat' con term_days 28 porque no hay tasas por plazo que registrar, y una cuenta term_tiered sin filas hijas es el hueco que se corrigió hoy en Nu y Scotiabank. La tasa pactada queda fija durante el plazo contratado."
+    "notes": "CORRECCIÓN 2026-08-17: el monto mínimo estaba registrado como $1,000,000. La página del producto de Banorte dice que el mínimo para invertir en Altos Rendimientos es de $250,000. Registrar el cuádruple ESCONDE el producto a quien sí califica. El 6.54% corresponde al plazo de 28 días. Banorte ofrece 28, 35, 60, 91, 182 y 366 días y actualiza las tasas cada semana según Cetes, sin publicar la escalera completa: remite a sucursal. Se mantiene yield_structure 'flat' con term_days 28 porque no hay tasas por plazo que registrar, y una cuenta term_tiered sin filas hijas es el hueco que se corrigió hoy en Nu y Scotiabank. La tasa pactada queda fija durante el plazo contratado. ESCALERA LOCALIZADA PERO VENCIDA (2026-08-17): el documento GATS-personal del emisor sí publica los seis plazos con $250,000 — 28 días 5.36%, 35 días 6.10%, 60 días 6.18%, 91 días 6.26%, 182 días 6.36% y 365 días 6.46% — pero está calculado al 26 de marzo de 2025 y vigente sólo hasta el 26 de septiembre de 2025: tiene casi un año y medio. NO se registran esos plazos: sustituir el 6.54% actual por una escalera de 2025 cambiaría un dato de fecha desconocida por otro de caducidad conocida. El documento se cita aquí para que la próxima pasada busque su versión vigente, que es donde está la escalera real."
   },
   {
     "account_id": "hsbc_mexico__ahorro_flexible_hsbc",

@@ -193,5 +193,30 @@
       }
     },
     "notes": "Promoción '100% CETE 60 días': 6.28% anual fija a 60 días desde $2,500, GAT nominal 6.45% y GAT real 2.57%, calculada el 25 de junio de 2026. Vigente del 3 de agosto al 30 de octubre de 2026. REEMPLAZA la tasa de régimen, no se suma. Es más de seis veces la tasa normal de Banamex a plazos cortos, así que la diferencia entre contratar dentro o fuera de la promoción es enorme. Sin monto máximo en sucursal; hasta 9 millones en la app."
+  },
+  {
+    "boost_id": "hey_banco__pagare_hey_inversion__boost_hey_pro",
+    "account_id": "hey_banco__pagare_hey_inversion",
+    "boost_rate_pct": 7.76,
+    "boost_basis": "replacement",
+    "condition_type": "tier_membership",
+    "condition_amount_mxn": "NOT_APPLICABLE",
+    "condition_count": "NOT_APPLICABLE",
+    "condition_period": "monthly",
+    "linked_product_id": "",
+    "max_balance_mxn": 1000000,
+    "promo_end_date": "NOT_APPLICABLE",
+    "confidence": {
+      "yield": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://banco.hey.inc/gana-con-hey/estilo-hey/hey-pro",
+          "https://banco.hey.inc/universo-hey/ahorra-e-invierte/inversion-hey"
+        ]
+      }
+    },
+    "notes": "Inversión Hey Pro: GAT nominal 7.76% a 28 días (tasa fija 7.50%) y 7.25% a 7 días (tasa 7.00%), calculado el 16 de junio de 2026. REEMPLAZA la tasa base de ~4%, casi el doble. REQUIERE LA MEMBRESÍA HEY PRO, que se paga: no está disponible por el solo hecho de abrir la cuenta. El tope de saldo también cambia: la tasa Pro aplica de $1,000 a $1,000,000, mientras la base llega a $50,000,000. Quien invierta más de un millón vuelve a la tasa base en el excedente."
   }
 ]

@@ -164,5 +164,41 @@
       }
     },
     "notes": "GAT nominal 0.20%, GAT real -3.61%, con $50,000 a 91 días. Calculado el 20 de julio de 2026, vigente al 20 de enero de 2027. El monto mínimo forma parte de la definición del escalón y no cabe en el esquema."
+  },
+  {
+    "term_id": "hey_banco__pagare_hey_inversion__t7",
+    "account_id": "hey_banco__pagare_hey_inversion",
+    "term_days": 7,
+    "rate_pct": 4.08,
+    "rate_type": "GAT_nominal",
+    "confidence": {
+      "yield": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://banco.hey.inc/universo-hey/ahorra-e-invierte/inversion-hey"
+        ]
+      }
+    },
+    "notes": "GAT nominal 4.08%, GAT real 0.29%, tasa fija 4.00%, para montos de $1,000 a $50,000,000 y plazo de 7 días. Calculado el 16 de junio de 2026."
+  },
+  {
+    "term_id": "hey_banco__pagare_hey_inversion__t28",
+    "account_id": "hey_banco__pagare_hey_inversion",
+    "term_days": 28,
+    "rate_pct": 4.07,
+    "rate_type": "GAT_nominal",
+    "confidence": {
+      "yield": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://banco.hey.inc/universo-hey/ahorra-e-invierte/inversion-hey"
+        ]
+      }
+    },
+    "notes": "GAT nominal 4.07%, GAT real 0.28%, tasa fija 4.00%, para montos de $1,000 a $50,000,000 y plazo de 28 días. Calculado el 16 de junio de 2026."
   }
 ]
