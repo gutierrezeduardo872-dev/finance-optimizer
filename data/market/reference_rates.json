@@ -16,5 +16,14 @@
     "source_url": "https://www.banxico.org.mx/SieAPIRest/service/v1/series/SF43783/datos/oportuno",
     "ttl_days": 7,
     "notes": "Tasa de Interés Interbancaria de Equilibrio a 28 días. Del lado del crédito, casi toda la banca fija su tasa ordinaria como TIIE más un margen: Banorte usa T.I.I.E.F. 28 más margen, Banamex TIIE + 54 a 55.5 puntos, Santander TIIE de fondeo más margen. Se registra por simetría con CETES_28 aunque hoy ninguna cuenta la use como índice."
+  },
+  {
+    "index": "UDI",
+    "rate": 8.6234,
+    "as_of": "2026-08-14",
+    "source": "Banxico SIE, serie SP68257 (valor de la UDI)",
+    "source_url": "https://www.banxico.org.mx/SieAPIRest/service/v1/series/SP68257/datos/oportuno",
+    "ttl_days": 7,
+    "notes": "Valor de la Unidad de Inversión en pesos. No es una tasa: es el factor que convierte la cobertura del seguro de depósito a pesos. IPAB cubre 400,000 UDIS y PROSOFIPO 25,000, cifras que no significan nada para el usuario hasta convertirlas — unos $3.45 millones y $215,000 respectivamente al valor actual. La UDI se indiza a la inflación y cambia a diario, por eso vive aquí y no en las filas de emisor."
   }
 ]
