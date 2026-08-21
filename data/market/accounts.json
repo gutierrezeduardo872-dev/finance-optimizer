@@ -754,7 +754,7 @@
       }
     },
     "conflicts": [],
-    "notes": "CORRECCIÓN 2026-08-17: el monto mínimo estaba registrado como $1,000,000. La página del producto de Banorte dice literalmente que el mínimo para invertir en Altos Rendimientos es de $250,000. Registrar el cuádruple ESCONDE el producto a quien sí califica — el error va en la dirección contraria a los de anualidades, pero cuesta igual. El 6.54% corresponde al plazo de 28 días. Banorte ofrece 28, 35, 60, 91, 182 y 366 días y ACTUALIZA LAS TASAS CADA SEMANA según el valor de los Cetes, sin publicar la escalera completa: remite a sucursal. Se mantiene yield_structure 'flat' con term_days 28 en lugar de 'term_tiered' porque no hay tasas por plazo que registrar, y una cuenta term_tiered sin filas hijas es justo el hueco que se corrigió hoy en Nu y Scotiabank. La tasa pactada sí queda fija durante el plazo contratado."
+    "notes": "CORRECCIÓN 2026-08-17: el monto mínimo estaba registrado como $1,000,000. La página del producto de Banorte dice que el mínimo para invertir en Altos Rendimientos es de $250,000. Registrar el cuádruple ESCONDE el producto a quien sí califica. El 6.54% corresponde al plazo de 28 días. Banorte ofrece 28, 35, 60, 91, 182 y 366 días y actualiza las tasas cada semana según Cetes, sin publicar la escalera completa: remite a sucursal. Se mantiene yield_structure 'flat' con term_days 28 porque no hay tasas por plazo que registrar, y una cuenta term_tiered sin filas hijas es el hueco que se corrigió hoy en Nu y Scotiabank. La tasa pactada queda fija durante el plazo contratado."
   },
   {
     "account_id": "hsbc_mexico__ahorro_flexible_hsbc",
