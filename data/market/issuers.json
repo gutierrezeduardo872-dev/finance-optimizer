@@ -320,7 +320,7 @@
         "sources": []
       }
     },
-    "notes": "Migrated from card census. legal_name and source_urls pending confirmation against the CNBV Padrón.",
+    "notes": "Migrated from card census. legal_name and source_urls pending confirmation against the CNBV Padrón. PISTAS DE CENSO — CUENTAS (2026-08-17): BBVA ofrece tres instrumentos a plazo que no están en el censo: Pagaré (1 a 364 días, tasa fija), Plan Flexible (182 y 364 días con liquidez cada 7 o 28 días) y CEDES (intereses abonados mensualmente). No se crearon filas porque la única tasa localizable —1.94% con GAT nominal 1.95% y GAT REAL -1.94%, de la landing de clientes de alto valor— no viene acompañada del plazo ni del monto al que aplica, y sin eso no se puede registrar. Vale la pena notar que incluso esa tasa, dirigida a clientes de alto valor, tiene GAT real negativa. El documento de GAT de BBVA (portal.bbva.mx) se calculó el 22 de abril de 2026 con vigencia al 29 de abril: vencido hace casi cuatro meses.",
     "offers_deposit_products": true
   },
   {

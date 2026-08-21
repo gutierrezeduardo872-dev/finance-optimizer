@@ -719,8 +719,8 @@
     "max_balance_earning_stated_rate_mxn": "UNKNOWN",
     "monthly_fee_mxn": 0,
     "fee_waiver_condition": "NOT_APPLICABLE",
-    "min_balance_mxn": 1000000,
-    "min_opening_deposit_mxn": 1000000,
+    "min_balance_mxn": 250000,
+    "min_opening_deposit_mxn": 250000,
     "liquidity": "term_locked",
     "term_days": 28,
     "isr_withholding_note": "GAT nominal 6.74%; 100% de Cetes",
@@ -731,30 +731,30 @@
       "identity": {
         "score": "high",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-05-19",
+        "verified_on": "2026-08-17",
         "sources": [
-          "https://www.banorte.com/Personal/Promociones-Banorte/Pagare-Altos-Rendimientos.html"
+          "https://www.banorte.com/Personal/Ahorro-e-Inversion/Inversiones-a-Plazo/Pagare-Altos-Rendimientos.html"
         ]
       },
       "cost": {
         "score": "medium",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-05-19",
+        "verified_on": "2026-08-17",
         "sources": [
-          "https://www.banorte.com/Personal/Promociones-Banorte/Pagare-Altos-Rendimientos.html"
+          "https://www.banorte.com/Personal/Ahorro-e-Inversion/Inversiones-a-Plazo/Pagare-Altos-Rendimientos.html"
         ]
       },
       "yield": {
-        "score": "low",
+        "score": "medium",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-05-19",
+        "verified_on": "2026-08-17",
         "sources": [
-          "https://www.banorte.com/Personal/Promociones-Banorte/Pagare-Altos-Rendimientos.html"
+          "https://www.banorte.com/Personal/Ahorro-e-Inversion/Inversiones-a-Plazo/Pagare-Altos-Rendimientos.html"
         ]
       }
     },
     "conflicts": [],
-    "notes": "Requires $1M; standard Pagaré ~4.57%"
+    "notes": "CORRECCIÓN 2026-08-17: el monto mínimo estaba registrado como $1,000,000. La página del producto de Banorte dice literalmente que el mínimo para invertir en Altos Rendimientos es de $250,000. Registrar el cuádruple ESCONDE el producto a quien sí califica — el error va en la dirección contraria a los de anualidades, pero cuesta igual. El 6.54% corresponde al plazo de 28 días. Banorte ofrece 28, 35, 60, 91, 182 y 366 días y ACTUALIZA LAS TASAS CADA SEMANA según el valor de los Cetes, sin publicar la escalera completa: remite a sucursal. Se mantiene yield_structure 'flat' con term_days 28 en lugar de 'term_tiered' porque no hay tasas por plazo que registrar, y una cuenta term_tiered sin filas hijas es justo el hueco que se corrigió hoy en Nu y Scotiabank. La tasa pactada sí queda fija durante el plazo contratado."
   },
   {
     "account_id": "hsbc_mexico__ahorro_flexible_hsbc",
