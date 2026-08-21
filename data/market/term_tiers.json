@@ -92,5 +92,59 @@
       }
     },
     "notes": "GAT nominal 11.99%, GAT real 7.91%, sobre un monto de $50 a 365 días. Calculado el 18 de marzo de 2026, vigente al 18 de septiembre de 2026. Los tramos de 7, 28, 90 y 180 días existen pero el emisor no los publica en HTML legible."
+  },
+  {
+    "term_id": "citibanamex__pagare_banamex__t14_2500",
+    "account_id": "citibanamex__pagare_banamex",
+    "term_days": 14,
+    "rate_pct": 0.91,
+    "rate_type": "GAT_nominal",
+    "confidence": {
+      "yield": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.banamex.com/resources/pdf/es/personas/cuentas/tarjetas_debito/GAT_Inversiones.pdf"
+        ]
+      }
+    },
+    "notes": "GAT nominal 0.91%, GAT real -2.92%, desde $2,500. Calculado el 8 de julio de 2026, vigente al 11 de agosto de 2026 (vencido). El monto mínimo es parte de la definición del escalón y no cabe en el esquema — ver notas de la cuenta."
+  },
+  {
+    "term_id": "citibanamex__pagare_banamex__t90_2500",
+    "account_id": "citibanamex__pagare_banamex",
+    "term_days": 90,
+    "rate_pct": 1.0,
+    "rate_type": "GAT_nominal",
+    "confidence": {
+      "yield": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.banamex.com/resources/pdf/es/personas/cuentas/tarjetas_debito/GAT_Inversiones.pdf"
+        ]
+      }
+    },
+    "notes": "GAT nominal 1.0%, GAT real -2.83%, desde $2,500. Calculado el 8 de julio de 2026, vigente al 11 de agosto de 2026 (vencido). El monto mínimo es parte de la definición del escalón y no cabe en el esquema — ver notas de la cuenta."
+  },
+  {
+    "term_id": "citibanamex__pagare_banamex__t63_50000",
+    "account_id": "citibanamex__pagare_banamex",
+    "term_days": 63,
+    "rate_pct": 5.01,
+    "rate_type": "GAT_nominal",
+    "confidence": {
+      "yield": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.banamex.com/resources/pdf/es/personas/cuentas/tarjetas_debito/GAT_Inversiones.pdf"
+        ]
+      }
+    },
+    "notes": "GAT nominal 5.01%, GAT real 1.02%, desde $50,000. Calculado el 8 de julio de 2026, vigente al 11 de agosto de 2026 (vencido). El monto mínimo es parte de la definición del escalón y no cabe en el esquema — ver notas de la cuenta."
   }
 ]

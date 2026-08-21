@@ -1353,5 +1353,173 @@
     },
     "conflicts": [],
     "notes": "Inversión a plazo fijo desde $50, plazos desde 7 días. El emisor sólo publica un punto de la escalera en HTML legible: GAT nominal 11.99% y GAT real 7.91% sobre $50 a 365 días, calculado el 18 de marzo de 2026 y vigente al 18 de septiembre de 2026. La tabla completa por monto y plazo vive en su página de Ley de Transparencia, que se renderiza por JavaScript y no entrega valores. SE REGISTRA GAT NOMINAL, NO TASA: es la única cifra publicada, y rate_type lo dice. La tasa nominal subyacente es algo menor y no se conoce. El propio blog de kubo publica 'hasta 10.12%' en mayo y '12.00%' en junio, y su página de inversiones anuncia 'hasta 14.60%' — esta última casi seguro incluye kubo.crowdfunding, que es préstamo entre pares, NO un depósito y NO está cubierto por PROSOFIPO; queda fuera de alcance por scope.md. Ninguna de esas tres cifras se registra. Aviso de solidez: usuarios reportaron retiros bloqueados en mayo y junio de 2026, incidente resuelto."
+  },
+  {
+    "account_id": "citibanamex__pagare_banamex",
+    "issuer_id": "citibanamex",
+    "display_name": "Pagaré Banamex",
+    "former_names": [],
+    "legacy_id": "NOT_APPLICABLE",
+    "account_type": "investment_term",
+    "lifecycle_status": "active",
+    "mapping_status": "mapped",
+    "yield_structure": "term_tiered",
+    "flat_rate_pct": "NOT_APPLICABLE",
+    "promotional_rate_pct": "NOT_APPLICABLE",
+    "promotional_rate_end_date": "NOT_APPLICABLE",
+    "rate_type": "GAT_nominal",
+    "max_balance_earning_stated_rate_mxn": "UNCAPPED",
+    "monthly_fee_mxn": 0,
+    "fee_waiver_condition": "NOT_APPLICABLE",
+    "min_balance_mxn": 2500,
+    "min_opening_deposit_mxn": 2500,
+    "liquidity": "term_locked",
+    "term_days": "NOT_APPLICABLE",
+    "isr_withholding_note": "Before ISR",
+    "insurance_scheme": "IPAB",
+    "insurance_coverage_udis": 400000,
+    "regulated_entity_type": "banco",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.banamex.com/resources/pdf/es/personas/cuentas/tarjetas_debito/GAT_Inversiones.pdf",
+          "https://www.banamex.com/es/centro-de-ayuda/cuentas/ahorro-facil/pagare_banamex.htm",
+          "https://www.banamex.com/es/personas/inversiones.html"
+        ]
+      },
+      "cost": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.banamex.com/resources/pdf/es/personas/cuentas/tarjetas_debito/GAT_Inversiones.pdf",
+          "https://www.banamex.com/es/centro-de-ayuda/cuentas/ahorro-facil/pagare_banamex.htm",
+          "https://www.banamex.com/es/personas/inversiones.html"
+        ]
+      },
+      "yield": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.banamex.com/resources/pdf/es/personas/cuentas/tarjetas_debito/GAT_Inversiones.pdf",
+          "https://www.banamex.com/es/centro-de-ayuda/cuentas/ahorro-facil/pagare_banamex.htm",
+          "https://www.banamex.com/es/personas/inversiones.html"
+        ]
+      }
+    },
+    "conflicts": [],
+    "notes": "Plazos de 14 a 378 días desde $2,500, sin comisiones. Contratable en app y BancaNet de 02:00 a 22:00 en días hábiles. LAS TASAS DE RÉGIMEN SON MUY BAJAS: 0.91% a 14 días y 1.00% a 90 días con $2,500. Hay que llegar a $50,000 para ver 5.01%. Un sofipo paga alrededor de 6.5% desde $50. LIMITACIÓN DE ESQUEMA: Banamex fija la tasa por MONTO Y PLAZO a la vez — $2,500 a 14 días paga 0.91% mientras $50,000 a 63 días paga 5.01%. TermTiers sólo tiene term_days, y YieldTiers sólo tiene rangos de monto: ninguna de las dos puede expresar una matriz de dos dimensiones. Se registran los puntos disponibles como escalones de plazo con el monto mínimo anotado en cada uno. Resolverlo requeriría un campo tier_min_mxn en TermTiers. CAT/GAT VENCIDO: el documento de GAT del emisor se calculó el 8 de julio de 2026 con vigencia al 11 de agosto — caducó hace seis días. Banamex lo revisa cada pocas semanas."
+  },
+  {
+    "account_id": "citibanamex__micuenta_banamex",
+    "issuer_id": "citibanamex",
+    "display_name": "MiCuenta Banamex",
+    "former_names": [],
+    "legacy_id": "NOT_APPLICABLE",
+    "account_type": "debit",
+    "lifecycle_status": "active",
+    "mapping_status": "mapped",
+    "yield_structure": "flat",
+    "flat_rate_pct": 0.0,
+    "promotional_rate_pct": "NOT_APPLICABLE",
+    "promotional_rate_end_date": "NOT_APPLICABLE",
+    "rate_type": "GAT_nominal",
+    "max_balance_earning_stated_rate_mxn": "UNCAPPED",
+    "monthly_fee_mxn": "UNKNOWN",
+    "fee_waiver_condition": "UNKNOWN",
+    "min_balance_mxn": 1,
+    "min_opening_deposit_mxn": "UNKNOWN",
+    "liquidity": "instant",
+    "term_days": "NOT_APPLICABLE",
+    "isr_withholding_note": "Before ISR",
+    "insurance_scheme": "IPAB",
+    "insurance_coverage_udis": 400000,
+    "regulated_entity_type": "banco",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.banamex.com/resources/pdf/es/personas/cuentas/tarjetas_debito/GAT_Inversiones.pdf"
+        ]
+      },
+      "cost": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.banamex.com/resources/pdf/es/personas/cuentas/tarjetas_debito/GAT_Inversiones.pdf"
+        ]
+      },
+      "yield": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.banamex.com/resources/pdf/es/personas/cuentas/tarjetas_debito/GAT_Inversiones.pdf"
+        ]
+      }
+    },
+    "conflicts": [],
+    "notes": "Cuenta de depósito a la vista. GAT nominal 0.00% y GAT real -3.80%: NO PAGA NADA. Es la tasa de referencia contra la que conviene comparar todo lo demás — dejar el dinero aquí pierde poder adquisitivo a razón de la inflación completa. Calculado el 8 de julio de 2026, vigente al 11 de agosto de 2026. La comisión mensual no aparece en el documento de GAT y queda UNKNOWN."
+  },
+  {
+    "account_id": "invex__cuenta_now",
+    "issuer_id": "invex",
+    "display_name": "Cuenta Now",
+    "former_names": [],
+    "legacy_id": "NOT_APPLICABLE",
+    "account_type": "savings",
+    "lifecycle_status": "active",
+    "mapping_status": "mapped",
+    "yield_structure": "flat",
+    "flat_rate_pct": 7.25,
+    "promotional_rate_pct": "NOT_APPLICABLE",
+    "promotional_rate_end_date": "NOT_APPLICABLE",
+    "rate_type": "rendimiento_anual_nominal",
+    "max_balance_earning_stated_rate_mxn": "UNKNOWN",
+    "monthly_fee_mxn": 0,
+    "fee_waiver_condition": "NOT_APPLICABLE",
+    "min_balance_mxn": "UNKNOWN",
+    "min_opening_deposit_mxn": "UNKNOWN",
+    "liquidity": "instant",
+    "term_days": "NOT_APPLICABLE",
+    "isr_withholding_note": "Before ISR",
+    "insurance_scheme": "IPAB",
+    "insurance_coverage_udis": 400000,
+    "regulated_entity_type": "banco",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.invextarjetas.com.mx/invex/Documentos/CONDUSEF/Cuotas.pdf"
+        ]
+      },
+      "cost": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.invextarjetas.com.mx/invex/Documentos/CONDUSEF/Cuotas.pdf"
+        ]
+      },
+      "yield": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.invextarjetas.com.mx/invex/Documentos/CONDUSEF/Cuotas.pdf"
+        ]
+      }
+    },
+    "conflicts": [],
+    "notes": "7.25% anual, GAT nominal 7.52% y GAT real 3.73%, del tarifario de INVEX. Primera cuenta de INVEX en el conjunto de datos: el emisor tenía 18 tarjetas mapeadas y ninguna cuenta. Marca digital Now (now.bank) de Banco INVEX, así que la protección es IPAB 400,000 UDIS y no PROSOFIPO — a 7.25% es de las mejores relaciones tasa/protección del conjunto, por encima de varios sofipos que pagan parecido con una vigésima parte de cobertura. Saldo mínimo y tope de saldo con tasa no se publican en el tarifario."
   }
 ]

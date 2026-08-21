@@ -168,5 +168,30 @@
       }
     },
     "notes": "Campaña 'Tu dinero te da más — 100% CETES': 6.29% anual, calculada al 14 de julio de 2026. REEMPLAZA la tasa por tramos, no se suma. DURA SÓLO TRES MESES desde la contratación; al terminar, Scotiabank asigna automáticamente Scotia Inversión Disponible Segmentos, cuyo primer tramo paga 0.63%. Sólo aplica a dinero nuevo: si el cliente ya tiene un pagaré activo debe abrir uno nuevo sobre el mismo contrato. El emisor no publica la fecha de término de la campaña, sólo la duración de tres meses por cliente, por eso promo_end_date es UNKNOWN."
+  },
+  {
+    "boost_id": "citibanamex__pagare_banamex__boost_6_28",
+    "account_id": "citibanamex__pagare_banamex",
+    "boost_rate_pct": 6.28,
+    "boost_basis": "replacement",
+    "condition_type": "other",
+    "condition_amount_mxn": 2500,
+    "condition_count": "NOT_APPLICABLE",
+    "condition_period": "once",
+    "linked_product_id": "",
+    "max_balance_mxn": 9000000,
+    "promo_end_date": "2026-10-30",
+    "confidence": {
+      "yield": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.banamex.com/hazmasdinero/index.html",
+          "https://www.banamex.com/es/personas/inversiones.html"
+        ]
+      }
+    },
+    "notes": "Promoción '100% CETE 60 días': 6.28% anual fija a 60 días desde $2,500, GAT nominal 6.45% y GAT real 2.57%, calculada el 25 de junio de 2026. Vigente del 3 de agosto al 30 de octubre de 2026. REEMPLAZA la tasa de régimen, no se suma. Es más de seis veces la tasa normal de Banamex a plazos cortos, así que la diferencia entre contratar dentro o fuera de la promoción es enorme. Sin monto máximo en sucursal; hasta 9 millones en la app."
   }
 ]
