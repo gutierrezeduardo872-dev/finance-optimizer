@@ -46,7 +46,13 @@ const MARKET_POINT_VALUE_MXN = 0.15;
 // Per-programme peso values, once researched. Keyed on points_program_name.
 // Empty by design: an entry here must come from an issuer or a defensible
 // redemption analysis, never from a guess that happens to look reasonable.
-const POINT_VALUE_OVERRIDES = {};
+const POINT_VALUE_OVERRIDES = {
+  // Sourced parities, so cards in these programmes are no longer estimated.
+  // BBVA's is a reference value that varies $0.07-$0.15 by merchant; Banamex's
+  // is a hard 10-points-to-the-peso, redeemable for cash.
+  'Puntos BBVA': 0.10,
+  'Puntos Premia': 0.10,
+};
 
 /* ------------------------------- helpers -------------------------------- */
 
