@@ -429,7 +429,7 @@
     "census_confidence": "high",
     "census_note": "Amex network product",
     "conflicts": [],
-    "notes": "CAT VENCIDO: calculado al 31 de diciembre de 2025, vigencia hasta el 30 de junio de 2026. Tasa de interés fija anual del 27.0% con cualquier forma de pago — a diferencia del resto de la gama Inbursa, que usa tasa fija personalizada. Tasa de acumulación no publicada: UNKNOWN. Emitida por SOFOM Inbursa, S.A. de C.V., S.F.O.M. E.R., no por Banco Inbursa. Se conserva bajo issuer_id banco_inbursa por decisión de producto (2026-08-17); la distinción no afecta ninguna recomendación de tarjeta porque el seguro de depósito no aplica a productos de crédito.",
+    "notes": "CAT VENCIDO: calculado al 31 de diciembre de 2025, vigencia hasta el 30 de junio de 2026. Tasa de interés fija anual del 27.0% con cualquier forma de pago — a diferencia del resto de la gama Inbursa, que usa tasa fija personalizada. Tasa de acumulación no publicada: UNKNOWN. Emitida por SOFOM Inbursa, S.A. de C.V., S.F.O.M. E.R., no por Banco Inbursa. Se conserva bajo issuer_id banco_inbursa por decisión de producto (2026-08-17); la distinción no afecta ninguna recomendación de tarjeta porque el seguro de depósito no aplica a productos de crédito. ACUMULACIÓN NO CONFIRMADA (2026-08-17): no aparece en la lista de tarjetas participantes de Recompensas Inbursa. La ausencia de una lista no prueba que no acumule, así que queda UNKNOWN en vez de 'none'.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
@@ -539,7 +539,7 @@
         "resolution": "Issuer folleto (calculado 31-dic-2025) states $390 sin IVA. Both comparator figures superseded; the 2023 one was three years stale."
       }
     ],
-    "notes": "Puntos Inbursa: 1 punto por dólar gastado (o su equivalente en pesos), valorado en 0.10 MXN por punto. A ~18.5 MXN/USD eso equivale a ~0.55% del gasto. El rendimiento efectivo se mueve con el tipo de cambio: la tasa está fijada en dólares, no en pesos. Canje mínimo 1,000 puntos; vigencia 48 meses. CORRECCIÓN 2026-08-17: la fila registraba base_reward_rate 5.4% y effective_rate_pct 0.54%. Esas cifras NO las publica Inbursa: salieron de convertir '1 punto por dólar' a un tipo de cambio supuesto de ~18.5 MXN/USD (1 punto por cada 18.5 pesos = 5.4 puntos por cada 100). Es exactamente el tipo de cambio congelado que motivó crear accrual_basis. Al FIX de hoy, $17.0218, la misma acumulación daría 5.88% y no 5.4% — la cifra estaba sobrestimada en cerca de 9% y se movía cada día sin que nadie la tocara. Ahora: accrual_basis per_usd con accrual_rate 1, base_reward_rate y effective_rate_pct UNKNOWN. La conversión la hace el motor con fx_rates.json, con una fecha que puede auditar. point_value_mxn 0.10 se conserva pero su evidencia sigue siendo 'inferred'.",
+    "notes": "Puntos Inbursa: 1 punto por dólar gastado (o su equivalente en pesos), valorado en 0.10 MXN por punto. A ~18.5 MXN/USD eso equivale a ~0.55% del gasto. El rendimiento efectivo se mueve con el tipo de cambio: la tasa está fijada en dólares, no en pesos. Canje mínimo 1,000 puntos; vigencia 48 meses. CORRECCIÓN 2026-08-17: la fila registraba base_reward_rate 5.4% y effective_rate_pct 0.54%. Esas cifras NO las publica Inbursa: salieron de convertir '1 punto por dólar' a un tipo de cambio supuesto de ~18.5 MXN/USD (1 punto por cada 18.5 pesos = 5.4 puntos por cada 100). Es exactamente el tipo de cambio congelado que motivó crear accrual_basis. Al FIX de hoy, $17.0218, la misma acumulación daría 5.88% y no 5.4% — la cifra estaba sobrestimada en cerca de 9% y se movía cada día sin que nadie la tocara. Ahora: accrual_basis per_usd con accrual_rate 1, base_reward_rate y effective_rate_pct UNKNOWN. La conversión la hace el motor con fx_rates.json, con una fecha que puede auditar. point_value_mxn 0.10 se conserva pero su evidencia sigue siendo 'inferred'. Programa Recompensas Inbursa: 1 Punto Inbursa por cada DÓLAR facturado (o su equivalente en pesos), y 10 puntos = $1 peso, es decir point_value_mxn 0.10 — ambas cifras publicadas por el emisor, no inferidas. La acumulación está denominada en dólares, así que base_reward_rate y effective_rate_pct quedan UNKNOWN y el motor convierte con el FIX de fx_rates.json. Un peso más caro significa MENOS puntos por compra. Canje mínimo 1,000 puntos ($100). Vigencia 48 meses. Transferibles a Aeroméxico Rewards a razón de 1:1; durante 2026 el emisor da el doble de puntos al transferir a programas de lealtad hoteleros. NO acumulan disposiciones de efectivo, casas de apuestas, pagos de créditos, intereses, impuestos ni comisiones. Si no se cubre el pago mínimo tres meses seguidos, SE PIERDEN los puntos acumulados — condición dura que casi ningún otro emisor aplica.",
     "annual_fee_mxn": 390,
     "annual_fee_includes_iva": false,
     "annual_fee_first_year_waived": true,
@@ -550,7 +550,7 @@
     "base_reward_rate": "UNKNOWN",
     "point_value_mxn": 0.1,
     "effective_rate_pct": "UNKNOWN",
-    "points_program_name": "Puntos Inbursa",
+    "points_program_name": "Recompensas Inbursa",
     "min_income_mxn_monthly": 10000,
     "invitation_only": false,
     "other_eligibility_criteria": "Edad mínima 18 años; historial medio",
@@ -574,12 +574,12 @@
         ]
       },
       "rewards": {
-        "score": "low",
-        "evidence_type": "inferred",
-        "verified_on": "2026-08-07",
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
         "sources": [
-          "https://www.kardmatch.com.mx/inbursa/tarjeta-de-credito-clasica-inbursa.asp",
-          "https://www.inbursa.com.mx/sites/gfi/document/tdc-clasica-folleto.pdf"
+          "https://www.inbursa.com/sites/gfi/tdc/recompensas",
+          "https://www.inbursa.com/sites/gfi/document/tdc-platinum-folleto.pdf"
         ]
       },
       "perks": {
@@ -613,7 +613,8 @@
     "accrual_rate": 1,
     "accrual_block_mxn": "NOT_APPLICABLE",
     "annual_fee_currency": "MXN",
-    "product_type": "credit"
+    "product_type": "credit",
+    "point_value_source": "https://www.inbursa.com/sites/gfi/tdc/recompensas"
   },
   {
     "card_id": "banco_inbursa__inbursa_oro",
@@ -629,7 +630,7 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": "Puntos Inbursa: 1 punto por dólar gastado (o su equivalente en pesos), valorado en 0.10 MXN por punto. A ~18.5 MXN/USD eso equivale a ~0.55% del gasto. El rendimiento efectivo se mueve con el tipo de cambio: la tasa está fijada en dólares, no en pesos. Canje mínimo 1,000 puntos; vigencia 48 meses. CORRECCIÓN 2026-08-17: la fila registraba base_reward_rate 5.4% y effective_rate_pct 0.54%. Esas cifras NO las publica Inbursa: salieron de convertir '1 punto por dólar' a un tipo de cambio supuesto de ~18.5 MXN/USD (1 punto por cada 18.5 pesos = 5.4 puntos por cada 100). Es exactamente el tipo de cambio congelado que motivó crear accrual_basis. Al FIX de hoy, $17.0218, la misma acumulación daría 5.88% y no 5.4% — la cifra estaba sobrestimada en cerca de 9% y se movía cada día sin que nadie la tocara. Ahora: accrual_basis per_usd con accrual_rate 1, base_reward_rate y effective_rate_pct UNKNOWN. La conversión la hace el motor con fx_rates.json, con una fecha que puede auditar. point_value_mxn 0.10 se conserva pero su evidencia sigue siendo 'inferred'.",
+    "notes": "Puntos Inbursa: 1 punto por dólar gastado (o su equivalente en pesos), valorado en 0.10 MXN por punto. A ~18.5 MXN/USD eso equivale a ~0.55% del gasto. El rendimiento efectivo se mueve con el tipo de cambio: la tasa está fijada en dólares, no en pesos. Canje mínimo 1,000 puntos; vigencia 48 meses. CORRECCIÓN 2026-08-17: la fila registraba base_reward_rate 5.4% y effective_rate_pct 0.54%. Esas cifras NO las publica Inbursa: salieron de convertir '1 punto por dólar' a un tipo de cambio supuesto de ~18.5 MXN/USD (1 punto por cada 18.5 pesos = 5.4 puntos por cada 100). Es exactamente el tipo de cambio congelado que motivó crear accrual_basis. Al FIX de hoy, $17.0218, la misma acumulación daría 5.88% y no 5.4% — la cifra estaba sobrestimada en cerca de 9% y se movía cada día sin que nadie la tocara. Ahora: accrual_basis per_usd con accrual_rate 1, base_reward_rate y effective_rate_pct UNKNOWN. La conversión la hace el motor con fx_rates.json, con una fecha que puede auditar. point_value_mxn 0.10 se conserva pero su evidencia sigue siendo 'inferred'. Programa Recompensas Inbursa: 1 Punto Inbursa por cada DÓLAR facturado (o su equivalente en pesos), y 10 puntos = $1 peso, es decir point_value_mxn 0.10 — ambas cifras publicadas por el emisor, no inferidas. La acumulación está denominada en dólares, así que base_reward_rate y effective_rate_pct quedan UNKNOWN y el motor convierte con el FIX de fx_rates.json. Un peso más caro significa MENOS puntos por compra. Canje mínimo 1,000 puntos ($100). Vigencia 48 meses. Transferibles a Aeroméxico Rewards a razón de 1:1; durante 2026 el emisor da el doble de puntos al transferir a programas de lealtad hoteleros. NO acumulan disposiciones de efectivo, casas de apuestas, pagos de créditos, intereses, impuestos ni comisiones. Si no se cubre el pago mínimo tres meses seguidos, SE PIERDEN los puntos acumulados — condición dura que casi ningún otro emisor aplica.",
     "annual_fee_mxn": 540,
     "annual_fee_includes_iva": false,
     "annual_fee_first_year_waived": "UNKNOWN",
@@ -640,7 +641,7 @@
     "base_reward_rate": "UNKNOWN",
     "point_value_mxn": 0.1,
     "effective_rate_pct": "UNKNOWN",
-    "points_program_name": "Puntos Inbursa",
+    "points_program_name": "Recompensas Inbursa",
     "min_income_mxn_monthly": "UNKNOWN",
     "invitation_only": false,
     "other_eligibility_criteria": "UNKNOWN",
@@ -665,12 +666,12 @@
         ]
       },
       "rewards": {
-        "score": "low",
-        "evidence_type": "inferred",
-        "verified_on": "2026-08-07",
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
         "sources": [
-          "https://www.kardmatch.com.mx/inbursa/tarjeta-de-credito-clasica-inbursa.asp",
-          "https://www.inbursa.com.mx/sites/gfi/document/tdc-clasica-folleto.pdf"
+          "https://www.inbursa.com/sites/gfi/tdc/recompensas",
+          "https://www.inbursa.com/sites/gfi/document/tdc-platinum-folleto.pdf"
         ]
       },
       "perks": {
@@ -704,7 +705,8 @@
     "accrual_rate": 1,
     "accrual_block_mxn": "NOT_APPLICABLE",
     "annual_fee_currency": "MXN",
-    "product_type": "credit"
+    "product_type": "credit",
+    "point_value_source": "https://www.inbursa.com/sites/gfi/tdc/recompensas"
   },
   {
     "card_id": "banco_inbursa__inbursa_platinum",
@@ -720,7 +722,7 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": "El emisor publica dos CAT distintos: la página del producto da 42.1% / 33.85% calculado al 30 de junio de 2026, y el folleto PDF da 43.9% / 34.77% calculado al 31 de diciembre de 2025. Se toma la cifra más reciente por fecha de cálculo. La anualidad coincide en ambas fuentes ($1,320 + IVA), así que no hay conflicto de costo. Puntos Inbursa transferibles a cadenas hoteleras y aerolíneas SkyTeam; tasa de acumulación no publicada.",
+    "notes": "El emisor publica dos CAT distintos: la página del producto da 42.1% / 33.85% calculado al 30 de junio de 2026, y el folleto PDF da 43.9% / 34.77% calculado al 31 de diciembre de 2025. Se toma la cifra más reciente por fecha de cálculo. La anualidad coincide en ambas fuentes ($1,320 + IVA), así que no hay conflicto de costo. Puntos Inbursa transferibles a cadenas hoteleras y aerolíneas SkyTeam; tasa de acumulación no publicada. Programa Recompensas Inbursa: 1 Punto Inbursa por cada DÓLAR facturado (o su equivalente en pesos), y 10 puntos = $1 peso, es decir point_value_mxn 0.10 — ambas cifras publicadas por el emisor, no inferidas. La acumulación está denominada en dólares, así que base_reward_rate y effective_rate_pct quedan UNKNOWN y el motor convierte con el FIX de fx_rates.json. Un peso más caro significa MENOS puntos por compra. Canje mínimo 1,000 puntos ($100). Vigencia 48 meses. Transferibles a Aeroméxico Rewards a razón de 1:1; durante 2026 el emisor da el doble de puntos al transferir a programas de lealtad hoteleros. NO acumulan disposiciones de efectivo, casas de apuestas, pagos de créditos, intereses, impuestos ni comisiones. Si no se cubre el pago mínimo tres meses seguidos, SE PIERDEN los puntos acumulados — condición dura que casi ningún otro emisor aplica. DIFERENCIADOR: acumula puntos también en compras a meses sin intereses, a diferencia de BBVA, Banamex y Banorte, que dejaron de reconocer ese gasto. En una cartera donde el MSI es una parte grande del consumo, eso cambia la comparación.",
     "annual_fee_mxn": 1320,
     "annual_fee_includes_iva": false,
     "annual_fee_first_year_waived": false,
@@ -729,9 +731,9 @@
     "cat_promedio_pct": 42.1,
     "base_reward_type": "points",
     "base_reward_rate": "UNKNOWN",
-    "point_value_mxn": "UNKNOWN",
+    "point_value_mxn": 0.1,
     "effective_rate_pct": "UNKNOWN",
-    "points_program_name": "Puntos Inbursa",
+    "points_program_name": "Recompensas Inbursa",
     "min_income_mxn_monthly": "UNKNOWN",
     "invitation_only": false,
     "other_eligibility_criteria": "Antigüedad laboral mínima de un año.",
@@ -755,10 +757,11 @@
         ]
       },
       "rewards": {
-        "score": "medium",
+        "score": "high",
         "evidence_type": "issuer_primary",
         "verified_on": "2026-08-17",
         "sources": [
+          "https://www.inbursa.com/sites/gfi/tdc/recompensas",
           "https://www.inbursa.com/sites/gfi/document/tdc-platinum-folleto.pdf"
         ]
       },
@@ -787,11 +790,12 @@
     "fee_billing_period": "annual",
     "cat_calculated_on": "2026-06-30",
     "cat_valid_until": "2026-12-30",
-    "accrual_basis": "UNKNOWN",
-    "accrual_rate": "UNKNOWN",
+    "accrual_basis": "per_usd",
+    "accrual_rate": 1,
     "accrual_block_mxn": "NOT_APPLICABLE",
     "annual_fee_currency": "MXN",
-    "product_type": "credit"
+    "product_type": "credit",
+    "point_value_source": "https://www.inbursa.com/sites/gfi/tdc/recompensas"
   },
   {
     "card_id": "banco_inbursa__inbursa_optima",
@@ -807,7 +811,7 @@
     "census_confidence": "high",
     "census_note": "On the issuer's product list. Terms not sourced this run.",
     "conflicts": [],
-    "notes": "CAT VENCIDO: calculado al 31 de diciembre de 2025 con vigencia al 30 de junio de 2026, es decir caducó antes de esta verificación. Inbursa refrescó parte de su gama en junio de 2026 y esta tarjeta no. El valor se registra tal cual con cat_valid_until en el pasado para que el triage lo levante. Puntos Inbursa transferibles a programas de lealtad hoteleros (Marriott, Sheraton, Westin y otros) y a Star Médica a razón de 1 punto por 2; durante 2026 el emisor ofrece el doble de puntos al transferir a cadenas hoteleras. La tasa de acumulación base no se publica: UNKNOWN.",
+    "notes": "CAT VENCIDO: calculado al 31 de diciembre de 2025 con vigencia al 30 de junio de 2026, es decir caducó antes de esta verificación. Inbursa refrescó parte de su gama en junio de 2026 y esta tarjeta no. El valor se registra tal cual con cat_valid_until en el pasado para que el triage lo levante. Puntos Inbursa transferibles a programas de lealtad hoteleros (Marriott, Sheraton, Westin y otros) y a Star Médica a razón de 1 punto por 2; durante 2026 el emisor ofrece el doble de puntos al transferir a cadenas hoteleras. La tasa de acumulación base no se publica: UNKNOWN. FUENTES DEL EMISOR EN DESACUERDO (2026-08-17): la página de Recompensas Inbursa enumera las tarjetas participantes —Clásica, Oro, Platinum, Enlace Médico y Fundación UNAM— y Óptima NO está en la lista; pero su propio folleto describe Puntos Inbursa transferibles a cadenas hoteleras. No se registra acumulación: 'none' afirmaría que no gana nada y per_usd 1 afirmaría que sí, y las dos fuentes son del emisor. Requiere confirmación directa.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
@@ -892,7 +896,7 @@
     "census_confidence": "high",
     "census_note": "co-brand (Telcel)",
     "conflicts": [],
-    "notes": "CORRECCIÓN 2026-08-17: la anualidad estaba registrada como $0. El anexo de comisiones de marca compartida y la página del producto coinciden en $540 + IVA anuales. Tarjeta adicional sin costo. Tasa preferencial al domiciliar el pago a una cuenta de cheques Inbursa. Tasa de acumulación no publicada. Emitida por SOFOM Inbursa, S.A. de C.V., S.F.O.M. E.R., no por Banco Inbursa. Se conserva bajo issuer_id banco_inbursa por decisión de producto (2026-08-17); la distinción no afecta ninguna recomendación de tarjeta porque el seguro de depósito no aplica a productos de crédito.",
+    "notes": "CORRECCIÓN 2026-08-17: la anualidad estaba registrada como $0. El anexo de comisiones de marca compartida y la página del producto coinciden en $540 + IVA anuales. Tarjeta adicional sin costo. Tasa preferencial al domiciliar el pago a una cuenta de cheques Inbursa. Tasa de acumulación no publicada. Emitida por SOFOM Inbursa, S.A. de C.V., S.F.O.M. E.R., no por Banco Inbursa. Se conserva bajo issuer_id banco_inbursa por decisión de producto (2026-08-17); la distinción no afecta ninguna recomendación de tarjeta porque el seguro de depósito no aplica a productos de crédito. ACUMULACIÓN NO CONFIRMADA (2026-08-17): no aparece en la lista de tarjetas participantes de Recompensas Inbursa. La ausencia de una lista no prueba que no acumule, así que queda UNKNOWN en vez de 'none'.",
     "annual_fee_mxn": 540,
     "annual_fee_includes_iva": false,
     "annual_fee_first_year_waived": false,
@@ -6055,18 +6059,18 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": "No annual fee entry card CORRECCIÓN 2026-08-17: CAT 132.3%, el más alto del conjunto de datos. Sin costo de administración del titular de por vida, PERO cobra $165 al mes de penalización por inactividad si la tarjeta no acumula $1,500 en compras o cargos recurrentes en el corte — hasta $1,980 al año. Tabla consolidada de CAT del emisor (CAT, tasa promedio y comisión de administración del titular en un solo documento), fecha de cálculo 31 de marzo de 2026, vigencia al 30 de septiembre de 2026. Tasa VARIABLE referenciada a T.I.I.E. Diaria Compuesta Ajustada más un margen fijo.",
+    "notes": "No annual fee entry card CORRECCIÓN 2026-08-17: CAT 132.3%, el más alto del conjunto de datos. Sin costo de administración del titular de por vida, PERO cobra $165 al mes de penalización por inactividad si la tarjeta no acumula $1,500 en compras o cargos recurrentes en el corte — hasta $1,980 al año. Tabla consolidada de CAT del emisor (CAT, tasa promedio y comisión de administración del titular en un solo documento), fecha de cálculo 31 de marzo de 2026, vigencia al 30 de septiembre de 2026. Tasa VARIABLE referenciada a T.I.I.E. Diaria Compuesta Ajustada más un margen fijo. PROGRAMA ScotiaRewards: los ScotiaPuntos se renombraron ScotiaPesos y ahora se acumula 'un porcentaje de tu facturación que varía dependiendo de tu producto de tarjeta'. EL VALOR SÍ ESTÁ PUBLICADO: los ScotiaPesos valen 1:1 en pesos y se redimen al instante desde ScotiaMóvil, así que point_value_mxn es 1.00 con fuente del emisor, no un supuesto. Lo que falta es el porcentaje por producto, que Scotiabank no publica por tarjeta: por eso accrual_basis es pct_of_spend con accrual_rate UNKNOWN. En cuanto aparezca el porcentaje, effective_rate_pct sale directo sin conversión alguna. 'Paga mi compra' permite bonificar compras mayores a $500 de los últimos 60 días, cubriendo el 100% del importe con ScotiaPesos. Los términos del programa cambiaron el 9 de febrero y otra vez el 1 de julio de 2026: conviene reverificar el porcentaje cuando se obtenga.",
     "annual_fee_mxn": 0,
     "annual_fee_includes_iva": "UNKNOWN",
     "annual_fee_first_year_waived": "UNKNOWN",
     "annual_fee_waiver_condition": "Sin anualidad",
     "interest_rate_annual_pct": 78.39,
     "cat_promedio_pct": 132.3,
-    "base_reward_type": "none",
+    "base_reward_type": "points",
     "base_reward_rate": "UNKNOWN",
-    "point_value_mxn": "NOT_APPLICABLE",
-    "effective_rate_pct": 0,
-    "points_program_name": "NOT_APPLICABLE",
+    "point_value_mxn": 1.0,
+    "effective_rate_pct": "UNKNOWN",
+    "points_program_name": "ScotiaRewards (ScotiaPesos)",
     "min_income_mxn_monthly": 7500,
     "invitation_only": false,
     "other_eligibility_criteria": "INE",
@@ -6090,11 +6094,12 @@
         ]
       },
       "rewards": {
-        "score": "medium",
+        "score": "high",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-07-22",
+        "verified_on": "2026-08-17",
         "sources": [
-          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/scotia-basica.aspx"
+          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/scotiarewards/scotiapesos.aspx",
+          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/scotiarewards.aspx"
         ]
       },
       "perks": {
@@ -6122,11 +6127,12 @@
     "fee_billing_period": "NOT_APPLICABLE",
     "cat_calculated_on": "2026-03-31",
     "cat_valid_until": "2026-09-30",
-    "accrual_basis": "NOT_APPLICABLE",
-    "accrual_rate": "NOT_APPLICABLE",
+    "accrual_basis": "pct_of_spend",
+    "accrual_rate": "UNKNOWN",
     "accrual_block_mxn": "NOT_APPLICABLE",
     "annual_fee_currency": "MXN",
-    "product_type": "credit"
+    "product_type": "credit",
+    "point_value_source": "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/scotiarewards/scotiapesos.aspx"
   },
   {
     "card_id": "scotiabank_mexico__infinite_scotia_wealth_management",
@@ -6142,7 +6148,7 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": "La anualidad más alta del conjunto de datos: $20,000 + IVA, con el CAT más bajo (30.5%). Producto de Wealth Management. Tabla consolidada de CAT del emisor (CAT, tasa promedio y comisión de administración del titular en un solo documento), fecha de cálculo 31 de marzo de 2026, vigencia al 30 de septiembre de 2026. Tasa VARIABLE referenciada a T.I.I.E. Diaria Compuesta Ajustada más un margen fijo. Tasa de acumulación de ScotiaRewards no publicada en la tabla del emisor: accrual_basis UNKNOWN.",
+    "notes": "La anualidad más alta del conjunto de datos: $20,000 + IVA, con el CAT más bajo (30.5%). Producto de Wealth Management. Tabla consolidada de CAT del emisor (CAT, tasa promedio y comisión de administración del titular en un solo documento), fecha de cálculo 31 de marzo de 2026, vigencia al 30 de septiembre de 2026. Tasa VARIABLE referenciada a T.I.I.E. Diaria Compuesta Ajustada más un margen fijo. Tasa de acumulación de ScotiaRewards no publicada en la tabla del emisor: accrual_basis UNKNOWN. PROGRAMA ScotiaRewards: los ScotiaPuntos se renombraron ScotiaPesos y ahora se acumula 'un porcentaje de tu facturación que varía dependiendo de tu producto de tarjeta'. EL VALOR SÍ ESTÁ PUBLICADO: los ScotiaPesos valen 1:1 en pesos y se redimen al instante desde ScotiaMóvil, así que point_value_mxn es 1.00 con fuente del emisor, no un supuesto. Lo que falta es el porcentaje por producto, que Scotiabank no publica por tarjeta: por eso accrual_basis es pct_of_spend con accrual_rate UNKNOWN. En cuanto aparezca el porcentaje, effective_rate_pct sale directo sin conversión alguna. 'Paga mi compra' permite bonificar compras mayores a $500 de los últimos 60 días, cubriendo el 100% del importe con ScotiaPesos. Los términos del programa cambiaron el 9 de febrero y otra vez el 1 de julio de 2026: conviene reverificar el porcentaje cuando se obtenga.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
@@ -6159,10 +6165,10 @@
     "cat_promedio_pct": 30.5,
     "base_reward_type": "points",
     "base_reward_rate": "UNKNOWN",
-    "point_value_mxn": "UNKNOWN",
+    "point_value_mxn": 1.0,
     "effective_rate_pct": "UNKNOWN",
-    "points_program_name": "ScotiaPuntos / ScotiaPesos",
-    "accrual_basis": "UNKNOWN",
+    "points_program_name": "ScotiaRewards (ScotiaPesos)",
+    "accrual_basis": "pct_of_spend",
     "accrual_rate": "UNKNOWN",
     "accrual_block_mxn": "NOT_APPLICABLE",
     "min_income_mxn_monthly": "UNKNOWN",
@@ -6186,11 +6192,12 @@
         ]
       },
       "rewards": {
-        "score": "medium",
+        "score": "high",
         "evidence_type": "issuer_primary",
         "verified_on": "2026-08-17",
         "sources": [
-          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/servicios/mas-informacion.aspx"
+          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/scotiarewards/scotiapesos.aspx",
+          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/scotiarewards.aspx"
         ]
       },
       "perks": {
@@ -6211,7 +6218,8 @@
       }
     },
     "annual_fee_currency": "MXN",
-    "product_type": "credit"
+    "product_type": "credit",
+    "point_value_source": "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/scotiarewards/scotiapesos.aspx"
   },
   {
     "card_id": "scotiabank_mexico__scotia_travel_clasica",
@@ -6227,7 +6235,7 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": "RESUELVE EL BLOQUEO ORIGINAL: tres comparadores daban tres anualidades distintas ($720, $750, $760). El emisor publica $799 + IVA. Tabla consolidada de CAT del emisor (CAT, tasa promedio y comisión de administración del titular en un solo documento), fecha de cálculo 31 de marzo de 2026, vigencia al 30 de septiembre de 2026. Tasa VARIABLE referenciada a T.I.I.E. Diaria Compuesta Ajustada más un margen fijo. Tasa de acumulación de ScotiaRewards no publicada en la tabla del emisor: accrual_basis UNKNOWN.",
+    "notes": "RESUELVE EL BLOQUEO ORIGINAL: tres comparadores daban tres anualidades distintas ($720, $750, $760). El emisor publica $799 + IVA. Tabla consolidada de CAT del emisor (CAT, tasa promedio y comisión de administración del titular en un solo documento), fecha de cálculo 31 de marzo de 2026, vigencia al 30 de septiembre de 2026. Tasa VARIABLE referenciada a T.I.I.E. Diaria Compuesta Ajustada más un margen fijo. Tasa de acumulación de ScotiaRewards no publicada en la tabla del emisor: accrual_basis UNKNOWN. PROGRAMA ScotiaRewards: los ScotiaPuntos se renombraron ScotiaPesos y ahora se acumula 'un porcentaje de tu facturación que varía dependiendo de tu producto de tarjeta'. EL VALOR SÍ ESTÁ PUBLICADO: los ScotiaPesos valen 1:1 en pesos y se redimen al instante desde ScotiaMóvil, así que point_value_mxn es 1.00 con fuente del emisor, no un supuesto. Lo que falta es el porcentaje por producto, que Scotiabank no publica por tarjeta: por eso accrual_basis es pct_of_spend con accrual_rate UNKNOWN. En cuanto aparezca el porcentaje, effective_rate_pct sale directo sin conversión alguna. 'Paga mi compra' permite bonificar compras mayores a $500 de los últimos 60 días, cubriendo el 100% del importe con ScotiaPesos. Los términos del programa cambiaron el 9 de febrero y otra vez el 1 de julio de 2026: conviene reverificar el porcentaje cuando se obtenga.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
@@ -6244,10 +6252,10 @@
     "cat_promedio_pct": 111.9,
     "base_reward_type": "points",
     "base_reward_rate": "UNKNOWN",
-    "point_value_mxn": "UNKNOWN",
+    "point_value_mxn": 1.0,
     "effective_rate_pct": "UNKNOWN",
-    "points_program_name": "ScotiaPuntos / ScotiaPesos",
-    "accrual_basis": "UNKNOWN",
+    "points_program_name": "ScotiaRewards (ScotiaPesos)",
+    "accrual_basis": "pct_of_spend",
     "accrual_rate": "UNKNOWN",
     "accrual_block_mxn": "NOT_APPLICABLE",
     "min_income_mxn_monthly": "UNKNOWN",
@@ -6271,11 +6279,12 @@
         ]
       },
       "rewards": {
-        "score": "medium",
+        "score": "high",
         "evidence_type": "issuer_primary",
         "verified_on": "2026-08-17",
         "sources": [
-          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/servicios/mas-informacion.aspx"
+          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/scotiarewards/scotiapesos.aspx",
+          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/scotiarewards.aspx"
         ]
       },
       "perks": {
@@ -6296,7 +6305,8 @@
       }
     },
     "annual_fee_currency": "MXN",
-    "product_type": "credit"
+    "product_type": "credit",
+    "point_value_source": "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/scotiarewards/scotiapesos.aspx"
   },
   {
     "card_id": "scotiabank_mexico__scotia_travel_oro",
@@ -6312,7 +6322,7 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": "Comparadores daban $1,099-$1,300; el emisor publica $1,209 + IVA. Tabla consolidada de CAT del emisor (CAT, tasa promedio y comisión de administración del titular en un solo documento), fecha de cálculo 31 de marzo de 2026, vigencia al 30 de septiembre de 2026. Tasa VARIABLE referenciada a T.I.I.E. Diaria Compuesta Ajustada más un margen fijo. Tasa de acumulación de ScotiaRewards no publicada en la tabla del emisor: accrual_basis UNKNOWN.",
+    "notes": "Comparadores daban $1,099-$1,300; el emisor publica $1,209 + IVA. Tabla consolidada de CAT del emisor (CAT, tasa promedio y comisión de administración del titular en un solo documento), fecha de cálculo 31 de marzo de 2026, vigencia al 30 de septiembre de 2026. Tasa VARIABLE referenciada a T.I.I.E. Diaria Compuesta Ajustada más un margen fijo. Tasa de acumulación de ScotiaRewards no publicada en la tabla del emisor: accrual_basis UNKNOWN. PROGRAMA ScotiaRewards: los ScotiaPuntos se renombraron ScotiaPesos y ahora se acumula 'un porcentaje de tu facturación que varía dependiendo de tu producto de tarjeta'. EL VALOR SÍ ESTÁ PUBLICADO: los ScotiaPesos valen 1:1 en pesos y se redimen al instante desde ScotiaMóvil, así que point_value_mxn es 1.00 con fuente del emisor, no un supuesto. Lo que falta es el porcentaje por producto, que Scotiabank no publica por tarjeta: por eso accrual_basis es pct_of_spend con accrual_rate UNKNOWN. En cuanto aparezca el porcentaje, effective_rate_pct sale directo sin conversión alguna. 'Paga mi compra' permite bonificar compras mayores a $500 de los últimos 60 días, cubriendo el 100% del importe con ScotiaPesos. Los términos del programa cambiaron el 9 de febrero y otra vez el 1 de julio de 2026: conviene reverificar el porcentaje cuando se obtenga.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
@@ -6329,10 +6339,10 @@
     "cat_promedio_pct": 104.2,
     "base_reward_type": "points",
     "base_reward_rate": "UNKNOWN",
-    "point_value_mxn": "UNKNOWN",
+    "point_value_mxn": 1.0,
     "effective_rate_pct": "UNKNOWN",
-    "points_program_name": "ScotiaPuntos / ScotiaPesos",
-    "accrual_basis": "UNKNOWN",
+    "points_program_name": "ScotiaRewards (ScotiaPesos)",
+    "accrual_basis": "pct_of_spend",
     "accrual_rate": "UNKNOWN",
     "accrual_block_mxn": "NOT_APPLICABLE",
     "min_income_mxn_monthly": "UNKNOWN",
@@ -6356,11 +6366,12 @@
         ]
       },
       "rewards": {
-        "score": "medium",
+        "score": "high",
         "evidence_type": "issuer_primary",
         "verified_on": "2026-08-17",
         "sources": [
-          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/servicios/mas-informacion.aspx"
+          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/scotiarewards/scotiapesos.aspx",
+          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/scotiarewards.aspx"
         ]
       },
       "perks": {
@@ -6381,7 +6392,8 @@
       }
     },
     "annual_fee_currency": "MXN",
-    "product_type": "credit"
+    "product_type": "credit",
+    "point_value_source": "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/scotiarewards/scotiapesos.aspx"
   },
   {
     "card_id": "scotiabank_mexico__scotia_travel_platinum",
@@ -6397,7 +6409,7 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": "Annual fee from aggregator; verify. Lounge access CORRECCIÓN 2026-08-17: anualidad $2,600 -> $2,776 + IVA y CAT 66.9%. Tabla consolidada de CAT del emisor (CAT, tasa promedio y comisión de administración del titular en un solo documento), fecha de cálculo 31 de marzo de 2026, vigencia al 30 de septiembre de 2026. Tasa VARIABLE referenciada a T.I.I.E. Diaria Compuesta Ajustada más un margen fijo.",
+    "notes": "Annual fee from aggregator; verify. Lounge access CORRECCIÓN 2026-08-17: anualidad $2,600 -> $2,776 + IVA y CAT 66.9%. Tabla consolidada de CAT del emisor (CAT, tasa promedio y comisión de administración del titular en un solo documento), fecha de cálculo 31 de marzo de 2026, vigencia al 30 de septiembre de 2026. Tasa VARIABLE referenciada a T.I.I.E. Diaria Compuesta Ajustada más un margen fijo. PROGRAMA ScotiaRewards: los ScotiaPuntos se renombraron ScotiaPesos y ahora se acumula 'un porcentaje de tu facturación que varía dependiendo de tu producto de tarjeta'. EL VALOR SÍ ESTÁ PUBLICADO: los ScotiaPesos valen 1:1 en pesos y se redimen al instante desde ScotiaMóvil, así que point_value_mxn es 1.00 con fuente del emisor, no un supuesto. Lo que falta es el porcentaje por producto, que Scotiabank no publica por tarjeta: por eso accrual_basis es pct_of_spend con accrual_rate UNKNOWN. En cuanto aparezca el porcentaje, effective_rate_pct sale directo sin conversión alguna. 'Paga mi compra' permite bonificar compras mayores a $500 de los últimos 60 días, cubriendo el 100% del importe con ScotiaPesos. Los términos del programa cambiaron el 9 de febrero y otra vez el 1 de julio de 2026: conviene reverificar el porcentaje cuando se obtenga.",
     "annual_fee_mxn": 2776,
     "annual_fee_includes_iva": false,
     "annual_fee_first_year_waived": "UNKNOWN",
@@ -6406,9 +6418,9 @@
     "cat_promedio_pct": 66.9,
     "base_reward_type": "points",
     "base_reward_rate": "UNKNOWN",
-    "point_value_mxn": "UNKNOWN",
+    "point_value_mxn": 1.0,
     "effective_rate_pct": "UNKNOWN",
-    "points_program_name": "ScotiaPuntos / ScotiaPesos",
+    "points_program_name": "ScotiaRewards (ScotiaPesos)",
     "min_income_mxn_monthly": 15000,
     "invitation_only": false,
     "other_eligibility_criteria": "INE",
@@ -6431,11 +6443,12 @@
         ]
       },
       "rewards": {
-        "score": "medium",
+        "score": "high",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-07-22",
+        "verified_on": "2026-08-17",
         "sources": [
-          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/travel-platinum.aspx"
+          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/scotiarewards/scotiapesos.aspx",
+          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/scotiarewards.aspx"
         ]
       },
       "perks": {
@@ -6463,11 +6476,12 @@
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "2026-03-31",
     "cat_valid_until": "2026-09-30",
-    "accrual_basis": "UNKNOWN",
+    "accrual_basis": "pct_of_spend",
     "accrual_rate": "UNKNOWN",
     "accrual_block_mxn": "NOT_APPLICABLE",
     "annual_fee_currency": "MXN",
-    "product_type": "credit"
+    "product_type": "credit",
+    "point_value_source": "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/scotiarewards/scotiapesos.aspx"
   },
   {
     "card_id": "scotiabank_mexico__singular_by_scotiabank_infinite",
@@ -6483,7 +6497,7 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": "Tabla consolidada de CAT del emisor (CAT, tasa promedio y comisión de administración del titular en un solo documento), fecha de cálculo 31 de marzo de 2026, vigencia al 30 de septiembre de 2026. Tasa VARIABLE referenciada a T.I.I.E. Diaria Compuesta Ajustada más un margen fijo. Tasa de acumulación de ScotiaRewards no publicada en la tabla del emisor: accrual_basis UNKNOWN.",
+    "notes": "Tabla consolidada de CAT del emisor (CAT, tasa promedio y comisión de administración del titular en un solo documento), fecha de cálculo 31 de marzo de 2026, vigencia al 30 de septiembre de 2026. Tasa VARIABLE referenciada a T.I.I.E. Diaria Compuesta Ajustada más un margen fijo. Tasa de acumulación de ScotiaRewards no publicada en la tabla del emisor: accrual_basis UNKNOWN. PROGRAMA ScotiaRewards: los ScotiaPuntos se renombraron ScotiaPesos y ahora se acumula 'un porcentaje de tu facturación que varía dependiendo de tu producto de tarjeta'. EL VALOR SÍ ESTÁ PUBLICADO: los ScotiaPesos valen 1:1 en pesos y se redimen al instante desde ScotiaMóvil, así que point_value_mxn es 1.00 con fuente del emisor, no un supuesto. Lo que falta es el porcentaje por producto, que Scotiabank no publica por tarjeta: por eso accrual_basis es pct_of_spend con accrual_rate UNKNOWN. En cuanto aparezca el porcentaje, effective_rate_pct sale directo sin conversión alguna. 'Paga mi compra' permite bonificar compras mayores a $500 de los últimos 60 días, cubriendo el 100% del importe con ScotiaPesos. Los términos del programa cambiaron el 9 de febrero y otra vez el 1 de julio de 2026: conviene reverificar el porcentaje cuando se obtenga.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
@@ -6500,10 +6514,10 @@
     "cat_promedio_pct": 42.6,
     "base_reward_type": "points",
     "base_reward_rate": "UNKNOWN",
-    "point_value_mxn": "UNKNOWN",
+    "point_value_mxn": 1.0,
     "effective_rate_pct": "UNKNOWN",
-    "points_program_name": "ScotiaPuntos / ScotiaPesos",
-    "accrual_basis": "UNKNOWN",
+    "points_program_name": "ScotiaRewards (ScotiaPesos)",
+    "accrual_basis": "pct_of_spend",
     "accrual_rate": "UNKNOWN",
     "accrual_block_mxn": "NOT_APPLICABLE",
     "min_income_mxn_monthly": "UNKNOWN",
@@ -6527,11 +6541,12 @@
         ]
       },
       "rewards": {
-        "score": "medium",
+        "score": "high",
         "evidence_type": "issuer_primary",
         "verified_on": "2026-08-17",
         "sources": [
-          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/servicios/mas-informacion.aspx"
+          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/scotiarewards/scotiapesos.aspx",
+          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/scotiarewards.aspx"
         ]
       },
       "perks": {
@@ -6552,7 +6567,8 @@
       }
     },
     "annual_fee_currency": "MXN",
-    "product_type": "credit"
+    "product_type": "credit",
+    "point_value_source": "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/scotiarewards/scotiapesos.aspx"
   },
   {
     "card_id": "scotiabank_mexico__singular_by_scotiabank_signature",
@@ -6568,7 +6584,7 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": "Tabla consolidada de CAT del emisor (CAT, tasa promedio y comisión de administración del titular en un solo documento), fecha de cálculo 31 de marzo de 2026, vigencia al 30 de septiembre de 2026. Tasa VARIABLE referenciada a T.I.I.E. Diaria Compuesta Ajustada más un margen fijo. Tasa de acumulación de ScotiaRewards no publicada en la tabla del emisor: accrual_basis UNKNOWN.",
+    "notes": "Tabla consolidada de CAT del emisor (CAT, tasa promedio y comisión de administración del titular en un solo documento), fecha de cálculo 31 de marzo de 2026, vigencia al 30 de septiembre de 2026. Tasa VARIABLE referenciada a T.I.I.E. Diaria Compuesta Ajustada más un margen fijo. Tasa de acumulación de ScotiaRewards no publicada en la tabla del emisor: accrual_basis UNKNOWN. PROGRAMA ScotiaRewards: los ScotiaPuntos se renombraron ScotiaPesos y ahora se acumula 'un porcentaje de tu facturación que varía dependiendo de tu producto de tarjeta'. EL VALOR SÍ ESTÁ PUBLICADO: los ScotiaPesos valen 1:1 en pesos y se redimen al instante desde ScotiaMóvil, así que point_value_mxn es 1.00 con fuente del emisor, no un supuesto. Lo que falta es el porcentaje por producto, que Scotiabank no publica por tarjeta: por eso accrual_basis es pct_of_spend con accrual_rate UNKNOWN. En cuanto aparezca el porcentaje, effective_rate_pct sale directo sin conversión alguna. 'Paga mi compra' permite bonificar compras mayores a $500 de los últimos 60 días, cubriendo el 100% del importe con ScotiaPesos. Los términos del programa cambiaron el 9 de febrero y otra vez el 1 de julio de 2026: conviene reverificar el porcentaje cuando se obtenga.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
@@ -6585,10 +6601,10 @@
     "cat_promedio_pct": 45.6,
     "base_reward_type": "points",
     "base_reward_rate": "UNKNOWN",
-    "point_value_mxn": "UNKNOWN",
+    "point_value_mxn": 1.0,
     "effective_rate_pct": "UNKNOWN",
-    "points_program_name": "ScotiaPuntos / ScotiaPesos",
-    "accrual_basis": "UNKNOWN",
+    "points_program_name": "ScotiaRewards (ScotiaPesos)",
+    "accrual_basis": "pct_of_spend",
     "accrual_rate": "UNKNOWN",
     "accrual_block_mxn": "NOT_APPLICABLE",
     "min_income_mxn_monthly": "UNKNOWN",
@@ -6612,11 +6628,12 @@
         ]
       },
       "rewards": {
-        "score": "medium",
+        "score": "high",
         "evidence_type": "issuer_primary",
         "verified_on": "2026-08-17",
         "sources": [
-          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/servicios/mas-informacion.aspx"
+          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/scotiarewards/scotiapesos.aspx",
+          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/scotiarewards.aspx"
         ]
       },
       "perks": {
@@ -6637,7 +6654,8 @@
       }
     },
     "annual_fee_currency": "MXN",
-    "product_type": "credit"
+    "product_type": "credit",
+    "point_value_source": "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/scotiarewards/scotiapesos.aspx"
   },
   {
     "card_id": "scotiabank_mexico__singular_by_scotiabank_world_elite",
@@ -6653,7 +6671,7 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": "Row added to resolve orphan key referenced in CardPerks; only the Elite Valet perk was captured from the official page. Fee, rate and eligibility NOT yet sourced - do not import as confirmed CORRECCIÓN 2026-08-17: anualidad resuelta de UNKNOWN a $6,308 + IVA, CAT 57.0%. Tabla consolidada de CAT del emisor (CAT, tasa promedio y comisión de administración del titular en un solo documento), fecha de cálculo 31 de marzo de 2026, vigencia al 30 de septiembre de 2026. Tasa VARIABLE referenciada a T.I.I.E. Diaria Compuesta Ajustada más un margen fijo.",
+    "notes": "Row added to resolve orphan key referenced in CardPerks; only the Elite Valet perk was captured from the official page. Fee, rate and eligibility NOT yet sourced - do not import as confirmed CORRECCIÓN 2026-08-17: anualidad resuelta de UNKNOWN a $6,308 + IVA, CAT 57.0%. Tabla consolidada de CAT del emisor (CAT, tasa promedio y comisión de administración del titular en un solo documento), fecha de cálculo 31 de marzo de 2026, vigencia al 30 de septiembre de 2026. Tasa VARIABLE referenciada a T.I.I.E. Diaria Compuesta Ajustada más un margen fijo. PROGRAMA ScotiaRewards: los ScotiaPuntos se renombraron ScotiaPesos y ahora se acumula 'un porcentaje de tu facturación que varía dependiendo de tu producto de tarjeta'. EL VALOR SÍ ESTÁ PUBLICADO: los ScotiaPesos valen 1:1 en pesos y se redimen al instante desde ScotiaMóvil, así que point_value_mxn es 1.00 con fuente del emisor, no un supuesto. Lo que falta es el porcentaje por producto, que Scotiabank no publica por tarjeta: por eso accrual_basis es pct_of_spend con accrual_rate UNKNOWN. En cuanto aparezca el porcentaje, effective_rate_pct sale directo sin conversión alguna. 'Paga mi compra' permite bonificar compras mayores a $500 de los últimos 60 días, cubriendo el 100% del importe con ScotiaPesos. Los términos del programa cambiaron el 9 de febrero y otra vez el 1 de julio de 2026: conviene reverificar el porcentaje cuando se obtenga.",
     "annual_fee_mxn": 6308,
     "annual_fee_includes_iva": false,
     "annual_fee_first_year_waived": "UNKNOWN",
@@ -6662,9 +6680,9 @@
     "cat_promedio_pct": 57.0,
     "base_reward_type": "points",
     "base_reward_rate": "UNKNOWN",
-    "point_value_mxn": "UNKNOWN",
+    "point_value_mxn": 1.0,
     "effective_rate_pct": "UNKNOWN",
-    "points_program_name": "ScotiaPuntos / ScotiaPesos",
+    "points_program_name": "ScotiaRewards (ScotiaPesos)",
     "min_income_mxn_monthly": "UNKNOWN",
     "invitation_only": false,
     "other_eligibility_criteria": "UNKNOWN",
@@ -6687,11 +6705,12 @@
         ]
       },
       "rewards": {
-        "score": "medium",
+        "score": "high",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-07-22",
+        "verified_on": "2026-08-17",
         "sources": [
-          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/world-elite.aspx"
+          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/scotiarewards/scotiapesos.aspx",
+          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/scotiarewards.aspx"
         ]
       },
       "perks": {
@@ -6719,11 +6738,12 @@
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "2026-03-31",
     "cat_valid_until": "2026-09-30",
-    "accrual_basis": "UNKNOWN",
+    "accrual_basis": "pct_of_spend",
     "accrual_rate": "UNKNOWN",
     "accrual_block_mxn": "NOT_APPLICABLE",
     "annual_fee_currency": "MXN",
-    "product_type": "credit"
+    "product_type": "credit",
+    "point_value_source": "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/scotiarewards/scotiapesos.aspx"
   },
   {
     "card_id": "scotiabank_mexico__tasa_baja_clasica",
@@ -6739,7 +6759,7 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": "Sin comisión de administración del titular y CAT de 58.7%, muy por debajo de la gama Travel — la propuesta es tasa baja, no recompensas. Tabla consolidada de CAT del emisor (CAT, tasa promedio y comisión de administración del titular en un solo documento), fecha de cálculo 31 de marzo de 2026, vigencia al 30 de septiembre de 2026. Tasa VARIABLE referenciada a T.I.I.E. Diaria Compuesta Ajustada más un margen fijo. Tasa de acumulación de ScotiaRewards no publicada en la tabla del emisor: accrual_basis UNKNOWN.",
+    "notes": "Sin comisión de administración del titular y CAT de 58.7%, muy por debajo de la gama Travel — la propuesta es tasa baja, no recompensas. Tabla consolidada de CAT del emisor (CAT, tasa promedio y comisión de administración del titular en un solo documento), fecha de cálculo 31 de marzo de 2026, vigencia al 30 de septiembre de 2026. Tasa VARIABLE referenciada a T.I.I.E. Diaria Compuesta Ajustada más un margen fijo. Tasa de acumulación de ScotiaRewards no publicada en la tabla del emisor: accrual_basis UNKNOWN. SIN RECOMPENSAS CONFIRMADAS (2026-08-17): la propuesta de la gama Tasa Baja es la tasa, no las recompensas, y Scotiabank no la incluye al describir ScotiaRewards. No se marca 'none' porque no hay una declaración explícita de exclusión.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
@@ -6824,7 +6844,7 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": "Tabla consolidada de CAT del emisor (CAT, tasa promedio y comisión de administración del titular en un solo documento), fecha de cálculo 31 de marzo de 2026, vigencia al 30 de septiembre de 2026. Tasa VARIABLE referenciada a T.I.I.E. Diaria Compuesta Ajustada más un margen fijo. Tasa de acumulación de ScotiaRewards no publicada en la tabla del emisor: accrual_basis UNKNOWN.",
+    "notes": "Tabla consolidada de CAT del emisor (CAT, tasa promedio y comisión de administración del titular en un solo documento), fecha de cálculo 31 de marzo de 2026, vigencia al 30 de septiembre de 2026. Tasa VARIABLE referenciada a T.I.I.E. Diaria Compuesta Ajustada más un margen fijo. Tasa de acumulación de ScotiaRewards no publicada en la tabla del emisor: accrual_basis UNKNOWN. SIN RECOMPENSAS CONFIRMADAS (2026-08-17): la propuesta de la gama Tasa Baja es la tasa, no las recompensas, y Scotiabank no la incluye al describir ScotiaRewards. No se marca 'none' porque no hay una declaración explícita de exclusión.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
@@ -11225,7 +11245,7 @@
     "census_confidence": "high",
     "census_note": "Found on the issuer's own product list; absent from the card census.",
     "conflicts": [],
-    "notes": "Tarjeta dirigida al gremio médico. Tasa de acumulación y programa de lealtad no publicados en la página del producto: UNKNOWN. Tasa preferencial al domiciliar el pago a una cuenta de cheques Inbursa.",
+    "notes": "Tarjeta dirigida al gremio médico. Tasa de acumulación y programa de lealtad no publicados en la página del producto: UNKNOWN. Tasa preferencial al domiciliar el pago a una cuenta de cheques Inbursa. Programa Recompensas Inbursa: 1 Punto Inbursa por cada DÓLAR facturado (o su equivalente en pesos), y 10 puntos = $1 peso, es decir point_value_mxn 0.10 — ambas cifras publicadas por el emisor, no inferidas. La acumulación está denominada en dólares, así que base_reward_rate y effective_rate_pct quedan UNKNOWN y el motor convierte con el FIX de fx_rates.json. Un peso más caro significa MENOS puntos por compra. Canje mínimo 1,000 puntos ($100). Vigencia 48 meses. Transferibles a Aeroméxico Rewards a razón de 1:1; durante 2026 el emisor da el doble de puntos al transferir a programas de lealtad hoteleros. NO acumulan disposiciones de efectivo, casas de apuestas, pagos de créditos, intereses, impuestos ni comisiones. Si no se cubre el pago mínimo tres meses seguidos, SE PIERDEN los puntos acumulados — condición dura que casi ningún otro emisor aplica.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
@@ -11242,9 +11262,9 @@
     "cat_promedio_pct": 72.9,
     "base_reward_type": "points",
     "base_reward_rate": "UNKNOWN",
-    "point_value_mxn": "UNKNOWN",
+    "point_value_mxn": 0.1,
     "effective_rate_pct": "UNKNOWN",
-    "points_program_name": "UNKNOWN",
+    "points_program_name": "Recompensas Inbursa",
     "min_income_mxn_monthly": "UNKNOWN",
     "invitation_only": false,
     "other_eligibility_criteria": "Dirigida a médicos.",
@@ -11266,11 +11286,12 @@
         ]
       },
       "rewards": {
-        "score": "medium",
+        "score": "high",
         "evidence_type": "issuer_primary",
         "verified_on": "2026-08-17",
         "sources": [
-          "https://www.inbursa.com/sites/gfi/tdc-enlacemedico"
+          "https://www.inbursa.com/sites/gfi/tdc/recompensas",
+          "https://www.inbursa.com/sites/gfi/document/tdc-platinum-folleto.pdf"
         ]
       },
       "perks": {
@@ -11290,11 +11311,12 @@
         ]
       }
     },
-    "accrual_basis": "UNKNOWN",
-    "accrual_rate": "UNKNOWN",
+    "accrual_basis": "per_usd",
+    "accrual_rate": 1,
     "accrual_block_mxn": "NOT_APPLICABLE",
     "annual_fee_currency": "MXN",
-    "product_type": "credit"
+    "product_type": "credit",
+    "point_value_source": "https://www.inbursa.com/sites/gfi/tdc/recompensas"
   },
   {
     "card_id": "banco_inbursa__fundacion_unam",
@@ -11310,7 +11332,7 @@
     "census_confidence": "high",
     "census_note": "Found on the issuer's own product list; absent from the card census.",
     "conflicts": [],
-    "notes": "Tarjeta de afinidad Fundación UNAM. El anexo de comisiones de marca compartida no publica tasa de acumulación ni programa de lealtad: base_reward_rate y effective_rate_pct quedan UNKNOWN. Sin costo de tarjeta adicional. Emitida por SOFOM Inbursa, S.A. de C.V., S.F.O.M. E.R., no por Banco Inbursa. Se conserva bajo issuer_id banco_inbursa por decisión de producto (2026-08-17); la distinción no afecta ninguna recomendación de tarjeta porque el seguro de depósito no aplica a productos de crédito.",
+    "notes": "Tarjeta de afinidad Fundación UNAM. El anexo de comisiones de marca compartida no publica tasa de acumulación ni programa de lealtad: base_reward_rate y effective_rate_pct quedan UNKNOWN. Sin costo de tarjeta adicional. Emitida por SOFOM Inbursa, S.A. de C.V., S.F.O.M. E.R., no por Banco Inbursa. Se conserva bajo issuer_id banco_inbursa por decisión de producto (2026-08-17); la distinción no afecta ninguna recomendación de tarjeta porque el seguro de depósito no aplica a productos de crédito. Programa Recompensas Inbursa: 1 Punto Inbursa por cada DÓLAR facturado (o su equivalente en pesos), y 10 puntos = $1 peso, es decir point_value_mxn 0.10 — ambas cifras publicadas por el emisor, no inferidas. La acumulación está denominada en dólares, así que base_reward_rate y effective_rate_pct quedan UNKNOWN y el motor convierte con el FIX de fx_rates.json. Un peso más caro significa MENOS puntos por compra. Canje mínimo 1,000 puntos ($100). Vigencia 48 meses. Transferibles a Aeroméxico Rewards a razón de 1:1; durante 2026 el emisor da el doble de puntos al transferir a programas de lealtad hoteleros. NO acumulan disposiciones de efectivo, casas de apuestas, pagos de créditos, intereses, impuestos ni comisiones. Si no se cubre el pago mínimo tres meses seguidos, SE PIERDEN los puntos acumulados — condición dura que casi ningún otro emisor aplica.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
@@ -11327,9 +11349,9 @@
     "cat_promedio_pct": 90.6,
     "base_reward_type": "points",
     "base_reward_rate": "UNKNOWN",
-    "point_value_mxn": "UNKNOWN",
+    "point_value_mxn": 0.1,
     "effective_rate_pct": "UNKNOWN",
-    "points_program_name": "UNKNOWN",
+    "points_program_name": "Recompensas Inbursa",
     "min_income_mxn_monthly": "UNKNOWN",
     "invitation_only": false,
     "other_eligibility_criteria": "Antigüedad laboral mínima de un año.",
@@ -11351,11 +11373,12 @@
         ]
       },
       "rewards": {
-        "score": "medium",
+        "score": "high",
         "evidence_type": "issuer_primary",
         "verified_on": "2026-08-17",
         "sources": [
-          "https://www.inbursa.com/sites/gfi/document/comisiones-tdc-inbursa-mc.pdf"
+          "https://www.inbursa.com/sites/gfi/tdc/recompensas",
+          "https://www.inbursa.com/sites/gfi/document/tdc-platinum-folleto.pdf"
         ]
       },
       "perks": {
@@ -11375,11 +11398,12 @@
         ]
       }
     },
-    "accrual_basis": "UNKNOWN",
-    "accrual_rate": "UNKNOWN",
+    "accrual_basis": "per_usd",
+    "accrual_rate": 1,
     "accrual_block_mxn": "NOT_APPLICABLE",
     "annual_fee_currency": "MXN",
-    "product_type": "credit"
+    "product_type": "credit",
+    "point_value_source": "https://www.inbursa.com/sites/gfi/tdc/recompensas"
   },
   {
     "card_id": "invex__now",
