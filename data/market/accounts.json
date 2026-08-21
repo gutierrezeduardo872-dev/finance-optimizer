@@ -1033,7 +1033,7 @@
     "fee_waiver_condition": "NOT_APPLICABLE",
     "min_balance_mxn": 0,
     "min_opening_deposit_mxn": 0,
-    "liquidity": "instant",
+    "liquidity": "term_locked",
     "term_days": 30,
     "isr_withholding_note": "GAT nominal 9.38%, GAT Real 5.34%; before impuestos",
     "insurance_scheme": "none",
@@ -1066,7 +1066,7 @@
       }
     },
     "conflicts": [],
-    "notes": "9% on 30-day apartado, continues after",
+    "notes": "9% on 30-day apartado, continues after CORRECCIÓN 2026-08-17: la liquidez estaba en 'instant' con term_days 30, que se contradice. El producto es un apartado a 30 días: el dinero queda comprometido durante el plazo, así que liquidity es term_locked. Importa doblemente aquí porque es la cuenta de mayor tasa del conjunto (9.0%) Y la única sin seguro de depósito alguno — Fondeadora es IFPE, no banco ni sofipo. Presentarla como dinero disponible e implícitamente seguro sería el peor error posible del lado de ahorro.",
     "rate_index": "NOT_APPLICABLE",
     "rate_index_pct": "NOT_APPLICABLE"
   },

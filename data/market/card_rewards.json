@@ -192,70 +192,6 @@
     "accrual_block_mxn": "NOT_APPLICABLE"
   },
   {
-    "reward_id": "jp_sofiexpress__didi_card__supermarket",
-    "card_id": "jp_sofiexpress__didi_card",
-    "category": "supermarket",
-    "rate": 2.0,
-    "reward_type": "cashback",
-    "point_value_mxn": 1.0,
-    "effective_rate_pct": 2.0,
-    "replaces_or_adds_to_base": "replaces",
-    "cap_amount": "UNKNOWN",
-    "cap_basis": "reward_mxn",
-    "cap_period": "monthly",
-    "min_spend": "NOT_APPLICABLE",
-    "promo_end_date": "NOT_APPLICABLE",
-    "user_selectable": false,
-    "confidence": {
-      "rewards": {
-        "score": "low",
-        "evidence_type": "issuer_primary",
-        "verified_on": "2026-05-31",
-        "sources": [
-          "https://didifinance.com/tarjeta-de-credito"
-        ]
-      }
-    },
-    "notes": "2% supers/gas/DiDi; total cashback cap $5000/mo",
-    "rate_after_cap": "NOT_APPLICABLE",
-    "payout_frequency": "statement",
-    "accrual_basis": "pct_of_spend",
-    "accrual_rate": 2.0,
-    "accrual_block_mxn": "NOT_APPLICABLE"
-  },
-  {
-    "reward_id": "jp_sofiexpress__didi_card__gas",
-    "card_id": "jp_sofiexpress__didi_card",
-    "category": "gas",
-    "rate": 2.0,
-    "reward_type": "cashback",
-    "point_value_mxn": 1.0,
-    "effective_rate_pct": 2.0,
-    "replaces_or_adds_to_base": "replaces",
-    "cap_amount": "UNKNOWN",
-    "cap_basis": "reward_mxn",
-    "cap_period": "monthly",
-    "min_spend": "NOT_APPLICABLE",
-    "promo_end_date": "NOT_APPLICABLE",
-    "user_selectable": false,
-    "confidence": {
-      "rewards": {
-        "score": "low",
-        "evidence_type": "issuer_primary",
-        "verified_on": "2026-05-31",
-        "sources": [
-          "https://didifinance.com/tarjeta-de-credito"
-        ]
-      }
-    },
-    "notes": "Part of $5000/mo total cap",
-    "rate_after_cap": "NOT_APPLICABLE",
-    "payout_frequency": "statement",
-    "accrual_basis": "pct_of_spend",
-    "accrual_rate": 2.0,
-    "accrual_block_mxn": "NOT_APPLICABLE"
-  },
-  {
     "reward_id": "jp_sofiexpress__didi_card__other",
     "card_id": "jp_sofiexpress__didi_card",
     "category": "other",
@@ -707,39 +643,6 @@
     "notes": "Tope de $500 mensuales compartido entre todas las categorías Cashback Baby.",
     "accrual_basis": "pct_of_spend",
     "accrual_rate": 6.0,
-    "accrual_block_mxn": "NOT_APPLICABLE"
-  },
-  {
-    "reward_id": "santander_mexico__likeu__supermarket",
-    "card_id": "santander_mexico__likeu",
-    "category": "supermarket",
-    "rate": 1.0,
-    "reward_type": "cashback",
-    "point_value_mxn": 1.0,
-    "effective_rate_pct": 1.0,
-    "replaces_or_adds_to_base": "replaces",
-    "cap_amount": 500,
-    "cap_basis": "reward_mxn",
-    "cap_period": "monthly",
-    "rate_after_cap": "NOT_APPLICABLE",
-    "payout_frequency": "monthly",
-    "min_spend": "NOT_APPLICABLE",
-    "promo_end_date": "NOT_APPLICABLE",
-    "user_selectable": false,
-    "confidence": {
-      "rewards": {
-        "score": "high",
-        "evidence_type": "issuer_primary",
-        "verified_on": "2026-08-07",
-        "sources": [
-          "https://www.santander.com.mx/personas/credito-y-financiamiento/tarjetas-de-credito/likeu/",
-          "https://www.santander.com.mx/cashback/likeu.html"
-        ]
-      }
-    },
-    "notes": "Tope de $500 mensuales compartido entre todas las categorías Cashback Baby.",
-    "accrual_basis": "pct_of_spend",
-    "accrual_rate": 1.0,
     "accrual_block_mxn": "NOT_APPLICABLE"
   },
   {
