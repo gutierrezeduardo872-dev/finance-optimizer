@@ -124,9 +124,9 @@
     "account_id": "nu_mx__cajita_nu",
     "boost_rate_pct": 13.0,
     "boost_basis": "replacement",
-    "condition_type": "min_transaction_count",
+    "condition_type": "tier_membership",
     "condition_amount_mxn": "NOT_APPLICABLE",
-    "condition_count": 1,
+    "condition_count": "NOT_APPLICABLE",
     "condition_period": "monthly",
     "linked_product_id": "",
     "max_balance_mxn": "UNKNOWN",
@@ -142,7 +142,7 @@
         ]
       }
     },
-    "notes": "Cajita Turbo: 13.00% anual fija, GAT nominal 13.88% y GAT real 9.73% — la tasa más alta del conjunto de datos. REEMPLAZA el 6.50% base, no se suma. No está disponible a solicitud: Nu la ofrece por invitación mediante notificación en la app a clientes que usan la tarjeta al menos una vez al mes, así que no se puede recomendar como algo que un usuario nuevo pueda contratar. El rendimiento sólo corre sobre el saldo dentro de la Cajita Turbo activada. Nu no publica tope de saldo. Promoción con vigencia al 19 de agosto de 2026."
+    "notes": "Cajita Turbo: 13.00% anual fija, GAT nominal 13.88% y GAT real 9.73% — la tasa más alta del conjunto de datos. REEMPLAZA el 6.50% base, no se suma, y sólo corre sobre el saldo dentro de la Cajita Turbo activada. CORRECCIÓN 2026-08-17: la condición estaba registrada como min_transaction_count = 1, que el motor evalúa como 'cualquiera que haga una compra al mes'. Eso habría otorgado 13% a TODO usuario de Nu con un movimiento — el doble de la tasa real, a quien no tiene el producto. Turbo NO se puede solicitar: Nu la ofrece por invitación mediante notificación en la app. La condición correcta es tier_membership, que el motor sólo da por cumplida cuando el usuario confirma que la tiene. Usar la tarjeta una vez al mes es la condición para CONSERVARLA, no para obtenerla. Nu no publica tope de saldo. Promoción con vigencia al 19 de agosto de 2026."
   },
   {
     "boost_id": "scotiabank_mexico__scotia_inversion_disponible__boost_6_29",
@@ -167,7 +167,7 @@
         ]
       }
     },
-    "notes": "Campaña 'Tu dinero te da más — 100% CETES': 6.29% anual, calculada al 14 de julio de 2026. REEMPLAZA la tasa por tramos, no se suma. DURA SÓLO TRES MESES desde la contratación; al terminar, Scotiabank asigna automáticamente Scotia Inversión Disponible Segmentos, cuyo primer tramo paga 0.63%. Sólo aplica a dinero nuevo: si el cliente ya tiene un pagaré activo debe abrir uno nuevo sobre el mismo contrato. El emisor no publica la fecha de término de la campaña, sólo la duración de tres meses por cliente, por eso promo_end_date es UNKNOWN."
+    "notes": "Campaña 'Tu dinero te da más — 100% CETES': 6.29% anual, calculada al 14 de julio de 2026. REEMPLAZA la tasa por tramos, no se suma. DURA SÓLO TRES MESES desde la contratación; al terminar, Scotiabank asigna automáticamente Scotia Inversión Disponible Segmentos, cuyo primer tramo paga 0.63%. Sólo aplica a dinero nuevo: si el cliente ya tiene un pagaré activo debe abrir uno nuevo sobre el mismo contrato. El emisor no publica la fecha de término de la campaña, sólo la duración de tres meses por cliente, por eso promo_end_date es UNKNOWN. NUNCA SE APLICA EN EL MOTOR (2026-08-17): condition_type 'other' cae al caso por defecto de boostConditionMet, que devuelve false a propósito — una condición que el motor no sabe evaluar no se da por cumplida. Este boost sirve de documentación pero no cambia ninguna recomendación. Para que aplique haría falta un tipo de condición nuevo, o tratarlo como tasa promocional de la cuenta en vez de boost."
   },
   {
     "boost_id": "citibanamex__pagare_banamex__boost_6_28",
@@ -192,7 +192,7 @@
         ]
       }
     },
-    "notes": "Promoción '100% CETE 60 días': 6.28% anual fija a 60 días desde $2,500, GAT nominal 6.45% y GAT real 2.57%, calculada el 25 de junio de 2026. Vigente del 3 de agosto al 30 de octubre de 2026. REEMPLAZA la tasa de régimen, no se suma. Es más de seis veces la tasa normal de Banamex a plazos cortos, así que la diferencia entre contratar dentro o fuera de la promoción es enorme. Sin monto máximo en sucursal; hasta 9 millones en la app."
+    "notes": "Promoción '100% CETE 60 días': 6.28% anual fija a 60 días desde $2,500, GAT nominal 6.45% y GAT real 2.57%, calculada el 25 de junio de 2026. Vigente del 3 de agosto al 30 de octubre de 2026. REEMPLAZA la tasa de régimen, no se suma. Es más de seis veces la tasa normal de Banamex a plazos cortos, así que la diferencia entre contratar dentro o fuera de la promoción es enorme. Sin monto máximo en sucursal; hasta 9 millones en la app. NUNCA SE APLICA EN EL MOTOR (2026-08-17): condition_type 'other' cae al caso por defecto de boostConditionMet, que devuelve false a propósito — una condición que el motor no sabe evaluar no se da por cumplida. Este boost sirve de documentación pero no cambia ninguna recomendación. Para que aplique haría falta un tipo de condición nuevo, o tratarlo como tasa promocional de la cuenta en vez de boost."
   },
   {
     "boost_id": "hey_banco__pagare_hey_inversion__boost_hey_pro",
