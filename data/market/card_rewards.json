@@ -1101,5 +1101,175 @@
     "accrual_basis": "pct_of_spend",
     "accrual_rate": 5.0,
     "accrual_block_mxn": "NOT_APPLICABLE"
+  },
+  {
+    "reward_id": "scotiabank_mexico__scotia_travel_platinum__travel",
+    "card_id": "scotiabank_mexico__scotia_travel_platinum",
+    "category": "travel",
+    "rate": 0.75,
+    "reward_type": "points",
+    "point_value_mxn": 1.0,
+    "effective_rate_pct": 0.75,
+    "replaces_or_adds_to_base": "adds",
+    "cap_amount": "UNCAPPED",
+    "cap_basis": "NOT_APPLICABLE",
+    "cap_period": "NOT_APPLICABLE",
+    "min_spend": "NOT_APPLICABLE",
+    "promo_end_date": "NOT_APPLICABLE",
+    "user_selectable": false,
+    "confidence": {
+      "rewards": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/scotiarewards.aspx",
+          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/scotiarewards/scotiapesos.aspx"
+        ]
+      }
+    },
+    "notes": "0.75% adicional en compras de viajes, SUMADO a la base de 0.75% — el emisor lo redacta como 'adicionales', uno de los pocos casos genuinamente aditivos del conjunto de datos, donde la norma mexicana es que la tasa de categoría reemplace a la base. Total en viajes: 1.5%.",
+    "rate_after_cap": "NOT_APPLICABLE",
+    "payout_frequency": "statement",
+    "accrual_basis": "pct_of_spend",
+    "accrual_rate": 0.75,
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "point_value_source": "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/scotiarewards/scotiapesos.aspx"
+  },
+  {
+    "reward_id": "scotiabank_mexico__singular_by_scotiabank_world_elite__travel",
+    "card_id": "scotiabank_mexico__singular_by_scotiabank_world_elite",
+    "category": "travel",
+    "rate": 1.0,
+    "reward_type": "points",
+    "point_value_mxn": 1.0,
+    "effective_rate_pct": 1.0,
+    "replaces_or_adds_to_base": "adds",
+    "cap_amount": "UNCAPPED",
+    "cap_basis": "NOT_APPLICABLE",
+    "cap_period": "NOT_APPLICABLE",
+    "min_spend": "NOT_APPLICABLE",
+    "promo_end_date": "NOT_APPLICABLE",
+    "user_selectable": false,
+    "confidence": {
+      "rewards": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/scotiarewards.aspx",
+          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/scotiarewards/scotiapesos.aspx"
+        ]
+      }
+    },
+    "notes": "1.0% adicional en compras de viajes, SUMADO a la base de 1.0% — el emisor lo redacta como 'adicionales', uno de los pocos casos genuinamente aditivos del conjunto de datos, donde la norma mexicana es que la tasa de categoría reemplace a la base. Total en viajes: 2.0%.",
+    "rate_after_cap": "NOT_APPLICABLE",
+    "payout_frequency": "statement",
+    "accrual_basis": "pct_of_spend",
+    "accrual_rate": 1.0,
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "point_value_source": "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/scotiarewards/scotiapesos.aspx"
+  },
+  {
+    "reward_id": "scotiabank_mexico__singular_by_scotiabank_signature__travel",
+    "card_id": "scotiabank_mexico__singular_by_scotiabank_signature",
+    "category": "travel",
+    "rate": 1.0,
+    "reward_type": "points",
+    "point_value_mxn": 1.0,
+    "effective_rate_pct": 1.0,
+    "replaces_or_adds_to_base": "adds",
+    "cap_amount": "UNCAPPED",
+    "cap_basis": "NOT_APPLICABLE",
+    "cap_period": "NOT_APPLICABLE",
+    "min_spend": "NOT_APPLICABLE",
+    "promo_end_date": "NOT_APPLICABLE",
+    "user_selectable": false,
+    "confidence": {
+      "rewards": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/scotiarewards.aspx",
+          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/scotiarewards/scotiapesos.aspx"
+        ]
+      }
+    },
+    "notes": "1.0% adicional en compras de viajes, SUMADO a la base de 1.0% — el emisor lo redacta como 'adicionales', uno de los pocos casos genuinamente aditivos del conjunto de datos, donde la norma mexicana es que la tasa de categoría reemplace a la base. Total en viajes: 2.0%.",
+    "rate_after_cap": "NOT_APPLICABLE",
+    "payout_frequency": "statement",
+    "accrual_basis": "pct_of_spend",
+    "accrual_rate": 1.0,
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "point_value_source": "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/scotiarewards/scotiapesos.aspx"
+  },
+  {
+    "reward_id": "scotiabank_mexico__singular_by_scotiabank_infinite__travel",
+    "card_id": "scotiabank_mexico__singular_by_scotiabank_infinite",
+    "category": "travel",
+    "rate": 1.5,
+    "reward_type": "points",
+    "point_value_mxn": 1.0,
+    "effective_rate_pct": 1.5,
+    "replaces_or_adds_to_base": "adds",
+    "cap_amount": "UNCAPPED",
+    "cap_basis": "NOT_APPLICABLE",
+    "cap_period": "NOT_APPLICABLE",
+    "min_spend": "NOT_APPLICABLE",
+    "promo_end_date": "NOT_APPLICABLE",
+    "user_selectable": false,
+    "confidence": {
+      "rewards": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/scotiarewards.aspx",
+          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/scotiarewards/scotiapesos.aspx"
+        ]
+      }
+    },
+    "notes": "1.5% adicional en compras de viajes, SUMADO a la base de 1.5% — el emisor lo redacta como 'adicionales', uno de los pocos casos genuinamente aditivos del conjunto de datos, donde la norma mexicana es que la tasa de categoría reemplace a la base. Total en viajes: 3.0%.",
+    "rate_after_cap": "NOT_APPLICABLE",
+    "payout_frequency": "statement",
+    "accrual_basis": "pct_of_spend",
+    "accrual_rate": 1.5,
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "point_value_source": "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/scotiarewards/scotiapesos.aspx"
+  },
+  {
+    "reward_id": "scotiabank_mexico__infinite_scotia_wealth_management__travel",
+    "card_id": "scotiabank_mexico__infinite_scotia_wealth_management",
+    "category": "travel",
+    "rate": 1.5,
+    "reward_type": "points",
+    "point_value_mxn": 1.0,
+    "effective_rate_pct": 1.5,
+    "replaces_or_adds_to_base": "adds",
+    "cap_amount": "UNCAPPED",
+    "cap_basis": "NOT_APPLICABLE",
+    "cap_period": "NOT_APPLICABLE",
+    "min_spend": "NOT_APPLICABLE",
+    "promo_end_date": "NOT_APPLICABLE",
+    "user_selectable": false,
+    "confidence": {
+      "rewards": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/scotiarewards.aspx",
+          "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/scotiarewards/scotiapesos.aspx"
+        ]
+      }
+    },
+    "notes": "1.5% adicional en compras de viajes, SUMADO a la base de 1.5% — el emisor lo redacta como 'adicionales', uno de los pocos casos genuinamente aditivos del conjunto de datos, donde la norma mexicana es que la tasa de categoría reemplace a la base. Total en viajes: 3.0%.",
+    "rate_after_cap": "NOT_APPLICABLE",
+    "payout_frequency": "statement",
+    "accrual_basis": "pct_of_spend",
+    "accrual_rate": 1.5,
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "point_value_source": "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/scotiarewards/scotiapesos.aspx"
   }
 ]
