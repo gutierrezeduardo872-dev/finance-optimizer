@@ -899,30 +899,30 @@
       "identity": {
         "score": "high",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-07-09",
+        "verified_on": "2026-08-17",
         "sources": [
-          "https://www.inbursa.com/sites/gfi/cuenta-inbursactmax"
+          "https://www.inbursa.com.mx/sites/gfi/cuenta-inbursactmax"
         ]
       },
       "cost": {
         "score": "medium",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-07-09",
+        "verified_on": "2026-08-17",
         "sources": [
-          "https://www.inbursa.com/sites/gfi/cuenta-inbursactmax"
+          "https://www.inbursa.com.mx/sites/gfi/cuenta-inbursactmax"
         ]
       },
       "yield": {
-        "score": "low",
+        "score": "medium",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-07-09",
+        "verified_on": "2026-08-17",
         "sources": [
-          "https://www.inbursa.com/sites/gfi/cuenta-inbursactmax"
+          "https://www.inbursa.com.mx/sites/gfi/cuenta-inbursactmax"
         ]
       }
     },
     "conflicts": [],
-    "notes": "Rate = ponderado de CETES; see tasasmensuales page"
+    "notes": "Depósito inicial de $100,000. Funciona como cuenta eje de la familia CT: CT 60 y CT Plus abonan ahí sus retiros programados. LA TASA ESTÁ INDEXADA, NO ES FIJA: Inbursa paga el 100% del promedio ponderado de CETES a 28 días vigente durante el mes, variable antes de impuestos. El esquema no tiene una estructura 'indexed' ni campos para el índice y su multiplicador, así que yield_structure queda 'flat' con flat_rate_pct UNKNOWN — que es honesto pero pierde el dato: sabemos exactamente cómo se calcula la tasa y no podemos guardarlo. Ver la propuesta de rate_index."
   },
   {
     "account_id": "banco_inbursa__cuenta_inbursa_ct_60",
@@ -942,9 +942,9 @@
     "monthly_fee_mxn": "UNKNOWN",
     "fee_waiver_condition": "UNKNOWN",
     "min_balance_mxn": 1,
-    "min_opening_deposit_mxn": 1,
-    "liquidity": "instant",
-    "term_days": "NOT_APPLICABLE",
+    "min_opening_deposit_mxn": "UNKNOWN",
+    "liquidity": "term_locked",
+    "term_days": 61,
     "isr_withholding_note": "100% de CETES 28d before ISR",
     "insurance_scheme": "IPAB",
     "insurance_coverage_udis": 400000,
@@ -953,7 +953,7 @@
       "identity": {
         "score": "high",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-07-22",
+        "verified_on": "2026-08-17",
         "sources": [
           "https://www.inbursa.com/sites/gfi/cuenta-inbursact60"
         ]
@@ -961,7 +961,7 @@
       "cost": {
         "score": "medium",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-07-22",
+        "verified_on": "2026-08-17",
         "sources": [
           "https://www.inbursa.com/sites/gfi/cuenta-inbursact60"
         ]
@@ -969,14 +969,14 @@
       "yield": {
         "score": "medium",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-07-22",
+        "verified_on": "2026-08-17",
         "sources": [
           "https://www.inbursa.com/sites/gfi/cuenta-inbursact60"
         ]
       }
     },
     "conflicts": [],
-    "notes": "Pays 100% of Cetes 28d rate from $1"
+    "notes": "CORRECCIÓN 2026-08-17: la liquidez estaba registrada como 'instant'. CT 60 exige PROGRAMAR LOS RETIROS CON 61 DÍAS DE ANTICIPACIÓN y los abona a una cuenta CT Max — no es una cuenta a la vista. Recomendarla como dinero disponible sería un error serio para alguien que necesita un fondo de emergencia. El '$1.00' que traía como saldo mínimo es en realidad el monto desde el que aplica la tasa, no un depósito inicial; el depósito inicial no se publica. Pago de rendimientos al final del mes, sin comisiones. LA TASA ESTÁ INDEXADA, NO ES FIJA: Inbursa paga el 100% del promedio ponderado de CETES a 28 días vigente durante el mes, variable antes de impuestos. El esquema no tiene una estructura 'indexed' ni campos para el índice y su multiplicador, así que yield_structure queda 'flat' con flat_rate_pct UNKNOWN — que es honesto pero pierde el dato: sabemos exactamente cómo se calcula la tasa y no podemos guardarlo. Ver la propuesta de rate_index."
   },
   {
     "account_id": "fondeadora__boveda_fondeadora_apartado_30_dias",
