@@ -74,5 +74,23 @@
       }
     },
     "notes": "GAT nominal 7.04%, GAT real 3.14%, calculadas el 25 de junio de 2026."
+  },
+  {
+    "term_id": "kubo_financiero__kubo_plazo_fijo__t365",
+    "account_id": "kubo_financiero__kubo_plazo_fijo",
+    "term_days": 365,
+    "rate_pct": 11.99,
+    "rate_type": "GAT_nominal",
+    "confidence": {
+      "yield": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.kubofinanciero.com/inversiones/kubo-ahorro"
+        ]
+      }
+    },
+    "notes": "GAT nominal 11.99%, GAT real 7.91%, sobre un monto de $50 a 365 días. Calculado el 18 de marzo de 2026, vigente al 18 de septiembre de 2026. Los tramos de 7, 28, 90 y 180 días existen pero el emisor no los publica en HTML legible."
   }
 ]

@@ -634,7 +634,7 @@
   },
   {
     "issuer_id": "jp_sofiexpress",
-    "legal_name": "UNKNOWN",
+    "legal_name": "J.P. Sofiexpress, S.A. de C.V., Sociedad Financiera Popular",
     "display_name": "JP Sofiexpress",
     "regulated_entity_type": "sofipo",
     "insurance_scheme": "PROSOFIPO",
@@ -653,18 +653,20 @@
       "identity": {
         "score": "high",
         "evidence_type": "regulator",
-        "verified_on": "2026-08-05",
+        "verified_on": "2026-08-17",
         "sources": [
-          "https://webapps.condusef.gob.mx/SIPRES/jsp/pub/index.jsp"
+          "https://sidof.segob.gob.mx/notas/docFuente/5641636",
+          "https://www.fondodeproteccion.mx/docs/PUBLICACIONES_OFICIALES/APORTA_SOFIPO/Acumulado%20SOFIPOS%20(2020-2024).pdf",
+          "https://www.cnbv.gob.mx/PrevencionDeLavadoDeDinero/Documents/TABLERO-DE-CONTROL-SOFIPOS_12052023.pdf"
         ]
       }
     },
-    "notes": "CONFLICT RESOLVED — SIPRES names JP Sofiexpress. The market dataset was right; the census 'Regigold SOFOM' was wrong.",
+    "notes": "CONFLICT RESOLVED — SIPRES names JP Sofiexpress. The market dataset was right; the census 'Regigold SOFOM' was wrong. VERIFICADO CONTRA REGULADOR 2026-08-17: aparece en la lista oficial de Sociedades Financieras Populares participantes del Fondo de Protección publicada en el DOF, y en el tablero de control de sofipos de la CNBV. Eso confirma a la vez el tipo de entidad (S.F.P.) y la participación en PROSOFIPO, de la que se deriva la cobertura de 25,000 UDIS. Razón social tomada literal del DOF.",
     "offers_deposit_products": true
   },
   {
     "issuer_id": "klar",
-    "legal_name": "UNKNOWN",
+    "legal_name": "Klar Technologies, S.A. de C.V., Sociedad Financiera Popular",
     "display_name": "Klar",
     "regulated_entity_type": "sofipo",
     "insurance_scheme": "PROSOFIPO",
@@ -683,14 +685,19 @@
       "identity": {
         "score": "high",
         "evidence_type": "regulator",
-        "verified_on": "2026-08-05",
+        "verified_on": "2026-08-17",
         "sources": [
-          "https://webapps.condusef.gob.mx/SIPRES/jsp/pub/index.jsp"
+          "https://sidof.segob.gob.mx/notas/docFuente/5641636",
+          "https://www.fondodeproteccion.mx/docs/PUBLICACIONES_OFICIALES/APORTA_SOFIPO/Acumulado%20SOFIPOS%20(2020-2024).pdf",
+          "https://www.cnbv.gob.mx/PrevencionDeLavadoDeDinero/Documents/TABLERO-DE-CONTROL-SOFIPOS_12052023.pdf"
         ]
       }
     },
-    "notes": "",
-    "offers_deposit_products": true
+    "notes": " VERIFICADO CONTRA REGULADOR 2026-08-17: aparece en la lista oficial de Sociedades Financieras Populares participantes del Fondo de Protección publicada en el DOF, y en el tablero de control de sofipos de la CNBV. Eso confirma a la vez el tipo de entidad (S.F.P.) y la participación en PROSOFIPO, de la que se deriva la cobertura de 25,000 UDIS. Razón social tomada literal del DOF.",
+    "offers_deposit_products": true,
+    "former_names": [
+      "Sefia"
+    ]
   },
   {
     "issuer_id": "liverpool",
@@ -1106,7 +1113,7 @@
   },
   {
     "issuer_id": "kubo_financiero",
-    "legal_name": "Kubo Financiero, S.A.P.I. de C.V., S.F.P.",
+    "legal_name": "Ku-Bo Financiero, S.A. de C.V., Sociedad Financiera Popular",
     "display_name": "kubo.financiero",
     "regulated_entity_type": "sofipo",
     "insurance_scheme": "PROSOFIPO",
@@ -1125,21 +1132,22 @@
     "former_names": [],
     "confidence": {
       "identity": {
-        "score": "medium",
-        "evidence_type": "comparator_secondary",
+        "score": "high",
+        "evidence_type": "regulator",
         "verified_on": "2026-08-17",
         "sources": [
-          "https://deceroalinfinito.com/mejores-sofipos",
-          "https://laverdadnoticias.com/dinero-inteligente/finanzas-personales/condusef-mejores-peores-sofipos"
+          "https://sidof.segob.gob.mx/notas/docFuente/5641636",
+          "https://www.fondodeproteccion.mx/docs/PUBLICACIONES_OFICIALES/APORTA_SOFIPO/Acumulado%20SOFIPOS%20(2020-2024).pdf",
+          "https://www.cnbv.gob.mx/PrevencionDeLavadoDeDinero/Documents/TABLERO-DE-CONTROL-SOFIPOS_12052023.pdf"
         ]
       }
     },
     "pending_entity_type": "",
-    "notes": "Sofipo 100% digital, de las más citadas del mercado. Aviso relevante: usuarios reportaron retiros bloqueados en mayo y junio de 2026 (incidente resuelto). Su propio blog publica dos tasas distintas de plazo fijo — 10.12% en mayo y 12.00% en junio — así que ninguna se registra sin la página de producto. Cobertura PROSOFIPO 25,000 UDIS, derivada del tipo de entidad."
+    "notes": "Sofipo 100% digital, de las más citadas del mercado. Aviso relevante: usuarios reportaron retiros bloqueados en mayo y junio de 2026 (incidente resuelto). Su propio blog publica dos tasas distintas de plazo fijo — 10.12% en mayo y 12.00% en junio — así que ninguna se registra sin la página de producto. Cobertura PROSOFIPO 25,000 UDIS, derivada del tipo de entidad. VERIFICADO CONTRA REGULADOR 2026-08-17: aparece en la lista oficial de Sociedades Financieras Populares participantes del Fondo de Protección publicada en el DOF, y en el tablero de control de sofipos de la CNBV. Eso confirma a la vez el tipo de entidad (S.F.P.) y la participación en PROSOFIPO, de la que se deriva la cobertura de 25,000 UDIS. Razón social tomada literal del DOF."
   },
   {
     "issuer_id": "libertad_servicios_financieros",
-    "legal_name": "Libertad Servicios Financieros, S.A. de C.V., S.F.P.",
+    "legal_name": "Libertad Servicios Financieros, S.A. de C.V., Sociedad Financiera Popular",
     "display_name": "Libertad Servicios Financieros",
     "regulated_entity_type": "sofipo",
     "insurance_scheme": "PROSOFIPO",
@@ -1158,21 +1166,22 @@
     "former_names": [],
     "confidence": {
       "identity": {
-        "score": "medium",
-        "evidence_type": "comparator_secondary",
+        "score": "high",
+        "evidence_type": "regulator",
         "verified_on": "2026-08-17",
         "sources": [
-          "https://deceroalinfinito.com/mejores-sofipos",
-          "https://laverdadnoticias.com/dinero-inteligente/finanzas-personales/condusef-mejores-peores-sofipos"
+          "https://sidof.segob.gob.mx/notas/docFuente/5641636",
+          "https://www.fondodeproteccion.mx/docs/PUBLICACIONES_OFICIALES/APORTA_SOFIPO/Acumulado%20SOFIPOS%20(2020-2024).pdf",
+          "https://www.cnbv.gob.mx/PrevencionDeLavadoDeDinero/Documents/TABLERO-DE-CONTROL-SOFIPOS_12052023.pdf"
         ]
       }
     },
     "pending_entity_type": "",
-    "notes": "Una de las sofipos más grandes por sucursales. IDATU de CONDUSEF 7.66 en el 3T de 2025, de los más bajos del sector. Cobertura PROSOFIPO 25,000 UDIS, derivada del tipo de entidad."
+    "notes": "Una de las sofipos más grandes por sucursales. IDATU de CONDUSEF 7.66 en el 3T de 2025, de los más bajos del sector. Cobertura PROSOFIPO 25,000 UDIS, derivada del tipo de entidad. VERIFICADO CONTRA REGULADOR 2026-08-17: aparece en la lista oficial de Sociedades Financieras Populares participantes del Fondo de Protección publicada en el DOF, y en el tablero de control de sofipos de la CNBV. Eso confirma a la vez el tipo de entidad (S.F.P.) y la participación en PROSOFIPO, de la que se deriva la cobertura de 25,000 UDIS. Razón social tomada literal del DOF."
   },
   {
     "issuer_id": "fincomun",
-    "legal_name": "Fincomún Servicios Financieros Comunitarios, S.A. de C.V., S.F.P.",
+    "legal_name": "Fincomún, Servicios Financieros Comunitarios, S.A. de C.V., Sociedad Financiera Popular",
     "display_name": "Fincomún",
     "regulated_entity_type": "sofipo",
     "insurance_scheme": "PROSOFIPO",
@@ -1191,21 +1200,22 @@
     "former_names": [],
     "confidence": {
       "identity": {
-        "score": "medium",
-        "evidence_type": "comparator_secondary",
+        "score": "high",
+        "evidence_type": "regulator",
         "verified_on": "2026-08-17",
         "sources": [
-          "https://deceroalinfinito.com/mejores-sofipos",
-          "https://laverdadnoticias.com/dinero-inteligente/finanzas-personales/condusef-mejores-peores-sofipos"
+          "https://sidof.segob.gob.mx/notas/docFuente/5641636",
+          "https://www.fondodeproteccion.mx/docs/PUBLICACIONES_OFICIALES/APORTA_SOFIPO/Acumulado%20SOFIPOS%20(2020-2024).pdf",
+          "https://www.cnbv.gob.mx/PrevencionDeLavadoDeDinero/Documents/TABLERO-DE-CONTROL-SOFIPOS_12052023.pdf"
         ]
       }
     },
     "pending_entity_type": "",
-    "notes": "Sofipo con enfoque en microempresarios. IDATU superior a 9.3 en el 3T de 2025. Cobertura PROSOFIPO 25,000 UDIS, derivada del tipo de entidad."
+    "notes": "Sofipo con enfoque en microempresarios. IDATU superior a 9.3 en el 3T de 2025. Cobertura PROSOFIPO 25,000 UDIS, derivada del tipo de entidad. VERIFICADO CONTRA REGULADOR 2026-08-17: aparece en la lista oficial de Sociedades Financieras Populares participantes del Fondo de Protección publicada en el DOF, y en el tablero de control de sofipos de la CNBV. Eso confirma a la vez el tipo de entidad (S.F.P.) y la participación en PROSOFIPO, de la que se deriva la cobertura de 25,000 UDIS. Razón social tomada literal del DOF."
   },
   {
     "issuer_id": "te_creemos",
-    "legal_name": "Te Creemos, S.A. de C.V., S.F.P.",
+    "legal_name": "Te Creemos, S.A. de C.V., Sociedad Financiera Popular",
     "display_name": "Te Creemos",
     "regulated_entity_type": "sofipo",
     "insurance_scheme": "PROSOFIPO",
@@ -1224,21 +1234,22 @@
     "former_names": [],
     "confidence": {
       "identity": {
-        "score": "medium",
-        "evidence_type": "comparator_secondary",
+        "score": "high",
+        "evidence_type": "regulator",
         "verified_on": "2026-08-17",
         "sources": [
-          "https://deceroalinfinito.com/mejores-sofipos",
-          "https://laverdadnoticias.com/dinero-inteligente/finanzas-personales/condusef-mejores-peores-sofipos"
+          "https://sidof.segob.gob.mx/notas/docFuente/5641636",
+          "https://www.fondodeproteccion.mx/docs/PUBLICACIONES_OFICIALES/APORTA_SOFIPO/Acumulado%20SOFIPOS%20(2020-2024).pdf",
+          "https://www.cnbv.gob.mx/PrevencionDeLavadoDeDinero/Documents/TABLERO-DE-CONTROL-SOFIPOS_12052023.pdf"
         ]
       }
     },
     "pending_entity_type": "",
-    "notes": "Sofipo con presencia nacional. Cobertura PROSOFIPO 25,000 UDIS, derivada del tipo de entidad."
+    "notes": "Sofipo con presencia nacional. Cobertura PROSOFIPO 25,000 UDIS, derivada del tipo de entidad. VERIFICADO CONTRA REGULADOR 2026-08-17: aparece en la lista oficial de Sociedades Financieras Populares participantes del Fondo de Protección publicada en el DOF, y en el tablero de control de sofipos de la CNBV. Eso confirma a la vez el tipo de entidad (S.F.P.) y la participación en PROSOFIPO, de la que se deriva la cobertura de 25,000 UDIS. Razón social tomada literal del DOF."
   },
   {
     "issuer_id": "financiera_sustentable",
-    "legal_name": "Financiera Sustentable de México, S.A. de C.V., S.F.P.",
+    "legal_name": "Financiera Sustentable de México, S.A. de C.V., Sociedad Financiera Popular",
     "display_name": "Financiera Sustentable",
     "regulated_entity_type": "sofipo",
     "insurance_scheme": "PROSOFIPO",
@@ -1257,21 +1268,22 @@
     "former_names": [],
     "confidence": {
       "identity": {
-        "score": "medium",
-        "evidence_type": "comparator_secondary",
+        "score": "high",
+        "evidence_type": "regulator",
         "verified_on": "2026-08-17",
         "sources": [
-          "https://deceroalinfinito.com/mejores-sofipos",
-          "https://laverdadnoticias.com/dinero-inteligente/finanzas-personales/condusef-mejores-peores-sofipos"
+          "https://sidof.segob.gob.mx/notas/docFuente/5641636",
+          "https://www.fondodeproteccion.mx/docs/PUBLICACIONES_OFICIALES/APORTA_SOFIPO/Acumulado%20SOFIPOS%20(2020-2024).pdf",
+          "https://www.cnbv.gob.mx/PrevencionDeLavadoDeDinero/Documents/TABLERO-DE-CONTROL-SOFIPOS_12052023.pdf"
         ]
       }
     },
     "pending_entity_type": "",
-    "notes": "Inversiones desde $100 con rendimientos mensuales y plazo fijo. Cobertura PROSOFIPO 25,000 UDIS, derivada del tipo de entidad."
+    "notes": "Inversiones desde $100 con rendimientos mensuales y plazo fijo. Cobertura PROSOFIPO 25,000 UDIS, derivada del tipo de entidad. VERIFICADO CONTRA REGULADOR 2026-08-17: aparece en la lista oficial de Sociedades Financieras Populares participantes del Fondo de Protección publicada en el DOF, y en el tablero de control de sofipos de la CNBV. Eso confirma a la vez el tipo de entidad (S.F.P.) y la participación en PROSOFIPO, de la que se deriva la cobertura de 25,000 UDIS. Razón social tomada literal del DOF."
   },
   {
     "issuer_id": "monte_de_piedad",
-    "legal_name": "Financiera Monte de Piedad, S.A. de C.V., S.F.P.",
+    "legal_name": "Financiera Monte de Piedad, S.A. de C.V., Sociedad Financiera Popular",
     "display_name": "Financiera Monte de Piedad",
     "regulated_entity_type": "sofipo",
     "insurance_scheme": "PROSOFIPO",
@@ -1287,19 +1299,22 @@
     "enumerated_on": "2026-08-17",
     "approved_on": "",
     "legacy_id": "",
-    "former_names": [],
+    "former_names": [
+      "Sociedad de Ahorro y Crédito La Paz"
+    ],
     "confidence": {
       "identity": {
-        "score": "medium",
-        "evidence_type": "comparator_secondary",
+        "score": "high",
+        "evidence_type": "regulator",
         "verified_on": "2026-08-17",
         "sources": [
-          "https://deceroalinfinito.com/mejores-sofipos",
-          "https://laverdadnoticias.com/dinero-inteligente/finanzas-personales/condusef-mejores-peores-sofipos"
+          "https://sidof.segob.gob.mx/notas/docFuente/5641636",
+          "https://www.fondodeproteccion.mx/docs/PUBLICACIONES_OFICIALES/APORTA_SOFIPO/Acumulado%20SOFIPOS%20(2020-2024).pdf",
+          "https://www.cnbv.gob.mx/PrevencionDeLavadoDeDinero/Documents/TABLERO-DE-CONTROL-SOFIPOS_12052023.pdf"
         ]
       }
     },
     "pending_entity_type": "",
-    "notes": "De las mejor evaluadas por CONDUSEF: IDATU cercano a 9.8 en el 3T de 2025. Cobertura PROSOFIPO 25,000 UDIS, derivada del tipo de entidad."
+    "notes": "De las mejor evaluadas por CONDUSEF: IDATU cercano a 9.8 en el 3T de 2025. Cobertura PROSOFIPO 25,000 UDIS, derivada del tipo de entidad. VERIFICADO CONTRA REGULADOR 2026-08-17: aparece en la lista oficial de Sociedades Financieras Populares participantes del Fondo de Protección publicada en el DOF, y en el tablero de control de sofipos de la CNBV. Eso confirma a la vez el tipo de entidad (S.F.P.) y la participación en PROSOFIPO, de la que se deriva la cobertura de 25,000 UDIS. Razón social tomada literal del DOF."
   }
 ]

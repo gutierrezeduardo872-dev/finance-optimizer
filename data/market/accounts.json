@@ -1299,5 +1299,59 @@
     },
     "conflicts": [],
     "notes": "Escalera de plazos de 7, 28, 90 y 180 días — una sola fila con hijos en TermTiers, según la regla de escaleras de scope.md, no cuatro productos. Monto mínimo $50, frente a $0.01 de las Cajitas normales. El dinero queda inmovilizado durante el plazo. Curiosidad de precio: a 7 días paga 6.55%, POR DEBAJO del 6.50%... apenas 0.05 puntos más que la Cajita 24/7, que es totalmente líquida. El plazo corto casi no se paga. Tasas calculadas el 25 de junio de 2026 con vigencia del 9 de julio al 19 de AGOSTO de 2026 — es decir, caducan en dos días. Nu revisa estas tasas cada seis semanas aproximadamente; conviene reverificar de inmediato. NOTA DE PROTECCIÓN: el folleto informativo de Nu, calculado el 25 de junio de 2026, todavía dice 'S.F.P.' y 'Fondo de Protección hasta por 25,000 UDIs'. La ficha del emisor registra la conversión a banca múltiple el 6 de agosto de 2026, posterior a ese folleto, así que se conserva IPAB 400,000 UDIS. Pero el material vigente de Nu sigue diciendo 25,000 UDIs: si un usuario compara la app con lo que dice Nu, verá cifras distintas. Reverificar la cobertura una vez que Nu actualice sus folletos."
+  },
+  {
+    "account_id": "kubo_financiero__kubo_plazo_fijo",
+    "issuer_id": "kubo_financiero",
+    "display_name": "kubo.plazo fijo",
+    "former_names": [],
+    "legacy_id": "NOT_APPLICABLE",
+    "account_type": "investment_term",
+    "lifecycle_status": "active",
+    "mapping_status": "mapped",
+    "yield_structure": "term_tiered",
+    "flat_rate_pct": "NOT_APPLICABLE",
+    "promotional_rate_pct": "NOT_APPLICABLE",
+    "promotional_rate_end_date": "NOT_APPLICABLE",
+    "rate_type": "GAT_nominal",
+    "max_balance_earning_stated_rate_mxn": "UNCAPPED",
+    "monthly_fee_mxn": 0,
+    "fee_waiver_condition": "NOT_APPLICABLE",
+    "min_balance_mxn": 50,
+    "min_opening_deposit_mxn": 50,
+    "liquidity": "term_locked",
+    "term_days": "NOT_APPLICABLE",
+    "isr_withholding_note": "Before ISR",
+    "insurance_scheme": "PROSOFIPO",
+    "insurance_coverage_udis": 25000,
+    "regulated_entity_type": "sofipo",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.kubofinanciero.com/inversiones/kubo-ahorro"
+        ]
+      },
+      "cost": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.kubofinanciero.com/inversiones/kubo-ahorro"
+        ]
+      },
+      "yield": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.kubofinanciero.com/inversiones/kubo-ahorro"
+        ]
+      }
+    },
+    "conflicts": [],
+    "notes": "Inversión a plazo fijo desde $50, plazos desde 7 días. El emisor sólo publica un punto de la escalera en HTML legible: GAT nominal 11.99% y GAT real 7.91% sobre $50 a 365 días, calculado el 18 de marzo de 2026 y vigente al 18 de septiembre de 2026. La tabla completa por monto y plazo vive en su página de Ley de Transparencia, que se renderiza por JavaScript y no entrega valores. SE REGISTRA GAT NOMINAL, NO TASA: es la única cifra publicada, y rate_type lo dice. La tasa nominal subyacente es algo menor y no se conoce. El propio blog de kubo publica 'hasta 10.12%' en mayo y '12.00%' en junio, y su página de inversiones anuncia 'hasta 14.60%' — esta última casi seguro incluye kubo.crowdfunding, que es préstamo entre pares, NO un depósito y NO está cubierto por PROSOFIPO; queda fuera de alcance por scope.md. Ninguna de esas tres cifras se registra. Aviso de solidez: usuarios reportaron retiros bloqueados en mayo y junio de 2026, incidente resuelto."
   }
 ]
