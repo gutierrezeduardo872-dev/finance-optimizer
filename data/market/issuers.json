@@ -814,7 +814,7 @@
         ]
       }
     },
-    "notes": "Converted from SOFIPO to institución de banca múltiple on 2026-08-06. CNBV authorised operations 2026-07-10. Deposit protection moved from PROSOFIPO 25,000 UDIS to IPAB 400,000 UDIS. legal_name still to be confirmed against the CNBV Padrón under the new licence.",
+    "notes": "Converted from SOFIPO to institución de banca múltiple on 2026-08-06. CNBV authorised operations 2026-07-10. Deposit protection moved from PROSOFIPO 25,000 UDIS to IPAB 400,000 UDIS. legal_name still to be confirmed against the CNBV Padrón under the new licence. CONFIRMADO 2026-08-17 (Eduardo): Nu opera como institución de banca múltiple y la cobertura es IPAB 400,000 UDIS. El folleto del emisor que aún dice 'S.F.P.' y '25,000 UDIs' se calculó el 25 de junio de 2026, antes de la conversión del 6 de agosto, y está desactualizado. No revertir con base en ese documento.",
     "pending_entity_type": "",
     "conversion_effective_date": "",
     "offers_deposit_products": true
@@ -1120,14 +1120,14 @@
     "insurance_coverage_udis": 25000,
     "cnbv_registered": true,
     "status": "active",
-    "in_dataset": false,
-    "exclusion_reason": "Alta de censo 2026-08-17, pendiente de aprobación Stage 1. Sin verificar contra el Padrón de la CNBV porque el portal bloquea el acceso automatizado. El tipo de entidad se toma de la denominación social (S.F.P.) y el esquema de seguro se deriva de ahí, nunca se investiga por separado. Sus productos no se publican hasta que in_dataset pase a true.",
+    "in_dataset": true,
+    "exclusion_reason": "",
     "source_urls": [
       "https://deceroalinfinito.com/mejores-sofipos",
       "https://laverdadnoticias.com/dinero-inteligente/finanzas-personales/condusef-mejores-peores-sofipos"
     ],
     "enumerated_on": "2026-08-17",
-    "approved_on": "",
+    "approved_on": "2026-08-17",
     "legacy_id": "",
     "former_names": [],
     "confidence": {
@@ -1143,7 +1143,7 @@
       }
     },
     "pending_entity_type": "",
-    "notes": "Sofipo 100% digital, de las más citadas del mercado. Aviso relevante: usuarios reportaron retiros bloqueados en mayo y junio de 2026 (incidente resuelto). Su propio blog publica dos tasas distintas de plazo fijo — 10.12% en mayo y 12.00% en junio — así que ninguna se registra sin la página de producto. Cobertura PROSOFIPO 25,000 UDIS, derivada del tipo de entidad. VERIFICADO CONTRA REGULADOR 2026-08-17: aparece en la lista oficial de Sociedades Financieras Populares participantes del Fondo de Protección publicada en el DOF, y en el tablero de control de sofipos de la CNBV. Eso confirma a la vez el tipo de entidad (S.F.P.) y la participación en PROSOFIPO, de la que se deriva la cobertura de 25,000 UDIS. Razón social tomada literal del DOF."
+    "notes": "Sofipo 100% digital, de las más citadas del mercado. Aviso relevante: usuarios reportaron retiros bloqueados en mayo y junio de 2026 (incidente resuelto). Su propio blog publica dos tasas distintas de plazo fijo — 10.12% en mayo y 12.00% en junio — así que ninguna se registra sin la página de producto. Cobertura PROSOFIPO 25,000 UDIS, derivada del tipo de entidad. VERIFICADO CONTRA REGULADOR 2026-08-17: aparece en la lista oficial de Sociedades Financieras Populares participantes del Fondo de Protección publicada en el DOF, y en el tablero de control de sofipos de la CNBV. Eso confirma a la vez el tipo de entidad (S.F.P.) y la participación en PROSOFIPO, de la que se deriva la cobertura de 25,000 UDIS. Razón social tomada literal del DOF. APROBADO 2026-08-17 (Eduardo): in_dataset=true, sus productos se publican. Identidad y participación en PROSOFIPO verificadas contra el DOF y el tablero de la CNBV antes de aprobar."
   },
   {
     "issuer_id": "libertad_servicios_financieros",
@@ -1155,7 +1155,7 @@
     "cnbv_registered": true,
     "status": "active",
     "in_dataset": false,
-    "exclusion_reason": "Alta de censo 2026-08-17, pendiente de aprobación Stage 1. Sin verificar contra el Padrón de la CNBV porque el portal bloquea el acceso automatizado. El tipo de entidad se toma de la denominación social (S.F.P.) y el esquema de seguro se deriva de ahí, nunca se investiga por separado. Sus productos no se publican hasta que in_dataset pase a true.",
+    "exclusion_reason": "Alta de censo 2026-08-17. Identidad y tipo de entidad VERIFICADOS contra el DOF y el tablero de sofipos de la CNBV, pero todavía sin productos mapeados: sus tasas no se publican en HTML legible y no se registró ninguna. Se mantiene in_dataset=false porque aprobar un emisor sin productos no cambia nada y lo haría parecer revisado. Aprobar al mapear su primera cuenta.",
     "source_urls": [
       "https://deceroalinfinito.com/mejores-sofipos",
       "https://laverdadnoticias.com/dinero-inteligente/finanzas-personales/condusef-mejores-peores-sofipos"
@@ -1189,7 +1189,7 @@
     "cnbv_registered": true,
     "status": "active",
     "in_dataset": false,
-    "exclusion_reason": "Alta de censo 2026-08-17, pendiente de aprobación Stage 1. Sin verificar contra el Padrón de la CNBV porque el portal bloquea el acceso automatizado. El tipo de entidad se toma de la denominación social (S.F.P.) y el esquema de seguro se deriva de ahí, nunca se investiga por separado. Sus productos no se publican hasta que in_dataset pase a true.",
+    "exclusion_reason": "Alta de censo 2026-08-17. Identidad y tipo de entidad VERIFICADOS contra el DOF y el tablero de sofipos de la CNBV, pero todavía sin productos mapeados: sus tasas no se publican en HTML legible y no se registró ninguna. Se mantiene in_dataset=false porque aprobar un emisor sin productos no cambia nada y lo haría parecer revisado. Aprobar al mapear su primera cuenta.",
     "source_urls": [
       "https://deceroalinfinito.com/mejores-sofipos",
       "https://laverdadnoticias.com/dinero-inteligente/finanzas-personales/condusef-mejores-peores-sofipos"
@@ -1223,7 +1223,7 @@
     "cnbv_registered": true,
     "status": "active",
     "in_dataset": false,
-    "exclusion_reason": "Alta de censo 2026-08-17, pendiente de aprobación Stage 1. Sin verificar contra el Padrón de la CNBV porque el portal bloquea el acceso automatizado. El tipo de entidad se toma de la denominación social (S.F.P.) y el esquema de seguro se deriva de ahí, nunca se investiga por separado. Sus productos no se publican hasta que in_dataset pase a true.",
+    "exclusion_reason": "Alta de censo 2026-08-17. Identidad y tipo de entidad VERIFICADOS contra el DOF y el tablero de sofipos de la CNBV, pero todavía sin productos mapeados: sus tasas no se publican en HTML legible y no se registró ninguna. Se mantiene in_dataset=false porque aprobar un emisor sin productos no cambia nada y lo haría parecer revisado. Aprobar al mapear su primera cuenta.",
     "source_urls": [
       "https://deceroalinfinito.com/mejores-sofipos",
       "https://laverdadnoticias.com/dinero-inteligente/finanzas-personales/condusef-mejores-peores-sofipos"
@@ -1257,7 +1257,7 @@
     "cnbv_registered": true,
     "status": "active",
     "in_dataset": false,
-    "exclusion_reason": "Alta de censo 2026-08-17, pendiente de aprobación Stage 1. Sin verificar contra el Padrón de la CNBV porque el portal bloquea el acceso automatizado. El tipo de entidad se toma de la denominación social (S.F.P.) y el esquema de seguro se deriva de ahí, nunca se investiga por separado. Sus productos no se publican hasta que in_dataset pase a true.",
+    "exclusion_reason": "Alta de censo 2026-08-17. Identidad y tipo de entidad VERIFICADOS contra el DOF y el tablero de sofipos de la CNBV, pero todavía sin productos mapeados: sus tasas no se publican en HTML legible y no se registró ninguna. Se mantiene in_dataset=false porque aprobar un emisor sin productos no cambia nada y lo haría parecer revisado. Aprobar al mapear su primera cuenta.",
     "source_urls": [
       "https://deceroalinfinito.com/mejores-sofipos",
       "https://laverdadnoticias.com/dinero-inteligente/finanzas-personales/condusef-mejores-peores-sofipos"
@@ -1291,7 +1291,7 @@
     "cnbv_registered": true,
     "status": "active",
     "in_dataset": false,
-    "exclusion_reason": "Alta de censo 2026-08-17, pendiente de aprobación Stage 1. Sin verificar contra el Padrón de la CNBV porque el portal bloquea el acceso automatizado. El tipo de entidad se toma de la denominación social (S.F.P.) y el esquema de seguro se deriva de ahí, nunca se investiga por separado. Sus productos no se publican hasta que in_dataset pase a true.",
+    "exclusion_reason": "Alta de censo 2026-08-17. Identidad y tipo de entidad VERIFICADOS contra el DOF y el tablero de sofipos de la CNBV, pero todavía sin productos mapeados: sus tasas no se publican en HTML legible y no se registró ninguna. Se mantiene in_dataset=false porque aprobar un emisor sin productos no cambia nada y lo haría parecer revisado. Aprobar al mapear su primera cuenta.",
     "source_urls": [
       "https://deceroalinfinito.com/mejores-sofipos",
       "https://laverdadnoticias.com/dinero-inteligente/finanzas-personales/condusef-mejores-peores-sofipos"
