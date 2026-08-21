@@ -629,7 +629,7 @@
         "sources": []
       }
     },
-    "notes": "Migrated from card census. legal_name and source_urls pending confirmation against the CNBV Padrón.",
+    "notes": "Migrated from card census. legal_name and source_urls pending confirmation against the CNBV Padrón. TASAS DE ACUMULACIÓN NO LOCALIZABLES (2026-08-17): INVEX opera SEIS programas de lealtad distintos —Recompensas Select, Recompensas Índigo, Pasaporte Despegar, Hilton Honors, altitude by Volaris y Cashi— y publica la tasa de sólo dos. El folleto de Despegar INVEX Gold da 1 punto por dólar fuera de Despegar, 1.8 en aéreos y 2.6 en no-aéreos; la familia Volaris publica sus puntos por cada $20. El resto —Despegar Platinum, Hilton Honors y Premium, Manchester United, SíCard Platinum y Plus, IKEA— no publica factor de acumulación ni valor del punto en ninguna fuente del emisor. recompensaselect.com.mx existe pero no entrega contenido indexable. Ninguno de esos programas publica tampoco el valor en pesos del punto, así que ni siquiera conociendo el factor se podría calcular effective_rate_pct. Para cerrarlos haría falta acceso a la tienda de canje de cada programa y estimar el valor por redención, que es una metodología distinta a la de este pipeline y debería decidirse antes de intentarla.",
     "offers_deposit_products": true
   },
   {
