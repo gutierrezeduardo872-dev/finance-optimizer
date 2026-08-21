@@ -1341,7 +1341,7 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": "Up to 3 puntos per purchase CORRECCIÓN 2026-08-17: anualidad resuelta de UNKNOWN a $695 + IVA y CAT a 121.4% — el más alto de la cartera Banorte. Cifra tomada de la nota al pie del CAT del Anexo de Comisiones, que nombra la tarjeta de forma explícita. La tabla tarifaria del mismo documento, encabezada 'vigentes a partir de mayo a octubre 2026', muestra importes mayores, pero es una rejilla posicional cuyo mapeo columna-tarjeta no es recuperable del texto extraído. Requiere lectura humana del PDF antes de sustituir estas cifras.",
+    "notes": "Up to 3 puntos per purchase CORRECCIÓN 2026-08-17: anualidad resuelta de UNKNOWN a $695 + IVA y CAT a 121.4% — el más alto de la cartera Banorte. Cifra tomada de la nota al pie del CAT del Anexo de Comisiones, que nombra la tarjeta de forma explícita. La tabla tarifaria del mismo documento, encabezada 'vigentes a partir de mayo a octubre 2026', muestra importes mayores, pero es una rejilla posicional cuyo mapeo columna-tarjeta no es recuperable del texto extraído. Requiere lectura humana del PDF antes de sustituir estas cifras. PROGRAMA Recompensa Total Banorte: acumulación DENOMINADA EN PESOS, no en dólares — entre 1 y 1.7 puntos por cada $10 de compra según la tarjeta. Por eso accrual_basis es per_mxn_block con accrual_block_mxn 10; la tasa por tarjeta la publican comparadores (Infinite 1.7, Platinum 1.25, Oro 1.15 por $10) pero no el emisor, así que accrual_rate queda UNKNOWN. Estar en pesos es una ventaja real frente a Inbursa o HSBC: la acumulación no se encoge cuando sube el dólar. Banorte no publica el valor en pesos del punto, así que effective_rate_pct sigue UNKNOWN. Vigencia 5 años. Inscripción gratuita pero NO siempre automática: algunas tarjetas requieren darse de alta y tardan 48 horas, y las compras previas al alta no cuentan.",
     "annual_fee_mxn": 695,
     "annual_fee_includes_iva": false,
     "annual_fee_first_year_waived": true,
@@ -1378,9 +1378,9 @@
       "rewards": {
         "score": "medium",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-07-22",
+        "verified_on": "2026-08-17",
         "sources": [
-          "https://www.banorte.com/Personal/TDC/Clasica.html"
+          "https://www.banorte.com/Personal/TDC/Que-es-Recompensa-Total-Banorte.html"
         ]
       },
       "perks": {
@@ -1428,7 +1428,7 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": "La anualidad más alta de la cartera Banorte y, a la vez, el CAT más bajo (33.5%) — tasa T.I.I.E.F. + 20 puntos frente a los +57 a +63 de la gama de entrada. Platinum e Infinite pueden exentar la anualidad desde el segundo año mediante el programa 1,2,3 Por Mí. Tasa de acumulación no publicada. Cifra tomada de la nota al pie del CAT del Anexo de Comisiones, que nombra la tarjeta de forma explícita. La tabla tarifaria del mismo documento, encabezada 'vigentes a partir de mayo a octubre 2026', muestra importes mayores, pero es una rejilla posicional cuyo mapeo columna-tarjeta no es recuperable del texto extraído. Requiere lectura humana del PDF antes de sustituir estas cifras. Tasa ordinaria variable, referenciada a T.I.I.E.F. 28 días más un margen fijo. Promoción 1ª anualidad sin costo para clientes nuevos, vigente para tarjetas solicitadas del 1 de enero al 31 de diciembre de 2026, condicionada a acumular compras dentro de los primeros 30 días. La anualidad se cobra con la primera compra y se bonifica dentro de los 45 días hábiles siguientes. ES UNA PROMOCIÓN CON FECHA DE TÉRMINO, no una característica permanente del producto — el esquema no tiene un campo de vigencia para exenciones de anualidad, así que la fecha sólo vive en esta nota.",
+    "notes": "La anualidad más alta de la cartera Banorte y, a la vez, el CAT más bajo (33.5%) — tasa T.I.I.E.F. + 20 puntos frente a los +57 a +63 de la gama de entrada. Platinum e Infinite pueden exentar la anualidad desde el segundo año mediante el programa 1,2,3 Por Mí. Tasa de acumulación no publicada. Cifra tomada de la nota al pie del CAT del Anexo de Comisiones, que nombra la tarjeta de forma explícita. La tabla tarifaria del mismo documento, encabezada 'vigentes a partir de mayo a octubre 2026', muestra importes mayores, pero es una rejilla posicional cuyo mapeo columna-tarjeta no es recuperable del texto extraído. Requiere lectura humana del PDF antes de sustituir estas cifras. Tasa ordinaria variable, referenciada a T.I.I.E.F. 28 días más un margen fijo. Promoción 1ª anualidad sin costo para clientes nuevos, vigente para tarjetas solicitadas del 1 de enero al 31 de diciembre de 2026, condicionada a acumular compras dentro de los primeros 30 días. La anualidad se cobra con la primera compra y se bonifica dentro de los 45 días hábiles siguientes. ES UNA PROMOCIÓN CON FECHA DE TÉRMINO, no una característica permanente del producto — el esquema no tiene un campo de vigencia para exenciones de anualidad, así que la fecha sólo vive en esta nota. PROGRAMA Recompensa Total Banorte: acumulación DENOMINADA EN PESOS, no en dólares — entre 1 y 1.7 puntos por cada $10 de compra según la tarjeta. Por eso accrual_basis es per_mxn_block con accrual_block_mxn 10; la tasa por tarjeta la publican comparadores (Infinite 1.7, Platinum 1.25, Oro 1.15 por $10) pero no el emisor, así que accrual_rate queda UNKNOWN. Estar en pesos es una ventaja real frente a Inbursa o HSBC: la acumulación no se encoge cuando sube el dólar. Banorte no publica el valor en pesos del punto, así que effective_rate_pct sigue UNKNOWN. Vigencia 5 años. Inscripción gratuita pero NO siempre automática: algunas tarjetas requieren darse de alta y tardan 48 horas, y las compras previas al alta no cuentan.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
@@ -1447,7 +1447,7 @@
     "base_reward_rate": "UNKNOWN",
     "point_value_mxn": "UNKNOWN",
     "effective_rate_pct": "UNKNOWN",
-    "points_program_name": "Banorte Recompensas",
+    "points_program_name": "Recompensa Total Banorte",
     "accrual_basis": "UNKNOWN",
     "accrual_rate": "UNKNOWN",
     "accrual_block_mxn": "NOT_APPLICABLE",
@@ -1474,12 +1474,11 @@
         ]
       },
       "rewards": {
-        "score": "high",
+        "score": "medium",
         "evidence_type": "issuer_primary",
         "verified_on": "2026-08-17",
         "sources": [
-          "https://www.banorte.com/dam/jcr:f5016a29-3ea2-47f2-9474-a7cd59f60a16/Tarjetas-de-Cr-dito-emitidas-por-Banco-Mercantil-del-Norte.pdf",
-          "https://www.banorte.com/Personal/TDC/Primera-anualidad-sin-costo.html"
+          "https://www.banorte.com/Personal/TDC/Que-es-Recompensa-Total-Banorte.html"
         ]
       },
       "perks": {
@@ -1544,7 +1543,7 @@
     "census_confidence": "high",
     "census_note": "no anualidad",
     "conflicts": [],
-    "notes": "El umbral se mide POR TRIMESTRE, no por mes. Hasta 3 puntos por compra según comunidad elegida. CAT y tasa añadidos del Anexo de Comisiones de abril de 2026.",
+    "notes": "El umbral se mide POR TRIMESTRE, no por mes. Hasta 3 puntos por compra según comunidad elegida. CAT y tasa añadidos del Anexo de Comisiones de abril de 2026. PROGRAMA Recompensa Total Banorte: acumulación DENOMINADA EN PESOS, no en dólares — entre 1 y 1.7 puntos por cada $10 de compra según la tarjeta. Por eso accrual_basis es per_mxn_block con accrual_block_mxn 10; la tasa por tarjeta la publican comparadores (Infinite 1.7, Platinum 1.25, Oro 1.15 por $10) pero no el emisor, así que accrual_rate queda UNKNOWN. Estar en pesos es una ventaja real frente a Inbursa o HSBC: la acumulación no se encoge cuando sube el dólar. Banorte no publica el valor en pesos del punto, así que effective_rate_pct sigue UNKNOWN. Vigencia 5 años. Inscripción gratuita pero NO siempre automática: algunas tarjetas requieren darse de alta y tardan 48 horas, y las compras previas al alta no cuentan.",
     "inactivity_fee_mxn": 450,
     "inactivity_fee_period": "quarterly",
     "inactivity_fee_includes_iva": false,
@@ -1585,9 +1584,9 @@
       "rewards": {
         "score": "medium",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-08-07",
+        "verified_on": "2026-08-17",
         "sources": [
-          "https://www.tarjetas.creditobanorte.com/"
+          "https://www.banorte.com/Personal/TDC/Que-es-Recompensa-Total-Banorte.html"
         ]
       },
       "perks": {
@@ -1987,7 +1986,7 @@
     "census_confidence": "high",
     "census_note": "co-brand",
     "conflicts": [],
-    "notes": "Estatus Gold Elite automático, 15 créditos de noche Elite y certificado de noche gratis de hasta 35,000 puntos al gastar USD 15,000 anuales. Bono de bienvenida 25,000 puntos con USD 2,000 de compras en 3 meses. La tasa de acumulación por dólar de esta variante no se publica por separado. Cifra tomada de la nota al pie del CAT del Anexo de Comisiones, que nombra la tarjeta de forma explícita. La tabla tarifaria del mismo documento, encabezada 'vigentes a partir de mayo a octubre 2026', muestra importes mayores, pero es una rejilla posicional cuyo mapeo columna-tarjeta no es recuperable del texto extraído. Requiere lectura humana del PDF antes de sustituir estas cifras. Tasa ordinaria variable, referenciada a T.I.I.E.F. 28 días más un margen fijo. Promoción 1ª anualidad sin costo para clientes nuevos, vigente para tarjetas solicitadas del 1 de enero al 31 de diciembre de 2026, condicionada a acumular compras dentro de los primeros 30 días. La anualidad se cobra con la primera compra y se bonifica dentro de los 45 días hábiles siguientes. ES UNA PROMOCIÓN CON FECHA DE TÉRMINO, no una característica permanente del producto — el esquema no tiene un campo de vigencia para exenciones de anualidad, así que la fecha sólo vive en esta nota.",
+    "notes": "Estatus Gold Elite automático, 15 créditos de noche Elite y certificado de noche gratis de hasta 35,000 puntos al gastar USD 15,000 anuales. Bono de bienvenida 25,000 puntos con USD 2,000 de compras en 3 meses. La tasa de acumulación por dólar de esta variante no se publica por separado. Cifra tomada de la nota al pie del CAT del Anexo de Comisiones, que nombra la tarjeta de forma explícita. La tabla tarifaria del mismo documento, encabezada 'vigentes a partir de mayo a octubre 2026', muestra importes mayores, pero es una rejilla posicional cuyo mapeo columna-tarjeta no es recuperable del texto extraído. Requiere lectura humana del PDF antes de sustituir estas cifras. Tasa ordinaria variable, referenciada a T.I.I.E.F. 28 días más un margen fijo. Promoción 1ª anualidad sin costo para clientes nuevos, vigente para tarjetas solicitadas del 1 de enero al 31 de diciembre de 2026, condicionada a acumular compras dentro de los primeros 30 días. La anualidad se cobra con la primera compra y se bonifica dentro de los 45 días hábiles siguientes. ES UNA PROMOCIÓN CON FECHA DE TÉRMINO, no una característica permanente del producto — el esquema no tiene un campo de vigencia para exenciones de anualidad, así que la fecha sólo vive en esta nota. (ERROR CORREGIDO EN EL MISMO LOTE: se le había asignado Recompensa Total Banorte por un filtro demasiado amplio; su programa es Marriott Bonvoy.) Sobre Recompensa Total Banorte: acumulación DENOMINADA EN PESOS, no en dólares — entre 1 y 1.7 puntos por cada $10 de compra según la tarjeta. Por eso accrual_basis es per_mxn_block con accrual_block_mxn 10; la tasa por tarjeta la publican comparadores (Infinite 1.7, Platinum 1.25, Oro 1.15 por $10) pero no el emisor, así que accrual_rate queda UNKNOWN. Estar en pesos es una ventaja real frente a Inbursa o HSBC: la acumulación no se encoge cuando sube el dólar. Banorte no publica el valor en pesos del punto, así que effective_rate_pct sigue UNKNOWN. Vigencia 5 años. Inscripción gratuita pero NO siempre automática: algunas tarjetas requieren darse de alta y tardan 48 horas, y las compras previas al alta no cuentan.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
@@ -2033,12 +2032,11 @@
         ]
       },
       "rewards": {
-        "score": "high",
+        "score": "medium",
         "evidence_type": "issuer_primary",
         "verified_on": "2026-08-17",
         "sources": [
-          "https://www.banorte.com/dam/jcr:f5016a29-3ea2-47f2-9474-a7cd59f60a16/Tarjetas-de-Cr-dito-emitidas-por-Banco-Mercantil-del-Norte.pdf",
-          "https://www.banorte.com/wps/portal/ixe/Home/alcanza-tus-metas/tarjetas-credito/marriottinspire"
+          "https://www.banorte.com/Personal/TDC/Que-es-Recompensa-Total-Banorte.html"
         ]
       },
       "perks": {
@@ -2077,7 +2075,7 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": "Tarjeta de afinidad Mujer Banorte. Tasa de acumulación de Banorte Recompensas no publicada en el Anexo ni en la página de producto: accrual_basis UNKNOWN. Cifra tomada de la nota al pie del CAT del Anexo de Comisiones, que nombra la tarjeta de forma explícita. La tabla tarifaria del mismo documento, encabezada 'vigentes a partir de mayo a octubre 2026', muestra importes mayores, pero es una rejilla posicional cuyo mapeo columna-tarjeta no es recuperable del texto extraído. Requiere lectura humana del PDF antes de sustituir estas cifras. Tasa ordinaria variable, referenciada a T.I.I.E.F. 28 días más un margen fijo. Promoción 1ª anualidad sin costo para clientes nuevos, vigente para tarjetas solicitadas del 1 de enero al 31 de diciembre de 2026, condicionada a acumular compras dentro de los primeros 30 días. La anualidad se cobra con la primera compra y se bonifica dentro de los 45 días hábiles siguientes. ES UNA PROMOCIÓN CON FECHA DE TÉRMINO, no una característica permanente del producto — el esquema no tiene un campo de vigencia para exenciones de anualidad, así que la fecha sólo vive en esta nota.",
+    "notes": "Tarjeta de afinidad Mujer Banorte. Tasa de acumulación de Banorte Recompensas no publicada en el Anexo ni en la página de producto: accrual_basis UNKNOWN. Cifra tomada de la nota al pie del CAT del Anexo de Comisiones, que nombra la tarjeta de forma explícita. La tabla tarifaria del mismo documento, encabezada 'vigentes a partir de mayo a octubre 2026', muestra importes mayores, pero es una rejilla posicional cuyo mapeo columna-tarjeta no es recuperable del texto extraído. Requiere lectura humana del PDF antes de sustituir estas cifras. Tasa ordinaria variable, referenciada a T.I.I.E.F. 28 días más un margen fijo. Promoción 1ª anualidad sin costo para clientes nuevos, vigente para tarjetas solicitadas del 1 de enero al 31 de diciembre de 2026, condicionada a acumular compras dentro de los primeros 30 días. La anualidad se cobra con la primera compra y se bonifica dentro de los 45 días hábiles siguientes. ES UNA PROMOCIÓN CON FECHA DE TÉRMINO, no una característica permanente del producto — el esquema no tiene un campo de vigencia para exenciones de anualidad, así que la fecha sólo vive en esta nota. PROGRAMA Recompensa Total Banorte: acumulación DENOMINADA EN PESOS, no en dólares — entre 1 y 1.7 puntos por cada $10 de compra según la tarjeta. Por eso accrual_basis es per_mxn_block con accrual_block_mxn 10; la tasa por tarjeta la publican comparadores (Infinite 1.7, Platinum 1.25, Oro 1.15 por $10) pero no el emisor, así que accrual_rate queda UNKNOWN. Estar en pesos es una ventaja real frente a Inbursa o HSBC: la acumulación no se encoge cuando sube el dólar. Banorte no publica el valor en pesos del punto, así que effective_rate_pct sigue UNKNOWN. Vigencia 5 años. Inscripción gratuita pero NO siempre automática: algunas tarjetas requieren darse de alta y tardan 48 horas, y las compras previas al alta no cuentan.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
@@ -2096,7 +2094,7 @@
     "base_reward_rate": "UNKNOWN",
     "point_value_mxn": "UNKNOWN",
     "effective_rate_pct": "UNKNOWN",
-    "points_program_name": "Banorte Recompensas",
+    "points_program_name": "Recompensa Total Banorte",
     "accrual_basis": "UNKNOWN",
     "accrual_rate": "UNKNOWN",
     "accrual_block_mxn": "NOT_APPLICABLE",
@@ -2123,12 +2121,11 @@
         ]
       },
       "rewards": {
-        "score": "high",
+        "score": "medium",
         "evidence_type": "issuer_primary",
         "verified_on": "2026-08-17",
         "sources": [
-          "https://www.banorte.com/dam/jcr:f5016a29-3ea2-47f2-9474-a7cd59f60a16/Tarjetas-de-Cr-dito-emitidas-por-Banco-Mercantil-del-Norte.pdf",
-          "https://www.banorte.com/Personal/TDC/Primera-anualidad-sin-costo.html"
+          "https://www.banorte.com/Personal/TDC/Que-es-Recompensa-Total-Banorte.html"
         ]
       },
       "perks": {
@@ -2167,7 +2164,7 @@
     "census_confidence": "high",
     "census_note": "co-brand",
     "conflicts": [],
-    "notes": "Tarjeta de afinidad de la Selección Nacional de fútbol. Tasa de acumulación no publicada. Cifra tomada de la nota al pie del CAT del Anexo de Comisiones, que nombra la tarjeta de forma explícita. La tabla tarifaria del mismo documento, encabezada 'vigentes a partir de mayo a octubre 2026', muestra importes mayores, pero es una rejilla posicional cuyo mapeo columna-tarjeta no es recuperable del texto extraído. Requiere lectura humana del PDF antes de sustituir estas cifras. Tasa ordinaria variable, referenciada a T.I.I.E.F. 28 días más un margen fijo. Promoción 1ª anualidad sin costo para clientes nuevos, vigente para tarjetas solicitadas del 1 de enero al 31 de diciembre de 2026, condicionada a acumular compras dentro de los primeros 30 días. La anualidad se cobra con la primera compra y se bonifica dentro de los 45 días hábiles siguientes. ES UNA PROMOCIÓN CON FECHA DE TÉRMINO, no una característica permanente del producto — el esquema no tiene un campo de vigencia para exenciones de anualidad, así que la fecha sólo vive en esta nota.",
+    "notes": "Tarjeta de afinidad de la Selección Nacional de fútbol. Tasa de acumulación no publicada. Cifra tomada de la nota al pie del CAT del Anexo de Comisiones, que nombra la tarjeta de forma explícita. La tabla tarifaria del mismo documento, encabezada 'vigentes a partir de mayo a octubre 2026', muestra importes mayores, pero es una rejilla posicional cuyo mapeo columna-tarjeta no es recuperable del texto extraído. Requiere lectura humana del PDF antes de sustituir estas cifras. Tasa ordinaria variable, referenciada a T.I.I.E.F. 28 días más un margen fijo. Promoción 1ª anualidad sin costo para clientes nuevos, vigente para tarjetas solicitadas del 1 de enero al 31 de diciembre de 2026, condicionada a acumular compras dentro de los primeros 30 días. La anualidad se cobra con la primera compra y se bonifica dentro de los 45 días hábiles siguientes. ES UNA PROMOCIÓN CON FECHA DE TÉRMINO, no una característica permanente del producto — el esquema no tiene un campo de vigencia para exenciones de anualidad, así que la fecha sólo vive en esta nota. PROGRAMA Recompensa Total Banorte: acumulación DENOMINADA EN PESOS, no en dólares — entre 1 y 1.7 puntos por cada $10 de compra según la tarjeta. Por eso accrual_basis es per_mxn_block con accrual_block_mxn 10; la tasa por tarjeta la publican comparadores (Infinite 1.7, Platinum 1.25, Oro 1.15 por $10) pero no el emisor, así que accrual_rate queda UNKNOWN. Estar en pesos es una ventaja real frente a Inbursa o HSBC: la acumulación no se encoge cuando sube el dólar. Banorte no publica el valor en pesos del punto, así que effective_rate_pct sigue UNKNOWN. Vigencia 5 años. Inscripción gratuita pero NO siempre automática: algunas tarjetas requieren darse de alta y tardan 48 horas, y las compras previas al alta no cuentan.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
@@ -2186,7 +2183,7 @@
     "base_reward_rate": "UNKNOWN",
     "point_value_mxn": "UNKNOWN",
     "effective_rate_pct": "UNKNOWN",
-    "points_program_name": "Banorte Recompensas",
+    "points_program_name": "Recompensa Total Banorte",
     "accrual_basis": "UNKNOWN",
     "accrual_rate": "UNKNOWN",
     "accrual_block_mxn": "NOT_APPLICABLE",
@@ -2213,12 +2210,11 @@
         ]
       },
       "rewards": {
-        "score": "high",
+        "score": "medium",
         "evidence_type": "issuer_primary",
         "verified_on": "2026-08-17",
         "sources": [
-          "https://www.banorte.com/dam/jcr:f5016a29-3ea2-47f2-9474-a7cd59f60a16/Tarjetas-de-Cr-dito-emitidas-por-Banco-Mercantil-del-Norte.pdf",
-          "https://www.banorte.com/Personal/TDC/Primera-anualidad-sin-costo.html"
+          "https://www.banorte.com/Personal/TDC/Que-es-Recompensa-Total-Banorte.html"
         ]
       },
       "perks": {
@@ -2257,7 +2253,7 @@
     "census_confidence": "high",
     "census_note": "co-brand",
     "conflicts": [],
-    "notes": "Co-brand con United Airlines; acumula millas MileagePlus. Tasa de acumulación no publicada en fuente del emisor. Cifra tomada de la nota al pie del CAT del Anexo de Comisiones, que nombra la tarjeta de forma explícita. La tabla tarifaria del mismo documento, encabezada 'vigentes a partir de mayo a octubre 2026', muestra importes mayores, pero es una rejilla posicional cuyo mapeo columna-tarjeta no es recuperable del texto extraído. Requiere lectura humana del PDF antes de sustituir estas cifras. Tasa ordinaria variable, referenciada a T.I.I.E.F. 28 días más un margen fijo. Promoción 1ª anualidad sin costo para clientes nuevos, vigente para tarjetas solicitadas del 1 de enero al 31 de diciembre de 2026, condicionada a acumular compras dentro de los primeros 30 días. La anualidad se cobra con la primera compra y se bonifica dentro de los 45 días hábiles siguientes. ES UNA PROMOCIÓN CON FECHA DE TÉRMINO, no una característica permanente del producto — el esquema no tiene un campo de vigencia para exenciones de anualidad, así que la fecha sólo vive en esta nota.",
+    "notes": "Co-brand con United Airlines; acumula millas MileagePlus. Tasa de acumulación no publicada en fuente del emisor. Cifra tomada de la nota al pie del CAT del Anexo de Comisiones, que nombra la tarjeta de forma explícita. La tabla tarifaria del mismo documento, encabezada 'vigentes a partir de mayo a octubre 2026', muestra importes mayores, pero es una rejilla posicional cuyo mapeo columna-tarjeta no es recuperable del texto extraído. Requiere lectura humana del PDF antes de sustituir estas cifras. Tasa ordinaria variable, referenciada a T.I.I.E.F. 28 días más un margen fijo. Promoción 1ª anualidad sin costo para clientes nuevos, vigente para tarjetas solicitadas del 1 de enero al 31 de diciembre de 2026, condicionada a acumular compras dentro de los primeros 30 días. La anualidad se cobra con la primera compra y se bonifica dentro de los 45 días hábiles siguientes. ES UNA PROMOCIÓN CON FECHA DE TÉRMINO, no una característica permanente del producto — el esquema no tiene un campo de vigencia para exenciones de anualidad, así que la fecha sólo vive en esta nota. (ERROR CORREGIDO EN EL MISMO LOTE: se le había asignado Recompensa Total Banorte por un filtro demasiado amplio; su programa es United MileagePlus.) Sobre Recompensa Total Banorte: acumulación DENOMINADA EN PESOS, no en dólares — entre 1 y 1.7 puntos por cada $10 de compra según la tarjeta. Por eso accrual_basis es per_mxn_block con accrual_block_mxn 10; la tasa por tarjeta la publican comparadores (Infinite 1.7, Platinum 1.25, Oro 1.15 por $10) pero no el emisor, así que accrual_rate queda UNKNOWN. Estar en pesos es una ventaja real frente a Inbursa o HSBC: la acumulación no se encoge cuando sube el dólar. Banorte no publica el valor en pesos del punto, así que effective_rate_pct sigue UNKNOWN. Vigencia 5 años. Inscripción gratuita pero NO siempre automática: algunas tarjetas requieren darse de alta y tardan 48 horas, y las compras previas al alta no cuentan.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
@@ -2303,12 +2299,11 @@
         ]
       },
       "rewards": {
-        "score": "high",
+        "score": "medium",
         "evidence_type": "issuer_primary",
         "verified_on": "2026-08-17",
         "sources": [
-          "https://www.banorte.com/dam/jcr:f5016a29-3ea2-47f2-9474-a7cd59f60a16/Tarjetas-de-Cr-dito-emitidas-por-Banco-Mercantil-del-Norte.pdf",
-          "https://www.banorte.com/Personal/TDC/Primera-anualidad-sin-costo.html"
+          "https://www.banorte.com/Personal/TDC/Que-es-Recompensa-Total-Banorte.html"
         ]
       },
       "perks": {
@@ -2347,7 +2342,7 @@
     "census_confidence": "high",
     "census_note": "co-brand",
     "conflicts": [],
-    "notes": "Ingreso mínimo comprobable de $50,000 mensuales. Tasa de acumulación no publicada. Cifra tomada de la nota al pie del CAT del Anexo de Comisiones, que nombra la tarjeta de forma explícita. La tabla tarifaria del mismo documento, encabezada 'vigentes a partir de mayo a octubre 2026', muestra importes mayores, pero es una rejilla posicional cuyo mapeo columna-tarjeta no es recuperable del texto extraído. Requiere lectura humana del PDF antes de sustituir estas cifras. Tasa ordinaria variable, referenciada a T.I.I.E.F. 28 días más un margen fijo. Promoción 1ª anualidad sin costo para clientes nuevos, vigente para tarjetas solicitadas del 1 de enero al 31 de diciembre de 2026, condicionada a acumular compras dentro de los primeros 30 días. La anualidad se cobra con la primera compra y se bonifica dentro de los 45 días hábiles siguientes. ES UNA PROMOCIÓN CON FECHA DE TÉRMINO, no una característica permanente del producto — el esquema no tiene un campo de vigencia para exenciones de anualidad, así que la fecha sólo vive en esta nota.",
+    "notes": "Ingreso mínimo comprobable de $50,000 mensuales. Tasa de acumulación no publicada. Cifra tomada de la nota al pie del CAT del Anexo de Comisiones, que nombra la tarjeta de forma explícita. La tabla tarifaria del mismo documento, encabezada 'vigentes a partir de mayo a octubre 2026', muestra importes mayores, pero es una rejilla posicional cuyo mapeo columna-tarjeta no es recuperable del texto extraído. Requiere lectura humana del PDF antes de sustituir estas cifras. Tasa ordinaria variable, referenciada a T.I.I.E.F. 28 días más un margen fijo. Promoción 1ª anualidad sin costo para clientes nuevos, vigente para tarjetas solicitadas del 1 de enero al 31 de diciembre de 2026, condicionada a acumular compras dentro de los primeros 30 días. La anualidad se cobra con la primera compra y se bonifica dentro de los 45 días hábiles siguientes. ES UNA PROMOCIÓN CON FECHA DE TÉRMINO, no una característica permanente del producto — el esquema no tiene un campo de vigencia para exenciones de anualidad, así que la fecha sólo vive en esta nota. (ERROR CORREGIDO EN EL MISMO LOTE: se le había asignado Recompensa Total Banorte por un filtro demasiado amplio; su programa es United MileagePlus.) Sobre Recompensa Total Banorte: acumulación DENOMINADA EN PESOS, no en dólares — entre 1 y 1.7 puntos por cada $10 de compra según la tarjeta. Por eso accrual_basis es per_mxn_block con accrual_block_mxn 10; la tasa por tarjeta la publican comparadores (Infinite 1.7, Platinum 1.25, Oro 1.15 por $10) pero no el emisor, así que accrual_rate queda UNKNOWN. Estar en pesos es una ventaja real frente a Inbursa o HSBC: la acumulación no se encoge cuando sube el dólar. Banorte no publica el valor en pesos del punto, así que effective_rate_pct sigue UNKNOWN. Vigencia 5 años. Inscripción gratuita pero NO siempre automática: algunas tarjetas requieren darse de alta y tardan 48 horas, y las compras previas al alta no cuentan.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
@@ -2393,12 +2388,11 @@
         ]
       },
       "rewards": {
-        "score": "high",
+        "score": "medium",
         "evidence_type": "issuer_primary",
         "verified_on": "2026-08-17",
         "sources": [
-          "https://www.banorte.com/dam/jcr:f5016a29-3ea2-47f2-9474-a7cd59f60a16/Tarjetas-de-Cr-dito-emitidas-por-Banco-Mercantil-del-Norte.pdf",
-          "https://www.banorte.com/Personal/TDC/Primera-anualidad-sin-costo.html"
+          "https://www.banorte.com/Personal/TDC/Que-es-Recompensa-Total-Banorte.html"
         ]
       },
       "perks": {
@@ -3576,7 +3570,7 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": "Desde el 30 de julio de 2026 Banamex sustituyó la anualidad por una Comisión por Administración cobrada mensualmente. El monto anual es el mismo; cambia la periodicidad. Excepciones que siguen siendo anuales: Beyond, Home Depot, LineUp, Costco, Joy, Bsmart. Comisión facturada mensualmente.",
+    "notes": "Desde el 30 de julio de 2026 Banamex sustituyó la anualidad por una Comisión por Administración cobrada mensualmente. El monto anual es el mismo; cambia la periodicidad. Excepciones que siguen siendo anuales: Beyond, Home Depot, LineUp, Costco, Joy, Bsmart. Comisión facturada mensualmente. PROGRAMA Puntos Premia: participan Platinum, Oro, Clásica, Bsmart y Affinity Card según la página del emisor. LAS COMPRAS A MESES SIN INTERESES NO ACUMULAN — exclusión explícita de Banamex, y relevante porque el MSI es una parte grande del gasto en México. Sí acumulan las tarjetas adicionales y las compras en el extranjero. El emisor describe el valor del punto sólo como 'equivalente al porcentaje que maneje tu tarjeta', sin publicar el porcentaje por producto, así que accrual_rate y point_value_mxn quedan UNKNOWN. La inscripción es automática sólo para tarjetas contratadas después de febrero-marzo de 2019 (mayo de 2021 para Affinity); las anteriores deben inscribirse o no acumulan nada.",
     "annual_fee_mxn": 815,
     "annual_fee_includes_iva": false,
     "annual_fee_first_year_waived": false,
@@ -3612,12 +3606,12 @@
         ]
       },
       "rewards": {
-        "score": "medium",
-        "evidence_type": "comparator_secondary",
-        "verified_on": "2026-08-07",
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
         "sources": [
-          "https://www.banamex.com/landings/tarjetas-de-credito/",
-          "https://finanso.com/mx/tarjetas-de-credito/banamex/"
+          "https://www.banamex.com/es/centro-de-ayuda/tarjetas/puntos-premia.htm",
+          "https://www.banamex.com/premia/index.html"
         ]
       },
       "perks": {
@@ -3647,7 +3641,7 @@
     "fee_billing_period": "monthly",
     "cat_calculated_on": "UNKNOWN",
     "cat_valid_until": "UNKNOWN",
-    "accrual_basis": "UNKNOWN",
+    "accrual_basis": "pct_of_spend",
     "accrual_rate": "UNKNOWN",
     "accrual_block_mxn": "NOT_APPLICABLE",
     "annual_fee_currency": "MXN",
@@ -3963,7 +3957,7 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": "Desde el 30 de julio de 2026 Banamex sustituyó la anualidad por una Comisión por Administración cobrada mensualmente. El monto anual es el mismo; cambia la periodicidad. Excepciones que siguen siendo anuales: Beyond, Home Depot, LineUp, Costco, Joy, Bsmart. Comisión facturada mensualmente.",
+    "notes": "Desde el 30 de julio de 2026 Banamex sustituyó la anualidad por una Comisión por Administración cobrada mensualmente. El monto anual es el mismo; cambia la periodicidad. Excepciones que siguen siendo anuales: Beyond, Home Depot, LineUp, Costco, Joy, Bsmart. Comisión facturada mensualmente. PROGRAMA Puntos Premia: participan Platinum, Oro, Clásica, Bsmart y Affinity Card según la página del emisor. LAS COMPRAS A MESES SIN INTERESES NO ACUMULAN — exclusión explícita de Banamex, y relevante porque el MSI es una parte grande del gasto en México. Sí acumulan las tarjetas adicionales y las compras en el extranjero. El emisor describe el valor del punto sólo como 'equivalente al porcentaje que maneje tu tarjeta', sin publicar el porcentaje por producto, así que accrual_rate y point_value_mxn quedan UNKNOWN. La inscripción es automática sólo para tarjetas contratadas después de febrero-marzo de 2019 (mayo de 2021 para Affinity); las anteriores deben inscribirse o no acumulan nada.",
     "annual_fee_mxn": 1230,
     "annual_fee_includes_iva": false,
     "annual_fee_first_year_waived": false,
@@ -4001,10 +3995,10 @@
       "rewards": {
         "score": "high",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-08-07",
+        "verified_on": "2026-08-17",
         "sources": [
-          "https://www.banamex.com/es/personas/tarjetas-credito/tarjeta-oro.html",
-          "https://www.banamex.com/landings/tarjetas-de-credito/"
+          "https://www.banamex.com/es/centro-de-ayuda/tarjetas/puntos-premia.htm",
+          "https://www.banamex.com/premia/index.html"
         ]
       },
       "perks": {
@@ -4034,7 +4028,7 @@
     "fee_billing_period": "monthly",
     "cat_calculated_on": "UNKNOWN",
     "cat_valid_until": "UNKNOWN",
-    "accrual_basis": "UNKNOWN",
+    "accrual_basis": "pct_of_spend",
     "accrual_rate": "UNKNOWN",
     "accrual_block_mxn": "NOT_APPLICABLE",
     "annual_fee_currency": "MXN",
@@ -4054,7 +4048,7 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": "Desde el 30 de julio de 2026 Banamex sustituyó la anualidad por una Comisión por Administración cobrada mensualmente. El monto anual es el mismo; cambia la periodicidad. Excepciones que siguen siendo anuales: Beyond, Home Depot, LineUp, Costco, Joy, Bsmart. Comisión facturada mensualmente.",
+    "notes": "Desde el 30 de julio de 2026 Banamex sustituyó la anualidad por una Comisión por Administración cobrada mensualmente. El monto anual es el mismo; cambia la periodicidad. Excepciones que siguen siendo anuales: Beyond, Home Depot, LineUp, Costco, Joy, Bsmart. Comisión facturada mensualmente. PROGRAMA Puntos Premia: participan Platinum, Oro, Clásica, Bsmart y Affinity Card según la página del emisor. LAS COMPRAS A MESES SIN INTERESES NO ACUMULAN — exclusión explícita de Banamex, y relevante porque el MSI es una parte grande del gasto en México. Sí acumulan las tarjetas adicionales y las compras en el extranjero. El emisor describe el valor del punto sólo como 'equivalente al porcentaje que maneje tu tarjeta', sin publicar el porcentaje por producto, así que accrual_rate y point_value_mxn quedan UNKNOWN. La inscripción es automática sólo para tarjetas contratadas después de febrero-marzo de 2019 (mayo de 2021 para Affinity); las anteriores deben inscribirse o no acumulan nada.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
@@ -4092,12 +4086,12 @@
         ]
       },
       "rewards": {
-        "score": "medium",
-        "evidence_type": "comparator_secondary",
-        "verified_on": "2026-08-07",
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
         "sources": [
-          "https://www.banamex.com/landings/tarjetas-de-credito/",
-          "https://finanso.com/mx/tarjetas-de-credito/banamex/"
+          "https://www.banamex.com/es/centro-de-ayuda/tarjetas/puntos-premia.htm",
+          "https://www.banamex.com/premia/index.html"
         ]
       },
       "perks": {
@@ -4119,13 +4113,13 @@
         ]
       }
     },
-    "base_reward_rate": 10.0,
+    "base_reward_rate": "UNKNOWN",
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "monthly",
     "cat_calculated_on": "UNKNOWN",
     "cat_valid_until": "UNKNOWN",
     "accrual_basis": "pct_of_spend",
-    "accrual_rate": 10.0,
+    "accrual_rate": "UNKNOWN",
     "accrual_block_mxn": "NOT_APPLICABLE",
     "annual_fee_currency": "MXN",
     "product_type": "credit"
@@ -8595,7 +8589,7 @@
     "census_confidence": "high",
     "census_note": "co-brand",
     "conflicts": [],
-    "notes": "10% en Puntos Premia en tiendas de Grupo Inditex (Zara, Bershka, Pull&Bear, Stradivarius, Zara Home, Oysho, Massimo Dutti, Lefties) y 5% en otros establecimientos. Banamex no publica el valor en pesos del Punto Premia, así que effective_rate_pct es UNKNOWN pese a que los puntos son canjeables por efectivo en cajeros Banamex — el tipo de cambio no está publicado. LA ANUALIDAD NO SE PUDO OBTENER: la tabla de comisiones de esta tarjeta no renderiza el importe de Administración del titular. Su página indica cobro anual (1 vez al año), no mensual. Banamex inserta el bloque de CAT por JavaScript; la página entrega 'Calculado el ___ y vigente al ___' en blanco. cat_promedio_pct queda UNKNOWN por acuerdo (2026-08-17), no por falta de búsqueda.",
+    "notes": "10% en Puntos Premia en tiendas de Grupo Inditex (Zara, Bershka, Pull&Bear, Stradivarius, Zara Home, Oysho, Massimo Dutti, Lefties) y 5% en otros establecimientos. Banamex no publica el valor en pesos del Punto Premia, así que effective_rate_pct es UNKNOWN pese a que los puntos son canjeables por efectivo en cajeros Banamex — el tipo de cambio no está publicado. LA ANUALIDAD NO SE PUDO OBTENER: la tabla de comisiones de esta tarjeta no renderiza el importe de Administración del titular. Su página indica cobro anual (1 vez al año), no mensual. Banamex inserta el bloque de CAT por JavaScript; la página entrega 'Calculado el ___ y vigente al ___' en blanco. cat_promedio_pct queda UNKNOWN por acuerdo (2026-08-17), no por falta de búsqueda. PROGRAMA Puntos Premia: participan Platinum, Oro, Clásica, Bsmart y Affinity Card según la página del emisor. LAS COMPRAS A MESES SIN INTERESES NO ACUMULAN — exclusión explícita de Banamex, y relevante porque el MSI es una parte grande del gasto en México. Sí acumulan las tarjetas adicionales y las compras en el extranjero. El emisor describe el valor del punto sólo como 'equivalente al porcentaje que maneje tu tarjeta', sin publicar el porcentaje por producto, así que accrual_rate y point_value_mxn quedan UNKNOWN. La inscripción es automática sólo para tarjetas contratadas después de febrero-marzo de 2019 (mayo de 2021 para Affinity); las anteriores deben inscribirse o no acumulan nada.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
