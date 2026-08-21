@@ -777,7 +777,7 @@
     "min_opening_deposit_mxn": 1,
     "liquidity": "instant",
     "term_days": "NOT_APPLICABLE",
-    "isr_withholding_note": "GAT Real -2.73%",
+    "isr_withholding_note": "Before ISR",
     "insurance_scheme": "IPAB",
     "insurance_coverage_udis": 400000,
     "regulated_entity_type": "banco",
@@ -791,24 +791,25 @@
         ]
       },
       "cost": {
-        "score": "low",
+        "score": "medium",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-01-14",
+        "verified_on": "2026-08-17",
         "sources": [
-          "https://www.hsbc.com.mx/cuentas/ahorro-flexible-hsbc/"
+          "https://www.hsbc.com.mx/content/dam/hsbc/mx/documents/cuentas/vista/ahorro_flexible/folleto_digital_ahorro_flexible.pdf"
         ]
       },
       "yield": {
-        "score": "low",
+        "score": "high",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-01-14",
+        "verified_on": "2026-08-17",
         "sources": [
-          "https://www.hsbc.com.mx/cuentas/ahorro-flexible-hsbc/"
+          "https://www.hsbc.com.mx/cuentas/ahorro-flexible-hsbc/",
+          "https://www.hsbc.com.mx/content/dam/hsbc/mx/documents/cuentas/vista/ahorro_flexible/folleto_digital_ahorro_flexible.pdf"
         ]
       }
     },
     "conflicts": [],
-    "notes": "Rate varies by amount; ~1% GAT nominal"
+    "notes": "GAT nominal 1.00% y GAT REAL -2.81%: el saldo pierde poder adquisitivo. Monto mínimo $1 para mantener la cuenta abierta, disponible 24/7 desde banca por internet y app, y el saldo no aparece en cajeros. Calculado el 17 de marzo de 2026, vigente al 17 de septiembre de 2026. Se registra GAT nominal porque es la única cifra que HSBC publica para esta cuenta."
   },
   {
     "account_id": "scotiabank_mexico__scotia_inversion_disponible",
@@ -1521,5 +1522,62 @@
     },
     "conflicts": [],
     "notes": "7.25% anual, GAT nominal 7.52% y GAT real 3.73%, del tarifario de INVEX. Primera cuenta de INVEX en el conjunto de datos: el emisor tenía 18 tarjetas mapeadas y ninguna cuenta. Marca digital Now (now.bank) de Banco INVEX, así que la protección es IPAB 400,000 UDIS y no PROSOFIPO — a 7.25% es de las mejores relaciones tasa/protección del conjunto, por encima de varios sofipos que pagan parecido con una vigésima parte de cobertura. Saldo mínimo y tope de saldo con tasa no se publican en el tarifario."
+  },
+  {
+    "account_id": "hsbc_mexico__pagare_hsbc",
+    "issuer_id": "hsbc_mexico",
+    "display_name": "Pagaré HSBC",
+    "former_names": [],
+    "legacy_id": "NOT_APPLICABLE",
+    "account_type": "investment_term",
+    "lifecycle_status": "active",
+    "mapping_status": "mapped",
+    "yield_structure": "term_tiered",
+    "flat_rate_pct": "NOT_APPLICABLE",
+    "promotional_rate_pct": "NOT_APPLICABLE",
+    "promotional_rate_end_date": "NOT_APPLICABLE",
+    "rate_type": "GAT_nominal",
+    "max_balance_earning_stated_rate_mxn": "UNCAPPED",
+    "monthly_fee_mxn": 0,
+    "fee_waiver_condition": "NOT_APPLICABLE",
+    "min_balance_mxn": 1000,
+    "min_opening_deposit_mxn": 1000,
+    "liquidity": "term_locked",
+    "term_days": "NOT_APPLICABLE",
+    "isr_withholding_note": "Before ISR",
+    "insurance_scheme": "IPAB",
+    "insurance_coverage_udis": 400000,
+    "regulated_entity_type": "banco",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.hsbc.com.mx/inversiones/inversion-a-plazo/pagare/",
+          "https://www.hsbc.com.mx/content/dam/hsbc/mx/documents/inversiones/gat_inversion_plazo.pdf"
+        ]
+      },
+      "cost": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.hsbc.com.mx/inversiones/inversion-a-plazo/pagare/",
+          "https://www.hsbc.com.mx/content/dam/hsbc/mx/documents/inversiones/gat_inversion_plazo.pdf"
+        ]
+      },
+      "yield": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.hsbc.com.mx/inversiones/inversion-a-plazo/pagare/",
+          "https://www.hsbc.com.mx/content/dam/hsbc/mx/documents/inversiones/gat_inversion_plazo.pdf"
+        ]
+      }
+    },
+    "conflicts": [],
+    "notes": "Plazos de 1 a 365 días desde $1,000, sin comisiones, con reinversión automática opcional. LA TASA DE RÉGIMEN ES LA MÁS BAJA DEL CONJUNTO DE DATOS ENTRE PRODUCTOS A PLAZO: GAT nominal 0.20% con $50,000 a 91 días, es decir GAT real -3.61%. Está por debajo de Banamex (0.91%-1.00%) y muy por debajo de cualquier sofipo. HSBC corrió una campaña de 6.77% con $50,000 a 90 días, pero su vigencia fue del 1 al 31 de mayo de 2026 y ya terminó, así que NO se registra como boost activo: hacerlo mostraría al usuario una tasa que ya no puede contratar. El documento de GAT del emisor cubre además Inversión Express y CEDES a tasa fija, CETE y TIIE: cuatro instrumentos más que no están en el censo. Mismo límite de esquema que Banamex: HSBC fija la tasa por monto Y plazo, y TermTiers sólo tiene term_days."
   }
 ]

@@ -146,5 +146,23 @@
       }
     },
     "notes": "GAT nominal 5.01%, GAT real 1.02%, desde $50,000. Calculado el 8 de julio de 2026, vigente al 11 de agosto de 2026 (vencido). El monto mínimo es parte de la definición del escalón y no cabe en el esquema — ver notas de la cuenta."
+  },
+  {
+    "term_id": "hsbc_mexico__pagare_hsbc__t91_50000",
+    "account_id": "hsbc_mexico__pagare_hsbc",
+    "term_days": 91,
+    "rate_pct": 0.2,
+    "rate_type": "GAT_nominal",
+    "confidence": {
+      "yield": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.hsbc.com.mx/content/dam/hsbc/mx/documents/inversiones/gat_inversion_plazo.pdf"
+        ]
+      }
+    },
+    "notes": "GAT nominal 0.20%, GAT real -3.61%, con $50,000 a 91 días. Calculado el 20 de julio de 2026, vigente al 20 de enero de 2027. El monto mínimo forma parte de la definición del escalón y no cabe en el esquema."
   }
 ]
