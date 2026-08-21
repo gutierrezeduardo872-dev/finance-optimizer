@@ -1316,5 +1316,38 @@
     },
     "pending_entity_type": "",
     "notes": "De las mejor evaluadas por CONDUSEF: IDATU cercano a 9.8 en el 3T de 2025. Cobertura PROSOFIPO 25,000 UDIS, derivada del tipo de entidad. VERIFICADO CONTRA REGULADOR 2026-08-17: aparece en la lista oficial de Sociedades Financieras Populares participantes del Fondo de Protección publicada en el DOF, y en el tablero de control de sofipos de la CNBV. Eso confirma a la vez el tipo de entidad (S.F.P.) y la participación en PROSOFIPO, de la que se deriva la cobertura de 25,000 UDIS. Razón social tomada literal del DOF."
+  },
+  {
+    "issuer_id": "revolut",
+    "legal_name": "Revolut Bank, S.A., Institución de Banca Múltiple",
+    "display_name": "Revolut",
+    "regulated_entity_type": "banco",
+    "insurance_scheme": "IPAB",
+    "insurance_coverage_udis": 400000,
+    "cnbv_registered": true,
+    "status": "active",
+    "in_dataset": true,
+    "exclusion_reason": "",
+    "source_urls": [
+      "https://www.revolut.com/es-MX/instant-access-savings/",
+      "https://cdn.revolut.com/terms_and_conditions/pdf/funcionalidades_productos_y_servicios_8af11b67_1.0.0_1770306951_es.pdf"
+    ],
+    "enumerated_on": "2026-08-17",
+    "approved_on": "2026-08-17",
+    "legacy_id": "",
+    "former_names": [],
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.revolut.com/es-MX/instant-access-savings/",
+          "https://cdn.revolut.com/terms_and_conditions/pdf/funcionalidades_productos_y_servicios_8af11b67_1.0.0_1770306951_es.pdf"
+        ]
+      }
+    },
+    "pending_entity_type": "",
+    "notes": "Alta Stage 1 2026-08-17. Opera en México desde el 26 de enero de 2026 como institución de banca múltiple autorizada por la CNBV — NO es sofipo ni IFPE, así que la cobertura es IPAB 400,000 UDIS, la misma que BBVA o Banamex. Importa decirlo porque compite en tasa con sofipos cuya cobertura es una vigésima parte. Modelo por planes: Estándar gratis, Premium $149 y Metal $349 al mes."
   }
 ]

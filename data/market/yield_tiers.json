@@ -138,5 +138,68 @@
       }
     },
     "notes": "Tasa de régimen del primer tramo, calculada al 10 de julio de 2026, vigente al 30 de octubre de 2026. GAT nominal 0.63%, GAT real -3.32%. Los tramos por encima de $99,999 no se publican en la página del producto: faltan."
+  },
+  {
+    "tier_id": "revolut__cuenta_revolut__t1",
+    "account_id": "revolut__cuenta_revolut",
+    "tier_min_mxn": 0.01,
+    "tier_max_mxn": 25000,
+    "rate_pct": 15.0,
+    "rate_type": "rendimiento_anual_nominal",
+    "marginal_or_blended": "marginal",
+    "confidence": {
+      "yield": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.revolut.com/es-MX/instant-access-savings/",
+          "https://cdn.revolut.com/terms_and_conditions/pdf/funcionalidades_productos_y_servicios_8af11b67_1.0.0_1770306951_es.pdf"
+        ]
+      }
+    },
+    "notes": "Aplica a todos los planes, incluido el Estándar gratuito. GAT nominal 16.18%, GAT real 11.98%. Calculado el 30 de abril de 2026. Los límites se registran contiguos; el emisor los redacta como 'hasta $25,000' y 'superiores a $25,000.01', un centavo de diferencia que es de redacción, no un tramo."
+  },
+  {
+    "tier_id": "revolut__cuenta_revolut__t2",
+    "account_id": "revolut__cuenta_revolut",
+    "tier_min_mxn": 25000,
+    "tier_max_mxn": 1000000,
+    "rate_pct": 7.5,
+    "rate_type": "rendimiento_anual_nominal",
+    "marginal_or_blended": "marginal",
+    "confidence": {
+      "yield": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.revolut.com/es-MX/instant-access-savings/",
+          "https://cdn.revolut.com/terms_and_conditions/pdf/funcionalidades_productos_y_servicios_8af11b67_1.0.0_1770306951_es.pdf"
+        ]
+      }
+    },
+    "notes": "'Hasta' 7.5%: es la tasa del plan Metal. La del plan Estándar no se publica. Calculado el 30 de abril de 2026. Los límites se registran contiguos; el emisor los redacta como 'hasta $25,000' y 'superiores a $25,000.01', un centavo de diferencia que es de redacción, no un tramo."
+  },
+  {
+    "tier_id": "revolut__cuenta_revolut__t3",
+    "account_id": "revolut__cuenta_revolut",
+    "tier_min_mxn": 1000000,
+    "tier_max_mxn": "UNCAPPED",
+    "rate_pct": 5.0,
+    "rate_type": "rendimiento_anual_nominal",
+    "marginal_or_blended": "marginal",
+    "confidence": {
+      "yield": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.revolut.com/es-MX/instant-access-savings/",
+          "https://cdn.revolut.com/terms_and_conditions/pdf/funcionalidades_productos_y_servicios_8af11b67_1.0.0_1770306951_es.pdf"
+        ]
+      }
+    },
+    "notes": "'Hasta' 5%: tasa del plan Metal, que cuesta $4,188 + IVA al año. GAT nominal 7.58%, GAT real 3.69%. Calculado el 30 de abril de 2026. Los límites se registran contiguos; el emisor los redacta como 'hasta $25,000' y 'superiores a $25,000.01', un centavo de diferencia que es de redacción, no un tramo."
   }
 ]

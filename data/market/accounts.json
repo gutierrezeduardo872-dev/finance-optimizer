@@ -1700,5 +1700,176 @@
     "notes": "Cuenta transaccional SIN RENDIMIENTO: yield_structure 'none', no 0%, porque Santander no publica tasa alguna y la propia página de cuentas advierte literalmente 'Le informamos que este no es un producto financiero de ahorro o inversión'. Es la primera cuenta de Santander en el conjunto de datos: el emisor tenía 7 tarjetas mapeadas y ninguna cuenta. La comisión de manejo se exenta con UNA OPERACIÓN AL MES — un conteo de transacciones, no un importe, igual que la penalización de HSBC Zero. El importe sin exentar no se publica, así que monthly_fee_mxn queda en 0 con la condición registrada aparte. Retiros sin tarjeta sin costo en cajeros Santander. Protegida por IPAB 400,000 UDIS.",
     "rate_index": "NOT_APPLICABLE",
     "rate_index_pct": "NOT_APPLICABLE"
+  },
+  {
+    "account_id": "revolut__cuenta_revolut",
+    "issuer_id": "revolut",
+    "display_name": "Cuenta Revolut — Rendimientos Diarios",
+    "former_names": [],
+    "legacy_id": "NOT_APPLICABLE",
+    "account_type": "savings",
+    "lifecycle_status": "active",
+    "mapping_status": "mapped",
+    "yield_structure": "tiered",
+    "flat_rate_pct": "NOT_APPLICABLE",
+    "promotional_rate_pct": "NOT_APPLICABLE",
+    "promotional_rate_end_date": "NOT_APPLICABLE",
+    "rate_type": "rendimiento_anual_nominal",
+    "max_balance_earning_stated_rate_mxn": "UNCAPPED",
+    "monthly_fee_mxn": 0,
+    "fee_waiver_condition": "El plan Estándar no cobra cuota de manejo. Premium cuesta $149 y Metal $349 al mes; Metal equivale a $4,188 + IVA al año.",
+    "min_balance_mxn": 0.01,
+    "min_opening_deposit_mxn": 0,
+    "liquidity": "instant",
+    "term_days": "NOT_APPLICABLE",
+    "isr_withholding_note": "Before ISR",
+    "insurance_scheme": "IPAB",
+    "insurance_coverage_udis": 400000,
+    "regulated_entity_type": "banco",
+    "rate_index": "NOT_APPLICABLE",
+    "rate_index_pct": "NOT_APPLICABLE",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.revolut.com/es-MX/instant-access-savings/",
+          "https://cdn.revolut.com/terms_and_conditions/pdf/funcionalidades_productos_y_servicios_8af11b67_1.0.0_1770306951_es.pdf"
+        ]
+      },
+      "cost": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.revolut.com/es-MX/instant-access-savings/",
+          "https://cdn.revolut.com/terms_and_conditions/pdf/funcionalidades_productos_y_servicios_8af11b67_1.0.0_1770306951_es.pdf"
+        ]
+      },
+      "yield": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.revolut.com/es-MX/instant-access-savings/",
+          "https://cdn.revolut.com/terms_and_conditions/pdf/funcionalidades_productos_y_servicios_8af11b67_1.0.0_1770306951_es.pdf"
+        ]
+      }
+    },
+    "conflicts": [],
+    "notes": "LA TASA MÁS ALTA DEL CONJUNTO DE DATOS CON PROTECCIÓN IPAB: 15.00% anual fija sobre los primeros $25,000, pagada DIARIAMENTE, con liquidez inmediata y desde $0.01. Supera a Fondeadora (9.00%, sin seguro alguno) y a los sofipos que rondan 8-9% con cobertura de 25,000 UDIS. ESTRUCTURA DECRECIENTE, no creciente: 15% hasta $25,000, hasta 7.5% de ahí a un millón, y hasta 5% por encima. Es lo contrario de una cuenta de banca tradicional, donde más saldo mejora la tasa. Un usuario con $200,000 obtiene mucho menos que la cifra publicitada. OJO CON EL 'HASTA': los tramos 2 y 3 alcanzan 7.5% y 5% sólo en el plan Metal, que cuesta $4,188 + IVA al año; Revolut no publica la tasa de esos tramos para el plan Estándar. El tramo de 15% sí aplica a todos los planes. GAT NEGATIVA EN ALGUNOS CASOS: el emisor publica una GAT nominal de -0.57% y GAT real de -4.17% en al menos una combinación de plan y saldo — la cuota del plan de pago se come el rendimiento. Pagar por Premium o Metal para perseguir la tasa puede dejar al usuario peor que en el plan gratuito. Tasas calculadas el 30 de abril de 2026, vigentes hasta que Revolut notifique su terminación: no hay fecha de caducidad publicada, así que conviene reverificar periódicamente en vez de esperar un vencimiento."
+  },
+  {
+    "account_id": "plata__ahorro_flexible",
+    "issuer_id": "plata",
+    "display_name": "Ahorro Flexible Plata",
+    "former_names": [],
+    "legacy_id": "NOT_APPLICABLE",
+    "account_type": "savings",
+    "lifecycle_status": "active",
+    "mapping_status": "mapped",
+    "yield_structure": "flat",
+    "flat_rate_pct": 7.0,
+    "promotional_rate_pct": "NOT_APPLICABLE",
+    "promotional_rate_end_date": "NOT_APPLICABLE",
+    "rate_type": "rendimiento_anual_nominal",
+    "max_balance_earning_stated_rate_mxn": "UNKNOWN",
+    "monthly_fee_mxn": 0,
+    "fee_waiver_condition": "NOT_APPLICABLE",
+    "min_balance_mxn": "UNKNOWN",
+    "min_opening_deposit_mxn": "UNKNOWN",
+    "liquidity": "instant",
+    "term_days": "NOT_APPLICABLE",
+    "isr_withholding_note": "Before ISR",
+    "insurance_scheme": "IPAB",
+    "insurance_coverage_udis": 400000,
+    "regulated_entity_type": "banco",
+    "rate_index": "NOT_APPLICABLE",
+    "rate_index_pct": "NOT_APPLICABLE",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://prime.platacard.mx/file-service/static/eula/ahorro_flexible_booklet.pdf"
+        ]
+      },
+      "cost": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://prime.platacard.mx/file-service/static/eula/ahorro_flexible_booklet.pdf"
+        ]
+      },
+      "yield": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://prime.platacard.mx/file-service/static/eula/ahorro_flexible_booklet.pdf"
+        ]
+      }
+    },
+    "conflicts": [],
+    "notes": "Tasa bruta 7.00% anual fija, GAT nominal 7.23% y GAT real 3.26%, con rendimientos diarios. Del folleto informativo del propio emisor. REQUIERE UNA CUENTA DE DÉBITO PLATA CUENTA ACTIVA: no se puede contratar sola, así que recomendarla implica abrir dos productos. OFERTA VENCIDA: el folleto se calculó el 15 de marzo de 2026 y dice 'oferta vigente al 31 de marzo de 2026' — hace casi cinco meses. Se registra la cifra porque es la única publicada por el emisor, pero conviene reverificarla antes de recomendarla. Banco Plata obtuvo licencia de banca múltiple de la CNBV en febrero de 2026, así que la cobertura es IPAB 400,000 UDIS."
+  },
+  {
+    "account_id": "plata__plata_cuenta",
+    "issuer_id": "plata",
+    "display_name": "Plata Cuenta",
+    "former_names": [],
+    "legacy_id": "NOT_APPLICABLE",
+    "account_type": "debit",
+    "lifecycle_status": "active",
+    "mapping_status": "mapped",
+    "yield_structure": "none",
+    "flat_rate_pct": "NOT_APPLICABLE",
+    "promotional_rate_pct": "NOT_APPLICABLE",
+    "promotional_rate_end_date": "NOT_APPLICABLE",
+    "rate_type": "NOT_APPLICABLE",
+    "max_balance_earning_stated_rate_mxn": "NOT_APPLICABLE",
+    "monthly_fee_mxn": 0,
+    "fee_waiver_condition": "NOT_APPLICABLE",
+    "min_balance_mxn": "UNKNOWN",
+    "min_opening_deposit_mxn": "UNKNOWN",
+    "liquidity": "instant",
+    "term_days": "NOT_APPLICABLE",
+    "isr_withholding_note": "NOT_APPLICABLE",
+    "insurance_scheme": "IPAB",
+    "insurance_coverage_udis": 400000,
+    "regulated_entity_type": "banco",
+    "rate_index": "NOT_APPLICABLE",
+    "rate_index_pct": "NOT_APPLICABLE",
+    "confidence": {
+      "identity": {
+        "score": "low",
+        "evidence_type": "comparator_secondary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://prime.platacard.mx/file-service/static/eula/ahorro_flexible_booklet.pdf"
+        ]
+      },
+      "cost": {
+        "score": "low",
+        "evidence_type": "comparator_secondary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://prime.platacard.mx/file-service/static/eula/ahorro_flexible_booklet.pdf"
+        ]
+      },
+      "yield": {
+        "score": "low",
+        "evidence_type": "comparator_secondary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://prime.platacard.mx/file-service/static/eula/ahorro_flexible_booklet.pdf"
+        ]
+      }
+    },
+    "conflicts": [],
+    "notes": "Cuenta de débito Mastercard lanzada en marzo de 2026: SPEI ilimitado y gratuito, portabilidad de nómina, pago de servicios y retiro en cajeros. SIN RENDIMIENTO PROPIO — el rendimiento vive en Ahorro Flexible, producto aparte que exige tener esta cuenta activa. Se registra yield_structure 'none' y no 0% porque el emisor no publica tasa alguna para la cuenta de débito. Fuente de comparador, no del emisor: no se localizó folleto informativo propio de Plata Cuenta. Confianza 'low'."
   }
 ]

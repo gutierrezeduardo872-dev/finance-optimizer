@@ -11128,7 +11128,7 @@
     "census_confidence": "high",
     "census_note": "Mastercard; Plata now a licensed bank",
     "conflicts": [],
-    "notes": "Bank since Feb 2026; Plata Plus membership $39/mo",
+    "notes": "Bank since Feb 2026; Plata Plus membership $39/mo COMPARADORES EN DESACUERDO (2026-08-17), sin cambiar el dato: publican CAT de 163.83%, 164.2% y 98.5%, tasas de 99.9% y de '29.0% a 79.0% según perfil', y anualidad de $0 con membresía de $99 o $39 al mes. Nuestra fila mantiene $199 de anualidad, 99.9% de tasa y CAT 164.22% porque provienen del Contrato de Adhesión del propio emisor, que gana sobre cualquier comparador. La dispersión sugiere que Plata ajusta precios por perfil, lo que el esquema no puede representar: una tasa por usuario no es una tasa de producto.",
     "annual_fee_mxn": 199,
     "annual_fee_includes_iva": false,
     "annual_fee_first_year_waived": "UNKNOWN",
@@ -11571,5 +11571,91 @@
         ]
       }
     }
+  },
+  {
+    "card_id": "revolut__tarjeta_de_credito",
+    "issuer_id": "revolut",
+    "cobrand_partner": "",
+    "display_name": "Tarjeta de Crédito Revolut",
+    "former_names": [],
+    "legacy_id": "NOT_APPLICABLE",
+    "tier": "clasica",
+    "network": "visa",
+    "lifecycle_status": "active",
+    "lifecycle_changed_on": "2026-08-17",
+    "mapping_status": "mapped",
+    "census_confidence": "high",
+    "census_note": "issuer product line",
+    "conflicts": [],
+    "product_type": "credit",
+    "annual_fee_currency": "MXN",
+    "annual_fee_mxn": 0,
+    "annual_fee_includes_iva": false,
+    "annual_fee_first_year_waived": false,
+    "annual_fee_waiver_condition": "Sin anualidad ni comisión de administración en el plan Estándar. Premium ($149/mes) y Metal ($349/mes) cobran cuota de plan, no de tarjeta.",
+    "fee_billing_period": "NOT_APPLICABLE",
+    "inactivity_fee_mxn": "NOT_APPLICABLE",
+    "inactivity_fee_period": "NOT_APPLICABLE",
+    "inactivity_fee_includes_iva": "NOT_APPLICABLE",
+    "inactivity_min_spend_mxn": "NOT_APPLICABLE",
+    "inactivity_spend_period": "NOT_APPLICABLE",
+    "interest_rate_annual_pct": 71.0,
+    "cat_promedio_pct": 99.3,
+    "cat_calculated_on": "UNKNOWN",
+    "cat_valid_until": "UNKNOWN",
+    "base_reward_type": "points",
+    "base_reward_rate": "UNKNOWN",
+    "point_value_mxn": "UNKNOWN",
+    "effective_rate_pct": "UNKNOWN",
+    "points_program_name": "Puntos Revolut",
+    "accrual_basis": "UNKNOWN",
+    "accrual_rate": "UNKNOWN",
+    "accrual_block_mxn": "NOT_APPLICABLE",
+    "min_income_mxn_monthly": "UNKNOWN",
+    "invitation_only": false,
+    "other_eligibility_criteria": "Mayor de 18 años con INE o pasaporte vigente. Revolut consulta Buró de Crédito.",
+    "confidence": {
+      "identity": {
+        "score": "low",
+        "evidence_type": "comparator_secondary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.digitt.com/blog/opinion-revolut-tdc"
+        ]
+      },
+      "cost": {
+        "score": "low",
+        "evidence_type": "comparator_secondary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.digitt.com/blog/opinion-revolut-tdc"
+        ]
+      },
+      "rewards": {
+        "score": "low",
+        "evidence_type": "comparator_secondary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.digitt.com/blog/opinion-revolut-tdc"
+        ]
+      },
+      "perks": {
+        "score": "low",
+        "evidence_type": "comparator_secondary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.digitt.com/blog/opinion-revolut-tdc"
+        ]
+      },
+      "eligibility": {
+        "score": "low",
+        "evidence_type": "comparator_secondary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.digitt.com/blog/opinion-revolut-tdc"
+        ]
+      }
+    },
+    "notes": "Sin anualidad en el plan Estándar y hasta 51 días de gracia sin intereses — el periodo más largo del conjunto de datos, frente a los 20-25 días habituales. Acceso a la sala VIP del AICM desde el primer día. PERO LA TASA ES ALTA: 71% fija anual y CAT 99.3% sin IVA. Es una tarjeta para quien liquida cada mes; financiar saldo en ella sale caro incluso para el mercado mexicano. CIFRAS DE COMPARADOR, NO DEL EMISOR (2026-08-17): la CAT, la tasa y el periodo de gracia vienen de un comparador. No se localizó folleto informativo ni página de producto con las cifras. Confianza 'low' a propósito; reverificar contra Revolut antes de darle peso en recomendaciones. Tampoco se publica la tasa de acumulación de Puntos Revolut ni su valor en pesos."
   }
 ]
