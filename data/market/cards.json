@@ -2561,7 +2561,7 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": "BBVA publica dos CAT distintos el mismo día: uno en la ficha del producto y otro en el tarifario general. Se registra el del tarifario por ser el más reciente; la cifra de la ficha queda anotada. No es un conflicto entre fuentes: ambas son del emisor. Ficha del producto: 79.9%. Tarifario: 78.5%.",
+    "notes": "BBVA publica dos CAT distintos el mismo día: uno en la ficha del producto y otro en el tarifario general. Se registra el del tarifario por ser el más reciente; la cifra de la ficha queda anotada. No es un conflicto entre fuentes: ambas son del emisor. Ficha del producto: 79.9%. Tarifario: 78.5%. NO PARTICIPA EN PUNTOS BBVA: el emisor la excluye del programa, así que base_reward_type 'none' está sustentado y no es una omisión. Tampoco cobra comisión de administración ni ofrece disposiciones de efectivo — es una tarjeta de entrada sin recompensas.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
@@ -2572,14 +2572,14 @@
     "annual_fee_waiver_condition": "NOT_APPLICABLE",
     "invitation_only": false,
     "other_eligibility_criteria": "NOT_APPLICABLE",
-    "point_value_mxn": "UNKNOWN",
-    "effective_rate_pct": "UNKNOWN",
+    "point_value_mxn": "NOT_APPLICABLE",
+    "effective_rate_pct": 0,
     "interest_rate_annual_pct": "UNKNOWN",
     "cat_promedio_pct": 78.5,
     "annual_fee_mxn": "UNKNOWN",
-    "base_reward_type": "points",
-    "base_reward_rate": "UNKNOWN",
-    "points_program_name": "Puntos BBVA",
+    "base_reward_type": "none",
+    "base_reward_rate": 0,
+    "points_program_name": "NOT_APPLICABLE",
     "min_income_mxn_monthly": 6000,
     "confidence": {
       "identity": {
@@ -2601,9 +2601,9 @@
       "rewards": {
         "score": "medium",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-08-07",
+        "verified_on": "2026-08-17",
         "sources": [
-          "https://bancario.com.mx/tarjeta-de-credito-bbva-mexico"
+          "https://www.bbva.mx/content/dam/public-web/mexico/documents/personas/tarjetas/Anexo_de_Beneficios_Bajada_de_tasas_DIC_21.pdf"
         ]
       },
       "perks": {
@@ -2626,8 +2626,8 @@
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "2026-03-01",
     "cat_valid_until": "UNKNOWN",
-    "accrual_basis": "UNKNOWN",
-    "accrual_rate": "UNKNOWN",
+    "accrual_basis": "NOT_APPLICABLE",
+    "accrual_rate": "NOT_APPLICABLE",
     "accrual_block_mxn": "NOT_APPLICABLE",
     "annual_fee_currency": "MXN",
     "product_type": "credit"
@@ -2646,7 +2646,7 @@
     "census_confidence": "high",
     "census_note": "affinity",
     "conflicts": [],
-    "notes": "Tarjeta de afinidad con la UNAM: BBVA dona el 1.5% del monto de cada compra al Programa de Becas de Titulación. Acumula 11% en Puntos BBVA, el nivel más alto de la gama de entrada, junto con IPN. La página del producto anuncia 'Sin anualidad* de por vida' junto a una comisión por administración del titular de $1,151 sin IVA. No se capturó el texto de la nota al pie, así que annual_fee_first_year_waived y la condición quedan UNKNOWN en lugar de suponer la condición de Azul BBVA (contratación 100% en línea). Se registra la comisión que el emisor publica. Las compras a meses sin intereses no acumulan Puntos. BBVA no publica el valor en pesos del Punto, así que effective_rate_pct queda UNKNOWN.",
+    "notes": "Tarjeta de afinidad con la UNAM: BBVA dona el 1.5% del monto de cada compra al Programa de Becas de Titulación. Acumula 11% en Puntos BBVA, el nivel más alto de la gama de entrada, junto con IPN. La página del producto anuncia 'Sin anualidad* de por vida' junto a una comisión por administración del titular de $1,151 sin IVA. No se capturó el texto de la nota al pie, así que annual_fee_first_year_waived y la condición quedan UNKNOWN en lugar de suponer la condición de Azul BBVA (contratación 100% en línea). Se registra la comisión que el emisor publica. Las compras a meses sin intereses no acumulan Puntos. BBVA no publica el valor en pesos del Punto, así que effective_rate_pct queda UNKNOWN. VALOR DEL PUNTO: BBVA no publica una paridad fija — su calculadora oficial usa $0.10 como referencia ordinaria y advierte que el valor real varía entre $0.07 y $0.15 según el comercio donde se canjee (más alto en departamentales y tecnología, más bajo en Rappi o Uber Eats). Se registra 0.10 por ser la cifra del propio emisor, mucho mejor que el supuesto genérico de 0.15, pero sigue siendo una referencia y no una paridad garantizada. Los puntos NO son convertibles a efectivo.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
@@ -2663,8 +2663,8 @@
     "cat_promedio_pct": 73.4,
     "base_reward_type": "points",
     "base_reward_rate": 11.0,
-    "point_value_mxn": "UNKNOWN",
-    "effective_rate_pct": "UNKNOWN",
+    "point_value_mxn": 0.1,
+    "effective_rate_pct": 1.1,
     "points_program_name": "Puntos BBVA",
     "accrual_basis": "pct_of_spend",
     "accrual_rate": 11.0,
@@ -2696,8 +2696,8 @@
         "evidence_type": "issuer_primary",
         "verified_on": "2026-08-17",
         "sources": [
-          "https://www.bbva.mx/personas/productos/tarjetas-de-credito/tarjeta-de-credito-afinidad-unam.html",
-          "https://www.bbva.mx/content/dam/public-web/mexico/documents/tycs/Terminos_y_Condiciones_Regreso_a_Clases_2026.pdf"
+          "https://www.bbva.mx/content/dam/public-web/mexico/documents/personas/tarjetas/Anexo_de_Beneficios_Bajada_de_tasas_DIC_21.pdf",
+          "https://www.bbva.mx/personas/productos/tarjetas-de-credito/puntos-bbva.html"
         ]
       },
       "perks": {
@@ -2720,7 +2720,8 @@
       }
     },
     "annual_fee_currency": "MXN",
-    "product_type": "credit"
+    "product_type": "credit",
+    "point_value_source": "https://www.bbva.mx/personas/productos/tarjetas-de-credito/puntos-bbva.html"
   },
   {
     "card_id": "bbva_mexico__azul_bbva",
@@ -2736,7 +2737,7 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": "'9% en Puntos BBVA' is points accrual not cashback; point value low",
+    "notes": "'9% en Puntos BBVA' is points accrual not cashback; point value low VALOR DEL PUNTO: BBVA no publica una paridad fija — su calculadora oficial usa $0.10 como referencia ordinaria y advierte que el valor real varía entre $0.07 y $0.15 según el comercio donde se canjee (más alto en departamentales y tecnología, más bajo en Rappi o Uber Eats). Se registra 0.10 por ser la cifra del propio emisor, mucho mejor que el supuesto genérico de 0.15, pero sigue siendo una referencia y no una paridad garantizada. Los puntos NO son convertibles a efectivo.",
     "annual_fee_mxn": 748,
     "annual_fee_includes_iva": false,
     "annual_fee_first_year_waived": true,
@@ -2745,8 +2746,8 @@
     "cat_promedio_pct": 90.9,
     "base_reward_type": "points",
     "base_reward_rate": 9.0,
-    "point_value_mxn": "UNKNOWN",
-    "effective_rate_pct": "UNKNOWN",
+    "point_value_mxn": 0.1,
+    "effective_rate_pct": 0.9,
     "points_program_name": "Puntos BBVA",
     "min_income_mxn_monthly": "UNKNOWN",
     "invitation_only": false,
@@ -2770,11 +2771,12 @@
         ]
       },
       "rewards": {
-        "score": "low",
+        "score": "high",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-03-09",
+        "verified_on": "2026-08-17",
         "sources": [
-          "https://www.bbva.mx/personas/productos/tarjetas-de-credito/tarjeta-de-credito-azul.html"
+          "https://www.bbva.mx/content/dam/public-web/mexico/documents/personas/tarjetas/Anexo_de_Beneficios_Bajada_de_tasas_DIC_21.pdf",
+          "https://www.bbva.mx/personas/productos/tarjetas-de-credito/puntos-bbva.html"
         ]
       },
       "perks": {
@@ -2806,7 +2808,8 @@
     "accrual_rate": 9.0,
     "accrual_block_mxn": "NOT_APPLICABLE",
     "annual_fee_currency": "MXN",
-    "product_type": "credit"
+    "product_type": "credit",
+    "point_value_source": "https://www.bbva.mx/personas/productos/tarjetas-de-credito/puntos-bbva.html"
   },
   {
     "card_id": "bbva_mexico__crea_bbva",
@@ -2822,7 +2825,7 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": "BBVA publica dos CAT distintos el mismo día: uno en la ficha del producto y otro en el tarifario general. Se registra el del tarifario por ser el más reciente; la cifra de la ficha queda anotada. No es un conflicto entre fuentes: ambas son del emisor. Ficha del producto: 121.7%. Tarifario: 120.0%.",
+    "notes": "BBVA publica dos CAT distintos el mismo día: uno en la ficha del producto y otro en el tarifario general. Se registra el del tarifario por ser el más reciente; la cifra de la ficha queda anotada. No es un conflicto entre fuentes: ambas son del emisor. Ficha del producto: 121.7%. Tarifario: 120.0%. ACUMULACIÓN 5.0% en Puntos BBVA. Las compras a MESES SIN INTERESES no acumulan puntos, ni las disposiciones de efectivo. Las adicionales sí acumulan a la cuenta del titular. Acumulación automática al corte, sin inscripción. Vigencia 13 meses en Azul y Oro, 18 en Platinum. Porcentajes del Anexo de Beneficios del emisor; BBVA se reserva el derecho de modificarlos. VALOR DEL PUNTO: BBVA no publica una paridad fija — su calculadora oficial usa $0.10 como referencia ordinaria y advierte que el valor real varía entre $0.07 y $0.15 según el comercio donde se canjee (más alto en departamentales y tecnología, más bajo en Rappi o Uber Eats). Se registra 0.10 por ser la cifra del propio emisor, mucho mejor que el supuesto genérico de 0.15, pero sigue siendo una referencia y no una paridad garantizada. Los puntos NO son convertibles a efectivo.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
@@ -2833,13 +2836,13 @@
     "annual_fee_waiver_condition": "NOT_APPLICABLE",
     "invitation_only": false,
     "other_eligibility_criteria": "NOT_APPLICABLE",
-    "point_value_mxn": "UNKNOWN",
-    "effective_rate_pct": "UNKNOWN",
+    "point_value_mxn": 0.1,
+    "effective_rate_pct": 0.5,
     "interest_rate_annual_pct": "UNKNOWN",
     "cat_promedio_pct": 120.0,
     "annual_fee_mxn": "UNKNOWN",
     "base_reward_type": "points",
-    "base_reward_rate": "UNKNOWN",
+    "base_reward_rate": 5.0,
     "points_program_name": "Puntos BBVA",
     "min_income_mxn_monthly": 4000,
     "confidence": {
@@ -2860,11 +2863,12 @@
         ]
       },
       "rewards": {
-        "score": "medium",
+        "score": "high",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-08-07",
+        "verified_on": "2026-08-17",
         "sources": [
-          "https://bancario.com.mx/tarjeta-de-credito-bbva-mexico"
+          "https://www.bbva.mx/content/dam/public-web/mexico/documents/personas/tarjetas/Anexo_de_Beneficios_Bajada_de_tasas_DIC_21.pdf",
+          "https://www.bbva.mx/personas/productos/tarjetas-de-credito/puntos-bbva.html"
         ]
       },
       "perks": {
@@ -2887,11 +2891,12 @@
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "2026-03-01",
     "cat_valid_until": "UNKNOWN",
-    "accrual_basis": "UNKNOWN",
-    "accrual_rate": "UNKNOWN",
+    "accrual_basis": "pct_of_spend",
+    "accrual_rate": 5.0,
     "accrual_block_mxn": "NOT_APPLICABLE",
     "annual_fee_currency": "MXN",
-    "product_type": "credit"
+    "product_type": "credit",
+    "point_value_source": "https://www.bbva.mx/personas/productos/tarjetas-de-credito/puntos-bbva.html"
   },
   {
     "card_id": "bbva_mexico__educacion_bbva",
@@ -2907,7 +2912,7 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": "Acumula 9% en Puntos BBVA. La página del producto anuncia 'Sin anualidad* de por vida' junto a una comisión por administración del titular de $748 sin IVA. No se capturó el texto de la nota al pie, así que annual_fee_first_year_waived y la condición quedan UNKNOWN en lugar de suponer la condición de Azul BBVA (contratación 100% en línea). Se registra la comisión que el emisor publica. Las compras a meses sin intereses no acumulan Puntos. BBVA no publica el valor en pesos del Punto, así que effective_rate_pct queda UNKNOWN.",
+    "notes": "Acumula 9% en Puntos BBVA. La página del producto anuncia 'Sin anualidad* de por vida' junto a una comisión por administración del titular de $748 sin IVA. No se capturó el texto de la nota al pie, así que annual_fee_first_year_waived y la condición quedan UNKNOWN en lugar de suponer la condición de Azul BBVA (contratación 100% en línea). Se registra la comisión que el emisor publica. Las compras a meses sin intereses no acumulan Puntos. BBVA no publica el valor en pesos del Punto, así que effective_rate_pct queda UNKNOWN. VALOR DEL PUNTO: BBVA no publica una paridad fija — su calculadora oficial usa $0.10 como referencia ordinaria y advierte que el valor real varía entre $0.07 y $0.15 según el comercio donde se canjee (más alto en departamentales y tecnología, más bajo en Rappi o Uber Eats). Se registra 0.10 por ser la cifra del propio emisor, mucho mejor que el supuesto genérico de 0.15, pero sigue siendo una referencia y no una paridad garantizada. Los puntos NO son convertibles a efectivo.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
@@ -2924,8 +2929,8 @@
     "cat_promedio_pct": 89.3,
     "base_reward_type": "points",
     "base_reward_rate": 9.0,
-    "point_value_mxn": "UNKNOWN",
-    "effective_rate_pct": "UNKNOWN",
+    "point_value_mxn": 0.1,
+    "effective_rate_pct": 0.9,
     "points_program_name": "Puntos BBVA",
     "accrual_basis": "pct_of_spend",
     "accrual_rate": 9.0,
@@ -2951,11 +2956,12 @@
         ]
       },
       "rewards": {
-        "score": "medium",
+        "score": "high",
         "evidence_type": "issuer_primary",
         "verified_on": "2026-08-17",
         "sources": [
-          "https://www.bbva.mx/personas/productos/tarjetas-de-credito/tarjeta-de-credito-educacion.html"
+          "https://www.bbva.mx/content/dam/public-web/mexico/documents/personas/tarjetas/Anexo_de_Beneficios_Bajada_de_tasas_DIC_21.pdf",
+          "https://www.bbva.mx/personas/productos/tarjetas-de-credito/puntos-bbva.html"
         ]
       },
       "perks": {
@@ -2976,7 +2982,8 @@
       }
     },
     "annual_fee_currency": "MXN",
-    "product_type": "credit"
+    "product_type": "credit",
+    "point_value_source": "https://www.bbva.mx/personas/productos/tarjetas-de-credito/puntos-bbva.html"
   },
   {
     "card_id": "bbva_mexico__ipn_bbva",
@@ -2992,7 +2999,7 @@
     "census_confidence": "high",
     "census_note": "affinity",
     "conflicts": [],
-    "notes": "Tarjeta de afinidad con el Instituto Politécnico Nacional: BBVA dona el 1.5% de cada compra al instituto. Acumula 11% en Puntos BBVA. Seguros sin costo de compra protegida y de pérdida o demora de equipaje. Tasa TIIEF + 55 puntos porcentuales. La página del producto anuncia 'Sin anualidad* de por vida' junto a una comisión por administración del titular de $748 sin IVA. No se capturó el texto de la nota al pie, así que annual_fee_first_year_waived y la condición quedan UNKNOWN en lugar de suponer la condición de Azul BBVA (contratación 100% en línea). Se registra la comisión que el emisor publica. Las compras a meses sin intereses no acumulan Puntos. BBVA no publica el valor en pesos del Punto, así que effective_rate_pct queda UNKNOWN.",
+    "notes": "Tarjeta de afinidad con el Instituto Politécnico Nacional: BBVA dona el 1.5% de cada compra al instituto. Acumula 11% en Puntos BBVA. Seguros sin costo de compra protegida y de pérdida o demora de equipaje. Tasa TIIEF + 55 puntos porcentuales. La página del producto anuncia 'Sin anualidad* de por vida' junto a una comisión por administración del titular de $748 sin IVA. No se capturó el texto de la nota al pie, así que annual_fee_first_year_waived y la condición quedan UNKNOWN en lugar de suponer la condición de Azul BBVA (contratación 100% en línea). Se registra la comisión que el emisor publica. Las compras a meses sin intereses no acumulan Puntos. BBVA no publica el valor en pesos del Punto, así que effective_rate_pct queda UNKNOWN. VALOR DEL PUNTO: BBVA no publica una paridad fija — su calculadora oficial usa $0.10 como referencia ordinaria y advierte que el valor real varía entre $0.07 y $0.15 según el comercio donde se canjee (más alto en departamentales y tecnología, más bajo en Rappi o Uber Eats). Se registra 0.10 por ser la cifra del propio emisor, mucho mejor que el supuesto genérico de 0.15, pero sigue siendo una referencia y no una paridad garantizada. Los puntos NO son convertibles a efectivo.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
@@ -3009,8 +3016,8 @@
     "cat_promedio_pct": 93.9,
     "base_reward_type": "points",
     "base_reward_rate": 11.0,
-    "point_value_mxn": "UNKNOWN",
-    "effective_rate_pct": "UNKNOWN",
+    "point_value_mxn": 0.1,
+    "effective_rate_pct": 1.1,
     "points_program_name": "Puntos BBVA",
     "accrual_basis": "pct_of_spend",
     "accrual_rate": 11.0,
@@ -3042,8 +3049,8 @@
         "evidence_type": "issuer_primary",
         "verified_on": "2026-08-17",
         "sources": [
-          "https://www.bbva.mx/personas/productos/tarjetas-de-credito/tarjeta-de-credito-ipn.html",
-          "https://www.bbva.mx/content/dam/public-web/mexico/documents/personas/tarjetas/TCR-IPN.pdf"
+          "https://www.bbva.mx/content/dam/public-web/mexico/documents/personas/tarjetas/Anexo_de_Beneficios_Bajada_de_tasas_DIC_21.pdf",
+          "https://www.bbva.mx/personas/productos/tarjetas-de-credito/puntos-bbva.html"
         ]
       },
       "perks": {
@@ -3066,7 +3073,8 @@
       }
     },
     "annual_fee_currency": "MXN",
-    "product_type": "credit"
+    "product_type": "credit",
+    "point_value_source": "https://www.bbva.mx/personas/productos/tarjetas-de-credito/puntos-bbva.html"
   },
   {
     "card_id": "bbva_mexico__oro_bbva",
@@ -3082,7 +3090,7 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": "CAT from older PDF; verify current",
+    "notes": "CAT from older PDF; verify current ACUMULACIÓN 11.0% en Puntos BBVA. Las compras a MESES SIN INTERESES no acumulan puntos, ni las disposiciones de efectivo. Las adicionales sí acumulan a la cuenta del titular. Acumulación automática al corte, sin inscripción. Vigencia 13 meses en Azul y Oro, 18 en Platinum. Porcentajes del Anexo de Beneficios del emisor; BBVA se reserva el derecho de modificarlos. VALOR DEL PUNTO: BBVA no publica una paridad fija — su calculadora oficial usa $0.10 como referencia ordinaria y advierte que el valor real varía entre $0.07 y $0.15 según el comercio donde se canjee (más alto en departamentales y tecnología, más bajo en Rappi o Uber Eats). Se registra 0.10 por ser la cifra del propio emisor, mucho mejor que el supuesto genérico de 0.15, pero sigue siendo una referencia y no una paridad garantizada. Los puntos NO son convertibles a efectivo.",
     "annual_fee_mxn": 748,
     "annual_fee_includes_iva": false,
     "annual_fee_first_year_waived": "UNKNOWN",
@@ -3090,9 +3098,9 @@
     "interest_rate_annual_pct": 44.99,
     "cat_promedio_pct": 60.5,
     "base_reward_type": "points",
-    "base_reward_rate": "UNKNOWN",
-    "point_value_mxn": "UNKNOWN",
-    "effective_rate_pct": "UNKNOWN",
+    "base_reward_rate": 11.0,
+    "point_value_mxn": 0.1,
+    "effective_rate_pct": 1.1,
     "points_program_name": "Puntos BBVA",
     "min_income_mxn_monthly": "UNKNOWN",
     "invitation_only": false,
@@ -3116,11 +3124,12 @@
         ]
       },
       "rewards": {
-        "score": "low",
+        "score": "high",
         "evidence_type": "issuer_primary",
-        "verified_on": "2023-08-01",
+        "verified_on": "2026-08-17",
         "sources": [
-          "https://www.bbva.mx/content/dam/public-web/mexico/documents/landing/cats_ago_2023.pdf"
+          "https://www.bbva.mx/content/dam/public-web/mexico/documents/personas/tarjetas/Anexo_de_Beneficios_Bajada_de_tasas_DIC_21.pdf",
+          "https://www.bbva.mx/personas/productos/tarjetas-de-credito/puntos-bbva.html"
         ]
       },
       "perks": {
@@ -3148,11 +3157,12 @@
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "UNKNOWN",
     "cat_valid_until": "UNKNOWN",
-    "accrual_basis": "UNKNOWN",
-    "accrual_rate": "UNKNOWN",
+    "accrual_basis": "pct_of_spend",
+    "accrual_rate": 11.0,
     "accrual_block_mxn": "NOT_APPLICABLE",
     "annual_fee_currency": "MXN",
-    "product_type": "credit"
+    "product_type": "credit",
+    "point_value_source": "https://www.bbva.mx/personas/productos/tarjetas-de-credito/puntos-bbva.html"
   },
   {
     "card_id": "bbva_mexico__platinum_bbva",
@@ -3168,7 +3178,7 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": "BBVA publica dos CAT distintos el mismo día: uno en la ficha del producto y otro en el tarifario general. Se registra el del tarifario por ser el más reciente; la cifra de la ficha queda anotada. No es un conflicto entre fuentes: ambas son del emisor. Ficha del producto: 49.4%. Tarifario: 47.9%.",
+    "notes": "BBVA publica dos CAT distintos el mismo día: uno en la ficha del producto y otro en el tarifario general. Se registra el del tarifario por ser el más reciente; la cifra de la ficha queda anotada. No es un conflicto entre fuentes: ambas son del emisor. Ficha del producto: 49.4%. Tarifario: 47.9%. ACUMULACIÓN 15.0% en Puntos BBVA. Las compras a MESES SIN INTERESES no acumulan puntos, ni las disposiciones de efectivo. Las adicionales sí acumulan a la cuenta del titular. Acumulación automática al corte, sin inscripción. Vigencia 13 meses en Azul y Oro, 18 en Platinum. Porcentajes del Anexo de Beneficios del emisor; BBVA se reserva el derecho de modificarlos. VALOR DEL PUNTO: BBVA no publica una paridad fija — su calculadora oficial usa $0.10 como referencia ordinaria y advierte que el valor real varía entre $0.07 y $0.15 según el comercio donde se canjee (más alto en departamentales y tecnología, más bajo en Rappi o Uber Eats). Se registra 0.10 por ser la cifra del propio emisor, mucho mejor que el supuesto genérico de 0.15, pero sigue siendo una referencia y no una paridad garantizada. Los puntos NO son convertibles a efectivo.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
@@ -3179,13 +3189,13 @@
     "annual_fee_waiver_condition": "NOT_APPLICABLE",
     "invitation_only": false,
     "other_eligibility_criteria": "NOT_APPLICABLE",
-    "point_value_mxn": "UNKNOWN",
-    "effective_rate_pct": "UNKNOWN",
+    "point_value_mxn": 0.1,
+    "effective_rate_pct": 1.5,
     "interest_rate_annual_pct": "UNKNOWN",
     "cat_promedio_pct": 47.9,
     "annual_fee_mxn": "UNKNOWN",
     "base_reward_type": "points",
-    "base_reward_rate": "UNKNOWN",
+    "base_reward_rate": 15.0,
     "points_program_name": "Puntos BBVA",
     "min_income_mxn_monthly": 50000,
     "confidence": {
@@ -3206,11 +3216,12 @@
         ]
       },
       "rewards": {
-        "score": "medium",
+        "score": "high",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-08-07",
+        "verified_on": "2026-08-17",
         "sources": [
-          "https://bancario.com.mx/tarjeta-de-credito-bbva-mexico"
+          "https://www.bbva.mx/content/dam/public-web/mexico/documents/personas/tarjetas/Anexo_de_Beneficios_Bajada_de_tasas_DIC_21.pdf",
+          "https://www.bbva.mx/personas/productos/tarjetas-de-credito/puntos-bbva.html"
         ]
       },
       "perks": {
@@ -3233,11 +3244,12 @@
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "2026-03-01",
     "cat_valid_until": "UNKNOWN",
-    "accrual_basis": "UNKNOWN",
-    "accrual_rate": "UNKNOWN",
+    "accrual_basis": "pct_of_spend",
+    "accrual_rate": 15.0,
     "accrual_block_mxn": "NOT_APPLICABLE",
     "annual_fee_currency": "MXN",
-    "product_type": "credit"
+    "product_type": "credit",
+    "point_value_source": "https://www.bbva.mx/personas/productos/tarjetas-de-credito/puntos-bbva.html"
   },
   {
     "card_id": "bbva_mexico__start_bbva",
@@ -3253,7 +3265,7 @@
     "census_confidence": "high",
     "census_note": "no anualidad",
     "conflicts": [],
-    "notes": "BBVA publica dos CAT distintos el mismo día: uno en la ficha del producto y otro en el tarifario general. Se registra el del tarifario por ser el más reciente; la cifra de la ficha queda anotada. No es un conflicto entre fuentes: ambas son del emisor. Ficha del producto: 124.8%. Tarifario: 122.9%. CORRECCIÓN 2026-08-17: la comisión por administración del titular estaba en UNKNOWN; el folleto TCR-Start del emisor la fija en $0.00 sin IVA, con tasa promedio ponderada 83.39% e ingreso mínimo de $2,000 mensuales (18 a 75 años). Fecha de cálculo corregida al 9 de marzo de 2026 — las filas de BBVA traían 2026-03-01, que no coincide con ningún documento vigente del emisor; revisar el resto de la cartera.",
+    "notes": "BBVA publica dos CAT distintos el mismo día: uno en la ficha del producto y otro en el tarifario general. Se registra el del tarifario por ser el más reciente; la cifra de la ficha queda anotada. No es un conflicto entre fuentes: ambas son del emisor. Ficha del producto: 124.8%. Tarifario: 122.9%. CORRECCIÓN 2026-08-17: la comisión por administración del titular estaba en UNKNOWN; el folleto TCR-Start del emisor la fija en $0.00 sin IVA, con tasa promedio ponderada 83.39% e ingreso mínimo de $2,000 mensuales (18 a 75 años). Fecha de cálculo corregida al 9 de marzo de 2026 — las filas de BBVA traían 2026-03-01, que no coincide con ningún documento vigente del emisor; revisar el resto de la cartera. ACUMULACIÓN 9.0% en Puntos BBVA. Las compras a MESES SIN INTERESES no acumulan puntos, ni las disposiciones de efectivo. Las adicionales sí acumulan a la cuenta del titular. Acumulación automática al corte, sin inscripción. Vigencia 13 meses en Azul y Oro, 18 en Platinum. Porcentajes del Anexo de Beneficios del emisor; BBVA se reserva el derecho de modificarlos. VALOR DEL PUNTO: BBVA no publica una paridad fija — su calculadora oficial usa $0.10 como referencia ordinaria y advierte que el valor real varía entre $0.07 y $0.15 según el comercio donde se canjee (más alto en departamentales y tecnología, más bajo en Rappi o Uber Eats). Se registra 0.10 por ser la cifra del propio emisor, mucho mejor que el supuesto genérico de 0.15, pero sigue siendo una referencia y no una paridad garantizada. Los puntos NO son convertibles a efectivo.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
@@ -3264,13 +3276,13 @@
     "annual_fee_waiver_condition": "NOT_APPLICABLE",
     "invitation_only": false,
     "other_eligibility_criteria": "NOT_APPLICABLE",
-    "point_value_mxn": "UNKNOWN",
-    "effective_rate_pct": "UNKNOWN",
+    "point_value_mxn": 0.1,
+    "effective_rate_pct": 0.9,
     "interest_rate_annual_pct": 83.39,
     "cat_promedio_pct": 122.9,
     "annual_fee_mxn": 0,
     "base_reward_type": "points",
-    "base_reward_rate": "UNKNOWN",
+    "base_reward_rate": 9.0,
     "points_program_name": "Puntos BBVA",
     "min_income_mxn_monthly": 2000,
     "confidence": {
@@ -3291,11 +3303,12 @@
         ]
       },
       "rewards": {
-        "score": "medium",
+        "score": "high",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-08-07",
+        "verified_on": "2026-08-17",
         "sources": [
-          "https://bancario.com.mx/tarjeta-de-credito-bbva-mexico"
+          "https://www.bbva.mx/content/dam/public-web/mexico/documents/personas/tarjetas/Anexo_de_Beneficios_Bajada_de_tasas_DIC_21.pdf",
+          "https://www.bbva.mx/personas/productos/tarjetas-de-credito/puntos-bbva.html"
         ]
       },
       "perks": {
@@ -3318,11 +3331,12 @@
     "fee_billing_period": "UNKNOWN",
     "cat_calculated_on": "2026-03-09",
     "cat_valid_until": "2026-09-05",
-    "accrual_basis": "UNKNOWN",
-    "accrual_rate": "UNKNOWN",
+    "accrual_basis": "pct_of_spend",
+    "accrual_rate": 9.0,
     "accrual_block_mxn": "NOT_APPLICABLE",
     "annual_fee_currency": "MXN",
-    "product_type": "credit"
+    "product_type": "credit",
+    "point_value_source": "https://www.bbva.mx/personas/productos/tarjetas-de-credito/puntos-bbva.html"
   },
   {
     "card_id": "bbva_mexico__vive_bbva",
@@ -3338,7 +3352,7 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": "Acumula 9% en Puntos BBVA. La página del producto y el folleto TCR-Vive del emisor coinciden en CAT, tasa y comisión. La página del producto anuncia 'Sin anualidad* de por vida' junto a una comisión por administración del titular de $748 sin IVA. No se capturó el texto de la nota al pie, así que annual_fee_first_year_waived y la condición quedan UNKNOWN en lugar de suponer la condición de Azul BBVA (contratación 100% en línea). Se registra la comisión que el emisor publica. Las compras a meses sin intereses no acumulan Puntos. BBVA no publica el valor en pesos del Punto, así que effective_rate_pct queda UNKNOWN.",
+    "notes": "Acumula 9% en Puntos BBVA. La página del producto y el folleto TCR-Vive del emisor coinciden en CAT, tasa y comisión. La página del producto anuncia 'Sin anualidad* de por vida' junto a una comisión por administración del titular de $748 sin IVA. No se capturó el texto de la nota al pie, así que annual_fee_first_year_waived y la condición quedan UNKNOWN en lugar de suponer la condición de Azul BBVA (contratación 100% en línea). Se registra la comisión que el emisor publica. Las compras a meses sin intereses no acumulan Puntos. BBVA no publica el valor en pesos del Punto, así que effective_rate_pct queda UNKNOWN. VALOR DEL PUNTO: BBVA no publica una paridad fija — su calculadora oficial usa $0.10 como referencia ordinaria y advierte que el valor real varía entre $0.07 y $0.15 según el comercio donde se canjee (más alto en departamentales y tecnología, más bajo en Rappi o Uber Eats). Se registra 0.10 por ser la cifra del propio emisor, mucho mejor que el supuesto genérico de 0.15, pero sigue siendo una referencia y no una paridad garantizada. Los puntos NO son convertibles a efectivo.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
@@ -3355,8 +3369,8 @@
     "cat_promedio_pct": 89.6,
     "base_reward_type": "points",
     "base_reward_rate": 9.0,
-    "point_value_mxn": "UNKNOWN",
-    "effective_rate_pct": "UNKNOWN",
+    "point_value_mxn": 0.1,
+    "effective_rate_pct": 0.9,
     "points_program_name": "Puntos BBVA",
     "accrual_basis": "pct_of_spend",
     "accrual_rate": 9.0,
@@ -3388,8 +3402,8 @@
         "evidence_type": "issuer_primary",
         "verified_on": "2026-08-17",
         "sources": [
-          "https://www.bbva.mx/personas/productos/tarjetas-de-credito/tarjeta-de-credito-vive.html",
-          "https://www.bbva.mx/content/dam/public-web/mexico/documents/personas/tarjetas/TCR-Vive.pdf"
+          "https://www.bbva.mx/content/dam/public-web/mexico/documents/personas/tarjetas/Anexo_de_Beneficios_Bajada_de_tasas_DIC_21.pdf",
+          "https://www.bbva.mx/personas/productos/tarjetas-de-credito/puntos-bbva.html"
         ]
       },
       "perks": {
@@ -3412,7 +3426,8 @@
       }
     },
     "annual_fee_currency": "MXN",
-    "product_type": "credit"
+    "product_type": "credit",
+    "point_value_source": "https://www.bbva.mx/personas/productos/tarjetas-de-credito/puntos-bbva.html"
   },
   {
     "card_id": "cibanco__clasica_platinum",
@@ -3480,7 +3495,7 @@
     "census_confidence": "high",
     "census_note": "por invitación",
     "conflicts": [],
-    "notes": "Desde el 30 de julio de 2026 Banamex sustituyó la anualidad por una Comisión por Administración cobrada mensualmente. El monto anual es el mismo; cambia la periodicidad. Excepciones que siguen siendo anuales: Beyond, Home Depot, LineUp, Costco, Joy, Bsmart.",
+    "notes": "Desde el 30 de julio de 2026 Banamex sustituyó la anualidad por una Comisión por Administración cobrada mensualmente. El monto anual es el mismo; cambia la periodicidad. Excepciones que siguen siendo anuales: Beyond, Home Depot, LineUp, Costco, Joy, Bsmart. VALOR DEL PUNTO: 10 Puntos Premia = $1 peso, es decir $0.10 por punto, igual para todas las tarjetas Banamex. A diferencia de BBVA no varía por comercio: los puntos se canjean por EFECTIVO en cajeros Banamex mediante la Tarjeta Premia, que llega al domicilio al acumular los primeros 1,000 puntos. Es un programa de cashback presentado como puntos. Vigencia 4 años.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
@@ -3490,7 +3505,7 @@
     "annual_fee_first_year_waived": false,
     "annual_fee_waiver_condition": "NOT_APPLICABLE",
     "base_reward_type": "points",
-    "point_value_mxn": "UNKNOWN",
+    "point_value_mxn": 0.1,
     "effective_rate_pct": "UNKNOWN",
     "points_program_name": "Puntos Premia",
     "min_income_mxn_monthly": 7000,
@@ -3554,7 +3569,8 @@
     "accrual_rate": "UNKNOWN",
     "accrual_block_mxn": "NOT_APPLICABLE",
     "annual_fee_currency": "MXN",
-    "product_type": "credit"
+    "product_type": "credit",
+    "point_value_source": "https://www.banamex.com/es/centro-de-ayuda/tarjetas/puntos-premia.htm"
   },
   {
     "card_id": "citibanamex__clasica_banamex",
@@ -3570,7 +3586,7 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": "Desde el 30 de julio de 2026 Banamex sustituyó la anualidad por una Comisión por Administración cobrada mensualmente. El monto anual es el mismo; cambia la periodicidad. Excepciones que siguen siendo anuales: Beyond, Home Depot, LineUp, Costco, Joy, Bsmart. Comisión facturada mensualmente. PROGRAMA Puntos Premia: participan Platinum, Oro, Clásica, Bsmart y Affinity Card según la página del emisor. LAS COMPRAS A MESES SIN INTERESES NO ACUMULAN — exclusión explícita de Banamex, y relevante porque el MSI es una parte grande del gasto en México. Sí acumulan las tarjetas adicionales y las compras en el extranjero. El emisor describe el valor del punto sólo como 'equivalente al porcentaje que maneje tu tarjeta', sin publicar el porcentaje por producto, así que accrual_rate y point_value_mxn quedan UNKNOWN. La inscripción es automática sólo para tarjetas contratadas después de febrero-marzo de 2019 (mayo de 2021 para Affinity); las anteriores deben inscribirse o no acumulan nada.",
+    "notes": "Desde el 30 de julio de 2026 Banamex sustituyó la anualidad por una Comisión por Administración cobrada mensualmente. El monto anual es el mismo; cambia la periodicidad. Excepciones que siguen siendo anuales: Beyond, Home Depot, LineUp, Costco, Joy, Bsmart. Comisión facturada mensualmente. PROGRAMA Puntos Premia: participan Platinum, Oro, Clásica, Bsmart y Affinity Card según la página del emisor. LAS COMPRAS A MESES SIN INTERESES NO ACUMULAN — exclusión explícita de Banamex, y relevante porque el MSI es una parte grande del gasto en México. Sí acumulan las tarjetas adicionales y las compras en el extranjero. El emisor describe el valor del punto sólo como 'equivalente al porcentaje que maneje tu tarjeta', sin publicar el porcentaje por producto, así que accrual_rate y point_value_mxn quedan UNKNOWN. La inscripción es automática sólo para tarjetas contratadas después de febrero-marzo de 2019 (mayo de 2021 para Affinity); las anteriores deben inscribirse o no acumulan nada. ACUMULACIÓN 5.0% en Puntos Premia. CIFRA DE COMPARADOR, NO DEL EMISOR: Banamex publica el porcentaje sólo de Platinum (10%) y de Affinity (5%); el de esta tarjeta proviene de dos comparadores que coinciden entre sí y encajan con los dos extremos que el emisor sí publica. Confianza 'low' a propósito — reverificar contra el contrato. Oro y Clásica ofrecen además 2% adicional en gasolina, TV de paga, telefonía y gimnasios, que no se registró como categoría por falta de fuente del emisor. Las compras a MESES SIN INTERESES no acumulan. Sí acumulan las adicionales y las compras en el extranjero. La inscripción es automática sólo si la tarjeta se contrató después de febrero de 2019 (Bsmart), marzo de 2019 (Clásica, Oro, Platinum) o mayo de 2021 (Affinity); las anteriores deben inscribirse o NO ACUMULAN NADA. VALOR DEL PUNTO: 10 Puntos Premia = $1 peso, es decir $0.10 por punto, igual para todas las tarjetas Banamex. A diferencia de BBVA no varía por comercio: los puntos se canjean por EFECTIVO en cajeros Banamex mediante la Tarjeta Premia, que llega al domicilio al acumular los primeros 1,000 puntos. Es un programa de cashback presentado como puntos. Vigencia 4 años.",
     "annual_fee_mxn": 815,
     "annual_fee_includes_iva": false,
     "annual_fee_first_year_waived": false,
@@ -3578,9 +3594,9 @@
     "interest_rate_annual_pct": "UNKNOWN",
     "cat_promedio_pct": "UNKNOWN",
     "base_reward_type": "points",
-    "base_reward_rate": "UNKNOWN",
-    "point_value_mxn": "UNKNOWN",
-    "effective_rate_pct": "UNKNOWN",
+    "base_reward_rate": 5.0,
+    "point_value_mxn": 0.1,
+    "effective_rate_pct": 0.5,
     "points_program_name": "Puntos Premia",
     "min_income_mxn_monthly": 7000,
     "invitation_only": false,
@@ -3606,12 +3622,12 @@
         ]
       },
       "rewards": {
-        "score": "high",
-        "evidence_type": "issuer_primary",
+        "score": "medium",
+        "evidence_type": "comparator_secondary",
         "verified_on": "2026-08-17",
         "sources": [
-          "https://www.banamex.com/es/centro-de-ayuda/tarjetas/puntos-premia.htm",
-          "https://www.banamex.com/premia/index.html"
+          "https://blog.kardmatch.com.mx/puntos-premia-banamex",
+          "https://www.digitt.com/blog/puntos-premia-citibanamex"
         ]
       },
       "perks": {
@@ -3642,10 +3658,11 @@
     "cat_calculated_on": "UNKNOWN",
     "cat_valid_until": "UNKNOWN",
     "accrual_basis": "pct_of_spend",
-    "accrual_rate": "UNKNOWN",
+    "accrual_rate": 5.0,
     "accrual_block_mxn": "NOT_APPLICABLE",
     "annual_fee_currency": "MXN",
-    "product_type": "credit"
+    "product_type": "credit",
+    "point_value_source": "https://www.banamex.com/es/centro-de-ayuda/tarjetas/puntos-premia.htm"
   },
   {
     "card_id": "citibanamex__conquista_banamex",
@@ -3687,7 +3704,7 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": "Desde el 30 de julio de 2026 Banamex sustituyó la anualidad por una Comisión por Administración cobrada mensualmente. El monto anual es el mismo; cambia la periodicidad. Excepciones que siguen siendo anuales: Beyond, Home Depot, LineUp, Costco, Joy, Bsmart. Comisión facturada mensualmente.",
+    "notes": "Desde el 30 de julio de 2026 Banamex sustituyó la anualidad por una Comisión por Administración cobrada mensualmente. El monto anual es el mismo; cambia la periodicidad. Excepciones que siguen siendo anuales: Beyond, Home Depot, LineUp, Costco, Joy, Bsmart. Comisión facturada mensualmente. VALOR DEL PUNTO: 10 Puntos Premia = $1 peso, es decir $0.10 por punto, igual para todas las tarjetas Banamex. A diferencia de BBVA no varía por comercio: los puntos se canjean por EFECTIVO en cajeros Banamex mediante la Tarjeta Premia, que llega al domicilio al acumular los primeros 1,000 puntos. Es un programa de cashback presentado como puntos. Vigencia 4 años.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
@@ -3697,7 +3714,7 @@
     "annual_fee_first_year_waived": false,
     "annual_fee_waiver_condition": "NOT_APPLICABLE",
     "base_reward_type": "points",
-    "point_value_mxn": "UNKNOWN",
+    "point_value_mxn": 0.1,
     "effective_rate_pct": "UNKNOWN",
     "points_program_name": "Puntos Premia",
     "min_income_mxn_monthly": 7000,
@@ -3761,7 +3778,8 @@
     "accrual_rate": "UNKNOWN",
     "accrual_block_mxn": "NOT_APPLICABLE",
     "annual_fee_currency": "MXN",
-    "product_type": "credit"
+    "product_type": "credit",
+    "point_value_source": "https://www.banamex.com/es/centro-de-ayuda/tarjetas/puntos-premia.htm"
   },
   {
     "card_id": "citibanamex__explora_banamex",
@@ -3777,7 +3795,7 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": "Desde el 30 de julio de 2026 Banamex sustituyó la anualidad por una Comisión por Administración cobrada mensualmente. El monto anual es el mismo; cambia la periodicidad. Excepciones que siguen siendo anuales: Beyond, Home Depot, LineUp, Costco, Joy, Bsmart. Comisión facturada mensualmente.",
+    "notes": "Desde el 30 de julio de 2026 Banamex sustituyó la anualidad por una Comisión por Administración cobrada mensualmente. El monto anual es el mismo; cambia la periodicidad. Excepciones que siguen siendo anuales: Beyond, Home Depot, LineUp, Costco, Joy, Bsmart. Comisión facturada mensualmente. VALOR DEL PUNTO: 10 Puntos Premia = $1 peso, es decir $0.10 por punto, igual para todas las tarjetas Banamex. A diferencia de BBVA no varía por comercio: los puntos se canjean por EFECTIVO en cajeros Banamex mediante la Tarjeta Premia, que llega al domicilio al acumular los primeros 1,000 puntos. Es un programa de cashback presentado como puntos. Vigencia 4 años.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
@@ -3787,7 +3805,7 @@
     "annual_fee_first_year_waived": false,
     "annual_fee_waiver_condition": "NOT_APPLICABLE",
     "base_reward_type": "points",
-    "point_value_mxn": "UNKNOWN",
+    "point_value_mxn": 0.1,
     "effective_rate_pct": "UNKNOWN",
     "points_program_name": "Puntos Premia",
     "min_income_mxn_monthly": 7000,
@@ -3851,7 +3869,8 @@
     "accrual_rate": "UNKNOWN",
     "accrual_block_mxn": "NOT_APPLICABLE",
     "annual_fee_currency": "MXN",
-    "product_type": "credit"
+    "product_type": "credit",
+    "point_value_source": "https://www.banamex.com/es/centro-de-ayuda/tarjetas/puntos-premia.htm"
   },
   {
     "card_id": "citibanamex__joy_banamex",
@@ -3957,7 +3976,7 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": "Desde el 30 de julio de 2026 Banamex sustituyó la anualidad por una Comisión por Administración cobrada mensualmente. El monto anual es el mismo; cambia la periodicidad. Excepciones que siguen siendo anuales: Beyond, Home Depot, LineUp, Costco, Joy, Bsmart. Comisión facturada mensualmente. PROGRAMA Puntos Premia: participan Platinum, Oro, Clásica, Bsmart y Affinity Card según la página del emisor. LAS COMPRAS A MESES SIN INTERESES NO ACUMULAN — exclusión explícita de Banamex, y relevante porque el MSI es una parte grande del gasto en México. Sí acumulan las tarjetas adicionales y las compras en el extranjero. El emisor describe el valor del punto sólo como 'equivalente al porcentaje que maneje tu tarjeta', sin publicar el porcentaje por producto, así que accrual_rate y point_value_mxn quedan UNKNOWN. La inscripción es automática sólo para tarjetas contratadas después de febrero-marzo de 2019 (mayo de 2021 para Affinity); las anteriores deben inscribirse o no acumulan nada.",
+    "notes": "Desde el 30 de julio de 2026 Banamex sustituyó la anualidad por una Comisión por Administración cobrada mensualmente. El monto anual es el mismo; cambia la periodicidad. Excepciones que siguen siendo anuales: Beyond, Home Depot, LineUp, Costco, Joy, Bsmart. Comisión facturada mensualmente. PROGRAMA Puntos Premia: participan Platinum, Oro, Clásica, Bsmart y Affinity Card según la página del emisor. LAS COMPRAS A MESES SIN INTERESES NO ACUMULAN — exclusión explícita de Banamex, y relevante porque el MSI es una parte grande del gasto en México. Sí acumulan las tarjetas adicionales y las compras en el extranjero. El emisor describe el valor del punto sólo como 'equivalente al porcentaje que maneje tu tarjeta', sin publicar el porcentaje por producto, así que accrual_rate y point_value_mxn quedan UNKNOWN. La inscripción es automática sólo para tarjetas contratadas después de febrero-marzo de 2019 (mayo de 2021 para Affinity); las anteriores deben inscribirse o no acumulan nada. ACUMULACIÓN 7.0% en Puntos Premia. CIFRA DE COMPARADOR, NO DEL EMISOR: Banamex publica el porcentaje sólo de Platinum (10%) y de Affinity (5%); el de esta tarjeta proviene de dos comparadores que coinciden entre sí y encajan con los dos extremos que el emisor sí publica. Confianza 'low' a propósito — reverificar contra el contrato. Oro y Clásica ofrecen además 2% adicional en gasolina, TV de paga, telefonía y gimnasios, que no se registró como categoría por falta de fuente del emisor. Las compras a MESES SIN INTERESES no acumulan. Sí acumulan las adicionales y las compras en el extranjero. La inscripción es automática sólo si la tarjeta se contrató después de febrero de 2019 (Bsmart), marzo de 2019 (Clásica, Oro, Platinum) o mayo de 2021 (Affinity); las anteriores deben inscribirse o NO ACUMULAN NADA. VALOR DEL PUNTO: 10 Puntos Premia = $1 peso, es decir $0.10 por punto, igual para todas las tarjetas Banamex. A diferencia de BBVA no varía por comercio: los puntos se canjean por EFECTIVO en cajeros Banamex mediante la Tarjeta Premia, que llega al domicilio al acumular los primeros 1,000 puntos. Es un programa de cashback presentado como puntos. Vigencia 4 años.",
     "annual_fee_mxn": 1230,
     "annual_fee_includes_iva": false,
     "annual_fee_first_year_waived": false,
@@ -3965,9 +3984,9 @@
     "interest_rate_annual_pct": "UNKNOWN",
     "cat_promedio_pct": "UNKNOWN",
     "base_reward_type": "points",
-    "base_reward_rate": "UNKNOWN",
-    "point_value_mxn": "UNKNOWN",
-    "effective_rate_pct": "UNKNOWN",
+    "base_reward_rate": 7.0,
+    "point_value_mxn": 0.1,
+    "effective_rate_pct": 0.7,
     "points_program_name": "Puntos Premia",
     "min_income_mxn_monthly": 7000,
     "invitation_only": false,
@@ -3993,12 +4012,12 @@
         ]
       },
       "rewards": {
-        "score": "high",
-        "evidence_type": "issuer_primary",
+        "score": "medium",
+        "evidence_type": "comparator_secondary",
         "verified_on": "2026-08-17",
         "sources": [
-          "https://www.banamex.com/es/centro-de-ayuda/tarjetas/puntos-premia.htm",
-          "https://www.banamex.com/premia/index.html"
+          "https://blog.kardmatch.com.mx/puntos-premia-banamex",
+          "https://www.digitt.com/blog/puntos-premia-citibanamex"
         ]
       },
       "perks": {
@@ -4029,10 +4048,11 @@
     "cat_calculated_on": "UNKNOWN",
     "cat_valid_until": "UNKNOWN",
     "accrual_basis": "pct_of_spend",
-    "accrual_rate": "UNKNOWN",
+    "accrual_rate": 7.0,
     "accrual_block_mxn": "NOT_APPLICABLE",
     "annual_fee_currency": "MXN",
-    "product_type": "credit"
+    "product_type": "credit",
+    "point_value_source": "https://www.banamex.com/es/centro-de-ayuda/tarjetas/puntos-premia.htm"
   },
   {
     "card_id": "citibanamex__platinum_banamex",
@@ -4048,7 +4068,7 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": "Desde el 30 de julio de 2026 Banamex sustituyó la anualidad por una Comisión por Administración cobrada mensualmente. El monto anual es el mismo; cambia la periodicidad. Excepciones que siguen siendo anuales: Beyond, Home Depot, LineUp, Costco, Joy, Bsmart. Comisión facturada mensualmente. PROGRAMA Puntos Premia: participan Platinum, Oro, Clásica, Bsmart y Affinity Card según la página del emisor. LAS COMPRAS A MESES SIN INTERESES NO ACUMULAN — exclusión explícita de Banamex, y relevante porque el MSI es una parte grande del gasto en México. Sí acumulan las tarjetas adicionales y las compras en el extranjero. El emisor describe el valor del punto sólo como 'equivalente al porcentaje que maneje tu tarjeta', sin publicar el porcentaje por producto, así que accrual_rate y point_value_mxn quedan UNKNOWN. La inscripción es automática sólo para tarjetas contratadas después de febrero-marzo de 2019 (mayo de 2021 para Affinity); las anteriores deben inscribirse o no acumulan nada.",
+    "notes": "Desde el 30 de julio de 2026 Banamex sustituyó la anualidad por una Comisión por Administración cobrada mensualmente. El monto anual es el mismo; cambia la periodicidad. Excepciones que siguen siendo anuales: Beyond, Home Depot, LineUp, Costco, Joy, Bsmart. Comisión facturada mensualmente. PROGRAMA Puntos Premia: participan Platinum, Oro, Clásica, Bsmart y Affinity Card según la página del emisor. LAS COMPRAS A MESES SIN INTERESES NO ACUMULAN — exclusión explícita de Banamex, y relevante porque el MSI es una parte grande del gasto en México. Sí acumulan las tarjetas adicionales y las compras en el extranjero. El emisor describe el valor del punto sólo como 'equivalente al porcentaje que maneje tu tarjeta', sin publicar el porcentaje por producto, así que accrual_rate y point_value_mxn quedan UNKNOWN. La inscripción es automática sólo para tarjetas contratadas después de febrero-marzo de 2019 (mayo de 2021 para Affinity); las anteriores deben inscribirse o no acumulan nada. ACUMULACIÓN 10% en Puntos Premia, cifra publicada por el emisor en la propia página del producto. Las compras a MESES SIN INTERESES no acumulan. Sí acumulan las adicionales y las compras en el extranjero. La inscripción es automática sólo si la tarjeta se contrató después de febrero de 2019 (Bsmart), marzo de 2019 (Clásica, Oro, Platinum) o mayo de 2021 (Affinity); las anteriores deben inscribirse o NO ACUMULAN NADA. VALOR DEL PUNTO: 10 Puntos Premia = $1 peso, es decir $0.10 por punto, igual para todas las tarjetas Banamex. A diferencia de BBVA no varía por comercio: los puntos se canjean por EFECTIVO en cajeros Banamex mediante la Tarjeta Premia, que llega al domicilio al acumular los primeros 1,000 puntos. Es un programa de cashback presentado como puntos. Vigencia 4 años.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
@@ -4058,8 +4078,8 @@
     "annual_fee_first_year_waived": false,
     "annual_fee_waiver_condition": "NOT_APPLICABLE",
     "base_reward_type": "points",
-    "point_value_mxn": "UNKNOWN",
-    "effective_rate_pct": "UNKNOWN",
+    "point_value_mxn": 0.1,
+    "effective_rate_pct": 1.0,
     "points_program_name": "Puntos Premia",
     "min_income_mxn_monthly": 7000,
     "invitation_only": false,
@@ -4090,7 +4110,7 @@
         "evidence_type": "issuer_primary",
         "verified_on": "2026-08-17",
         "sources": [
-          "https://www.banamex.com/es/centro-de-ayuda/tarjetas/puntos-premia.htm",
+          "https://www.banamex.com/es/personas/tarjetas-credito/tarjeta-platinum.html",
           "https://www.banamex.com/premia/index.html"
         ]
       },
@@ -4113,16 +4133,17 @@
         ]
       }
     },
-    "base_reward_rate": "UNKNOWN",
+    "base_reward_rate": 10.0,
     "inactivity_spend_period": "NOT_APPLICABLE",
     "fee_billing_period": "monthly",
     "cat_calculated_on": "UNKNOWN",
     "cat_valid_until": "UNKNOWN",
     "accrual_basis": "pct_of_spend",
-    "accrual_rate": "UNKNOWN",
+    "accrual_rate": 10.0,
     "accrual_block_mxn": "NOT_APPLICABLE",
     "annual_fee_currency": "MXN",
-    "product_type": "credit"
+    "product_type": "credit",
+    "point_value_source": "https://www.banamex.com/es/centro-de-ayuda/tarjetas/puntos-premia.htm"
   },
   {
     "card_id": "hsbc_mexico__hsbc_2now",
@@ -8215,7 +8236,7 @@
     "census_confidence": "high",
     "census_note": "co-brand (C.F. Monterrey)",
     "conflicts": [],
-    "notes": "Tarjeta de afinidad con el club Rayados de Monterrey. Acumula 9% en Puntos BBVA. Seguros sin costo de compra protegida y de pérdida o demora de equipaje. La página del producto anuncia 'Sin anualidad* de por vida' junto a una comisión por administración del titular de $748 sin IVA. No se capturó el texto de la nota al pie, así que annual_fee_first_year_waived y la condición quedan UNKNOWN en lugar de suponer la condición de Azul BBVA (contratación 100% en línea). Se registra la comisión que el emisor publica. Las compras a meses sin intereses no acumulan Puntos. BBVA no publica el valor en pesos del Punto, así que effective_rate_pct queda UNKNOWN.",
+    "notes": "Tarjeta de afinidad con el club Rayados de Monterrey. Acumula 9% en Puntos BBVA. Seguros sin costo de compra protegida y de pérdida o demora de equipaje. La página del producto anuncia 'Sin anualidad* de por vida' junto a una comisión por administración del titular de $748 sin IVA. No se capturó el texto de la nota al pie, así que annual_fee_first_year_waived y la condición quedan UNKNOWN en lugar de suponer la condición de Azul BBVA (contratación 100% en línea). Se registra la comisión que el emisor publica. Las compras a meses sin intereses no acumulan Puntos. BBVA no publica el valor en pesos del Punto, así que effective_rate_pct queda UNKNOWN. VALOR DEL PUNTO: BBVA no publica una paridad fija — su calculadora oficial usa $0.10 como referencia ordinaria y advierte que el valor real varía entre $0.07 y $0.15 según el comercio donde se canjee (más alto en departamentales y tecnología, más bajo en Rappi o Uber Eats). Se registra 0.10 por ser la cifra del propio emisor, mucho mejor que el supuesto genérico de 0.15, pero sigue siendo una referencia y no una paridad garantizada. Los puntos NO son convertibles a efectivo.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
@@ -8232,8 +8253,8 @@
     "cat_promedio_pct": 92.3,
     "base_reward_type": "points",
     "base_reward_rate": 9.0,
-    "point_value_mxn": "UNKNOWN",
-    "effective_rate_pct": "UNKNOWN",
+    "point_value_mxn": 0.1,
+    "effective_rate_pct": 0.9,
     "points_program_name": "Puntos BBVA",
     "accrual_basis": "pct_of_spend",
     "accrual_rate": 9.0,
@@ -8259,11 +8280,12 @@
         ]
       },
       "rewards": {
-        "score": "medium",
+        "score": "high",
         "evidence_type": "issuer_primary",
         "verified_on": "2026-08-17",
         "sources": [
-          "https://www.bbva.mx/personas/productos/tarjetas-de-credito/tarjeta-de-credito-rayados.html"
+          "https://www.bbva.mx/content/dam/public-web/mexico/documents/personas/tarjetas/Anexo_de_Beneficios_Bajada_de_tasas_DIC_21.pdf",
+          "https://www.bbva.mx/personas/productos/tarjetas-de-credito/puntos-bbva.html"
         ]
       },
       "perks": {
@@ -8284,7 +8306,8 @@
       }
     },
     "annual_fee_currency": "MXN",
-    "product_type": "credit"
+    "product_type": "credit",
+    "point_value_source": "https://www.bbva.mx/personas/productos/tarjetas-de-credito/puntos-bbva.html"
   },
   {
     "card_id": "banco_inbursa__bodega_aurrera_inbursa",
@@ -8589,7 +8612,7 @@
     "census_confidence": "high",
     "census_note": "co-brand",
     "conflicts": [],
-    "notes": "10% en Puntos Premia en tiendas de Grupo Inditex (Zara, Bershka, Pull&Bear, Stradivarius, Zara Home, Oysho, Massimo Dutti, Lefties) y 5% en otros establecimientos. Banamex no publica el valor en pesos del Punto Premia, así que effective_rate_pct es UNKNOWN pese a que los puntos son canjeables por efectivo en cajeros Banamex — el tipo de cambio no está publicado. LA ANUALIDAD NO SE PUDO OBTENER: la tabla de comisiones de esta tarjeta no renderiza el importe de Administración del titular. Su página indica cobro anual (1 vez al año), no mensual. Banamex inserta el bloque de CAT por JavaScript; la página entrega 'Calculado el ___ y vigente al ___' en blanco. cat_promedio_pct queda UNKNOWN por acuerdo (2026-08-17), no por falta de búsqueda. PROGRAMA Puntos Premia: participan Platinum, Oro, Clásica, Bsmart y Affinity Card según la página del emisor. LAS COMPRAS A MESES SIN INTERESES NO ACUMULAN — exclusión explícita de Banamex, y relevante porque el MSI es una parte grande del gasto en México. Sí acumulan las tarjetas adicionales y las compras en el extranjero. El emisor describe el valor del punto sólo como 'equivalente al porcentaje que maneje tu tarjeta', sin publicar el porcentaje por producto, así que accrual_rate y point_value_mxn quedan UNKNOWN. La inscripción es automática sólo para tarjetas contratadas después de febrero-marzo de 2019 (mayo de 2021 para Affinity); las anteriores deben inscribirse o no acumulan nada.",
+    "notes": "10% en Puntos Premia en tiendas de Grupo Inditex (Zara, Bershka, Pull&Bear, Stradivarius, Zara Home, Oysho, Massimo Dutti, Lefties) y 5% en otros establecimientos. Banamex no publica el valor en pesos del Punto Premia, así que effective_rate_pct es UNKNOWN pese a que los puntos son canjeables por efectivo en cajeros Banamex — el tipo de cambio no está publicado. LA ANUALIDAD NO SE PUDO OBTENER: la tabla de comisiones de esta tarjeta no renderiza el importe de Administración del titular. Su página indica cobro anual (1 vez al año), no mensual. Banamex inserta el bloque de CAT por JavaScript; la página entrega 'Calculado el ___ y vigente al ___' en blanco. cat_promedio_pct queda UNKNOWN por acuerdo (2026-08-17), no por falta de búsqueda. PROGRAMA Puntos Premia: participan Platinum, Oro, Clásica, Bsmart y Affinity Card según la página del emisor. LAS COMPRAS A MESES SIN INTERESES NO ACUMULAN — exclusión explícita de Banamex, y relevante porque el MSI es una parte grande del gasto en México. Sí acumulan las tarjetas adicionales y las compras en el extranjero. El emisor describe el valor del punto sólo como 'equivalente al porcentaje que maneje tu tarjeta', sin publicar el porcentaje por producto, así que accrual_rate y point_value_mxn quedan UNKNOWN. La inscripción es automática sólo para tarjetas contratadas después de febrero-marzo de 2019 (mayo de 2021 para Affinity); las anteriores deben inscribirse o no acumulan nada. VALOR DEL PUNTO: 10 Puntos Premia = $1 peso, es decir $0.10 por punto, igual para todas las tarjetas Banamex. A diferencia de BBVA no varía por comercio: los puntos se canjean por EFECTIVO en cajeros Banamex mediante la Tarjeta Premia, que llega al domicilio al acumular los primeros 1,000 puntos. Es un programa de cashback presentado como puntos. Vigencia 4 años.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
@@ -8606,8 +8629,8 @@
     "cat_promedio_pct": "UNKNOWN",
     "base_reward_type": "points",
     "base_reward_rate": 5.0,
-    "point_value_mxn": "UNKNOWN",
-    "effective_rate_pct": "UNKNOWN",
+    "point_value_mxn": 0.1,
+    "effective_rate_pct": 0.5,
     "points_program_name": "Puntos Premia",
     "min_income_mxn_monthly": "UNKNOWN",
     "invitation_only": false,
@@ -8659,7 +8682,8 @@
     "accrual_rate": 5.0,
     "accrual_block_mxn": "NOT_APPLICABLE",
     "annual_fee_currency": "MXN",
-    "product_type": "credit"
+    "product_type": "credit",
+    "point_value_source": "https://www.banamex.com/es/centro-de-ayuda/tarjetas/puntos-premia.htm"
   },
   {
     "card_id": "citibanamex__la_comer_card_banamex",
@@ -8761,7 +8785,7 @@
     "census_confidence": "high",
     "census_note": "co-brand (Ticketmaster/LineUp)",
     "conflicts": [],
-    "notes": "Comisión por Administración $1,230 + IVA al año, cobrada mensualmente. Tasa promedio ponderada 61.81%. El CAT se calculó el 9 de julio de 2025 con vigencia al 9 de enero de 2026 — caducó hace más de siete meses y Banamex no lo ha recalculado. Se registran las fechas aunque el valor del CAT no renderice, para que el triage lo levante. Co-brand con Ticketmaster: 6 puntos por cada $10 gastados en Ticketmaster y 2x1 en eventos, según comparador — sin corroborar en fuente del emisor, por eso base_reward_rate queda UNKNOWN.",
+    "notes": "Comisión por Administración $1,230 + IVA al año, cobrada mensualmente. Tasa promedio ponderada 61.81%. El CAT se calculó el 9 de julio de 2025 con vigencia al 9 de enero de 2026 — caducó hace más de siete meses y Banamex no lo ha recalculado. Se registran las fechas aunque el valor del CAT no renderice, para que el triage lo levante. Co-brand con Ticketmaster: 6 puntos por cada $10 gastados en Ticketmaster y 2x1 en eventos, según comparador — sin corroborar en fuente del emisor, por eso base_reward_rate queda UNKNOWN. VALOR DEL PUNTO: 10 Puntos Premia = $1 peso, es decir $0.10 por punto, igual para todas las tarjetas Banamex. A diferencia de BBVA no varía por comercio: los puntos se canjean por EFECTIVO en cajeros Banamex mediante la Tarjeta Premia, que llega al domicilio al acumular los primeros 1,000 puntos. Es un programa de cashback presentado como puntos. Vigencia 4 años.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
@@ -8778,7 +8802,7 @@
     "cat_promedio_pct": "UNKNOWN",
     "base_reward_type": "points",
     "base_reward_rate": "UNKNOWN",
-    "point_value_mxn": "UNKNOWN",
+    "point_value_mxn": 0.1,
     "effective_rate_pct": "UNKNOWN",
     "points_program_name": "Puntos Premia",
     "min_income_mxn_monthly": "UNKNOWN",
@@ -8830,7 +8854,8 @@
     "accrual_rate": "UNKNOWN",
     "accrual_block_mxn": "NOT_APPLICABLE",
     "annual_fee_currency": "MXN",
-    "product_type": "credit"
+    "product_type": "credit",
+    "point_value_source": "https://www.banamex.com/es/centro-de-ayuda/tarjetas/puntos-premia.htm"
   },
   {
     "card_id": "citibanamex__teleton_banamex",
@@ -8846,7 +8871,7 @@
     "census_confidence": "high",
     "census_note": "affinity",
     "conflicts": [],
-    "notes": "Desde el 30 de julio de 2026 Banamex sustituyó la anualidad por una Comisión por Administración cobrada mensualmente. El monto anual es el mismo; cambia la periodicidad. Excepciones que siguen siendo anuales: Beyond, Home Depot, LineUp, Costco, Joy, Bsmart. Comisión facturada mensualmente.",
+    "notes": "Desde el 30 de julio de 2026 Banamex sustituyó la anualidad por una Comisión por Administración cobrada mensualmente. El monto anual es el mismo; cambia la periodicidad. Excepciones que siguen siendo anuales: Beyond, Home Depot, LineUp, Costco, Joy, Bsmart. Comisión facturada mensualmente. VALOR DEL PUNTO: 10 Puntos Premia = $1 peso, es decir $0.10 por punto, igual para todas las tarjetas Banamex. A diferencia de BBVA no varía por comercio: los puntos se canjean por EFECTIVO en cajeros Banamex mediante la Tarjeta Premia, que llega al domicilio al acumular los primeros 1,000 puntos. Es un programa de cashback presentado como puntos. Vigencia 4 años.",
     "inactivity_fee_mxn": "NOT_APPLICABLE",
     "inactivity_fee_period": "NOT_APPLICABLE",
     "inactivity_fee_includes_iva": "NOT_APPLICABLE",
@@ -8856,7 +8881,7 @@
     "annual_fee_first_year_waived": false,
     "annual_fee_waiver_condition": "NOT_APPLICABLE",
     "base_reward_type": "points",
-    "point_value_mxn": "UNKNOWN",
+    "point_value_mxn": 0.1,
     "effective_rate_pct": "UNKNOWN",
     "points_program_name": "Puntos Premia",
     "min_income_mxn_monthly": 7000,
@@ -8920,7 +8945,8 @@
     "accrual_rate": "UNKNOWN",
     "accrual_block_mxn": "NOT_APPLICABLE",
     "annual_fee_currency": "MXN",
-    "product_type": "credit"
+    "product_type": "credit",
+    "point_value_source": "https://www.banamex.com/es/centro-de-ayuda/tarjetas/puntos-premia.htm"
   },
   {
     "card_id": "citibanamex__the_home_depot_banamex",
