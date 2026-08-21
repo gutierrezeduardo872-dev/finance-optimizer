@@ -293,8 +293,35 @@ function bestUnmetBoost(d, userId, acct, baseRate) {
 
 /* -------------------------------- yield --------------------------------- */
 
+/**
+ * Resolve an index-linked account to a rate.
+ *
+ * Several Mexican deposit products quote a percentage of a reference rate
+ * rather than a rate: the whole Inbursa CT family pays 100% of 28-day CETES.
+ * Those rows store the index and the multiplier, never a resolved figure,
+ * because a stored figure freezes a number that moves weekly. Resolution
+ * happens here, against ReferenceRates, so the value carries a date.
+ *
+ * Returns null when the index is unknown or missing — callers treat that as
+ * "no rate available" rather than silently substituting zero, which is what
+ * made these accounts read as 0% before.
+ */
+function indexedRate(d, acct) {
+  if (acct.yield_structure !== 'indexed') return null;
+  const key = String(acct.rate_index || '').trim();
+  const pct = knownNum(acct.rate_index_pct);
+  if (!key || pct === null) return null;
+  const row = (d.referenceRates || []).find(
+    (r) => String(r.index).trim() === key);
+  const ref = row ? knownNum(row.rate) : null;
+  if (ref === null) return null;
+  return ref * pct / 100;
+}
+
+
 function annualYield(d, userId, acct, balance) {
-  const base = num(acct.flat_rate_pct);
+  const idx = indexedRate(d, acct);
+  const base = idx === null ? num(acct.flat_rate_pct) : idx;
   const structure = acct.yield_structure;
   const bb = bestBoost(d, userId, acct, base);
   let y = 0;
@@ -330,7 +357,8 @@ function annualYield(d, userId, acct, balance) {
 }
 
 function marginalRate(d, userId, acct, balance) {
-  const base = num(acct.flat_rate_pct);
+  const idx = indexedRate(d, acct);
+  const base = idx === null ? num(acct.flat_rate_pct) : idx;
   let r = 0;
   if (acct.yield_structure === 'tiered') {
     for (const t of tiersFor(d, acct.account_id)) {
@@ -344,7 +372,8 @@ function marginalRate(d, userId, acct, balance) {
 }
 
 function headlineRate(d, userId, acct) {
-  const base = num(acct.flat_rate_pct);
+  const idx = indexedRate(d, acct);
+  const base = idx === null ? num(acct.flat_rate_pct) : idx;
   let r = base;
   if (acct.yield_structure === 'tiered') {
     const tiers = tiersFor(d, acct.account_id);

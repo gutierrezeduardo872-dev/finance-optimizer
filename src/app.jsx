@@ -65,11 +65,17 @@ const writeQueue = (() => {
 const EMPTY_DB = {
   issuers: [], cards: [], cardRewards: [], cardPerks: [], accounts: [],
   yieldTiers: [], termTiers: [], conditionalBoosts: [], categories: [],
+  // fxRates and referenceRates arrive from the backend as single-purpose
+  // reference tables: the USD/MXN FIX, and the CETES/TIIE rates that
+  // index-linked accounts resolve against. Absent from this list they would
+  // be silently dropped on merge and every indexed account would read 0%.
+  fxRates: [], referenceRates: [],
   users: [], userProducts: [], movements: [],
 };
 
 const MARKET_KEYS = ['issuers', 'cards', 'cardRewards', 'cardPerks', 'accounts',
-                     'yieldTiers', 'termTiers', 'conditionalBoosts', 'categories'];
+                     'yieldTiers', 'termTiers', 'conditionalBoosts', 'categories',
+                     'fxRates', 'referenceRates'];
 const USER_KEYS = ['users', 'userProducts', 'movements'];
 
 const pick = (obj, keys) => keys.reduce((acc, k) => { acc[k] = obj[k] || []; return acc; }, {});
