@@ -28,7 +28,25 @@
    stays visible.
    =========================================================================== */
 
-const MARKET_POINT_VALUE_MXN = 0.25;
+// Placeholder peso value for a point whose issuer publishes none. Every card
+// scored with it is flagged `pointsEstimated`, and the UI must say so.
+//
+// One number cannot fit every programme, and the distortion is not small.
+// Volaris INVEX 2.0 pays 20 Puntos altitude per $20 of spend; at 0.15 that
+// resolves to 7.5%, which would make it the highest-earning card in the
+// portfolio and beat every real cashback card we hold a published rate for.
+// An airline currency awarded in large quantities is worth far less per point
+// than a bank point, so the same constant flatters one and penalises the other.
+//
+// Until the loyalty-programme audit gives us per-programme values, treat any
+// estimated rate above ~2.5% as an artifact of this constant rather than a
+// finding. See POINT_VALUE_OVERRIDES for how per-programme values will land.
+const MARKET_POINT_VALUE_MXN = 0.15;
+
+// Per-programme peso values, once researched. Keyed on points_program_name.
+// Empty by design: an entry here must come from an issuer or a defensible
+// redemption analysis, never from a guess that happens to look reasonable.
+const POINT_VALUE_OVERRIDES = {};
 
 /* ------------------------------- helpers -------------------------------- */
 
@@ -132,6 +150,10 @@ function pointValue(bonusRow, card) {
   if (fromBonus !== null) return { pv: fromBonus, est: false };
   const fromCard = knownNum(card && card.point_value_mxn);
   if (fromCard !== null) return { pv: fromCard, est: false };
+  const prog = String((card && card.points_program_name) || '').trim();
+  if (prog && POINT_VALUE_OVERRIDES[prog] != null) {
+    return { pv: POINT_VALUE_OVERRIDES[prog], est: true };
+  }
   return { pv: MARKET_POINT_VALUE_MXN, est: true };
 }
 
@@ -147,6 +169,89 @@ function capInfoFor(bonusRow, pv) {
     period: String(bonusRow.cap_period || 'monthly').toLowerCase(),
   };
 }
+
+/* ------------------------- rate and fee resolution ----------------------- */
+
+/** A dated reference value (USD/MXN FIX, CETES, UDI). Null when unavailable. */
+function refValue(d, key) {
+  const row = (d.referenceRates || []).find((r) => String(r.index).trim() === key);
+  if (row) return knownNum(row.rate);
+  const fx = (d.fxRates || []).find((r) => String(r.pair).trim() === key);
+  return fx ? knownNum(fx.rate) : null;
+}
+
+const usdMxn = (d) => refValue(d, 'USD/MXN');
+
+/**
+ * What one peso of spend returns, as a percentage, in pesos.
+ *
+ * Tries the sources in order of trust:
+ *   1. effective_rate_pct        — the issuer's own peso figure, if published
+ *   2. accrual_basis             — per_usd or per_mxn_block, resolved with the
+ *                                  FIX or the block size
+ *   3. base_reward_rate x value  — the percentage-of-spend case
+ *
+ * Returns { pct, estimated, reason } or null. NULL MEANS UNVALUABLE, NOT ZERO.
+ * Fifty-six mapped cards land here, and not because the point value is
+ * unknown — because the issuer never publishes the accrual rate. Scoring them
+ * as 0 makes them indistinguishable from a card that genuinely pays nothing,
+ * which is how an Aeroméxico Platinum came to read as 0%.
+ */
+function resolveRate(d, row, card) {
+  const src = row || card;
+  const type = String((row ? row.reward_type : card.base_reward_type) ||
+                      card.base_reward_type || '').toLowerCase();
+  if (type === 'none') return { pct: 0, estimated: false, reason: 'none' };
+
+  const eff = knownNum(src.effective_rate_pct);
+  if (eff !== null) return { pct: eff, estimated: false, reason: 'published' };
+
+  const pv = pointValue(row, card);
+  const basis = String(src.accrual_basis || '').toLowerCase();
+  const arate = knownNum(src.accrual_rate);
+
+  if (basis === 'per_usd' && arate !== null) {
+    const fx = usdMxn(d);
+    if (fx === null) return null;          // no dated FX: refuse to guess one
+    // arate points per USD -> points per peso -> pesos per peso of spend.
+    return { pct: (arate / fx) * pv.pv * 100, estimated: true, reason: 'per_usd' };
+  }
+
+  if (basis === 'per_mxn_block' && arate !== null) {
+    const block = knownNum(src.accrual_block_mxn);
+    if (block === null || block === 0) return null;
+    return { pct: (arate / block) * pv.pv * 100, estimated: pv.est,
+             reason: 'per_mxn_block' };
+  }
+
+  const rate = knownNum(row ? row.rate : card.base_reward_rate);
+  if (rate === null) return null;          // the rate itself is unknown
+  const isPoints = type === 'points' || type === 'miles';
+  return { pct: isPoints ? rate * pv.pv : rate,
+           estimated: isPoints && pv.est, reason: 'rate' };
+}
+
+/**
+ * Annual fee in pesos. Amex prices its charge cards in dollars, so a raw
+ * annual_fee_mxn of 1300 sits next to Banorte's 6000 and reads as cheap when
+ * it is nearly four times more.
+ */
+function resolveFee(d, card) {
+  const fee = knownNum(card.annual_fee_mxn);
+  if (fee === null) return null;
+  if (String(card.annual_fee_currency || 'MXN').toUpperCase() !== 'USD') return fee;
+  const fx = usdMxn(d);
+  return fx === null ? null : fee * fx;
+}
+
+/** Deposit insurance coverage in pesos, from UDIS. */
+function coverageMxn(d, acct) {
+  const udis = knownNum(acct.insurance_coverage_udis);
+  if (udis === null) return 0;             // ifpe: no scheme, no coverage
+  const udi = refValue(d, 'UDI');
+  return udi === null ? null : udis * udi;
+}
+
 
 function scoreCard(d, card, category, amount, userId) {
   const all = d.cardRewards.filter(
@@ -187,12 +292,22 @@ function scoreCard(d, card, category, amount, userId) {
     rate = baseRate; rtype = baseType; pv = basePv;
   }
 
-  let reward = amount * rewardValue(rtype, rate, pv.pv);
-  if (usedBonus && adds) reward += amount * rewardValue(baseType, baseRate, basePv.pv);
+  // Resolve through resolveRate rather than multiplying here: it also handles
+  // per-USD and per-block accrual, and returns null when the card cannot be
+  // priced at all instead of quietly yielding zero.
+  const resolved = resolveRate(d, usedBonus ? bonus : null, card);
+  const baseResolved = resolveRate(d, null, card);
+  const unvaluable = resolved === null;
 
-  const pointsEstimated =
-    ((rtype === 'points' || rtype === 'miles') && pv.est) ||
-    (usedBonus && adds && (baseType === 'points' || baseType === 'miles') && basePv.est);
+  let reward = unvaluable ? 0 : amount * resolved.pct / 100;
+  if (!unvaluable && usedBonus && adds && baseResolved) {
+    reward += amount * baseResolved.pct / 100;
+  }
+  if (!unvaluable) rate = resolved.pct;
+
+  const pointsEstimated = !unvaluable && (
+    resolved.estimated || (usedBonus && adds && baseResolved && baseResolved.estimated));
+  const rateReason = unvaluable ? 'unvaluable' : resolved.reason;
 
   let capped = false, capRemaining = null;
   if (usedBonus) {
@@ -218,13 +333,33 @@ function scoreCard(d, card, category, amount, userId) {
 
   return { card, rate, rtype, reward, perkValue, perks, usedBonus, capped,
            capRemaining, bonusBlockedBy, pointsEstimated, optional, baseRate,
-           score: reward + perkValue };
+           unvaluable, rateReason,
+           annualFeeMxn: resolveFee(d, card),
+           isCharge: String(card.product_type || 'credit').toLowerCase() === 'charge',
+           // An unvaluable card scores below every priced card, including one
+           // that earns nothing — a known zero beats an unknown.
+           score: unvaluable ? -1 : reward + perkValue };
 }
 
-const ccRecommend = (d, userId, category, amount) =>
-  heldCards(d, userId)
+/**
+ * Ranked cards, priced first. `unvaluable` is exposed separately so the UI can
+ * say why those cards are absent from the comparison rather than showing them
+ * as earning nothing.
+ */
+function ccRecommend(d, userId, category, amount) {
+  const all = heldCards(d, userId)
     .map((c) => scoreCard(d, c, category, amount, userId))
     .sort((a, b) => b.score - a.score);
+  const ranked = all.filter((x) => !x.unvaluable);
+  const unvaluable = all.filter((x) => x.unvaluable);
+  // Keep returning an array so existing callers keep working; the buckets are
+  // attached as properties.
+  const out = ranked.concat(unvaluable);
+  out.ranked = ranked;
+  out.unvaluable = unvaluable;
+  out.best = ranked[0] || null;
+  return out;
+}
 
 /* -------------------------------- boosts -------------------------------- */
 
@@ -407,11 +542,32 @@ function boostOpportunity(d, userId, acct, balance) {
 
 /* ------------------------------- savings -------------------------------- */
 
-function savingsIn(d, userId, amount) {
+/** Best rate across an account's term ladder, for allocation purposes. */
+function bestTermRate(d, acct) {
+  const rows = termTiersFor(d, acct.account_id);
+  return rows.reduce((m, t) => Math.max(m, num(t.rate_pct)), 0);
+}
+
+
+/**
+ * Where to put money.
+ *
+ * opts.capAtCoverage — when true the greedy split stops filling an account at
+ * its deposit-insurance limit before moving to the next. Off by default: a
+ * user deliberately chasing yield on a small balance is not making a mistake,
+ * and forcing the safer answer would be us overriding them silently.
+ */
+function savingsIn(d, userId, amount, opts) {
+  const capAtCoverage = !!(opts && opts.capAtCoverage);
   const accts = heldAccounts(d, userId);
 
   const ranked = accts.map((a) => {
     const eligible = amount >= num(a.min_balance_mxn);
+    // Insurance and liquidity are returned, never scored. A hidden risk
+    // penalty would be a judgement we make silently on the user's behalf, and
+    // there is no defensible number for it. Show the exposure; let them choose.
+    const cover = coverageMxn(d, a);
+    const covered = cover === null ? null : Math.min(amount, cover);
     return {
       acct: a,
       eligible,
@@ -419,24 +575,40 @@ function savingsIn(d, userId, amount) {
       boost: !!bestBoost(d, userId, a, num(a.flat_rate_pct)),
       opportunity: eligible ? boostOpportunity(d, userId, a, amount) : null,
       rate: headlineRate(d, userId, a),
+      insuranceScheme: a.insurance_scheme,
+      coverageMxn: cover,
+      insuredMxn: covered,
+      uninsuredMxn: cover === null ? null : Math.max(0, amount - cover),
+      locked: String(a.liquidity || '').toLowerCase() === 'term_locked',
+      lockDays: knownNum(a.term_days),
     };
   }).sort((x, y) => y.benefit - x.benefit);
 
   // Build rate bands, best first, then fill greedily.
   const bands = [];
   accts.filter((a) => amount >= num(a.min_balance_mxn)).forEach((a) => {
-    const base = num(a.flat_rate_pct);
+    // Through indexedRate, not flat_rate_pct: an indexed or term-tiered account
+    // has NOT_APPLICABLE there, so the old code gave it a rate of 0 and the
+    // splitter skipped it entirely even though annualYield priced it fine.
+    const idx = indexedRate(d, a);
+    const base = idx === null ? num(a.flat_rate_pct) : idx;
     const bb = bestBoost(d, userId, a, base);
     if (a.yield_structure === 'tiered') {
+      const cover = capAtCoverage ? coverageMxn(d, a) : null;
       tiersFor(d, a.account_id).forEach((t) => {
         const lo = num(t.tier_min_mxn), hi = cap(t.tier_max_mxn);
         const rate = bb && lo < bb.cap ? bb.rate : num(t.rate_pct);
-        bands.push({ rate, cap: hi - lo, acct: a });
+        const width = cover === null ? hi - lo
+                                     : Math.max(0, Math.min(hi, cover) - lo);
+        bands.push({ rate, cap: width, acct: a });
       });
     } else {
+      const stated = cap(a.max_balance_earning_stated_rate_mxn);
+      const cover = capAtCoverage ? coverageMxn(d, a) : null;
       bands.push({
-        rate: bb ? bb.rate : base,
-        cap: cap(a.max_balance_earning_stated_rate_mxn),
+        rate: bb ? bb.rate : (a.yield_structure === 'term_tiered'
+                              ? bestTermRate(d, a) : base),
+        cap: cover === null ? stated : Math.min(stated, cover),
         acct: a,
       });
     }
@@ -485,6 +657,7 @@ function savingsIn(d, userId, amount) {
   });
 
   return { ranked, best: ranked[0],
+           capAtCoverage,
            split: { total, unallocated: left,
                     parts: parts.sort((a, b) => b.amount - a.amount) } };
 }
