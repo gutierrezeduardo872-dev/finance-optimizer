@@ -1579,5 +1579,62 @@
     },
     "conflicts": [],
     "notes": "Plazos de 1 a 365 días desde $1,000, sin comisiones, con reinversión automática opcional. LA TASA DE RÉGIMEN ES LA MÁS BAJA DEL CONJUNTO DE DATOS ENTRE PRODUCTOS A PLAZO: GAT nominal 0.20% con $50,000 a 91 días, es decir GAT real -3.61%. Está por debajo de Banamex (0.91%-1.00%) y muy por debajo de cualquier sofipo. HSBC corrió una campaña de 6.77% con $50,000 a 90 días, pero su vigencia fue del 1 al 31 de mayo de 2026 y ya terminó, así que NO se registra como boost activo: hacerlo mostraría al usuario una tasa que ya no puede contratar. El documento de GAT del emisor cubre además Inversión Express y CEDES a tasa fija, CETE y TIIE: cuatro instrumentos más que no están en el censo. Mismo límite de esquema que Banamex: HSBC fija la tasa por monto Y plazo, y TermTiers sólo tiene term_days."
+  },
+  {
+    "account_id": "santander_mexico__cuenta_free",
+    "issuer_id": "santander_mexico",
+    "display_name": "Cuenta FREE Santander",
+    "former_names": [],
+    "legacy_id": "NOT_APPLICABLE",
+    "account_type": "debit",
+    "lifecycle_status": "active",
+    "mapping_status": "mapped",
+    "yield_structure": "none",
+    "flat_rate_pct": "NOT_APPLICABLE",
+    "promotional_rate_pct": "NOT_APPLICABLE",
+    "promotional_rate_end_date": "NOT_APPLICABLE",
+    "rate_type": "NOT_APPLICABLE",
+    "max_balance_earning_stated_rate_mxn": "NOT_APPLICABLE",
+    "monthly_fee_mxn": 0,
+    "fee_waiver_condition": "Sin comisión por administración o manejo de cuenta al realizar al menos una operación al mes. El emisor no publica el importe que se cobra si no se cumple.",
+    "min_balance_mxn": "UNKNOWN",
+    "min_opening_deposit_mxn": "UNKNOWN",
+    "liquidity": "instant",
+    "term_days": "NOT_APPLICABLE",
+    "isr_withholding_note": "NOT_APPLICABLE",
+    "insurance_scheme": "IPAB",
+    "insurance_coverage_udis": 400000,
+    "regulated_entity_type": "banco",
+    "confidence": {
+      "identity": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://assets.santandermedia.com/adobe/assets/urn:aaid:aem:530ce262-3c1c-4b59-a09a-4326981266ab/original/as/folleto-cuenta-free.pdf",
+          "https://www.santander.com.mx/personas/cuentas/"
+        ]
+      },
+      "cost": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://assets.santandermedia.com/adobe/assets/urn:aaid:aem:530ce262-3c1c-4b59-a09a-4326981266ab/original/as/folleto-cuenta-free.pdf",
+          "https://www.santander.com.mx/personas/cuentas/"
+        ]
+      },
+      "yield": {
+        "score": "high",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://assets.santandermedia.com/adobe/assets/urn:aaid:aem:530ce262-3c1c-4b59-a09a-4326981266ab/original/as/folleto-cuenta-free.pdf",
+          "https://www.santander.com.mx/personas/cuentas/"
+        ]
+      }
+    },
+    "conflicts": [],
+    "notes": "Cuenta transaccional SIN RENDIMIENTO: yield_structure 'none', no 0%, porque Santander no publica tasa alguna y la propia página de cuentas advierte literalmente 'Le informamos que este no es un producto financiero de ahorro o inversión'. Es la primera cuenta de Santander en el conjunto de datos: el emisor tenía 7 tarjetas mapeadas y ninguna cuenta. La comisión de manejo se exenta con UNA OPERACIÓN AL MES — un conteo de transacciones, no un importe, igual que la penalización de HSBC Zero. El importe sin exentar no se publica, así que monthly_fee_mxn queda en 0 con la condición registrada aparte. Retiros sin tarjeta sin costo en cajeros Santander. Protegida por IPAB 400,000 UDIS."
   }
 ]
