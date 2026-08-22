@@ -238,7 +238,7 @@ function blockedLabel(scored) {
 
 /* ---------------------------- savings advisor --------------------------- */
 
-function SavingsAdvisor({ d, user, logMovement, setBalance, go }) {
+function SavingsAdvisor({ d, user, logMovement, setBalance, setProductFlag, go }) {
   const [dir, setDir] = useState('in');
   const [amountStr, setAmountStr] = useState('');
   const [picked, setPicked] = useState(null);
@@ -368,6 +368,38 @@ function SavingsAdvisor({ d, user, logMovement, setBalance, go }) {
 
           {/* MIGRATED: an unmet boost is advice, not a silent downgrade. The
               engine returns what unlocks the better rate and what it is worth. */}
+          {/* Confirmable boosts: the engine cannot observe a paid membership or
+              where payroll lands, so it asks. Without this the boost is
+              unreachable and the account silently pays its base rate. */}
+          {dir === 'in' && current.opportunity && current.acct._upid &&
+           ['tier_membership', 'payroll_direct_deposit']
+             .includes(String(current.opportunity.conditionType || '').toLowerCase()) && (
+            <button className="panel tap-panel"
+                    onClick={() => setProductFlag(
+                      current.acct._upid,
+                      current.opportunity.conditionType === 'tier_membership'
+                        ? 'membership_tier' : 'payroll_deposited',
+                      current.opportunity.conditionType === 'tier_membership'
+                        ? 'confirmado' : true)}>
+              <div className="note">
+                ¿Ya tienes {conditionCopy(d, current.acct, current.opportunity)}?{' '}
+                Confírmalo y contamos {pct(current.opportunity.potentialRate)} en vez de{' '}
+                {pct(current.opportunity.currentRate)} — son{' '}
+                <b>{mxn(current.opportunity.extraPerYear)} más al año</b>.
+              </div>
+            </button>
+          )}
+
+          {dir === 'in' && current.acct._membership && (
+            <button className="panel tap-panel"
+                    onClick={() => setProductFlag(current.acct._upid, 'membership_tier', '')}>
+              <div className="note">
+                Estamos contando el rendimiento con tu beneficio activo. Si ya no lo
+                tienes, tócalo para quitarlo.
+              </div>
+            </button>
+          )}
+
           {dir === 'in' && current.opportunity && current.opportunity.extraPerYear > 1 && (
             <div className="note">
               Esta cuenta puede rendir {pct(current.opportunity.potentialRate)}{' '}

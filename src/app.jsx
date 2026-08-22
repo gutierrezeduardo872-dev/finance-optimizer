@@ -242,6 +242,26 @@ function App() {
     ok('Saldo actualizado');
   };
 
+  /**
+   * Confirm or clear a flag the engine cannot observe: a paid membership tier,
+   * or payroll landing in this account. Both gate real boosts — Nu's Cajita
+   * Turbo at 13% and Ualá's payroll rate — and until now nothing in the app
+   * could set them, so those boosts could never apply to anyone.
+   */
+  const setProductFlag = (upId, field, value) => {
+    apply((prev) => ({
+      ...prev,
+      userProducts: prev.userProducts.map(
+        (p) => (p.id === upId
+          ? { ...p, [field]: value,
+              flag_confirmed_on: new Date().toISOString().slice(0, 10) }
+          : p)),
+    }));
+    writeQueue.push({ action: 'updateUserProduct', id: upId, [field]: value },
+                    () => bad('No se pudo actualizar'));
+    ok(value ? 'Beneficio confirmado' : 'Beneficio quitado');
+  };
+
   const saveName = (name) => {
     apply((prev) => ({
       ...prev,
@@ -331,7 +351,7 @@ function App() {
         return <CardAdvisor d={db} user={session} logMovement={logMovement} go={go} />;
       case 'save':
         return <SavingsAdvisor d={db} user={session} logMovement={logMovement}
-                               setBalance={setBalance} go={go} />;
+                               setBalance={setBalance} setProductFlag={setProductFlag} go={go} />;
       case 'picks':
         return <Suggestions d={db} user={session} addProduct={addProduct} go={go} />;
       case 'products':

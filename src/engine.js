@@ -816,8 +816,15 @@ function newAccountPicks(d, userId) {
   const deposits = d.movements
     .filter((m) => m.user_id === userId && m.flow === 'debit' && m.direction === 'in')
     .map((m) => num(m.amount));
-  if (!deposits.length) return [];
-  const typical = Math.round(deposits.reduce((s, v) => s + v, 0) / deposits.length);
+
+  // Fall back to the balance the user already recorded. Requiring logged
+  // deposit movements meant an account suggestion never appeared for anyone
+  // who had entered a balance but not yet logged a deposit — which is most
+  // people, and made the whole feature look broken rather than empty.
+  const typical = deposits.length
+    ? Math.round(deposits.reduce((s, v) => s + v, 0) / deposits.length)
+    : Math.round(held.reduce((s, a) => s + num(a.current_balance), 0));
+  if (typical <= 0) return [];
 
   const bestHeld = held
     .map((a) => ({ a, y: annualYield(d, userId, a, typical) }))
