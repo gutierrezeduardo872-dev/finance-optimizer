@@ -27,15 +27,24 @@ function CardAdvisor({ d, user, logMovement, go }) {
       : null),
     [d, user, category, amount, held.length]);
 
-  useEffect(() => { setLogged(false); }, [category, amountStr]);
+  // Clearing the override when the purchase changes matters: a card chosen for
+  // a $500 supermarket run is not necessarily the right one for $9,000 of travel.
+  const [picked, setPicked] = useState(null);
+  useEffect(() => { setLogged(false); setPicked(null); }, [category, amountStr]);
 
   const issuerOfCard = (cardId) => {
     const c = d.cards.find((x) => x.card_id === cardId);
     return c ? (d.issuers.find((i) => i.issuer_id === c.issuer_id) || {}) : {};
   };
 
-  const best = ranked && ranked[0];
-  const runnerUp = ranked && ranked[1];
+  // ranked now carries `.best` (highest-scoring PRICED card, null if none) and
+  // `.unvaluable`. Using ranked[0] would pick an unvaluable card when the user
+  // holds nothing we can price, and log a score of -1 as the benefit.
+  const suggested = ranked && (ranked.best || ranked[0]);
+  const best = (ranked && picked && ranked.find((r) => r.card.card_id === picked))
+               || suggested;
+  const runnerUp = ranked && ranked.find((r) => r.card.card_id !== (best && best.card.card_id));
+  const overridden = !!(picked && suggested && picked !== suggested.card.card_id);
 
   const onLog = () => {
     logMovement({
@@ -48,11 +57,12 @@ function CardAdvisor({ d, user, logMovement, go }) {
       // apply to reward only — perk value is not capped — so mixing them made
       // the cap read as more consumed than it was.
       computed_reward_mxn: Number(best.reward.toFixed(2)),
+      notes: overridden ? 'Usuario eligió otra tarjeta que la sugerida' : '',
     });
     setLogged(true);
   };
 
-  const reset = () => { setLogged(false); setAmountStr(''); };
+  const reset = () => { setLogged(false); setAmountStr(''); setPicked(null); };
 
   if (!held.length) {
     return (
@@ -179,22 +189,27 @@ function CardAdvisor({ d, user, logMovement, go }) {
             <div className="panel">
               <div className="panel-head">
                 <div className="ph-l">Tus otras tarjetas</div>
+                <div className="ph-r" style={{ fontSize: 12, opacity: 0.7 }}>
+                  toca para usar otra
+                </div>
               </div>
-              {ranked.slice(1).map((r) => {
+              {ranked.filter((r) => r.card.card_id !== best.card.card_id).map((r) => {
                 const iss = issuerOfCard(r.card.card_id);
                 return (
                   <Row
                     key={r.card.card_id}
                     mark={<BankMark name={iss.display_name} url={iss.logo_url} size={34} />}
                     title={r.card.display_name}
-                    meta={blockedLabel(r) ||
-                          (r.rate + '% ' + rtl(r.rtype) +
-                           (r.capped ? ' · tope alcanzado' : ''))}
-                    right={mxn2(r.score)}
-                    rightSub={best.score - r.score >= 0.01
-                      ? '−' + mxn2(best.score - r.score) : 'igual'}
-                    onClick={() => setSheetItem({ type: 'card', data: r.card,
-                                                  logo: iss.logo_url })}
+                    meta={r.unvaluable
+                      ? 'no podemos compararla — el emisor no publica el valor de sus puntos'
+                      : (blockedLabel(r) ||
+                         (r.rate + '% ' + rtl(r.rtype) +
+                          (r.capped ? ' · tope alcanzado' : '')))}
+                    right={r.unvaluable ? '—' : mxn2(r.score)}
+                    rightSub={r.unvaluable ? 'sin dato'
+                      : (best.score - r.score >= 0.01
+                         ? '−' + mxn2(best.score - r.score) : 'igual')}
+                    onClick={() => setPicked(r.card.card_id)}
                   />
                 );
               })}

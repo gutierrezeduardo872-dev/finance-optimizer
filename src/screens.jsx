@@ -493,6 +493,11 @@ function Suggestions({ d, user, addProduct, go }) {
           {cardPicks.map((p) => {
             const iss = issuerOf(p.card);
             const feeTxt = feeLabel(p.card);
+            // Worst-case yearly cost, so the footer accounts for a monthly
+            // inactivity penalty and not just the annual fee. Restored after
+            // the fee-label change removed the original `fee` binding and left
+            // the reference below dangling — which crashed the whole screen.
+            const fee = maxCarryingCost(p.card);
             return (
               <button key={p.card.card_id} className="pick"
                       onClick={() => setSheetItem({ type: 'card', data: p.card,
