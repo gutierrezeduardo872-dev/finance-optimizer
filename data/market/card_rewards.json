@@ -1271,5 +1271,69 @@
     "accrual_rate": 1.5,
     "accrual_block_mxn": "NOT_APPLICABLE",
     "point_value_source": "https://www.scotiabank.com.mx/personas/tarjetas-de-credito/scotiarewards/scotiapesos.aspx"
+  },
+  {
+    "reward_id": "klar__tarjeta_de_credito_klar__supermarket",
+    "card_id": "klar__tarjeta_de_credito_klar",
+    "category": "supermarket",
+    "rate": 1.0,
+    "reward_type": "cashback",
+    "point_value_mxn": 1.0,
+    "effective_rate_pct": 1.0,
+    "replaces_or_adds_to_base": "replaces",
+    "cap_amount": 1000,
+    "cap_basis": "reward_mxn",
+    "cap_period": "monthly",
+    "min_spend": "NOT_APPLICABLE",
+    "promo_end_date": "NOT_APPLICABLE",
+    "user_selectable": false,
+    "confidence": {
+      "rewards": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.klar.mx/cashback"
+        ]
+      }
+    },
+    "notes": "1.0% en supermercados participantes (Walmart, Chedraui, HEB, Soriana, La Comer, Sumesa, Costco, Bodega Aurrerá, Sam's Club, City Market). El tope de $1,000 al mes es COMPARTIDO con las demás categorías.",
+    "rate_after_cap": 0,
+    "payout_frequency": "monthly",
+    "accrual_basis": "pct_of_spend",
+    "accrual_rate": 1.0,
+    "accrual_block_mxn": "NOT_APPLICABLE"
+  },
+  {
+    "reward_id": "klar__platino__supermarket",
+    "card_id": "klar__platino",
+    "category": "supermarket",
+    "rate": 3.0,
+    "reward_type": "cashback",
+    "point_value_mxn": 1.0,
+    "effective_rate_pct": 3.0,
+    "replaces_or_adds_to_base": "replaces",
+    "cap_amount": 3000,
+    "cap_basis": "reward_mxn",
+    "cap_period": "monthly",
+    "min_spend": "NOT_APPLICABLE",
+    "promo_end_date": "NOT_APPLICABLE",
+    "user_selectable": false,
+    "confidence": {
+      "rewards": {
+        "score": "medium",
+        "evidence_type": "issuer_primary",
+        "verified_on": "2026-08-17",
+        "sources": [
+          "https://www.klar.mx/cashback"
+        ]
+      }
+    },
+    "notes": "3.0% en supermercados participantes (Walmart, Chedraui, HEB, Soriana, La Comer, Sumesa, Costco, Bodega Aurrerá, Sam's Club, City Market). El tope de $3,000 al mes es COMPARTIDO con las demás categorías.",
+    "rate_after_cap": 0,
+    "payout_frequency": "monthly",
+    "accrual_basis": "pct_of_spend",
+    "accrual_rate": 3.0,
+    "accrual_block_mxn": "NOT_APPLICABLE"
   }
 ]

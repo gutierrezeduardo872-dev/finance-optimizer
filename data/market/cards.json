@@ -9538,7 +9538,7 @@
     "census_confidence": "high",
     "census_note": "",
     "conflicts": [],
-    "notes": "CAT/tasa from aggregator; classic tier",
+    "notes": "CAT/tasa from aggregator; classic tier CASHBACK POR CATEGORÍAS (Klar Plus): entre 1% y 3.0% según categoría — supermercados, viajes, suscripciones, gasolina y servicios. FUERA de las categorías elegibles no hay devolución, por eso base_reward_rate es 0 y no UNKNOWN. TOPE SOBRE LA RECOMPENSA, no sobre el gasto: máximo $1,000 M.N. de cashback al mes, agregado entre todas las categorías, no por categoría. Requiere gastar $2,500 M.N. al mes con la línea de crédito o la Cuenta Klar para ACTIVAR y MANTENER Klar Plus. Sin cumplirlo no se gana cashback alguno. Se abona en efectivo a la tarjeta el primer día del mes siguiente, sin trámite. Klar publica el porcentaje por categoría sólo de supermercados (1.0%); el resto los muestra dentro de la app, así que no se registran.",
     "annual_fee_mxn": 0,
     "annual_fee_includes_iva": "UNKNOWN",
     "annual_fee_first_year_waived": "UNKNOWN",
@@ -9546,10 +9546,10 @@
     "interest_rate_annual_pct": 123.1,
     "cat_promedio_pct": 187,
     "base_reward_type": "cashback",
-    "base_reward_rate": "UNKNOWN",
+    "base_reward_rate": 0,
     "point_value_mxn": 1.0,
-    "effective_rate_pct": "UNKNOWN",
-    "points_program_name": "NOT_APPLICABLE",
+    "effective_rate_pct": 0,
+    "points_program_name": "Cashback Klar",
     "min_income_mxn_monthly": "UNKNOWN",
     "invitation_only": false,
     "other_eligibility_criteria": "18+, sin historial requerido",
@@ -9572,11 +9572,12 @@
         ]
       },
       "rewards": {
-        "score": "medium",
+        "score": "high",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-07-22",
+        "verified_on": "2026-08-17",
         "sources": [
-          "https://www.klar.mx/"
+          "https://www.klar.mx/cashback",
+          "https://www.klar.mx/plus"
         ]
       },
       "perks": {
@@ -9604,8 +9605,8 @@
     "fee_billing_period": "NOT_APPLICABLE",
     "cat_calculated_on": "UNKNOWN",
     "cat_valid_until": "UNKNOWN",
-    "accrual_basis": "UNKNOWN",
-    "accrual_rate": "UNKNOWN",
+    "accrual_basis": "pct_of_spend",
+    "accrual_rate": 0,
     "accrual_block_mxn": "NOT_APPLICABLE",
     "annual_fee_currency": "MXN",
     "product_type": "credit"
@@ -9624,7 +9625,7 @@
     "census_confidence": "high",
     "census_note": "metal, por invitación",
     "conflicts": [],
-    "notes": "Lower tasa than classic; aggregator figures",
+    "notes": "Lower tasa than classic; aggregator figures CASHBACK POR CATEGORÍAS (Klar Platino): entre 1% y 6.0% según categoría — supermercados, viajes, suscripciones, gasolina y servicios. FUERA de las categorías elegibles no hay devolución, por eso base_reward_rate es 0 y no UNKNOWN. TOPE SOBRE LA RECOMPENSA, no sobre el gasto: máximo $3,000 M.N. de cashback al mes, agregado entre todas las categorías, no por categoría. La membresía Platino sustituye el requisito de gasto mensual de Klar Plus. Se abona en efectivo a la tarjeta el primer día del mes siguiente, sin trámite. Klar publica el porcentaje por categoría sólo de supermercados (3.0%); el resto los muestra dentro de la app, así que no se registran.",
     "annual_fee_mxn": 0,
     "annual_fee_includes_iva": "UNKNOWN",
     "annual_fee_first_year_waived": "UNKNOWN",
@@ -9632,10 +9633,10 @@
     "interest_rate_annual_pct": 61.1,
     "cat_promedio_pct": 85,
     "base_reward_type": "cashback",
-    "base_reward_rate": "UNKNOWN",
+    "base_reward_rate": 0,
     "point_value_mxn": 1.0,
-    "effective_rate_pct": "UNKNOWN",
-    "points_program_name": "NOT_APPLICABLE",
+    "effective_rate_pct": 0,
+    "points_program_name": "Cashback Klar",
     "min_income_mxn_monthly": "UNKNOWN",
     "invitation_only": false,
     "other_eligibility_criteria": "18+",
@@ -9658,11 +9659,12 @@
         ]
       },
       "rewards": {
-        "score": "medium",
+        "score": "high",
         "evidence_type": "issuer_primary",
-        "verified_on": "2026-07-22",
+        "verified_on": "2026-08-17",
         "sources": [
-          "https://www.klar.mx/"
+          "https://www.klar.mx/cashback",
+          "https://www.klar.mx/plus"
         ]
       },
       "perks": {
@@ -9690,8 +9692,8 @@
     "fee_billing_period": "NOT_APPLICABLE",
     "cat_calculated_on": "UNKNOWN",
     "cat_valid_until": "UNKNOWN",
-    "accrual_basis": "UNKNOWN",
-    "accrual_rate": "UNKNOWN",
+    "accrual_basis": "pct_of_spend",
+    "accrual_rate": 0,
     "accrual_block_mxn": "NOT_APPLICABLE",
     "annual_fee_currency": "MXN",
     "product_type": "credit"
