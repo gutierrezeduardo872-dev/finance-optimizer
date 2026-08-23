@@ -347,7 +347,13 @@ function AccountDetails({ d, a, uid }) {
 
       <div className="drow">
         <span>Comisión mensual</span>
-        <span>{num(a.monthly_fee_mxn) ? mxn(num(a.monthly_fee_mxn)) + '/mes' : 'Ninguna'}</span>
+        {/* An unknown fee is not the absence of a fee. Inbursa CT Max reads
+            UNKNOWN here and charges $319/month, which "Ninguna" would hide. */}
+        <span>{knownNum(a.monthly_fee_mxn) === null
+          ? 'Sin dato'
+          : (knownNum(a.monthly_fee_mxn)
+              ? mxn(knownNum(a.monthly_fee_mxn)) + '/mes'
+              : 'Ninguna')}</span>
       </div>
       <div className="drow">
         <span>Saldo mínimo</span>

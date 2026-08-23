@@ -565,8 +565,14 @@ function Suggestions({ d, user, addProduct, go }) {
                   </div>
                 </div>
                 <div className="pick-foot">
-                  Sobre un depósito típico tuyo de {mxn(p.typical)}
-                  {p.beats ? ', frente a ' + p.beats : ''}.
+                  {p.type === 'reallocation'
+                    ? 'Reacomodando los ' + mxn(p.total) + ' que ya tienes, sin abrir nada nuevo.'
+                    : 'Moviendo ' + mxn(p.suggestedAmount) + ' de tus ' + mxn(p.total) +
+                      '. Frente a reacomodar lo que ya tienes, aporta ' +
+                      mxn(p.upliftOverBest) + ' más al año.'}
+                  {p.locked ? ' Tu dinero queda comprometido un plazo.' : ''}
+                  {p.insuranceScheme === 'none'
+                    ? ' Sin seguro de depósito: no está cubierta por IPAB ni PROSOFIPO.' : ''}
                   <span className="row-chev"><Ico n="right" s={14} /></span>
                 </div>
                 {/* Deposit insurance is a real trade-off against yield, so say it

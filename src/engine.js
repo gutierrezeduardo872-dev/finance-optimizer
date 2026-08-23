@@ -494,7 +494,10 @@ function annualYield(d, userId, acct, balance) {
       y += earning * base / 100;
     }
   }
-  return y - num(acct.monthly_fee_mxn) * 12;
+  // A fee we have not sourced is not a fee of zero. Subtract what we know and
+  // let savingsIn flag the rest, rather than quietly inflating the yield.
+  const fee = knownNum(acct.monthly_fee_mxn);
+  return y - (fee === null ? 0 : fee) * 12;
 }
 
 function marginalRate(d, userId, acct, balance) {
@@ -587,6 +590,10 @@ function savingsIn(d, userId, amount, opts) {
       uninsuredMxn: cover === null ? null : Math.max(0, amount - cover),
       locked: String(a.liquidity || '').toLowerCase() === 'term_locked',
       lockDays: knownNum(a.term_days),
+      monthlyFee: knownNum(a.monthly_fee_mxn),
+      // True when we could not source the fee, so the projected yield is an
+      // upper bound rather than a figure.
+      feeUnknown: knownNum(a.monthly_fee_mxn) === null,
     };
   }).sort((x, y) => y.benefit - x.benefit);
 
@@ -807,42 +814,125 @@ function newCardPicks(d, userId) {
     .slice(0, 4);
 }
 
+/* --------------------------- portfolio optimisation ---------------------- */
+
+/**
+ * Yield bands for a set of accounts: every distinct rate the money could earn,
+ * with how much fits at that rate. Extracted so newAccountPicks can reuse the
+ * same allocator savingsIn uses, instead of pretending the whole balance would
+ * sit in one account at its headline rate — which ignores caps and made
+ * Revolut look like 15% on $100,000 when only the first $25,000 earns it.
+ */
+function yieldBands(d, userId, accts, amount, capAtCoverage) {
+  const bands = [];
+  accts.filter((a) => amount >= num(a.min_balance_mxn)).forEach((a) => {
+    const idx = indexedRate(d, a);
+    const base = idx === null ? num(a.flat_rate_pct) : idx;
+    const bb = bestBoost(d, userId, a, base);
+    const cover = capAtCoverage ? coverageMxn(d, a) : null;
+    if (a.yield_structure === 'tiered') {
+      tiersFor(d, a.account_id).forEach((t) => {
+        const lo = num(t.tier_min_mxn), hi = cap(t.tier_max_mxn);
+        const rate = bb && lo < bb.cap ? bb.rate : num(t.rate_pct);
+        const width = cover === null ? hi - lo : Math.max(0, Math.min(hi, cover) - lo);
+        bands.push({ rate, cap: width, acct: a });
+      });
+    } else {
+      const stated = cap(a.max_balance_earning_stated_rate_mxn);
+      bands.push({
+        rate: bb ? bb.rate : (a.yield_structure === 'term_tiered'
+                              ? bestTermRate(d, a) : base),
+        cap: cover === null ? stated : Math.min(stated, cover),
+        acct: a,
+      });
+    }
+  });
+  return bands.sort((x, y) => y.rate - x.rate);
+}
+
+/** Greedy fill: best rate first, up to each band's capacity. */
+function allocate(bands, amount) {
+  let left = amount, gross = 0;
+  const alloc = {};
+  const perAcct = {};   // gross yield contributed by each account
+  bands.forEach((b) => {
+    if (left <= 0) return;
+    const take = Math.min(left, b.cap);
+    alloc[b.acct.account_id] = (alloc[b.acct.account_id] || 0) + take;
+    perAcct[b.acct.account_id] = (perAcct[b.acct.account_id] || 0) + take * b.rate / 100;
+    gross += take * b.rate / 100;
+    left -= take;
+  });
+  const fees = Object.keys(alloc).reduce((s, id) => {
+    const a = bands.find((b) => b.acct.account_id === id).acct;
+    const f = knownNum(a.monthly_fee_mxn);
+    return s + (f === null ? 0 : f) * 12;
+  }, 0);
+  return { alloc, gross, net: gross - fees, unallocated: left, perAcct };
+}
+
+/** What the portfolio earns today, at the balances the user actually recorded. */
+function currentPortfolioYield(d, userId) {
+  return heldAccounts(d, userId)
+    .reduce((s, a) => s + annualYield(d, userId, a, num(a.current_balance)), 0);
+}
+
+
 function newAccountPicks(d, userId) {
   const user = d.users.find((u) => u.user_id === userId);
   if (!user) return [];
   const held = heldAccounts(d, userId);
   const heldIds = held.map((a) => a.account_id);
 
-  const deposits = d.movements
-    .filter((m) => m.user_id === userId && m.flow === 'debit' && m.direction === 'in')
-    .map((m) => num(m.amount));
+  // The whole portfolio, not one deposit. Comparing a single "typical deposit"
+  // against one incumbent account answered a question nobody asked; what a user
+  // wants to know is what their total balance could earn if it were placed well.
+  const total = Math.round(held.reduce((s, a) => s + num(a.current_balance), 0));
+  if (total <= 0) return [];
 
-  // Fall back to the balance the user already recorded. Requiring logged
-  // deposit movements meant an account suggestion never appeared for anyone
-  // who had entered a balance but not yet logged a deposit — which is most
-  // people, and made the whole feature look broken rather than empty.
-  const typical = deposits.length
-    ? Math.round(deposits.reduce((s, v) => s + v, 0) / deposits.length)
-    : Math.round(held.reduce((s, a) => s + num(a.current_balance), 0));
-  if (typical <= 0) return [];
+  const current = currentPortfolioYield(d, userId);
+  const bestHeldOnly = allocate(yieldBands(d, userId, held, total), total).net;
 
-  const bestHeld = held
-    .map((a) => ({ a, y: annualYield(d, userId, a, typical) }))
-    .sort((x, y) => y.y - x.y)[0];
-  const baseline = bestHeld ? Math.max(0, bestHeld.y) : 0;
-
-  return d.accounts
+  const picks = d.accounts
     .filter((a) => !heldIds.includes(a.account_id) &&
                    a.lifecycle_status === 'active' && eligibleFor(user, a))
-    .map((a) => ({
-      type: 'account', acct: a, typical,
-      uplift: annualYield(d, userId, { ...a, current_balance: typical }, typical) - baseline,
-      rate: headlineRate(d, userId, a),
-      beats: bestHeld ? bestHeld.a.display_name : null,
-    }))
-    .filter((p) => p.uplift > 0)
-    .sort((a, b) => b.uplift - a.uplift)
-    .slice(0, 3);
+    .map((a) => {
+      const withNew = allocate(
+        yieldBands(d, userId, held.concat([a]), total), total);
+      const share = withNew.alloc[a.account_id] || 0;
+      return {
+        type: 'account', acct: a, total,
+        // Against what the portfolio earns TODAY, so the figure is the money
+        // actually on the table rather than a comparison with one account.
+        uplift: withNew.net - current,
+        // And against a perfect reallocation of what they already hold, which
+        // is what this account adds beyond simply tidying up.
+        upliftOverBest: withNew.net - bestHeldOnly,
+        suggestedAmount: Math.round(share),
+        // Blended across the tiers the money would actually occupy. Revolut's
+        // headline is 15%, but only the first $25,000 earns it; on $100,000 the
+        // real figure is 9.4%, and showing 15% would oversell it.
+        rate: share > 0
+          ? Math.round(((withNew.perAcct[a.account_id] || 0) / share) * 1000) / 10
+          : headlineRate(d, userId, a),
+        headlineRate: headlineRate(d, userId, a),
+        locked: String(a.liquidity || '').toLowerCase() === 'term_locked',
+        insuranceScheme: a.insurance_scheme,
+      };
+    })
+    .filter((p) => p.uplift > 1 && p.suggestedAmount > 0)
+    .sort((a, b) => b.uplift - a.uplift);
+
+  // Reallocating what they already hold, with nothing new opened. Often the
+  // largest single gain available and it costs the user no paperwork, so it
+  // leads rather than hides behind the new-account suggestions.
+  const realloc = bestHeldOnly - current;
+  if (realloc > 1) {
+    picks.unshift({ type: 'reallocation', total, uplift: realloc,
+                    upliftOverBest: 0, acct: null,
+                    alloc: allocate(yieldBands(d, userId, held, total), total).alloc });
+  }
+  return picks.slice(0, 6);
 }
 
 /* ------------------------------ portfolio ------------------------------- */
