@@ -99,7 +99,7 @@
         ]
       },
       "yield": {
-        "score": "medium",
+        "score": "low",
         "evidence_type": "issuer_primary",
         "verified_on": "2026-07-22",
         "sources": [
@@ -155,7 +155,7 @@
         ]
       },
       "yield": {
-        "score": "medium",
+        "score": "low",
         "evidence_type": "issuer_primary",
         "verified_on": "2026-07-22",
         "sources": [
@@ -211,7 +211,7 @@
         ]
       },
       "yield": {
-        "score": "medium",
+        "score": "low",
         "evidence_type": "issuer_primary",
         "verified_on": "2026-07-22",
         "sources": [
@@ -267,7 +267,7 @@
         ]
       },
       "yield": {
-        "score": "medium",
+        "score": "low",
         "evidence_type": "issuer_primary",
         "verified_on": "2026-07-22",
         "sources": [
@@ -662,7 +662,7 @@
         ]
       },
       "yield": {
-        "score": "medium",
+        "score": "low",
         "evidence_type": "issuer_primary",
         "verified_on": "2026-07-22",
         "sources": [
@@ -917,10 +917,10 @@
     "promotional_rate_end_date": "NOT_APPLICABLE",
     "rate_type": "rendimiento_anual_nominal",
     "max_balance_earning_stated_rate_mxn": "UNKNOWN",
-    "monthly_fee_mxn": "UNKNOWN",
-    "fee_waiver_condition": "UNKNOWN",
-    "min_balance_mxn": 100000,
-    "min_opening_deposit_mxn": 100000,
+    "monthly_fee_mxn": 319,
+    "fee_waiver_condition": "NOT_APPLICABLE",
+    "min_balance_mxn": 0,
+    "min_opening_deposit_mxn": "UNKNOWN",
     "liquidity": "instant",
     "term_days": "NOT_APPLICABLE",
     "isr_withholding_note": "Referenced to CETES 28d; before ISR",
@@ -941,7 +941,7 @@
         "evidence_type": "issuer_primary",
         "verified_on": "2026-08-17",
         "sources": [
-          "https://www.inbursa.com.mx/sites/gfi/cuenta-inbursactmax"
+          "https://www.inbursa.com/sites/gfi/document/folleto-inbursa-ct-max.pdf"
         ]
       },
       "yield": {
@@ -949,12 +949,12 @@
         "evidence_type": "issuer_primary",
         "verified_on": "2026-08-17",
         "sources": [
-          "https://www.inbursa.com.mx/sites/gfi/cuenta-inbursactmax"
+          "https://www.inbursa.com/sites/gfi/document/folleto-inbursa-ct-max.pdf"
         ]
       }
     },
     "conflicts": [],
-    "notes": "Depósito inicial de $100,000. Funciona como cuenta eje de la familia CT: CT 60 y CT Plus abonan ahí sus retiros programados. LA TASA ESTÁ INDEXADA, NO ES FIJA: Inbursa paga el 100% del promedio ponderado de CETES a 28 días vigente durante el mes, variable antes de impuestos. Registrado como yield_structure 'indexed' con rate_index CETES_28 y rate_index_pct 100: el motor resuelve la tasa contra reference_rates.json, cuyo valor lleva fecha. El contrato habla del PROMEDIO PONDERADO del mes, no de la subasta del día, así que la resolución es aproximada. PENDIENTE EN EL MOTOR (2026-08-17): src/engine.js resuelve 'flat', 'tiered' y 'term_tiered', pero no 'indexed': cae al caso por defecto y lee flat_rate_pct, que aquí es NOT_APPLICABLE, así que la cuenta rinde 0 en la app. El dato es correcto; falta que annualYield lea rate_index contra reference_rates.json.",
+    "notes": "Depósito inicial de $100,000. Funciona como cuenta eje de la familia CT: CT 60 y CT Plus abonan ahí sus retiros programados. LA TASA ESTÁ INDEXADA, NO ES FIJA: Inbursa paga el 100% del promedio ponderado de CETES a 28 días vigente durante el mes, variable antes de impuestos. Registrado como yield_structure 'indexed' con rate_index CETES_28 y rate_index_pct 100: el motor resuelve la tasa contra reference_rates.json, cuyo valor lleva fecha. El contrato habla del PROMEDIO PONDERADO del mes, no de la subasta del día, así que la resolución es aproximada. PENDIENTE EN EL MOTOR (2026-08-17): src/engine.js resuelve 'flat', 'tiered' y 'term_tiered', pero no 'indexed': cae al caso por defecto y lee flat_rate_pct, que aquí es NOT_APPLICABLE, así que la cuenta rinde 0 en la app. El dato es correcto; falta que annualYield lea rate_index contra reference_rates.json. CORRECCIÓN 2026-08-17: monthly_fee_mxn estaba en UNKNOWN y la app lo mostraba como 0. El folleto del emisor cobra 'Administración - renta $319.00 MENSUAL', IVA incluido: $3,828 al año. Es una cuenta de CHEQUES, no una cuenta de inversión sin comisiones como el resto de la familia CT. EL EFECTO ES ENORME Y EL PROPIO EMISOR LO PUBLICA: con saldo de $100,000 a $499,999 la tasa bruta es 7.25% pero la GAT NOMINAL es 4.08% y la GAT REAL 0.31% — la renta se come más de tres puntos. Sólo a partir de $1,000,000 la GAT nominal (7.15%) se acerca a la tasa bruta. Recomendar esta cuenta a alguien con $100,000 sin descontar la renta sobrestimaría su rendimiento en más del triple. Tampoco exige saldo mínimo: el '$100,000' es un depósito inicial RECOMENDADO, no un requisito, así que min_balance_mxn pasa de 100,000 a 0 — el error escondía la cuenta a quien tiene menos. RENDIMIENTO ESCALONADO SOBRE EL ÍNDICE: 100% de CETES hasta $5,000,000 y 90% por encima. El esquema sólo admite un rate_index_pct por cuenta, así que se registra el 100% del tramo principal y el 90% queda en esta nota.",
     "rate_index": "CETES_28",
     "rate_index_pct": 100
   },
@@ -973,8 +973,8 @@
     "promotional_rate_end_date": "NOT_APPLICABLE",
     "rate_type": "rendimiento_anual_nominal",
     "max_balance_earning_stated_rate_mxn": "UNCAPPED",
-    "monthly_fee_mxn": "UNKNOWN",
-    "fee_waiver_condition": "UNKNOWN",
+    "monthly_fee_mxn": 0,
+    "fee_waiver_condition": "NOT_APPLICABLE",
     "min_balance_mxn": 1,
     "min_opening_deposit_mxn": "UNKNOWN",
     "liquidity": "term_locked",
@@ -1010,7 +1010,7 @@
       }
     },
     "conflicts": [],
-    "notes": "CORRECCIÓN 2026-08-17: la liquidez estaba registrada como 'instant'. CT 60 exige PROGRAMAR LOS RETIROS CON 61 DÍAS DE ANTICIPACIÓN y los abona a una cuenta CT Max — no es una cuenta a la vista. Recomendarla como dinero disponible sería un error serio para alguien que necesita un fondo de emergencia. El '$1.00' que traía como saldo mínimo es en realidad el monto desde el que aplica la tasa, no un depósito inicial; el depósito inicial no se publica. Pago de rendimientos al final del mes, sin comisiones. LA TASA ESTÁ INDEXADA, NO ES FIJA: Inbursa paga el 100% del promedio ponderado de CETES a 28 días vigente durante el mes, variable antes de impuestos. Registrado como yield_structure 'indexed' con rate_index CETES_28 y rate_index_pct 100: el motor resuelve la tasa contra reference_rates.json, cuyo valor lleva fecha. El contrato habla del PROMEDIO PONDERADO del mes, no de la subasta del día, así que la resolución es aproximada. PENDIENTE EN EL MOTOR (2026-08-17): src/engine.js resuelve 'flat', 'tiered' y 'term_tiered', pero no 'indexed': cae al caso por defecto y lee flat_rate_pct, que aquí es NOT_APPLICABLE, así que la cuenta rinde 0 en la app. El dato es correcto; falta que annualYield lea rate_index contra reference_rates.json.",
+    "notes": "CORRECCIÓN 2026-08-17: la liquidez estaba registrada como 'instant'. CT 60 exige PROGRAMAR LOS RETIROS CON 61 DÍAS DE ANTICIPACIÓN y los abona a una cuenta CT Max — no es una cuenta a la vista. Recomendarla como dinero disponible sería un error serio para alguien que necesita un fondo de emergencia. El '$1.00' que traía como saldo mínimo es en realidad el monto desde el que aplica la tasa, no un depósito inicial; el depósito inicial no se publica. Pago de rendimientos al final del mes, sin comisiones. LA TASA ESTÁ INDEXADA, NO ES FIJA: Inbursa paga el 100% del promedio ponderado de CETES a 28 días vigente durante el mes, variable antes de impuestos. Registrado como yield_structure 'indexed' con rate_index CETES_28 y rate_index_pct 100: el motor resuelve la tasa contra reference_rates.json, cuyo valor lleva fecha. El contrato habla del PROMEDIO PONDERADO del mes, no de la subasta del día, así que la resolución es aproximada. PENDIENTE EN EL MOTOR (2026-08-17): src/engine.js resuelve 'flat', 'tiered' y 'term_tiered', pero no 'indexed': cae al caso por defecto y lee flat_rate_pct, que aquí es NOT_APPLICABLE, así que la cuenta rinde 0 en la app. El dato es correcto; falta que annualYield lea rate_index contra reference_rates.json. COMISIONES CONFIRMADAS 2026-08-17: la página del emisor dice 'inversión sin comisiones', así que monthly_fee_mxn es 0 con sustento, no por omisión. A diferencia de CT Max, que sí cobra $319 mensuales por ser cuenta de cheques.",
     "rate_index": "CETES_28",
     "rate_index_pct": 100
   },
@@ -1057,7 +1057,7 @@
         ]
       },
       "yield": {
-        "score": "medium",
+        "score": "low",
         "evidence_type": "issuer_primary",
         "verified_on": "2026-07-22",
         "sources": [
@@ -1113,7 +1113,7 @@
         ]
       },
       "yield": {
-        "score": "medium",
+        "score": "low",
         "evidence_type": "issuer_primary",
         "verified_on": "2026-07-22",
         "sources": [
@@ -1169,7 +1169,7 @@
         ]
       },
       "yield": {
-        "score": "medium",
+        "score": "low",
         "evidence_type": "issuer_primary",
         "verified_on": "2026-07-22",
         "sources": [
@@ -1225,7 +1225,7 @@
         ]
       },
       "yield": {
-        "score": "medium",
+        "score": "low",
         "evidence_type": "issuer_primary",
         "verified_on": "2026-07-22",
         "sources": [
@@ -1281,7 +1281,7 @@
         ]
       },
       "yield": {
-        "score": "medium",
+        "score": "low",
         "evidence_type": "issuer_primary",
         "verified_on": "2026-07-22",
         "sources": [
