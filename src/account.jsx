@@ -82,9 +82,12 @@ function History({ d, user, deleteMovement }) {
                              { v: 'debit', l: 'Cuentas' }]} />
       </div>
 
-      <div className="hint">
-        <Ico n="info" s={16} /> Desliza un movimiento a la izquierda para eliminarlo.
-      </div>
+      {rows.length > 0 && (
+        <div className="hint">
+          <Ico n="info" s={16} /> Desliza un movimiento a la izquierda para
+          eliminarlo, o ábrelo para ver el detalle.
+        </div>
+      )}
 
       <div className="mini-grid three">
         <Stat label="Movimientos" value={totals.count} />
@@ -407,7 +410,7 @@ function Admin({ d }) {
               known date; it must not be discovered after the fact. */}
           {pending.map((i) => (
             <Row key={i.issuer_id} title={i.display_name}
-                 meta={'Cambia de figura regulatoria el ' + i.conversion_effective_date}
+                 meta={'Cambia de figura regulatoria el ' + dateLabel(i.conversion_effective_date)}
                  right="pendiente" />
           ))}
         </div>

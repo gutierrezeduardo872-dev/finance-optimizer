@@ -46,6 +46,15 @@ function CardAdvisor({ d, user, logMovement, go }) {
   const runnerUp = ranked && ranked.find((r) => r.card.card_id !== (best && best.card.card_id));
   const overridden = !!(picked && suggested && picked !== suggested.card.card_id);
 
+  // Use the engine's own buckets. `ranked` is the flat concatenation kept for
+  // older callers; `ranked.unvaluable` is the authoritative list of cards we
+  // cannot price, and everything else is comparable.
+  const unvaluable = (ranked && ranked.unvaluable) || [];
+  const others = ranked
+    ? ranked.filter((r) => !r.unvaluable &&
+                           r.card.card_id !== (best && best.card.card_id))
+    : [];
+
   const onLog = () => {
     logMovement({
       flow: 'cc',
@@ -90,6 +99,7 @@ function CardAdvisor({ d, user, logMovement, go }) {
           {cats.map((c) => (
             <button key={c.category_key}
                     className={'cat' + (category === c.category_key ? ' on' : '')}
+                    aria-pressed={category === c.category_key}
                     onClick={() => setCategory(c.category_key)}>
               <Ico n={catIcon(c.category_key)} s={20} />
               <span>{c.display_label}</span>
@@ -185,31 +195,61 @@ function CardAdvisor({ d, user, logMovement, go }) {
               : <button className="btn teal" onClick={onLog}>Registrar compra</button>}
           </div>
 
-          {ranked.length > 1 && (
+          {/* The engine already separates priced cards from unpriceable ones.
+              Concatenating both into one list put a "—" row between rows
+              carrying pesos, which reads as a zero rather than as an absence.
+              Two panels, because they answer two different questions. */}
+          {others.length > 0 && (
             <div className="panel">
               <div className="panel-head">
                 <div className="ph-l">Tus otras tarjetas</div>
-                <div className="ph-r" style={{ fontSize: 12, opacity: 0.7 }}>
-                  toca para usar otra
-                </div>
+                <div className="ph-r">toca para usar otra</div>
               </div>
-              {ranked.filter((r) => r.card.card_id !== best.card.card_id).map((r) => {
+              {others.map((r) => {
                 const iss = issuerOfCard(r.card.card_id);
                 return (
                   <Row
                     key={r.card.card_id}
                     mark={<BankMark name={iss.display_name} url={iss.logo_url} size={34} />}
                     title={r.card.display_name}
-                    meta={r.unvaluable
-                      ? 'no podemos compararla — el emisor no publica el valor de sus puntos'
-                      : (blockedLabel(r) ||
-                         (r.rate + '% ' + rtl(r.rtype) +
-                          (r.capped ? ' · tope alcanzado' : '')))}
-                    right={r.unvaluable ? '—' : mxn2(r.score)}
-                    rightSub={r.unvaluable ? 'sin dato'
-                      : (best.score - r.score >= 0.01
-                         ? '−' + mxn2(best.score - r.score) : 'igual')}
+                    meta={blockedLabel(r) ||
+                          (r.rate + '% ' + rtl(r.rtype) +
+                           (r.capped ? ' · tope alcanzado' : ''))}
+                    right={mxn2(r.score)}
+                    rightSub={best.score - r.score >= 0.01
+                      ? '−' + mxn2(best.score - r.score) : 'igual'}
                     onClick={() => setPicked(r.card.card_id)}
+                  />
+                );
+              })}
+            </div>
+          )}
+
+          {unvaluable.length > 0 && (
+            <div className="panel">
+              <div className="panel-head">
+                <div className="ph-l">
+                  <Ico n="info" s={16} /> Todavía no comparables
+                </div>
+                <span className="ph-r">{unvaluable.length}</span>
+              </div>
+              <div className="sub">
+                Su emisor no publica cuánto vale un punto, así que no podemos
+                convertirlas a pesos. No las estamos contando como cero — no
+                las estamos contando.
+              </div>
+              {unvaluable.map((r) => {
+                const iss = issuerOfCard(r.card.card_id);
+                return (
+                  <Row
+                    key={r.card.card_id}
+                    mark={<BankMark name={iss.display_name} url={iss.logo_url} size={34} />}
+                    title={r.card.display_name}
+                    meta={r.rate ? r.rate + '% ' + rtl(r.rtype) : iss.display_name}
+                    right="—"
+                    rightSub="sin valor publicado"
+                    onClick={() => setSheetItem({ type: 'card', data: r.card,
+                                                  logo: iss.logo_url })}
                   />
                 );
               })}

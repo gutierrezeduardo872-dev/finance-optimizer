@@ -118,6 +118,10 @@ function App() {
   });
   const scroller = useRef(null);
 
+  // Live snapshot for listeners registered once (see the popstate effect).
+  const navRef = useRef({ view, lastMainView, menuOpen });
+  navRef.current = { view, lastMainView, menuOpen };
+
   useEffect(() => writeQueue.subscribe(setPendingWrites), []);
   useEffect(() => {
     if (!toast) return;
@@ -284,7 +288,32 @@ function App() {
     setMenuOpen(false);
     if (scroller.current) scroller.current.scrollTop = 0;
     window.scrollTo(0, 0);
+    // Routing used to be React state alone, so Android's back gesture left
+    // Norte entirely instead of leaving the screen. Each navigation now pushes
+    // a history entry; the popstate handler below turns back into "go up one".
+    if (typeof next === 'string' && next !== view) {
+      try { history.pushState({ view: next }, '', '#' + next); } catch {}
+    }
   };
+
+  /**
+   * Back means the nearest enclosing thing: close the menu if it is open,
+   * otherwise leave a subview for the tab it was opened from, otherwise follow
+   * the history entry. Only at Inicio does back leave the app.
+   *
+   * The listener is registered once, so it reads live state through a ref
+   * instead of closing over the values it saw at mount.
+   */
+  useEffect(() => {
+    try { history.replaceState({ view: 'home' }, '', '#home'); } catch {}
+    const onPop = (e) => {
+      const s = navRef.current;
+      if (s.menuOpen) { setMenuOpen(false); return; }
+      setView(SUBVIEWS[s.view] ? s.lastMainView : ((e.state && e.state.view) || 'home'));
+    };
+    window.addEventListener('popstate', onPop);
+    return () => window.removeEventListener('popstate', onPop);
+  }, []);
 
   const signOut = () => {
     LS.del(K_SESSION); LS.del(K_USER);

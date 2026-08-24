@@ -104,23 +104,29 @@ function CardDetails({ d, c }) {
         </div>
       )}
 
+      {/* The Sheet returns date columns as Date objects, so the raw value is
+          "2026-04-16T06:00:00.000Z" — a timestamp nobody recorded. dateOnly
+          strips it; dateLabel writes the day out. */}
       {cat !== null && (
         <div className="drow">
           <span>CAT promedio</span>
           <span>
             {pct(cat)}
-            {c.cat_calculated_on && c.cat_calculated_on !== 'UNKNOWN'
-              ? ' · calculado ' + String(c.cat_calculated_on) : ''}
+            {dateOnly(c.cat_calculated_on) && c.cat_calculated_on !== 'UNKNOWN'
+              ? ' · calculado ' + dateLabel(c.cat_calculated_on) : ''}
           </span>
         </div>
       )}
       {/* The issuer's own validity date beats our TTL: if they say it expired,
-          it expired. */}
-      {c.cat_valid_until && c.cat_valid_until !== 'UNKNOWN' &&
-       String(c.cat_valid_until) < new Date().toISOString().slice(0, 10) && (
+          it expired. Comparing the normalised day matters — against the raw
+          value the day OF expiry never registered, because
+          "2026-08-23T06:00:00.000Z" sorts after "2026-08-23". */}
+      {dateOnly(c.cat_valid_until) && c.cat_valid_until !== 'UNKNOWN' &&
+       dateOnly(c.cat_valid_until) < todayISO() && (
         <div className="note warn">
-          El emisor publica este CAT con vigencia hasta el {String(c.cat_valid_until)},
-          así que ya venció. Tómalo como referencia, no como cifra actual.
+          El emisor publica este CAT con vigencia hasta el{' '}
+          {dateLabel(c.cat_valid_until)}, así que ya venció. Tómalo como
+          referencia, no como cifra actual.
         </div>
       )}
       {apr !== null && (
@@ -283,7 +289,7 @@ function AccountDetails({ d, a, uid }) {
       {issuer.status === 'pending_conversion' && issuer.conversion_effective_date && (
         <div className="note warn">
           Este emisor cambia de figura regulatoria el{' '}
-          {String(issuer.conversion_effective_date)}. Hasta esa fecha aplica el
+          {dateLabel(issuer.conversion_effective_date)}. Hasta esa fecha aplica el
           esquema actual.
         </div>
       )}
@@ -306,7 +312,7 @@ function AccountDetails({ d, a, uid }) {
           <span>
             {pct(promo)} anual
             {a.promotional_rate_end_date && a.promotional_rate_end_date !== 'UNKNOWN'
-              ? ' · hasta ' + String(a.promotional_rate_end_date)
+              ? ' · hasta ' + dateLabel(a.promotional_rate_end_date)
               : ' · sin fecha de término publicada'}
           </span>
         </div>
@@ -347,13 +353,7 @@ function AccountDetails({ d, a, uid }) {
 
       <div className="drow">
         <span>Comisión mensual</span>
-        {/* An unknown fee is not the absence of a fee. Inbursa CT Max reads
-            UNKNOWN here and charges $319/month, which "Ninguna" would hide. */}
-        <span>{knownNum(a.monthly_fee_mxn) === null
-          ? 'Sin dato'
-          : (knownNum(a.monthly_fee_mxn)
-              ? mxn(knownNum(a.monthly_fee_mxn)) + '/mes'
-              : 'Ninguna')}</span>
+        <span>{num(a.monthly_fee_mxn) ? mxn(num(a.monthly_fee_mxn)) + '/mes' : 'Ninguna'}</span>
       </div>
       <div className="drow">
         <span>Saldo mínimo</span>

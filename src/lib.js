@@ -163,6 +163,41 @@ const rateTypeLabel = (t) => RATE_TYPE[t] || "";
 const MONTHS = ["enero","febrero","marzo","abril","mayo","junio","julio",
                 "agosto","septiembre","octubre","noviembre","diciembre"];
 
+/**
+ * A date column, as the day it names — nothing more.
+ *
+ * In git these fields are clean: cat_calculated_on is "2026-04-16". But the app
+ * does not read git, it reads the Sheet, and Apps Script hands back a
+ * date-formatted cell as a Date object, which JSON.stringify turns into
+ * "2026-04-16T06:00:00.000Z" — the T06:00Z being the CDMX offset, not a time
+ * anyone recorded. Rendering that raw put a meaningless timestamp on the CAT.
+ *
+ * Slicing is correct rather than parsing: the string is already the local day
+ * the issuer published, and running it through Date() would shift it back one
+ * day for anyone west of UTC.
+ *
+ * Sentinels pass through untouched so callers can still test for them.
+ */
+const SENTINELS = ["UNKNOWN", "NOT_APPLICABLE", "UNCAPPED"];
+
+const dateOnly = (v) => {
+  const s = String(v == null ? "" : v).trim();
+  if (!s || SENTINELS.includes(s.toUpperCase())) return s;
+  const m = s.match(/^(\d{4}-\d{2}-\d{2})/);
+  return m ? m[1] : s;
+};
+
+/** The same day, written the way a person in Mexico writes it: "16 abr. 2026". */
+const dateLabel = (v) => {
+  const iso = dateOnly(v);
+  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso);
+  if (!m) return iso;
+  return Number(m[3]) + " " + MONTHS[Number(m[2]) - 1].slice(0, 3) + ". " + m[1];
+};
+
+/** Today, as the same kind of string, for comparing against a date column. */
+const todayISO = () => new Date().toISOString().slice(0, 10);
+
 const monthLabel = (key) => {
   const [y, m] = String(key).split("-");
   return (MONTHS[Number(m) - 1] || "") + " " + y;
@@ -309,6 +344,36 @@ const ICONS = {
   department_store: ["M5.2 8h13.6l-1.1 12.4H6.3z","M9 8V6a3 3 0 0 1 6 0v2"],
   pharmacy: ["M9.6 3.6h4.8v6h6v4.8h-6v6H9.6v-6h-6V9.6h6z"],
   utilities: ["M13.4 3.2 5.2 14h6l-.6 6.8L18.8 10h-6z"],
+
+  /* The five categories added to categories.json after this set was drawn.
+     Until now each fell through to `other`, so a quarter of the grid was
+     identical grey dots. */
+  home_improvement: ["M14.6 3.4 20.6 9.4l-2.8 2.8-6-6z",
+                     "M15 8.6 5.4 18.2a1.8 1.8 0 0 0 2.6 2.6l9.6-9.6z"],
+  entertainment: ["M3.4 6.6h17.2v3.2a2.2 2.2 0 0 0 0 4.4v3.2H3.4v-3.2a2.2 2.2 0 0 0 0-4.4z",
+                  "M14.8 7v1.8","M14.8 11.1v1.8","M14.8 15.2v1.8"],
+  health: ["M12 20.2C7.4 17 3.8 13.6 3.8 9.8a4.2 4.2 0 0 1 8.2-1.4 4.2 4.2 0 0 1 8.2 1.4c0 3.8-3.6 7.2-8.2 10.4z",
+           "M6.8 11.4h2.4l1.4-2.2 1.8 4 1.2-1.8h2.6"],
+  education: ["M2.8 8.8 12 4.6l9.2 4.2-9.2 4.2z",
+              "M6.8 11v4.4c0 1.6 2.3 2.6 5.2 2.6s5.2-1 5.2-2.6V11",
+              "M21.2 8.8v5"],
+  clothing: ["M8.4 3.6 3.6 6.4l2 3.8 2-1v11.2h8.8V9.2l2 1 2-3.8-4.8-2.8a3.6 3.6 0 0 1-7.2 0z"],
+
   other: ["M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16","M12 12h.01"]};
 
-const catIcon = (key) => (ICONS[key] ? key : "other");
+/**
+ * The canonical category key is `restaurant`; the icon was drawn as
+ * `restaurants`. Nothing errored — catIcon just fell through to `other`, so
+ * one of the most-used categories in the app showed the generic dot.
+ *
+ * Aliasing rather than renaming, because the icon name is also a public-ish
+ * handle: anything else in the app that already asks for "restaurants" keeps
+ * working, and a future key rename in the dataset lands here, not in a
+ * component.
+ */
+const ICON_ALIAS = { restaurant: "restaurants" };
+
+const catIcon = (key) => {
+  const k = ICON_ALIAS[key] || key;
+  return ICONS[k] ? k : "other";
+};

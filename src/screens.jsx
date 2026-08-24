@@ -92,23 +92,15 @@ function Home({ d, user, go }) {
             <span className="row-chev"><Ico n="right" s={14} /></span>
           </div>
           <div className="pick-mini">
-            {/* A reallocation pick has no product behind it — it is advice about
-                money the user already holds — so there is no issuer to badge. */}
-            {top.type === 'reallocation'
-              ? <div className="mark-plain"><Ico n="savings" s={22} /></div>
-              : <BankMark name={issuerName((top.card || top.acct).issuer_id)} size={38} />}
+            <BankMark name={issuerName((top.card || top.acct).issuer_id)} size={38} />
             <div className="pick-mini-m">
               <div className="pick-mini-n">
-                {top.type === 'reallocation'
-                  ? 'Reacomoda lo que ya tienes'
-                  : (top.card ? top.card.display_name : top.acct.display_name)}
+                {top.card ? top.card.display_name : top.acct.display_name}
               </div>
               <div className="pick-mini-s">
-                {top.type === 'reallocation'
-                  ? 'Cerca de ' + mxn(top.uplift) + '/año sin abrir nada nuevo'
-                  : (top.card
-                      ? 'Cerca de ' + mxn(top.uplift) + '/mes más que tu combinación actual'
-                      : 'Cerca de ' + mxn(top.uplift) + '/año más de rendimiento')}
+                {top.card
+                  ? 'Cerca de ' + mxn(top.uplift) + '/mes más que tu combinación actual'
+                  : 'Cerca de ' + mxn(top.uplift) + '/año más de rendimiento'}
               </div>
             </div>
           </div>
@@ -265,6 +257,8 @@ function Products({ d, user, addProduct, removeProduct }) {
            onClick={() => openSheet(p, from)}
            action={
              <button className={'pill-btn' + (held ? ' held' : '')}
+                     aria-label={(held ? 'Quitar ' : 'Agregar ') + nameOf(p)}
+                     aria-pressed={held}
                      disabled={busyId === id}
                      onClick={(e) => { e.stopPropagation(); toggle(p); }}>
                {busyId === id ? <span className="spin dark" />
@@ -373,7 +367,10 @@ function Products({ d, user, addProduct, removeProduct }) {
                     </div>
                     {inst && <div className={'inst-tag ' + inst.tone}>{inst.l}</div>}
                     {heldHere > 0 && (
-                      <span className="bank-dot" title="Ya tienes productos aquí" />
+                      <span className="bank-dot" role="img"
+                            aria-label={heldHere + (heldHere === 1
+                              ? ' producto tuyo aquí' : ' productos tuyos aquí')}
+                            title="Ya tienes productos aquí" />
                     )}
                   </button>
                 );
@@ -553,29 +550,6 @@ function Suggestions({ d, user, addProduct, go }) {
             <div className="ph-l"><Ico n="savings" s={16} /> Cuentas que te convienen</div>
           </div>
           {acctPicks.map((p) => {
-            if (p.type === 'reallocation') {
-              return (
-                <div key="realloc" className="pick sand-pick">
-                  <div className="pick-top">
-                    <div className="mark-plain"><Ico n="savings" s={24} /></div>
-                    <div className="pick-id">
-                      <div className="pick-n">Reacomoda lo que ya tienes</div>
-                      <div className="pick-i">
-                        Sin abrir ninguna cuenta nueva
-                      </div>
-                    </div>
-                    <div className="pick-up">
-                      <div className="num">+{mxn(p.uplift)}</div>
-                      <div className="pick-uu">al año</div>
-                    </div>
-                  </div>
-                  <div className="pick-foot">
-                    Moviendo tus {mxn(p.total)} a las cuentas que ya tienes, pero en
-                    las proporciones que más rinden.
-                  </div>
-                </div>
-              );
-            }
             const iss = issuerOf(p.acct);
             const inst = instOf(iss);
             return (
@@ -596,14 +570,8 @@ function Suggestions({ d, user, addProduct, go }) {
                   </div>
                 </div>
                 <div className="pick-foot">
-                  {p.type === 'reallocation'
-                    ? 'Reacomodando los ' + mxn(p.total) + ' que ya tienes, sin abrir nada nuevo.'
-                    : 'Moviendo ' + mxn(p.suggestedAmount) + ' de tus ' + mxn(p.total) +
-                      '. Frente a reacomodar lo que ya tienes, aporta ' +
-                      mxn(p.upliftOverBest) + ' más al año.'}
-                  {p.locked ? ' Tu dinero queda comprometido un plazo.' : ''}
-                  {p.insuranceScheme === 'none'
-                    ? ' Sin seguro de depósito: no está cubierta por IPAB ni PROSOFIPO.' : ''}
+                  Sobre un depósito típico tuyo de {mxn(p.typical)}
+                  {p.beats ? ', frente a ' + p.beats : ''}.
                   <span className="row-chev"><Ico n="right" s={14} /></span>
                 </div>
                 {/* Deposit insurance is a real trade-off against yield, so say it
