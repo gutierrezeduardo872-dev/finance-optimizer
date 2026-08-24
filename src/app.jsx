@@ -118,10 +118,6 @@ function App() {
   });
   const scroller = useRef(null);
 
-  // Live snapshot for listeners registered once (see the popstate effect).
-  const navRef = useRef({ view, lastMainView, menuOpen });
-  navRef.current = { view, lastMainView, menuOpen };
-
   useEffect(() => writeQueue.subscribe(setPendingWrites), []);
   useEffect(() => {
     if (!toast) return;
@@ -288,32 +284,7 @@ function App() {
     setMenuOpen(false);
     if (scroller.current) scroller.current.scrollTop = 0;
     window.scrollTo(0, 0);
-    // Routing used to be React state alone, so Android's back gesture left
-    // Norte entirely instead of leaving the screen. Each navigation now pushes
-    // a history entry; the popstate handler below turns back into "go up one".
-    if (typeof next === 'string' && next !== view) {
-      try { history.pushState({ view: next }, '', '#' + next); } catch {}
-    }
   };
-
-  /**
-   * Back means the nearest enclosing thing: close the menu if it is open,
-   * otherwise leave a subview for the tab it was opened from, otherwise follow
-   * the history entry. Only at Inicio does back leave the app.
-   *
-   * The listener is registered once, so it reads live state through a ref
-   * instead of closing over the values it saw at mount.
-   */
-  useEffect(() => {
-    try { history.replaceState({ view: 'home' }, '', '#home'); } catch {}
-    const onPop = (e) => {
-      const s = navRef.current;
-      if (s.menuOpen) { setMenuOpen(false); return; }
-      setView(SUBVIEWS[s.view] ? s.lastMainView : ((e.state && e.state.view) || 'home'));
-    };
-    window.addEventListener('popstate', onPop);
-    return () => window.removeEventListener('popstate', onPop);
-  }, []);
 
   const signOut = () => {
     LS.del(K_SESSION); LS.del(K_USER);
@@ -443,4 +414,53 @@ function App() {
   );
 }
 
-ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+/**
+ * Without this, any render error unmounts the tree and the user sees a black
+ * screen with no information — which is how two bugs shipped today and had to
+ * be diagnosed by guesswork. React deliberately blanks the UI on an uncaught
+ * error; the boundary catches it and shows what actually broke.
+ */
+class ErrorBoundary extends React.Component {
+  constructor(props) { super(props); this.state = { err: null, info: null }; }
+  static getDerivedStateFromError(err) { return { err }; }
+  componentDidCatch(err, info) {
+    this.setState({ info });
+    try { console.error('Norte render error:', err, info); } catch (e) {}
+  }
+  render() {
+    if (!this.state.err) return this.props.children;
+    const stack = String((this.state.info && this.state.info.componentStack) || '')
+      .split('\n').filter(Boolean).slice(0, 6).join('\n');
+    const text = String(this.state.err && this.state.err.message || this.state.err) +
+                 '\n' + stack;
+    return (
+      <div style={{ padding: 20, fontFamily: 'Inter,system-ui,sans-serif',
+                    color: '#1C2431', maxWidth: 640, margin: '0 auto' }}>
+        <h2 style={{ fontFamily: '"Space Grotesk",sans-serif', color: '#B85F35' }}>
+          Algo se rompió en esta pantalla
+        </h2>
+        <p style={{ lineHeight: 1.5 }}>
+          El resto de la app sigue funcionando. Copia este detalle y compártelo —
+          dice exactamente qué falló.
+        </p>
+        <pre style={{ whiteSpace: 'pre-wrap', wordBreak: 'break-word',
+                      background: '#f4f2ef', padding: 12, borderRadius: 10,
+                      fontSize: 12, lineHeight: 1.45 }}>{text}</pre>
+        <button onClick={() => { try { navigator.clipboard.writeText(text); } catch (e) {} }}
+                style={{ padding: '10px 16px', borderRadius: 10, border: 0,
+                         background: '#0F7365', color: '#fff', fontWeight: 600,
+                         marginRight: 8 }}>
+          Copiar detalle
+        </button>
+        <button onClick={() => this.setState({ err: null, info: null })}
+                style={{ padding: '10px 16px', borderRadius: 10,
+                         border: '1px solid #d8d3cc', background: '#fff' }}>
+          Reintentar
+        </button>
+      </div>
+    );
+  }
+}
+
+ReactDOM.createRoot(document.getElementById('root'))
+  .render(<ErrorBoundary><App /></ErrorBoundary>);
