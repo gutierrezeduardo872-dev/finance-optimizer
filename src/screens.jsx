@@ -92,15 +92,23 @@ function Home({ d, user, go }) {
             <span className="row-chev"><Ico n="right" s={14} /></span>
           </div>
           <div className="pick-mini">
-            <BankMark name={issuerName((top.card || top.acct).issuer_id)} size={38} />
+            {/* A reallocation pick has no product behind it — it is advice about
+                money the user already holds — so there is no issuer to badge. */}
+            {top.type === 'reallocation'
+              ? <div className="mark-plain"><Ico n="savings" s={22} /></div>
+              : <BankMark name={issuerName((top.card || top.acct).issuer_id)} size={38} />}
             <div className="pick-mini-m">
               <div className="pick-mini-n">
-                {top.card ? top.card.display_name : top.acct.display_name}
+                {top.type === 'reallocation'
+                  ? 'Reacomoda lo que ya tienes'
+                  : (top.card ? top.card.display_name : top.acct.display_name)}
               </div>
               <div className="pick-mini-s">
-                {top.card
-                  ? 'Cerca de ' + mxn(top.uplift) + '/mes más que tu combinación actual'
-                  : 'Cerca de ' + mxn(top.uplift) + '/año más de rendimiento'}
+                {top.type === 'reallocation'
+                  ? 'Cerca de ' + mxn(top.uplift) + '/año sin abrir nada nuevo'
+                  : (top.card
+                      ? 'Cerca de ' + mxn(top.uplift) + '/mes más que tu combinación actual'
+                      : 'Cerca de ' + mxn(top.uplift) + '/año más de rendimiento')}
               </div>
             </div>
           </div>
@@ -545,6 +553,29 @@ function Suggestions({ d, user, addProduct, go }) {
             <div className="ph-l"><Ico n="savings" s={16} /> Cuentas que te convienen</div>
           </div>
           {acctPicks.map((p) => {
+            if (p.type === 'reallocation') {
+              return (
+                <div key="realloc" className="pick sand-pick">
+                  <div className="pick-top">
+                    <div className="mark-plain"><Ico n="savings" s={24} /></div>
+                    <div className="pick-id">
+                      <div className="pick-n">Reacomoda lo que ya tienes</div>
+                      <div className="pick-i">
+                        Sin abrir ninguna cuenta nueva
+                      </div>
+                    </div>
+                    <div className="pick-up">
+                      <div className="num">+{mxn(p.uplift)}</div>
+                      <div className="pick-uu">al año</div>
+                    </div>
+                  </div>
+                  <div className="pick-foot">
+                    Moviendo tus {mxn(p.total)} a las cuentas que ya tienes, pero en
+                    las proporciones que más rinden.
+                  </div>
+                </div>
+              );
+            }
             const iss = issuerOf(p.acct);
             const inst = instOf(iss);
             return (

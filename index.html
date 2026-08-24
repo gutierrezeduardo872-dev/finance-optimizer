@@ -289,6 +289,9 @@ button{font:inherit;color:inherit;cursor:pointer}
 .pick:last-child{margin-bottom:0}
 .pick:active{transform:scale(.995)}
 .pick-top{display:flex;align-items:center;gap:12px}
+/* Reallocation suggestions have no issuer to badge — advice about money the
+   user already holds, not a product to open. */
+.mark-plain{width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex:0 0 42px;background:var(--teal-soft,#e6f2f0);color:var(--teal,#0F7365)}
 .pick-id{flex:1;min-width:0}
 .pick-n{font-family:"Space Grotesk";font-weight:600;font-size:15.5px;color:var(--ink);
   white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
