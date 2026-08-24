@@ -954,12 +954,20 @@ function allocate(bands, amount) {
     gross += take * b.rate / 100;
     left -= take;
   });
-  const fees = Object.keys(alloc).reduce((s, id) => {
-    const a = bands.find((b) => b.acct.account_id === id).acct;
-    const f = knownNum(a.monthly_fee_mxn);
+  // Charge the fee for EVERY account in play, not just the ones that receive
+  // money. A maintenance fee is the price of holding the account; moving the
+  // balance elsewhere does not avoid it unless the user closes it. Charging it
+  // only on allocation made the fee disappear from the optimal case and
+  // inflated every suggestion by the full fee — $3,828/yr in Inbursa's case.
+  const seen = {};
+  const fees = bands.reduce((s, b) => {
+    const id = b.acct.account_id;
+    if (seen[id]) return s;
+    seen[id] = 1;
+    const f = knownNum(b.acct.monthly_fee_mxn);
     return s + (f === null ? 0 : f) * 12;
   }, 0);
-  return { alloc, gross, net: gross - fees, unallocated: left, perAcct };
+  return { alloc, gross, net: gross - fees, unallocated: left, perAcct, fees };
 }
 
 /** What the portfolio earns today, at the balances the user actually recorded. */
@@ -991,11 +999,13 @@ function newAccountPicks(d, userId) {
       const withNew = allocate(
         yieldBands(d, userId, held.concat([a]), total), total);
       const share = withNew.alloc[a.account_id] || 0;
+      // If the new account gets nothing, opening it would only add its fee.
+      const newFee = share > 0 ? 0 : (knownNum(a.monthly_fee_mxn) || 0) * 12;
       return {
         type: 'account', acct: a, total,
         // Against what the portfolio earns TODAY, so the figure is the money
         // actually on the table rather than a comparison with one account.
-        uplift: withNew.net - current,
+        uplift: withNew.net - current + newFee,
         // And against a perfect reallocation of what they already hold, which
         // is what this account adds beyond simply tidying up.
         upliftOverBest: withNew.net - bestHeldOnly,
@@ -1019,11 +1029,40 @@ function newAccountPicks(d, userId) {
   // leads rather than hides behind the new-account suggestions.
   const realloc = bestHeldOnly - current;
   if (realloc > 1) {
+    const opt = allocate(yieldBands(d, userId, held, total), total);
+    // Per-account before/after, so the suggestion can be opened up and checked
+    // rather than taken on faith. "Move your money" is a big ask on trust.
+    const moves = held.map((a) => {
+      const now = num(a.current_balance);
+      const then = Math.round(opt.alloc[a.account_id] || 0);
+      return {
+        acct: a,
+        from: Math.round(now),
+        to: then,
+        delta: then - Math.round(now),
+        rateNow: headlineRate(d, userId, a),
+        yieldNow: annualYield(d, userId, a, now),
+        yieldThen: annualYield(d, userId, a, then),
+        monthlyFee: knownNum(a.monthly_fee_mxn),
+      };
+    }).sort((x, y) => y.to - x.to);
     picks.unshift({ type: 'reallocation', total, uplift: realloc,
                     upliftOverBest: 0, acct: null,
-                    alloc: allocate(yieldBands(d, userId, held, total), total).alloc });
+                    currentYield: current, optimisedYield: bestHeldOnly,
+                    alloc: opt.alloc, moves });
   }
-  return picks.slice(0, 6);
+  // An account left with nothing but a maintenance fee is pure cost. Worth
+  // saying out loud, because the reallocation above quietly assumes the user
+  // keeps paying for it.
+  const strand = (picks[0] && picks[0].type === 'reallocation' ? picks[0].moves : [])
+    .filter((m) => m.to === 0 && m.monthlyFee > 0);
+  strand.forEach((m) => picks.push({
+    type: 'close', acct: m.acct, total,
+    uplift: m.monthlyFee * 12,
+    upliftOverBest: 0,
+    monthlyFee: m.monthlyFee,
+  }));
+  return picks.slice(0, 7);
 }
 
 /* ------------------------------ portfolio ------------------------------- */

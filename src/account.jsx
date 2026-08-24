@@ -214,6 +214,7 @@ function History({ d, user, deleteMovement }) {
 
 function Profile({ d, user, onSignOut, onSwitch, saveName, go }) {
   const port = useMemo(() => portfolio(d, user.user_id), [d, user]);
+  const [acctsOpen, setAcctsOpen] = useState(false);
   const me = d.users.find((u) => u.user_id === user.user_id) || user;
   const [editing, setEditing] = useState(false);
   const [name, setName] = useState(me.name || '');
@@ -255,7 +256,40 @@ function Profile({ d, user, onSignOut, onSwitch, saveName, go }) {
         <Row icon="savings" title="Cuentas"
              meta={port.projYield > 0 ? mxn(port.projYield) + '/año proyectado'
                                       : 'Sin rendimiento proyectado'}
-             right={port.accts.length} onClick={() => go('products')} />
+             right={port.accts.length}
+             onClick={() => setAcctsOpen(!acctsOpen)} />
+        {/* Per-account earnings. The total alone hides the case that matters:
+            an account whose maintenance fee exceeds what it pays, which nets
+            out invisibly inside a single projected figure. */}
+        {acctsOpen && port.accts.map((a) => {
+          const bal = num(a.current_balance);
+          const y = annualYield(d, user.user_id, a, bal);
+          const fee = knownNum(a.monthly_fee_mxn);
+          return (
+            <div key={a.account_id} className="realloc-row">
+              <div className="realloc-n">
+                {a.display_name}
+                <span className="realloc-r"> · {pct(headlineRate(d, user.user_id, a))}</span>
+                {fee > 0 && (
+                  <span className="realloc-fee"> · {mxn(fee)}/mes de comisión</span>
+                )}
+              </div>
+              <div className="realloc-mv">
+                {mxn(bal)}
+                <span className={y >= 0 ? 'realloc-up' : 'realloc-dn'}>
+                  {' '}({y >= 0 ? '+' : ''}{mxn(y)}/año)
+                </span>
+              </div>
+            </div>
+          );
+        })}
+        {acctsOpen && port.accts.some((a) =>
+          annualYield(d, user.user_id, a, num(a.current_balance)) < 0) && (
+          <div className="pick-foot">
+            Una cuenta en rojo cuesta más en comisiones de lo que paga de
+            rendimiento con tu saldo actual.
+          </div>
+        )}
       </div>
 
       <div className="panel">

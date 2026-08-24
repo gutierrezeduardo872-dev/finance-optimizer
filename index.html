@@ -544,6 +544,15 @@ body::before{content:"";position:fixed;inset:-20%;z-index:0;pointer-events:none;
 
 /* Reallocation suggestions have no issuer to badge — advice about money the
    user already holds, not a product to open. */
+.realloc-detail{padding:10px 0 2px;border-top:1px solid rgba(0,0,0,.06);margin-top:10px}
+.realloc-sum{font-size:12.5px;opacity:.75;margin-bottom:8px}
+.realloc-row{display:flex;justify-content:space-between;gap:10px;padding:5px 0;font-size:12.5px}
+.realloc-n{flex:1;min-width:0}
+.realloc-r{opacity:.6}
+.realloc-fee{color:var(--copper,#B85F35)}
+.realloc-mv{white-space:nowrap;text-align:right}
+.realloc-up{color:var(--teal,#0F7365)}
+.realloc-dn{color:var(--copper,#B85F35)}
 .mark-plain{width:42px;height:42px;border-radius:12px;display:flex;align-items:center;
   justify-content:center;flex:0 0 42px;background:var(--teal-soft);color:var(--teal);
   box-shadow:var(--spec-soft)}

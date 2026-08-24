@@ -10,7 +10,7 @@ const REPO=process.env.NORTE_REPO || new URL('../', import.meta.url).pathname;
 const R=REPO+'data/market/';
 const L=f=>JSON.parse(fs.readFileSync(R+f,'utf8'));
 
-const files=['lib.js','ui.jsx','engine.js','details.jsx','advisors.jsx','screens.jsx'];
+const files=['lib.js','ui.jsx','engine.js','details.jsx','advisors.jsx','screens.jsx','account.jsx'];
 let src=files.map(f=>fs.readFileSync(REPO+'src/'+f,'utf8')).join('\n');
 src=src.replace(/^\/\*[\s\S]*?\*\//,'');
 const out=esbuild.transformSync(src,{loader:'jsx',jsxFactory:'React.createElement',
@@ -39,7 +39,7 @@ const d={cards:L('cards.json'),cardRewards:L('card_rewards.json'),cardPerks:[],
 
 // ui.jsx already destructures the hooks off React, exactly as the browser
 // build does, so including it is enough.
-const scope=new Function('React','d0',out.code+'; return {Home, Suggestions, Products};')(React,d);
+const scope=new Function('React','d0',out.code+'; return {Home, Suggestions, Products, Profile};')(React,d);
 const noop=()=>{};
 const props={d,user:d.users[0],go:noop,setSheetItem:noop,logMovement:noop,
   setBalance:noop,setProductFlag:noop,session:d.users[0],addProduct:noop,removeProduct:noop};
@@ -62,7 +62,16 @@ const srcAcct=out.code.replace(marker,'const [tab, setTab] = useState("account")
 const scopeAcct=new Function('React','d0',srcAcct+'; return {Suggestions};')(React,d);
 
 let fail=0;
-const targets={...scope, 'Suggestions[tab=account]':scopeAcct.Suggestions};
+// And with the reallocation detail expanded: that branch is behind a collapsed
+// panel, so the default render never touches it.
+const mOpen=/const \[reallocOpen, setReallocOpen\] = useState\(false\)/;
+if(!mOpen.test(srcAcct)) { console.log('  HARNESS BROKEN: reallocOpen state not found'); process.exit(3); }
+const scopeOpen=new Function('React','d0',
+  srcAcct.replace(mOpen,'const [reallocOpen, setReallocOpen] = useState(true)')+
+  '; return {Suggestions};')(React,d);
+
+const targets={...scope, 'Suggestions[tab=account]':scopeAcct.Suggestions,
+               'Suggestions[realloc expanded]':scopeOpen.Suggestions};
 for (const [name,C] of Object.entries(targets)) {
   if(!C){console.log(`  skip  ${name} (not exported)`);continue;}
   try { renderToString(React.createElement(C,props)); console.log(`  OK    ${name}`); }

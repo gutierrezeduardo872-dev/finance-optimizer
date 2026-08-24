@@ -437,6 +437,7 @@ function Suggestions({ d, user, addProduct, go }) {
   const [sheetItem, setSheetItem] = useState(null);
   const [busyId, setBusyId] = useState('');
   const [tab, setTab] = useState('card');
+  const [reallocOpen, setReallocOpen] = useState(false);
 
   const issuerOf = (p) => d.issuers.find((i) => i.issuer_id === p.issuer_id) || {};
   const catLabel = (key) => {
@@ -558,8 +559,10 @@ function Suggestions({ d, user, addProduct, go }) {
           </div>
           {acctPicks.map((p) => {
             if (p.type === 'reallocation') {
+              const open = reallocOpen;
               return (
-                <div key="realloc" className="pick sand-pick">
+                <button key="realloc" className="pick sand-pick"
+                        onClick={() => setReallocOpen(!open)}>
                   <div className="pick-top">
                     <div className="mark-plain"><Ico n="savings" s={24} /></div>
                     <div className="pick-id">
@@ -571,9 +574,59 @@ function Suggestions({ d, user, addProduct, go }) {
                       <div className="pick-uu">al año</div>
                     </div>
                   </div>
+                  {open && (
+                    <div className="realloc-detail">
+                      <div className="realloc-sum">
+                        Hoy ganas {mxn(p.currentYield)}/año. Reacomodado,
+                        {' '}{mxn(p.optimisedYield)}/año.
+                      </div>
+                      {p.moves.map((m) => (
+                        <div key={m.acct.account_id} className="realloc-row">
+                          <div className="realloc-n">
+                            {m.acct.display_name}
+                            <span className="realloc-r"> · {pct(m.rateNow)}</span>
+                            {m.monthlyFee > 0 && (
+                              <span className="realloc-fee">
+                                {' '}· {mxn(m.monthlyFee)}/mes de comisión
+                              </span>
+                            )}
+                          </div>
+                          <div className="realloc-mv">
+                            {mxn(m.from)} <Ico n="right" s={11} /> <b>{mxn(m.to)}</b>
+                            <span className={m.yieldThen >= m.yieldNow
+                                             ? 'realloc-up' : 'realloc-dn'}>
+                              {' '}({mxn(m.yieldNow)} <Ico n="right" s={10} /> {mxn(m.yieldThen)}/año)
+                            </span>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  )}
                   <div className="pick-foot">
-                    Moviendo tus {mxn(p.total)} a las cuentas que ya tienes, pero en
-                    las proporciones que más rinden.
+                    {open ? 'Toca para cerrar el detalle.'
+                          : 'Toca para ver cuánto mover a cada cuenta.'}
+                  </div>
+                </button>
+              );
+            }
+            if (p.type === 'close') {
+              return (
+                <div key={'close-' + p.acct.account_id} className="pick sand-pick">
+                  <div className="pick-top">
+                    <div className="mark-plain"><Ico n="alert" s={24} /></div>
+                    <div className="pick-id">
+                      <div className="pick-n">Considera cerrar {p.acct.display_name}</div>
+                      <div className="pick-i">Sin saldo, sólo cobra comisión</div>
+                    </div>
+                    <div className="pick-up">
+                      <div className="num">+{mxn(p.uplift)}</div>
+                      <div className="pick-uu">al año</div>
+                    </div>
+                  </div>
+                  <div className="pick-foot">
+                    Si mueves tu dinero a otra cuenta, ésta seguiría cobrando
+                    {' '}{mxn(p.monthlyFee)} al mes. Cerrarla es lo que convierte el
+                    reacomodo en ahorro real.
                   </div>
                 </div>
               );
@@ -598,8 +651,15 @@ function Suggestions({ d, user, addProduct, go }) {
                   </div>
                 </div>
                 <div className="pick-foot">
-                  Sobre un depósito típico tuyo de {mxn(p.typical)}
-                  {p.beats ? ', frente a ' + p.beats : ''}.
+                  {/* The suggestion is about the whole portfolio, not one
+                      deposit — saying otherwise made the number look unrelated
+                      to the figure shown above it. */}
+                  Moviendo {mxn(p.suggestedAmount)} de tus {mxn(p.total)}.
+                  {p.upliftOverBest > 1
+                    ? ' Frente a sólo reacomodar lo que ya tienes, aporta ' +
+                      mxn(p.upliftOverBest) + ' más al año.'
+                    : ' Casi todo el beneficio lo consigues reacomodando lo que ya tienes.'}
+                  {p.locked ? ' Tu dinero queda comprometido un plazo.' : ''}
                   <span className="row-chev"><Ico n="right" s={14} /></span>
                 </div>
                 {/* Deposit insurance is a real trade-off against yield, so say it
