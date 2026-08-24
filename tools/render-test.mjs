@@ -10,7 +10,7 @@ const REPO=process.env.NORTE_REPO || new URL('../', import.meta.url).pathname;
 const R=REPO+'data/market/';
 const L=f=>JSON.parse(fs.readFileSync(R+f,'utf8'));
 
-const files=['lib.js','ui.jsx','engine.js','details.jsx','advisors.jsx','screens.jsx','account.jsx'];
+const files=['lib.js','ui.jsx','engine.js','details.jsx','advisors.jsx','screens.jsx','account.jsx','admin.jsx'];
 let src=files.map(f=>fs.readFileSync(REPO+'src/'+f,'utf8')).join('\n');
 src=src.replace(/^\/\*[\s\S]*?\*\//,'');
 const out=esbuild.transformSync(src,{loader:'jsx',jsxFactory:'React.createElement',
@@ -39,7 +39,7 @@ const d={cards:L('cards.json'),cardRewards:L('card_rewards.json'),cardPerks:[],
 
 // ui.jsx already destructures the hooks off React, exactly as the browser
 // build does, so including it is enough.
-const scope=new Function('React','d0',out.code+'; return {Home, Suggestions, Products, Profile};')(React,d);
+const scope=new Function('React','d0',out.code+'; return {Home, Suggestions, Products, Profile, Admin, AdminEstado, AdminDatos, AdminMotorTabs};')(React,d);
 const noop=()=>{};
 const props={d,user:d.users[0],go:noop,setSheetItem:noop,logMovement:noop,
   setBalance:noop,setProductFlag:noop,session:d.users[0],addProduct:noop,removeProduct:noop};
@@ -70,7 +70,31 @@ const scopeOpen=new Function('React','d0',
   srcAcct.replace(mOpen,'const [reallocOpen, setReallocOpen] = useState(true)')+
   '; return {Suggestions};')(React,d);
 
-const targets={...scope, 'Suggestions[tab=account]':scopeAcct.Suggestions,
+// The admin additions all live behind collapsed state, so a default render
+// touches none of them. Force each open. Every marker is asserted: a harness
+// that silently stops testing is worse than none.
+function variant(label, pattern, replacement, exports) {
+  if(!pattern.test(out.code)) { console.log(`  HARNESS BROKEN: ${label} marker missing`); process.exit(3); }
+  return new Function('React','d0',
+    out.code.replace(pattern,replacement)+`; return {${exports}};`)(React,d);
+}
+const vEstado=variant('AdminEstado open',
+  /function AdminEstado\(\{ d \}\) \{\s*const \[open, setOpen\] = useState\(null\)/,
+  'function AdminEstado({ d }) {\n  const [open, setOpen] = useState("Emisores")',
+  'AdminEstado');
+const vDatos=variant('AdminDatos open',
+  /function AdminDatos\(\{ d \}\) \{\s*const \[open, setOpen\] = useState\(null\)/,
+  'function AdminDatos({ d }) {\n  const [open, setOpen] = useState("exp")',
+  'AdminDatos');
+const vMotor=variant('AdminMotorTabs side',
+  /const \[side, setSide\] = useState\("card"\)/,
+  'const [side, setSide] = useState("acct")',
+  'AdminMotorTabs');
+
+const targets={...scope,
+  'AdminEstado[expanded]':vEstado.AdminEstado,
+  'AdminDatos[expanded]':vDatos.AdminDatos,
+  'AdminMotorTabs[cuentas]':vMotor.AdminMotorTabs, 'Suggestions[tab=account]':scopeAcct.Suggestions,
                'Suggestions[realloc expanded]':scopeOpen.Suggestions};
 for (const [name,C] of Object.entries(targets)) {
   if(!C){console.log(`  skip  ${name} (not exported)`);continue;}
