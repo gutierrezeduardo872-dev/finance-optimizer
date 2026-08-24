@@ -49,8 +49,21 @@ const scopeFns=new Function('React','d0',out.code+'; return {newCardPicks,newAcc
 const nCard=scopeFns.newCardPicks(d,'u1').length, nAcct=scopeFns.newAccountPicks(d,'u1').length;
 console.log(`  fixture: ${nCard} card picks, ${nAcct} account picks`);
 if(!nCard||!nAcct){console.log('  FIXTURE TOO THIN — branches would not render'); process.exit(2);}
+// Suggestions defaults to the card tab, so rendering it plainly never exercises
+// the account branch — which is exactly where the crash was, and why the first
+// two versions of this harness passed against live bugs. Render a variant with
+// the default flipped so both tabs are covered.
+// Target the Suggestions tab specifically. A bare replace of "useState('card')"
+// hits Products' `kind` state first and leaves the Suggestions tab on 'card',
+// which is how this harness passed against a live crash in the account branch.
+const marker=/const \[tab, setTab\] = useState\("card"\)/;
+if(!marker.test(out.code)) { console.log('  HARNESS BROKEN: tab state not found'); process.exit(3); }
+const srcAcct=out.code.replace(marker,'const [tab, setTab] = useState("account")');
+const scopeAcct=new Function('React','d0',srcAcct+'; return {Suggestions};')(React,d);
+
 let fail=0;
-for (const [name,C] of Object.entries(scope)) {
+const targets={...scope, 'Suggestions[tab=account]':scopeAcct.Suggestions};
+for (const [name,C] of Object.entries(targets)) {
   if(!C){console.log(`  skip  ${name} (not exported)`);continue;}
   try { renderToString(React.createElement(C,props)); console.log(`  OK    ${name}`); }
   catch(e){ fail++; console.log(`  CRASH ${name}: ${e.message}`);
