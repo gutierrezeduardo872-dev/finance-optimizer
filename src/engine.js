@@ -151,15 +151,30 @@ function priorRewardOnCard(d, userId, cardId, categories, period) {
 /* --------------------------------- cards -------------------------------- */
 
 /** Peso value of one unit of reward. `est` marks a market estimate. */
-function pointValue(bonusRow, card) {
+function pointValue(bonusRow, card, trace) {
+  const step = (field, value, branch, out) => {
+    if (trace) trace.push({ field, value, branch, out });
+  };
   const fromBonus = knownNum(bonusRow && bonusRow.point_value_mxn);
-  if (fromBonus !== null) return { pv: fromBonus, est: false };
+  if (fromBonus !== null) {
+    step('point_value_mxn', fromBonus, 'publicado en el bonus', mxn2(fromBonus) + '/pto');
+    return { pv: fromBonus, est: false };
+  }
   const fromCard = knownNum(card && card.point_value_mxn);
-  if (fromCard !== null) return { pv: fromCard, est: false };
+  if (fromCard !== null) {
+    step('point_value_mxn', fromCard, 'publicado en la tarjeta', mxn2(fromCard) + '/pto');
+    return { pv: fromCard, est: false };
+  }
   const prog = String((card && card.points_program_name) || '').trim();
   if (prog && POINT_VALUE_OVERRIDES[prog] != null) {
+    step('points_program_name', prog, 'valor de programa conocido',
+         mxn2(POINT_VALUE_OVERRIDES[prog]) + '/pto (est.)');
     return { pv: POINT_VALUE_OVERRIDES[prog], est: true };
   }
+  // The market fallback is the single most consequential estimate in the
+  // engine: it is what separates "worth this much" from "we do not know".
+  step('point_value_mxn', '(ausente)', 'supuesto de mercado',
+       mxn2(MARKET_POINT_VALUE_MXN) + '/pto (est.)');
   return { pv: MARKET_POINT_VALUE_MXN, est: true };
 }
 
@@ -203,38 +218,78 @@ const usdMxn = (d) => refValue(d, 'USD/MXN');
  * as 0 makes them indistinguishable from a card that genuinely pays nothing,
  * which is how an Aeroméxico Platinum came to read as 0%.
  */
-function resolveRate(d, row, card) {
+function resolveRate(d, row, card, trace) {
+  // `trace`, when passed, collects one step per field consulted. It is written
+  // to and never read here: no branch below may consult it, or the explained
+  // run stops describing the production run and the tool becomes a liar.
+  const step = (field, value, branch, out) => {
+    if (trace) trace.push({ field, value, branch, out });
+  };
+
   const src = row || card;
   const type = String((row ? row.reward_type : card.base_reward_type) ||
                       card.base_reward_type || '').toLowerCase();
-  if (type === 'none') return { pct: 0, estimated: false, reason: 'none' };
+  step('reward_type', type || '(vacío)', 'entrada', null);
+  if (type === 'none') {
+    step('reward_type', type, 'sin recompensa', '0%');
+    return { pct: 0, estimated: false, reason: 'none' };
+  }
 
   const eff = knownNum(src.effective_rate_pct);
-  if (eff !== null) return { pct: eff, estimated: false, reason: 'published' };
+  if (eff !== null) {
+    step('effective_rate_pct', src.effective_rate_pct, 'publicada', eff + '%');
+    return { pct: eff, estimated: false, reason: 'published' };
+  }
+  step('effective_rate_pct', src.effective_rate_pct == null || src.effective_rate_pct === ''
+       ? '(ausente)' : src.effective_rate_pct, 'sin dato · continúa', null);
 
-  const pv = pointValue(row, card);
+  const pv = pointValue(row, card, trace);
   const basis = String(src.accrual_basis || '').toLowerCase();
   const arate = knownNum(src.accrual_rate);
 
   if (basis === 'per_usd' && arate !== null) {
+    step('accrual_basis', basis, 'acumula por dólar', null);
+    step('accrual_rate', arate, 'presente', null);
     const fx = usdMxn(d);
-    if (fx === null) return null;          // no dated FX: refuse to guess one
-    // arate points per USD -> points per peso -> pesos per peso of spend.
-    return { pct: (arate / fx) * pv.pv * 100, estimated: true, reason: 'per_usd' };
+    if (fx === null) {
+      step('FIX USD/MXN', '(sin tipo de cambio con fecha)', 'no adivinar', 'null');
+      return null;                          // no dated FX: refuse to guess one
+    }
+    step('FIX USD/MXN', fx, 'convierte', null);
+    const out = (arate / fx) * pv.pv * 100;
+    step('—', arate + ' pts/USD ÷ ' + fx + ' × ' + pv.pv,
+         'puntos por peso → pesos por peso', pct(out));
+    return { pct: out, estimated: true, reason: 'per_usd' };
   }
 
   if (basis === 'per_mxn_block' && arate !== null) {
+    step('accrual_basis', basis, 'acumula por bloque', null);
     const block = knownNum(src.accrual_block_mxn);
-    if (block === null || block === 0) return null;
-    return { pct: (arate / block) * pv.pv * 100, estimated: pv.est,
-             reason: 'per_mxn_block' };
+    if (block === null || block === 0) {
+      step('accrual_block_mxn', src.accrual_block_mxn === '' ? '(ausente)'
+           : src.accrual_block_mxn, 'bloque inválido', 'null');
+      return null;
+    }
+    const out = (arate / block) * pv.pv * 100;
+    step('accrual_block_mxn', block, 'presente', null);
+    step('—', arate + ' pts / $' + block + ' × ' + pv.pv, 'pesos por peso', pct(out));
+    return { pct: out, estimated: pv.est, reason: 'per_mxn_block' };
   }
+  step('accrual_basis', basis || '(ausente)', 'sin acumulación · continúa', null);
 
-  const rate = knownNum(row ? row.rate : card.base_reward_rate);
-  if (rate === null) return null;          // the rate itself is unknown
+  const rawRate = row ? row.rate : card.base_reward_rate;
+  const rate = knownNum(rawRate);
+  if (rate === null) {
+    step(row ? 'rate' : 'base_reward_rate',
+         rawRate == null || rawRate === '' ? '(ausente)' : rawRate,
+         'la tasa misma es desconocida', 'null');
+    return null;                            // the rate itself is unknown
+  }
+  step(row ? 'rate' : 'base_reward_rate', rate, 'presente', rate + '%');
   const isPoints = type === 'points' || type === 'miles';
-  return { pct: isPoints ? rate * pv.pv : rate,
-           estimated: isPoints && pv.est, reason: 'rate' };
+  const out = isPoints ? rate * pv.pv : rate;
+  if (isPoints) step('—', rate + ' × ' + pv.pv, 'puntos a pesos', pct(out));
+  return { pct: out, estimated: isPoints && pv.est, reason: 'rate' };
 }
 
 /**
@@ -259,7 +314,13 @@ function coverageMxn(d, acct) {
 }
 
 
-function scoreCard(d, card, category, amount, userId) {
+function scoreCard(d, card, category, amount, userId, opts) {
+  // The trace is opt-in and write-only. Nothing below branches on it.
+  const trace = opts && opts.explain ? [] : null;
+  const step = (field, value, branch, out) => {
+    if (trace) trace.push({ field, value, branch, out });
+  };
+
   const all = d.cardRewards.filter(
     (r) => r.card_id === card.card_id && r.category === category);
   const isSelectable = (r) =>
@@ -301,7 +362,17 @@ function scoreCard(d, card, category, amount, userId) {
   // Resolve through resolveRate rather than multiplying here: it also handles
   // per-USD and per-block accrual, and returns null when the card cannot be
   // priced at all instead of quietly yielding zero.
-  const resolved = resolveRate(d, usedBonus ? bonus : null, card);
+  if (trace) {
+    step('cardRewards', all.length + ' fila(s) para ' + category,
+         bonus ? 'bonus de categoría encontrado' : 'sin bonus · usa tasa base', null);
+    if (bonus && bonusBlockedBy) {
+      const [kind, val] = String(bonusBlockedBy).split(':');
+      step(kind, val, 'condición no cumplida · el bonus no aplica', null);
+    } else if (usedBonus) {
+      step('bonus.rate', num(bonus.rate), 'condición cumplida', null);
+    }
+  }
+  const resolved = resolveRate(d, usedBonus ? bonus : null, card, trace);
   const baseResolved = resolveRate(d, null, card);
   const unvaluable = resolved === null;
 
@@ -333,13 +404,33 @@ function scoreCard(d, card, category, amount, userId) {
     }
   }
 
+  if (trace) {
+    if (unvaluable) {
+      step('—', 'sin precio', 'no comparable',
+           'score −1 (por debajo de un cero conocido)');
+    } else {
+      step('monto', mxn2(amount), 'aplica ' + pct(resolved.pct),
+           mxn2(amount * resolved.pct / 100));
+      if (capped) {
+        step('cap_amount', mxn2(capRemaining), 'tope alcanzado · recorta', mxn2(reward));
+      }
+    }
+  }
+
   const perks = d.cardPerks.filter(
     (p) => p.card_id === card.card_id && p.applies_to_category === category);
   const perkValue = perks.reduce((s, p) => s + num(p.mxn_value), 0);
+  if (trace && perkValue > 0) {
+    step('cardPerks', perks.length + ' beneficio(s)', 'suma valor', '+ ' + mxn2(perkValue));
+  }
+  if (trace && !unvaluable) {
+    step('—', 'recompensa + beneficios', 'score final', mxn2(reward + perkValue));
+  }
 
   return { card, rate, rtype, reward, perkValue, perks, usedBonus, capped,
            capRemaining, bonusBlockedBy, pointsEstimated, optional, baseRate,
            unvaluable, rateReason,
+           trace,
            annualFeeMxn: resolveFee(d, card),
            isCharge: String(card.product_type || 'credit').toLowerCase() === 'charge',
            // An unvaluable card scores below every priced card, including one
@@ -352,9 +443,9 @@ function scoreCard(d, card, category, amount, userId) {
  * say why those cards are absent from the comparison rather than showing them
  * as earning nothing.
  */
-function ccRecommend(d, userId, category, amount) {
+function ccRecommend(d, userId, category, amount, opts) {
   const all = heldCards(d, userId)
-    .map((c) => scoreCard(d, c, category, amount, userId))
+    .map((c) => scoreCard(d, c, category, amount, userId, opts))
     .sort((a, b) => b.score - a.score);
   const ranked = all.filter((x) => !x.unvaluable);
   const unvaluable = all.filter((x) => x.unvaluable);

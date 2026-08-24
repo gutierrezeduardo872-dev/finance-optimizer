@@ -118,6 +118,10 @@ function App() {
   });
   const scroller = useRef(null);
 
+  // Live snapshot for listeners registered once (see the popstate effect).
+  const navRef = useRef({ view, lastMainView, menuOpen });
+  navRef.current = { view, lastMainView, menuOpen };
+
   useEffect(() => writeQueue.subscribe(setPendingWrites), []);
   useEffect(() => {
     if (!toast) return;
@@ -284,7 +288,32 @@ function App() {
     setMenuOpen(false);
     if (scroller.current) scroller.current.scrollTop = 0;
     window.scrollTo(0, 0);
+    // Routing used to be React state alone, so Android's back gesture left
+    // Norte entirely instead of leaving the screen. Each navigation now pushes
+    // a history entry; the popstate handler below turns back into "go up one".
+    if (typeof next === 'string' && next !== view) {
+      try { history.pushState({ view: next }, '', '#' + next); } catch (e) {}
+    }
   };
+
+  /**
+   * Back means the nearest enclosing thing: close the menu if it is open,
+   * otherwise leave a subview for the tab it was opened from, otherwise follow
+   * the history entry. Only at Inicio does back leave the app.
+   *
+   * The listener is registered once, so it reads live state through a ref
+   * instead of closing over the values it saw at mount.
+   */
+  useEffect(() => {
+    try { history.replaceState({ view: 'home' }, '', '#home'); } catch (e) {}
+    const onPop = (e) => {
+      const st = navRef.current;
+      if (st.menuOpen) { setMenuOpen(false); return; }
+      setView(SUBVIEWS[st.view] ? st.lastMainView : ((e.state && e.state.view) || 'home'));
+    };
+    window.addEventListener('popstate', onPop);
+    return () => window.removeEventListener('popstate', onPop);
+  }, []);
 
   const signOut = () => {
     LS.del(K_SESSION); LS.del(K_USER);
@@ -363,7 +392,12 @@ function App() {
         return <Profile d={db} user={session} onSignOut={signOut} onSwitch={signOut}
                         saveName={saveName} go={go} />;
       case 'admin':
-        return <Admin d={db} />;
+        // Route-level guard. Reaching #admin by hand should not render it.
+        return session.is_admin === true
+          ? <Admin d={db} user={session} />
+          : <Empty icon="shield" title="Sólo para administradores">
+              Esta sección no está disponible en tu cuenta.
+            </Empty>;
       default:
         return null;
     }

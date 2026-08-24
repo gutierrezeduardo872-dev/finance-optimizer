@@ -528,7 +528,7 @@ function Suggestions({ d, user, addProduct, go }) {
                   <div className="why">
                     {p.reasons.slice(0, 3).map((r) => (
                       <span key={r.cat} className="why-chip">
-                        <Ico n={catIcon(r.cat)} s={13} /> {catLabel(r.cat)} · {r.rate}%
+                        <Ico n={catIcon(r.cat)} s={13} /> {catLabel(r.cat)} · {pct(r.rate)}
                       </span>
                     ))}
                   </div>

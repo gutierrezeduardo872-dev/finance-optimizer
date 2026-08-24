@@ -329,8 +329,11 @@ function Menu({ open, onClose, d, user, go, onRefresh, syncing, lastSync, onSign
            right={port.mv.length || null} onClick={() => go('history')} />
       <Row icon="user" title="Perfil" meta="Tus datos y productos"
            onClick={() => go('profile')} />
-      {user.is_admin && (
-        <Row icon="shield" title="Admin" meta="Estado de los datos"
+      {/* Hiding a row is not access control — app.jsx refuses the route as
+          well. Both read the same boolean; the Sheet must hold a real TRUE and
+          not the string, because any non-empty cell is truthy. */}
+      {user.is_admin === true && (
+        <Row icon="shield" title="Admin" meta="Estado · motor · datos"
              onClick={() => go('admin')} />
       )}
       <Row icon="refresh" title={syncing ? 'Actualizando…' : 'Actualizar datos'}
@@ -343,78 +346,8 @@ function Menu({ open, onClose, d, user, go, onRefresh, syncing, lastSync, onSign
   );
 }
 
-/* --------------------------------- admin -------------------------------- */
-
-function Admin({ d }) {
-  // MIGRATED: the dataset is no longer edited in the Sheet. The Sheet is a
-  // generated view of data/market/*.json in git, so this screen reports what
-  // arrived rather than inviting edits.
-  const insurance = useMemo(() => {
-    const m = {};
-    d.issuers.forEach((i) => {
-      const inst = instOf(i);
-      const key = inst ? inst.l : 'Sin clasificar';
-      m[key] = (m[key] || 0) + 1;
-    });
-    return m;
-  }, [d.issuers]);
-
-  const uninsured = d.accounts.filter((a) => {
-    const iss = d.issuers.find((i) => i.issuer_id === a.issuer_id);
-    const inst = instOf(iss);
-    return inst && inst.tone === 'warn' && takesDeposits(iss);
-  }).length;
-
-  const pending = d.issuers.filter((i) => i.status === 'pending_conversion');
-
-  const rows = [
-    ['Usuarios', d.users.length, d.users.map((u) => u.name).join(', ')],
-    ['Emisores', d.issuers.length,
-      Object.entries(insurance).map(([k, v]) => v + ' ' + k).join(' · ')],
-    ['Tarjetas', d.cards.length,
-      d.cardRewards.length + ' bonus · ' + d.cardPerks.length + ' beneficios'],
-    ['Cuentas', d.accounts.length,
-      d.yieldTiers.length + ' niveles · ' +
-      ((d.conditionalBoosts || []).length) + ' condicionados'],
-    ['Categorías', d.categories.length,
-      d.categories.map((c) => c.display_label).join(', ')],
-    ['Movimientos', d.movements.length, 'registrados por ti'],
-  ];
-
-  return (
-    <>
-      <div className="panel">
-        <div className="panel-head">
-          <div className="ph-l"><Ico n="shield" s={16} /> Estado de los datos</div>
-        </div>
-        <div className="sub">
-          Los datos de mercado viven en el repositorio y se publican a la hoja.
-          Editar la hoja directamente se detecta como divergencia en la siguiente
-          publicación.
-        </div>
-        {rows.map(([label, value, meta]) => (
-          <Row key={label} title={label} meta={meta} right={value} />
-        ))}
-      </div>
-
-      {(uninsured > 0 || pending.length > 0) && (
-        <div className="panel">
-          <div className="panel-head">
-            <div className="ph-l"><Ico n="alert" s={16} /> Requiere atención</div>
-          </div>
-          {uninsured > 0 && (
-            <Row title="Cuentas sin seguro de depósito" right={uninsured}
-                 meta="Se marcan como tal en el detalle y en Sugerencias" />
-          )}
-          {/* A licence granted but not yet effective changes the insurance on a
-              known date; it must not be discovered after the fact. */}
-          {pending.map((i) => (
-            <Row key={i.issuer_id} title={i.display_name}
-                 meta={'Cambia de figura regulatoria el ' + dateLabel(i.conversion_effective_date)}
-                 right="pendiente" />
-          ))}
-        </div>
-      )}
-    </>
-  );
-}
+/* --------------------------------- admin --------------------------------
+   MOVED to src/admin.jsx. Admin is a section now, not a screen: Estado, Motor
+   and Datos. Declaring Admin here as well would shadow the new one — plain
+   scripts share one scope.
+   ------------------------------------------------------------------------ */

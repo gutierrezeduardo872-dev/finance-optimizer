@@ -136,14 +136,14 @@ function CardAdvisor({ d, user, logMovement, go }) {
             <div className="v-sub">de vuelta en esta compra</div>
 
             <div className="v-tags">
-              <span className="tag">{best.rate}% {rtl(best.rtype)}</span>
+              <span className="tag">{pct(best.rate)} {rtl(best.rtype)}</span>
               {best.usedBonus && <span className="tag amber">bonus activo</span>}
               {best.capped && <span className="tag warn">tope alcanzado</span>}
               {best.pointsEstimated && <span className="tag">puntos est.</span>}
             </div>
 
             <Breakdown rows={[
-              { k: 'Recompensa (' + best.rate + '% ' + rtl(best.rtype) + ')',
+              { k: 'Recompensa (' + pct(best.rate) + ' ' + rtl(best.rtype) + ')',
                 v: mxn2(best.reward) },
               ...(best.perkValue > 0
                 ? [{ k: 'Valor de beneficios', v: '+ ' + mxn2(best.perkValue),
@@ -213,7 +213,7 @@ function CardAdvisor({ d, user, logMovement, go }) {
                     mark={<BankMark name={iss.display_name} url={iss.logo_url} size={34} />}
                     title={r.card.display_name}
                     meta={blockedLabel(r) ||
-                          (r.rate + '% ' + rtl(r.rtype) +
+                          (pct(r.rate) + ' ' + rtl(r.rtype) +
                            (r.capped ? ' · tope alcanzado' : ''))}
                     right={mxn2(r.score)}
                     rightSub={best.score - r.score >= 0.01
@@ -245,7 +245,7 @@ function CardAdvisor({ d, user, logMovement, go }) {
                     key={r.card.card_id}
                     mark={<BankMark name={iss.display_name} url={iss.logo_url} size={34} />}
                     title={r.card.display_name}
-                    meta={r.rate ? r.rate + '% ' + rtl(r.rtype) : iss.display_name}
+                    meta={r.rate ? pct(r.rate) + ' ' + rtl(r.rtype) : iss.display_name}
                     right="—"
                     rightSub="sin valor publicado"
                     onClick={() => setSheetItem({ type: 'card', data: r.card,
