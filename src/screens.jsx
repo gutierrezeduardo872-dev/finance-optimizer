@@ -580,26 +580,42 @@ function Suggestions({ d, user, addProduct, go }) {
                         Hoy ganas {mxn(p.currentYield)}/año. Reacomodado,
                         {' '}{mxn(p.optimisedYield)}/año.
                       </div>
-                      {p.moves.map((m) => (
-                        <div key={m.acct.account_id} className="realloc-row">
-                          <div className="realloc-n">
-                            {m.acct.display_name}
-                            <span className="realloc-r"> · {pct(m.rateNow)}</span>
-                            {m.monthlyFee > 0 && (
-                              <span className="realloc-fee">
-                                {' '}· {mxn(m.monthlyFee)}/mes de comisión
+                      {/* Two lines per account, not one wrapping line. The
+                          single-row version put name, rate, fee, two balances
+                          and two yields on one line, which wrapped into an
+                          unreadable stack on a phone. */}
+                      {p.moves.map((m) => {
+                        const move = m.to - m.from;
+                        return (
+                          <div key={m.acct.account_id} className="mv-card">
+                            <div className="mv-head">
+                              <span className="mv-name">{m.acct.display_name}</span>
+                              <span className="mv-rate">{pct(m.rateNow)}</span>
+                            </div>
+                            <div className="mv-line">
+                              <span className="mv-lbl">Saldo</span>
+                              <span className="mv-val">
+                                {mxn(m.from)} <span className="mv-arw">→</span> <b>{mxn(m.to)}</b>
                               </span>
-                            )}
+                            </div>
+                            <div className="mv-line">
+                              <span className="mv-lbl">Rendimiento</span>
+                              <span className={'mv-val ' + (m.yieldThen >= m.yieldNow
+                                                            ? 'realloc-up' : 'realloc-dn')}>
+                                {mxn(m.yieldNow)} <span className="mv-arw">→</span>
+                                {' '}<b>{mxn(m.yieldThen)}</b>/año
+                              </span>
+                            </div>
+                            <div className="mv-act">
+                              {move > 0 ? 'Mueve ' + mxn(move) + ' hacia aquí'
+                                : move < 0 ? 'Saca ' + mxn(-move) + ' de aquí'
+                                : 'Déjala como está'}
+                              {m.monthlyFee > 0 && m.to === 0 &&
+                                ' · seguirá cobrando ' + mxn(m.monthlyFee) + '/mes si no la cierras'}
+                            </div>
                           </div>
-                          <div className="realloc-mv">
-                            {mxn(m.from)} <Ico n="right" s={11} /> <b>{mxn(m.to)}</b>
-                            <span className={m.yieldThen >= m.yieldNow
-                                             ? 'realloc-up' : 'realloc-dn'}>
-                              {' '}({mxn(m.yieldNow)} <Ico n="right" s={10} /> {mxn(m.yieldThen)}/año)
-                            </span>
-                          </div>
-                        </div>
-                      ))}
+                        );
+                      })}
                     </div>
                   )}
                   <div className="pick-foot">

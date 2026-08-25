@@ -59,7 +59,28 @@ const POINT_VALUE_OVERRIDES = {
 /* num(), knownNum(), weekKey(), NOW_MONTH and NOW_WEEK come from lib.js,
    which loads first. Do not redeclare them — these files share one scope. */
 
-const cap = (v) => { const n = knownNum(v); return n === null ? Infinity : n; };
+/**
+ * A ceiling in pesos.
+ *
+ * UNCAPPED means the issuer says there is no limit, so Infinity is correct.
+ * UNKNOWN means we do not know, and treating that as Infinity is the same
+ * mistake as treating an unknown rate as zero — only in the optimistic
+ * direction, which is worse. Nu publishes no ceiling for Cajita Turbo, and
+ * that made the allocator hand 13% to a $950,000 balance.
+ */
+const cap = (v) => {
+  const s = String(v == null ? '' : v).trim().toUpperCase();
+  if (s === 'UNCAPPED' || s === 'NOT_APPLICABLE') return Infinity;
+  const n = knownNum(v);
+  return n === null ? Infinity : n;   // legacy callers; see capStrict below
+};
+
+/** Null when the ceiling is unknown, so callers must decide what to do. */
+const capStrict = (v) => {
+  const s = String(v == null ? '' : v).trim().toUpperCase();
+  if (s === 'UNCAPPED' || s === 'NOT_APPLICABLE') return Infinity;
+  return knownNum(v);
+};
 
 
 /* ---------------------------- held products ----------------------------- */
@@ -507,9 +528,22 @@ function rateOf(b, baseRate) {
 function bestBoost(d, userId, acct, baseRate) {
   const cands = boostsFor(d, acct)
     .filter((b) => boostConditionMet(d, userId, acct, b))
-    .map((b) => ({ boost: b, rate: rateOf(b, baseRate), cap: cap(b.max_balance_mxn) }))
-    .filter((x) => x.rate !== null);
+    .map((b) => ({ boost: b, rate: rateOf(b, baseRate),
+                   cap: capStrict(b.max_balance_mxn) }))
+    // A boost whose ceiling the issuer does not publish cannot be sized, so it
+    // cannot be allocated against. It is still reported separately as an
+    // opportunity — the rate is real, the amount it covers is not knowable.
+    .filter((x) => x.rate !== null && x.cap !== null);
   return cands.length ? cands.reduce((a, b) => (b.rate > a.rate ? b : a)) : null;
+}
+
+/** Boosts that apply but whose ceiling is unpublished, for display only. */
+function unsizedBoosts(d, userId, acct, baseRate) {
+  return boostsFor(d, acct)
+    .filter((b) => boostConditionMet(d, userId, acct, b) &&
+                   capStrict(b.max_balance_mxn) === null &&
+                   rateOf(b, baseRate) !== null)
+    .map((b) => ({ boost: b, rate: rateOf(b, baseRate) }));
 }
 
 /** Best boost the user does NOT yet qualify for, if it beats what they have. */
@@ -682,6 +716,7 @@ function savingsIn(d, userId, amount, opts) {
       locked: String(a.liquidity || '').toLowerCase() === 'term_locked',
       lockDays: knownNum(a.term_days),
       monthlyFee: knownNum(a.monthly_fee_mxn),
+      unsized: unsizedBoosts(d, userId, a, num(a.flat_rate_pct)),
       // True when we could not source the fee, so the projected yield is an
       // upper bound rather than a figure.
       feeUnknown: knownNum(a.monthly_fee_mxn) === null,
@@ -923,8 +958,14 @@ function yieldBands(d, userId, accts, amount, capAtCoverage) {
     const cover = capAtCoverage ? coverageMxn(d, a) : null;
     if (a.yield_structure === 'tiered') {
       tiersFor(d, a.account_id).forEach((t) => {
+        const known = knownNum(t.rate_pct);
+        // A tier whose rate the issuer does not publish is not a 0% tier — it
+        // is a tier we cannot price. Emitting it at 0 let the allocator park
+        // money there and report it as optimal.
+        if (known === null && !bb) return;
         const lo = num(t.tier_min_mxn), hi = cap(t.tier_max_mxn);
-        const rate = bb && lo < bb.cap ? bb.rate : num(t.rate_pct);
+        const rate = bb && lo < bb.cap ? bb.rate : known;
+        if (rate === null) return;
         const width = cover === null ? hi - lo : Math.max(0, Math.min(hi, cover) - lo);
         bands.push({ rate, cap: width, acct: a });
       });
@@ -1044,6 +1085,7 @@ function newAccountPicks(d, userId) {
         yieldNow: annualYield(d, userId, a, now),
         yieldThen: annualYield(d, userId, a, then),
         monthlyFee: knownNum(a.monthly_fee_mxn),
+      unsized: unsizedBoosts(d, userId, a, num(a.flat_rate_pct)),
       };
     }).sort((x, y) => y.to - x.to);
     picks.unshift({ type: 'reallocation', total, uplift: realloc,
