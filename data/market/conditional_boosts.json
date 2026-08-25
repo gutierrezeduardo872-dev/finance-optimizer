@@ -129,12 +129,12 @@
     "condition_count": "NOT_APPLICABLE",
     "condition_period": "monthly",
     "linked_product_id": "",
-    "max_balance_mxn": "UNKNOWN",
+    "max_balance_mxn": 25000,
     "promo_end_date": "2026-08-19",
     "confidence": {
       "yield": {
-        "score": "high",
-        "evidence_type": "issuer_primary",
+        "score": "low",
+        "evidence_type": "inferred",
         "verified_on": "2026-08-17",
         "sources": [
           "https://cdn.nubank.com.br/MX/folleto-informativo-cuenta.pdf",
@@ -142,7 +142,7 @@
         ]
       }
     },
-    "notes": "Cajita Turbo: 13.00% anual fija, GAT nominal 13.88% y GAT real 9.73% — la tasa más alta del conjunto de datos. REEMPLAZA el 6.50% base, no se suma, y sólo corre sobre el saldo dentro de la Cajita Turbo activada. CORRECCIÓN 2026-08-17: la condición estaba registrada como min_transaction_count = 1, que el motor evalúa como 'cualquiera que haga una compra al mes'. Eso habría otorgado 13% a TODO usuario de Nu con un movimiento — el doble de la tasa real, a quien no tiene el producto. Turbo NO se puede solicitar: Nu la ofrece por invitación mediante notificación en la app. La condición correcta es tier_membership, que el motor sólo da por cumplida cuando el usuario confirma que la tiene. Usar la tarjeta una vez al mes es la condición para CONSERVARLA, no para obtenerla. Nu no publica tope de saldo. Promoción con vigencia al 19 de agosto de 2026."
+    "notes": "Cajita Turbo: 13.00% anual fija, GAT nominal 13.88% y GAT real 9.73% — la tasa más alta del conjunto de datos. REEMPLAZA el 6.50% base, no se suma, y sólo corre sobre el saldo dentro de la Cajita Turbo activada. CORRECCIÓN 2026-08-17: la condición estaba registrada como min_transaction_count = 1, que el motor evalúa como 'cualquiera que haga una compra al mes'. Eso habría otorgado 13% a TODO usuario de Nu con un movimiento — el doble de la tasa real, a quien no tiene el producto. Turbo NO se puede solicitar: Nu la ofrece por invitación mediante notificación en la app. La condición correcta es tier_membership, que el motor sólo da por cumplida cuando el usuario confirma que la tiene. Usar la tarjeta una vez al mes es la condición para CONSERVARLA, no para obtenerla. TOPE $25,000: el 13% corre sólo sobre los primeros $25,000 dentro de la Cajita Turbo; el excedente vuelve a la tasa base de 6.50%. Dato aportado por Eduardo (2026-08-17), no localizado en material publicado de Nu — reverificar contra la app del emisor cuando se pueda. Promoción con vigencia al 19 de agosto de 2026."
   },
   {
     "boost_id": "scotiabank_mexico__scotia_inversion_disponible__boost_6_29",

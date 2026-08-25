@@ -744,12 +744,20 @@ function savingsIn(d, userId, amount, opts) {
     } else {
       const stated = cap(a.max_balance_earning_stated_rate_mxn);
       const cover = capAtCoverage ? coverageMxn(d, a) : null;
-      bands.push({
-        rate: bb ? bb.rate : (a.yield_structure === 'term_tiered'
-                              ? bestTermRate(d, a) : base),
-        cap: cover === null ? stated : Math.min(stated, cover),
-        acct: a,
-      });
+      const room = cover === null ? stated : Math.min(stated, cover);
+      const plain = a.yield_structure === 'term_tiered' ? bestTermRate(d, a) : base;
+      if (bb) {
+        // A boost has its own ceiling, separate from the account's. Emitting
+        // one band at the boosted rate with the account's cap gave Cajita
+        // Turbo's 13% to every peso, when it covers only the first $25,000.
+        const boosted = Math.min(room, bb.cap);
+        if (boosted > 0) bands.push({ rate: bb.rate, cap: boosted, acct: a });
+        if (room > boosted) {
+          bands.push({ rate: plain, cap: room - boosted, acct: a });
+        }
+      } else {
+        bands.push({ rate: plain, cap: room, acct: a });
+      }
     }
   });
   bands.sort((x, y) => y.rate - x.rate);
@@ -971,12 +979,18 @@ function yieldBands(d, userId, accts, amount, capAtCoverage) {
       });
     } else {
       const stated = cap(a.max_balance_earning_stated_rate_mxn);
-      bands.push({
-        rate: bb ? bb.rate : (a.yield_structure === 'term_tiered'
-                              ? bestTermRate(d, a) : base),
-        cap: cover === null ? stated : Math.min(stated, cover),
-        acct: a,
-      });
+      const room = cover === null ? stated : Math.min(stated, cover);
+      const plain = a.yield_structure === 'term_tiered' ? bestTermRate(d, a) : base;
+      if (bb) {
+        // A boost has its own ceiling, separate from the account's. One band at
+        // the boosted rate with the account's cap gave Cajita Turbo's 13% to
+        // every peso when it covers only the first $25,000.
+        const boosted = Math.min(room, bb.cap);
+        if (boosted > 0) bands.push({ rate: bb.rate, cap: boosted, acct: a });
+        if (room > boosted) bands.push({ rate: plain, cap: room - boosted, acct: a });
+      } else {
+        bands.push({ rate: plain, cap: room, acct: a });
+      }
     }
   });
   return bands.sort((x, y) => y.rate - x.rate);
