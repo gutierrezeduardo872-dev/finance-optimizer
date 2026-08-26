@@ -590,12 +590,28 @@ function Suggestions({ d, user, addProduct, go }) {
                           <div key={m.acct.account_id} className="mv-card">
                             <div className="mv-head">
                               <span className="mv-name">{m.acct.display_name}</span>
-                              <span className="mv-rate">{pct(m.rateNow)}</span>
+                              {/* The rate this balance actually earns, blended.
+                                  The headline is shown only when it differs, so
+                                  a promotional rate cannot masquerade as the
+                                  rate on the whole balance. */}
+                              <span className="mv-rate">
+                                {pct(m.rateThen)}
+                                {m.headline - m.rateThen > 0.05 && (
+                                  <span className="mv-cap"> · hasta {pct(m.headline)}</span>
+                                )}
+                              </span>
                             </div>
                             <div className="mv-line">
                               <span className="mv-lbl">Saldo</span>
                               <span className="mv-val">
                                 {mxn(m.from)} <span className="mv-arw">→</span> <b>{mxn(m.to)}</b>
+                              </span>
+                            </div>
+                            <div className="mv-line">
+                              <span className="mv-lbl">Tasa</span>
+                              <span className="mv-val">
+                                {pct(m.rateNow)} <span className="mv-arw">→</span>
+                                {' '}<b>{pct(m.rateThen)}</b>
                               </span>
                             </div>
                             <div className="mv-line">
@@ -659,6 +675,8 @@ function Suggestions({ d, user, addProduct, go }) {
                     <div className="pick-n">{p.acct.display_name}</div>
                     <div className="pick-i">
                       {iss.display_name}{inst ? ' · ' + inst.l : ''} · {pct(p.rate)} anual
+                      {p.headlineRate - p.rate > 0.05 &&
+                        ' (hasta ' + pct(p.headlineRate) + ' en tramos menores)'}
                     </div>
                   </div>
                   <div className="pick-up">

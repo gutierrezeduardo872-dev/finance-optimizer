@@ -387,7 +387,15 @@ function SavingsAdvisor({ d, user, logMovement, setBalance, setProductFlag, go }
               <div className="v-amount num">{mxn(current.benefit)}</div>
               <div className="v-sub">rendimiento estimado al año</div>
               <div className="v-tags">
+                {/* Blended for the amount entered, with the headline as a
+                    qualifier. A 13% promotional band on the first $25,000 must
+                    not read as 13% on the whole balance. */}
                 <span className="tag">{pct(current.rate)} anual</span>
+                {current.rateCapped && (
+                  <span className="tag tag-soft">
+                    hasta {pct(current.headline)} en tramos menores
+                  </span>
+                )}
                 {current.boost && <span className="tag teal">boost activo</span>}
                 {!current.eligible && <span className="tag warn">bajo el mínimo</span>}
               </div>

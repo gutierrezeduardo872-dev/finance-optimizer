@@ -691,6 +691,29 @@ function bestTermRate(d, acct) {
  * user deliberately chasing yield on a small balance is not making a mistake,
  * and forcing the safer answer would be us overriding them silently.
  */
+/**
+ * The rate a specific balance actually earns, blended across bands.
+ *
+ * headlineRate answers "what is the best rate this account can pay", which is
+ * the right answer for a shop window and the wrong one next to a balance.
+ * Cajita Nu's Turbo pays 13% on the first $25,000; showing "13%" beside
+ * $950,000 claims a rate the user will not receive on 97% of their money.
+ */
+function blendedRate(d, userId, acct, balance) {
+  const bal = num(balance);
+  if (bal <= 0) return headlineRate(d, userId, acct);
+  const gross = annualYield(d, userId, acct, bal) +
+                (knownNum(acct.monthly_fee_mxn) || 0) * 12;
+  return Math.round((gross / bal) * 1000) / 10;
+}
+
+/** True when the headline overstates what this balance earns. */
+function rateIsCapped(d, userId, acct, balance) {
+  return blendedRate(d, userId, acct, balance) <
+         headlineRate(d, userId, acct) - 0.05;
+}
+
+
 function savingsIn(d, userId, amount, opts) {
   const capAtCoverage = !!(opts && opts.capAtCoverage);
   const accts = heldAccounts(d, userId);
@@ -708,7 +731,9 @@ function savingsIn(d, userId, amount, opts) {
       benefit: eligible ? annualYield(d, userId, a, amount) : 0,
       boost: !!bestBoost(d, userId, a, num(a.flat_rate_pct)),
       opportunity: eligible ? boostOpportunity(d, userId, a, amount) : null,
-      rate: headlineRate(d, userId, a),
+      rate: blendedRate(d, userId, a, amount),
+      headline: headlineRate(d, userId, a),
+      rateCapped: rateIsCapped(d, userId, a, amount),
       insuranceScheme: a.insurance_scheme,
       coverageMxn: cover,
       insuredMxn: covered,
@@ -1095,7 +1120,9 @@ function newAccountPicks(d, userId) {
         from: Math.round(now),
         to: then,
         delta: then - Math.round(now),
-        rateNow: headlineRate(d, userId, a),
+        rateNow: blendedRate(d, userId, a, now),
+        rateThen: blendedRate(d, userId, a, then),
+        headline: headlineRate(d, userId, a),
         yieldNow: annualYield(d, userId, a, now),
         yieldThen: annualYield(d, userId, a, then),
         monthlyFee: knownNum(a.monthly_fee_mxn),
