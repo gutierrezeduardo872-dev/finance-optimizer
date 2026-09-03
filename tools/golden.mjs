@@ -36,16 +36,54 @@ const json = (p) => JSON.parse(read(p));
 
 const M = (n) => json(`data/market/${n}.json`);
 
+/* --market <file> swaps the repo JSON for a bootstrap payload pulled from the
+   database. Same battery, same fixture, different source: if the 257 cases
+   still match, the round trip through Postgres changed nothing. */
+const marketArg = process.argv.indexOf('--market');
+const OVERRIDE = marketArg > -1 ? JSON.parse(fs.readFileSync(process.argv[marketArg + 1], 'utf8')) : null;
+const KEY = {
+  issuers: 'issuers', cards: 'cards', card_rewards: 'cardRewards', card_perks: 'cardPerks',
+  accounts: 'accounts', yield_tiers: 'yieldTiers', term_tiers: 'termTiers',
+  conditional_boosts: 'conditionalBoosts', categories: 'categories',
+  fx_rates: 'fxRates', reference_rates: 'referenceRates',
+};
+const ID = {
+  issuers: 'issuer_id', cards: 'card_id', card_rewards: 'reward_id', card_perks: 'perk_id',
+  accounts: 'account_id', yield_tiers: 'tier_id', term_tiers: 'term_id',
+  conditional_boosts: 'boost_id', categories: 'category_key',
+  fx_rates: 'pair', reference_rates: 'index',
+};
+
+/* Every table is sorted by its id before it reaches the engine. Postgres
+   returns rows sorted and the JSON files are in the order the skill wrote
+   them, so without this the same data produces different fixtures.
+
+   It also pins something worth knowing: the engine's output is not entirely
+   independent of input row order. Two products that score identically are
+   ranked by their position in the array. Sorting here makes the test
+   deterministic; whether the app should break those ties on something more
+   meaningful than array position is a separate question, and an open one. */
+const T = (n) => {
+  const rows = OVERRIDE ? (OVERRIDE[KEY[n]] || []) : M(n);
+  const id = ID[n];
+  return [...rows].sort((a, b) => String(a[id]).localeCompare(String(b[id])));
+};
+
 function fixture() {
-  const cards = M('cards');
-  const accounts = M('accounts');
+  const cards = T('cards');
+  const accounts = T('accounts');
 
   // A deterministic slice: the first cards and accounts that are actually
   // mapped, so the user holds products with real rates rather than skeletons.
+  // Sorted by id, not left in file order. The database returns rows sorted and
+  // the JSON files do not, so without this the fixture holds different
+  // products depending on where the data came from and the two runs cannot be
+  // compared at all. Found exactly that way on 2026-09-03.
   const held = (rows, idKey, n) =>
     rows.filter((r) => r.mapping_status === 'mapped' || r.mapping_status === 'MAPPED')
-        .slice(0, n)
-        .map((r) => r[idKey]);
+        .map((r) => r[idKey])
+        .sort()
+        .slice(0, n);
 
   const heldCardIds = held(cards, 'card_id', 6);
   const heldAcctIds = held(accounts, 'account_id', 5);
@@ -76,17 +114,17 @@ function fixture() {
   ]));
 
   return {
-    issuers: M('issuers'),
+    issuers: T('issuers'),
     cards,
-    cardRewards: M('card_rewards'),
+    cardRewards: T('card_rewards'),
     cardPerks: [],
     accounts,
-    yieldTiers: M('yield_tiers'),
-    termTiers: M('term_tiers'),
-    conditionalBoosts: M('conditional_boosts'),
-    categories: M('categories'),
-    fxRates: M('fx_rates'),
-    referenceRates: M('reference_rates'),
+    yieldTiers: T('yield_tiers'),
+    termTiers: T('term_tiers'),
+    conditionalBoosts: T('conditional_boosts'),
+    categories: T('categories'),
+    fxRates: T('fx_rates'),
+    referenceRates: T('reference_rates'),
     users: [{ user_id: 'u1', name: 'Fixture', risk_score: '700', pin: '', is_admin: '', notes: '' }],
     userProducts,
     movements,
@@ -110,7 +148,7 @@ function battery(E, d) {
     catch (e) { out[label] = { __error: String(e && e.message || e) }; }
   };
 
-  const cats = d.categories.map((c) => c.category_key);
+  const cats = d.categories.map((c) => c.category_key).sort();
 
   for (const cat of cats) {
     for (const amt of AMOUNTS) {
