@@ -10,7 +10,9 @@ const REPO=process.env.NORTE_REPO || new URL('../', import.meta.url).pathname;
 const R=REPO+'data/market/';
 const L=f=>JSON.parse(fs.readFileSync(R+f,'utf8'));
 
-const files=['lib.js','ui.jsx','engine.js','details.jsx','advisors.jsx','screens.jsx','account.jsx','admin.jsx'];
+// core.bundle.js is generated from core/*.js and must be current: run
+// python3 tools/build-core.py before this, or the test checks stale logic.
+const files=['core.bundle.js','lib.js','ui.jsx','details.jsx','advisors.jsx','screens.jsx','account.jsx','admin.jsx'];
 let src=files.map(f=>fs.readFileSync(REPO+'src/'+f,'utf8')).join('\n');
 src=src.replace(/^\/\*[\s\S]*?\*\//,'');
 const out=esbuild.transformSync(src,{loader:'jsx',jsxFactory:'React.createElement',

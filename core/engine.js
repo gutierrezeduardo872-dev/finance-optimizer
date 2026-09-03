@@ -1,32 +1,27 @@
 /* ===========================================================================
-   Norte — recommendation engine
+   Norte core — scoring engine
    ---------------------------------------------------------------------------
-   Reconstructed from the compiled bundle and migrated to the canonical schema
-   (2026-08). This file is SOURCE. index.html is generated from it — never edit
-   the bundle directly.
+   PORTABLE. Zero DOM references (verified). This file is the product: card
+   scoring, yield resolution, boosts, picks and portfolio maths. It is the one
+   part of Norte that survives the move to React Native untouched, which is
+   why it was pulled out first.
 
-   What changed from the previous build, and why:
-
-   1. Boosts moved out of the account row into the ConditionalBoosts table.
-      An account can now have several, they do not stack, and each declares
-      whether its rate REPLACES the base or ADDS to it. The old code always
-      added, which read Ualá as 21.75% when the real figure is 15%.
-
-   2. Boost conditions are typed. Card spend, transaction count, monthly
-      deposit, payroll and membership are satisfied differently. An unknown
-      condition is never assumed met.
-
-   3. savingsIn's split now drops any allocation that falls below that
-      account's own minimum and redistributes it. Previously it checked the
-      minimum against the full amount, so it could promise a rate the customer
-      would not actually earn.
-
-   Deliberately kept from the previous build: the market point-value estimate.
-   Where an issuer publishes no peso value, points are valued at
-   MARKET_POINT_VALUE_MXN and flagged `pointsEstimated` so the UI can say so.
-   That is more useful than refusing to rank the card, as long as the estimate
-   stays visible.
+   Everything it needs from the formatting layer is imported explicitly below,
+   so the implicit shared-scope trick that index.html relies on is no longer
+   load-bearing here.
    =========================================================================== */
+
+import {
+  mxn,
+  mxn2,
+  pct,
+  num,
+  knownNum,
+  maxCarryingCost,
+  NOW_MONTH,
+  weekKey,
+  NOW_WEEK,
+} from './format.js';
 
 // Placeholder peso value for a point whose issuer publishes none. Every card
 // scored with it is flagged `pointsEstimated`, and the UI must say so.
@@ -1175,3 +1170,53 @@ function portfolio(d, userId) {
   };
 }
 
+export {
+  MARKET_POINT_VALUE_MXN,
+  POINT_VALUE_OVERRIDES,
+  cap,
+  capStrict,
+  heldCards,
+  heldAccounts,
+  tiersFor,
+  termTiersFor,
+  mtdSpend,
+  mtdSpendAnyCard,
+  mtdTxCount,
+  mtdDeposits,
+  priorRewardOnCard,
+  pointValue,
+  rewardValue,
+  capInfoFor,
+  refValue,
+  usdMxn,
+  resolveRate,
+  resolveFee,
+  coverageMxn,
+  scoreCard,
+  ccRecommend,
+  boostConditionMet,
+  boostsFor,
+  rateOf,
+  bestBoost,
+  unsizedBoosts,
+  bestUnmetBoost,
+  indexedRate,
+  annualYield,
+  marginalRate,
+  headlineRate,
+  boostOpportunity,
+  bestTermRate,
+  blendedRate,
+  rateIsCapped,
+  savingsIn,
+  savingsOut,
+  carryingCost,
+  avgMonthlySpend,
+  eligibleFor,
+  newCardPicks,
+  yieldBands,
+  allocate,
+  currentPortfolioYield,
+  newAccountPicks,
+  portfolio,
+};

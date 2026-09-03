@@ -804,8 +804,10 @@ body::before{content:"";position:fixed;inset:-20%;z-index:0;pointer-events:none;
 
 <script defer src="https://unpkg.com/@babel/standalone@7.24.7/babel.min.js"></script>
 
-<script defer type="text/babel" data-presets="react" src="src/lib.js?v=20260824b"></script>
-<script defer type="text/babel" data-presets="react" src="src/engine.js?v=20260824b"></script>
+<!-- Generated from core/*.js by tools/build-core.py. Plain JS, no JSX, so it
+     does not need Babel and loads before everything that depends on it. -->
+<script defer src="src/core.bundle.js?v=20260903a"></script>
+<script defer type="text/babel" data-presets="react" src="src/lib.js?v=20260903a"></script>
 <script defer type="text/babel" data-presets="react" src="src/ui.jsx?v=20260824b"></script>
 <script defer type="text/babel" data-presets="react" src="src/details.jsx?v=20260824b"></script>
 <script defer type="text/babel" data-presets="react" src="src/advisors.jsx?v=20260824b"></script>

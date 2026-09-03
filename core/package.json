@@ -1,0 +1,9 @@
+{
+  "name": "@norte/core",
+  "version": "1.0.0",
+  "description": "Norte scoring engine and formatters. Portable: browser, Node, React Native.",
+  "type": "module",
+  "main": "index.js",
+  "sideEffects": false,
+  "private": true
+}
