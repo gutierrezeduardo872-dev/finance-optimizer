@@ -7,3 +7,6 @@ sheet_export/
 
 # render-test dependencies
 tools/node_modules/
+
+# volcado generado por db/push.mjs --verify
+db/bootstrap.json
