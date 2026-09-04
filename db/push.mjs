@@ -27,7 +27,15 @@ import { fileURLToPath } from 'node:url';
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const M = (n) => JSON.parse(fs.readFileSync(path.join(ROOT, 'data/market', n + '.json'), 'utf8'));
 
-const URL_BASE = (process.env.SUPABASE_URL || '').replace(/\/+$/, '');
+/* Supabase enseña la URL del proyecto de dos formas según la pantalla: la
+   corta (https://xxx.supabase.co) y la de la API, con /rest/v1 al final.
+   Las dos son razonables de copiar, así que aquí se aceptan ambas en lugar
+   de fallar con un 404 que no explica nada. */
+const URL_BASE = (process.env.SUPABASE_URL || '')
+  .trim()
+  .replace(/\/+$/, '')
+  .replace(/\/rest\/v1$/, '')
+  .replace(/\/+$/, '');
 const KEY = process.env.SUPABASE_SERVICE_ROLE_KEY || '';
 const DRY = process.argv.includes('--dry-run');
 const VERIFY = process.argv.includes('--verify');
