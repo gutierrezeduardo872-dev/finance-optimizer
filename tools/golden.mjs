@@ -225,6 +225,14 @@ function loadLegacy() {
 
 /* -------------------------------------------------------------------------- */
 
+/* Sabido y aceptado: ccRecommend devuelve un ARREGLO con .best, .ranked y
+   .unvaluable colgados encima como propiedades, y JSON.stringify ignora las
+   propiedades no indexadas de un arreglo. O sea que esas tres no quedan
+   fijadas aquí. El contenido sí: el arreglo es ranked.concat(unvaluable) y
+   cada elemento lleva su propia bandera unvaluable, así que el orden y la
+   clasificación están cubiertos. Lo que no se detectaría es que .best dejara
+   de apuntar al primero. Anotado en vez de corregido porque arreglarlo
+   obliga a regenerar toda la línea base. */
 const stable = (o) => JSON.stringify(o, (k, v) => {
   if (v && typeof v === 'object' && !Array.isArray(v)) {
     return Object.fromEntries(Object.keys(v).sort().map((kk) => [kk, v[kk]]));
