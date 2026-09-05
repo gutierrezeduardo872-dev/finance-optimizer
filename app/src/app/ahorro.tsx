@@ -19,7 +19,9 @@
    =========================================================================== */
 
 import { useMemo, useState } from 'react';
-import { ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
+import {
+  ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View,
+} from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { mxn, pct, savingsIn } from '@core/index.js';
@@ -37,7 +39,7 @@ const CONDITION_LABEL: Record<string, string> = {
 };
 
 export default function SavingsAdvisor() {
-  const { db, userId } = useNorte();
+  const { db, userId, logMovement, setBalance } = useNorte();
   const [raw, setRaw] = useState('50000');
   const amount = Number(String(raw).replace(/[^0-9.]/g, '')) || 0;
 
@@ -117,6 +119,26 @@ export default function SavingsAdvisor() {
             ) : null}
 
             <Insurance item={best} amount={amount} />
+
+            {/* Depositar mueve el saldo además de registrar el movimiento: si
+                solo se registrara, la próxima consulta seguiría razonando con
+                el saldo viejo. */}
+            <TouchableOpacity
+              style={s.action}
+              disabled={amount <= 0}
+              onPress={() => {
+                logMovement({
+                  flow: 'debit', direction: 'in', amount,
+                  productId: best.acct.account_id, benefit: best.benefit,
+                });
+                setBalance(best.acct.account_id,
+                  (Number(best.acct.current_balance) || 0) + amount);
+                setRaw('');
+              }}
+              accessibilityRole="button"
+            >
+              <Text style={s.actionText}>Deposité aquí, registrar {mxn(amount)}</Text>
+            </TouchableOpacity>
           </View>
         ) : (
           <View style={s.winner}>
@@ -281,6 +303,11 @@ const s = StyleSheet.create({
   note: { color: T.ink2, fontSize: 12.5, marginTop: 10, lineHeight: 18 },
   warn: { color: T.copper, fontSize: 12.5, marginTop: 10, lineHeight: 18 },
   ok: { color: T.ink3, fontSize: 12.5, marginTop: 10, lineHeight: 18 },
+  action: {
+    backgroundColor: T.teal, borderRadius: 12, paddingVertical: 13,
+    alignItems: 'center', marginTop: 16,
+  },
+  actionText: { color: '#05201C', fontSize: 15, fontWeight: '700' },
 
   boost: {
     backgroundColor: T.copperSoft, borderColor: T.copper, borderWidth: 1,

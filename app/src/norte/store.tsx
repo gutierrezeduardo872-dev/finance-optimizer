@@ -26,6 +26,20 @@ type Ctx = {
   addProduct: (kind: 'card' | 'account', id: string) => void;
   removeProduct: (kind: 'card' | 'account', id: string) => void;
   setBalance: (accountId: string, balance: number) => void;
+  logMovement: (m: LoggedMovement) => void;
+};
+
+/* Lo que la app registra cuando el usuario dice que sí tomó el consejo. El
+   beneficio se guarda calculado, no se recalcula al leer: las tasas cambian, y
+   un historial que se recalcula reescribe el pasado cada vez que un emisor
+   mueve un número. */
+export type LoggedMovement = {
+  flow: 'cc' | 'debit';
+  direction?: 'in' | 'out';
+  merchant_category?: string;
+  amount: number;
+  productId: string;
+  benefit: number;
 };
 
 const NorteContext = createContext<Ctx | null>(null);
@@ -35,7 +49,7 @@ const nextId = () => `up_${Date.now().toString(36)}_${seq++}`;
 
 export function NorteProvider({ children }: { children: ReactNode }) {
   const [userProducts, setUserProducts] = useState<any[]>(INITIAL_PRODUCTS);
-  const [movements] = useState<any[]>(INITIAL_MOVEMENTS);
+  const [movements, setMovements] = useState<any[]>(INITIAL_MOVEMENTS);
 
   const db = useMemo(() => ({
     ...MARKET,
@@ -66,6 +80,24 @@ export function NorteProvider({ children }: { children: ReactNode }) {
     removeProduct: (kind, id) =>
       setUserProducts((prev) =>
         prev.filter((p) => !(p.product_type === kind && p.product_id === id))),
+
+    /* Registrar es lo que convierte a Norte en algo que sabe lo que has hecho
+       y no solo lo que podrías hacer. Además alimenta los topes del mes y las
+       condiciones de los boosts, así que la siguiente recomendación ya toma en
+       cuenta esta. */
+    logMovement: (m) =>
+      setMovements((prev) => [...prev, {
+        movement_id: nextId(),
+        user_id: USER_ID,
+        timestamp: new Date().toISOString(),
+        flow: m.flow,
+        direction: m.direction || '',
+        merchant_category: m.merchant_category || '',
+        amount: String(m.amount),
+        recommended_product_id: m.productId,
+        computed_benefit_mxn: String(m.benefit),
+        notes: '',
+      }]),
 
     setBalance: (accountId, balance) =>
       setUserProducts((prev) => prev.map((p) =>

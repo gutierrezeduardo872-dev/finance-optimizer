@@ -23,7 +23,7 @@ import { useNorte } from '@/norte/store';
 import { T } from '@/norte/theme';
 
 export default function CardAdvisor() {
-  const { db, userId } = useNorte();
+  const { db, userId, logMovement } = useNorte();
   const [category, setCategory] = useState('supermarket');
   const [raw, setRaw] = useState('2500');
 
@@ -98,6 +98,27 @@ export default function CardAdvisor() {
             {best.pointsEstimated ? (
               <Text style={s.note}>Valor en puntos estimado, no publicado por el emisor.</Text>
             ) : null}
+
+            {/* Registrarlo no es cosmético: alimenta el tope del mes y las
+                condiciones de los boosts, así que la siguiente recomendación
+                ya toma en cuenta esta. */}
+            <TouchableOpacity
+              style={s.action}
+              disabled={amount <= 0}
+              onPress={() => {
+                logMovement({
+                  flow: 'cc',
+                  merchant_category: category,
+                  amount,
+                  productId: best.card.card_id,
+                  benefit: best.reward + best.perkValue,
+                });
+                setRaw('');
+              }}
+              accessibilityRole="button"
+            >
+              <Text style={s.actionText}>Usé esta, registrar {mxn2(amount)}</Text>
+            </TouchableOpacity>
           </View>
         ) : (
           <View style={s.winner}>
@@ -190,6 +211,11 @@ const s = StyleSheet.create({
   },
   metricBig: { color: T.teal, fontSize: 26, fontWeight: '700' },
   note: { color: T.ink2, fontSize: 12.5, marginTop: 10, lineHeight: 18 },
+  action: {
+    backgroundColor: T.copper, borderRadius: 12, paddingVertical: 13,
+    alignItems: 'center', marginTop: 16,
+  },
+  actionText: { color: '#1A1008', fontSize: 15, fontWeight: '700' },
 
   restLabel: { marginTop: 14 },
   row: {

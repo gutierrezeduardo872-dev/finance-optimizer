@@ -22,7 +22,8 @@ import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 import {
-  boostOpportunity, heldAccounts, mxn, newAccountPicks, newCardPicks, pct, portfolio,
+  boostOpportunity, dayLabel, heldAccounts, mxn, mxn2, newAccountPicks, newCardPicks,
+  pct, portfolio,
 } from '@core/index.js';
 import { issuerName } from '@/norte/data';
 import { useNorte } from '@/norte/store';
@@ -54,6 +55,28 @@ export default function Home() {
       .sort((x: any, y: any) => y.op.extraPerYear - x.op.extraPerYear);
   }, [db, userId]);
 
+  /* Lo que Norte ya te ha generado. Es la única cifra de la app que mira
+     hacia atrás, y es la que contesta "¿esto sirve de algo?". Sale de los
+     movimientos registrados, con el beneficio guardado tal como se calculó el
+     día que se tomó la decisión. */
+  const recent = useMemo(
+    () => [...p.mv]
+      .sort((a: any, b: any) => String(b.timestamp).localeCompare(String(a.timestamp)))
+      .slice(0, 4),
+    [p.mv],
+  );
+
+  const nameOf = (id: string) => {
+    const c = db.cards.find((x: any) => x.card_id === id);
+    if (c) return c.display_name;
+    const a = db.accounts.find((x: any) => x.account_id === id);
+    return a ? a.display_name : id;
+  };
+  const catLabel = (key: string) => {
+    const c = db.categories.find((x: any) => x.category_key === key);
+    return c ? c.display_label : key;
+  };
+
   const acctPicks = useMemo(() => newAccountPicks(db, userId), [db, userId]);
   const cardPicks = useMemo(() => newCardPicks(db, userId), [db, userId]);
 
@@ -81,6 +104,15 @@ export default function Home() {
         </Text>
 
         <View style={s.hero}>
+          <View style={s.generated}>
+            <Text style={s.heroLabel}>Norte te ha generado este mes</Text>
+            <Text style={s.generatedValue}>{mxn2(p.monthBenefit)}</Text>
+            <Text style={s.heroSub}>
+              {mxn2(p.lifeBenefit)} en total · {p.mv.length}{' '}
+              {p.mv.length === 1 ? 'movimiento' : 'movimientos'}
+            </Text>
+          </View>
+
           <View style={s.heroRow}>
             <View style={s.heroCell}>
               <Text style={s.heroLabel}>Hoy ganas</Text>
@@ -98,6 +130,30 @@ export default function Home() {
             ) : null}
           </View>
         </View>
+
+        {recent.length > 0 && (
+          <Section title="Lo último" note="Los movimientos que has registrado.">
+            {recent.map((m: any) => (
+              <View key={m.movement_id} style={s.mv}>
+                <View style={s.mvMain}>
+                  <Text style={s.mvName} numberOfLines={1}>{nameOf(m.recommended_product_id)}</Text>
+                  <Text style={s.mvMeta}>
+                    {dayLabel(m.timestamp)}
+                    {m.flow === 'cc'
+                      ? ` · ${catLabel(m.merchant_category)}`
+                      : m.direction === 'in' ? ' · depósito' : ' · retiro'}
+                  </Text>
+                </View>
+                <View style={s.mvRight}>
+                  <Text style={s.mvAmount}>{mxn(Number(m.amount))}</Text>
+                  {Number(m.computed_benefit_mxn) > 0 ? (
+                    <Text style={s.mvBenefit}>+{mxn2(Number(m.computed_benefit_mxn))}</Text>
+                  ) : null}
+                </View>
+              </View>
+            ))}
+          </Section>
+        )}
 
         {nothing ? (
           <Text style={s.empty}>
@@ -257,6 +313,11 @@ const s = StyleSheet.create({
     backgroundColor: T.surface, borderColor: T.line, borderWidth: 1,
     borderRadius: 16, padding: 16,
   },
+  generated: {
+    paddingBottom: 15, marginBottom: 15,
+    borderBottomWidth: 1, borderBottomColor: T.line2,
+  },
+  generatedValue: { color: T.teal, fontSize: 32, fontWeight: '700', letterSpacing: -0.5 },
   heroRow: { flexDirection: 'row', gap: 18 },
   heroCell: { flex: 1 },
   heroLabel: {
@@ -288,6 +349,18 @@ const s = StyleSheet.create({
   },
   moveName: { color: T.ink2, fontSize: 13.5, flex: 1 },
   moveDelta: { fontSize: 14, fontWeight: '700' },
+
+  mv: {
+    flexDirection: 'row', alignItems: 'center', gap: 12,
+    backgroundColor: T.surface2, borderColor: T.line2, borderWidth: 1,
+    borderRadius: 12, paddingHorizontal: 14, paddingVertical: 11, marginBottom: 6,
+  },
+  mvMain: { flex: 1, minWidth: 0 },
+  mvName: { color: T.ink, fontSize: 14, fontWeight: '600' },
+  mvMeta: { color: T.ink3, fontSize: 11.5, marginTop: 1 },
+  mvRight: { alignItems: 'flex-end' },
+  mvAmount: { color: T.ink2, fontSize: 14, fontWeight: '600' },
+  mvBenefit: { color: T.teal, fontSize: 12, fontWeight: '700', marginTop: 1 },
 
   empty: { color: T.ink2, fontSize: 14, lineHeight: 21, marginTop: 16 },
   footnote: { color: T.ink3, fontSize: 11.5, lineHeight: 17, marginTop: 24 },
