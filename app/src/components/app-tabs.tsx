@@ -12,9 +12,17 @@ export default function AppTabs() {
       indicatorColor={T.copperSoft}
       labelStyle={{ selected: { color: T.copper } }}>
       <NativeTabs.Trigger name="index">
-        <NativeTabs.Trigger.Label>Tarjeta</NativeTabs.Trigger.Label>
+        <NativeTabs.Trigger.Label>Inicio</NativeTabs.Trigger.Label>
         <NativeTabs.Trigger.Icon
           src={require('@/assets/images/tabIcons/home.png')}
+          renderingMode="template"
+        />
+      </NativeTabs.Trigger>
+
+      <NativeTabs.Trigger name="tarjeta">
+        <NativeTabs.Trigger.Label>Tarjeta</NativeTabs.Trigger.Label>
+        <NativeTabs.Trigger.Icon
+          src={require('@/assets/images/tabIcons/explore.png')}
           renderingMode="template"
         />
       </NativeTabs.Trigger>

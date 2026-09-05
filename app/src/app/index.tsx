@@ -1,141 +1,231 @@
 /* ===========================================================================
-   Norte — asesor de tarjeta, primera pantalla nativa
+   Norte — inicio
    ---------------------------------------------------------------------------
-   El objetivo de esta pantalla no es verse bien todavía. Es contestar una
-   pregunta: ¿corre el motor de core/ en un iPhone y da los mismos números que
-   la web?
+   Las otras tres pantallas contestan preguntas que el usuario hace. Esta
+   contesta la que no sabe que tiene: qué está dejando sobre la mesa ahora
+   mismo.
 
-   Por eso el usuario, los productos y los movimientos son idénticos al
-   fixture de tools/golden.mjs. Si el resultado aquí no coincide con
-   tools/golden.json, el puerto está mal y hay que saberlo ahora y no en la
-   Fase 4 con cinco pantallas encima.
+   El orden no es por tamaño de la cifra, es por lo que cuesta cobrarla:
+
+     1. Boosts sin cumplir. Ya tienes la cuenta; solo falta una condición.
+     2. Reallocar. Mover dinero entre cuentas que ya son tuyas, sin abrir nada.
+     3. Abrir una cuenta.
+     4. Sacar una tarjeta.
+
+   Poner primero la ganancia más grande sería el orden equivocado: sugerir un
+   producto nuevo antes de haber exprimido lo que ya trae convierte al asesor
+   en un catálogo.
    =========================================================================== */
 
-import { useMemo, useState } from 'react';
-import {
-  ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View,
-} from 'react-native';
+import { useMemo } from 'react';
+import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-import { ccRecommend, mxn, mxn2, pct, shortIssuer } from '@core/index.js';
-import { CATEGORIES, issuerName } from '@/norte/data';
+import {
+  boostOpportunity, heldAccounts, mxn, newAccountPicks, newCardPicks, pct, portfolio,
+} from '@core/index.js';
+import { issuerName } from '@/norte/data';
 import { useNorte } from '@/norte/store';
 import { T } from '@/norte/theme';
 
-export default function CardAdvisor() {
+const CONDITION_LABEL: Record<string, string> = {
+  linked_card_spend: 'gastar con la tarjeta ligada',
+  payroll_direct_deposit: 'domiciliar tu nómina',
+  min_monthly_deposit: 'depositar al mes',
+  min_transaction_count: 'hacer movimientos al mes',
+  tier_membership: 'subir de plan',
+  other: 'cumplir una condición del emisor',
+};
+
+export default function Home() {
   const { db, userId } = useNorte();
-  const [category, setCategory] = useState('supermarket');
-  const [raw, setRaw] = useState('2500');
 
-  const amount = Number(String(raw).replace(/[^0-9.]/g, '')) || 0;
+  const p = useMemo(() => portfolio(db, userId), [db, userId]);
 
-  const result = useMemo(
-    () => ccRecommend(db, userId, category, amount, {}),
-    [category, amount],
-  );
+  /* Boosts sin cumplir sobre lo que ya tiene. Es la única categoría de consejo
+     que no le pide abrir nada ni mover nada. */
+  const boosts = useMemo(() => {
+    return heldAccounts(db, userId)
+      .map((a: any) => {
+        const op = boostOpportunity(db, userId, a, Number(a.current_balance) || 0);
+        return op ? { acct: a, op } : null;
+      })
+      .filter(Boolean)
+      .sort((x: any, y: any) => y.op.extraPerYear - x.op.extraPerYear);
+  }, [db, userId]);
 
-  const best = result.best;
-  const rest = result.ranked.slice(1);
+  const acctPicks = useMemo(() => newAccountPicks(db, userId), [db, userId]);
+  const cardPicks = useMemo(() => newCardPicks(db, userId), [db, userId]);
+
+  const realloc = acctPicks.find((x: any) => x.type === 'reallocation');
+  const newAccounts = acctPicks.filter((x: any) => x.type === 'account').slice(0, 2);
+  const closes = acctPicks.filter((x: any) => x.type === 'close');
+
+  const totalOnTable =
+    boosts.reduce((s: number, b: any) => s + b.op.extraPerYear, 0) +
+    (realloc?.uplift || 0) +
+    (newAccounts[0]?.upliftOverBest || 0) +
+    (cardPicks[0]?.uplift || 0) * 12;
+
+  const nothing =
+    boosts.length === 0 && !realloc && newAccounts.length === 0 &&
+    cardPicks.length === 0 && closes.length === 0;
 
   return (
     <SafeAreaView style={s.safe}>
-      <ScrollView contentContainerStyle={s.scroll} keyboardShouldPersistTaps="handled">
+      <ScrollView contentContainerStyle={s.scroll}>
 
-        <Text style={s.kicker}>Asesor de tarjeta</Text>
-        <Text style={s.h1}>¿Con cuál pago?</Text>
+        <Text style={s.kicker}>Tu norte</Text>
+        <Text style={s.h1}>
+          {nothing ? 'Todo en orden' : 'Estás dejando dinero en la mesa'}
+        </Text>
 
-        <View style={s.field}>
-          <Text style={s.label}>Monto</Text>
-          <TextInput
-            style={s.input}
-            value={raw}
-            onChangeText={setRaw}
-            keyboardType="decimal-pad"
-            placeholder="0"
-            placeholderTextColor={T.ink3}
-            selectionColor={T.copper}
-          />
-        </View>
-
-        <Text style={s.label}>Categoría</Text>
-        <View style={s.chips}>
-          {CATEGORIES.map((c) => {
-            const on = c.category_key === category;
-            return (
-              <TouchableOpacity
-                key={c.category_key}
-                onPress={() => setCategory(c.category_key)}
-                style={[s.chip, on && s.chipOn]}
-                accessibilityRole="button"
-                accessibilityState={{ selected: on }}
-              >
-                <Text style={[s.chipText, on && s.chipTextOn]}>{c.display_label}</Text>
-              </TouchableOpacity>
-            );
-          })}
-        </View>
-
-        {best ? (
-          <View style={s.winner}>
-            <Text style={s.winnerKicker}>Usa esta</Text>
-            <Text style={s.winnerName}>{best.card.display_name}</Text>
-            <Text style={s.winnerIssuer}>{shortIssuer(issuerName(best.card.issuer_id))}</Text>
-
-            <View style={s.winnerRow}>
-              <View>
-                <Text style={s.metricLabel}>Ganas</Text>
-                <Text style={s.metricBig}>{mxn2(best.reward + best.perkValue)}</Text>
-              </View>
-              <View>
-                <Text style={s.metricLabel}>Tasa</Text>
-                <Text style={s.metricBig}>{pct(best.rate)}</Text>
-              </View>
+        <View style={s.hero}>
+          <View style={s.heroRow}>
+            <View style={s.heroCell}>
+              <Text style={s.heroLabel}>Hoy ganas</Text>
+              <Text style={s.heroValue}>{mxn(p.projYield)}</Text>
+              <Text style={s.heroSub}>al año, {pct(p.avgRate)} sobre {mxn(p.balance)}</Text>
             </View>
-
-            {best.capped ? (
-              <Text style={s.note}>Tope alcanzado este mes. Queda {mxn2(best.capRemaining)}.</Text>
-            ) : null}
-            {best.pointsEstimated ? (
-              <Text style={s.note}>Valor en puntos estimado, no publicado por el emisor.</Text>
+            {totalOnTable > 1 ? (
+              <View style={s.heroCell}>
+                <Text style={s.heroLabel}>Podrías ganar</Text>
+                <Text style={[s.heroValue, { color: T.copper }]}>
+                  +{mxn(totalOnTable)}
+                </Text>
+                <Text style={s.heroSub}>más al año, con lo de abajo</Text>
+              </View>
             ) : null}
           </View>
-        ) : (
-          <View style={s.winner}>
-            <Text style={s.winnerName}>Sin recomendación</Text>
-            <Text style={s.note}>
-              Ninguna de tus tarjetas tiene datos suficientes para esta categoría.
-            </Text>
-          </View>
-        )}
+        </View>
 
-        {rest.length > 0 && (
-          <>
-            <Text style={[s.label, s.restLabel]}>El resto</Text>
-            {rest.map((r: any) => (
-              <View key={r.card.card_id} style={s.row}>
-                <View style={s.rowMain}>
-                  <Text style={s.rowName} numberOfLines={1}>{r.card.display_name}</Text>
-                  <Text style={s.rowIssuer}>{shortIssuer(issuerName(r.card.issuer_id))}</Text>
-                </View>
-                <View style={s.rowRight}>
-                  <Text style={s.rowReward}>{mxn2(r.reward + r.perkValue)}</Text>
-                  <Text style={s.rowRate}>{pct(r.rate)}</Text>
-                </View>
+        {nothing ? (
+          <Text style={s.empty}>
+            Con los productos que traes y lo que gastas, no hay nada mejor disponible
+            en los datos que tenemos. Eso puede cambiar cuando cambien las tasas.
+          </Text>
+        ) : null}
+
+        {boosts.length > 0 && (
+          <Section
+            title="Sin abrir nada"
+            note="Ya tienes estas cuentas. Solo falta cumplir una condición."
+          >
+            {boosts.map(({ acct, op }: any) => (
+              <View key={acct.account_id} style={[s.item, s.itemCopper]}>
+                <Text style={s.itemGain}>+{mxn(op.extraPerYear)} al año</Text>
+                <Text style={s.itemName}>{acct.display_name}</Text>
+                <Text style={s.itemBody}>
+                  Pasa de {pct(op.currentRate)} a {pct(op.potentialRate)} al{' '}
+                  {CONDITION_LABEL[op.conditionType] || op.conditionType}
+                  {op.conditionAmount ? ` ${mxn(op.conditionAmount)}` : ''}
+                  {op.maxBalance ? `, sobre los primeros ${mxn(op.maxBalance)}` : ''}.
+                </Text>
               </View>
             ))}
-          </>
+          </Section>
         )}
 
-        {result.unvaluable.length > 0 && (
-          <Text style={s.footnote}>
-            {result.unvaluable.length} tarjeta(s) fuera de la comparación: el emisor no publica
-            lo suficiente para ponerles precio. Un cero conocido gana a un desconocido.
-          </Text>
+        {realloc && (
+          <Section
+            title="Mover lo que ya tienes"
+            note="Mismo dinero, mismas cuentas, distinta repartición."
+          >
+            <View style={[s.item, s.itemTeal]}>
+              <Text style={[s.itemGain, { color: T.teal }]}>
+                +{mxn(realloc.uplift)} al año
+              </Text>
+              <Text style={s.itemBody}>
+                De {mxn(realloc.currentYield)} a {mxn(realloc.optimisedYield)} al año
+                sobre los mismos {mxn(realloc.total)}.
+              </Text>
+              {realloc.moves
+                .filter((m: any) => m.delta !== 0)
+                .map((m: any) => (
+                  <View key={m.acct.account_id} style={s.move}>
+                    <Text style={s.moveName} numberOfLines={1}>{m.acct.display_name}</Text>
+                    <Text style={[s.moveDelta, { color: m.delta > 0 ? T.teal : T.ink3 }]}>
+                      {m.delta > 0 ? '+' : ''}{mxn(m.delta)}
+                    </Text>
+                  </View>
+                ))}
+            </View>
+          </Section>
+        )}
+
+        {closes.length > 0 && (
+          <Section
+            title="Dejar de pagar"
+            note="Cuentas que se quedarían vacías y siguen cobrando manejo."
+          >
+            {closes.map((c: any) => (
+              <View key={c.acct.account_id} style={[s.item, s.itemCopper]}>
+                <Text style={s.itemGain}>+{mxn(c.uplift)} al año</Text>
+                <Text style={s.itemName}>{c.acct.display_name}</Text>
+                <Text style={s.itemBody}>
+                  Cobra {mxn(c.monthlyFee)} al mes y no le corresponde saldo.
+                </Text>
+              </View>
+            ))}
+          </Section>
+        )}
+
+        {newAccounts.length > 0 && (
+          <Section title="Abrir una cuenta" note="Además de reacomodar lo que ya traes.">
+            {newAccounts.map((a: any) => (
+              <View key={a.acct.account_id} style={s.item}>
+                <Text style={[s.itemGain, { color: T.teal }]}>
+                  +{mxn(a.upliftOverBest)} al año
+                </Text>
+                <Text style={s.itemName}>{a.acct.display_name}</Text>
+                <Text style={s.itemIssuer}>{issuerName(a.acct.issuer_id)}</Text>
+                <Text style={s.itemBody}>
+                  Mandarías {mxn(a.suggestedAmount)} y rendirían {pct(a.rate)}
+                  {a.headlineRate > a.rate
+                    ? ` (anuncia ${pct(a.headlineRate)}, pero no sobre todo el saldo)`
+                    : ''}
+                  .
+                </Text>
+                {a.insuranceScheme === 'none' ? (
+                  <Text style={s.itemWarn}>Sin seguro de depósito.</Text>
+                ) : null}
+                {a.locked ? <Text style={s.itemWarn}>A plazo forzoso.</Text> : null}
+              </View>
+            ))}
+          </Section>
+        )}
+
+        {cardPicks.length > 0 && (
+          <Section
+            title="Sacar una tarjeta"
+            note="Calculado sobre lo que ya gastas, no sobre un gasto hipotético."
+          >
+            {cardPicks.slice(0, 2).map((c: any) => (
+              <View key={c.card.card_id} style={s.item}>
+                <Text style={[s.itemGain, { color: T.teal }]}>
+                  +{mxn(c.uplift * 12)} al año
+                </Text>
+                <Text style={s.itemName}>{c.card.display_name}</Text>
+                <Text style={s.itemIssuer}>{issuerName(c.card.issuer_id)}</Text>
+                {c.reasons.slice(0, 3).map((r: any) => (
+                  <Text key={r.cat} style={s.itemBody}>
+                    {r.cat}: {pct(r.rate)} sobre los {mxn(r.spend)} que ya gastas ahí,
+                    {' '}+{mxn(r.gain)}.
+                  </Text>
+                ))}
+                {c.fee > 0 ? (
+                  <Text style={s.itemWarn}>
+                    Cuesta {mxn(c.fee)} al año, ya descontado de la cifra de arriba.
+                  </Text>
+                ) : null}
+              </View>
+            ))}
+          </Section>
         )}
 
         <Text style={s.footnote}>
-          {db.cards.length} tarjetas y {db.accounts.length} cuentas del mercado mexicano.
-          Los topes ya descuentan lo que llevas gastado este mes.
+          Todo lo de arriba se calcula sobre lo que realmente gastas y el saldo que
+          realmente traes. Nada asume un gasto que no has hecho.
         </Text>
 
       </ScrollView>
@@ -143,66 +233,62 @@ export default function CardAdvisor() {
   );
 }
 
+function Section({ title, note, children }: any) {
+  return (
+    <View style={s.section}>
+      <Text style={s.sectionTitle}>{title}</Text>
+      <Text style={s.sectionNote}>{note}</Text>
+      {children}
+    </View>
+  );
+}
+
 const s = StyleSheet.create({
   safe: { flex: 1, backgroundColor: T.canvas },
-  scroll: { padding: 20, paddingBottom: 48, gap: 14 },
+  scroll: { padding: 20, paddingBottom: 48 },
 
   kicker: {
     color: T.ink3, fontSize: 12, fontWeight: '600',
     letterSpacing: 1.4, textTransform: 'uppercase',
   },
-  h1: { color: T.ink, fontSize: 30, fontWeight: '700', letterSpacing: -0.5, marginBottom: 6 },
+  h1: { color: T.ink, fontSize: 29, fontWeight: '700', letterSpacing: -0.5, marginBottom: 16 },
 
-  field: { gap: 6 },
-  label: {
-    color: T.ink3, fontSize: 11, fontWeight: '600',
-    letterSpacing: 1.2, textTransform: 'uppercase',
+  hero: {
+    backgroundColor: T.surface, borderColor: T.line, borderWidth: 1,
+    borderRadius: 16, padding: 16,
   },
-  input: {
-    backgroundColor: T.surface, borderColor: T.line, borderWidth: 1, borderRadius: 12,
-    color: T.ink, fontSize: 26, fontWeight: '700',
-    paddingHorizontal: 14, paddingVertical: 12,
-  },
-
-  chips: { flexDirection: 'row', flexWrap: 'wrap', gap: 8 },
-  chip: {
-    backgroundColor: T.surface2, borderColor: T.line2, borderWidth: 1,
-    borderRadius: 999, paddingHorizontal: 13, paddingVertical: 8,
-  },
-  chipOn: { backgroundColor: T.copperSoft, borderColor: T.copper },
-  chipText: { color: T.ink2, fontSize: 13, fontWeight: '500' },
-  chipTextOn: { color: T.copper, fontWeight: '700' },
-
-  winner: {
-    backgroundColor: T.surface, borderColor: T.copper, borderWidth: 1,
-    borderRadius: 16, padding: 18, gap: 4, marginTop: 6,
-  },
-  winnerKicker: {
-    color: T.copper, fontSize: 11, fontWeight: '700',
-    letterSpacing: 1.4, textTransform: 'uppercase',
-  },
-  winnerName: { color: T.ink, fontSize: 21, fontWeight: '700', letterSpacing: -0.3 },
-  winnerIssuer: { color: T.ink3, fontSize: 13 },
-  winnerRow: { flexDirection: 'row', gap: 32, marginTop: 14 },
-  metricLabel: {
+  heroRow: { flexDirection: 'row', gap: 18 },
+  heroCell: { flex: 1 },
+  heroLabel: {
     color: T.ink3, fontSize: 10, fontWeight: '600',
-    letterSpacing: 1.2, textTransform: 'uppercase', marginBottom: 2,
+    letterSpacing: 1.1, textTransform: 'uppercase', marginBottom: 3,
   },
-  metricBig: { color: T.teal, fontSize: 26, fontWeight: '700' },
-  note: { color: T.ink2, fontSize: 12.5, marginTop: 10, lineHeight: 18 },
+  heroValue: { color: T.ink, fontSize: 25, fontWeight: '700' },
+  heroSub: { color: T.ink3, fontSize: 11.5, marginTop: 3, lineHeight: 16 },
 
-  restLabel: { marginTop: 14 },
-  row: {
-    flexDirection: 'row', alignItems: 'center', gap: 12,
-    backgroundColor: T.surface2, borderColor: T.line2, borderWidth: 1,
-    borderRadius: 12, paddingHorizontal: 14, paddingVertical: 12,
+  section: { marginTop: 26 },
+  sectionTitle: { color: T.ink, fontSize: 17, fontWeight: '700', letterSpacing: -0.2 },
+  sectionNote: { color: T.ink3, fontSize: 12.5, marginTop: 2, marginBottom: 10, lineHeight: 18 },
+
+  item: {
+    backgroundColor: T.surface, borderColor: T.line, borderWidth: 1,
+    borderRadius: 14, padding: 15, marginBottom: 8,
   },
-  rowMain: { flex: 1, minWidth: 0 },
-  rowName: { color: T.ink, fontSize: 15, fontWeight: '600' },
-  rowIssuer: { color: T.ink3, fontSize: 12, marginTop: 1 },
-  rowRight: { alignItems: 'flex-end' },
-  rowReward: { color: T.ink, fontSize: 15, fontWeight: '700' },
-  rowRate: { color: T.ink3, fontSize: 12, marginTop: 1 },
+  itemCopper: { borderColor: T.copper, backgroundColor: T.copperSoft },
+  itemTeal: { borderColor: T.teal },
+  itemGain: { color: T.copper, fontSize: 19, fontWeight: '700', marginBottom: 5 },
+  itemName: { color: T.ink, fontSize: 15.5, fontWeight: '600' },
+  itemIssuer: { color: T.ink3, fontSize: 12, marginTop: 1 },
+  itemBody: { color: T.ink2, fontSize: 13, lineHeight: 19, marginTop: 6 },
+  itemWarn: { color: T.copper, fontSize: 12.5, lineHeight: 18, marginTop: 6 },
 
-  footnote: { color: T.ink3, fontSize: 11.5, lineHeight: 17, marginTop: 8 },
+  move: {
+    flexDirection: 'row', justifyContent: 'space-between', gap: 12,
+    marginTop: 9, paddingTop: 9, borderTopWidth: 1, borderTopColor: T.line2,
+  },
+  moveName: { color: T.ink2, fontSize: 13.5, flex: 1 },
+  moveDelta: { fontSize: 14, fontWeight: '700' },
+
+  empty: { color: T.ink2, fontSize: 14, lineHeight: 21, marginTop: 16 },
+  footnote: { color: T.ink3, fontSize: 11.5, lineHeight: 17, marginTop: 24 },
 });
