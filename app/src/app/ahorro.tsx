@@ -23,7 +23,8 @@ import { ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { mxn, pct, savingsIn } from '@core/index.js';
-import { db, issuerName, USER_ID } from '@/norte/data';
+import { issuerName } from '@/norte/data';
+import { useNorte } from '@/norte/store';
 import { T } from '@/norte/theme';
 
 const CONDITION_LABEL: Record<string, string> = {
@@ -36,11 +37,12 @@ const CONDITION_LABEL: Record<string, string> = {
 };
 
 export default function SavingsAdvisor() {
+  const { db, userId } = useNorte();
   const [raw, setRaw] = useState('50000');
   const amount = Number(String(raw).replace(/[^0-9.]/g, '')) || 0;
 
   const result = useMemo(
-    () => savingsIn(db, USER_ID, amount, {}),
+    () => savingsIn(db, userId, amount, {}),
     [amount],
   );
 

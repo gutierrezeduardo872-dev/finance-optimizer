@@ -18,17 +18,19 @@ import {
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { ccRecommend, mxn, mxn2, pct, shortIssuer } from '@core/index.js';
-import { CATEGORIES, db, issuerName, USER_ID } from '@/norte/data';
+import { CATEGORIES, issuerName } from '@/norte/data';
+import { useNorte } from '@/norte/store';
 import { T } from '@/norte/theme';
 
 export default function CardAdvisor() {
+  const { db, userId } = useNorte();
   const [category, setCategory] = useState('supermarket');
   const [raw, setRaw] = useState('2500');
 
   const amount = Number(String(raw).replace(/[^0-9.]/g, '')) || 0;
 
   const result = useMemo(
-    () => ccRecommend(db, USER_ID, category, amount, {}),
+    () => ccRecommend(db, userId, category, amount, {}),
     [category, amount],
   );
 

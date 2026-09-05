@@ -95,7 +95,10 @@ const movements = [
   notes: '',
 }));
 
-export const db: any = {
+/* Las tablas de mercado son inmutables: vienen del repo y nadie las edita en
+   la app. Lo que sí cambia es qué productos tiene el usuario, y eso vive en
+   store.tsx, no aquí. */
+export const MARKET: any = {
   issuers: byId(issuers as any[], 'issuer_id'),
   cards: byId(cards as any[], 'card_id'),
   cardRewards: byId(cardRewards as any[], 'reward_id'),
@@ -109,12 +112,13 @@ export const db: any = {
   referenceRates: referenceRates as any[],
 
   users: [{ user_id: USER_ID, name: 'Demo', risk_score: '720', pin: '', is_admin: '', notes: '' }],
+};
 
-  userProducts: [
+export const INITIAL_PRODUCTS: any[] = [
     ...HELD_CARDS.map((id, i) => ({
-      id: `up_c${i}`, user_id: USER_ID, product_type: 'card', product_id: id,
-      current_balance: '', notes: '',
-    })),
+    id: `up_c${i}`, user_id: USER_ID, product_type: 'card', product_id: id,
+    current_balance: '', notes: '',
+  })),
     ...HELD_ACCOUNTS.map(([id, balance], i) => ({
       id: `up_a${i}`, user_id: USER_ID, product_type: 'account', product_id: id,
       current_balance: String(balance),
@@ -123,14 +127,11 @@ export const db: any = {
       membership_tier: '', payroll_deposited: false,
       notes: '',
     })),
-  ],
+];
 
-  movements,
+export const INITIAL_MOVEMENTS = movements;
 
-  userFlags: { [USER_ID]: { payroll: false, memberships: [] } },
-};
-
-export const CATEGORIES = db.categories as { category_key: string; display_label: string }[];
+export const CATEGORIES = MARKET.categories as { category_key: string; display_label: string }[];
 
 /* shortIssuer() recorta el nombre legal ("Banco Inbursa, S.A., Institución de
    Banca Múltiple" no cabe en una tarjeta), pero recibe el nombre, no el id.
