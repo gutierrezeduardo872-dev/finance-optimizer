@@ -132,9 +132,8 @@ export default function CardAdvisor() {
         )}
 
         <Text style={s.footnote}>
-          Datos: {db.cards.length} tarjetas, {db.accounts.length} cuentas.
-          Cartera de prueba de {db.userProducts.filter((p: any) => p.product_type === 'card').length} tarjetas,
-          la misma del golden. Gasto del mes ya considerado: {mxn(2500)} aprox.
+          {db.cards.length} tarjetas y {db.accounts.length} cuentas del mercado mexicano.
+          Los topes ya descuentan lo que llevas gastado este mes.
         </Text>
 
       </ScrollView>

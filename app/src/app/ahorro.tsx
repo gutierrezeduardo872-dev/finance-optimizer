@@ -169,18 +169,34 @@ export default function SavingsAdvisor() {
             <Text style={[s.label, s.restLabel]}>El resto</Text>
             {rest.map((r: any) => (
               <View key={r.acct.account_id} style={s.row}>
-                <View style={s.rowMain}>
-                  <Text style={s.rowName} numberOfLines={1}>{r.acct.display_name}</Text>
-                  <Text style={s.rowIssuer}>
-                    {issuerName(r.acct.issuer_id)}
-                    {r.locked ? ' · a plazo' : ''}
-                    {!r.eligible ? ' · monto insuficiente' : ''}
+                <View style={s.rowTop}>
+                  <View style={s.rowMain}>
+                    <Text style={s.rowName} numberOfLines={1}>{r.acct.display_name}</Text>
+                    <Text style={s.rowIssuer}>
+                      {issuerName(r.acct.issuer_id)}
+                      {r.locked ? ' · a plazo' : ''}
+                      {!r.eligible ? ' · monto insuficiente' : ''}
+                      {r.coverageMxn === null ? ' · sin seguro' : ''}
+                    </Text>
+                  </View>
+                  <View style={s.rowRight}>
+                    <Text style={s.rowReward}>{mxn(r.benefit)}</Text>
+                    <Text style={s.rowRate}>{pct(r.rate)}</Text>
+                  </View>
+                </View>
+
+                {/* Una cuenta que hoy va en cuarto lugar puede ser la mejor en
+                    cuanto se cumpla su condición. Esconder eso porque no ganó
+                    es esconder precisamente el consejo que la app existe para
+                    dar. */}
+                {r.opportunity ? (
+                  <Text style={s.rowBoost}>
+                    Sube a {pct(r.opportunity.potentialRate)} si{' '}
+                    {CONDITION_LABEL[r.opportunity.conditionType] || r.opportunity.conditionType}
+                    {r.opportunity.conditionAmount ? ` ${mxn(r.opportunity.conditionAmount)}` : ''}
+                    {'. '}+{mxn(r.opportunity.extraPerYear)} al año.
                   </Text>
-                </View>
-                <View style={s.rowRight}>
-                  <Text style={s.rowReward}>{mxn(r.benefit)}</Text>
-                  <Text style={s.rowRate}>{pct(r.rate)}</Text>
-                </View>
+                ) : null}
               </View>
             ))}
           </>
@@ -293,9 +309,13 @@ const s = StyleSheet.create({
 
   restLabel: { marginTop: 14 },
   row: {
-    flexDirection: 'row', alignItems: 'center', gap: 12,
     backgroundColor: T.surface2, borderColor: T.line2, borderWidth: 1,
     borderRadius: 12, paddingHorizontal: 14, paddingVertical: 12,
+  },
+  rowTop: { flexDirection: 'row', alignItems: 'center', gap: 12 },
+  rowBoost: {
+    color: T.copper, fontSize: 12.5, lineHeight: 18, marginTop: 9,
+    paddingTop: 9, borderTopWidth: 1, borderTopColor: T.line2,
   },
   rowMain: { flex: 1, minWidth: 0 },
   rowName: { color: T.ink, fontSize: 15, fontWeight: '600' },
